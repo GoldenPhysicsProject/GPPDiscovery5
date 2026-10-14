@@ -1,0 +1,5 @@
+eps - (phi+i)/sqrt(phi+2) [+/- 5.78e-120] + [+/- 7.10e-120]j contains0: True
+kappa_def - (sqrt(phi+2)-phi) [+/- 4.29e-120] contains0: True
+kappa - (5^{1/4}sqrt(phi)-phi) [+/- 8.01e-120] contains0: True
+(1-ik)/(1+ik) - eps(chibar) [+/- 7.56e-120] + [+/- 1.09e-119]j contains0: True
+kappa = [0.284079043840412296028291832393 +/- 1.27e-31]
