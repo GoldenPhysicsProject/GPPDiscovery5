@@ -26,3 +26,12 @@ Public credit: Daniel Toupin / Golden Physics Project, with AI assistance from G
 - A numerical check is evidence, not a proof. Every output says whether it is floating-point or certified (interval arithmetic).
 - No credentials anywhere in this repo.
 - Before calling anything a positivity mechanism, test it against the fakes F_θ = ξ(s−θ)ξ(s+θ) and Davenport–Heilbronn.
+
+## Running
+
+```
+pip install -r requirements.txt
+python experiments/li_coefficients/li_coeffs.py 100
+python experiments/dh_zero/dh_zero.py
+```
+Or use Actions → run-experiment (`script=experiments/...py`, `args=...`). Every script writes a `result*.json` through `scripts/common.write_result`, stamped `kind: float|certified`, git rev and credit. In this repo, mpmath output is always `float`. Only interval/Arb enclosures may be labelled `certified`.
