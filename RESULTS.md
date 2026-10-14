@@ -4,6 +4,7 @@ Tables written up from `results.jsonl`, newest first. Every row says whether it 
 
 | date | experiment | result | label | float/certified |
 |---|---|---|---|---|
+| 2026-10-14 | `symmetrized_euler/sym_euler.py N 60` | analytic Λ_N(s)+Λ_N(1−s): off-line zeros (Re>½, t≤60) for ζ: 6/17/32/97/327 at N=2/3/5/13/50; F_{1/4} and DH similar, so no separation | NUMERICAL | float |
 | 2026-10-14 | `li_certified/li_arb.py 2001 6000` | λ_1..λ_2001(F_{1/4}) all > 0 (balls exclude 0); L=10600 run for sign change near 9250 in progress | CERTIFIED | certified (Arb) |
 | 2026-10-14 | `dh_phi/dh_phi.py` | DH κ = √(φ+2)−φ = 5^{1/4}√φ−φ; ε(χ)=(φ+i)/√(φ+2); φ from choice q=5 | PROVED LEMMA (algebra) + Arb consistency | certified check |
 | 2026-10-14 | `ftheta_window` h=19/25 (even) | F_{1/4} −0.021969145467, ζ +0.002030094923, matches expected | NUMERICAL | float |
