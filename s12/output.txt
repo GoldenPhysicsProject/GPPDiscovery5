@@ -1,0 +1,10 @@
+h=0.35 even: lam0(pole+arch)=2.576e-03  localbound=0.490  prime-term on bottom vec=+1.782e-11  lam_full=+2.576e-03
+h=0.35 odd: lam0(pole+arch)=1.276e-01  localbound=0.490  prime-term on bottom vec=-8.405e-10  lam_full=+1.276e-01
+h=0.40 even: lam0(pole+arch)=1.087e-03  localbound=0.490  prime-term on bottom vec=+3.165e-04  lam_full=+5.033e-04
+h=0.40 odd: lam0(pole+arch)=-1.201e-02  localbound=0.490  prime-term on bottom vec=-5.791e-02  lam_full=+3.059e-02
+h=0.45 even: lam0(pole+arch)=-8.745e-04  localbound=0.490  prime-term on bottom vec=-3.761e-03  lam_full=+7.001e-05
+h=0.45 odd: lam0(pole+arch)=-1.376e-01  localbound=0.490  prime-term on bottom vec=-2.041e-01  lam_full=+6.606e-03
+h=0.50 even: lam0(pole+arch)=-1.347e-02  localbound=0.490  prime-term on bottom vec=-2.294e-02  lam_full=+4.722e-06
+h=0.50 odd: lam0(pole+arch)=-2.526e-01  localbound=0.490  prime-term on bottom vec=-3.372e-01  lam_full=+8.984e-04
+h=0.54 even: lam0(pole+arch)=-3.508e-02  localbound=0.490  prime-term on bottom vec=-5.825e-02  lam_full=+5.676e-07
+h=0.54 odd: lam0(pole+arch)=-3.388e-01  localbound=0.490  prime-term on bottom vec=-4.141e-01  lam_full=+1.026e-04
