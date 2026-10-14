@@ -15,3 +15,4 @@ Tables written up from `results.jsonl`, newest first. Every row says whether it 
 | 2026-10-14 | `li_coefficients/li_coeffs.py 100` | λ_1..λ_100 > 0 for ξ, F_{1/4}, F_{1/20}, DH; λ_1(ξ)=0.023096 | NUMERICAL | float |
 | 2026-10-14 | `dh_zero/dh_zero.py` | DH zero 0.808517182456637 + 85.699348485377592i, \|f\|≈8e-32, FE residual 2.5e-32 | NUMERICAL | float (dps≈30) |
 | 2026-10-14 | `pole_parity/pole_parity.py` | Weil pole term: even +1.71887, odd −0.00528, mixed 1.69775 ≠ 2G(½)²=2.12099 (pole = 2G(½)G(−½)) | NUMERICAL | float |
+| 2026-10-14 | `weil_ab_split` M=18 h=0.40..0.52 | F_{1/4} fails h=0.46; on min, dPole>|dA| but dPrimes tips dQ<0; primes/C crosses 1 for F_{1/4} only | NUMERICAL | float |
