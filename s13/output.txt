@@ -1,0 +1,16 @@
+th=0.0 h=0.40 even: #neg(A)=0 lamA=+1.087e-03 <x,T2x>=+3.229e-04 T2min=-8.396e-02 overlap(botA,botT2)=0.049 c=0.9803 window=(np.float64(-6.0), np.float64(1.3555)) lamW=+5.033e-04
+th=0.0 h=0.40 odd: #neg(A)=1 lamA=-1.201e-02 <x,T2x>=-5.907e-02 T2min=-4.911e-01 overlap(botA,botT2)=0.360 c=0.9803 window=(np.float64(0.219), np.float64(6.0)) lamW=+3.059e-02
+th=0.0 h=0.45 even: #neg(A)=1 lamA=-8.745e-04 <x,T2x>=-3.837e-03 T2min=-4.899e-01 overlap(botA,botT2)=0.103 c=0.9803 window=(np.float64(0.2695), np.float64(0.9935)) lamW=+7.001e-05
+th=0.0 h=0.45 odd: #neg(A)=1 lamA=-1.376e-01 <x,T2x>=-2.082e-01 T2min=-4.991e-01 overlap(botA,botT2)=0.578 c=0.9803 window=(np.float64(0.911), np.float64(2.569)) lamW=+6.606e-03
+th=0.0 h=0.50 even: #neg(A)=1 lamA=-1.347e-02 <x,T2x>=-2.340e-02 T2min=-4.960e-01 overlap(botA,botT2)=0.169 c=0.9803 window=(np.float64(0.8705), np.float64(0.9805)) lamW=+4.722e-06
+th=0.0 h=0.50 odd: #neg(A)=1 lamA=-2.526e-01 <x,T2x>=-3.440e-01 T2min=-5.000e-01 overlap(botA,botT2)=0.745 c=0.9803 window=(np.float64(0.974), np.float64(1.671)) lamW=+8.984e-04
+th=0.0 h=0.54 even: #neg(A)=1 lamA=-3.508e-02 <x,T2x>=-5.942e-02 T2min=-4.994e-01 overlap(botA,botT2)=0.300 c=0.9803 window=(np.float64(0.959), np.float64(0.98)) lamW=+5.676e-07
+th=0.0 h=0.54 odd: #neg(A)=1 lamA=-3.388e-01 <x,T2x>=-4.225e-01 T2min=-5.000e-01 overlap(botA,botT2)=0.818 c=0.9803 window=(np.float64(0.98), np.float64(1.3145)) lamW=+1.026e-04
+th=0.25 h=0.40 even: #neg(A)=0 lamA=+1.584e-03 <x,T2x>=+5.347e-04 T2min=-8.396e-02 overlap(botA,botT2)=0.050 c=0.9950 window=(np.float64(-6.0), np.float64(1.6715)) lamW=+8.547e-04
+th=0.25 h=0.40 odd: #neg(A)=0 lamA=+2.257e-02 <x,T2x>=-4.262e-02 T2min=-4.911e-01 overlap(botA,botT2)=0.311 c=0.9950 window=(np.float64(-0.4885), np.float64(6.0)) lamW=+5.894e-02
+th=0.25 h=0.45 even: #neg(A)=0 lamA=+6.884e-04 <x,T2x>=-1.626e-03 T2min=-4.899e-01 overlap(botA,botT2)=0.090 c=0.9950 window=(np.float64(-0.333), np.float64(1.0065)) lamW=+5.741e-05
+th=0.25 h=0.45 odd: #neg(A)=1 lamA=-1.051e-01 <x,T2x>=-1.456e-01 T2min=-4.991e-01 overlap(botA,botT2)=0.489 c=0.9950 window=(np.float64(0.8695), np.float64(4.135)) lamW=+1.181e-02
+th=0.25 h=0.50 even: #neg(A)=1 lamA=-9.033e-03 <x,T2x>=-1.484e-02 T2min=-4.960e-01 overlap(botA,botT2)=0.139 c=0.9950 window=(np.float64(0.815), np.float64(0.99)) lamW=-4.113e-05
+th=0.25 h=0.50 odd: #neg(A)=1 lamA=-2.066e-01 <x,T2x>=-2.667e-01 T2min=-5.000e-01 overlap(botA,botT2)=0.661 c=0.9950 window=(np.float64(0.9885), np.float64(2.344)) lamW=+9.758e-04
+th=0.25 h=0.54 even: #neg(A)=1 lamA=-2.531e-02 <x,T2x>=-3.543e-02 T2min=-4.994e-01 overlap(botA,botT2)=0.241 c=0.9950 window=(np.float64(0.9775), np.float64(0.9885)) lamW=-4.159e-05
+th=0.25 h=0.54 odd: #neg(A)=1 lamA=-2.914e-01 <x,T2x>=-3.678e-01 T2min=-5.000e-01 overlap(botA,botT2)=0.765 c=0.9950 window=(np.float64(0.9975), np.float64(1.633)) lamW=-3.730e-04
