@@ -1,30 +1,28 @@
 # GPPDiscovery5
 
-Discovery lab of the **guest seat (Grok)** for the Golden Physics Project. Set up by Daniel Toupin on 2026-10-14.
+Public mathematical workspace for the Golden Physics Project, operated by the guest seat (Grok).
+
+This repository contains exploratory mathematical code, formal statements, and reproducible computational work. Detailed working notes, unpublished strategy, session records, and research history are maintained in the private GPP bridge (`work/guest/`, `GUEST_RESEARCH_NOTES.md`) and mirrored to the project database.
+
+Results remain research-stage unless explicitly promoted to the canonical verification repository (`GoldenPhysicsProject/GPPVerify`). Promotion goes through Claude Code, which audits each hand-off and formalizes its exact parts in Lean 4.
 
 Public credit: Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
 
-This repo is **public**. It holds runnable numerics and finished, checkable math. RH strategy, unpublished ideas and proof attempts belong in the private coordination repo, `GoldenPhysicsProject/GPP-bridge`, under `work/guest/` and `GUEST_RESEARCH_NOTES.md`.
-
-## Layout
+## Layout (mirrors GPPDiscovery2)
 
 | Path | Contents |
 |---|---|
-| `research/<YYYY-MM-DD>_<topic>.md` | Finished write-ups. Each carries a status label (THEOREM / PROVED LEMMA / CONDITIONAL / NUMERICAL / OPEN / CONJECTURE) and a "what this does NOT claim" section. |
-| `experiments/<topic>/` | Runnable scripts, each with a README (how to run, dependencies) and its saved output. Every output says whether it is floating-point or certified (interval arithmetic). |
-| `notes/` | Scratch. Not citable. |
-| `scripts/` | Shared helpers. |
-| `requirements.txt` | Python dependencies for the experiments. |
+| `discovery/<thread>/` | Longer threads: write-ups, maps and syntheses, each labelled THEOREM / PROVED LEMMA / CONDITIONAL / NUMERICAL / OPEN / CONJECTURE. |
+| `research/` | Dated research notes and checkpoints (`<YYYY-MM-DD>_<topic>.md`). |
+| `experiments/` | Self-contained runnable scripts, each with saved output. |
+| `scripts/` | Reusable checkers and helpers. |
+| `RESULTS.md` + `results.jsonl` | Scan results written up as tables, plus the raw rows. The workflow appends to `results.jsonl`. |
+| `.github/workflows/run-experiment.yml` | A `workflow_dispatch` runner. It runs any script under `experiments/` or `scripts/` on GitHub Actions and commits its JSON output to `results.jsonl`. |
+| `requirements.txt` | Python dependencies. |
 
-## How work moves
+## Standing rules
 
-1. Explore here, and keep the private strategy in GPP-bridge.
-2. Write an exact result up as a hand-off: statement, proof sketch or computation, status label, reproducible script, and what it does NOT claim.
-3. Claude Code audits the hand-off and formalizes the exact parts in Lean 4 in `GoldenPhysicsProject/GPPVerify` (no `sorry`, no axioms, CI green).
-
-## Rules
-
-- **RH is OPEN.** Nothing here proves it.
-- **A numerical check is evidence, not a proof.**
-- **No credentials** anywhere in this repo.
-- **Before calling anything a positivity mechanism,** test it against the two fake L-functions (the shifted product F_θ and Davenport–Heilbronn).
+- RH is OPEN. Nothing here proves it.
+- A numerical check is evidence, not a proof. Every output says whether it is floating-point or certified (interval arithmetic).
+- No credentials anywhere in this repo.
+- Before calling anything a positivity mechanism, test it against the fakes F_θ = ξ(s−θ)ξ(s+θ) and Davenport–Heilbronn.

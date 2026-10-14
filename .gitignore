@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
+artifacts/
+result.json
 .venv/
-.ipynb_checkpoints/
 .env
 *.key
