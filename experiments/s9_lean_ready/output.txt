@@ -1,0 +1,8 @@
+(a) cos(h(t_k +- i th)) = cosh(h th): OK
+(b) Re (t+i th)^-2 identity: OK
+(c) FT closed form residual (exact subs): -0.e-167
+(d) sign lemma numerator factor 4(1-c)(t^2-th^2): each factor sign fixed; sympy: None
+(e) Gram energy: -4*(c - 1)
+(f) Re a_k = 2*cos(k*phi*log(p))*cosh(k*theta*log(p))  (= 2cosh(th u)cos(phi u) at u=k log p)
+(g) |a(2)| for theta=0.1 untempered: 0.138740470999486
+(d') sign lemma is negative: True | expr = -4*A*B/(H*(B + 2*T2)**2)
