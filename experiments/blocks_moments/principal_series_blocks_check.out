@@ -1,0 +1,70 @@
+=== D-retry: conical reduction with Legendre type=3 (argument x>1) ===
+  h=(0.5 + 0.7j), z=0.3, type=2: rel=0.4657344648553401416274575457204432822932
+  h=(0.5 + 0.7j), z=0.3, type=3: rel=9.598068509139980891872687602518421599991e-42
+  h=(0.5 + 1.4j), z=0.15, type=2: rel=0.4849435335166413582507313808977093025613
+  h=(0.5 + 1.4j), z=0.15, type=3: rel=1.591165236472505490223661608455840100498e-41
+  h=0.8, z=0.25, type=2: rel=0.9755910636354756709083793026429083235034
+  h=0.8, z=0.25, type=3: rel=1.554777712009792797552432531690527037888e-41
+  h=(0.5 + 2.3j), z=0.42, type=2: rel=0.4713109020985804429277961047798318912159
+  h=(0.5 + 2.3j), z=0.42, type=3: rel=2.513797283728165359089076242228733474381e-41
+=== H-retry: half-line convention M1 = (1/2pi) int_0^inf P dlam ===
+  M1 = 0.125   vs 1/8 = 0.125  rel= 0.0
+=== I. Mellin bridge vanishing at first zeta zeros (claimed 29 digits) ===
+  rho_1=(0.5 + 14.1347251417347j)  |bridge(rho)| = 3.272e-50
+  rho_2=(0.5 + 21.0220396387716j)  |bridge(rho)| = 1.7339e-54
+  rho_3=(0.5 + 25.0108575801457j)  |bridge(rho)| = 5.7648e-57
+=== J. temperedness envelope: |k_h| ~ e^{-pi lambda} decay? spot check ===
+  lam=1.0: |k_h(0.4)|=0.71627019   e^{-pi lam/2}=0.20787958  ratio=3.4456015
+  lam=3.0: |k_h(0.4)|=0.71770245   e^{-pi lam/2}=0.008983291  ratio=79.893042
+  lam=6.0: |k_h(0.4)|=0.71831129   e^{-pi lam/2}=8.0699518e-5  ratio=8901.0605
+=== K. M2 = 1/90? two-fold iterated moment candidates ===
+  (1/2pi)int_0^inf P^2 = 0.083333333333333333333  1/90= 0.011111111111111111111
+=== Prefactor modulus: |c|^2 = (2 lam/pi) coth(pi lam/2), c=2Gamma(2h)/Gamma(h)^2, h=(1+i lam)/2 ===
+  lam=0.5: rel=1.01577588142517942926430383574e-31
+  lam=2.0: rel=3.08630098375318370869278634138e-31
+  lam=7.0: rel=0.0
+=== Temperedness: |g_{1+i lam}(z,zbar)| -> |1-z|^{-1/2} on |z|=1 ===
+  phi=1.0, target |1-z|^-1/2 = 1.021487201
+     lam=4.0: |g|=1.027494648  ratio=1.005881079
+     lam=12.0: |g|=1.021370991  ratio=0.9998862344
+     lam=30.0: |g|=1.020612556  ratio=0.9991437531
+  phi=2.2, target |1-z|^-1/2 = 0.7492111183
+     lam=4.0: |g|=0.7479822214  ratio=0.9983597456
+     lam=12.0: |g|=0.7484042435  ratio=0.9989230342
+     lam=30.0: |g|=0.7484527216  ratio=0.9989877397
+=== Coincidence check: does 1/8 in the digamma moment equal M1 structurally? ===
+  full-line moment       = -0.36587750650535586986
+  (1/2pi)int_R P * psi(1/2) = -0.49087750650535586986  [= (1/4)psi(1/2)]
+  deviation piece        = 0.125   vs 1/8 = 0.125
+  M1 (half-line)         = 0.125
+  => the two '1/8's use DIFFERENT integration conventions (full vs half line).
+Step 1: Fourier inversion (1/2pi)int_R P cos(lam t/2) dlam = 1/(4 cosh^2(t/4))
+  t=0.7: rel=2.03316850359314533983082483784e-31
+  t=3.0: rel=1.65286555234525748880528798601e-31
+Step 2: moment = int_0^inf dt [1/(2 sinh(t/2))] * (1/4)[1 - sech^2(t/4)]
+  = 0.125
+Step 3: substitution u=t/4 gives (1/4) int_0^inf tanh u sech^2 u du = (1/4)(1/2) = 1/8
+  = 0.125   [exact 1/8 = 0.125]
+Cross-check vs direct digamma moment:
+  0.125
+M2 = (1/(2pi)^2) int_0^inf int_0^inf P(l1)P(l2)P(|l1-l2|) dl1 dl2  =? 1/90
+  numeric M2 = 0.0111111111111111111    1/90 = 0.0111111111111111111   rel= 1.8175e-26
+  zeta(4)/pi^4 = 0.0111111111111111111
+=== Stefan-Boltzmann family: m_s = (1/2pi)int_0^inf lam^{s-1} P dlam =? pi^{-(s+1)}(1-2^{-(s+1)})Gamma(s+1)zeta(s+1) ===
+  s=1.0: lhs=0.125 rhs=0.125 rel=0.0
+  s=2.0: lhs=0.0678443143051043981 rhs=0.0678443143051043981 rel=1.817e-31
+  s=3.0: lhs=0.0625 rhs=0.0625 rel=0.0
+  s=0.7: lhs=0.184560290530297946 rhs=0.184560290530297946 rel=1.452e-24
+  s=4.5: lhs=0.0967472756210144583 rhs=0.0967472756210144583 rel=2.548e-31
+  special values: m_1 = 0.125  (claim 1/8)
+  m_3 = 0.0625  (claim 1/16 = 0.0625 )
+=== Weierstrass product: 1/P = prod (1+lam^2/n^2) ===
+  lam=0.8: prod=2.43990124981183  1/P=2.43990124981183  rel=0.0
+  lam=2.5: prod=163.991350403172  1/P=163.991350403172  rel=3.079e-31
+=== Matsubara residues: Res_{lam=i n} P = i(-1)^n n ===
+  n=1: residue=(-9.99999946025e-13 - 1.0j)   claim i(-1)^n n = (0.0 - 1.0j)
+  n=2: residue=(9.99999784099e-13 + 2.0j)   claim i(-1)^n n = (0.0 + 2.0j)
+  n=3: residue=(-9.99999514222e-13 - 3.0j)   claim i(-1)^n n = (0.0 - 3.0j)
+=== Fourier transform of P: hat P(k) = (pi/2) sech^2(k/2)? ===
+  k=0.6: int_R P e^{-ikl}dl=1.43749377815151  (pi/2)sech^2(k/2)=1.43749377815151  rel=1.372e-31
+  k=2.0: int_R P e^{-ikl}dl=0.659694153155417  (pi/2)sech^2(k/2)=0.659694153155417  rel=1.495e-31

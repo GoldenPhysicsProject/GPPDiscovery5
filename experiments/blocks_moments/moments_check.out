@@ -1,0 +1,4 @@
+PASS: Fourier pair P <-> sech^2(x/2)/4
+PASS: Planck representation at beta=2*pi
+PASS: logarithmic derivative / Weierstrass-compatible identity
+PASS: Matsubara pole residues
