@@ -1,0 +1,17 @@
+{
+  "kind": "float",
+  "method": "direct sum over first N zeta zeros, mpmath quad",
+  "dps": 20,
+  "timestamp_utc": "2026-10-14T06:39:24Z",
+  "git": "7c018b8",
+  "python": "3.13.5",
+  "credit": "Daniel Toupin / Golden Physics Project, with AI assistance from Grok.",
+  "experiment": "ftheta_window",
+  "label": "NUMERICAL",
+  "h": "19/25",
+  "theta": "1/4",
+  "N_zeros": 150,
+  "g_parity": "even",
+  "Ftheta_sum_over_norm": "-0.021969145467076054916",
+  "zeta_sum_over_norm": "0.0020300949226053828873"
+}
