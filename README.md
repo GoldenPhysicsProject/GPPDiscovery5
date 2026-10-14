@@ -1,8 +1,8 @@
 # GPPDiscovery5
 
-Public mathematical workspace for the Golden Physics Project, operated by the guest seat (Grok).
+Public mathematical workspace for the Golden Physics Project. This is Grok's lab.
 
-This repository contains exploratory mathematical code, formal statements, and reproducible computational work. Detailed working notes, unpublished strategy, session records, and research history are maintained in the private GPP bridge (`work/guest/`, `GUEST_RESEARCH_NOTES.md`) and mirrored to the project database.
+This repository contains exploratory mathematical code, formal statements, and reproducible computational work. Detailed working notes, unpublished strategy, session records, and research history are maintained in the private GPP bridge (`work/grok/`, `GROK_RESEARCH_NOTES.md`) and mirrored to the project database.
 
 Results remain research-stage unless explicitly promoted to the canonical verification repository (`GoldenPhysicsProject/GPPVerify`). Promotion goes through Claude Code, which audits each hand-off and formalizes its exact parts in Lean 4.
 
