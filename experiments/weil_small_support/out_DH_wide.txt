@@ -1,0 +1,20 @@
+DH      h=1.300 even=+3.616067e-09 odd=+2.147104e-06
+DH      h=1.500 even=+1.683799e-11 odd=+1.870879e-08
+DH      h=1.700 even=+2.237043e-11 odd=+5.571861e-09
+DH      h=1.900 even=+6.299859e-13 odd=+7.394114e-11
+DH      h=2.100 even=+1.893806e-14 odd=+1.013830e-10
+DH      h=2.300 even=-9.672509e-15 odd=+1.941143e-13
+DH      h=2.500 even=-9.337441e-15 odd=+4.243741e-14
+DH      h=2.700 even=-1.305168e-14 odd=+3.087596e-14
+DH      h=2.900 even=-1.960639e-14 odd=+1.688878e-14
+Traceback (most recent call last):
+  File "/workspace/GPPDiscovery5/experiments/weil_small_support/weil_ritz.py", line 87, in <module>
+    e, o = lam(h, kd, th); rows.append([round(float(h), 4), e, o])
+           ~~~^^^^^^^^^^^
+  File "/workspace/GPPDiscovery5/experiments/weil_small_support/weil_ritz.py", line 78, in lam
+    Q, G = form(h, kind, theta)
+           ~~~~^^^^^^^^^^^^^^^^
+  File "/workspace/GPPDiscovery5/experiments/weil_small_support/weil_ritz.py", line 61, in form
+    if c_dh[n] != 0: Q -= 2*c_dh[n]/np.sqrt(n)*Fmat(np.log(n))
+       ~~~~^^^
+KeyError: 400
