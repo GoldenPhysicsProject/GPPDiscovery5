@@ -6,24 +6,41 @@ on:
         description: 'Path of the script to run (under experiments/ or scripts/)'
         required: true
       args:
-        description: 'Extra arguments'
+        description: 'Extra arguments (whitespace-separated; no shell syntax)'
         required: false
         default: ''
 permissions:
   contents: write
+concurrency:
+  group: run-experiment-results
+  cancel-in-progress: false
 jobs:
   run:
     runs-on: ubuntu-latest
     timeout-minutes: 350
+    env:
+      SCRIPT: ${{ inputs.script }}
+      ARGS: ${{ inputs.args }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: '3.11'}
       - run: pip install -r requirements.txt
+      - name: Validate script path
+        run: |
+          set -euo pipefail
+          case "$SCRIPT" in
+            experiments/*.py|scripts/*.py) ;;
+            *) echo "::error::script must be a .py under experiments/ or scripts/"; exit 1;;
+          esac
+          case "$SCRIPT" in *..*) echo "::error::no '..' in script path"; exit 1;; esac
+          test -f "$SCRIPT" || { echo "::error::$SCRIPT not found"; exit 1; }
       - name: Run
         run: |
-          case "${{ inputs.script }}" in experiments/*|scripts/*) ;; *) echo "script must be under experiments/ or scripts/"; exit 1;; esac
-          python "${{ inputs.script }}" ${{ inputs.args }} | tee run_output.txt
+          set -euo pipefail
+          # ARGS is split on whitespace into an array; it is never evaluated by the shell.
+          read -r -a argv <<< "$ARGS"
+          python "$SCRIPT" "${argv[@]}" | tee run_output.txt
       - uses: actions/upload-artifact@v4
         with:
           name: run-output
@@ -33,10 +50,22 @@ jobs:
           if-no-files-found: ignore
       - name: Append result.json to results.jsonl
         run: |
-          if [ -f result.json ]; then
-            python -c "import json; r=json.load(open('result.json')); r['_script']='${{ inputs.script }}'; open('results.jsonl','a').write(json.dumps(r)+'\n')"
-            git config user.name github-actions
-            git config user.email github-actions@users.noreply.github.com
-            git add results.jsonl
-            git commit -m "results: ${{ inputs.script }}" && git push || true
-          fi
+          set -euo pipefail
+          [ -f result.json ] || { echo "no result.json; nothing to append"; exit 0; }
+          python - <<'PY'
+          import json, os
+          r = json.load(open("result.json"))
+          r["_script"] = os.environ["SCRIPT"]
+          open("results.jsonl", "a").write(json.dumps(r) + "\n")
+          PY
+          git config user.name github-actions
+          git config user.email github-actions@users.noreply.github.com
+          git add results.jsonl
+          git commit -m "results: $SCRIPT"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              echo "pushed on attempt $i"; exit 0
+            fi
+            echo "push attempt $i failed; retrying"; sleep $((i * 5))
+          done
+          echo "::error::could not push results.jsonl after 5 attempts"; exit 1
