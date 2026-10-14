@@ -1,0 +1,14 @@
+=== v2 paired / large / weil compare ===
+separations Qz>=0 Qt<0: 0
+zeta_neg_count: 3
+big_centered: [{'h': 6.0, 'Qz': np.float64(3.96515021993876), 'Q25': np.float64(8.247742655715566)}, {'h': 8.0, 'Qz': np.float64(4.331524157299075), 'Q25': np.float64(9.18649127541022)}, {'h': 10.0, 'Qz': np.float64(4.580207066898993), 'Q25': np.float64(9.897075636801588)}, {'h': 12.0, 'Qz': np.float64(4.754537644310702), 'Q25': np.float64(10.450621318841456)}]
+paired min Qz=-2.425743e-01 Q25=-2.988695e+00 Q10=-7.498637e-01
+
+--- renorm vs Weil est on autocorr (F=f*f~) ---
+  a=0.25: renorm Qz=+8.2677e-02 Q25=+1.6541e-01 | arch z=-5.1545e-02 25=-1.0321e-01 | WeilEst z=+1.3422e-01 25=+2.6862e-01
+  a=0.35: renorm Qz=+1.6227e-01 Q25=+3.2476e-01 | arch z=-1.4836e-01 25=-2.9705e-01 | WeilEst z=+3.1063e-01 25=+6.2181e-01
+  a=0.50: renorm Qz=+3.3148e-01 Q25=+6.6389e-01 | arch z=-3.3071e-01 25=-6.6242e-01 | WeilEst z=+6.6219e-01 25=+1.3263e+00
+  a=0.70: renorm Qz=+6.2594e-01 Q25=+1.2547e+00 | arch z=-6.2587e-01 25=-1.2546e+00 | WeilEst z=+1.2518e+00 25=+2.5093e+00
+  a=1.00: renorm Qz=+1.1526e+00 Q25=+2.3140e+00 | arch z=-1.1526e+00 25=-2.3140e+00 | WeilEst z=+2.3052e+00 25=+4.6280e+00
+  a=1.50: renorm Qz=+2.1968e+00 Q25=+4.4253e+00 | arch z=-2.1968e+00 25=-4.4253e+00 | WeilEst z=+4.3936e+00 25=+8.8506e+00
+wrote /workspace/GPPDiscovery5/experiments/renorm_ftheta/result_v2.json

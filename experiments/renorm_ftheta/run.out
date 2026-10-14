@@ -1,0 +1,27 @@
+=== Renormalized pole-minus-prime (arch OMITTED) ===
+status: NUMERICAL (float); RH OPEN
+rows=55 elapsed=0.32s
+
+--- separations: Q_zeta>=0 and Q_theta<0 ---
+(none)
+
+--- Q_zeta < 0 (dead-end signal if common) ---
+(none on scanned family)
+
+--- sample table (yoshida_k4, autocorr_yosh4) Q_zeta / Q_0.25 ---
+  yoshida_k4       h=0.5: Qz=+8.150100e-01  Q25=+1.631183e+00  polez=+8.1501e-01  primz=+0.0000e+00
+  autocorr_yosh4   h=0.5: Qz=+8.267719e-02  Q25=+1.654133e-01  polez=+8.2677e-02  primz=+0.0000e+00
+  yoshida_k4       h=1.0: Qz=+1.572533e+00  Q25=+3.152430e+00  polez=+1.6440e+00  primz=+7.1424e-02
+  autocorr_yosh4   h=1.0: Qz=+3.314794e-01  Q25=+6.638931e-01  polez=+3.3212e-01  primz=+6.4124e-04
+  yoshida_k4       h=1.5: Qz=+2.067185e+00  Q25=+4.151912e+00  polez=+2.5011e+00  primz=+4.3393e-01
+  autocorr_yosh4   h=1.5: Qz=+7.073257e-01  Q25=+1.418195e+00  polez=+7.5259e-01  primz=+4.5268e-02
+  yoshida_k4       h=2.0: Qz=+2.439581e+00  Q25=+4.911873e+00  polez=+3.4014e+00  primz=+9.6185e-01
+  autocorr_yosh4   h=2.0: Qz=+1.152618e+00  Q25=+2.314012e+00  polez=+1.3513e+00  primz=+1.9868e-01
+  yoshida_k4       h=3.0: Qz=+2.993690e+00  Q25=+6.065918e+00  polez=+5.3970e+00  primz=+2.4033e+00
+  autocorr_yosh4   h=3.0: Qz=+2.196806e+00  Q25=+4.425295e+00  polez=+3.1278e+00  primz=+9.3097e-01
+  yoshida_k4       h=4.0: Qz=+3.400528e+00  Q25=+6.944661e+00  polez=+7.7788e+00  primz=+4.3783e+00
+  autocorr_yosh4   h=4.0: Qz=+3.395759e+00  Q25=+6.870025e+00  polez=+5.7849e+00  primz=+2.3891e+00
+  yoshida_k4       h=5.0: Qz=+3.715244e+00  Q25=+7.655076e+00  polez=+1.0733e+01  primz=+7.0182e+00
+  autocorr_yosh4   h=5.0: Qz=+4.710613e+00  Q25=+9.578479e+00  polez=+9.5088e+00  primz=+4.7982e+00
+
+wrote /workspace/GPPDiscovery5/experiments/renorm_ftheta/result.json

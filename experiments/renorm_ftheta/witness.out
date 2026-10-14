@@ -1,0 +1,4 @@
+witness: paired Yoshida c=9 w=0.4 k=4 (NOT positive-type)
+Q_zeta  = +1.6341214871e-03  (pole=5.863915e+01, prime=5.863752e+01)
+Q_1/4   = -1.6744690111e-01  (pole=5.637899e+02, prime=5.639574e+02)
+status: NUMERICAL float; RH OPEN; off Weil class
