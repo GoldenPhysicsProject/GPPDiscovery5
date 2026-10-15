@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/workspace/GPPDiscovery5/s27/s27_lp_cut.py", line 57, in <module>
+    if __name__ == "__main__": main()
+                               ~~~~^^
+  File "/workspace/GPPDiscovery5/s27/s27_lp_cut.py", line 40, in main
+    r = linprog(cobj, A_ub=np.vstack([A1, A2]), b_ub=np.r_[sigA(X), np.full(bs*nph, A.B)], bounds=bnds, method="highs")
+  File "/workspace/venv/lib/python3.13/site-packages/scipy/optimize/_linprog.py", line 660, in linprog
+    sol = _linprog_highs(lp, solver=highs_solvers[meth],
+                         **solver_options)
+  File "/workspace/venv/lib/python3.13/site-packages/scipy/optimize/_linprog_highs.py", line 355, in _linprog_highs
+    res = _highs_wrapper(c, A.indptr, A.indices, A.data, lhs, rhs,
+                         lb, ub, integrality.astype(np.uint8), options)
+  File "/workspace/venv/lib/python3.13/site-packages/scipy/optimize/_highspy/_highs_wrapper.py", line 206, in _highs_wrapper
+    run_status = highs.run()
+MemoryError: std::bad_alloc
