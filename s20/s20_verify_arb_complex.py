@@ -20,7 +20,9 @@ for j in range(N):
     if v > m: m = v
 ber = 1 - arb.pi()*(K-1)/N; M = (m/ber).upper()
 Xi = arb(d["Xi_LP"]).floor() + 1
-tail = acb(a, Xi/2).digamma().real + lf - 2*kap - arb(c) - M; assert tail > 0, tail
+def tailm(X): return acb(a, X/2).digamma().real + lf - 2*kap - arb(c) - M
+while not tailm(Xi) > 0: Xi = Xi + 1   # Re psi increasing in |y|: enlarge the body range until the tail bound closes
+tail = tailm(Xi)
 F2 = (acb(3).zeta(acb(a)).real/2 + 2*kap*t*t + sum((abs(x)+abs(y))*uk*uk for x, y, uk in zip(A, Bc, u))).upper()
 def fval(x):
     w = acb(a, x/2); z = acb(0, D*x).exp(); e = acb(0, L*x).exp(); Pz = P(z)
