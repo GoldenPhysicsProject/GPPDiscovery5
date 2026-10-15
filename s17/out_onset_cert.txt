@@ -1,0 +1,4 @@
+h=0.38 odd  Arch0+Pole : Q(g)/||g||^2 = [-0.003804931691 +/- 4.06e-13]  (explicit rational g, Arb)
+h=0.40 odd  Arch0      : Q(g)/||g||^2 = [-0.04086000496 +/- 6.81e-13]  (explicit rational g, Arb)
+h=0.42 even Arch0+Pole : Q(g)/||g||^2 = [-0.0001347805950 +/- 1.61e-14]  (explicit rational g, Arb)
+h=0.45 even F_theta    : Q(g)/||g||^2 = [-1.421870618e-5 +/- 1.34e-15]  (explicit rational g, Arb)

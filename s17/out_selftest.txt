@@ -1,0 +1,3 @@
+h=0.04: max|Q_zeta(S17) - A(S14)| = 1.67e-72 ; max|N - quad| = 0.0
+h=0.3: max|Q_zeta(S17) - A(S14)| = 3.55e-71 ; max|N - quad| = 0.0
+h=0.5: max|Q_zeta(S17) - A(S14)| = 2.23e-71 ; max|N - quad| = 0.0

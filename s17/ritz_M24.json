@@ -1,0 +1,1082 @@
+[
+ {
+  "h": "1/32",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "even",
+  "ritz_min": "1.41776593243",
+  "cert_upper": "[1.41776593243 +/- 1.07e-12]",
+  "cert_lower": "[1.16788480586 +/- 1.70e-12]"
+ },
+ {
+  "h": "1/32",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "odd",
+  "ritz_min": "2.52351597876",
+  "cert_upper": "[2.52351597876 +/- 3.09e-12]",
+  "cert_lower": "[1.16787463284 +/- 4.46e-12]"
+ },
+ {
+  "h": "1/32",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "even",
+  "ritz_min": "2.83550173249",
+  "cert_upper": "[2.83550173249 +/- 4.24e-12]",
+  "cert_lower": "[2.33564500768 +/- 1.88e-12]"
+ },
+ {
+  "h": "1/32",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "odd",
+  "ritz_min": "5.04705018757",
+  "cert_upper": "[5.04705018757 +/- 3.63e-12]",
+  "cert_lower": "[2.33561957382 +/- 2.73e-12]"
+ },
+ {
+  "h": "1/32",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "even",
+  "ritz_min": "2.42881411216",
+  "cert_upper": "[2.42881411216 +/- 3.96e-12]",
+  "cert_lower": "[2.29774531574 +/- 3.38e-12]"
+ },
+ {
+  "h": "1/32",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "odd",
+  "ritz_min": "3.62213811594",
+  "cert_upper": "[3.62213811594 +/- 4.58e-12]",
+  "cert_lower": "[2.29774531574 +/- 3.38e-12]"
+ },
+ {
+  "h": "1/32",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "even",
+  "ritz_min": "2.71649618462",
+  "cert_upper": "[2.71649618462 +/- 4.26e-12]",
+  "cert_lower": "[2.58542738819 +/- 1.60e-12]"
+ },
+ {
+  "h": "1/32",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "odd",
+  "ritz_min": "3.90982018839",
+  "cert_upper": "[3.90982018839 +/- 2.80e-12]",
+  "cert_lower": "[2.58542738819 +/- 1.60e-12]"
+ },
+ {
+  "h": "1/32",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "even",
+  "ritz_min": "2.9103951772",
+  "cert_upper": "[2.91039517720 +/- 3.96e-12]",
+  "cert_lower": "[2.77732271829 +/- 2.41e-12]"
+ },
+ {
+  "h": "1/32",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "odd",
+  "ritz_min": "4.13296177036",
+  "cert_upper": "[4.13296177036 +/- 3.73e-12]",
+  "cert_lower": "[2.77732271829 +/- 2.41e-12]"
+ },
+ {
+  "h": "1/32",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "even",
+  "ritz_min": "2.93963973593",
+  "cert_upper": "[2.93963973593 +/- 5.01e-14]",
+  "cert_lower": "[2.80857093950 +/- 2.62e-12]"
+ },
+ {
+  "h": "1/32",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "odd",
+  "ritz_min": "4.1329637397",
+  "cert_upper": "[4.13296373970 +/- 1.42e-12]",
+  "cert_lower": "[2.80857093950 +/- 2.62e-12]"
+ },
+ {
+  "h": "1/25",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "even",
+  "ritz_min": "1.19946553568",
+  "cert_upper": "[1.19946553568 +/- 4.64e-12]",
+  "cert_lower": "[0.916665634456 +/- 3.82e-13]"
+ },
+ {
+  "h": "1/25",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "odd",
+  "ritz_min": "2.27663695016",
+  "cert_upper": "[2.27663695016 +/- 1.92e-12]",
+  "cert_lower": "[0.916644299416 +/- 4.47e-13]"
+ },
+ {
+  "h": "1/25",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "even",
+  "ritz_min": "2.39888330873",
+  "cert_upper": "[2.39888330873 +/- 1.98e-12]",
+  "cert_lower": "[1.83312596136 +/- 6.56e-13]"
+ },
+ {
+  "h": "1/25",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "odd",
+  "ritz_min": "4.55330218376",
+  "cert_upper": "[4.55330218376 +/- 5.00e-13]",
+  "cert_lower": "[1.83307261928 +/- 8.61e-14]"
+ },
+ {
+  "h": "1/25",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "even",
+  "ritz_min": "2.18605947359",
+  "cert_upper": "[2.18605947359 +/- 1.62e-12]",
+  "cert_lower": "[2.05527419296 +/- 2.68e-12]"
+ },
+ {
+  "h": "1/25",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "odd",
+  "ritz_min": "3.37526989262",
+  "cert_upper": "[3.37526989262 +/- 6.45e-13]",
+  "cert_lower": "[2.05527419296 +/- 2.68e-12]"
+ },
+ {
+  "h": "1/25",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "even",
+  "ritz_min": "2.47374154604",
+  "cert_upper": "[2.47374154604 +/- 1.71e-13]",
+  "cert_lower": "[2.34295626541 +/- 4.46e-12]"
+ },
+ {
+  "h": "1/25",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "odd",
+  "ritz_min": "3.66295196507",
+  "cert_upper": "[3.66295196507 +/- 1.14e-12]",
+  "cert_lower": "[2.34295626541 +/- 4.46e-12]"
+ },
+ {
+  "h": "1/25",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "even",
+  "ritz_min": "2.65945367643",
+  "cert_upper": "[2.65945367643 +/- 4.29e-13]",
+  "cert_lower": "[2.52610354689 +/- 2.82e-13]"
+ },
+ {
+  "h": "1/25",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "odd",
+  "ritz_min": "3.88609138686",
+  "cert_upper": "[3.88609138686 +/- 4.48e-12]",
+  "cert_lower": "[2.52610354689 +/- 2.82e-13]"
+ },
+ {
+  "h": "1/25",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "even",
+  "ritz_min": "2.69688509735",
+  "cert_upper": "[2.69688509735 +/- 4.39e-12]",
+  "cert_lower": "[2.56609981673 +/- 1.34e-12]"
+ },
+ {
+  "h": "1/25",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "odd",
+  "ritz_min": "3.88609551639",
+  "cert_upper": "[3.88609551639 +/- 4.66e-12]",
+  "cert_lower": "[2.56609981673 +/- 1.34e-12]"
+ },
+ {
+  "h": "1/12",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "even",
+  "ritz_min": "0.606531686296",
+  "cert_upper": "[0.606531686296 +/- 3.79e-13]",
+  "cert_lower": "[0.161172761497 +/- 4.01e-13]"
+ },
+ {
+  "h": "1/12",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "odd",
+  "ritz_min": "1.54243919985",
+  "cert_upper": "[1.54243919985 +/- 3.15e-12]",
+  "cert_lower": "[0.160979793272 +/- 1.62e-13]"
+ },
+ {
+  "h": "1/12",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "even",
+  "ritz_min": "1.21289007708",
+  "cert_upper": "[1.21289007708 +/- 2.15e-12]",
+  "cert_lower": "[0.321429777545 +/- 1.79e-13]"
+ },
+ {
+  "h": "1/12",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "odd",
+  "ritz_min": "3.08496698699",
+  "cert_upper": "[3.08496698699 +/- 2.99e-12]",
+  "cert_lower": "[0.320947181062 +/- 1.50e-14]"
+ },
+ {
+  "h": "1/12",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "even",
+  "ritz_min": "1.47245421572",
+  "cert_upper": "[1.47245421572 +/- 4.47e-12]",
+  "cert_lower": "[1.34308467240 +/- 1.86e-13]"
+ },
+ {
+  "h": "1/12",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "odd",
+  "ritz_min": "2.64123824475",
+  "cert_upper": "[2.64123824475 +/- 4.14e-12]",
+  "cert_lower": "[1.34308467240 +/- 1.86e-13]"
+ },
+ {
+  "h": "1/12",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "even",
+  "ritz_min": "1.76013628818",
+  "cert_upper": "[1.76013628818 +/- 3.76e-12]",
+  "cert_lower": "[1.63076674485 +/- 1.60e-12]"
+ },
+ {
+  "h": "1/12",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "odd",
+  "ritz_min": "2.9289203172",
+  "cert_upper": "[2.92892031720 +/- 2.36e-12]",
+  "cert_lower": "[1.63076674485 +/- 1.60e-12]"
+ },
+ {
+  "h": "1/12",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "even",
+  "ritz_min": "1.90532651686",
+  "cert_upper": "[1.90532651686 +/- 1.79e-14]",
+  "cert_lower": "[1.77061067393 +/- 1.51e-12]"
+ },
+ {
+  "h": "1/12",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "odd",
+  "ritz_min": "3.15202656594",
+  "cert_upper": "[3.15202656594 +/- 8.97e-13]",
+  "cert_lower": "[1.77061067393 +/- 1.51e-12]"
+ },
+ {
+  "h": "1/12",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "even",
+  "ritz_min": "1.98327983949",
+  "cert_upper": "[1.98327983949 +/- 4.58e-13]",
+  "cert_lower": "[1.85391029617 +/- 4.20e-12]"
+ },
+ {
+  "h": "1/12",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "odd",
+  "ritz_min": "3.15206386851",
+  "cert_upper": "[3.15206386851 +/- 1.86e-12]",
+  "cert_lower": "[1.85391029617 +/- 4.20e-12]"
+ },
+ {
+  "h": "0.1",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "even",
+  "ritz_min": "0.478257548278",
+  "cert_upper": "[0.478257548278 +/- 9.60e-14]",
+  "cert_lower": "[-0.0293967118119 +/- 4.56e-14]"
+ },
+ {
+  "h": "0.1",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "odd",
+  "ritz_min": "1.35995006371",
+  "cert_upper": "[1.35995006371 +/- 3.23e-12]",
+  "cert_lower": "[-0.0297302118515 +/- 4.26e-14]"
+ },
+ {
+  "h": "0.1",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "even",
+  "ritz_min": "0.956284010378",
+  "cert_upper": "[0.956284010378 +/- 4.14e-13]",
+  "cert_lower": "[-0.0601256072928 +/- 3.37e-14]"
+ },
+ {
+  "h": "0.1",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "odd",
+  "ritz_min": "2.72000867359",
+  "cert_upper": "[2.72000867359 +/- 1.01e-12]",
+  "cert_lower": "[-0.0609597952456 +/- 3.88e-15]"
+ },
+ {
+  "h": "0.1",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "even",
+  "ritz_min": "1.2979770111",
+  "cert_upper": "[1.29797701110 +/- 4.91e-12]",
+  "cert_lower": "[1.16915734178 +/- 4.62e-12]"
+ },
+ {
+  "h": "0.1",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "odd",
+  "ritz_min": "2.45888506855",
+  "cert_upper": "[2.45888506855 +/- 1.53e-12]",
+  "cert_lower": "[1.16915734178 +/- 4.62e-12]"
+ },
+ {
+  "h": "0.1",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "even",
+  "ritz_min": "1.58565908356",
+  "cert_upper": "[1.58565908356 +/- 3.32e-12]",
+  "cert_lower": "[1.45683941423 +/- 2.84e-12]"
+ },
+ {
+  "h": "0.1",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "odd",
+  "ritz_min": "2.746567141",
+  "cert_upper": "[2.74656714100 +/- 2.59e-13]",
+  "cert_lower": "[1.45683941423 +/- 2.84e-12]"
+ },
+ {
+  "h": "0.1",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "even",
+  "ritz_min": "1.71527838499",
+  "cert_upper": "[1.71527838499 +/- 3.11e-13]",
+  "cert_lower": "[1.58004120062 +/- 2.25e-12]"
+ },
+ {
+  "h": "0.1",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "odd",
+  "ritz_min": "2.9696462706",
+  "cert_upper": "[2.96964627060 +/- 8.29e-13]",
+  "cert_lower": "[1.58004120062 +/- 2.25e-12]"
+ },
+ {
+  "h": "0.1",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "even",
+  "ritz_min": "1.80880263487",
+  "cert_upper": "[1.80880263487 +/- 8.94e-13]",
+  "cert_lower": "[1.67998296554 +/- 1.38e-12]"
+ },
+ {
+  "h": "0.1",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "odd",
+  "ritz_min": "2.96971069231",
+  "cert_upper": "[2.96971069231 +/- 4.47e-12]",
+  "cert_lower": "[1.67998296554 +/- 1.38e-12]"
+ },
+ {
+  "h": "0.2",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "even",
+  "ritz_min": "0.106105164329",
+  "cert_upper": "[0.106105164329 +/- 4.83e-13]",
+  "cert_lower": "[-0.771623041330 +/- 2.37e-14]"
+ },
+ {
+  "h": "0.2",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "odd",
+  "ritz_min": "0.664324684072",
+  "cert_upper": "[0.664324684072 +/- 2.63e-13]",
+  "cert_lower": "[-0.774295046412 +/- 2.12e-13]"
+ },
+ {
+  "h": "0.2",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "even",
+  "ritz_min": "0.211703091357",
+  "cert_upper": "[0.211703091357 +/- 1.79e-13]",
+  "cert_lower": "[-1.54889063167 +/- 4.94e-12]"
+ },
+ {
+  "h": "0.2",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "odd",
+  "ritz_min": "1.3286197961",
+  "cert_upper": "[1.32861979610 +/- 4.47e-12]",
+  "cert_lower": "[-1.55558468968 +/- 3.84e-12]"
+ },
+ {
+  "h": "0.2",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "even",
+  "ritz_min": "0.651978047109",
+  "cert_upper": "[0.651978047109 +/- 4.99e-13]",
+  "cert_lower": "[0.526524751284 +/- 3.23e-13]"
+ },
+ {
+  "h": "0.2",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "odd",
+  "ritz_min": "1.76551915344",
+  "cert_upper": "[1.76551915344 +/- 4.05e-12]",
+  "cert_lower": "[0.526524751284 +/- 3.23e-13]"
+ },
+ {
+  "h": "0.2",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "even",
+  "ritz_min": "0.939660119561",
+  "cert_upper": "[0.939660119561 +/- 2.80e-13]",
+  "cert_lower": "[0.814206823736 +/- 1.04e-13]"
+ },
+ {
+  "h": "0.2",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "odd",
+  "ritz_min": "2.05320122589",
+  "cert_upper": "[2.05320122589 +/- 2.27e-12]",
+  "cert_lower": "[0.814206823736 +/- 1.04e-13]"
+ },
+ {
+  "h": "0.2",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "even",
+  "ritz_min": "0.976140859892",
+  "cert_upper": "[0.976140859892 +/- 1.54e-13]",
+  "cert_lower": "[0.837814871104 +/- 7.68e-14]"
+ },
+ {
+  "h": "0.2",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "odd",
+  "ritz_min": "2.27583230071",
+  "cert_upper": "[2.27583230071 +/- 1.68e-12]",
+  "cert_lower": "[0.837814871104 +/- 7.68e-14]"
+ },
+ {
+  "h": "0.2",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "even",
+  "ritz_min": "1.16280367088",
+  "cert_upper": "[1.16280367088 +/- 4.52e-12]",
+  "cert_lower": "[1.03735037505 +/- 3.13e-13]"
+ },
+ {
+  "h": "0.2",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "odd",
+  "ritz_min": "2.2763447772",
+  "cert_upper": "[2.27634477720 +/- 1.95e-12]",
+  "cert_lower": "[1.03735037505 +/- 3.13e-13]"
+ },
+ {
+  "h": "0.3",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "even",
+  "ritz_min": "0.0104246913061",
+  "cert_upper": "[0.0104246913061 +/- 4.74e-14]",
+  "cert_lower": "[-1.22534633643 +/- 4.51e-13]"
+ },
+ {
+  "h": "0.3",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "odd",
+  "ritz_min": "0.252587174884",
+  "cert_upper": "[0.252587174884 +/- 1.71e-13]",
+  "cert_lower": "[-1.23438692332 +/- 4.74e-12]"
+ },
+ {
+  "h": "0.3",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "even",
+  "ritz_min": "0.0204532677051",
+  "cert_upper": "[0.0204532677051 +/- 3.88e-14]",
+  "cert_lower": "[-2.46406261751 +/- 4.47e-12]"
+ },
+ {
+  "h": "0.3",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "odd",
+  "ritz_min": "0.504019644346",
+  "cert_upper": "[0.504019644346 +/- 1.30e-13]",
+  "cert_lower": "[-2.48677117270 +/- 1.58e-13]"
+ },
+ {
+  "h": "0.3",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "even",
+  "ritz_min": "0.29366993043",
+  "cert_upper": "[0.293669930430 +/- 4.82e-13]",
+  "cert_lower": "[0.171705992014 +/- 3.09e-13]"
+ },
+ {
+  "h": "0.3",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "odd",
+  "ritz_min": "1.35991987098",
+  "cert_upper": "[1.35991987098 +/- 5.96e-14]",
+  "cert_lower": "[0.171705992014 +/- 3.09e-13]"
+ },
+ {
+  "h": "0.3",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "even",
+  "ritz_min": "0.581352002881",
+  "cert_upper": "[0.581352002881 +/- 3.00e-13]",
+  "cert_lower": "[0.459388064466 +/- 8.90e-14]"
+ },
+ {
+  "h": "0.3",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "odd",
+  "ritz_min": "1.64760194343",
+  "cert_upper": "[1.64760194343 +/- 1.85e-12]",
+  "cert_lower": "[0.459388064466 +/- 8.90e-14]"
+ },
+ {
+  "h": "0.3",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "even",
+  "ritz_min": "0.525454370595",
+  "cert_upper": "[0.525454370595 +/- 1.34e-13]",
+  "cert_lower": "[0.384091576004 +/- 3.51e-13]"
+ },
+ {
+  "h": "0.3",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "odd",
+  "ritz_min": "1.86903192502",
+  "cert_upper": "[1.86903192502 +/- 2.56e-12]",
+  "cert_lower": "[0.384091576004 +/- 3.51e-13]"
+ },
+ {
+  "h": "0.3",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "even",
+  "ritz_min": "0.804495554196",
+  "cert_upper": "[0.804495554196 +/- 4.91e-13]",
+  "cert_lower": "[0.682531615780 +/- 2.99e-13]"
+ },
+ {
+  "h": "0.3",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "odd",
+  "ritz_min": "1.87074549475",
+  "cert_upper": "[1.87074549475 +/- 3.96e-12]",
+  "cert_lower": "[0.682531615780 +/- 2.99e-13]"
+ },
+ {
+  "h": "0.34",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "even",
+  "ritz_min": "0.00235196716966",
+  "cert_upper": "[0.00235196716966 +/- 5.16e-16]",
+  "cert_lower": "[-1.36954654162 +/- 2.59e-12]"
+ },
+ {
+  "h": "0.34",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "odd",
+  "ritz_min": "0.123454312567",
+  "cert_upper": "[0.123454312567 +/- 4.47e-13]",
+  "cert_lower": "[-1.38272380942 +/- 3.58e-12]"
+ },
+ {
+  "h": "0.34",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "even",
+  "ritz_min": "0.00443845001817",
+  "cert_upper": "[0.00443845001817 +/- 3.97e-15]",
+  "cert_lower": "[-2.75659237456 +/- 3.61e-12]"
+ },
+ {
+  "h": "0.34",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "odd",
+  "ritz_min": "0.244843036947",
+  "cert_upper": "[0.244843036947 +/- 3.88e-13]",
+  "cert_lower": "[-2.78973618809 +/- 3.45e-12]"
+ },
+ {
+  "h": "0.34",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "even",
+  "ritz_min": "0.187332871666",
+  "cert_upper": "[0.187332871666 +/- 2.24e-13]",
+  "cert_lower": "[0.0668006048818 +/- 2.63e-14]"
+ },
+ {
+  "h": "0.34",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "odd",
+  "ritz_min": "1.23476662091",
+  "cert_upper": "[1.23476662091 +/- 4.89e-12]",
+  "cert_lower": "[0.0668006048818 +/- 2.63e-14]"
+ },
+ {
+  "h": "0.34",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "even",
+  "ritz_min": "0.475014944118",
+  "cert_upper": "[0.475014944118 +/- 3.96e-15]",
+  "cert_lower": "[0.354482677334 +/- 4.46e-13]"
+ },
+ {
+  "h": "0.34",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "odd",
+  "ritz_min": "1.52244869337",
+  "cert_upper": "[1.52244869337 +/- 3.34e-12]",
+  "cert_lower": "[0.354482677334 +/- 4.46e-13]"
+ },
+ {
+  "h": "0.34",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "even",
+  "ritz_min": "0.382458822777",
+  "cert_upper": "[0.382458822777 +/- 4.37e-13]",
+  "cert_lower": "[0.239891370812 +/- 4.89e-13]"
+ },
+ {
+  "h": "0.34",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "odd",
+  "ritz_min": "1.74310957091",
+  "cert_upper": "[1.74310957091 +/- 8.99e-13]",
+  "cert_lower": "[0.239891370812 +/- 4.89e-13]"
+ },
+ {
+  "h": "0.34",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "even",
+  "ritz_min": "0.698158495432",
+  "cert_upper": "[0.698158495432 +/- 2.14e-13]",
+  "cert_lower": "[0.577626228648 +/- 2.36e-13]"
+ },
+ {
+  "h": "0.34",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "odd",
+  "ritz_min": "1.74559224468",
+  "cert_upper": "[1.74559224468 +/- 8.74e-13]",
+  "cert_lower": "[0.577626228648 +/- 2.36e-13]"
+ },
+ {
+  "h": "0.4",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "even",
+  "ritz_min": "0.000293935816047",
+  "cert_upper": "[0.000293935816047 +/- 3.90e-16]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.4",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "odd",
+  "ritz_min": "0.0210867285689",
+  "cert_upper": "[0.0210867285689 +/- 4.84e-14]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.4",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "even",
+  "ritz_min": "0.000462147526448",
+  "cert_upper": "[0.000462147526448 +/- 4.19e-16]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.4",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "odd",
+  "ritz_min": "0.040164716004",
+  "cert_upper": "[0.0401647160040 +/- 2.09e-14]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.4",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "even",
+  "ritz_min": "0.0882929492376",
+  "cert_upper": "[0.0882929492376 +/- 1.52e-14]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.4",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "odd",
+  "ritz_min": "0.9394732351",
+  "cert_upper": "[0.939473235100 +/- 4.84e-14]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.4",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "even",
+  "ritz_min": "0.340663037752",
+  "cert_upper": "[0.340663037752 +/- 5.63e-14]",
+  "cert_lower": "[0.222317028728 +/- 2.15e-13]"
+ },
+ {
+  "h": "0.4",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "odd",
+  "ritz_min": "1.36004590956",
+  "cert_upper": "[1.36004590956 +/- 1.95e-12]",
+  "cert_lower": "[0.222317028728 +/- 2.15e-13]"
+ },
+ {
+  "h": "0.4",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "even",
+  "ritz_min": "0.237119952098",
+  "cert_upper": "[0.237119952098 +/- 3.59e-13]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.4",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "odd",
+  "ritz_min": "1.44578993641",
+  "cert_upper": "[1.44578993641 +/- 9.20e-13]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.4",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "even",
+  "ritz_min": "0.563806589066",
+  "cert_upper": "[0.563806589066 +/- 1.54e-13]",
+  "cert_lower": "[0.445460580042 +/- 4.25e-13]"
+ },
+ {
+  "h": "0.4",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "odd",
+  "ritz_min": "1.58318946087",
+  "cert_upper": "[1.58318946087 +/- 2.27e-12]",
+  "cert_lower": "[0.445460580042 +/- 4.25e-13]"
+ },
+ {
+  "h": "0.45",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "even",
+  "ritz_min": "3.26379331387e-5",
+  "cert_upper": "[3.26379331387e-5 +/- 3.50e-17]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.45",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "odd",
+  "ritz_min": "0.00399733384449",
+  "cert_upper": "[0.00399733384449 +/- 1.76e-15]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.45",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "even",
+  "ritz_min": "-3.77172550279e-6",
+  "cert_upper": "[-3.77172550279e-6 +/- 1.82e-18]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.45",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "odd",
+  "ritz_min": "0.00679276542777",
+  "cert_upper": "[0.00679276542777 +/- 2.26e-16]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.45",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "even",
+  "ritz_min": "0.0494000684471",
+  "cert_upper": "[0.0494000684471 +/- 3.75e-14]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.45",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "odd",
+  "ritz_min": "0.648698345058",
+  "cert_upper": "[0.648698345058 +/- 3.08e-13]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.45",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "even",
+  "ritz_min": "0.246265348866",
+  "cert_upper": "[0.246265348866 +/- 2.33e-13]",
+  "cert_lower": "[0.129776279507 +/- 4.37e-13]"
+ },
+ {
+  "h": "0.45",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "odd",
+  "ritz_min": "1.2424736667",
+  "cert_upper": "[1.24247366670 +/- 3.85e-12]",
+  "cert_lower": "[0.129776279507 +/- 4.37e-13]"
+ },
+ {
+  "h": "0.45",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "even",
+  "ritz_min": "0.163757920281",
+  "cert_upper": "[0.163757920281 +/- 2.06e-13]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.45",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "odd",
+  "ritz_min": "1.15322941914",
+  "cert_upper": "[1.15322941914 +/- 2.67e-12]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.45",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "even",
+  "ritz_min": "0.46940890018",
+  "cert_upper": "[0.469408900180 +/- 2.29e-14]",
+  "cert_lower": "[0.352919830821 +/- 2.27e-13]"
+ },
+ {
+  "h": "0.45",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "odd",
+  "ritz_min": "1.46561721802",
+  "cert_upper": "[1.46561721802 +/- 1.95e-12]",
+  "cert_lower": "[0.352919830821 +/- 2.27e-13]"
+ },
+ {
+  "h": "0.5",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "even",
+  "ritz_min": "2.05481317664e-6",
+  "cert_upper": "[2.05481317664e-6 +/- 3.76e-18]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.5",
+  "M": 24,
+  "eta": "zeta",
+  "sector": "odd",
+  "ritz_min": "0.000427654669086",
+  "cert_upper": "[0.000427654669086 +/- 1.80e-16]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.5",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "even",
+  "ritz_min": "-4.2254450214e-5",
+  "cert_upper": "[-4.22544502140e-5 +/- 1.87e-17]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.5",
+  "M": 24,
+  "eta": "F_theta",
+  "sector": "odd",
+  "ritz_min": "0.000146547887926",
+  "cert_upper": "[0.000146547887926 +/- 3.00e-17]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.5",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "even",
+  "ritz_min": "0.0263885050774",
+  "cert_upper": "[0.0263885050774 +/- 1.13e-14]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.5",
+  "M": 24,
+  "eta": "chi3 (mod 3, odd)",
+  "sector": "odd",
+  "ritz_min": "0.442228445854",
+  "cert_upper": "[0.442228445854 +/- 1.33e-13]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.5",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "even",
+  "ritz_min": "0.164191710337",
+  "cert_upper": "[0.164191710337 +/- 4.42e-13]",
+  "cert_lower": "[0.0495905135800 +/- 4.99e-14]"
+ },
+ {
+  "h": "0.5",
+  "M": 24,
+  "eta": "chi4 (mod 4, odd)",
+  "sector": "odd",
+  "ritz_min": "1.13744661255",
+  "cert_upper": "[1.13744661255 +/- 2.02e-12]",
+  "cert_lower": "[0.0495905135800 +/- 4.99e-14]"
+ },
+ {
+  "h": "0.5",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "even",
+  "ritz_min": "0.106556253826",
+  "cert_upper": "[0.106556253826 +/- 2.53e-13]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.5",
+  "M": 24,
+  "eta": "chi5 quadratic (mod 5, even)",
+  "sector": "odd",
+  "ritz_min": "0.944787383509",
+  "cert_upper": "[0.944787383509 +/- 2.25e-13]",
+  "cert_lower": "n/a (primes present)"
+ },
+ {
+  "h": "0.5",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "even",
+  "ritz_min": "0.387335261652",
+  "cert_upper": "[0.387335261652 +/- 3.50e-13]",
+  "cert_lower": "[0.272734064894 +/- 1.60e-13]"
+ },
+ {
+  "h": "0.5",
+  "M": 24,
+  "eta": "chi5 quartic (mod 5, odd; = conj on real g)",
+  "sector": "odd",
+  "ritz_min": "1.36059016387",
+  "cert_upper": "[1.36059016387 +/- 3.78e-12]",
+  "cert_lower": "[0.272734064894 +/- 1.60e-13]"
+ }
+]

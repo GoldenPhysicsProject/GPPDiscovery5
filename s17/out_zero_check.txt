@@ -1,0 +1,27 @@
+chi3 (mod 3, odd): 114 zeros in (0,200.0); smooth count ~ 113.2; first [8.039737155681467, 11.249206207772936, 15.704619176721625]
+chi4 (mod 4, odd): 122 zeros in (0,200.0); smooth count ~ 122.3; first [6.020948904697597, 10.243770304166555, 12.988098012312422]
+chi5 quadratic (mod 5, even): 129 zeros in (0,200.0); smooth count ~ 129.7; first [6.648453344727715, 9.83144443288667, 11.958845626083514]
+h=0.3 even g  zeta                           form=+1.1437701845e-02 zero-side(T<200)=+1.1437701844e-02 rel.diff=1.38e-10
+h=0.3 even g  chi3 (mod 3, odd)              form=+8.1785787799e-02 zero-side(T<200)=+8.1785787797e-02 rel.diff=2.11e-11
+h=0.3 even g  chi4 (mod 4, odd)              form=+1.1777462126e-01 zero-side(T<200)=+1.1777462125e-01 rel.diff=1.98e-11
+h=0.3 even g  chi5 quadratic (mod 5, even)   form=+1.2346511082e-01 zero-side(T<200)=+1.2346511082e-01 rel.diff=2.82e-11
+h=0.3 odd g   zeta                           form=+1.0513974802e-03 zero-side(T<200)=+1.0513974785e-03 rel.diff=1.63e-09
+h=0.3 odd g   chi3 (mod 3, odd)              form=+3.4915078106e-03 zero-side(T<200)=+3.4915078063e-03 rel.diff=1.25e-09
+h=0.3 odd g   chi4 (mod 4, odd)              form=+4.1280017688e-03 zero-side(T<200)=+4.1280017656e-03 rel.diff=7.87e-10
+h=0.3 odd g   chi5 quadratic (mod 5, even)   form=+4.6198360958e-03 zero-side(T<200)=+4.6198360882e-03 rel.diff=1.63e-09
+h=0.3 mixed g zeta                           form=+1.8965520830e-02 zero-side(T<200)=+1.8965520828e-02 rel.diff=1.19e-10
+h=0.3 mixed g chi3 (mod 3, odd)              form=+1.0589276118e-01 zero-side(T<200)=+1.0589276118e-01 rel.diff=2.28e-11
+h=0.3 mixed g chi4 (mod 4, odd)              form=+1.4725148212e-01 zero-side(T<200)=+1.4725148211e-01 rel.diff=2.33e-11
+h=0.3 mixed g chi5 quadratic (mod 5, even)   form=+1.5578972177e-01 zero-side(T<200)=+1.5578972176e-01 rel.diff=1.79e-11
+h=0.5 even g  zeta                           form=+7.0617510172e-05 zero-side(T<200)=+7.0617510150e-05 rel.diff=3.11e-10
+h=0.5 even g  chi3 (mod 3, odd)              form=+4.3156799147e-02 zero-side(T<200)=+4.3156799147e-02 rel.diff=7.57e-13
+h=0.5 even g  chi4 (mod 4, odd)              form=+1.0230829805e-01 zero-side(T<200)=+1.0230829805e-01 rel.diff=3.50e-13
+h=0.5 even g  chi5 quadratic (mod 5, even)   form=+8.8179290163e-02 zero-side(T<200)=+8.8179290163e-02 rel.diff=1.02e-12
+h=0.5 odd g   zeta                           form=+6.6940880488e-05 zero-side(T<200)=+6.6940880455e-05 rel.diff=5.00e-10
+h=0.5 odd g   chi3 (mod 3, odd)              form=+3.6804790127e-03 zero-side(T<200)=+3.6804790127e-03 rel.diff=1.88e-11
+h=0.5 odd g   chi4 (mod 4, odd)              form=+4.9964920382e-03 zero-side(T<200)=+4.9964920381e-03 rel.diff=1.38e-11
+h=0.5 odd g   chi5 quadratic (mod 5, even)   form=+5.5499891929e-03 zero-side(T<200)=+5.5499891929e-03 rel.diff=9.19e-12
+h=0.5 mixed g zeta                           form=+1.9260081865e-03 zero-side(T<200)=+1.9260081864e-03 rel.diff=1.73e-11
+h=0.5 mixed g chi3 (mod 3, odd)              form=+6.8003065888e-02 zero-side(T<200)=+6.8003065888e-02 rel.diff=6.08e-13
+h=0.5 mixed g chi4 (mod 4, odd)              form=+1.3628125676e-01 zero-side(T<200)=+1.3628125676e-01 rel.diff=3.34e-13
+h=0.5 mixed g chi5 quadratic (mod 5, even)   form=+1.2524303842e-01 zero-side(T<200)=+1.2524303842e-01 rel.diff=7.19e-13

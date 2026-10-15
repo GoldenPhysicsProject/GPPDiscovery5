@@ -1,0 +1,18 @@
+{"h": "0.30", "M": 32, "sector": "even", "Arch0": "-1.0972981", "Arch0+Pole": "0.0093089929", "Q_zeta": "0.0093089929", "Q_chi3": "0.2836519", "Q_chi5quad": "0.51213981", "primes_present": []}
+{"h": "0.30", "M": 32, "sector": "odd", "Arch0": "0.24905029", "Arch0+Pole": "0.24181526", "Q_zeta": "0.24181526", "Q_chi3": "1.3494311", "Q_chi5quad": "1.8584882", "primes_present": []}
+{"h": "0.34", "M": 32, "sector": "even", "Arch0": "-1.2404924", "Arch0+Pole": "0.0020348826", "Q_zeta": "0.0020348826", "Q_chi3": "0.17753621", "Q_chi5quad": "0.36894555", "primes_present": []}
+{"h": "0.34", "M": 32, "sector": "odd", "Arch0": "0.12310774", "Arch0+Pole": "0.11255715", "Q_zeta": "0.11255715", "Q_chi3": "1.224282", "Q_chi5quad": "1.7325456", "primes_present": []}
+{"h": "0.36", "M": 32, "sector": "even", "Arch0": "-1.306604", "Arch0+Pole": "0.0011653568", "Q_zeta": "0.0010807903", "Q_chi3": "0.13326665", "Q_chi5quad": "0.30716951", "primes_present": [2]}
+{"h": "0.36", "M": 32, "sector": "odd", "Arch0": "0.065504881", "Arch0+Pole": "0.052968311", "Q_zeta": "0.059174595", "Q_chi3": "1.1582907", "Q_chi5quad": "1.6660222", "primes_present": [2]}
+{"h": "0.38", "M": 32, "sector": "even", "Arch0": "-1.3695811", "Arch0+Pole": "0.0010585079", "Q_zeta": "0.00053455556", "Q_chi3": "0.10528414", "Q_chi5quad": "0.26480666", "primes_present": [2]}
+{"h": "0.38", "M": 32, "sector": "odd", "Arch0": "0.01095511", "Arch0+Pole": "-0.0038049317", "Q_zeta": "0.033392956", "Q_chi3": "1.0449289", "Q_chi5quad": "1.5518593", "primes_present": [2]}
+{"h": "0.40", "M": 32, "sector": "even", "Arch0": "-1.4297396", "Arch0+Pole": "0.00089581917", "Q_zeta": "0.00024860516", "Q_chi3": "0.083624561", "Q_chi5quad": "0.22910429", "primes_present": [2]}
+{"h": "0.40", "M": 32, "sector": "odd", "Arch0": "-0.040860005", "Arch0+Pole": "-0.058095245", "Q_zeta": "0.018574827", "Q_chi3": "0.91214542", "Q_chi5quad": "1.4183057", "primes_present": [2]}
+{"h": "0.42", "M": 32, "sector": "even", "Arch0": "-1.4873489", "Arch0+Pole": "-0.00013478059", "Q_zeta": "0.00010784333", "Q_chi3": "0.066286346", "Q_chi5quad": "0.19780339", "primes_present": [2]}
+{"h": "0.42", "M": 32, "sector": "odd", "Arch0": "-0.090212383", "Arch0+Pole": "-0.11018899", "Q_zeta": "0.0098878863", "Q_chi3": "0.78550503", "Q_chi5quad": "1.2909455", "primes_present": [2]}
+{"h": "0.45", "M": 32, "sector": "even", "Arch0": "-1.5694814", "Arch0+Pole": "-0.0049487952", "Q_zeta": "2.5747984e-5", "Q_chi3": "0.04637067", "Q_chi5quad": "0.15706498", "primes_present": [2]}
+{"h": "0.45", "M": 32, "sector": "odd", "Arch0": "-0.16012667", "Arch0+Pole": "-0.18474647", "Q_zeta": "0.0033680066", "Q_chi3": "0.62466825", "Q_chi5quad": "1.1290115", "primes_present": [2]}
+{"h": "0.50", "M": 32, "sector": "even", "Arch0": "-1.6964933", "Arch0+Pole": "-0.026001791", "Q_zeta": "1.5731463e-6", "Q_chi3": "0.024330077", "Q_chi5quad": "0.10032131", "primes_present": [2]}
+{"h": "0.50", "M": 32, "sector": "odd", "Arch0": "-0.26723955", "Arch0+Pole": "-0.30113962", "Q_zeta": "0.00032582595", "Q_chi3": "0.42388144", "Q_chi5quad": "0.92620614", "primes_present": [2]}
+{"h": "0.55", "M": 32, "sector": "even", "Arch0": "-1.8131294", "Arch0+Pole": "-0.064402514", "Q_zeta": "1.0861656e-7", "Q_chi3": "0.011480863", "Q_chi5quad": "0.052521352", "primes_present": [2, 3]}
+{"h": "0.55", "M": 32, "sector": "odd", "Arch0": "-0.36458553", "Arch0+Pole": "-0.40990286", "Q_zeta": "2.4307976e-5", "Q_chi3": "0.28174914", "Q_chi5quad": "0.78180335", "primes_present": [2, 3]}
