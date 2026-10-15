@@ -1,0 +1,5 @@
+  round 0: LP s=1.230479 true max>=1.231089 chars=45 pts=20000
+  round 1: LP s=1.230519 true max>=1.230703 chars=45 pts=23000
+  round 2: LP s=1.230550 true max>=1.230632 chars=45 pts=26000
+  round 3: LP s=1.230554 true max>=1.230560 chars=45 pts=29000
+L=1.0 D=6 primes=[3, 5] A_raw=2.70809 torus A~1.23056 (LP 1.23055) [63s]
