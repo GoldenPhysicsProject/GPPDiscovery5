@@ -1,0 +1,6 @@
+chi3 (mod 3, odd)              trial 0: Q(matrix)=0.149238421158  Q(symbol)=0.149238431846  diff=1.1e-08 ; N: 0.145003703204 vs 0.145003703204
+chi3 (mod 3, odd)              trial 1: Q(matrix)=0.372200545042  Q(symbol)=0.372200581689  diff=3.7e-08 ; N: 0.697007037651 vs 0.697007037651
+chi5 quadratic (mod 5, even)   trial 0: Q(matrix)=0.109081442910  Q(symbol)=0.109081455069  diff=1.2e-08 ; N: 0.134582389892 vs 0.134582389892
+chi5 quadratic (mod 5, even)   trial 1: Q(matrix)=0.366460750350  Q(symbol)=0.366460781109  diff=3.1e-08 ; N: 0.432652664360 vs 0.432652664360
+chi4 (mod 4, odd)              trial 0: Q(matrix)=0.104989577236  Q(symbol)=0.104989580965  diff=3.7e-09 ; N: 0.100022334865 vs 0.100022334865
+chi4 (mod 4, odd)              trial 1: Q(matrix)=0.060400590085  Q(symbol)=0.060400590674  diff=5.9e-10 ; N: 0.057979031584 vs 0.057979031584
