@@ -1,0 +1,21 @@
+=== S19 χ₄ Ritz cross-check at h* (NUMERICAL; upper on λ_min) ===
+Credit: Daniel Toupin / Golden Physics Project, AI assistance: Grok
+RH OPEN. GRH OPEN. Not a coercivity lower bound.
+
+h* = [0.54930614433405484570 +/- 2.38e-21]
+δ = c1−log4 = [0.84429640451598172494 +/- 4.16e-21]
+target coefficients 0.025 / 0.02 (from ground-state certificate)
+
+--- M=32 ---
+  sector even: Ritz λ_min = 0.0843169634017  Arb Rayleigh upper = [0.0843169634017 +/- 1.34e-14]  F(log2)/N = [0.27305609 +/- 3.04e-10]
+           Arb Rayleigh > 0.02: True  (sanity only; not a lower proof)
+  sector odd : Ritz λ_min = 1.03344063116  Arb Rayleigh upper = [1.03344063116 +/- 2.60e-12]  F(log2)/N = [-0.45966450 +/- 2.35e-9]
+           Arb Rayleigh > 0.02: True  (sanity only; not a lower proof)
+--- M=48 ---
+  sector even: Ritz λ_min = 0.0769787580316  Arb Rayleigh upper = [0.0769787580316 +/- 2.70e-14]  F(log2)/N = [0.28075343 +/- 1.53e-9]
+           Arb Rayleigh > 0.02: True  (sanity only; not a lower proof)
+  sector odd : Ritz λ_min = 1.02437490717  Arb Rayleigh upper = [1.02437490717 +/- 8.07e-13]  F(log2)/N = [-0.46474944 +/- 3.99e-9]
+           Arb Rayleigh > 0.02: True  (sanity only; not a lower proof)
+
+Label: NUMERICAL Ritz / CERTIFIED Rayleigh upper witnesses.
+Ground-state Arb lower certificate is in s19_chi4_arb.py.

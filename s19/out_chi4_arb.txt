@@ -1,0 +1,60 @@
+=== S19 χ₄ ground-state Arb certificate ===
+ctx.prec = 512
+Credit: Daniel Toupin / Golden Physics Project, AI assistance: Grok
+RH OPEN. Dirichlet GRH OPEN. Finite-window χ₄ only.
+
+h* = (log 3)/2 = [0.5493061443340548456976226184612628523237 +/- 4.53e-41]
+k  = 19/10     = [1.900000000000000000000000000000000000000 +/- 3e-44]
+
+(a) kh* = [1.04368167423470420682548297508 +/- 3.61e-30]
+    π/2  = [1.57079632679489661923132169164 +/- 2.49e-31]
+    kh* < π/2 : True
+    cos(kh*)  = [0.503041742147991100169769091694 +/- 9.98e-32]  > 0 : True
+
+(b) sign pattern of s_j = a_j cos(kh*) - k sin(kh*):
+    s[0] = [-0.887535407731920249584108834164 +/- 4.91e-31]  < 0 : True
+    s[1] = [0.11854807656406195076 +/- 4.58e-21]  > 0 : True
+    s[2] = [1.1246315608600441511 +/- 5.04e-21]  > 0 : True
+    s[3] = [2.1307150451560263514 +/- 3.46e-20]  > 0 : True
+    s[14] = [13.197633372411830555 +/- 1.70e-19]  > 0 : True
+    s[1..14] all > 0 : True
+
+    Σ_{j=0..14} d_j = [1.02843999334076719082320268428 +/- 1.50e-30]
+
+(c) 100-cell monotone Arb lower bounds C_i (15 modes):
+    C_i := Σ d_j + b_0(U_i) + Σ_{j=1..14} b_j(L_i)
+    (b_0 at upper endpoint; b_j≥1 at lower; omitted j≥15 ≥0)
+    worst cell index i = 64  (0-based; Codex reported 64)
+    C_64 ball     = [0.8795834621661168898864762079984104448368 +/- 1.26e-42]
+    C_64 .lower() = [0.8795834621661168898864762079984104448368 +/- 1.26e-42]
+    all 100 C_i > 0.87 (rigorous): True
+
+(d) δ = c₁ − log 4:
+    δ = log(2π)+γ−π/2     = [0.8442964045159817249358498712538862686664 +/- 3.05e-41]
+    δ = c1 − log4 (S17)   = [0.8442964045159817249358498712538862686664 +/- 3.05e-41]
+    overlap (same value): True
+    c1 (S17 consts)       = [2.23059076563587234377031411417 +/- 2.40e-31]
+    c1 = log(π)−ψ(3/4)    = [2.23059076563587234377031411417 +/- 2.40e-31]
+    c1 overlaps digamma:  True
+
+    Codex δ digits enclosed by ours: True
+    Codex min-C digits enclosed:    True
+    |mid(C)-Codex| approx:         [1.182200682e-50 +/- 1.42e-60]
+
+(e) gap and thresholds:
+    min C − δ (ball)           = [0.0352870576501351649506263367445 +/- 2.42e-32]
+    lower(C) − upper(δ)        = [0.0352870576501351649506263367445 +/- 2.42e-32]
+    gap > 0.025 (via lowers):  True
+    gap > 0.02  (via lowers):  True
+    C_worst > δ+0.025 (Arb):   True
+    C_worst > δ+0.02  (Arb):   True
+
+    χ₄(2) = 0  (ramified; W_χ4 vanishes on (0,h*])
+
+=== VERDICT ===
+PASS — independent Arb certificate CONFIRMS Codex:
+  all 100 cells have C_i > 0.87 > δ
+  min C (cell 64) − δ > 0.025  ⇒  Q_χ4(g) > 0.025 ||g||²
+  (also > 0.02, matching the pure-rational conservative coefficient)
+CONDITIONAL on analytic Picone identity + j≥15 remainder ≥0 (Lean-open).
+NOT a RH/GRH claim. Finite window 0<h≤h*=(log3)/2 only.
