@@ -1,0 +1,4 @@
+(1,1) S17 0.003846708  symbol sigma_A 0.003846708  certified m 0.003846708
+(1,3) S17 -0.005386198  symbol sigma_A -0.005386198  certified m -0.005386198
+(3,5) S17 -0.008620493  symbol sigma_A -0.008620493  certified m -0.008620493
+(5,5) S17 0.010586688  symbol sigma_A 0.010586688  certified m 0.010586688
