@@ -1,0 +1,26 @@
+[
+ {
+  "h": "0.4",
+  "M": 40,
+  "lam_Q_even": "0.00022642581",
+  "lam_B_even_wperp": "0.25288947",
+  "lam_B_even_mean0": "0.25448805",
+  "coeff_cos_angle_w_mean": 0.9999997940514117
+ },
+ {
+  "h": "0.5",
+  "M": 40,
+  "lam_Q_even": "1.3282743e-6",
+  "lam_B_even_wperp": "0.015709987",
+  "lam_B_even_mean0": "0.015771013",
+  "coeff_cos_angle_w_mean": 0.9999994975384178
+ },
+ {
+  "h": "hstar",
+  "M": 40,
+  "lam_Q_even": "8.9613811e-8",
+  "lam_B_even_wperp": "0.0012763885",
+  "lam_B_even_mean0": "0.0011619119",
+  "coeff_cos_angle_w_mean": 0.9999992683379743
+ }
+]
