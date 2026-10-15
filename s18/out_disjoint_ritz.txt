@@ -1,0 +1,42 @@
+M=16 h=0.36          even  Ritz max|F(log2)|/N = 0.00314300499245 (sign +)  Arb RQ = [0.00314300499245 +/- 8.41e-16] theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=16 h=0.36          odd   Ritz max|F(log2)|/N = 0.00565919706695 (sign -)  Arb RQ = [-0.00565919706695 +/- 2.29e-16] theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=16 h=0.45          even  Ritz max|F(log2)|/N = 0.499342967564   (sign +)  Arb RQ = [0.499342967564 +/- 1.08e-13]  theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=16 h=0.45          odd   Ritz max|F(log2)|/N = 0.499845262237   (sign -)  Arb RQ = [-0.499845262237 +/- 2.32e-13] theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=16 h=h*=log3/2     even  Ritz max|F(log2)|/N = 0.499999276569   (sign +)  Arb RQ = [0.499999276569 +/- 2.86e-13]  theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=16 h=h*=log3/2     odd   Ritz max|F(log2)|/N = 0.499997994556   (sign -)  Arb RQ = [-0.499997994556 +/- 4.57e-13] theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=16 h=0.65          even  Ritz max|F(log2)|/N = 0.499999997094   (sign +)  Arb RQ = [0.499999997094 +/- 2.16e-13]  theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=16 h=0.65          odd   Ritz max|F(log2)|/N = 0.499999998893   (sign -)  Arb RQ = [-0.499999998893 +/- 1.23e-13] theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=16 h=0.69          even  Ritz max|F(log2)|/N = 0.499999999999   (sign +)  Arb RQ = [0.499999999999 +/- 4.67e-13]  theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=16 h=0.69          odd   Ritz max|F(log2)|/N = 0.499999999999   (sign -)  Arb RQ = [-0.499999999999 +/- 3.28e-13] theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=16 h=0.75 (>log2)  even  Ritz max|F(log2)|/N = 0.564038066277   (sign -)  Arb RQ = [-0.564038066277 +/- 1.45e-13] theory sup = cos(pi/4) = 0.7071067812  <=1/2: False
+M=16 h=0.75 (>log2)  odd   Ritz max|F(log2)|/N = 0.500086029799   (sign +)  Arb RQ = [0.500086029799 +/- 4.68e-13]  theory sup = cos(pi/4) = 0.7071067812  <=1/2: False
+M=16 h=1.0 (>log2)   even  Ritz max|F(log2)|/N = 0.707096809349   (sign -)  Arb RQ = [-0.707096809349 +/- 9.08e-14] theory sup = cos(pi/4) = 0.7071067812  <=1/2: False
+M=16 h=1.0 (>log2)   odd   Ritz max|F(log2)|/N = 0.706712997503   (sign +)  Arb RQ = [0.706712997503 +/- 4.87e-13]  theory sup = cos(pi/4) = 0.7071067812  <=1/2: False
+M=32 h=0.36          even  Ritz max|F(log2)|/N = 0.44325599554    (sign +)  Arb RQ = [0.443255995540 +/- 4.76e-13]  theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=32 h=0.36          odd   Ritz max|F(log2)|/N = 0.466315820399   (sign -)  Arb RQ = [-0.466315820399 +/- 1.90e-13] theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=32 h=0.45          even  Ritz max|F(log2)|/N = 0.499999969695   (sign +)  Arb RQ = [0.499999969695 +/- 1.14e-13]  theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=32 h=0.45          odd   Ritz max|F(log2)|/N = 0.499999982807   (sign -)  Arb RQ = [-0.499999982807 +/- 4.24e-13] theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=32 h=h*=log3/2     even  Ritz max|F(log2)|/N = 0.499999999999   (sign +)  Arb RQ = [0.499999999999 +/- 1.34e-13]  theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=32 h=h*=log3/2     odd   Ritz max|F(log2)|/N = 0.499999999999   (sign -)  Arb RQ = [-0.499999999999 +/- 3.14e-13] theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=32 h=0.65          even  Ritz max|F(log2)|/N = 0.5              (sign +)  Arb RQ = [0.500000000000 +/- 1.2e-16]   theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=32 h=0.65          odd   Ritz max|F(log2)|/N = 0.5              (sign -)  Arb RQ = [-0.500000000000 +/- 3e-17]    theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=32 h=0.69          even  Ritz max|F(log2)|/N = 0.5              (sign +)  Arb RQ = [0.500000000000 +/- 3e-17]     theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=32 h=0.69          odd   Ritz max|F(log2)|/N = 0.5              (sign -)  Arb RQ = [-0.500000000000 +/- 3e-17]    theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=32 h=0.75 (>log2)  even  Ritz max|F(log2)|/N = 0.692785015073   (sign -)  Arb RQ = [-0.692785015073 +/- 1.19e-13] theory sup = cos(pi/4) = 0.7071067812  <=1/2: False
+M=32 h=0.75 (>log2)  odd   Ritz max|F(log2)|/N = 0.605222487534   (sign -)  Arb RQ = [-0.605222487534 +/- 1.60e-13] theory sup = cos(pi/4) = 0.7071067812  <=1/2: False
+M=32 h=1.0 (>log2)   even  Ritz max|F(log2)|/N = 0.707106781001   (sign -)  Arb RQ = [-0.707106781001 +/- 3.43e-13] theory sup = cos(pi/4) = 0.7071067812  <=1/2: False
+M=32 h=1.0 (>log2)   odd   Ritz max|F(log2)|/N = 0.707106771847   (sign -)  Arb RQ = [-0.707106771847 +/- 2.69e-13] theory sup = cos(pi/4) = 0.7071067812  <=1/2: False
+M=48 h=0.36          even  Ritz max|F(log2)|/N = 0.498506352095   (sign +)  Arb RQ = [0.498506352095 +/- 1.73e-13]  theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=48 h=0.36          odd   Ritz max|F(log2)|/N = 0.498512208195   (sign -)  Arb RQ = [-0.498512208195 +/- 4.21e-13] theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=48 h=0.45          even  Ritz max|F(log2)|/N = 0.499999999998   (sign +)  Arb RQ = [0.499999999998 +/- 3.58e-13]  theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=48 h=0.45          odd   Ritz max|F(log2)|/N = 0.499999999997   (sign -)  Arb RQ = [-0.499999999997 +/- 4.70e-13] theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=48 h=h*=log3/2     even  Ritz max|F(log2)|/N = 0.5              (sign +)  Arb RQ = [0.500000000000 +/- 4e-17]     theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=48 h=h*=log3/2     odd   Ritz max|F(log2)|/N = 0.5              (sign -)  Arb RQ = [-0.500000000000 +/- 3e-17]    theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=48 h=0.65          even  Ritz max|F(log2)|/N = 0.5              (sign +)  Arb RQ = [0.500000000000 +/- 3e-17]     theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=48 h=0.65          odd   Ritz max|F(log2)|/N = 0.5              (sign -)  Arb RQ = [-0.500000000000 +/- 3e-17]    theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=48 h=0.69          even  Ritz max|F(log2)|/N = 0.5              (sign +)  Arb RQ = [0.500000000000 +/- 3e-17]     theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=48 h=0.69          odd   Ritz max|F(log2)|/N = 0.5              (sign -)  Arb RQ = [-0.500000000000 +/- 3e-17]    theory sup = cos(pi/3) = 0.5  <=1/2: True
+M=48 h=0.75 (>log2)  even  Ritz max|F(log2)|/N = 0.705714353486   (sign -)  Arb RQ = [-0.705714353486 +/- 4.67e-13] theory sup = cos(pi/4) = 0.7071067812  <=1/2: False
+M=48 h=0.75 (>log2)  odd   Ritz max|F(log2)|/N = 0.684195490425   (sign -)  Arb RQ = [-0.684195490425 +/- 8.70e-14] theory sup = cos(pi/4) = 0.7071067812  <=1/2: False
+M=48 h=1.0 (>log2)   even  Ritz max|F(log2)|/N = 0.707106781187   (sign -)  Arb RQ = [-0.707106781187 +/- 4.57e-13] theory sup = cos(pi/4) = 0.7071067812  <=1/2: False
+M=48 h=1.0 (>log2)   odd   Ritz max|F(log2)|/N = 0.707106781186   (sign -)  Arb RQ = [-0.707106781186 +/- 1.49e-13] theory sup = cos(pi/4) = 0.7071067812  <=1/2: False
