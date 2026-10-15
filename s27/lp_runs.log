@@ -1,0 +1,6 @@
+h=hstar tag=pl16L6_hstar DC=(0.5,) pl=16,6 U=12.0 D=0.05 B=3.0 xi=0.002: status=0 c_LP=-0.004087851234352879 Xi=452.7 K=219 nd=0 npl=16 (5196s)
+wrote lp_pl16L6_hstar.json
+
+real	86m36.801s
+user	76m16.128s
+sys	0m25.173s

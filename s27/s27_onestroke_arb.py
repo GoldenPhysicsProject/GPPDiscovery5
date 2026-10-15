@@ -44,6 +44,7 @@ def sph_j(d, x):
 def sph_j_all(x, D):
     """j_0..j_{D+1}(x), x>0: top two orders by Arb Bessel at boosted precision (0F1 cancellation ~ e^x),
     then exact backward recurrence j_{d-1} = (2d+1)/x j_d - j_{d+1} in ball arithmetic."""
+    rx = x.rad(); x = arb(x.mid())   # evaluate at the exact midpoint; |j_d'| <= 1/2 on R
     old = ctx.prec
     ctx.prec = old + int(1.5 * float(x.mid())) + 64
     try:
@@ -53,7 +54,7 @@ def sph_j_all(x, D):
             v[d - 1] = (2 * d + 1) / x * v[d] - v[d + 1]
     finally:
         ctx.prec = old
-    return [+t for t in v]
+    return [+t + arb(0, rx) for t in v]
 
 def sph_i(d, x):
     return (arb.pi() / (2 * x)).sqrt() * x.bessel_i(arb(d) + arb(1) / 2)
@@ -141,6 +142,20 @@ def main():
             m = symb(acb(arb(xx), arb(yc, hb * 1.001)))
             if m > MS: MS = m
     MS = arb(MS.upper())
+    # real-axis sup M0 of |S| on [0, T] (for the tail bounds)
+    M0 = arb(0)
+    nr = int(math.ceil(Tf / (2 * hb)))
+    for ix in range(nr):
+        xc = (2 * ix + 1) * arb(hb)
+        tt = arb(xc.mid(), hb * 1.001)
+        v = acb(arb(1)/4, tt / 2).digamma().real - logpi - beta
+        for (_, c, lg) in terms:
+            v -= c * (tt * lg).cos()
+        for (x, fr) in lift_terms:
+            v += x * (tt * fr).cos()
+        u = abs(v).upper()
+        if u > M0: M0 = u
+    print(f'M0 (real-axis sup |S|) <= {float(M0.upper()):.4f}', flush=True)
     print(f'M_S (strip sup) <= {MS.mid()}  [{time.time()-t0:.1f}s] rho={rho:.4f} ovh={ovh:.3f}', flush=True)
     res = {'L': a.L, 'T': a.T, 'K': a.K, 'w': a.w, 'ng': a.ng, 'b': a.b, 'prec': a.prec,
            'comb': [n for n, _, _ in terms], 'lift': a.lift, 'kappas': kappas, 'A_L': str(AL), 'beta': str(beta), 'M_S': str(MS)}
@@ -181,7 +196,7 @@ def main():
         # Gauss error bound per entry (uniform over the block)
         dmax = degs[-1]
         Mint = MS / arb.pi() * 2 * L * (2 * dmax + 1) * (2 * L * b).exp()
-        Epan = w / 2 * arb(64) / 15 * Mint / ((arb(rho) ** 2 - 1) * arb(rho) ** (2 * a.ng))
+        Epan = w / 2 * arb(64) / 15 * Mint / ((arb(rho) ** 2 - 1) * arb(rho) ** (2 * (a.ng - 1)))  # conservative: Trefethen Thm 4.5 read with n+1 = ng nodes
         Eq = Epan * npan
         # pole vector
         p = [(2 * L * (2 * d + 1)).sqrt() * sph_i(d, L / 2) for d in degs]
@@ -237,12 +252,12 @@ def main():
                 sumD += 2 * term; break
             sumD += term; d += 2
         sumA = sum(2 * Lf * (2 * dd + 1) for dd in degs)
-        M0 = float(MS.upper())
+        M0f = float(M0.upper())
         lp = lambda d: 0.5 * math.log(2 * Lf * (2 * d + 1)) + d * math.log(Lf / 2) - lgdf(d) + (Lf / 2) ** 2 / 2
         pD2 = sum(math.exp(2 * lp(dd)) for dd in range(dK, dK + 400, 2)) * 1.0000001
         pA = math.sqrt(sum(float(abs(x).upper()) ** 2 for x in p))
-        eps_B = (Tf / math.pi) * M0 * math.sqrt(sumA * sumD) + 2 * pA * math.sqrt(pD2)
-        eps_CDD = (Tf / math.pi) * M0 * sumD
+        eps_B = (Tf / math.pi) * M0f * math.sqrt(sumA * sumD) + 2 * pA * math.sqrt(pD2)
+        eps_CDD = (Tf / math.pi) * M0f * sumD
         lamD = float(beta.lower()) - eps_CDD - (2 * pD2 if par == 1 else 0)
         out = {'parity': 'even' if par == 0 else 'odd', 'degs': [degs[0], degs[-1]], 'nodes': N,
                'quad_err_entry': float(Eq.upper()), 'lam_fail_shift': lam_est, 'normE_bound': rE,
