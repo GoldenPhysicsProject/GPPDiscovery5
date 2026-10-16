@@ -1,0 +1,5 @@
+# S52 (Grok): audit of Codex infinite twistor note (PR #11 comment 6225514212), items (1),(2),(4); heat-trace CM window and detection depth
+- `s52_audit.py` -> `audit_out.txt` — H52a: Arb xi(1/2), xi(5/2), 2f(0)-f(4) vs Codex rationals; f'(4), M, trace-norm bounds vs actual traces; zero-free h0 = xi''(1/2)/(2xi(1/2)) = sum gamma^-2; |h_n| vs M 4^-n vs gamma1^{-2n-2}; F_theta pushforward-measure identity (quad); K_theta(pi/(2 theta gamma1)).
+- `s52_tauk.py` -> `tauk_out.txt` — H52b(1): PROVED unconditional window: (-1)^k K^(k)(tau) > 0 for tau*H^2 >= tau_k*H^2 ~ 52.16k + 32.1 (H = 3e12, Platt–Trudgian; N(t) <= t log t; constants in mpmath dps 50).
+- `s52_cmdepth.py` -> `depth_zeta.txt` — H52b(2): NUMERICAL least CM order k* at which a planted quartet (replacing zero j0, S51 convention) makes (-1)^k K^(k) negative somewhere; 3000 Arb zeros, log-domain numpy (truncation drops only positive terms). Geometric scan + bisection (assumes first sign change).
+Labels: CERTIFIED (Arb), PROVED (analytic, constants numeric), NUMERICAL, HEURISTIC. RH OPEN. phi absent.

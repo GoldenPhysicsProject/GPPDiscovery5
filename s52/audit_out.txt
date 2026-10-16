@@ -1,0 +1,18 @@
+xi(1/2) = [0.4971207781883141099127737 +/- 3.97e-26]  > 1071/3200=0.3346875 : True
+xi(5/2) = [0.5450942070121344167544286 +/- 3.76e-26]  < 85/128=0.6640625 : True
+2f(0)-f(4) = 2xi(1/2)-xi(5/2) = [0.4491473493644938030711189 +/- 1.70e-26]  > 17/3200=0.0053125 : True
+f'(4) = xi'(5/2)/4 = 0.012514582349363342098
+M(true dens) = f'(4)/(2f0-f4) = 0.0278629771879327 ; with Codex lower denominator 17/3200: M <= 2.35568608929192
+trace bounds 16M/9, 4M/9 (true-denominator M): 0.04953418167 0.01238354542
+h0 zero-free = 0.023104993115418970789  ; sum over 3000 zeros = 0.022774775923791634664 (tail ~ log/H)
+tr H0 ~ 0.0231051372926  tr H1 ~ 3.71732543205e-5 (NUMERICAL; = trace norms if PSD)
+Hausdorff support under RH: max x = 1/gamma1^2 = 0.00500524412359  (vs Codex 1/4)
+ n=1 h_n=3.71726e-5  Codex bound M 4^-n=0.00696574  gamma1^{-2n-2}=2.50525e-5
+ n=5 h_n=1.58769e-14  Codex bound M 4^-n=2.72099e-5  gamma1^{-2n-2}=1.57236e-14
+ n=10 h_n=4.94026e-26  Codex bound M 4^-n=2.65722e-8  gamma1^{-2n-2}=4.93944e-26
+ n=20 h_n=4.87451e-49  Codex bound M 4^-n=2.53412e-14  gamma1^{-2n-2}=4.87451e-49
+F(0)=int Phi = 0.24856038909415706  xi(1/2)= 0.4971207781883141
+F_theta(z)=F(z-th)F(z+th)=0.0622892558522 ; int cosh(zw) dmu_theta=0.0622892556504 ; rel diff 3.24e-09
+min density of mu_theta on grid (>=0 expected): 0.0
+tau=pi/(2 theta gamma1)= 0.555651528785978  K_theta(tau)= -1.2530568e-48  first term= -1.2530568e-48
+K_theta sign change predicted at pi/(4 theta gamma1)= 0.277826
