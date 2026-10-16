@@ -1,0 +1,21 @@
+c_G (zeta'/zeta) = -3.37218341922566558223295749745
+c_G (closed)      = -3.37218341922566558223295749745
+sum_rho 1/(rho(rho-1/2)) predicted = -0.0461914179322420676286205  closed -(2+g-log4pi)= -0.0461914179322420676286205
+zero sum (100k) = -0.046147291048811520466  + tail in [ -4.41301e-5 , -4.41237e-5 ] main -4.4126865e-5
+residual vs closed (with main tail) = 1.84487e-11
+RH envelope sum 1/(|g||rho|) <= 0.0462007030019
+x=5e+05 G_pred=-3.375994 G_sieve=-3.375994 | d_psi pred=-0.16573 sieve=-0.16023 | logmean pred=0.25727 | linmean pred=0.01399 sieve=0.01399 | E1 pred=-1.52226
+x=1e+06 G_pred=-3.359577 G_sieve=-3.359577 | d_psi pred=0.41020 sieve=0.41340 | logmean pred=0.24317 | linmean pred=-0.00464 sieve=-0.00464 | E1 pred=-2.08998
+x=5e+06 G_pred=-3.379990 G_sieve=-3.379990 | d_psi pred=-0.42610 sieve=-0.43431 | logmean pred=0.21912 | linmean pred=0.01024 sieve=0.01024 | E1 pred=-1.26389
+x=1e+07 G_pred=-3.363179 G_sieve=-3.363180 | d_psi pred=0.47320 sieve=0.46188 | logmean pred=0.20866 | linmean pred=-0.00589 sieve=-0.00589 | E1 pred=-2.15479
+x=5e+07 G_pred=-3.369028 G_sieve=-3.369028 | d_psi pred=-0.16883 sieve=-0.17074 | logmean pred=0.19004 | linmean pred=-0.00243 sieve=-0.00243 | E1 pred=-1.51568
+x=1e+08 G_pred=-3.383122 G_sieve=-3.383122 | d_psi pred=0.17277 sieve=0.17572 | logmean pred=0.18366 | linmean pred=0.01189 sieve=0.01189 | E1 pred=-1.86433
+x=5e+08 G_pred=-3.351519 G_sieve=-3.351520 | d_psi pred=-0.30401 sieve=-0.31260 | logmean pred=0.16732 | linmean pred=-0.02015 sieve=-0.02015 | E1 pred=-1.37175
+x=1e+09 G_pred=-3.384740 G_sieve=-3.384740 | d_psi pred=-0.05172 sieve=-0.05047 | logmean pred=0.16333 | linmean pred=0.01243 sieve=0.01243 | E1 pred=-1.64065
+x=5e+09 G_pred=-3.367990 G_sieve=-3.367990 | d_psi pred=0.29811 sieve=0.29717 | logmean pred=0.15081 | linmean pred=-0.00360 sieve=-0.00360 | E1 pred=-1.98211
+x=1e+10 G_pred=-3.366874 G_sieve=-3.366874 | d_psi pred=-0.42615 sieve=-0.42120 | logmean pred=0.14622 | linmean pred=-0.00607 sieve=-0.00607 | E1 pred=-1.25729
+x=5e+10 G_pred=-3.382649 G_sieve=nan | d_psi pred=0.19986 sieve=nan | logmean pred=0.13731 | linmean pred=0.01107 sieve=nan | E1 pred=-1.89118
+x=1e+11 G_pred=-3.366314 G_sieve=nan | d_psi pred=-0.19066 sieve=nan | logmean pred=0.13291 | linmean pred=-0.00633 sieve=nan | E1 pred=-1.49249
+x=1e+11: E1(x)-E1(x/2)=0.39869; dyadic log-mean of d_psi (G(x/2)-G(x))/log2 = -0.02357; sqrt(log x)=5.033
+x=1e+10: E1(x)-E1(x/2)=0.72482; dyadic log-mean of d_psi (G(x/2)-G(x))/log2 = -0.00161; sqrt(log x)=4.799
+x=1e+09: E1(x)-E1(x/2)=-0.26890; dyadic log-mean of d_psi (G(x/2)-G(x))/log2 = 0.04793; sqrt(log x)=4.552

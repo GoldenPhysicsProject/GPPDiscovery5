@@ -1,0 +1,13 @@
+X=       10 G_f=-0.19153  model amp*X^0.3085=0.00055
+X=       44 G_f=-0.39292  model amp*X^0.3085=0.00088
+X=      191 G_f=-0.55240  model amp*X^0.3085=0.00138
+X=      836 G_f=-0.66190  model amp*X^0.3085=0.00217
+X=     3657 G_f=-0.63573  model amp*X^0.3085=0.00342
+X=    15992 G_f=-0.55013  model amp*X^0.3085=0.00540
+X=    69935 G_f=-0.56535  model amp*X^0.3085=0.00851
+X=   305829 G_f=-0.60924  model amp*X^0.3085=0.01341
+X=  1337401 G_f=-0.71290  model amp*X^0.3085=0.02114
+X=  5848499 G_f=-0.66590  model amp*X^0.3085=0.03333
+f(sigma) on [0.5,4]: min 0.8253830238211022 signs [1.0, nan]  const(s=0)= -0.6211528532017719
+single DH zero envelope crosses RH envelope at X ~ 1.686e+07
+single DH zero envelope crosses sqrt(log X) at X ~ 9.991e+13
