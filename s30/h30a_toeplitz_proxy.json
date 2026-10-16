@@ -1,0 +1,80 @@
+{
+ "L1.0": {
+  "L": 1.0,
+  "M": 64,
+  "dual_proxy": 3.96221785055337,
+  "lam_max": 1.9205724751294926,
+  "raw_A": 5.852468364352817,
+  "hist": [
+   [
+    0,
+    0.05148485024743826
+   ],
+   [
+    50,
+    3.9620426755070826
+   ],
+   [
+    100,
+    3.9622177934930547
+   ],
+   [
+    150,
+    3.962217850528538
+   ],
+   [
+    200,
+    3.962217850553297
+   ],
+   [
+    250,
+    3.962217850553368
+   ],
+   [
+    299,
+    3.9622178505533685
+   ]
+  ],
+  "note": "NUMERICAL truncated-Toeplitz circle/lattice PROXY only \u2014 not true Bohr dual. If dual_proxy \u2248 \u03bb_max, consistent with strong duality on this relaxation; if dual_proxy \u226a \u03bb_max, lattice too coarse or method weak. cvxpy/MOSEK unavailable; skipped full SDP.",
+  "status": "DIAGNOSTIC"
+ },
+ "L1.19": {
+  "L": 1.19,
+  "M": 64,
+  "dual_proxy": 5.026473655067352,
+  "lam_max": 2.659447345329601,
+  "raw_A": 7.075005628532498,
+  "hist": [
+   [
+    0,
+    -0.21630040169493137
+   ],
+   [
+    50,
+    5.026473655065026
+   ],
+   [
+    100,
+    5.026473655064697
+   ],
+   [
+    150,
+    5.026473655064695
+   ],
+   [
+    200,
+    5.026473655064696
+   ],
+   [
+    250,
+    5.026473655064694
+   ],
+   [
+    299,
+    5.026473655064694
+   ]
+  ],
+  "note": "NUMERICAL truncated-Toeplitz circle/lattice PROXY only \u2014 not true Bohr dual. If dual_proxy \u2248 \u03bb_max, consistent with strong duality on this relaxation; if dual_proxy \u226a \u03bb_max, lattice too coarse or method weak. cvxpy/MOSEK unavailable; skipped full SDP.",
+  "status": "DIAGNOSTIC"
+ }
+}

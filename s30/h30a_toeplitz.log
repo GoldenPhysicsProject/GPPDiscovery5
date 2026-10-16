@@ -1,0 +1,21 @@
+
+=== Toeplitz proxy L=1.0 ===
+  step 0: dual_proxy=0.051485 best=0.051485
+  step 50: dual_proxy=3.962043 best=3.962043
+  step 100: dual_proxy=3.962218 best=3.962218
+  step 150: dual_proxy=3.962218 best=3.962218
+  step 200: dual_proxy=3.962218 best=3.962218
+  step 250: dual_proxy=3.962218 best=3.962218
+  step 299: dual_proxy=3.962218 best=3.962218
+RESULT L=1.0: proxy=3.96222 λ=1.92057 rawA=5.85247
+
+=== Toeplitz proxy L=1.19 ===
+  step 0: dual_proxy=-0.216300 best=-0.216300
+  step 50: dual_proxy=5.026474 best=5.026474
+  step 100: dual_proxy=5.026474 best=5.026474
+  step 150: dual_proxy=5.026474 best=5.026474
+  step 200: dual_proxy=5.026474 best=5.026474
+  step 250: dual_proxy=5.026474 best=5.026474
+  step 299: dual_proxy=5.026474 best=5.026474
+RESULT L=1.19: proxy=5.02647 λ=2.65945 rawA=7.07501
+wrote h30a_toeplitz_proxy.json

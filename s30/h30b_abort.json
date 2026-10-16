@@ -1,0 +1,25 @@
+{
+  "L": 1.25,
+  "A_lift": 4.590321,
+  "T1_approx": 620.0,
+  "smoke_T400": {"status": "INVALID", "reason": "beta<=0 (T < T1)"},
+  "smoke_T700": {
+    "status": "ABORT",
+    "beta": 0.121454,
+    "K": 730, "ng": 60,
+    "even_lam_est": 2.748e-55,
+    "odd_lam_est": 1.980e-51,
+    "rE_even": 2.634e-52,
+    "rE_odd": 2.636e-52,
+    "ratio_rE_over_lam_even": 958.0,
+    "note": "rE >> lam_est (factor ~1000). Same pathology as S28 dead-end at 40 nodes/panel: need K*E_quad << lam_min. Tiny beta at T just above T1 makes lam microscopic."
+  },
+  "smoke_T1350": {
+    "status": "KILLED_OOM_RISK",
+    "beta": 0.778921,
+    "K": 1400, "ng": 60, "workers": 6,
+    "note": "Each fork worker ~2.6GB RSS; 5 workers + parent exhausted 16GB box. Killed after ~19min still in assembly. Not a certificate attempt."
+  },
+  "verdict": "H30b DEFERRED / abort this session: per-prime lift at L=1.25 needs either (a) substantially more nodes/panel or larger T with more RAM, or (b) a better A (torus) to enlarge beta at moderate T. Alternate torus L=1.19 cert not attempted (H30a D=3 matched S28; D=4 pending).",
+  "label": "DEFERRED"
+}

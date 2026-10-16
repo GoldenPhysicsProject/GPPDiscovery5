@@ -1,0 +1,7 @@
+L=5/4 T=700 K=730 comb=[2, 3, 4, 5, 7, 8, 9, 11] A=4.590321 beta=0.121454 lift_terms=70
+M_S <= 4335.7368  M0 <= 32.2184 [16s]
+assembly done: 1400 panels x 60 nodes [349s]
+ parity 0: lam_est=2.7484317152994403e-55 rE=2.634e-52 quad/entry=3.609e-55 [22s]
+{"parity": "even", "degs": [0, 1458], "nodes": 84000, "quad_err_entry": 3.608521338371467e-55, "lam_est": 2.7484317152994403e-55, "normE_bound": 2.634220582564982e-52, "lam0_schur": null, "first_omitted_degree": 1460, "eps_B": 3.003759084928446e-125, "eps_CDD": 4.720201230146958e-260, "lamD_lower": 0.12145374828003254} [22s]
+ parity 1: lam_est=1.979827197842172e-51 rE=2.636e-52 quad/entry=3.611e-55 [24s]
+{"parity": "odd", "degs": [1, 1459], "nodes": 84000, "quad_err_entry": 3.610995470245565e-55, "lam_est": 1.979827197842172e-51, "normE_bound": 2.6360267009295753e-52, "lam0_schur": null, "first_omitted_degree": 1461, "eps_B": 9.000993046983271e-126, "eps_CDD": 4.232687907565442e-261, "lamD_lower": 0.12145374828003254} [24s]

@@ -1,0 +1,9 @@
+L=5/4 T=400 K=420 comb=[2, 3, 4, 5, 7, 8, 9, 11] A=4.590321 beta=-0.439233 lift_terms=70
+Traceback (most recent call last):
+  File "/workspace/GPPDiscovery5/s28/s28_onestroke_fast.py", line 252, in <module>
+    main()
+    ~~~~^^
+  File "/workspace/GPPDiscovery5/s28/s28_onestroke_fast.py", line 173, in main
+    assert T > arb(15) / 4 and beta > 0, 'beta <= 0'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: beta <= 0

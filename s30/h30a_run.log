@@ -1,0 +1,110 @@
+
+=== H30a Fejér–Riesz L=1.0 D=2 N=120 ===
+λ_max(P_L)=1.93056360 (N=120); ref S28 N120=1.9305635972086237
+‖f‖²≈g(0)=0.983800  (should be ~1 for orthonormal basis combo)
+Parseval proxy ∫|F|² dt/2π ≈ 0.4990 (partial t∈[0,150.0])
+primes=[2, 3, 5, 7] vis=5 invisible chars=72 seeds=8000
+WLS: dual_mean=2.025519 (≈λ?)  A_on_seed=5.684792  A_true≈8.002606  rms=1.1974
+  round 0: LP s=3.019316 true>=3.023512 pts=20000 chars=72
+  round 1: LP s=3.019640 true>=3.020939 pts=23500 chars=72
+  round 2: LP s=3.019723 true>=3.020403 pts=27000 chars=72
+  round 3: LP s=3.019852 true>=3.020113 pts=30500 chars=72
+RESULT L=1.0 D=2: A_true≈3.02011 λ=1.93056 ratio=1.564 per_prime=3.0476 S28=2.95 status=NO_PROGRESS [98s]
+
+=== H30a Fejér–Riesz L=1.0 D=3 N=120 ===
+λ_max(P_L)=1.93056360 (N=120); ref S28 N120=1.9305635972086237
+‖f‖²≈g(0)=0.983800  (should be ~1 for orthonormal basis combo)
+Parseval proxy ∫|F|² dt/2π ≈ 0.4990 (partial t∈[0,150.0])
+primes=[2, 3, 5, 7] vis=5 invisible chars=97 seeds=8000
+WLS: dual_mean=2.020438 (≈λ?)  A_on_seed=7.207486  A_true≈13.711203  rms=0.7859
+  round 0: LP s=2.902803 true>=3.085742 pts=20000 chars=97
+  round 1: LP s=2.917883 true>=3.004376 pts=23500 chars=97
+  round 2: LP s=2.926730 true>=3.012115 pts=27000 chars=97
+  round 3: LP s=2.930343 true>=2.961405 pts=30500 chars=97
+  round 4: LP s=2.933638 true>=2.948492 pts=34000 chars=97
+  round 5: LP s=2.934882 true>=2.943236 pts=37500 chars=97
+  round 6: LP s=2.935551 true>=2.938022 pts=41000 chars=97
+  round 7: LP s=2.935815 true>=2.936885 pts=44500 chars=97
+  round 8: LP s=2.935888 true>=2.936440 pts=48000 chars=97
+  round 9: LP s=2.935922 true>=2.936130 pts=51500 chars=97
+RESULT L=1.0 D=3: A_true≈2.93613 λ=1.93056 ratio=1.521 per_prime=3.0476 S28=2.95 status=NO_PROGRESS [375s]
+L=1 D=3 no progress toward floor; still run D=4 once then move to L=1.19
+
+=== H30a Fejér–Riesz L=1.0 D=4 N=120 ===
+λ_max(P_L)=1.93056360 (N=120); ref S28 N120=1.9305635972086237
+‖f‖²≈g(0)=0.983800  (should be ~1 for orthonormal basis combo)
+Parseval proxy ∫|F|² dt/2π ≈ 0.4990 (partial t∈[0,150.0])
+primes=[2, 3, 5, 7] vis=5 invisible chars=156 seeds=8000
+WLS: dual_mean=1.938381 (≈λ?)  A_on_seed=5.994977  A_true≈117.775427  rms=0.4572
+  round 0: LP s=2.565363 true>=2.898275 pts=20000 chars=156
+  round 1: LP s=2.574403 true>=2.810820 pts=23500 chars=156
+  round 2: LP s=2.581196 true>=2.760414 pts=27000 chars=156
+  round 3: LP s=2.585609 true>=2.713212 pts=30500 chars=156
+  round 4: LP s=2.595354 true>=2.722143 pts=34000 chars=156
+  round 5: LP s=2.598428 true>=2.688700 pts=37500 chars=156
+  round 6: LP s=2.599954 true>=2.691053 pts=41000 chars=156
+  round 7: LP s=2.604668 true>=2.659133 pts=44500 chars=156
+  round 8: LP s=2.607029 true>=2.647081 pts=48000 chars=156
+  round 9: LP s=2.608711 true>=2.657481 pts=51500 chars=156
+  round 10: LP s=2.610697 true>=2.623835 pts=55000 chars=156
+  round 11: LP s=2.611734 true>=2.622846 pts=58500 chars=156
+RESULT L=1.0 D=4: A_true≈2.62294 λ=1.93056 ratio=1.359 per_prime=3.0476 S28=2.95 status=PROGRESS [864s]
+
+=== H30a Fejér–Riesz L=1.19 D=2 N=120 ===
+λ_max(P_L)=2.66125254 (N=120); ref S28 N120=2.6612525390517066
+‖f‖²≈g(0)=0.994332  (should be ~1 for orthonormal basis combo)
+Parseval proxy ∫|F|² dt/2π ≈ 0.4995 (partial t∈[0,150.0])
+primes=[2, 3, 5, 7] vis=7 invisible chars=93 seeds=8000
+WLS: dual_mean=2.693418 (≈λ?)  A_on_seed=8.244441  A_true≈11.721264  rms=1.9075
+  round 0: LP s=3.780695 true>=3.865653 pts=20000 chars=93
+  round 1: LP s=3.785572 true>=3.809775 pts=23500 chars=93
+  round 2: LP s=3.787428 true>=3.811294 pts=27000 chars=93
+  round 3: LP s=3.787651 true>=3.795980 pts=30500 chars=93
+  round 4: LP s=3.788346 true>=3.792899 pts=34000 chars=93
+  round 5: LP s=3.788460 true>=3.790090 pts=37500 chars=93
+  round 6: LP s=3.788622 true>=3.789609 pts=41000 chars=93
+  round 7: LP s=3.788688 true>=3.789954 pts=44500 chars=93
+  round 8: LP s=3.788716 true>=3.789019 pts=48000 chars=93
+RESULT L=1.19 D=2: A_true≈3.78902 λ=2.66125 ratio=1.424 per_prime=3.9194 S28=3.602 status=NO_PROGRESS [300s]
+
+=== H30a Fejér–Riesz L=1.19 D=3 N=120 ===
+λ_max(P_L)=2.66125254 (N=120); ref S28 N120=2.6612525390517066
+‖f‖²≈g(0)=0.994332  (should be ~1 for orthonormal basis combo)
+Parseval proxy ∫|F|² dt/2π ≈ 0.4995 (partial t∈[0,150.0])
+primes=[2, 3, 5, 7] vis=7 invisible chars=114 seeds=8000
+WLS: dual_mean=2.695424 (≈λ?)  A_on_seed=8.039179  A_true≈13.906313  rms=1.2432
+  round 0: LP s=3.525652 true>=3.985555 pts=20000 chars=114
+  round 1: LP s=3.550064 true>=3.953537 pts=23500 chars=114
+  round 2: LP s=3.562326 true>=3.956140 pts=27000 chars=114
+  round 3: LP s=3.570640 true>=3.774609 pts=30500 chars=114
+  round 4: LP s=3.579069 true>=3.730250 pts=34000 chars=114
+  round 5: LP s=3.585216 true>=3.711946 pts=37500 chars=114
+  round 6: LP s=3.588602 true>=3.684971 pts=41000 chars=114
+  round 7: LP s=3.592767 true>=3.666090 pts=44500 chars=114
+  round 8: LP s=3.595598 true>=3.659322 pts=48000 chars=114
+  round 9: LP s=3.596701 true>=3.660623 pts=51500 chars=114
+  round 10: LP s=3.597122 true>=3.620842 pts=55000 chars=114
+  round 11: LP s=3.599082 true>=3.658429 pts=58500 chars=114
+RESULT L=1.19 D=3: A_true≈3.65844 λ=2.66125 ratio=1.375 per_prime=3.9194 S28=3.602 status=NO_PROGRESS [561s]
+
+=== H30a Fejér–Riesz L=1.19 D=4 N=120 ===
+λ_max(P_L)=2.66125254 (N=120); ref S28 N120=2.6612525390517066
+‖f‖²≈g(0)=0.994332  (should be ~1 for orthonormal basis combo)
+Parseval proxy ∫|F|² dt/2π ≈ 0.4995 (partial t∈[0,150.0])
+primes=[2, 3, 5, 7] vis=7 invisible chars=168 seeds=8000
+WLS: dual_mean=2.710122 (≈λ?)  A_on_seed=17.081704  A_true≈10417.228960  rms=0.9486
+  round 0: LP s=3.240424 true>=3.864343 pts=20000 chars=168
+  round 1: LP s=3.259385 true>=3.680098 pts=23500 chars=168
+  round 2: LP s=3.266806 true>=3.644709 pts=27000 chars=168
+  round 3: LP s=3.274132 true>=3.647427 pts=30500 chars=168
+  round 4: LP s=3.277786 true>=3.527750 pts=34000 chars=168
+  round 5: LP s=3.281504 true>=3.483039 pts=37500 chars=168
+  round 6: LP s=3.283879 true>=3.458470 pts=41000 chars=168
+  round 7: LP s=3.286281 true>=3.429646 pts=44500 chars=168
+  round 8: LP s=3.291826 true>=3.482450 pts=48000 chars=168
+  round 9: LP s=3.293737 true>=3.409875 pts=51500 chars=168
+  round 10: LP s=3.295782 true>=3.393556 pts=55000 chars=168
+  round 11: LP s=3.296297 true>=3.398592 pts=58500 chars=168
+RESULT L=1.19 D=4: A_true≈3.39859 λ=2.66125 ratio=1.277 per_prime=3.9194 S28=3.602 status=PROGRESS [1649s]
+
+SUMMARY: PROGRESS: beat S28 torus slightly; floor still open.
