@@ -1,0 +1,62 @@
+{
+  "session": "S41",
+  "certified_T": 16.0,
+  "certified_label": "CERTIFIED",
+  "n_events_cert": 595877,
+  "barrier_holds_prefix": true,
+  "min_S_lo": {
+    "lower_bound": "0.0277700093805871836913110401542",
+    "argmin": {
+      "n": 3109,
+      "t": "8.0420564100587538114",
+      "value": "0.0277700093805871836913110401542"
+    },
+    "positive": true
+  },
+  "min_E_lo": {
+    "lower_bound": "0.0794953498652300290042011608121",
+    "argmin": {
+      "n": 2,
+      "t": "0.69314718055994530942",
+      "value": "0.0794953498652300290042011608121"
+    },
+    "positive": true
+  },
+  "min_Uplus_after_lo": {
+    "lower_bound": "0.121888649178135807415998970638",
+    "argmin": {
+      "n": 2,
+      "t": "0.69314718055994530942",
+      "value": "0.121888649178135807415998970638"
+    },
+    "positive": true
+  },
+  "also_certified_T14": true,
+  "numerical_T18": {
+    "n_events": 3878366,
+    "min_S": {
+      "value": 0.021498598285688786,
+      "n": 34186499,
+      "t": 17.34734135801032
+    },
+    "min_E": {
+      "value": 0.07949534986523134,
+      "n": 2,
+      "t": 0.6931471805599453
+    },
+    "min_Uplus_after": {
+      "value": 0.12188864917813752,
+      "n": 2,
+      "t": 0.6931471805599453
+    },
+    "neg_counts": {
+      "S": 0,
+      "E": 0,
+      "Uplus": 0
+    }
+  },
+  "H41b_label": "CONFIRMED-with-GAP",
+  "RH": "OPEN",
+  "global_kick_barrier": "OPEN",
+  "phi": "absent"
+}

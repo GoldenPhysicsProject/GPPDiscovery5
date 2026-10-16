@@ -1,0 +1,91 @@
+H41a CERTIFIED sieve T=16.0, dps=40
+  ... 20000/595877 events, elapsed 10.5s, min U+_lo=0.1218886492
+  ... 40000/595877 events, elapsed 19.7s, min U+_lo=0.1218886492
+  ... 60000/595877 events, elapsed 29.0s, min U+_lo=0.1218886492
+  ... 80000/595877 events, elapsed 38.3s, min U+_lo=0.1218886492
+  ... 100000/595877 events, elapsed 47.7s, min U+_lo=0.1218886492
+  ... 120000/595877 events, elapsed 57.2s, min U+_lo=0.1218886492
+  ... 140000/595877 events, elapsed 66.4s, min U+_lo=0.1218886492
+  ... 160000/595877 events, elapsed 75.8s, min U+_lo=0.1218886492
+  ... 180000/595877 events, elapsed 85.1s, min U+_lo=0.1218886492
+  ... 200000/595877 events, elapsed 94.5s, min U+_lo=0.1218886492
+  ... 220000/595877 events, elapsed 104.0s, min U+_lo=0.1218886492
+  ... 240000/595877 events, elapsed 113.9s, min U+_lo=0.1218886492
+  ... 260000/595877 events, elapsed 123.3s, min U+_lo=0.1218886492
+  ... 280000/595877 events, elapsed 132.9s, min U+_lo=0.1218886492
+  ... 300000/595877 events, elapsed 142.3s, min U+_lo=0.1218886492
+  ... 320000/595877 events, elapsed 151.6s, min U+_lo=0.1218886492
+  ... 340000/595877 events, elapsed 161.1s, min U+_lo=0.1218886492
+  ... 360000/595877 events, elapsed 170.5s, min U+_lo=0.1218886492
+  ... 380000/595877 events, elapsed 180.0s, min U+_lo=0.1218886492
+  ... 400000/595877 events, elapsed 189.2s, min U+_lo=0.1218886492
+  ... 420000/595877 events, elapsed 199.0s, min U+_lo=0.1218886492
+  ... 440000/595877 events, elapsed 208.5s, min U+_lo=0.1218886492
+  ... 460000/595877 events, elapsed 217.9s, min U+_lo=0.1218886492
+  ... 480000/595877 events, elapsed 227.7s, min U+_lo=0.1218886492
+  ... 500000/595877 events, elapsed 237.7s, min U+_lo=0.1218886492
+  ... 520000/595877 events, elapsed 247.3s, min U+_lo=0.1218886492
+  ... 540000/595877 events, elapsed 257.1s, min U+_lo=0.1218886492
+  ... 560000/595877 events, elapsed 266.7s, min U+_lo=0.1218886492
+  ... 580000/595877 events, elapsed 276.1s, min U+_lo=0.1218886492
+{
+  "label": "CERTIFIED",
+  "n_events": 595877,
+  "n_fail": 0,
+  "min_S_lo": {
+    "lower_bound": "0.0277700093805871836913110401542",
+    "argmin": {
+      "n": 3109,
+      "t": "8.0420564100587538114",
+      "value": "0.0277700093805871836913110401542"
+    },
+    "positive": true
+  },
+  "min_E_lo": {
+    "lower_bound": "0.0794953498652300290042011608121",
+    "argmin": {
+      "n": 2,
+      "t": "0.69314718055994530942",
+      "value": "0.0794953498652300290042011608121"
+    },
+    "positive": true
+  },
+  "min_Uplus_after_lo": {
+    "lower_bound": "0.121888649178135807415998970638",
+    "argmin": {
+      "n": 2,
+      "t": "0.69314718055994530942",
+      "value": "0.121888649178135807415998970638"
+    },
+    "positive": true
+  },
+  "elapsed_sec": 283.64921045303345
+}
+Wrote /workspace/GPPDiscovery5/s41/h41a_cert_T16.json
+H41a NUMERICAL stretch T=18.0
+{
+  "label": "NUMERICAL",
+  "T": 18.0,
+  "n_events": 3878366,
+  "min_S": {
+    "value": 0.021498598285688786,
+    "n": 34186499,
+    "t": 17.34734135801032
+  },
+  "min_E": {
+    "value": 0.07949534986523134,
+    "n": 2,
+    "t": 0.6931471805599453
+  },
+  "min_Uplus_after": {
+    "value": 0.12188864917813752,
+    "n": 2,
+    "t": 0.6931471805599453
+  },
+  "neg_S": 0,
+  "neg_E": 0,
+  "neg_Uplus": 0,
+  "elapsed_sec": 7.114790916442871
+}
+Wrote /workspace/GPPDiscovery5/s41/h41a_numerical_T18.json
+Wrote /workspace/GPPDiscovery5/s41/h41a_summary.json

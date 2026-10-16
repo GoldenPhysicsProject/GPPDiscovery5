@@ -1,0 +1,66 @@
+H41a CERTIFIED sieve T=14.0, dps=40
+  ... 20000/93371 events, elapsed 9.4s, min U+_lo=0.1218886492
+  ... 40000/93371 events, elapsed 18.5s, min U+_lo=0.1218886492
+  ... 60000/93371 events, elapsed 27.8s, min U+_lo=0.1218886492
+  ... 80000/93371 events, elapsed 37.1s, min U+_lo=0.1218886492
+{
+  "label": "CERTIFIED",
+  "n_events": 93371,
+  "n_fail": 0,
+  "min_S_lo": {
+    "lower_bound": "0.0277700093805871836913110401542",
+    "argmin": {
+      "n": 3109,
+      "t": "8.0420564100587538114",
+      "value": "0.0277700093805871836913110401542"
+    },
+    "positive": true
+  },
+  "min_E_lo": {
+    "lower_bound": "0.0794953498652300290042011608121",
+    "argmin": {
+      "n": 2,
+      "t": "0.69314718055994530942",
+      "value": "0.0794953498652300290042011608121"
+    },
+    "positive": true
+  },
+  "min_Uplus_after_lo": {
+    "lower_bound": "0.121888649178135807415998970638",
+    "argmin": {
+      "n": 2,
+      "t": "0.69314718055994530942",
+      "value": "0.121888649178135807415998970638"
+    },
+    "positive": true
+  },
+  "elapsed_sec": 43.05648875236511
+}
+Wrote /workspace/GPPDiscovery5/s41/h41a_cert_T14.json
+H41a NUMERICAL stretch T=16.0
+{
+  "label": "NUMERICAL",
+  "T": 16.0,
+  "n_events": 595877,
+  "min_S": {
+    "value": 0.027770009380418514,
+    "n": 3109,
+    "t": 8.042056410058754
+  },
+  "min_E": {
+    "value": 0.07949534986523134,
+    "n": 2,
+    "t": 0.6931471805599453
+  },
+  "min_Uplus_after": {
+    "value": 0.12188864917813752,
+    "n": 2,
+    "t": 0.6931471805599453
+  },
+  "neg_S": 0,
+  "neg_E": 0,
+  "neg_Uplus": 0,
+  "elapsed_sec": 1.0263288021087646
+}
+Wrote /workspace/GPPDiscovery5/s41/h41a_numerical_T16.json
+Wrote /workspace/GPPDiscovery5/s41/h41a_summary.json
