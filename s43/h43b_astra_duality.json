@@ -1,0 +1,10 @@
+{
+  "A_equals_sup_affine": "CONFIRMED",
+  "max_A_sup_err": 8.816207631167156e-39,
+  "Vstar_gaps_min": 0.27974976287068826,
+  "Vstar_prefix_failures": 0,
+  "all_time_duality_structure": "CONFIRMED",
+  "RH_strength_all_prefix_bound": "OPEN",
+  "phi_absent": true,
+  "RH": "OPEN"
+}
