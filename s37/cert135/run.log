@@ -1,0 +1,10 @@
+L=27/20 T=700 K=780 comb=[2, 3, 4, 5, 7, 8, 9, 11, 13] A=4.592800 beta=0.118975 lift_terms=701
+M_S <= 2334.0956  M0 <= 26.0032 [139s]
+assembly done: 1400 panels x 92 nodes [741s]
+ parity 0: lam_est=5.270625572503645e-70 rE=3.649e-87 quad/entry=4.678e-90 [24s]
+ dumped Atil -> atil_L135_T700_K780_even.json
+ schur_prec=384 bs_list=[]
+{"parity": "even", "degs": [0, 1558], "nodes": 128800, "quad_err_entry": 4.677916020406722e-90, "lam_est": 5.270625572503645e-70, "normE_bound": 3.6487745051504055e-87, "lam0_schur": null, "first_omitted_degree": 1560, "eps_B": 6.046721325086648e-127, "eps_CDD": 1.9220323142463972e-263, "lamD_lower": 0.11897469720548776} [27s]
+ parity 1: lam_est=-3.280689665249628e-65 rE=3.651e-87 quad/entry=4.681e-90 [24s]
+ dumped Atil -> atil_L135_T700_K780_odd.json
+{"parity": "odd", "degs": [1, 1559], "nodes": 128800, "quad_err_entry": 4.68091757062835e-90, "lam_est": -3.280689665249628e-65, "normE_bound": 3.651115711863462e-87, "lam0_schur": null, "first_omitted_degree": 1561, "eps_B": 1.8314593331167665e-127, "eps_CDD": 1.7609967283043703e-264, "lamD_lower": 0.11897469720548776} [25s]

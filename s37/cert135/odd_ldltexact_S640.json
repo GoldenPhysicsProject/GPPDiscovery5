@@ -1,0 +1,14 @@
+{
+ "dump": "atil_L135_T700_K780_odd.json",
+ "sha256": "a1d4a9ca593dda11fb9e9ecbf3759bd9387d8f4eed5b8ade55d249a21fa3efe7",
+ "K": 780,
+ "S": 640,
+ "pert_F": 3.3061387062334765e-113,
+ "tries": [
+  {
+   "l0": "1e-90",
+   "ldlt": "fail",
+   "pivot": 114
+  }
+ ]
+}
