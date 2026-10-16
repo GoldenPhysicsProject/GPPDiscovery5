@@ -1,0 +1,80 @@
+{
+  "label": "CONFIRMED inputs for Codex exact-rational L=1 tails (conditional certificate)",
+  "caveat": "Arb matrix / Cholesky / M0 / beta / kappa are SINGLE IMPLEMENTATION (Grok S27/S28). Rational tail assertions are implementation-independent (Fraction). Not independent rerun. Lean-open. RH OPEN.",
+  "L": 1,
+  "T": 300,
+  "K": 262,
+  "d0_even": 524,
+  "d0_odd": 525,
+  "S27_even": {
+    "beta_arb": "[0.810820432507849368378367876360900906475519573456401538448505818129177182886914539086482470168072452973130352134700 +/- 6.08e-115]",
+    "M_S": "820.1955041885375976562500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "M0": "NOT in S27 JSON; S28 fast cert supplies M0 (same pipeline symbol bound)",
+    "lam0_cholesky": "4.140000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e-30",
+    "normE_bound_A_minus_Amid": 8.9532742870474e-33,
+    "lam_fail_shift": 4.142302251856211e-30,
+    "certified_lower_float": 4.131046725712953e-30
+  },
+  "S27_odd": {
+    "lam0_cholesky": "1.050000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e-26",
+    "normE_bound_A_minus_Amid": 8.970409736315938e-33,
+    "certified_lower_float": 1.0499991029590264e-26
+  },
+  "S28_fast_same_L1": {
+    "beta_arb": "[0.810820432507849368378367876360900906475519573456401538448505818129177182886914539086482470168072452973130352134700 +/- 6.08e-115]",
+    "M0_arb": "[21.80089562388679575764361517486084436784613747000562424663878433077272033942288870416201444817609062271316093993662 +/- 2.98e-114]",
+    "M_S": "820.1955041885375976562500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "even_lam0_schur": "4.138000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e-30",
+    "even_normE_bound": 8.9532742870474e-33,
+    "odd_lam0_schur": "1.055000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e-26",
+    "odd_normE_bound": 8.970409736315938e-33,
+    "note": "S28 blocked-Schur reproduces S27; M0 enclosed in Arb as printed ball"
+  },
+  "Codex_conditional_hypotheses_vs_Grok": {
+    "M0_leq_22": {
+      "codex_uses": 22,
+      "S28_M0_mid": 21.800895623886795,
+      "holds": true
+    },
+    "beta_geq_0.8108": {
+      "codex_uses": 0.8108,
+      "S28_beta_mid": 0.8108204325078494,
+      "holds": true
+    },
+    "lambda0_geq_4.14e-30": {
+      "codex_uses": 4.14e-30,
+      "S27_lam0": 4.14e-30,
+      "S28_lam0_schur": 4.138e-30,
+      "note": "S28 Schur shift 4.138e-30 < Codex 4.14e-30; S27 Cholesky was 4.14e-30. Conditional ineq still holds with 4.138e-30 - 9e-33 > 4.12e-30"
+    },
+    "norm_A_minus_Amid_lt_9e-33": {
+      "codex_uses": 9e-33,
+      "S27_even": 8.9532742870474e-33,
+      "S28_even": 8.9532742870474e-33,
+      "holds": true
+    }
+  },
+  "S28_tails_arb_certified_lower": {
+    "even": {
+      "certified_lower_arb": 4.124813572869044e-30,
+      "eps_B_upper": 2.7605094323576183e-53,
+      "lamD_lower": 0.8108204325078494,
+      "tail_sumD_upper": 6.415847900317809e-118,
+      "pole_tail_upper": 0.0,
+      "lam0": "[4.138000000000000000000000000000000000000000000000000000000000000000000000000e-30 +/- 2.20e-107]",
+      "rE": 1.3186427130955905e-32,
+      "certified_lower_float_pipeline": 4.1290467257129526e-30
+    },
+    "odd": {
+      "certified_lower_arb": 1.0549986788335692e-26,
+      "eps_B_upper": 7.902039600315978e-54,
+      "lamD_lower": 0.8108204325078494,
+      "tail_sumD_upper": 5.237166459076662e-119,
+      "pole_tail_upper": 0.0,
+      "lam0": "[1.055000000000000000000000000000000000000000000000000000000000000000000000000e-26 +/- 4.68e-104]",
+      "rE": 1.3211664308155367e-32,
+      "certified_lower_float_pipeline": 1.0549991029590264e-26
+    }
+  },
+  "verdict": "Fraction assertions CONFIRMED (script rerun). Arb inputs CONFIRMED from S27/S28 JSON with printed balls. Conditional certificate end-to-end honest IF one accepts single-implementation Arb matrix; say so explicitly. Independent rerun still requested (Turbo/Sol)."
+}

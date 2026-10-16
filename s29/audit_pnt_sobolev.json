@@ -1,0 +1,205 @@
+{
+  "spot_checks": [
+    {
+      "L": 0.8,
+      "tag": "even_low",
+      "P": 1.1730640876240461,
+      "C": 2.2089700832488233,
+      "diff": -1.0359059956247771,
+      "D": 1.2809820778446421,
+      "n2": 1.04880884817015,
+      "np2": 2.3244472759254986,
+      "bound": 3.8274474649689574,
+      "holds": true,
+      "ratio": 0.2706519175262354
+    },
+    {
+      "L": 0.8,
+      "tag": "odd_low",
+      "P": -0.7516529074001768,
+      "C": -0.35118955167084864,
+      "diff": -0.4004633557293281,
+      "D": 1.2809820778446421,
+      "n2": 1.0198039027185546,
+      "np2": 3.1902073022452218,
+      "bound": 4.833639656007711,
+      "holds": true,
+      "ratio": 0.08284923664750099
+    },
+    {
+      "L": 0.8,
+      "tag": "mixed_H1",
+      "P": -0.021764321203206646,
+      "C": 0.032714005965341644,
+      "diff": -0.05447832716854829,
+      "D": 1.2809820778446421,
+      "n2": 0.5054333342222307,
+      "np2": 4.038175502858898,
+      "bound": 2.7781426094914328,
+      "holds": true,
+      "ratio": 0.01960962226432325
+    },
+    {
+      "L": 0.8,
+      "tag": "continuum_mode",
+      "P": 2.007317880732823,
+      "C": 3.993642552763818,
+      "diff": -1.986324672030995,
+      "D": 1.2809820778446421,
+      "n2": 1.3669588149413565,
+      "np2": 0.4391076652299958,
+      "bound": 1.9657058052504985,
+      "holds": true,
+      "ratio": 1.010489294341718
+    },
+    {
+      "L": 1.0,
+      "tag": "even_low",
+      "P": 1.975713042410552,
+      "C": 3.015756432251874,
+      "diff": -1.040043389841322,
+      "D": 1.5304838290939764,
+      "n2": 1.0488088481701499,
+      "np2": 1.8595578207403978,
+      "bound": 3.826700392894123,
+      "holds": true,
+      "ratio": 0.2717859469146316
+    },
+    {
+      "L": 1.0,
+      "tag": "odd_low",
+      "P": -1.1977821870990426,
+      "C": -0.60393709983486,
+      "diff": -0.5938450872641826,
+      "D": 1.5304838290939764,
+      "n2": 1.0198039027185544,
+      "np2": 2.5521658417961754,
+      "bound": 4.779255146662771,
+      "holds": true,
+      "ratio": 0.12425473615461798
+    },
+    {
+      "L": 1.0,
+      "tag": "mixed_H1",
+      "P": -0.034731206494308914,
+      "C": 0.046288075226685335,
+      "diff": -0.08101928172099425,
+      "D": 1.5304838290939764,
+      "n2": 0.5054333342222307,
+      "np2": 3.2305404022871187,
+      "bound": 2.6944997862050246,
+      "holds": true,
+      "ratio": 0.030068394191674095
+    },
+    {
+      "L": 1.0,
+      "tag": "continuum_mode",
+      "P": 4.412289704635263,
+      "C": 7.082703647553542,
+      "diff": -2.6704139429182785,
+      "D": 1.5304838290939764,
+      "n2": 1.564313113202231,
+      "np2": 0.5159909225616338,
+      "bound": 3.1079674766786525,
+      "holds": true,
+      "ratio": 0.8592155365062031
+    },
+    {
+      "L": 1.5,
+      "tag": "even_low",
+      "P": 4.621301168770269,
+      "C": 5.715785381461391,
+      "diff": -1.094484212691122,
+      "D": 2.0588270816548775,
+      "n2": 1.0488088481701499,
+      "np2": 1.2397052138269318,
+      "bound": 3.809270272906414,
+      "holds": true,
+      "ratio": 0.28732122802513765
+    },
+    {
+      "L": 1.5,
+      "tag": "odd_low",
+      "P": -2.5958176338003183,
+      "C": -1.738630065492734,
+      "diff": -0.8571875683075842,
+      "D": 2.0588270816548775,
+      "n2": 1.0198039027185546,
+      "np2": 1.7014438945307835,
+      "bound": 4.642941501183019,
+      "holds": true,
+      "ratio": 0.18462166023181065
+    },
+    {
+      "L": 1.5,
+      "tag": "mixed_H1",
+      "P": -0.02797264711780315,
+      "C": 0.10313514841853838,
+      "diff": -0.13110779553634153,
+      "D": 2.0588270816548775,
+      "n2": 0.5054333342222306,
+      "np2": 2.153693601524746,
+      "bound": 2.504110132017031,
+      "holds": true,
+      "ratio": 0.05235704047518699
+    },
+    {
+      "L": 1.5,
+      "tag": "continuum_mode",
+      "P": 17.787545895835333,
+      "C": 22.56812501573996,
+      "diff": -4.780579119904626,
+      "D": 2.0588270816548775,
+      "n2": 2.0473590497407557,
+      "np2": 0.7206179857930454,
+      "bound": 7.352490055570311,
+      "holds": true,
+      "ratio": 0.6501986515823734
+    }
+  ],
+  "D_trend": [
+    {
+      "L": 0.5,
+      "D": 0.7420465964804669,
+      "D_over_eL": 0.45007401170081185
+    },
+    {
+      "L": 1.0,
+      "D": 1.5304838290939764,
+      "D_over_eL": 0.5630335357690213
+    },
+    {
+      "L": 1.5,
+      "D": 2.0588270816548775,
+      "D_over_eL": 0.4593864164475773
+    },
+    {
+      "L": 2.0,
+      "D": 2.466513850453793,
+      "D_over_eL": 0.33380635055819224
+    },
+    {
+      "L": 2.5,
+      "D": 2.841745555128582,
+      "D_over_eL": 0.23326467998220018
+    }
+  ],
+  "analytic": {
+    "boundary_terms": "CONFIRMED: M(0)=0 and g_f(2L)=0 kill the Stieltjes IBP boundary. For f in H^1_c((-L,L)) (or C^1_c), g is AC and vanishes at +/-2L.",
+    "phase_normalization": "CONFIRMED: <f,K_L f> = int e^{|u|/2} g_f(-u) du = 2 Re int_0^{2L} e^{u/2} g_f(u) du matches C_L. Discrete P_L = 2 Re sum Lambda(n)n^{-1/2} g_f(log n) matches S28 convention.",
+    "Stieltjes_IBP": "CONFIRMED formally: sum Lambda n^{-1/2} g(log n) - int e^{u/2} g = int e^{-u/2} g dM, then IBP -> -int M d(e^{-u/2} g). Factor 2 Re preserved.",
+    "complex_vs_real": "CONFIRMED for complex f via 2 Re and g(-u)=conj(g(u)); inequality uses |g|<=||f||^2, |g'|<=||f||||f'|| which hold for complex H^1.",
+    "Dirichlet_portability": "CONFIRMED as stated for FIXED nontrivial primitive chi (PNT in AP). NOT uniform in conductor. Principal/nonprimitive needs pole/main term separated \u2014 noted by Codex.",
+    "F_theta_falsifier": "CONFIRMED: for F_theta the weights n^theta+n^{-theta} change Chebyshev main term to ~x^{1+theta}; o(e^L) vs zeta continuum FAILS. Mandatory falsifier, not RH proof.",
+    "Sobolev_loss_essential": "CONFIRMED limitation: PNT alone cannot give ||P_L-K_L||_{L2->L2}=o(e^L). Derivative loss is essential to this proof. Does NOT transfer continuum one-positive-mode count to discrete P_L.",
+    "D_o_eL": "CONFIRMED: classical PNT => D(L)=o(e^L). Numerics: D/e^L decreases slowly at small L.",
+    "minor_caveats": [
+      "Effective constants need a cited explicit PNT error (Codex flags this).",
+      "Quadrature/interpolation in this audit is float numerical \u2014 supports the inequality shape, not a formal proof.",
+      "g' bound a.e. requires AC representative; standard for H^1."
+    ]
+  },
+  "verdict": "CONFIRMED",
+  "gaps": "No fatal gap found. The Sobolev derivative loss and non-transfer to operator norm / positive-eigenvalue count are already disclosed by Codex and are essential limitations, not hidden errors.",
+  "rh_status": "RH OPEN. GRH OPEN."
+}

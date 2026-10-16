@@ -1,0 +1,46 @@
+{
+  "L1.0_D3": {
+    "L": 1.0,
+    "D": 3,
+    "lam_max": 1.920572,
+    "A_lp": 2.935908,
+    "A_max_est": 2.936243,
+    "per_prime_ref": 3.047608,
+    "torus_S28_ref": 2.95,
+    "n_chars": 97,
+    "status": "CONVERGED",
+    "note": "Eigen-seeded torus matches S28; slight improvement 2.936 vs ~2.95."
+  },
+  "L1.19_D3": {
+    "L": 1.19,
+    "D": 3,
+    "lam_max": 2.660207,
+    "A_lp": 3.601807,
+    "A_max_est": 3.602545,
+    "per_prime_ref": 3.919408,
+    "torus_S28_ref": 3.602,
+    "n_chars": 114,
+    "status": "NEAR_CONVERGED_STOPPED",
+    "hist_tail": [
+      [
+        3.600786,
+        3.607647
+      ],
+      [
+        3.601369,
+        3.605847
+      ],
+      [
+        3.601662,
+        3.60368
+      ],
+      [
+        3.601807,
+        3.602545
+      ]
+    ],
+    "note": "Eigen-seeded torus reproduces S28 A~3.602; does not beat it. Gap to floor ~0.94. Killed after round 13 (pts=73000) to save budget; gap 7.4e-4."
+  },
+  "DEAD_END_t_grid": "See h29a_krein_lift.json \u2014 finite t Chebyshev overfits.",
+  "conclusion": "H29a: eigenfunction seeding does not reduce A below S28 torus at D=3. Strong-duality Krein extension still open (H28). No new smaller-T certificate this session."
+}

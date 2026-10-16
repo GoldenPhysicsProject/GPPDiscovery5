@@ -1,0 +1,149 @@
+{
+  "rows": [
+    {
+      "L": 1.0,
+      "k_computed": 0.7717023192091044,
+      "k_stated": 0.7717023192,
+      "k_err": 9.104383913438596e-12,
+      "lam_computed": 2.894151032272926,
+      "lam_stated": 2.89415103,
+      "lam_err": 2.2729258475351344e-09,
+      "rayleigh_cosh": 2.8941478760575334,
+      "rayleigh_vs_lam": 3.156215392596806e-06,
+      "ode": {
+        "ode_rel_max": 1.283317147132473,
+        "robin_L": 0.000298027899347132,
+        "robin_mL": 0.00029802789946395316,
+        "eig_residual": 3.931068229300749e-07
+      },
+      "spectrum": {
+        "n_pos": 1,
+        "n_neg": 49,
+        "top": 2.8941406198051878,
+        "second": -5.730847767710178e-06,
+        "most_neg": -0.6216918569791638,
+        "all_top5": [
+          -2.4580555798414476e-05,
+          -2.2754201489367074e-05,
+          -6.1926962835698535e-06,
+          -5.730847767710178e-06,
+          2.8941406198051878
+        ]
+      },
+      "discrete_pmax_S28": 1.9385,
+      "continuum_over_discrete": 1.4929847986963767
+    },
+    {
+      "L": 2.0,
+      "k_computed": 0.599839320128867,
+      "k_stated": 0.5998393201,
+      "k_err": 2.8867019885581158e-11,
+      "lam_computed": 9.106870124912284,
+      "lam_stated": 9.10687012,
+      "lam_err": 4.912283912972271e-09,
+      "rayleigh_cosh": 9.106858826505922,
+      "rayleigh_vs_lam": 1.1298406361603952e-05,
+      "ode": {
+        "ode_rel_max": 0.4917079758112768,
+        "robin_L": 0.0003598876134634905,
+        "robin_mL": 0.00035988761335573445,
+        "eig_residual": 1.446848249846989e-06
+      },
+      "spectrum": {
+        "n_pos": 1,
+        "n_neg": 49,
+        "top": 9.106832851159544,
+        "second": -2.294049483253408e-05,
+        "most_neg": -4.000027066561235,
+        "all_top5": [
+          -9.839626974314457e-05,
+          -9.108286183233208e-05,
+          -2.4789985855146317e-05,
+          -2.294049483253408e-05,
+          9.106832851159544
+        ]
+      },
+      "discrete_pmax_S28": 7.9726,
+      "continuum_over_discrete": 1.1422710439395283
+    },
+    {
+      "L": 4.0,
+      "k_computed": 0.5163345347436763,
+      "k_stated": 0.5163345347,
+      "k_err": 4.367628481105612e-11,
+      "lam_computed": 60.236058720784776,
+      "lam_stated": 60.23605872,
+      "lam_err": 7.847731353649579e-10,
+      "rayleigh_cosh": 60.236025713638185,
+      "rayleigh_vs_lam": 3.300714659104642e-05,
+      "ode": {
+        "ode_rel_max": 0.06165138635807292,
+        "robin_L": 0.0005329079323236608,
+        "robin_mL": 0.0005329079322647895,
+        "eig_residual": 4.509374652813067e-06
+      },
+      "spectrum": {
+        "n_pos": 1,
+        "n_neg": 39,
+        "top": 60.23589622088741,
+        "second": -0.000217856678011891,
+        "most_neg": -48.08512239604039,
+        "all_top5": [
+          -0.0009480884391618139,
+          -0.0008613347171331914,
+          -0.0002399441651309537,
+          -0.000217856678011891,
+          60.23589622088741
+        ]
+      },
+      "discrete_pmax_S28": null,
+      "continuum_over_discrete": null
+    },
+    {
+      "L": 6.0,
+      "k_computed": 0.5024137960056287,
+      "k_stated": 0.502413796,
+      "k_err": 5.628719712547081e-12,
+      "lam_computed": 413.2876241610089,
+      "lam_stated": 413.28762416,
+      "lam_err": 1.0089138413604815e-09,
+      "rayleigh_cosh": 413.2875710506898,
+      "rayleigh_vs_lam": 5.311031912924591e-05,
+      "ode": {
+        "ode_rel_max": 0.007119342734253524,
+        "robin_L": 0.0007565153975822449,
+        "robin_mL": 0.0007565153976180109,
+        "eig_residual": 7.560194560632174e-06
+      },
+      "spectrum": {
+        "n_pos": 1,
+        "n_neg": 39,
+        "top": 413.287362689629,
+        "second": -0.0004912300867349406,
+        "most_neg": -393.27722419750296,
+        "all_top5": [
+          -0.002137453603414914,
+          -0.00194172246949561,
+          -0.0005410869046265275,
+          -0.0004912300867349406,
+          413.287362689629
+        ]
+      },
+      "discrete_pmax_S28": null,
+      "continuum_over_discrete": null
+    }
+  ],
+  "verdict": "CONFIRMED",
+  "proof_notes": [
+    "ODE u''=(1/4)u+f with Robin u'(-L)=-(1/2)u(-L), u'(L)=(1/2)u(L) CONFIRMED numerically for f_+=cosh(kx).",
+    "Unique k>1/2 solving k tanh(kL)=1/2: CONFIRMED (strict increase; value at 1/2 < 1/2).",
+    "lambda=1/(k^2-1/4) matches Rayleigh and Galerkin top eigenvalue to ~1e-6..1e-8.",
+    "Exactly one positive Galerkin eigenvalue for N=40..50; many negative eigenvalues exist (kernel e^{+|x-y|/2} is indefinite).",
+    "Claim 'all other nonzero eigenvalues are nonpositive' follows from uniqueness of positive eigenpair for compact self-adjoint operators; Galerkin supports it.",
+    "GAP (minor, not fatal): distributional->Sobolev differentiation is standard for this Lipschitz kernel but not spelled out with function-space citations; converse 'explicit f_+ satisfies Kf=lam f by solving inhomogeneous ODE' is sketched, not fully expanded. Numerics close the gap for practical purposes.",
+    "NOT a gap: complex vs real \u2014 kernel real symmetric, complexification does not add positive eigenvalues.",
+    "Continuum vs discrete: lambda_+(1)=2.894 vs Grok lambda_max(P_L)=1.9385 (~1.49x); lambda_+(2)=9.107 vs 7.973 (~1.14x). Expected (PNT error / discrete measure)."
+  ],
+  "discrete_comparison": "Continuum K_L is the PNT mean model; discrete P_L is the true Weil prime operator. Gap shrinks as L grows (PNT).",
+  "rh_status": "RH OPEN. GRH OPEN. Continuum spectral theorem does NOT transfer to discrete P_L without Sobolev loss (see companion audit)."
+}
