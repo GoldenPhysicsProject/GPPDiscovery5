@@ -9,3 +9,5 @@ L=1.3 D=8 primes=[2, 3, 5] vis=6 chars=342 per_prime_raw=5.6040
   round 7: LP s=2.739684 true>=2.907486 pts=36000 [947s]
   round 8: LP s=2.739722 true>=2.874488 pts=39000 [1110s]
   round 9: LP s=2.740484 true>=3.045487 pts=42000 [1291s]
+  round 10: LP s=2.740575 true>=2.840503 pts=45000 [1581s]
+DONE
