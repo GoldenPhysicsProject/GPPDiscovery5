@@ -1,0 +1,8 @@
+L1.25_D4: L=1.25 primes=[2, 3, 5, 7, 11] chars=298 all invisible; min(|k.logp|-2L)=5.526e-03
+  it 1: boxes 16384 keep 16384 best F 3.754979 max ub 69.219889 min d 3.93e-01
+  it 2: boxes 32768 keep 32768 best F 3.770902 max ub 36.625531 min d 1.96e-01
+  it 3: boxes 65536 keep 65536 best F 3.771180 max ub 28.176205 min d 9.82e-02
+  it 4: boxes 131072 keep 131072 best F 3.808447 max ub 23.313063 min d 9.82e-02
+  it 5: boxes 262144 keep 261977 best F 3.820948 max ub 19.130063 min d 9.82e-02
+  it 6: boxes 523954 keep 518312 best F 3.862422 max ub 15.420189 min d 9.82e-02
+  it 7: boxes 1036624 keep 993694 best F 3.888693 max ub 12.672549 min d 4.91e-02

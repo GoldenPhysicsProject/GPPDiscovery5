@@ -1,0 +1,27 @@
+SUBSET mode: remaining primes [11] must be bounded separately (s31_merge_p11.py)
+L1.25_D4: L=1.25 primes=[2, 3, 5, 7] chars=166 all invisible; min(|k.logp|-2L)=5.526e-03
+  it 1: boxes 2048 keep 2048 best F 3.397180 max ub 61.776405 min d 3.93e-01
+  it 2: boxes 4096 keep 4096 best F 3.405230 max ub 28.125271 min d 1.96e-01
+  it 3: boxes 8192 keep 8186 best F 3.407436 max ub 18.251125 min d 9.82e-02
+  it 4: boxes 16372 keep 16171 best F 3.417098 max ub 14.503349 min d 9.82e-02
+  it 5: boxes 32342 keep 31245 best F 3.417098 max ub 11.445917 min d 4.91e-02
+  it 6: boxes 62490 keep 56972 best F 3.432450 max ub 9.147204 min d 4.91e-02
+  it 7: boxes 113944 keep 91829 best F 3.438006 max ub 7.171757 min d 4.91e-02
+  it 8: boxes 183658 keep 148549 best F 3.438006 max ub 6.068908 min d 2.45e-02
+  it 9: boxes 297098 keep 240714 best F 3.447630 max ub 5.358499 min d 2.45e-02
+  it 10: boxes 481428 keep 373400 best F 3.447630 max ub 4.795372 min d 2.45e-02
+  it 11: boxes 746800 keep 514665 best F 3.447630 max ub 4.353258 min d 2.45e-02
+  it 12: boxes 1029330 keep 709590 best F 3.447630 max ub 4.082541 min d 1.23e-02
+  it 13: boxes 1419180 keep 1005958 best F 3.447630 max ub 3.920944 min d 1.23e-02
+  it 14: boxes 2011916 keep 1283399 best F 3.449511 max ub 3.784331 min d 1.23e-02
+  it 15: boxes 2566798 keep 1332646 best F 3.452672 max ub 3.666898 min d 1.23e-02
+  it 16: boxes 2665292 keep 1330452 best F 3.452672 max ub 3.606508 min d 6.14e-03
+  it 17: boxes 2660904 keep 1279503 best F 3.452878 max ub 3.570287 min d 6.14e-03
+  it 18: boxes 2559006 keep 595774 best F 3.453418 max ub 3.533999 min d 6.14e-03
+  it 19: boxes 1191548 keep 102325 best F 3.454010 max ub 3.506511 min d 6.14e-03
+  it 20: boxes 204650 keep 28552 best F 3.454450 max ub 3.492084 min d 3.07e-03
+  it 21: boxes 57104 keep 11918 best F 3.454450 max ub 3.483281 min d 3.07e-03
+  it 22: boxes 23836 keep 4328 best F 3.454673 max ub 3.474338 min d 3.07e-03
+  it 23: boxes 8656 keep 605 best F 3.454673 max ub 3.467757 min d 3.07e-03
+  it 24: boxes 1210 keep 0 best F 3.454673 max ub 3.464244 min d 3.07e-03
+L1.25_D4: sup_torus (B-m) <= 3.4646 (best sample 3.454673); boxes 18347898; Eround 8.61e-12 [94s]

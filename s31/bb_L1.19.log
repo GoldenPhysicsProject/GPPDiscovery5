@@ -1,0 +1,26 @@
+L1.19_D4: L=1.19 primes=[2, 3, 5, 7] chars=168 all invisible; min(|k.logp|-2L)=7.674e-02
+  it 1: boxes 2048 keep 2048 best F 3.324576 max ub 37.202797 min d 3.93e-01
+  it 2: boxes 4096 keep 4096 best F 3.325773 max ub 21.491282 min d 1.96e-01
+  it 3: boxes 8192 keep 8189 best F 3.325773 max ub 16.550151 min d 9.82e-02
+  it 4: boxes 16378 keep 16032 best F 3.335342 max ub 12.581233 min d 9.82e-02
+  it 5: boxes 32064 keep 30029 best F 3.335342 max ub 9.921510 min d 9.82e-02
+  it 6: boxes 60058 keep 52184 best F 3.335342 max ub 7.823537 min d 9.82e-02
+  it 7: boxes 104368 keep 87561 best F 3.368912 max ub 6.683544 min d 4.91e-02
+  it 8: boxes 175122 keep 135149 best F 3.383580 max ub 5.705560 min d 4.91e-02
+  it 9: boxes 270298 keep 201883 best F 3.388412 max ub 5.030027 min d 2.45e-02
+  it 10: boxes 403766 keep 274916 best F 3.394087 max ub 4.481406 min d 2.45e-02
+  it 11: boxes 549832 keep 369852 best F 3.394087 max ub 4.187965 min d 2.45e-02
+  it 12: boxes 739704 keep 444490 best F 3.394087 max ub 3.931210 min d 2.45e-02
+  it 13: boxes 888980 keep 523797 best F 3.394087 max ub 3.792895 min d 1.23e-02
+  it 14: boxes 1047594 keep 503193 best F 3.394087 max ub 3.669296 min d 1.23e-02
+  it 15: boxes 1006386 keep 470228 best F 3.396617 max ub 3.590434 min d 1.23e-02
+  it 16: boxes 940456 keep 256512 best F 3.396767 max ub 3.531546 min d 1.23e-02
+  it 17: boxes 513024 keep 68190 best F 3.397786 max ub 3.495517 min d 6.14e-03
+  it 18: boxes 136380 keep 10982 best F 3.397786 max ub 3.465075 min d 6.14e-03
+  it 19: boxes 21964 keep 4607 best F 3.397786 max ub 3.447099 min d 6.14e-03
+  it 20: boxes 9214 keep 3040 best F 3.398077 max ub 3.431492 min d 6.14e-03
+  it 21: boxes 6080 keep 2143 best F 3.398077 max ub 3.422943 min d 6.14e-03
+  it 22: boxes 4286 keep 992 best F 3.398233 max ub 3.415333 min d 3.07e-03
+  it 23: boxes 1984 keep 253 best F 3.398422 max ub 3.410716 min d 3.07e-03
+  it 24: boxes 506 keep 0 best F 3.398537 max ub 3.406830 min d 3.07e-03
+L1.19_D4: sup_torus (B-m) <= 3.4086 (best sample 3.398537); boxes 6942780; Eround 8.47e-12 [37s]
