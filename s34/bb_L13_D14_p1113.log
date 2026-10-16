@@ -1,0 +1,19 @@
+SUBSET mode: remaining primes [2, 3, 5, 7] must be bounded separately (s31_merge_p11.py)
+L1.3_D14: L=1.3 primes=[11, 13] chars=191 all invisible; min(|k.logp|-2L)=1.320e-01
+  it 1: boxes 32 keep 32 best F 1.198537 max ub 88.123837 min d 3.93e-01
+  it 2: boxes 64 keep 64 best F 1.198807 max ub 54.070030 min d 1.96e-01
+  it 3: boxes 128 keep 128 best F 1.198807 max ub 24.130120 min d 1.96e-01
+  it 4: boxes 256 keep 250 best F 1.198807 max ub 14.141925 min d 9.82e-02
+  it 5: boxes 500 keep 483 best F 1.199073 max ub 6.942766 min d 9.82e-02
+  it 6: boxes 966 keep 931 best F 1.199187 max ub 4.422479 min d 4.91e-02
+  it 7: boxes 1862 keep 1744 best F 1.199189 max ub 2.545287 min d 4.91e-02
+  it 8: boxes 3488 keep 3312 best F 1.199189 max ub 1.951201 min d 2.45e-02
+  it 9: boxes 6624 keep 6326 best F 1.199796 max ub 1.526771 min d 2.45e-02
+  it 10: boxes 12652 keep 12225 best F 1.200016 max ub 1.384113 min d 1.23e-02
+  it 11: boxes 24450 keep 23092 best F 1.200122 max ub 1.279481 min d 1.23e-02
+  it 12: boxes 46184 keep 43783 best F 1.200218 max ub 1.245715 min d 6.14e-03
+  it 13: boxes 87566 keep 74042 best F 1.200275 max ub 1.220026 min d 6.14e-03
+  it 14: boxes 148084 keep 111592 best F 1.200275 max ub 1.211751 min d 3.07e-03
+  it 15: boxes 223184 keep 83 best F 1.200355 max ub 1.205222 min d 3.07e-03
+  it 16: boxes 166 keep 0 best F 1.200367 max ub 1.203161 min d 1.53e-03
+L1.3_D14: sup_torus (B-m) <= 1.2044 (best sample 1.200367); boxes 556206; Eround 1.15e-11 [4s]

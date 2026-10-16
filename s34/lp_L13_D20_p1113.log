@@ -1,0 +1,4 @@
+L=1.3 D=20 primes=[11, 13] vis=2 chars=383 per_prime_raw=2.8688
+  round 0: LP s=1.181337 true>=1.222302 pts=15000 [87s]
+  round 1: LP s=1.181387 true>=1.197681 pts=18000 [188s]
+DONE
