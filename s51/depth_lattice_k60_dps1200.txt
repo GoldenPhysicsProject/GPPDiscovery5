@@ -1,0 +1,3 @@
+mode lattice:1 dps 1200 K 3000 NMAX 120
+k  gamma   N_below+2  spacing | delta : N*  (pivot sign at N*, scaled)
+60 60.0 61 1.0 | 0.05sp=0.05:100

@@ -1,0 +1,6 @@
+mode zeta dps 500 K 3000 NMAX 90
+k  gamma   N_below+2  spacing | delta : N*  (pivot sign at N*, scaled)
+4 30.4249 5 3.983 | 0.05sp=0.199:11  0.2sp=0.797:9(off-strip model)  0.45sp=1.79:8(off-strip model)  abs0.1=0.1:12  abs0.4=0.4:10
+10 49.7738 11 3.036 | 0.05sp=0.152:23  0.2sp=0.607:21(off-strip model)  0.45sp=1.37:19(off-strip model)  abs0.1=0.1:23  abs0.4=0.4:22
+21 79.3374 22 2.478 | 0.05sp=0.124:43  0.2sp=0.496:40  0.45sp=1.11:38(off-strip model)  abs0.1=0.1:43  abs0.4=0.4:41
+37 116.227 38 2.153 | 0.05sp=0.108:71  0.2sp=0.431:69  0.45sp=0.969:66(off-strip model)  abs0.1=0.1:71  abs0.4=0.4:69

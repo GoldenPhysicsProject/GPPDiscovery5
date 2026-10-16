@@ -1,0 +1,3 @@
+mode zeta dps 1600 K 3000 NMAX 200
+k  gamma   N_below+2  spacing | delta : N*  (pivot sign at N*, scaled)
+100 236.524 101 1.732 | abs0.1=0.1:182

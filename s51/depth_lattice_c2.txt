@@ -1,0 +1,6 @@
+mode lattice:2 dps 300 K 3000 NMAX 90
+k  gamma   N_below+2  spacing | delta : N*  (pivot sign at N*, scaled)
+8 16.0 9 2.0 | 0.05sp=0.1:15  0.2sp=0.4:14  0.45sp=0.9:12(off-strip model)  abs0.1=0.1:15  abs0.4=0.4:14
+15 30.0 16 2.0 | 0.05sp=0.1:27  0.2sp=0.4:25  0.45sp=0.9:23(off-strip model)  abs0.1=0.1:27  abs0.4=0.4:25
+25 50.0 26 2.0 | 0.05sp=0.1:43  0.2sp=0.4:41  0.45sp=0.9:39(off-strip model)  abs0.1=0.1:43  abs0.4=0.4:41
+40 80.0 41 2.0 | 0.05sp=0.1:55  0.2sp=0.4:56  0.45sp=0.9:54(off-strip model)  abs0.1=0.1:57  abs0.4=0.4:57

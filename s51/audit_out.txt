@@ -1,0 +1,46 @@
+== (iii-a) first-five brackets vs Arb-certified zeros (acb.zeta_zeros, on line) ==
+1 [14.13472514173469379045725 +/- 1.99e-24] in ('14.13', '14.14') CERTIFIED | Z(a)=[-0.0037463 +/- 3.84e-8] Z(b)=[0.0041856 +/- 1.90e-8] signchange=True | lo-gap 0.004725 hi-gap 0.005275
+2 [21.02203963877155499262848 +/- 4.07e-25] in ('21.02', '21.03') CERTIFIED | Z(a)=[0.0023190 +/- 9.89e-9] Z(b)=[-0.0090458 +/- 9.68e-9] signchange=True | lo-gap 0.00204 hi-gap 0.00796
+3 [25.01085758014568876321379 +/- 9.93e-25] in ('25.01', '25.02') CERTIFIED | Z(a)=[-0.0011762 +/- 3.02e-8] Z(b)=[0.012556 +/- 3.62e-7] signchange=True | lo-gap 0.0008576 hi-gap 0.009142
+4 [30.42487612585951321031190 +/- 2.47e-24] in ('30.42', '30.43') CERTIFIED | Z(a)=[0.0063652 +/- 1.72e-8] Z(b)=[-0.0066734 +/- 2.08e-8] signchange=True | lo-gap 0.004876 hi-gap 0.005124
+5 [32.93506158773918969066237 +/- 1.04e-24] in ('32.93', '32.94') CERTIFIED | Z(a)=[-0.0069863 +/- 4.91e-8] Z(b)=[0.0068345 +/- 4.83e-8] signchange=True | lo-gap 0.005062 hi-gap 0.004938
+== (iii-b) Codex Lagrange/Frobenius bound recomputed independently (exact Fractions) ==
+N=3  Codex-style upper ||V^-1||_F^2 = 1.370573e+17  (true 1.357518e+17, ratio 1.010) ; true lambda_min(G_N, first N zeros) = 7.3663867e-18 ; 1/||V^-1||_F^2 = 7.3664e-18
+N=4  Codex-style upper ||V^-1||_F^2 = 4.813965e+23  (true 4.747021e+23, ratio 1.014) ; true lambda_min(G_N, first N zeros) = 2.1065845e-24 ; 1/||V^-1||_F^2 = 2.1066e-24
+N=5  Codex-style upper ||V^-1||_F^2 = 1.015826e+31  (true 9.962658e+30, ratio 1.020) ; true lambda_min(G_N, first N zeros) = 1.0037482e-31 ; 1/||V^-1||_F^2 = 1.0037e-31
+Codex asserts: inv4<5e23, inv5<2e31 -> True True
+== (ii) tail sum_{gamma>H} gamma^-4 ==
+log H = 28.729633
+2/H^2 = 2.2222e-25 ; (4logH/3+4/9)/H^3 = 1.4352e-36 ; 41/H^3 = 1.5185e-36
+Rosser upper N(H) = 1.236240e+13 ; H log H = 8.618890e+13 ; H^2 = 9.000e+24
+main-term tail int_H^inf (1/2pi)log(t/2pi) t^-4 dt = 5.34939e-38 (= ~1.44/H^3)
+needed: H5 margin 1/(2e31)-4e-32 = 1e-32 -> need 5*S <= 1e-32, S<=2e-33; N(t)<=t^2 gives 2.2e-25 (FAILS for H5), t^1.5 gives 1.03e-31
+== (iv) actual h_n: Phi-moment (zero-free) vs zero sums ==
+h_0  Phi: 0.023104993115418970789   zeros+tail: 0.023105043258087713421   rel diff 2.17e-06
+h_1  Phi: 0.000037172599285269686165   zeros+tail: 0.000037172599289286101098   rel diff 1.08e-10
+h_2  Phi: 1.441739314009732797e-7   zeros+tail: 1.4417393140097360141e-7   rel diff 2.23e-15
+h_3  Phi: 6.6303168025299086987e-10   zeros+tail: 6.630316802529908699e-10   rel diff 3.89e-20
+h_4  Phi: 3.2136641506166012161e-12   zeros+tail: 3.2136641506166012161e-12   rel diff 6.42e-25
+h_5  Phi: 1.5876934514910153519e-14   zeros+tail: 1.5876934514910153519e-14   rel diff 1.04e-29
+h_6  Phi: 7.9033257240467379111e-17   zeros+tail: 7.9033257240467379111e-17   rel diff 1.68e-34
+h_7  Phi: 3.9464713999988461338e-19   zeros+tail: 3.9464713999988461338e-19   rel diff 2.69e-39
+det H3 (Phi) = 3.11996029e-31 ; Codex 3.11996028999615e-31
+h1*h5-h3^2 (Phi) = 1.50575915582e-19 ; Codex 1.50575915582118e-19
+N= 3 lambda_min(H_N): Phi-moment 8.081467038e-17 | zero-sum 8.081467053e-17
+N= 4 lambda_min(H_N): Phi-moment 2.962091608e-23 | zero-sum 2.962091621e-23
+N= 5 lambda_min(H_N): Phi-moment 8.510640957e-30 | zero-sum 8.510641019e-30
+N= 6 lambda_min(H_N): Phi-moment 1.572800491e-36 | zero-sum 1.572800512e-36
+N= 7 lambda_min(H_N): Phi-moment 1.397722374e-43 | zero-sum 1.397722407e-43
+N= 8 lambda_min(H_N): Phi-moment 1.050392547e-50 | zero-sum 1.05039258e-50
+N= 9 lambda_min(H_N): Phi-moment 8.502137152e-58 | zero-sum 8.50213753e-58
+N=10 lambda_min(H_N): Phi-moment 4.287941377e-65 | zero-sum 4.287941658e-65
+== CERTIFIED extension: G_K (K Arb-certified on-line zeros) > c I by Sylvester on G_K - cI ==
+S4 bound via N(t)<=(t/2pi)log t: [2.28420e-37 +/- 4.85e-43] ; via N(t)<=t log t: 41/H^3 = [1.51852e-36 +/- 1.49e-42]
+N= 3 lambda_min(G_K)~8.0814368e-17 ; certified G_K > [7.27329e-17 +/- 3.13e-23] I: True ; minus tail 2.284e-37 -> H_N > [7.27329e-17 +/- 3.13e-23] I : True
+N= 4 lambda_min(G_K)~2.9620669e-23 ; certified G_K > [2.66586e-23 +/- 1.98e-30] I: True ; minus tail 2.284e-37 -> H_N > [2.66586e-23 +/- 1.98e-30] I : True
+N= 5 lambda_min(G_K)~8.5105185e-30 ; certified G_K > [7.65947e-30 +/- 3.32e-36] I: True ; minus tail 2.284e-37 -> H_N > [7.65947e-30 +/- 3.55e-36] I : True
+N= 6 lambda_min(G_K)~1.5727583e-36 ; certified G_K > [1.41548e-36 +/- 2.44e-42] I: True ; minus tail 2.284e-37 -> H_N > [1.18706e-36 +/- 1.95e-42] I : True
+N= 7 lambda_min(G_K)~1.3976571e-43 ; certified G_K > [1.25789e-43 +/- 1.44e-49] I: True ; minus tail 2.284e-37 -> H_N > [-2.28420e-37 +/- 3.60e-43] I : False
+N= 8 lambda_min(G_K)~1.0503264e-50 ; certified G_K > [9.45294e-51 +/- 2.03e-57] I: True ; minus tail 2.284e-37 -> H_N > [-2.28420e-37 +/- 4.85e-43] I : False
+N= 9 lambda_min(G_K)~8.5013825e-58 ; certified G_K > [7.65124e-58 +/- 4.29e-64] I: True ; minus tail 2.284e-37 -> H_N > [-2.28420e-37 +/- 4.85e-43] I : False
+N=10 lambda_min(G_K)~4.2873808e-65 ; certified G_K > [3.85864e-65 +/- 2.73e-71] I: True ; minus tail 2.284e-37 -> H_N > [-2.28420e-37 +/- 4.85e-43] I : False
