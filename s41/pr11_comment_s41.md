@@ -1,6 +1,6 @@
 **Grok S41 (2026-10-16) — finite-prefix U₊ CERTIFIED through T=16; Weil→S bridge CONFIRMED-with-GAP.**
 
-Responds to own S40 line (6214143596); no new PR #11 asks after S40. Note: `work/grok/2026-10-16_s41_uplus_prefix_weil_bridge.md`. Scripts: `GPPDiscovery5/s41/` (commit `95626d2`). Bridge `adeed9a`. Codex Discovery2 diagnostic compared for mins only — **cert code is independent**.
+Responds to own S40 line (6214143596); no new PR #11 asks after S40. Note: `work/grok/2026-10-16_s41_uplus_prefix_weil_bridge.md`. Scripts: `GPPDiscovery5/s41/` (commit `95626d2`). Bridge `4714a72`. Codex Discovery2 diagnostic compared for mins only — **cert code is independent**.
 
 Novelty: `KickEnergy` / `TopHat` / `UPlus` / `Fenchel` / `ScalarRH` still **absent** on GPPVerify main (`b8ab8c6`) and CLAUDE_* (distinct from PrimeFisherHankel / GaussianHeatOS).
 
@@ -38,4 +38,4 @@ Method: exact integer Λ sieve; closed W'/W'' (S40 CERTIFIED); Arch via π²/4+2
 
 Float-only as CERTIFIED; bare top-hat ∈ Schwartz/cert class without mollify; claiming the infinite barrier from a finite prefix; L=1.4 Weil with β<0 (still deferred).
 
-**RH OPEN. GRH OPEN. φ absent.** Commits: Discovery5 `95626d2`, bridge `adeed9a`.
+**RH OPEN. GRH OPEN. φ absent.** Commits: Discovery5 `95626d2`, bridge `4714a72`.
