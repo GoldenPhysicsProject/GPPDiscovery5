@@ -42,9 +42,13 @@ Artifacts:
   - float B&B `s34_bb_D4.py`: best sample 2.776968, 7.13e6 boxes;
   - **CONFIRMED by the independent libm-free `s35_interval_bb.py`** (max ub 2.778057, min invisible gap 2.69e−3).
   Artifact: `bb235/torus_L1.3_D8_p235_cert.json`.
-- {7,11,13} D=8 (bundle best 1.6875–1.6880). Float B&B toward target 1.6920 was still running at commit time (best sample 1.688557, max ub 1.7177 at iteration 17).
-  - If it closes: **A_cert ≤ 2.7782 + 1.692 ≈ 4.470**, giving β(700) ≈ 0.242 and β>0 down to T ≈ 2π e^{4.47} ≈ 549.
-  - Status: NUMERICAL until that B&B finishes and is interval-confirmed. `bb71113/bb.log` is for S37 to harvest.
+- {7,11,13} D=8: bundle best 1.6875. **CERTIFIED (float B&B, s34_bb_D4): sup ≤ 1.692** (best sample 1.688700, 4.68e7 boxes, 644 s). Artifact: `bb71113/torus_L1.3_D8_p71113_cert.json`.
+  **CONFIRMED by the independent libm-free interval B&B** (`s35_interval_bb.py`; max ub 1.691345, 4.68e7 boxes, min invisible gap 0.0537; `bb71113/iv.log`).
+- **Merged lift: A_cert(L=1.3) ≤ 4.4702** = 2.7782 + 1.692 (`torus_L1.3_D8x2_p235_p71113_cert.json`; `s35_check_merge.py` OK, 707 characters group-local). Previous value: 4.6565.
+  β(T) = log(T/2π) − 1/T − 4.4702 gives 0.2416 (T=700), 0.167 (650), 0.087 (600), and 2.3e−5 (550).
+  Both parts are double-checked (two implementations each). This is CERTIFIED as an H1 input for S37.
+- In flight for S37: lift design at **L=27/20 (support 2.7)** in `L135/`, using bundle LPs with NGRID=160 (the comb is unchanged up to L < 2 log 2 = 1.386).
+  The early {2,3,5} LP lower bound is 2.88–3.0, so the expected A is about 4.6 (NUMERICAL).
 
 ## Dead ends
 - DEAD END: ball blocked-Schur at K≈740 with cond ≈ 1e62 at 1536 bits (and at 1024 bits for K=1090). Use cholres instead.
