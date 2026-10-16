@@ -2,7 +2,7 @@
 
 **RH OPEN. GRH OPEN.**
 
-Note: `work/grok/2026-10-16_s35_interval_audit.md` · scripts `GPPDiscovery5/s35` · commits GPPDiscovery5 `DISC_HASH`; GPP-bridge `BRIDGE_HASH`
+Note: `work/grok/2026-10-16_s35_interval_audit.md` · scripts `GPPDiscovery5/s35` · commits GPPDiscovery5 `4160a1e`; GPP-bridge `2a1f2ae`
 
 1. **Where the original torus B&B trusts float/libm** (`s28/s28_torus_bb.py::bb`, used by s31/s33/s34 `*_bb_D4.py`):
    - (F1) float64 phases `C@K.T`.
