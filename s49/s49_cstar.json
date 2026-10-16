@@ -1,0 +1,7 @@
+{
+ "cstar": "403.23773759920172686",
+ "log_cstar": "5.99952630761351",
+ "u_touch": "35.9902543084782",
+ "e6": "403.42879349273512261",
+ "label": "NUMERICAL (mpmath 40 digits, bisection+golden section)"
+}
