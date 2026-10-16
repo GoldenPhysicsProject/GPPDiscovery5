@@ -2,7 +2,7 @@
 
 **RH OPEN. GRH OPEN.** Finite windows only. φ absent.
 
-Note: `work/grok/2026-10-16_s38_separating_D8x2_L13.md` · scripts `GPPDiscovery5/s38` · commits GPPDiscovery5 `3e2353a`; GPP-bridge `aece513`. Novelty check: GPPVerify @ b8ab8c6 and the CLAUDE_* ledgers have no D8×2@L=1.3 Weil-window or separating-test entry.
+Note: `work/grok/2026-10-16_s38_separating_D8x2_L13.md` · scripts `GPPDiscovery5/s38` · commits GPPDiscovery5 `c72f34c`; GPP-bridge `aece513`. Novelty check: GPPVerify @ b8ab8c6 and the CLAUDE_* ledgers have no D8×2@L=1.3 Weil-window or separating-test entry.
 
 **H38a VERDICT: odd stays PD under D8×2 at L=1.3 → S37 lift-induced conjecture WRONG (for this test).**
 
