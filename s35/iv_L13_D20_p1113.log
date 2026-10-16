@@ -1,0 +1,40 @@
+../s34/torus_L1.3_D20_cert.json: n=2 terms=385 (vis 2); invisibility (mpmath, independent) OK at L=13/10, min gap 1.3200e-01
+  Arb table N=2^20 built [2s]
+  it 1: boxes 1 kept 1 best_lo 1.180231 max ub 8475.683116 min w 262144
+  it 2: boxes 2 kept 2 best_lo 1.180432 max ub 3604.127341 min w 131072
+  it 3: boxes 4 kept 4 best_lo 1.180432 max ub 2068.624631 min w 131072
+  it 4: boxes 8 kept 8 best_lo 1.181429 max ub 920.428808 min w 65536
+  it 5: boxes 16 kept 16 best_lo 1.181429 max ub 530.253929 min w 65536
+  it 6: boxes 32 kept 32 best_lo 1.181549 max ub 250.682276 min w 32768
+  it 7: boxes 64 kept 64 best_lo 1.181549 max ub 144.088644 min w 32768
+  it 8: boxes 128 kept 128 best_lo 1.181549 max ub 65.049552 min w 16384
+  it 9: boxes 256 kept 256 best_lo 1.182285 max ub 38.833685 min w 16384
+  it 10: boxes 512 kept 504 best_lo 1.184141 max ub 17.256514 min w 8192
+  it 11: boxes 1008 kept 987 best_lo 1.184141 max ub 10.292391 min w 8192
+  it 12: boxes 1974 kept 1905 best_lo 1.196423 max ub 5.090765 min w 4096
+  it 13: boxes 3810 kept 3684 best_lo 1.196423 max ub 3.375151 min w 4096
+  it 14: boxes 7368 kept 7116 best_lo 1.196423 max ub 2.135660 min w 2048
+  it 15: boxes 14232 kept 13841 best_lo 1.196423 max ub 1.717025 min w 2048
+  it 16: boxes 27682 kept 26799 best_lo 1.196745 max ub 1.421883 min w 1024
+  it 17: boxes 53598 kept 52115 best_lo 1.197211 max ub 1.325688 min w 1024
+  it 18: boxes 104230 kept 98014 best_lo 1.197623 max ub 1.253816 min w 512
+  it 19: boxes 196028 kept 174764 best_lo 1.197650 max ub 1.229609 min w 512
+  it 20: boxes 349528 kept 196 best_lo 1.197650 max ub 1.211700 min w 256
+  it 21: boxes 392 kept 97 best_lo 1.197650 max ub 1.205683 min w 256
+  it 22: boxes 194 kept 0 best_lo 1.197677 max ub 1.201165 min w 256
+{
+ "ok": true,
+ "cert": "../s34/torus_L1.3_D20_cert.json",
+ "target": 1.2017,
+ "L": "13/10",
+ "best_lower": 1.1976765866669068,
+ "boxes": 761067,
+ "iters": 22,
+ "M": 20,
+ "min_halfwidth_rad": 0.0015339807878856414,
+ "EF": 1.8888707802743765e-12,
+ "Eg_max": 6.84058851346661e-12,
+ "min_invisible_gap": 0.13200344212470294,
+ "elapsed_s": 8.909761190414429,
+ "method": "s35_interval_bb: exact-integer phases + Arb cos/sin table (no libm), a-priori IEEE sum bounds, 2nd-order Taylor B&B"
+}

@@ -1,1 +1,6 @@
 L=1.3 D=8 primes=[7, 11, 13] vis=3 chars=365 per_prime_raw=4.3397
+  round 0: LP s=1.682852 true>=1.767136 pts=15000 [86s]
+  round 1: LP s=1.683855 true>=1.724156 pts=18000 [183s]
+  round 2: LP s=1.684349 true>=1.704822 pts=21000 [297s]
+  round 3: LP s=1.685414 true>=1.705758 pts=24000 [2387s]
+DONE

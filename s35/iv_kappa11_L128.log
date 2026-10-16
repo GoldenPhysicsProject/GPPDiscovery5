@@ -1,0 +1,28 @@
+kappa11_L1.28_src.json: n=1 terms=12 (vis 1); invisibility (mpmath, independent) OK at L=32/25, min gap 2.2358e+00
+  Arb table N=2^20 built [2s]
+  it 1: boxes 1 kept 1 best_lo 0.741586 max ub 188.544657 min w 131072
+  it 2: boxes 2 kept 2 best_lo 0.741586 max ub 47.906592 min w 65536
+  it 3: boxes 4 kept 4 best_lo 0.741586 max ub 16.966361 min w 32768
+  it 4: boxes 8 kept 8 best_lo 0.741586 max ub 4.039884 min w 16384
+  it 5: boxes 16 kept 14 best_lo 0.741586 max ub 1.704651 min w 8192
+  it 6: boxes 28 kept 27 best_lo 0.741586 max ub 0.946782 min w 4096
+  it 7: boxes 54 kept 51 best_lo 0.741586 max ub 0.790480 min w 2048
+  it 8: boxes 102 kept 92 best_lo 0.741586 max ub 0.753719 min w 1024
+  it 9: boxes 184 kept 125 best_lo 0.741586 max ub 0.744693 min w 512
+  it 10: boxes 250 kept 0 best_lo 0.741586 max ub 0.742338 min w 512
+{
+ "ok": true,
+ "cert": "kappa11_L1.28_src.json",
+ "target": 0.7425,
+ "L": "32/25",
+ "best_lower": 0.7415857656943527,
+ "boxes": 649,
+ "iters": 10,
+ "M": 20,
+ "min_halfwidth_rad": 0.0030679615757712828,
+ "EF": 1.3644693017052547e-14,
+ "Eg_max": 5.499453497933684e-14,
+ "min_invisible_gap": 2.2357905455967413,
+ "elapsed_s": 1.531843662261963,
+ "method": "s35_interval_bb: exact-integer phases + Arb cos/sin table (no libm), a-priori IEEE sum bounds, 2nd-order Taylor B&B"
+}

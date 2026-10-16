@@ -1,1 +1,37 @@
 L=13/10 T=1000 K=1090 comb=[2, 3, 4, 5, 7, 8, 9, 11, 13] A=4.771800 beta=0.297078 lift_terms=210
+M_S <= 13053.8953  M0 <= 21.0624 [142s]
+assembly done: 2000 panels x 70 nodes [5663s]
+ parity 0: lam_est=5.246490193685321e-62 rE=3.877e-62 quad/entry=3.557e-65 [81s]
+ schur_prec=1024 bs_list=[48, 32, 64, 24]
+  try bs=48 fac=0.999 l0=5.241000e-62 -> False
+  try bs=48 fac=0.99 l0=5.194000e-62 -> False
+  try bs=48 fac=0.95 l0=4.984000e-62 -> False
+  try bs=48 fac=0.8 l0=4.197000e-62 -> False
+  try bs=48 fac=0.5 l0=2.623000e-62 -> False
+  try bs=32 fac=0.999 l0=5.241000e-62 -> False
+  try bs=32 fac=0.99 l0=5.194000e-62 -> False
+  try bs=32 fac=0.95 l0=4.984000e-62 -> False
+  try bs=32 fac=0.8 l0=4.197000e-62 -> False
+  try bs=32 fac=0.5 l0=2.623000e-62 -> False
+  try bs=64 fac=0.999 l0=5.241000e-62 -> False
+  try bs=64 fac=0.99 l0=5.194000e-62 -> False
+  try bs=64 fac=0.95 l0=4.984000e-62 -> False
+  try bs=64 fac=0.8 l0=4.197000e-62 -> False
+  try bs=64 fac=0.5 l0=2.623000e-62 -> False
+  try bs=24 fac=0.999 l0=5.241000e-62 -> False
+  try bs=24 fac=0.99 l0=5.194000e-62 -> False
+  try bs=24 fac=0.95 l0=4.984000e-62 -> False
+  try bs=24 fac=0.8 l0=4.197000e-62 -> False
+  try bs=24 fac=0.5 l0=2.623000e-62 -> False
+{"parity": "even", "degs": [0, 2178], "nodes": 140000, "quad_err_entry": 3.5565864341092245e-65, "lam_est": 5.246490193685321e-62, "normE_bound": 3.8766792198192507e-62, "lam0_schur": null, "first_omitted_degree": 2180, "eps_B": 2.3561449740517605e-143, "eps_CDD": 1.340872753937373e-296, "lamD_lower": 0.29707821257279154} [650s]
+ parity 1: lam_est=4.724086874810166e-58 rE=3.878e-62 quad/entry=3.558e-65 [78s]
+ schur_prec=1024 bs_list=[48, 32, 64, 24]
+  try bs=48 fac=0.999 l0=4.719000e-58 -> False
+  try bs=48 fac=0.99 l0=4.677000e-58 -> False
+  try bs=48 fac=0.95 l0=4.488000e-58 -> False
+  try bs=48 fac=0.8 l0=3.779000e-58 -> False
+  try bs=48 fac=0.5 l0=2.362000e-58 -> False
+  try bs=32 fac=0.999 l0=4.719000e-58 -> False
+  try bs=32 fac=0.99 l0=4.677000e-58 -> False
+  try bs=32 fac=0.95 l0=4.488000e-58 -> False
+  try bs=32 fac=0.8 l0=3.779000e-58 -> False

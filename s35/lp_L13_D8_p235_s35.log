@@ -1,0 +1,9 @@
+L=1.3 D=8 primes=[2, 3, 5] vis=6 chars=342 per_prime_raw=5.6040
+  round 0: LP s=2.736161 true>=3.273572 pts=15000 [96s]
+  round 1: LP s=2.737108 true>=3.183204 pts=18000 [184s]
+  round 2: LP s=2.737530 true>=3.034923 pts=21000 [280s]
+  round 3: LP s=2.738164 true>=2.968755 pts=24000 [388s]
+  round 4: LP s=2.738383 true>=2.892654 pts=27000 [502s]
+  round 5: LP s=2.738945 true>=2.930420 pts=30000 [633s]
+  round 6: LP s=2.739229 true>=2.932570 pts=33000 [791s]
+  round 7: LP s=2.739684 true>=2.907486 pts=36000 [947s]
