@@ -35,3 +35,15 @@ assembly done: 2000 panels x 70 nodes [5663s]
   try bs=32 fac=0.99 l0=4.677000e-58 -> False
   try bs=32 fac=0.95 l0=4.488000e-58 -> False
   try bs=32 fac=0.8 l0=3.779000e-58 -> False
+  try bs=32 fac=0.5 l0=2.362000e-58 -> False
+  try bs=64 fac=0.999 l0=4.719000e-58 -> False
+  try bs=64 fac=0.99 l0=4.677000e-58 -> False
+  try bs=64 fac=0.95 l0=4.488000e-58 -> False
+  try bs=64 fac=0.8 l0=3.779000e-58 -> False
+  try bs=64 fac=0.5 l0=2.362000e-58 -> False
+  try bs=24 fac=0.999 l0=4.719000e-58 -> False
+  try bs=24 fac=0.99 l0=4.677000e-58 -> False
+  try bs=24 fac=0.95 l0=4.488000e-58 -> False
+  try bs=24 fac=0.8 l0=3.779000e-58 -> False
+  try bs=24 fac=0.5 l0=2.362000e-58 -> False
+{"parity": "odd", "degs": [1, 2179], "nodes": 140000, "quad_err_entry": 3.5582190191145535e-65, "lam_est": 4.724086874810166e-58, "normE_bound": 3.8784587356090875e-62, "lam0_schur": null, "first_omitted_degree": 2181, "eps_B": 2.357222907830195e-143, "eps_CDD": 1.340872753937373e-296, "lamD_lower": 0.29707821257279154} [809s]

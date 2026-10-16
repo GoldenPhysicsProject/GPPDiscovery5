@@ -61,14 +61,14 @@ H1 is now double-checked by two independent implementations. H2 is single-implem
 ## 5. Harvest PID 81147 (L=13/10, T=1000, K=1090, A=4.7718, β=0.2971)
 Assembly finished after 5663 s.
 - EVEN: **FAILED** (lam0_schur null). lam_est 5.2465e−62, rE 3.877e−62, all 20 Schur@1024 tries False.
-- ODD: lam_est 4.7241e−58, rE 3.878e−62. Every Schur@1024 try logged so far was False; the remaining tries were running at commit.
+- ODD: **FAILED**. All 20 Schur@1024 tries were False (lam0_schur null); lam_est 4.7241e−58, rE 3.878e−62. JSON `../s33/cert_L13_T1000_schurboost_p384s1024.json`. PID 81147 has exited.
 - **No support-2.6 certificate.** The bottleneck is ball-Schur precision at K=1090: the odd sector fails even with λ/rE ≈ 1.2e4.
 - LESSON: use `--dump_atil` on long runs.
 - DEAD END: Schur@1024 at K=1090.
 
 ## 6. Secondary (NUMERICAL)
 3+3 D=8 regrouping at L=1.3: {2,3,5} A_true ≥ 2.9688 (LP 2.7382, unconverged) and {7,11,13} A_true ≥ 1.7058, so this lift is ≥ 4.6745 > 4.6565. It does **not** beat S34 as is.
-The LP values (2.738 + 1.685 = 4.423) suggest that a converged {2,3,5} D=8 lift could reach about 4.45. A {2,3,5} LP continuation ran in the background (`lp_L13_D8_p235_s35.log`).
+The LP values (2.738 + 1.685 = 4.423) suggest that a converged {2,3,5} D=8 lift could reach about 4.45. The S35 continuation (10 rounds, 1291 s, `lp_L13_D8_p235_s35.*`) is still unconverged: LP s = 2.7405, sampled true max oscillating 2.87–3.05. So the current exchange-LP does not converge in 3D at D=8, and a better optimizer is needed.
 
 ## Dead ends
 - None new for the audit (all five envelopes CONFIRMED).
