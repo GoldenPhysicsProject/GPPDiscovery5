@@ -1,0 +1,22 @@
+{
+  "H39c": "L=1.4 D8x2 float LP harvest (NUMERICAL, NGRID=64, ~3min/bundle, warm-start L=1.35)",
+  "bundles": {
+    "D8_{2,3,5}": {
+      "A_true": 3.465122601364591,
+      "A_lp": 3.396265784582268,
+      "file": "L14/bundle_p235_L14.json"
+    },
+    "D8_{7,11,13}": {
+      "A_true": 1.9926617222443526,
+      "A_lp": 1.978384765008541,
+      "file": "L14/bundle_p71113_L14.json"
+    }
+  },
+  "A_sum_numerical": 5.457784323608944,
+  "beta_700_rule": "beta \u2248 4.7118 - A (from S36\u2013S38 at T=700)",
+  "beta_700_est": -0.7459843236089441,
+  "viable_beta_ge_0.05": false,
+  "decision": "DEFER full Weil cert at L=1.4/T=700 \u2014 \u03b2 deeply negative. Need better lift (higher D, different split, or T\u226b700) or odd@L=1.35 diagnosis instead.",
+  "note": "LPs still accepting at budget end; further float improvement unlikely to close 5.46\u21924.66 gap (~0.8). Not interval-certified.",
+  "status": "NUMERICAL_DESIGN; no B&B; no Weil cert"
+}

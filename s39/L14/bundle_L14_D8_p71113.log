@@ -1,0 +1,14 @@
+L=1.4 D=8 primes=[7, 11, 13] chars=362
+init true max 2.332919 [2s]
+ it 0: LP 1.998870 true 2.527628 best 2.332919 rej r=0.025 pts=9000 [21s]
+ it 1: LP 2.094221 true 2.313302 best 2.313302 ACC r=0.0375 pts=5695 [29s]
+ it 2: LP 1.973870 true 2.613090 best 2.313302 rej r=0.01875 pts=7337 [41s]
+ it 3: LP 2.028491 true 2.125649 best 2.125649 ACC r=0.02813 pts=8837 [54s]
+ it 4: LP 1.955896 true 2.211391 best 2.125649 rej r=0.01406 pts=10824 [73s]
+ it 5: LP 1.991866 true 2.142884 best 2.125649 rej r=0.007031 pts=12324 [93s]
+ it 6: LP 2.012529 true 2.039299 best 2.039299 ACC r=0.01055 pts=13790 [111s]
+ it 7: LP 1.984608 true 2.045447 best 2.039299 rej r=0.005273 pts=15790 [134s]
+ it 8: LP 1.998350 true 2.011591 best 2.011591 ACC r=0.00791 pts=17290 [161s]
+ it 9: LP 1.978385 true 1.992662 best 1.992662 ACC r=0.01187 pts=19290 [193s]
+DONE best 1.9926617222443526
+DONE711
