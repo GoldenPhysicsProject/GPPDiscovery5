@@ -1,0 +1,59 @@
+{
+  "spots": [
+    {
+      "t": "1.0",
+      "Pole_t2": "1.021007721651046281809801",
+      "A_Prime_t2": "0.1503974875511986637818024",
+      "S_enclosure": [
+        "0.04400730523685253189203326",
+        "0.04400730523685253189203326"
+      ],
+      "S_mid": "0.04400730523685253189203326",
+      "Q_proxy_S_over_t_half": "0.08801461047370506378406653",
+      "tail": "8.375432044e-180"
+    },
+    {
+      "t": "0.69314718055994528623",
+      "Pole_t2": "0.4852813742385702600138578",
+      "A_Prime_t2": "0.0",
+      "S_enclosure": [
+        "0.06355558603757040902143327",
+        "0.06355558603757040902143327"
+      ],
+      "S_mid": "0.06355558603757040902143327",
+      "Q_proxy_S_over_t_half": "0.183382657594389352268809",
+      "tail": "2.276252482e-126"
+    },
+    {
+      "t": "2.0",
+      "Pole_t2": "4.344645078521950227823245",
+      "A_Prime_t2": "1.745850839155380427294331",
+      "S_enclosure": [
+        "0.05334112417185566800687108",
+        "0.05334112417185566800687108"
+      ],
+      "S_mid": "0.05334112417185566800687108",
+      "Q_proxy_S_over_t_half": "0.05334112417185566800687108",
+      "tail": "8.569255309e-354"
+    },
+    {
+      "t": "5.0",
+      "Pole_t2": "41.05831583730948893295882",
+      "A_Prime_t2": "31.55347763754481072858749",
+      "S_enclosure": [
+        "0.04537134955883398706309755",
+        "0.04537134955883398706309755"
+      ],
+      "S_mid": "0.04537134955883398706309755",
+      "Q_proxy_S_over_t_half": "0.01814853982353359482523902",
+      "tail": "1.318604839e-875"
+    }
+  ],
+  "t0_matches_cone": true,
+  "piece_defs": "CONFIRMED (W,A by definition)",
+  "identity_S_eq_t_half_Q": {
+    "status": "CONFIRMED-with-caveat",
+    "note": "By explicit formula, (t/2)Pole/Arch/Prime equal the displayed pieces for the top-hat autocorrelation g=(1-|u|/t)_+. Top-hat is L2 discontinuous; mollify and pass gamma pairing by dominated convergence (sinc^2(r) log(2+|r|) integrable); finite prime sum passes. GAP only under rigid Schwartz-only statements of Weil. No zero-sum numerical Q check (would not audit independently)."
+  },
+  "label": "CONFIRMED-with-caveat"
+}

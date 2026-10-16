@@ -1,0 +1,43 @@
+{
+  "T": 14.0,
+  "n_events": 93371,
+  "last_n": 1202603,
+  "min_S": {
+    "value": 0.027770009380418514,
+    "n": 3109,
+    "t": 8.042056410058754
+  },
+  "min_E": {
+    "value": 0.07949534986523134,
+    "n": 2,
+    "t": 0.6931471805599453
+  },
+  "min_Uplus": {
+    "value": 0.12188864917813752,
+    "n": 2,
+    "t": 0.6931471805599453
+  },
+  "min_Uminus": {
+    "value": 0.43704757532315097,
+    "n": 16,
+    "t": 2.772588722239781
+  },
+  "neg_E_count": 0,
+  "neg_S_count": 0,
+  "neg_Uplus_count": 0,
+  "Codex_min_S": {
+    "value": 0.0277700093804,
+    "n": 3109
+  },
+  "Codex_min_E": {
+    "value": 0.0794953498652,
+    "n": 2
+  },
+  "Codex_min_Uplus_note": "at n=2 \u22480.12188865 (through e^16)",
+  "elapsed_sec": 0.1260089874267578,
+  "label": "NUMERICAL",
+  "match_min_S_n": true,
+  "match_min_E_n": true,
+  "S_rel_diff_vs_Codex": 6.66653319486845e-13,
+  "E_rel_diff_vs_Codex": 3.941871433131808e-13
+}

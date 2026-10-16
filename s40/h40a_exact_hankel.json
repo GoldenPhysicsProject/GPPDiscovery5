@@ -1,0 +1,131 @@
+{
+  "labels": {
+    "omega0": "CERTIFIED",
+    "W_derivatives_and_hankel": "CERTIFIED",
+    "Wprime_closed": "CERTIFIED",
+    "starting_cone": "CERTIFIED"
+  },
+  "claims": {
+    "summary": {
+      "omega0": "CERTIFIED",
+      "W_derivs_hankel": "CERTIFIED",
+      "Wprime_closed": "CERTIFIED",
+      "starting_cone": "CERTIFIED",
+      "RH": "OPEN"
+    }
+  },
+  "omega0": {
+    "via_euler_pi_log": "-5.372183419225665582232957497449742289014539251623553843",
+    "via_digamma": "-5.372183419225665582232957497449742289014539251623553843",
+    "abs_diff": "8.433758355e-81",
+    "match_ge_50digits": true
+  },
+  "W_derivatives_t0": {
+    "Wpp_simplified": "5*sqrt(2)/6",
+    "Wppp_simplified": "37*sqrt(2)/36",
+    "Wpppp_simplified": "-371*sqrt(2)/216",
+    "eq_pp_zero": true,
+    "eq_ppp_zero": true,
+    "eq_pppp_zero": true,
+    "Wpp_equals_5_over_3sqrt2": true,
+    "Wppp_equals_37_over_18sqrt2": true,
+    "Wpppp_equals_m371_over_108sqrt2": true
+  },
+  "hankel": {
+    "expr_simplified": "-403/81 + 125*sqrt(2)/54",
+    "target": "125*sqrt(2)/54 - 403/81",
+    "expr_minus_target_zero": true,
+    "numerical": "-1.70166613648203306604547363223",
+    "from_targets": "-1.70166613648203306604547363223",
+    "closed_form_num": "-1.70166613648203306604547363223",
+    "negative": true,
+    "Codex_approx": "-1.7016661364820330660",
+    "sqrt2_lt_21762_10125": true,
+    "21762_10125_gt_3_2": true
+  },
+  "Wprime": {
+    "checks": [
+      {
+        "t": "0.69314718055994530942",
+        "J": 150,
+        "abs_diff": "2.635549486e-82",
+        "match_50dig": true
+      },
+      {
+        "t": "1.0",
+        "J": 150,
+        "abs_diff": "4.216879177e-81",
+        "match_50dig": true
+      },
+      {
+        "t": "2.0",
+        "J": 100,
+        "abs_diff": "4.216879177e-81",
+        "match_50dig": true
+      },
+      {
+        "t": "5.0",
+        "J": 50,
+        "abs_diff": "3.373503342e-80",
+        "match_50dig": true
+      },
+      {
+        "t": "0.1",
+        "J": 2500,
+        "abs_diff": "2.635549486e-82",
+        "match_50dig": true
+      },
+      {
+        "t": "0.5",
+        "J": 500,
+        "abs_diff": "9.883310572e-83",
+        "match_50dig": true
+      }
+    ],
+    "all_match_50dig": true,
+    "atanh_atan_vs_2sum_z4j1": "4.216879177e-81",
+    "algebraic_identity": "CERTIFIED",
+    "identity_note": "a_j=(4j+1)/2 \u21d2 exp(-a_j t)/a_j = 2 z^(4j+1)/(4j+1), z=e^{-t/2}; sum_j = atanh(z)+atan(z). Classical odd-power series split."
+  },
+  "starting_cone": {
+    "t0": "log(2)",
+    "S_enclosure": [
+      "0.0635555860375704142387122834387",
+      "0.0635555860375704142387122834387"
+    ],
+    "S_width": "0.0",
+    "S_mid": "0.0635555860375704142387122834387",
+    "Codex_S": "0.06355558603757",
+    "p_plus": "-0.265153923284080971871666972229",
+    "Codex_p": "-0.26515392328408",
+    "a": "1.17851130197757920733474060351",
+    "a_equals_5_3sqrt2": true,
+    "Codex_a": "1.17851130197758",
+    "E_enclosure": [
+      "0.0794953498652300290042011623578",
+      "0.0794953498652300290042011623578"
+    ],
+    "Codex_E": "0.0794953498652",
+    "X_enclosure": [
+      "0.387042572462216779287665944865",
+      "0.387042572462216779287665944865"
+    ],
+    "Codex_X": "0.38704257246222",
+    "Uplus_enclosure": [
+      "0.121888649178135807415998972636",
+      "0.121888649178135807415998972636"
+    ],
+    "Codex_Uplus": "0.12188864917814",
+    "Uminus_enclosure": [
+      "0.652196495746297751159332917094",
+      "0.652196495746297751159332917094"
+    ],
+    "Codex_Uminus": "0.65219649574630",
+    "Uplus_positive": true,
+    "Uminus_positive": true,
+    "E_positive": true,
+    "tail_S": "2.276252482e-126",
+    "tail_Wp": "9.11639119e-124",
+    "J_trunc": 200
+  }
+}
