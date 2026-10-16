@@ -1,0 +1,17 @@
+{
+ "L": 1.25,
+ "lam_max": 2.95110788267703,
+ "conv": [
+  2.9415690475423593,
+  2.9481137706708926,
+  2.95110788267703
+ ],
+ "A_L_raw": 8.521,
+ "A_cert_torus_p11": 4.2071,
+ "per_prime": 4.5903,
+ "gap": 1.2559921173229696,
+ "ratio": 1.4256002041455784,
+ "T1_star": 120.17931860303544,
+ "status": "NUMERICAL",
+ "note": "Galerkin s28_pmax method N=40/80/120; not certified. Floor for any invisible lift."
+}

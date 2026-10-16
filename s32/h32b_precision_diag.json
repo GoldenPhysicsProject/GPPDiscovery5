@@ -1,0 +1,48 @@
+{
+ "hypothesis": "H32b",
+ "title": "Even-sector precision diagnosis + cheaper support-2.5 path design",
+ "even_384": {
+  "lam_est": 3.301490157979886e-55,
+  "rE": 4.140254376865122e-61,
+  "lam_over_rE": 797400.0,
+  "bits_headroom": 19.6,
+  "lam0_schur": null,
+  "M_S": 480805.17,
+  "K": 730,
+  "prec": 384,
+  "verdict": "PENDING \u2014 ball Schur failed; numerically PD"
+ },
+ "condition_proxy": "M_S/lam_est ~ 1.46e60 (extreme); Schur radius growth over K/bs~15 blocks likely exceeds 384-bit mantissa",
+ "beta_curve_A_4.2071": {
+  "T_min_beta_pos": 430,
+  "T_450_beta": 0.062,
+  "T_500_beta": 0.168,
+  "T_700_beta": 0.505,
+  "warning": "Lower T shrinks lam_min \u2192 HARDER Schur. Cheaper walltime path needs higher prec OR smaller A (closer to floor 2.951), not lower T alone."
+ },
+ "floor_L125": {
+  "lam_max_PL": 2.9511,
+  "A_cert": 4.2071,
+  "gap": 1.256,
+  "ratio": 1.426
+ },
+ "ranked_fixes": [
+  "Wait for --prec 512 result (in flight)",
+  "If 512 fails: --prec 768 with same T=700 (memory: need workers=1 or estimate_only first)",
+  "Raise T to 800\u20131000 to grow lam_min (opposite of cheaper-T; trades walltime for conditioning)",
+  "Shrink A toward floor via better torus (H32a deferred \u2014 S29/S30 Fejer/eigen NO_PROGRESS)",
+  "Matrix rescale / better basis (spherical Bessel already used; try diagonal preconditioner before Schur)"
+ ],
+ "dead_ends_confirmed": [
+  "plain 5D B&B at L=1.25",
+  "T=1350 OOM",
+  "ng=60 at L=1.25 (M_S too large)",
+  "finite-t Chebyshev lift (S29)",
+  "H30a Fejer-Riesz / |F*|^2 seed NO_PROGRESS vs S28 torus",
+  "H29a eigen-seeded D=3 torus no better than S28"
+ ],
+ "novelty": "GPPVerify #365/#367/#368 unrelated; CLAUDE_* has no support-2.5 torus cert; Grok S31 odd-only on support 2.5 is first",
+ "phi": "absent",
+ "rh": "OPEN",
+ "grh": "OPEN"
+}
