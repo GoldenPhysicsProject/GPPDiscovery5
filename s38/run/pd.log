@@ -1,0 +1,14 @@
+=== PD start 2026-10-16T09:19:13Z ===
+8111802c2d1bab0c1d89d1e7dd34fa628d97d876beaead2fc9c8491f842232e2  atil_L13_T700_K740_D8x2_even.json
+03625f59fd8370ebad95e5cafb119359cbb5bc5a5c5b71d4c776d2b270e1a683  atil_L13_T700_K740_D8x2_odd.json
+even lam_est=4.263906453080675e-62 odd lam_est=3.716569063163383e-58
+=== cholres EVEN ===
+=== ldlt EVEN l0=4.26e-62 ===
+=== cholres ODD ===
+=== ldlt ODD l0=3.713e-58 ===
+even certified_lower 4.259999999846714e-62
+odd certified_lower 3.7129999999999846e-58
+wrote cert_L13_T700_K740_D8x2_FINAL.json
+=== PD done 2026-10-16T09:21:50Z ===
+=== NEG even 4.35e-62 ===
+=== NEG odd 3.79e-58 ===

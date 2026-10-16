@@ -1,0 +1,13 @@
+=== H38a start 2026-10-16T08:54:45Z T=700 K=740 ng=78 workers=2 ===
+L=13/10 T=700 K=740 comb=[2, 3, 4, 5, 7, 8, 9, 11, 13] A=4.470200 beta=0.241575 lift_terms=707
+M_S <= 763.9057  M0 <= 25.5740 [285s]
+assembly done: 1400 panels x 78 nodes [1123s]
+ parity 0: lam_est=4.263906453080675e-62 rE=1.533e-72 quad/entry=2.071e-75 [20s]
+ dumped Atil -> atil_L13_T700_K740_D8x2_even.json
+ schur_prec=384 bs_list=[]
+{"parity": "even", "degs": [0, 1478], "nodes": 109200, "quad_err_entry": 2.0714275106820216e-75, "lam_est": 4.263906453080675e-62, "normE_bound": 1.5328563596178642e-72, "lam0_schur": null, "first_omitted_degree": 1480, "eps_B": 1.2021922398291048e-110, "eps_CDD": 8.913093887674641e-231, "lamD_lower": 0.24157469720548777} [23s]
+ parity 1: lam_est=3.716569063163383e-58 rE=1.534e-72 quad/entry=2.073e-75 [20s]
+ dumped Atil -> atil_L13_T700_K740_D8x2_odd.json
+ schur_prec=384 bs_list=[]
+{"parity": "odd", "degs": [1, 1479], "nodes": 109200, "quad_err_entry": 2.0728285438309442e-75, "lam_est": 3.716569063163383e-58, "normE_bound": 1.5338931243326646e-72, "lam0_schur": null, "first_omitted_degree": 1481, "eps_B": 3.695929899706556e-111, "eps_CDD": 8.412812448133027e-232, "lamD_lower": 0.24157469720548777} [23s]
+=== H38a assembly done 2026-10-16T09:18:59Z ===
