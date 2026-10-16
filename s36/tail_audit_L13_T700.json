@@ -1,0 +1,28 @@
+{
+ "even": {
+  "sumD_upper": 7.891027148798617e-235,
+  "pD2_upper": 0.0,
+  "pA_upper": 1.9956810323984207,
+  "eps_B_arb_upper": 1.1416310401240547e-110,
+  "eps_B_float": 1.6073119792135e-110,
+  "eps_CDD_arb_upper": 6.01181927269754e-231,
+  "eps_CDD_float": 1.1916665324300028e-230,
+  "lamD_arb_lower": 0.05527469720548776,
+  "certified_lower_arb": "3.633998258e-62",
+  "certified_lower_float": 3.6339982582224383e-62,
+  "agrees": true
+ },
+ "odd": {
+  "sumD_upper": 7.44793289767783e-236,
+  "pD2_upper": 0.0,
+  "pA_upper": 0.7475804485785422,
+  "eps_B_arb_upper": 3.509702616854266e-111,
+  "eps_B_float": 4.941399724037612e-111,
+  "eps_CDD_arb_upper": 5.6742456579729995e-232,
+  "eps_CDD_float": 1.1247796965219855e-231,
+  "lamD_arb_lower": 0.05527469720548776,
+  "certified_lower_arb": "1.491000000e-58",
+  "certified_lower_float": 1.4909999998257043e-58,
+  "agrees": true
+ }
+}

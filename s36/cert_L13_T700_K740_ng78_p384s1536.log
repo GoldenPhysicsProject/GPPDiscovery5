@@ -1,0 +1,31 @@
+L=13/10 T=700 K=740 comb=[2, 3, 4, 5, 7, 8, 9, 11, 13] A=4.656500 beta=0.055275 lift_terms=546
+M_S <= 8680225.1875  M0 <= 34.1920 [89s]
+assembly done: 1400 panels x 78 nodes [516s]
+ parity 0: lam_est=3.6375638746281806e-62 rE=1.742e-68 quad/entry=2.354e-71 [21s]
+ dumped Atil -> atil_L13_T700_K740_even.json
+ schur_prec=1536 bs_list=[48, 32]
+  try bs=48 fac=0.999 l0=3.634000e-62 -> False
+  try bs=48 fac=0.99 l0=3.601000e-62 -> False
+  try bs=48 fac=0.95 l0=3.456000e-62 -> False
+  try bs=48 fac=0.8 l0=2.910000e-62 -> False
+  try bs=48 fac=0.5 l0=1.819000e-62 -> False
+  try bs=32 fac=0.999 l0=3.634000e-62 -> False
+  try bs=32 fac=0.99 l0=3.601000e-62 -> False
+  try bs=32 fac=0.95 l0=3.456000e-62 -> False
+  try bs=32 fac=0.8 l0=2.910000e-62 -> False
+  try bs=32 fac=0.5 l0=1.819000e-62 -> False
+{"parity": "even", "degs": [0, 1478], "nodes": 109200, "quad_err_entry": 2.35375345539596e-71, "lam_est": 3.6375638746281806e-62, "normE_bound": 1.7417775615274155e-68, "lam0_schur": null, "first_omitted_degree": 1480, "eps_B": 1.6073119792135e-110, "eps_CDD": 1.1916665324300028e-230, "lamD_lower": 0.05527469720548776} [235s]
+ parity 1: lam_est=1.492104153531926e-58 rE=1.743e-68 quad/entry=2.355e-71 [22s]
+ dumped Atil -> atil_L13_T700_K740_odd.json
+ schur_prec=1536 bs_list=[48, 32]
+  try bs=48 fac=0.999 l0=1.491000e-58 -> False
+  try bs=48 fac=0.99 l0=1.477000e-58 -> False
+  try bs=48 fac=0.95 l0=1.417000e-58 -> False
+  try bs=48 fac=0.8 l0=1.194000e-58 -> False
+  try bs=48 fac=0.5 l0=7.461000e-59 -> False
+  try bs=32 fac=0.999 l0=1.491000e-58 -> False
+  try bs=32 fac=0.99 l0=1.477000e-58 -> False
+  try bs=32 fac=0.95 l0=1.417000e-58 -> False
+  try bs=32 fac=0.8 l0=1.194000e-58 -> False
+  try bs=32 fac=0.5 l0=7.461000e-59 -> False
+{"parity": "odd", "degs": [1, 1479], "nodes": 109200, "quad_err_entry": 2.35534544285311e-71, "lam_est": 1.492104153531926e-58, "normE_bound": 1.7429556316029362e-68, "lam0_schur": null, "first_omitted_degree": 1481, "eps_B": 4.941399724037612e-111, "eps_CDD": 1.1247796965219855e-231, "lamD_lower": 0.05527469720548776} [245s]
