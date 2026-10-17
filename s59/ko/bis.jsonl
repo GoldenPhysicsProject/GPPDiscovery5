@@ -1,0 +1,3 @@
+{"mode": "bis", "sec": "odd", "p": 11, "M": 56, "EDGEK": "0", "delta_in": [0.0012939, 0.0012964], "note": "", "wall_s": 231}
+{"mode": "bis", "sec": "even", "p": 11, "M": 56, "EDGEK": "0", "delta_in": [0.0042246, 0.0042305], "note": "", "wall_s": 221}
+{"mode": "bis", "sec": "even", "p": 7, "M": 104, "EDGEK": "0", "delta_in": [0.0039419, 0.0039463], "note": "", "wall_s": 1246}

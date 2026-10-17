@@ -1,0 +1,14 @@
+L=1.4 EPS=0.0056 DC=4 sep_chars=839 cross_chars=287 minfreq=2.806111
+group maxima: A top [3.2897697  3.28976969 3.28333511] (120 kept, last 3.2790); B top [1.88350168 1.88350168 1.87244298] (120 kept, last 1.8718) [8s]
+init true max 5.177382 (separable cert 5.189) [20s]
+ it 0: LP 4.385304 true 6.890152 best 5.177382 rej r=0.005 pts=5000 [42s]
+ it 1: LP 4.765421 true 5.989021 best 5.177382 rej r=0.0025 pts=5000 [61s]
+ it 2: LP 4.967050 true 5.517191 best 5.177382 rej r=0.00125 pts=5000 [81s]
+ it 3: LP 5.056863 true 5.334257 best 5.177382 rej r=0.000625 pts=5000 [100s]
+ it 4: LP 5.107322 true 5.251877 best 5.177382 rej r=0.0003125 pts=5000 [119s]
+ it 5: LP 5.130331 true 5.193371 best 5.177382 rej r=0.0001563 pts=5000 [137s]
+ it 6: LP 5.141675 true 5.167750 best 5.167750 ACC r=0.0002344 pts=5000 [155s]
+ it 7: LP 5.136450 true 5.202346 best 5.167750 rej r=0.0001172 pts=5000 [174s]
+ it 8: LP 5.147088 true 5.158045 best 5.158045 ACC r=0.0001758 pts=5000 [194s]
+ it 9: LP 5.143461 true 5.162457 best 5.158045 rej r=8.789e-05 pts=5000 [215s]
+DONE best 5.158044771713175 T(beta=0.15) = 1270

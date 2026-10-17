@@ -1,0 +1,15 @@
+L=1.4 EPS=0.0056 DC=5 sep_chars=839 cross_chars=993 minfreq=2.806111
+group maxima: A top [3.2897697  3.28976969 3.28333511] (120 kept, last 3.2790); B top [1.88350168 1.88350168 1.87244298] (120 kept, last 1.8718) [10s]
+init true max 5.161299 (separable cert 5.189) [34s]
+ it 0: LP 4.355142 true 7.736017 best 5.161299 rej r=0.005 pts=4000 [73s]
+ it 1: LP 4.798133 true 6.542515 best 5.161299 rej r=0.0025 pts=4000 [110s]
+ it 2: LP 4.989499 true 5.674402 best 5.161299 rej r=0.00125 pts=4000 [144s]
+ it 3: LP 5.081331 true 5.382581 best 5.161299 rej r=0.000625 pts=4000 [180s]
+ it 4: LP 5.122220 true 5.234759 best 5.161299 rej r=0.0003125 pts=4000 [215s]
+ it 5: LP 5.136858 true 5.184625 best 5.161299 rej r=0.0001563 pts=4000 [249s]
+ it 6: LP 5.143063 true 5.159848 best 5.159848 ACC r=0.0002344 pts=4000 [281s]
+ it 7: LP 5.137740 true 5.226275 best 5.159848 rej r=0.0001172 pts=4000 [317s]
+ it 8: LP 5.143420 true 5.151314 best 5.151314 ACC r=0.0001758 pts=4000 [351s]
+ it 9: LP 5.139514 true 5.171009 best 5.151314 rej r=8.789e-05 pts=4000 [388s]
+DONE best 5.151314075449141 T(beta=0.15) = 1262
+(killed by Grok after it 8 at ~06:19Z to stay within the 1-heavy-process budget; joint_dc5.json = best after it 8)

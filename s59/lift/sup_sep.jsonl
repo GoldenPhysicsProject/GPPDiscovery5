@@ -1,0 +1,1 @@
+{"file": "/workspace/GPPDiscovery5/s58/run140/torus_L1.40_buf_D9D8_cert.json", "seed": 7, "NG": 80, "NRAND": 400000, "NTOP": 8000, "groupA_local_max": 3.2999256855863055, "groupB_local_max": 1.8835016757631287, "sup_est": 5.183427361349434, "top5": [5.183427, 5.183427, 5.183427, 5.183427, 5.183427], "argmax": [2.79374, 1.08285, -3.06626, 0.8257, -2.12303, 2.29051], "wall_s": 154}
