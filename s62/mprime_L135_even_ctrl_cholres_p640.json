@@ -1,0 +1,15 @@
+{
+ "dump": "mprime_L135_even_ctrl.json",
+ "K": 779,
+ "prec": 640,
+ "delta_str": 7.79e-222,
+ "lam_est": 9e-62,
+ "tries": [
+  {
+   "fac": 1.0,
+   "l0": 9e-62,
+   "chol": "fail",
+   "pivot": 157
+  }
+ ]
+}

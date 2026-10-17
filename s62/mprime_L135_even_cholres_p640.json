@@ -1,0 +1,19 @@
+{
+ "dump": "mprime_L135_even.json",
+ "K": 779,
+ "prec": 640,
+ "delta_str": 7.79e-222,
+ "lam_est": 7.39e-62,
+ "tries": [
+  {
+   "fac": 1.0,
+   "l0": 7.39e-62,
+   "minpiv": 1.2461069027015292e-07,
+   "normE": 1.215896779751412e-190,
+   "lam_lower": 7.39e-62,
+   "ok": true
+  }
+ ],
+ "lam_lower": 7.39e-62,
+ "l0": 7.39e-62
+}

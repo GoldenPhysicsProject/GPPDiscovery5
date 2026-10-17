@@ -1,0 +1,6 @@
+K=780 sha=61bb468cc9b4 parsed [1s]
+ inverse iteration 0 [10s]
+ inverse iteration 1 [18s]
+ inverse iteration 2 [27s]
+ Ritz estimates lam1=5.2706256e-70 lam2=7.5482526e-62 lam3=1.7935637e-54
+{"dump": "../s37/cert135/atil_L135_T700_K780_even.json", "dump_sha256": "61bb468cc9b45dda5bf9a478d9b35ba3a63887a13ac3b4a9ee359bbcd83b204f", "K": 780, "prec": 768, "lam1_est": "5.2706255725e-70", "lam2_est": "7.54825261923e-62", "lam3_est": "1.79356372678e-54", "j0": 1, "s2": 7.397e-62, "Mprime": "mprime_L135_even.json", "Mprime_sha256": "2219439c1e2e18c4e28363dc209222b851b01889550372de73e8fed419f054c6", "Mprime_n": 779, "Mprime_maxrad": 7.729561155394799e-231, "Mprime_rad_spectral_bound": 6.021328140052548e-228, "sec": 30.3}

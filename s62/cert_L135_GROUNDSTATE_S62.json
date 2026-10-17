@@ -1,0 +1,26 @@
+{
+ "claim": "CERTIFIED (Arb + exact-integer arithmetic, Lean-open): on L^2[-27/20, 27/20] (support 2.7) the zeta Weil form Q has a SIMPLE, EVEN ground state. lambda_1 = lambda_1^even in [5.26499e-70, 2.7691e-69]; next level >= min(lambda_1^odd, lambda_2^even) >= 1.5659e-65 (clearance x5654); lambda_1^odd in [1.5659e-65, 3.3829e-65]; lambda_2^even >= 7.389e-62. Certified ordering lambda_1^even < lambda_1^odd < lambda_2^even.",
+ "L": "27/20",
+ "normalisation": "Q(f)=Q_zeta on f in L^2[-L,L], ||f|| = L^2 norm; S14/S27 normalisation = Zhu arXiv:2608.24827 eq.(2) (validated: reproduces Zhu Table 3 at L=0.8, 1.0, 1.2 to 3-4 digits)",
+ "even_upper": {"value": "2.7691e-69", "method": "Arb Rayleigh quotient of a rational vector in the even trig basis cos((2m+1)pi u/2L), m<200 (cosritz.py, geometric side only: pole closed form, arch by acb.integral, primes exact)", "arb": "[2.76904810631e-69 +/- 7.72e-82]", "K_series": {"104": 3.5454e-69, "130": 3.1154e-69, "160": 2.9198e-69, "200": 2.7690e-69}},
+ "even_lower": {"value": "5.26499e-70", "source": "S37 certificate (T=700, K=780; two PD implementations), GPPDiscovery5/s37/cert135"},
+ "odd_lower": {"value": "1.5659e-65", "source": "S53 certificate (T=800, K=880; two PD implementations), GPPDiscovery5/s53"},
+ "odd_upper": {"value": "3.3829e-65", "method": "Arb Rayleigh quotient, odd basis sin(m pi u/L), m<=130", "arb": "[3.38282369823e-65 +/- 1.11e-77]"},
+ "even_lambda2_lower": {
+   "value": "7.389e-62",
+   "method": "Courant-Fischer on the S37 even reduced-form dump (R <= Q as forms): w = Ritz ground vector of Atil (rational, 80 digits), restriction to w-perp parametrised exactly (p_i = e_i - v_i e_j0, P^T P = I + v v^T); M' = P^T X P - s2 v v^T, s2 = 7.397e-62; lambda_min(M') >= 7.39e-62 by two independent implementations",
+   "atil_sha256": "61bb468cc9b45dda5bf9a478d9b35ba3a63887a13ac3b4a9ee359bbcd83b204f",
+   "Mprime_sha256": "2219439c1e2e18c4e28363dc209222b851b01889550372de73e8fed419f054c6",
+   "pd_impl_1_s36_cholres_p640": "lambda_min(M') >= 7.390000e-62 (||E|| <= 1.216e-190)",
+   "pd_impl_2_s37_ldlt_exact_S640": "lambda_min(sym M') >= 7.390000e-62 (minD 1.246e-07, ||E||_F <= 7.381e-136)",
+   "negative_control": "l0 = 9.0e-62 FAILS in both implementations at pivot 157 (would imply restricted lambda >= 7.88e-62 > lambda_2 estimate 7.548e-62)",
+   "deductions": "rE 3.65e-87 (S37 normE_bound) + string error 7.8e-112 + eps_B 6.0e-127 + M' Arb radius 6.0e-228 + parse radius (<1e-225); lamD 0.119 >> s2",
+   "estimates_nonrigorous": {"lambda1_R": "5.2706e-70", "lambda2_R": "7.5483e-62", "lambda3_R": "1.7936e-54", "trig_Ritz_lambda2_Q_K200": "1.7785e-61"}
+ },
+ "consistency": ["even_upper 2.7691e-69 >= even_lower 5.26499e-70", "odd_upper >= odd_lower", "trig basis reproduces Zhu Table 3: L=0.8 n=24 2.2702e-17 (Zhu 2.27e-17), L=1.0 n=40 8.0811e-30 (8.08e-30), L=1.2 n=70 9.9043e-49 (9.98e-49)", "L=0.8 odd 2.2383e-14 inside Zhu's odd bracket [8.206e-15, 2.347e-14]", "closed-form autocorrelations and pole moments checked by quadrature to 4e-31 (selftest.py)"],
+ "support_2p8_side_results": {"L": "7/5", "even_upper": "1.6486e-77 (K=140)", "even_lower": "7.4196e-78 (S61)", "odd_upper": "2.4959e-73 (K=140)", "odd_lower": "PENDING (chain_odd.sh running)"},
+ "prior_art": "Zhu arXiv:2608.24827 v2: simple even ground state certified at L=0.8 only. Chen, Zenodo 10.5281/zenodo.20605508: analytic simple positive even ground state for the POLE-FREE form QW°_lambda (all lambda), not the full form. Zenodo 10.5281/zenodo.20887027: even-simplicity for three finite Galerkin matrices only. Mori (log 15, Zenodo): positivity constant 2^-2904, no parity claim found. CLAUDE_RESEARCH_NOTES: numerical only.",
+ "fakes": "Rules out none of F_theta / DH / H_{-t}. DH at L=27/20 also has an even ground state (NUMERICAL, both Ritz: even 5.75e-13, odd 1.58e-9), so evenness is not zeta-specific here.",
+ "phi": "absent",
+ "session": "Grok S62", "status": "RH OPEN"
+}
