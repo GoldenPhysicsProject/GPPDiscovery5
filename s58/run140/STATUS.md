@@ -8,5 +8,5 @@
 - ODD: not started (needs beta ~ 0.25, i.e. T ~ 1450, K ~ 1655). RH OPEN.
 - S60 (06:55Z+): the S58 EVEN run is VOID (not a refutation): sph_j_all backward recurrence at x = T*L = 1834, D = 2994 lost all
   precision at SPHJ_BOOST = 1.75 (rE = inf, lam_est = None, dumped midpoints garbage up to 9e188; pd.sh aborted). No certificate.
-  Outputs moved to void_boost175/. Re-run with SPHJ_BOOST = 2.0 (verified finite balls, rad 5e-119): chain_even_r2.sh, started ~07:40Z,
+  Outputs moved to void_boost175/. Re-run with SPHJ_BOOST = 2.0 (verified finite balls, rad 5e-119): chain_even_r2.sh, started 07:11Z, ETA ~08:55Z,
   same T/K/lift, W = 3; done-file even.done. Odd NOT launched (odd x = 2030 also OK at BOOST 2.0).
