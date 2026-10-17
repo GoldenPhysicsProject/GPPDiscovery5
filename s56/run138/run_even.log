@@ -1,2 +1,7 @@
 L=69/50 T=1020 K=1148 comb=[2, 3, 4, 5, 7, 8, 9, 11, 13] A=4.965000 beta=0.123700 lift_terms=823
 M_S <= 8961.6254  M0 <= 28.2256 [202s]
+assembly done: 2040 panels x 92 nodes [1027s]
+ parity 0: lam_est=1.721992030425515e-74 rE=4.631e-86 quad/entry=4.034e-89 [89s]
+ dumped Atil -> atil_L138_T1020_K1148_even.json
+ schur_prec=384 bs_list=[]
+{"parity": "even", "degs": [0, 2294], "nodes": 187680, "quad_err_entry": 4.0343385500190856e-89, "lam_est": 1.721992030425515e-74, "normE_bound": 4.6314206667854976e-86, "lam0_schur": null, "first_omitted_degree": 2296, "eps_B": 3.4948346094633545e-143, "eps_CDD": 1.8328383479531903e-296, "lamD_lower": 0.12370044771210853} [94s]

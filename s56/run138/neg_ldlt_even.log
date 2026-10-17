@@ -1,0 +1,3 @@
+K=1148 S=640 sha256 OK; max e_last=-114; ||Atil-N/2^S||_F <= 4.131e-113 [54s]
+ l0=1.7564e-74: fixed-point LDL^T FAILED at pivot 345 (W - l0 I numerically indefinite) [115s]
+DONE 168.90900444984436

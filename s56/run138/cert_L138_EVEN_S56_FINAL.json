@@ -1,0 +1,13 @@
+{
+ "L": "69/50", "support": "2.76", "parity": "even", "lift": "torus_L1.38_buf_D9D8_cert.json (s56/lift, B&B A_cert 4.9641)",
+ "A_used_in_assembly": "4.9650 (provisional, >= certified 4.9641, identical K/a_q: s56_check_prov PASS)",
+ "closest_lift_char": "log 16 = 2.772589, gap 0.012589, eps*T = 12.8",
+ "T": 1020, "K": 1148, "ng": 92, "prec": 384, "beta": 0.1237, "lam_est": 1.721992030425515e-74, "rE": 4.631e-86,
+ "pd_cholres_p640": "lambda_min(Atil) >= 1.7200e-74, ||E||<=5.23e-115",
+ "pd_ldlt_exact_S640": "lambda_min >= 1.7203e-74, ||E||_F<=1.175e-114",
+ "negative_control": "ldlt_exact l0=1.7564e-74 FAILS (pivot 345)",
+ "inertia_s55_lam": "0 negative pivots, 0 zero pivots (mu = 1.72199e-74)",
+ "atil_sha256": "498ec3707ed71c2e3085d63b9c1551dd714c1a2939f616d1121d67bc0cdde381",
+ "certified_lower": 1.7199e-74,
+ "status": "CERTIFIED (Arb, Lean-open, two independent PD implementations, failing negative control): Q_zeta(f) >= 1.7199e-74 ||f||^2 on EVEN f in L^2[-69/50, 69/50]. Odd parity pending (S57). RH OPEN."
+}
