@@ -1,0 +1,1 @@
+{"mu_smallest_modulus": 1.2472304216512829e-73, "n_neg_pivots": 0, "n_zero_pivots": 0, "lam_min_estimate": 1.2472304216512829e-73, "verdict": "PD-looking (mu = lam_min)", "file": "/workspace/GPPDiscovery5/s58/run140/atil_L140_T1277_K1459_odd.json", "K": 1459, "prec": 640, "secs": 526}

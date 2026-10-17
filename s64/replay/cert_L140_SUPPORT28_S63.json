@@ -1,0 +1,17 @@
+{
+ "claims": {
+  "full_complex_support_2.8": "CERTIFIED (Arb + exact integers, Lean-open): Q_zeta(f) >= 7.4196e-78 ||f||_2^2 for every complex f in L^2[-7/5, 7/5] (= min of even S61 7.4196e-78 and odd S63 1.2459e-73; Q is parity-diagonal)",
+  "ground_state_even": "CERTIFIED: lambda1(even) <= 1.6486e-77 (S62 Arb trig Ritz, K=140) < 1.2459e-73 <= lambda1(odd); clearance x7557",
+  "ground_state_simple": "CERTIFIED: lambda2(even) >= 8.6759e-70 (Courant-Fischer restriction of the S61 even dump, two PD impls, control FAILS) > lambda1(even) <= 1.6486e-77; gap x5.3e7",
+  "ordering": "lambda1(even) <= 1.6486e-77 < 1.2459e-73 <= lambda1(odd) <= 2.4959e-73 < 8.6759e-70 <= lambda2(even)"
+ },
+ "lambda2_even": {"dump": "../s58/run140/atil_L140_T1310_K1497_even.json", "dump_sha256": "94238400e0b9b80d22bd4585ce69e386bda76d03d552582e64dfaade483e1a69",
+   "Mprime_sha256": "2da64e43a1674cdf527be4f0eb69b5c8fa64956d41c24795d3a3d22ac1ba18c8", "Mprime_n": 1496, "s2": 8.676e-70,
+   "ritz_estimates_nonrigorous": {"lam1": 7.42715941156e-78, "lam2": 8.85285600052e-70, "lam3": 1.9337115855e-62},
+   "pd_impl_1_cholres_p640": "lambda_min(M') >= 8.6760e-70 OK (minpiv 1.332e-07, ||E|| <= 1.69e-190); control 9.7381e-70 FAILS pivot 193",
+   "pd_impl_2_ldlt_exact_S640": "lambda_min(M') >= 8.67599e-70 OK (minD 1.332e-07, ||E||_F <= 1.07e-127); control 9.7381e-70 FAILS pivot 193",
+   "deductions": "rE 3.3e-85, original dump string error <= 1.5e-111, M' radius spectral bound 1.2e-227, parse 1.3e-227, eps_B 5.6e-143; two-block min with lamD 0.150",
+   "final": "lambda2(even) >= 8.6759e-70"},
+ "window_conversion": "our L = half-width of supp f; support 2L = 2.8 = log(16.4446). Mori VIII: f supported in [-(1/2)log 15, (1/2)log 15], i.e. L = 1.35403, width log 15 = 2.70805. Same normalisation (L^2 norm; Mori even margin 2.40e-70 at L=1.35403 vs our certified 5.26e-70 at L=1.35).",
+ "status": "RH OPEN. Finite window only. External certificate, not Lean."
+}

@@ -1,0 +1,14 @@
+{
+ "claim": "CERTIFIED (Arb, Lean-open): Q_zeta(f) >= 1.2459e-73 ||f||^2 for all odd f in L^2[-7/5, 7/5] (support 2.8)",
+ "L": "7/5", "parity": "odd", "T": 1277, "K": 1459, "ng": 92, "prec": 384, "SPHJ_BOOST": 2.0, "workers": 3,
+ "lift": "torus_L1.40_buf_D10D8_cert.json (S61 {2,3,5} D10 <= 3.1675 + S58 {7,11,13} D8 <= 1.8861, A_cert 5.0536, 1001 chars)", "beta": 0.260009,
+ "lamD_lower": 0.26000870426689, "lam_est": 1.2472304216512829e-73, "normE_bound_rE": 8.102283821090012e-85,
+ "quad_err_entry": 5.553313094164431e-88, "eps_B": 5.311203009590795e-143, "first_omitted_degree": 2919, "assembly_wall_s": 7302,
+ "pd_impl_1_cholres_p640": "lambda_min(Atil) >= 1.2460e-73 (minpiv 3.267e-08, ||E|| <= 6.78e-115, delta_str <= 1.46e-111)",
+ "pd_impl_2_ldlt_exact_S640": "lambda_min(sym Atil) >= 1.24599e-73 (minD 3.267e-08, ||E||_F <= 1.39e-114, pert_F 4.70e-113)",
+ "negative_control": "ldlt_exact at 1.2722e-73 FAILS at pivot 357 (as required)",
+ "inertia_s55_lam": "0 negative, 0 zero pivots, mu = 1.24723e-73",
+ "final_bound": "min(1.2460e-73, 1.24599e-73) - rE(8.1e-85) - delta_str(1.5e-111) -> 1.2459e-73 (rounded down); two-block min with lamD 0.26 - eps_B",
+ "atil_sha256": "db6365a4f8d092d1430449b812369c8e9a2eac2973e9c88064c604e73e524071",
+ "session": "Grok S63 (chain_odd.sh launched S61 09:15Z; odd.done S63)", "status": "RH OPEN"
+}

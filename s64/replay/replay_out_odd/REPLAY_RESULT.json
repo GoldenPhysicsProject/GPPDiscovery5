@@ -1,0 +1,15 @@
+{
+ "parity": "odd",
+ "cholres_lower": 1.246e-73,
+ "ldlt_exact_lower": 1.24599e-73,
+ "neg_control_fails": true,
+ "neg_control_pivot": [
+  357
+ ],
+ "inertia_ok": true,
+ "inertia_log": "{\"mu_smallest_modulus\": 1.2472304216512829e-73, \"n_neg_pivots\": 0, \"n_zero_pivots\": 0, \"lam_min_estimate\": 1.2472304216512829e-73, \"verdict\": \"PD-looking (mu = lam_min)\", \"file\": \"/workspace/GPPDiscovery5/s58/run140/atil_L140_T1277_K1459_odd.json\", \"K\": 1459, \"prec\": 640, \"secs\": 526}",
+ "cert_ldlt_lower": 1.24599e-73,
+ "agree_4sig": true,
+ "wall_s": 1583.756100177765,
+ "PASS": true
+}

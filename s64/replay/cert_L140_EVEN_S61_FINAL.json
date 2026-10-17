@@ -1,0 +1,14 @@
+{
+ "claim": "CERTIFIED (Arb, Lean-open): Q_zeta(f) >= 7.4196e-78 ||f||^2 for all even f in L^2[-7/5, 7/5] (support 2.8)",
+ "L": "7/5", "parity": "even", "T": 1310, "K": 1497, "ng": 92, "prec": 384, "SPHJ_BOOST": 2.0,
+ "lift": "torus_L1.40_buf_D9D8_cert.json (S58, A_cert 5.189, 839 chars, buffer EPS 0.0056)", "beta": 0.150142,
+ "lamD_lower": 0.15014199100722578, "lam_est": 7.427159411555478e-78, "normE_bound_rE": 3.254666527064264e-85,
+ "quad_err_entry": 2.1741259321397103e-88, "eps_B": 5.639216062058669e-143,
+ "pd_impl_1_cholres_p640": "lambda_min(Atil) >= 7.4200e-78 (||E|| <= 1.334e-114)",
+ "pd_impl_2_ldlt_exact_S640": "lambda_min(sym Atil) >= 7.4197e-78 (minD 7.265e-09, ||E||_F <= 1.622e-114)",
+ "negative_control": "ldlt_exact at 7.5757e-78 FAILS at pivot 406 (as required)",
+ "inertia_s55_lam": "0 negative, 0 zero pivots, mu = 7.42716e-78",
+ "final_bound": "min(7.4200e-78, 7.4197e-78) - rE(3.3e-85) -> 7.4196e-78 (rounded down)",
+ "atil_sha256": "94238400e0b9b80d22bd4585ce69e386bda76d03d552582e64dfaade483e1a69",
+ "session": "Grok S61 (run launched S60 07:11Z as chain_even_r2.sh)", "status": "RH OPEN"
+}
