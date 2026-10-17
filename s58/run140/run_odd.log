@@ -1,1 +1,7 @@
 L=7/5 T=1277 K=1459 comb=[2, 3, 4, 5, 7, 8, 9, 11, 13, 16] A=5.053600 beta=0.260009 lift_terms=1001
+M_S <= 75171.8811  M0 <= 26.7555 [2137s]
+assembly done: 2554 panels x 92 nodes [4976s]
+ parity 1: lam_est=1.2472304216512829e-73 rE=8.102e-85 quad/entry=5.553e-88 [180s]
+ dumped Atil -> atil_L140_T1277_K1459_odd.json
+ schur_prec=384 bs_list=[]
+{"parity": "odd", "degs": [1, 2917], "nodes": 234968, "quad_err_entry": 5.553313094164431e-88, "lam_est": 1.2472304216512829e-73, "normE_bound": 8.102283821090012e-85, "lam0_schur": null, "first_omitted_degree": 2919, "eps_B": 5.311203009590795e-143, "eps_CDD": 2.1751240292921102e-296, "lamD_lower": 0.26000870426689} [190s]
