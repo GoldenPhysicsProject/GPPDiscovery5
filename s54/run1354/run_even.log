@@ -1,0 +1,7 @@
+L=677/500 T=800 K=884 comb=[2, 3, 4, 5, 7, 8, 9, 11, 13] A=4.592800 beta=0.252685 lift_terms=701
+M_S <= 2334.0056  M0 <= 25.8695 [222s]
+assembly done: 1600 panels x 92 nodes [509s]
+ parity 0: lam_est=1.255396900592e-70 rE=5.390e-87 quad/entry=6.097e-90 [35s]
+ dumped Atil -> atil_L1354_T800_K884_even.json
+ schur_prec=384 bs_list=[]
+{"parity": "even", "degs": [0, 1766], "nodes": 147200, "quad_err_entry": 6.096900349905563e-90, "lam_est": 1.255396900592e-70, "normE_bound": 5.389659916890183e-87, "lam0_schur": null, "first_omitted_degree": 1768, "eps_B": 1.0041160177294601e-135, "eps_CDD": 3.6182832184958514e-281, "lamD_lower": 0.2526846612585818} [39s]

@@ -1,0 +1,5 @@
+20 3.97642e-29 peak idx 1 mass<=13 idx 1.0
+40 1.72633e-45 peak idx 1 mass<=13 idx 1.0
+60 -7.49463e-51 peak idx 4 mass<=13 idx 1.0
+100 -1.66355e-31 peak idx 17 mass<=13 idx 0.5464
+S37 even L=1.35 T=700 leading100 lam_min 5.12951e-68

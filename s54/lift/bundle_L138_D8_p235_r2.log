@@ -1,0 +1,13 @@
+L=1.38 D=8 primes=[2, 3, 5] chars=336
+init true max 3.308401 [14s]
+ it 0: LP 3.088044 true 3.758562 best 3.308401 rej r=0.025 pts=9000 [38s]
+ it 1: LP 3.156533 true 3.475676 best 3.308401 rej r=0.0125 pts=5431 [55s]
+ it 2: LP 3.202788 true 3.380564 best 3.308401 rej r=0.00625 pts=6678 [72s]
+ it 3: LP 3.231493 true 3.313517 best 3.308401 rej r=0.003125 pts=8178 [97s]
+ it 4: LP 3.250576 true 3.290335 best 3.290335 ACC r=0.004688 pts=9678 [118s]
+ it 5: LP 3.232275 true 3.285426 best 3.285426 ACC r=0.007031 pts=11673 [140s]
+ it 6: LP 3.205027 true 3.244968 best 3.244968 ACC r=0.01055 pts=13662 [163s]
+ it 7: LP 3.169733 true 3.235362 best 3.235362 ACC r=0.01582 pts=15658 [187s]
+ it 8: LP 3.123091 true 3.426220 best 3.235362 rej r=0.00791 pts=17643 [215s]
+ it 9: LP 3.146886 true 3.183246 best 3.183246 ACC r=0.01187 pts=19143 [242s]
+KILLED at 01:06Z to protect run1354 memory (best still 3.308401 from r1)

@@ -1,0 +1,15 @@
+L=1.38 D=8 primes=[7, 11, 13] chars=362
+init true max 2.332951 [19s]
+ it 0: LP 1.998634 true 2.530862 best 2.332951 rej r=0.025 pts=9000 [56s]
+ it 1: LP 2.092879 true 2.315386 best 2.315386 ACC r=0.0375 pts=5695 [80s]
+ it 2: LP 1.969129 true 3.716133 best 2.315386 rej r=0.01875 pts=7282 [105s]
+ it 3: LP 2.024989 true 2.275897 best 2.275897 ACC r=0.02813 pts=8782 [137s]
+ it 4: LP 1.949475 true 2.928041 best 2.275897 rej r=0.01406 pts=10759 [174s]
+ it 5: LP 1.985409 true 2.307031 best 2.275897 rej r=0.007031 pts=12259 [209s]
+ it 6: LP 2.004785 true 2.115115 best 2.115115 ACC r=0.01055 pts=13759 [246s]
+ it 7: LP 1.978124 true 2.151241 best 2.115115 rej r=0.005273 pts=15759 [287s]
+ it 8: LP 1.991958 true 2.071882 best 2.071882 ACC r=0.00791 pts=17259 [328s]
+ it 9: LP 1.973682 true 2.223821 best 2.071882 rej r=0.003955 pts=19259 [380s]
+ it 10: LP 1.983586 true 2.052152 best 2.052152 ACC r=0.005933 pts=20759 [439s]
+ it 11: LP 1.970179 true 2.044986 best 2.044986 ACC r=0.008899 pts=22759 [502s]
+KILLED by Grok at 01:05Z (budget overrun in final truemax; CPU needed for run1354). Best-so-far JSON kept.
