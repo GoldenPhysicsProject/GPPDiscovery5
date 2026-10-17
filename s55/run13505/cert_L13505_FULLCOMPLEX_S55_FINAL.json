@@ -1,0 +1,12 @@
+{
+ "L": "2701/2000", "support": "2.701", "lift": "../../s37/torus_L1.35_D8x2_p235_p71113_cert.json", "A_cert": "4.5928",
+ "gap_to_log15": 0.0070502, "eps_T": 5.64,
+ "even": {"T": 800, "K": 881, "ng": 92, "prec": 384, "lam_est": 1.2014833172876182e-69, "rE": 5.324e-87,
+   "pd_cholres_p640": "lambda_min(Atil) >= 1.2000e-69, ||E||<=3.99e-115", "pd_ldlt_exact_S640": "lambda_min >= 1.2003e-69, ||E||_F<=9.51e-115",
+   "negative_control": "ldlt_exact l0=1.2255e-69 FAILS (pivot 380)", "inertia_s55_lam": "0 negative pivots", "certified_lower": 1.1999e-69},
+ "odd": {"T": 800, "K": 881, "ng": 92, "prec": 384, "lam_est": 1.0916151085337042e-65, "rE": 5.327e-87,
+   "pd_cholres_p640": "lambda_min(Atil) >= 1.0910e-65, ||E||<=1.18e-114", "pd_ldlt_exact_S640": "lambda_min >= 1.0905e-65, ||E||_F<=1.26e-114",
+   "negative_control": "ldlt_exact l0=1.1134e-65 FAILS (pivot 427)", "inertia_s55_lam": "0 negative pivots", "certified_lower": 1.0904e-65},
+ "full_complex_lower": 1.1999e-69,
+ "status": "CERTIFIED (Arb, Lean-open, two independent PD implementations per parity). RH OPEN."
+}

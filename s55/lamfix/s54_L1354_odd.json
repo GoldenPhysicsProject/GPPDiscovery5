@@ -1,0 +1,1 @@
+{"mu_smallest_modulus": 8.213759981455605e-66, "n_neg_pivots": 2, "n_zero_pivots": 0, "lam_min_estimate": null, "verdict": "INDEFINITE: 2 negative pivots; mu is NOT lam_min", "file": "../s54/run1354/atil_L1354_T800_K884_odd.json", "K": 884, "prec": 640, "secs": 82}
