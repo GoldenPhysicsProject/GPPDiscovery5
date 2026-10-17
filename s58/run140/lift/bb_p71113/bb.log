@@ -1,0 +1,49 @@
+SUBSET mode: remaining primes [2, 3, 5] must be bounded separately (s31_merge_p11.py)
+L1.4_D8: L=1.4 primes=[7, 11, 13] chars=362 all invisible; min(|k.logp|-2L)=2.080e-02
+  it 1: boxes 256 keep 256 best F 1.868988 max ub 58.928697 min d 3.93e-01
+  it 2: boxes 512 keep 512 best F 1.871336 max ub 41.888934 min d 1.96e-01
+  it 3: boxes 1024 keep 1024 best F 1.871750 max ub 27.365127 min d 1.96e-01
+  it 4: boxes 2048 keep 2040 best F 1.871837 max ub 16.481172 min d 1.96e-01
+  it 5: boxes 4080 keep 4000 best F 1.871837 max ub 11.967651 min d 9.82e-02
+  it 6: boxes 8000 keep 7691 best F 1.871837 max ub 8.395638 min d 9.82e-02
+  it 7: boxes 15382 keep 14438 best F 1.871837 max ub 5.510753 min d 9.82e-02
+  it 8: boxes 28876 keep 26825 best F 1.871837 max ub 4.355584 min d 4.91e-02
+  it 9: boxes 53650 keep 48225 best F 1.872860 max ub 3.462624 min d 4.91e-02
+  it 10: boxes 96450 keep 78642 best F 1.877797 max ub 2.796177 min d 4.91e-02
+raise target 1.8818
+  it 1: boxes 256 keep 256 best F 1.868988 max ub 58.928697 min d 3.93e-01
+  it 2: boxes 512 keep 512 best F 1.871336 max ub 41.888934 min d 1.96e-01
+  it 3: boxes 1024 keep 1024 best F 1.871750 max ub 27.365127 min d 1.96e-01
+  it 4: boxes 2048 keep 2040 best F 1.871837 max ub 16.481172 min d 1.96e-01
+  it 5: boxes 4080 keep 4000 best F 1.871837 max ub 11.967651 min d 9.82e-02
+  it 6: boxes 8000 keep 7690 best F 1.871837 max ub 8.395638 min d 9.82e-02
+  it 7: boxes 15380 keep 14434 best F 1.871837 max ub 5.510753 min d 9.82e-02
+  it 8: boxes 28868 keep 26808 best F 1.871837 max ub 4.355584 min d 4.91e-02
+  it 9: boxes 53616 keep 48168 best F 1.872860 max ub 3.462624 min d 4.91e-02
+  it 10: boxes 96336 keep 78444 best F 1.877797 max ub 2.796177 min d 4.91e-02
+  it 11: boxes 156888 keep 132093 best F 1.882092 max ub 2.488601 min d 2.45e-02
+raise target 1.8861
+  it 1: boxes 256 keep 256 best F 1.868988 max ub 58.928697 min d 3.93e-01
+  it 2: boxes 512 keep 512 best F 1.871336 max ub 41.888934 min d 1.96e-01
+  it 3: boxes 1024 keep 1024 best F 1.871750 max ub 27.365127 min d 1.96e-01
+  it 4: boxes 2048 keep 2040 best F 1.871837 max ub 16.481172 min d 1.96e-01
+  it 5: boxes 4080 keep 4000 best F 1.871837 max ub 11.967651 min d 9.82e-02
+  it 6: boxes 8000 keep 7690 best F 1.871837 max ub 8.395638 min d 9.82e-02
+  it 7: boxes 15380 keep 14431 best F 1.871837 max ub 5.510753 min d 9.82e-02
+  it 8: boxes 28862 keep 26800 best F 1.871837 max ub 4.355584 min d 4.91e-02
+  it 9: boxes 53600 keep 48132 best F 1.872860 max ub 3.462624 min d 4.91e-02
+  it 10: boxes 96264 keep 78289 best F 1.877797 max ub 2.796177 min d 4.91e-02
+  it 11: boxes 156578 keep 131633 best F 1.882092 max ub 2.488601 min d 2.45e-02
+  it 12: boxes 263266 keep 212407 best F 1.882092 max ub 2.276994 min d 2.45e-02
+  it 13: boxes 424814 keep 322566 best F 1.882092 max ub 2.106200 min d 2.45e-02
+  it 14: boxes 645132 keep 526216 best F 1.882319 max ub 2.030109 min d 1.23e-02
+  it 15: boxes 1052432 keep 827764 best F 1.882783 max ub 1.976813 min d 1.23e-02
+  it 16: boxes 1655528 keep 1139591 best F 1.883166 max ub 1.936845 min d 1.23e-02
+  it 17: boxes 2279182 keep 1574008 best F 1.883431 max ub 1.919462 min d 6.14e-03
+  it 18: boxes 3148016 keep 1330095 best F 1.883431 max ub 1.906749 min d 6.14e-03
+  it 19: boxes 2660190 keep 813 best F 1.883431 max ub 1.896791 min d 6.14e-03
+  it 20: boxes 1626 keep 630 best F 1.883438 max ub 1.892515 min d 3.07e-03
+  it 21: boxes 1260 keep 486 best F 1.883469 max ub 1.889336 min d 3.07e-03
+  it 22: boxes 972 keep 157 best F 1.883469 max ub 1.886836 min d 3.07e-03
+  it 23: boxes 314 keep 0 best F 1.883486 max ub 1.885737 min d 1.53e-03
+L1.4_D8: sup_torus (B-m) <= 1.8861 (best sample 1.883486); boxes 12499336; Eround 2.19e-11 [158s]
