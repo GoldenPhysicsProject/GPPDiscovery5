@@ -1,0 +1,7 @@
+L=27/20 T=800 K=880 comb=[2, 3, 4, 5, 7, 8, 9, 11, 13] A=4.592800 beta=0.252685 lift_terms=701
+M_S <= 2334.0056  M0 <= 25.8695 [143s]
+assembly done: 1600 panels x 92 nodes [507s]
+ parity 1: lam_est=1.5677712681934844e-65 rE=5.311e-87 quad/entry=6.035e-90 [35s]
+ dumped Atil -> atil_L135_T800_K880_odd.json
+ schur_prec=384 bs_list=[]
+{"parity": "odd", "degs": [1, 1759], "nodes": 147200, "quad_err_entry": 6.035455997965095e-90, "lam_est": 1.5677712681934844e-65, "normE_bound": 5.311201290301306e-87, "lam0_schur": null, "first_omitted_degree": 1761, "eps_B": 2.1258582921620399e-134, "eps_CDD": 1.6395892910596873e-278, "lamD_lower": 0.2526846612585818} [39s]
