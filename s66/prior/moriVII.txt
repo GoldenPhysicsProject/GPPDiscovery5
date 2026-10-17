@@ -1,0 +1,522 @@
+  WEIL POSITIVITY ON THE WINDOW OF WIDTH log 12, AND A LOWER
+          BOUND FOR THE PROLATE EIGENVALUE DEFECT
+
+                                                  RYOTA MORI
+
+
+       Abstract. Weil’s criterion states that the Riemann Hypothesis holds if and only if Weil’s quadratic
+       form Q is nonnegative on all admissible test functions. Restricting the support to a fixed interval
+       [−L, L] gives a weaker, unconditional question. We prove that Q(f ) ≥ 2−1518 ∥f ∥22 for every complex
+       C 2 function f supported in [− 21 log 12, 21 log 12]; the half-width 12 log 12 ≈ 1.2425 exceeds that of
+       the previous proofs we know of, the largest being 12 log 10 (our previous paper). The new analytic
+       ingredient is an explicit lower bound for the defect of the top eigenvalue of time and frequency
+       limiting: 1 − λ0 (c) ≥ e−2(c+1) /(4(c + 1)(c + 4)) for all c > 0, which has the correct exponential
+       rate e−2c . It replaces the out-of-band estimate of our previous paper, which was proved under the
+       convenient hypothesis L < 7/6, and it improves the constant on the window of half-width 21 log 10
+       from 2−49162 to 2−876 without recomputing the finite matrices. The proof follows Liu’s bounded-
+       comparison framework and reduces positivity to a finite matrix inequality of size 416 in each parity,
+       which we certify in Arb ball arithmetic with all quadrature, rounding and inversion errors paid: the
+       finite margin is about 1.21 × 10−54 (even) and 1.59 × 10−50 (odd), while the total error is below
+       10−75 . It is an external certificate, not a formal proof. The result concerns one fixed window and
+       does not address the Riemann Hypothesis.
+
+
+
+Version 2. Zenodo, doi:10.5281/zenodo.23265728 (version 1: doi:10.5281/zenodo.23261744). Ver-
+sion 2 defines the functions bj of Lemma 5.1 and the transform v̂j in the proof of Lemma 3.2, adds
+the identity behind W(X) ⪰ G, and refers to release v1.5.1, which corrects the replay instruc-
+tions; the theorems and all constants are unchanged. Certificate data and code: release v1.5.1 of
+https://github.com/moriryota/prolate-weil-bounds, doi:10.5281/zenodo.23092422. Licence:
+CC BY 4.0.
+    Status. Analytic proof plus an external interval-arithmetic certificate (Arb/FLINT). The lower
+    bound for the prolate defect, the general tail estimate and the certificate passed two independent
+    AI reviews each, including an independent reimplementation of the final check; no blocking issues
+    remained. An independent review of this manuscript led to local corrections of proof text and
+    citations. Not formalized in Lean. Not yet reviewed by independent human experts.
+
+                                               1. Introduction
+1.1. Background. Let Q be Weil’s quadratic form [19, 4]. Weil’s criterion states that RH is
+equivalent to Q(f ) ≥ 0 for all admissible f . If the support of f is restricted to [−L, L], only
+prime powers n < e2L contribute and the question can be decided unconditionally for small L.
+Positivity is known for L = 21 log 2 (Yoshida [20]), L = 0.8 (Zhu [21]), L = 12 log 5 (Lean 4, [11]),
+L = 17/16 (Liu [10], unrefereed) and L = 12 log 10 ([14]). For µ = e2L , the bottom λmin of the
+spectrum of the restricted form satisfies λmin ≤ 3.50 × 1024 µ9/2 log µ e−4πµ for 50 ≤ µ ≤ 104 , and
+λmin ≤ 7.58 × 1024 µ5 (log µ)3 e−4πµ for every µ ≥ 50 [13, Theorem K]. These are upper bounds only,
+but they show that each enlargement of the window must resolve a much smaller margin.
+   In [14] the high frequencies were controlled by a lower bound on the out-of-band mass, I −Bband ⪰
+δI, proved by Lagrange interpolation. That argument was stated under the convenient sufficient
+condition L < 7/6 (that is, e2L < 10.3) and gave only δ = 2−49158 , while the best constant is the
+defect 1 − λ0 (ΩL) of time and frequency limiting, of size e−2ΩL up to powers.
+
+  Date: 10 October 2026 (version 2; version 1: 9 October 2026).
+                                                         1
+2                                             RYOTA MORI
+
+
+1.2. Results. For L > 0, f ∈ C 2 (R; C) with supp f ⊂ [−L, L], put Ff (z) = f (x)eizx dx, a(t) =
+                                                                             R
+
+Re ψ( 41 + it2 ) − log π and
+                          Z                      Z                   Z
+                                           2                   2   1
+                Q(f ) = 2 f (x) cosh x2 dx − 2 f (x) sinh x2 dx +       a(t)|Ff (t)|2 dt
+                                                                  2π R
+(1.1)                         X Λ(n)      Z
+                         −2        √ Re f (x)f (x − log n) dx.
+                                    n       R
+                             n<e2L
+
+By the Guinand–Weil explicit formula, Q(f ) = Re ρ mρ Ff (γρ )Ff (γρ ) with γρ = (ρ − 21 )/i; RH is
+                                                    P
+not assumed. The derivation, the convergence of the zero sum, and the reduction to real symmetric
+operators on each parity are as in [14, Section 2]; nothing there depends on L. For L = 12 log 12
+the prime powers are n ∈ {2, 3, 4, 5, 7, 8, 9, 11}.
+Theorem M. For every f ∈ C 2 (R; C) with supp f ⊂ [− 12 log 12, 12 log 12],
+                                              Z
+                               Q(f ) ≥ 2−1518    |f (x)|2 dx.
+                                                         R
+Theorem N. Let λ0 (c) be the largest eigenvalue of the operator on L2 (−1, 1) with kernel sin(c(x −
+y))/(π(x − y)). For every c > 0,
+                                                       e−2(c+1)
+                                    1 − λ0 (c) ≥                   .
+                                                   4(c + 1)(c + 4)
+Moreover the normalized positive ground state satisfies ψ0,c (1)2 ≥ e−2c /(4c + 12).
+Corollary 1.1. The constant in Theorem L of [14] can be replaced by 2−876 : Q(f ) ≥ 2−876 ∥f ∥2
+for every f ∈ C 2 (R; C) supported in [− 21 log 10, 12 log 10].
+  Theorem M is proved by an ordinary analytic argument together with an external certificate in
+ball arithmetic (Arb/FLINT [1]), produced and checked by separate programs. It is not a formal
+proof.
+
+                 reference     half-width L        e2L       method
+                 Yoshida [20] 12 log 2 ≈ 0.347     2    analytic + computer-assisted
+                 Zhu [21]     0.8                  4.95 interval certificate
+                              1
+                 [11]          2 log 5 ≈ 0.805     5    Lean 4 (kernel-checked)
+                 Liu [10]     17/16 = 1.0625       8.37 interval certificate (unrefereed)
+                              1
+                 [14]          2 log 10 ≈ 1.151    10   interval certificate
+                 Theorem M 21 log 12 ≈ 1.242       12   interval certificate
+       Table 1. Unconditional positivity on windows [−L, L]. The approach of Connes
+       and Consani [5] works under vanishing conditions on the Fourier transform and is
+       not listed.
+
+
+1.3. Method and what is new.
+                                                                         √
+     • Theorem N: a comparison of the ground state with x−1/2 I0 (c 1 − x2 ), combined with
+       Slepian’s identity. The exponential rate e−2c is sharp (Fuchs [7]); the polynomial factor is
+                      √
+       c−2 instead of c. A lower bound C −1 e−2Cc/π with an unspecified constant follows from the
+       uncertainty principle of Nazarov and Jaming [15, 8]; explicit endpoint bounds of Bonami
+       and Karoui [2, 3] require conditions that the ground state does not satisfy. We do not claim
+       that Theorem N is new.
+     • A tail inequality for general L and Ω, with the projection errors written as functions of N
+       and of the ellipse parameter ρ (Section 3).
+                          WEIL POSITIVITY ON THE WINDOW OF WIDTH log 12                                  3
+
+
+        • The window 12 log 12, where the prime 11 enters, with ∥Cp ∥ ≤ 16
+                                                                        57
+                                                                           and Ω = 416; the finite
+          condition is certified at N = 832; at N = 640 the computed comparison matrix was
+          numerically negative in both parities (Section 5).
+
+                        2. The defect of the top prolate eigenvalue
+                                                                                               d
+     Let Qc be the operator on L2 (−1, 1) with kernel sin(c(x − y))/(π(x − y)) and Dc = − dx     (1 −
+   2  d     2  2
+ x ) dx + c x . We use the following classical facts (see also [18, 17]). The operators Qc and Dc
+have a common complete system of real eigenfunctions ψn,c , and the largest eigenvalue λ0 (c) of
+Qc and the smallest eigenvalue χ0 (c) of Dc belong to the same simple eigenfunction ψ = ψ0,c [9,
+Section 2.1]. This eigenfunction is even and has no zeros in (−1, 1) [16, Theorems 1 and 3]. The
+ finite Fourier eigenfunction relation gives an entire extension, and the endpoint values are nonzero
+Rby1 uniqueness   of the analytic solution at the regular singular endpoints. We normalize ψ > 0 and
+        2 = 1. Slepian’s identity, with this normalization, is proved in [12, Lemma 2.1]:
+   −1 ψ
+
+                                                    2λ0 (c)ψ0,c (1)2
+(2.1)                                   λ′0 (c) =                    .
+                                                           c
+In particular λ0 is increasing. Write p(x) = 1 − x2 and A = ψ(1) > 0. The eigenvalue equation is
+(pψ ′ )′ = (c2 x2 − χ0 )ψ, and the constant test function gives 0 < χ0 ≤ c2 /3.
+Lemma 2.1 (centre). ψ ′ < 0 on (0, 1), and ψ(a) ≥ 65 ψ(0) for a = 1/(2(c + 1)).
+Proof. pψ ′ vanishes at 0 (parity) and at 1 (regularity), and (pψ ′ )′ changes sign
+                                                                                 R x once on (0, 1), at
+     √
+x = χ0 /c; hence pψ ′ < 0 on (0, 1). Since ψ ≤ ψ(0) there, −p(x)ψ ′ (x) = 0 (χ0 − c2 t2 )ψ dt ≤
+                                                    2                       2                 c2 a2
+χ0 ψ(0)x ≤ c2 ψ(0)x. Integrating, ψ(a) ≥ ψ(0) 1 + c2 log(1 − a2 ) , and − c2 log(1 − a2 ) ≤ 2(1−a
+                                                                 
+                                                                                                   2) ≤
+1/4   1
+3/2 = 6 .                                                                                               □
+                                                       √
+Lemma 2.2 (comparison). Let Y (x) = x−1/2 I0 (c 1 − x2 ) for 0 < x ≤ 1, where I0 is the modified
+Bessel function. Then
+                                         ′ ′
+                                                
+                                                   2 2      3     1
+                                     (pY ) = c x + 2 +               Y,
+                                                           4x     4
+and ψ(x) ≤ AY (x) for 0 < x ≤ 1.
+                        √
+Proof. Put w = I0 (c p). From the modified Bessel equation [6, 10.25.1], (pw′ )′ = c2 x2 w −
+ √       √                         √ √
+c p I1 (c p) and w′ = −cxI1 (c p)/ p. With Y = x−1/2 w, the cross term 2p(x−1/2 )′ w′ =
+ √       √
+c p I1 (c p)x−1/2 cancels the last term, and (p(x−1/2 )′ )′ = ( 4x32 + 14 )x−1/2 gives the identity. More-
+over Y (1) = 1, and pY ′ → 0 as x → 1.
+    Let d = Y − ψ/A. Then d(1) = 0. Evaluating the two differential equations at x = 1 gives
+Y ′ (1) = −(c2 + 1)/2 and ψ ′ (1) = −(c2 − χ0 )A/2, so d′ (1) = −(1 + χ0 )/2 < 0 and d > 0 near 1.
+Also
+                                                     3       1      χ0
+                                (pd′ )′ = c2 x2 d +      2
+                                                            +    Y +     ψ.
+                                                      4x      4       A
+Suppose d vanishes in (0, 1) and let x1 be its largest zero there. On (x1 , 1) the right side is positive,
+               R1                             R1
+so pd′ (x) = − x (pd′ )′ < 0, and d(x1 ) = − x1 d′ > 0, a contradiction.                                □
+
+Proof of Theorem N. By [6, 10.32.1], I0 (z) ≤ ez for z ≥ 0, so Lemma 2.2 gives ψ(x)2 ≤ A2 x−1 e2c
+on (0, 1]. On [0, a], Lemma 2.1 gives ψ 2 ≤ ψ(0)2 ≤ 4ψ(a)2 ≤ 4A2 a−1 e2c . Hence
+                Z 1
+                     ψ 2 ≤ 2A2 e2c 4 + log a1 = A2 e2c 8 + 2 log(2(c + 1)) ≤ A2 e2c (4c + 12),
+                                                                         
+           1=2
+                  0
+4                                               RYOTA MORI
+
+
+which is the bound for ψ0,c (1)2 . If λ0 (c) ≤ 12 , then 1 − λ0 (c) ≥ 21 , which exceeds the claimed bound.
+Otherwise λ0 (s) > 12 for s ≥ c, and by (2.1)
+                                                                            e−2s              e−2(c+1)
+                                  Z c+1                          Z c+1
+                                          2λ0 (s)ψ0,s (1)2
+ 1−λ0 (c) ≥ λ0 (c+1)−λ0 (c) =                              ds ≥                     ds ≥                  . □
+                                    c             s                c     s(4s + 12)       4(c + 1)(c + 4)
+Remark 2.3. (i) For aRwindow [−L, L] and the band |t| ≤ Ω (with Ff (t) = f (x)eitx dx), scaling
+                                                                                      R
+                     1             2                        2
+x = Ls shows that 2π    |t|>Ω |Ff | ≥ (1 − λ0 (ΩL))∥f ∥ , so Theorem N gives the out-of-band bound
+I −Bband ⪰ d(ΩL)I with d(c) = e−2(c+1) /(4(c+1)(c+4)), for every L. (ii) By Fuchs [7], 1−λ0 (c) ∼
+ √
+4 π c1/2 e−2c , so Theorem N has the correct exponential rate and loses a factor of order c5/2 . A
+Legendre–Galerkin computation for 0.5 ≤ c ≤ 20 gives ratios between 3.7 × 102 and 4.6 × 105
+(numerical, not used).
+
+                      3. The bounded comparison for general windows
+   Throughout this section L > 0 is fixed, I = [−L, L], H = L2 (I; C), and Ω > 0, m > 0 are
+parameters. The argument is that of [14, Sections 3–4] with every constant written in terms of L,
+Ω, m and the truncation order N ; it follows the framework of Liu [10].
+
+3.1. The prime operator. For a ∈ R let Sa f (x) = 1I (x−a)f (x−a), Cp = n<e2L Λ(n)n−1/2 (Slog n +
+                                                                               P
+S− log n ), so that the prime term of (1.1) is −⟨f, Cp f ⟩. For a positive even weight w the weighted
+Schur inequality gives ∥Cp ∥ ≤ ess sup Rw , where
+                         X Λ(n) 1I (x + log n)w(x + log n) + 1I (x − log n)w(x − log n)
+              Rw (x) =        √                                                           .
+                           2L
+                                n                            w(x)
+                       n<e
+
+In the variable q = e2x , x ≥ 0, the shift by + log n is active for q < e2L /n2 and the shift by − log n
+for q > n2 e−2L . If ∥Cp ∥ ≤ s, put γ = s + m and M = γI − Cp ; then mI ⪯ M ⪯ bI with b = 2s + m.
+3.2. The tail. Let Bband have kernel sin(Ω(x − y))/(π(x − y)) on I, and
+                                                          Z Ω
+                                                        1
+                 x        x             x        x
+     K = 2| cosh 2 ⟩⟨cosh 2 | − 2| sinh 2 ⟩⟨sinh 2 | +        (a(t) − γ)|et ⟩⟨et | dt,    et (x) = eitx .
+                                                       2π −Ω
+                                                            1                          2
+                                                              R
+Then Q(f ) = ⟨f, (M + K)f ⟩ + Ttail (f ) with Ttail (f ) = 2π  |t|>Ω (a(t) − γ)|Ff (t)| dt. By the proof of
+                                t
+Lemma 3.3 of [14], a(t) ≥ log 2π   − 1t for t ≥ 15
+                                                 4 ; the right side increases with t, so
+                                            Ω     1
+(3.1)                     a(t) − γ ≥ C := log  − −γ         (|t| ≥ Ω ≥ 154 ).
+                                            2π Ω
+Proposition 3.1 (tail inequality). Assume C > 0, let c = ΩL > 2, p         and let 0 < δ ≤ d(c) =
+e−2(c+1) /(4(c + 1)(c + 4)). Put S = I − Bband − δI, v0 = (2L)−1/2 , v1 = 3/(2L) x/L, hj = Svj ,
+                                       c+1             3c2 + 6c + 2
+                                  E0 =      ,    E 1 =                ,
+                                        πc2                 πc3
+and let u0 , u1 ≥ 0 satisfy uj Ej ≤ C. Then, with U = u0 |h0 ⟩⟨h0 | + u1 |h1 ⟩⟨h1 |,
+                                      Ttail (f ) ≥ Cδ∥f ∥2 + ⟨f, U f ⟩.
+Proof. By Theorem N and Remark 2.3(i), I − Bband ⪰ d(c)I ⪰ δI, so 0 ⪯ S ⪯ I, and (3.1)
+gives Ttail (f ) ≥ Cδ∥f ∥2 + C⟨f, Sf ⟩. As in [14, Proposition 3.4], ej = ⟨vj , (I − Bband )vj ⟩ satisfies
+c−1
+ πc2
+     ≤ e0 ≤ E0 and 3(c−2)πc2
+                              ≤ e1 ≤ E1 ; these bounds come from integration by parts and hold
+for every c > 2. In fact 1 − λ0 (c) > d(c): this is immediate if λ0 (c) ≤ 21 ; otherwise the first
+inequality in the proof of Theorem N is strict, since λ0 (c + 1) < 1. Thus S ⪰ (1 − λ0 (c) − δ)I ≻ 0,
+and ⟨vj , Svj ⟩ = ej − δ > 0 for both j = 0, 1. The vectors v0 , v1 have opposite parities and S
+                           WEIL POSITIVITY ON THE WINDOW OF WIDTH log 12                                    5
+
+
+commutes with P the reflection, so the Cauchy–Schwarz inequality for the form ⟨·, S·⟩ on each parity
+gives ⟨f, Sf ⟩ ≥ j |⟨hj , f ⟩|2 /(ej − δ), and C/(ej − δ) ≥ C/Ej ≥ uj .                           □
+
+  With V = K + U we obtain, for admissible f ,
+
+(3.2)                               Q(f ) ≥ Cδ∥f ∥2 + ⟨f, (M + V )f ⟩,
+
+and it suffices to prove M + V ⪰ 0 on H.
+
+3.3. Reduction  to a finite matrix. Let N ≥ 2 bePan integer, counting both parities, and let
+vj (x) = (2j + 1)/(2L)Pj (x/L), E : CN → H, Ez = j<N zj vj , P = EE ∗ , and
+        p
+
+
+        A = E ∗ M E,     B = E ∗ M 2 E,    J = E ∗ V E,    G = E ∗ M −1 E,     DM = B − A2 ⪰ 0.
+
+Let R = V −EJE ∗ , and suppose ∥(I −P )RP ∥ ≤ e, (I −P )R(I −P ) ⪰ −n and ∥(I −P )R(I −P )∥ ≤ h
+with n < m. With
+                                   2e2            e+n         2h2
+                         α=e+           ,    β=         +            ,
+                                 m−n                m2    m2 (m − n)
+the block elimination of [14, (4.1)] (with θ = χ = 1; the proof uses only mI ⪯ M and n < m) gives
+
+(3.3)                     G−1 + J ⪰ αI + βDM          =⇒      M + V ⪰ 0 on H.
+
+For every matrix X, W(X) = X +X ∗ −X ∗ AX +m−1 (I −AX −X ∗ A+X ∗ BX) satisfies W(X) ⪰ G
+[14, Section 4]: with RX = E − M EX one has W(X) − G = RX   ∗ (m−1 I − M −1 )R
+                                                                                X ⪰ 0. Since
+      −1                             −1    −1
+G ⪰ b I, both inverses exist and W(X) ⪯ G . So it suffices to certify, in each parity,
+
+(3.4)                          T = W(X)−1 + J − αI − β(B − A2 ) ≻ 0.
+
+Lemma 3.2 (projection errors). Let ρ > 1, c = ΩL, and
+
+                2   8Lρ2 c(ρ−ρ−1 ) −2N          Ω                        
+               rN =      2
+                           e      ρ    ,  K0 = max |a(0) − γ|, |a(Ω) − γ| ,
+                  (ρ − 1)                       π
+    √                      √
+Hp = 2L cosh L2 and qN = 2LeL/2 (L/2)N /N !. Then one may take
+   h √    p       p      p    i                                                      h    Ω         i
+                                                                     2    2                           2    2
+e = K0 2L+ Ω/π (u0 E0 +u1 E1 ) rN +4Hp qN ,                  n = K0 rN +4qN ,     h = K0 + (u0 +u1 ) rN +4qN .
+                                                                                          π
+                                                                                    −1
+Proof. For |t| ≤ Ω, eitx on I is, after scaling to [−1, 1], bounded by ec(ρ−ρ )/2 on the Bernstein
+                                                                                     −1
+ellipse Eρ . Hence its Chebyshev coefficients are at most 2Hρ−k , where H = ec(ρ−ρ )/2 , and the
+truncation of degree N − 1 has sup-norm error at most 2Hρ−N /(1 − ρ−1 ) = 2Hρ1−N /(ρ − 1). Since
+the L2 projection is optimal and ∥1∥2L2 (I) = 2L, this gives ∥(I − P )et ∥ ≤ rN . The function a is
+increasing on t ≥ 0: in the series for ψ, each term Re( 41 + it2 + k)−1 decreases in t. Therefore
+ 1
+   RΩ                                                                   √
+2π −Ω   |a − γ| ≤ K 0 . The band   part of R is then bounded     by K 0   2LrN off the diagonal block, and
+by K0 rN2 in the complementary block (from below and in norm).
+                                                  RΩ
+                                                1
+                                                                −P )et dt, where v̂j (t) = I vj (x)e−itx dx =
+                                                                                          R
+   For U : (I −P )hj = −(I −P )Bband vj = − 2π     −Ω v̂j (t)(I
+                                                              p
+Fvj (−t) (the opposite sign to F ), with norm at most rN Ω/π by Cauchy–Schwarz and Plancherel.
+Also ∥hj ∥2 ≤ ⟨vj , Svj ⟩ ≤ Ej , and U ⪰ 0, so U contributes nothing to n.
+   For the poles: the Taylor remainder of e±x/2 of order N gives ∥(I −P ) cosh x2 ∥, ∥(I −P ) sinh x2 ∥ ≤
+qN , and both norms are at most Hp .                                                                        □
+6                                               RYOTA MORI
+
+
+                                        4. The window 12 log 12
+   Let L = 12 log 12, so e2L = 12 and the prime powers are 2, 3, 4, 5, 7, 8, 9, 11.
+                                                 19
+   Prime operator.            With w(x) = 1 + 40    (x/L)2 , the breakpoints on x ≥ 0 are q ∈
+    4 25        49 16 27 121
+{1, 3 , 12 , 3, 12 , 3 , 4 , 12 , 12}. Bounding Rw in ball arithmetic on 8 · 256 = 2048 closed
+                                                       57
+subintervals gives Rw < 3.5557, hence ∥Cp ∥ ≤ s = 16      . We take m = 12 , so γ = 65         61
+                                                                                    16 and b = 8 .
+                                                                             1
+   Tail. With Ω = 416 we get c = ΩL ≈ 516.86 and C ≈ 0.12790 > 8 . Moreover − log2 d(c) =
+1514.27 . . ., so we take δ = 2−1515 and τ = δ/8 = 2−1518 < Cδ. The coefficients u0 = 207, u1 = 68
+satisfy uj Ej < C.
+   Projection errors. With N = 832 (that is, 416 modes in each parity) and ρ = 3, Lemma 3.2
+gives, in ball arithmetic,
+     e < 2.08 × 10−94 < 2−311 ,        n < 1.27 × 10−191 < 2−634 ,        h < 3.82 × 10−190 < 2−629 .
+Then n < m, and α + βb2 < 2−303 (checked with exact rationals).
+Remark 4.1. At N = 640 the midpoint value of the smallest eigenvalue of W(X∗ )−1 +J was negative
+in both parities (−1.99 × 10−46 even, −4.89 × 10−50 odd). The negative directions are concentrated
+on Legendre degrees below 32, and the simple compression A + J is positive in the same directions.
+So the failure comes from the loss in the inverse bound, not from the Weil form. At N = 832
+the condition holds. For comparison, our Legendre–Galerkin computation of the bottom of the
+spectrum of Q on this window gives about 4.05 × 10−54 (numerical, not used in the proof; cf. [13]).
+
+                    5. Source matrices, quadrature and the certificate
+    A and B. After splitting I at the support boundaries of the shifts, the entries are integrals of
+polynomials of degree at most 1662; Gauss–Legendre quadrature with 834 nodes is exact, so only
+rounding errors occur. These are enclosed by the balls, and ϵA = ϵB = 2−400 covers them together
+with the distance to the rational centres.
+    J. In each parity the band and gamma-weighted integrals are computed on the panels
+[0, 21 ], [ 12 , 1], [1, 2], . . . , [128, 256], [256, 416] with 256 Gauss nodes each, from the representation
+         itx
+                       p
+                          2L(2j + 1) ij jj (Lt). For each parity p ∈ {0, 1} and j ≡ p (mod 2) put
+R
+  I vj e dx =
+
+                                        bj (t) = i−p Fvj (t) = (−1)(j−p)/2 2L(2j + 1) jj (Lt).
+                                                                          p
+
+These functions
+         RΩ        are real for real Rt, and in a fixed parity the band and gamma-weighted band entries
+are π −1                          −1 Ω (a(t) − γ)b (t)b (t) dt. The functions b extend holomorphically
+          0 bi (t)bj (t) dt and π      0             i   j                     j
+to the quadrature ellipses.
+Lemma 5.1 (quadrature). On the Bernstein ellipses ρ = 2 of the panels, | Im z| ≤ 60 and |z| ≤ 436.
+There |bi bj | ≤ 2Le120L < 52 e150 , and g(z) = 21 [ψ( 14 + iz2 ) + ψ( 14 − iz2 )] − log π − 65
+                                                                                             16 is holomorphic
+with |g| < 1100. Consequently the quadrature error of J, including the pole and U terms, is below
+2−263 in operator norm.
+Proof. The longest panel [256, 416] has half-length 80, so its ellipse has semi-minor axis 80 · 43 = 60,
+and every point satisfies |z| ≤ 336 + 100. For w = 14 ± iz2 : on the three panels of length at most 1,
+         1
+Re w ≥ 16  ; on the others, Re z ≥ 74 , so | Im w| ≥ 87 . Hence |w + k| ≥ 161
+                                                                              for all integers k ≥ 0.
+                                                                           5
+   After 31 applications of the recurrence, v = w + 31 has Re v ≥ 4 and |v − 1| < 249, and the
+                              P            1
+series ψ(v) = −γE + (v − 1) k≥0 (k+1)(k+v)        [6, 5.7.6] gives |ψ(v)| < 499. The recurrence costs at
+most 31 · 16.
+   A Chebyshev truncation of degree 511 and the exactness of 256-point Gauss up to degree 511 give
+the panel error 4ℓH 2−511 . The sum of the panel lengths is 416, and the operator norm is at most
+416 times the entrywise bound. The pole coefficients use 872 nodes and the Taylor polynomials of
+                          WEIL POSITIVITY ON THE WINDOW OF WIDTH log 12                                7
+
+
+degree 912, with remainder 2(5/8)913 /913!. For U , ∥E ∗ Svj ∥ ≤ 1. Adding the three contributions
+in ball arithmetic gives 5.45 × 10−80 < 2−263 .                                                 □
+   The constant δ. The saved matrix J was computed with δold = d(c) (enclosed in a ball), while
+the theorem uses δ = 2−1515 ≤ d(c). With t = δold − δ ∈ [0, 2−1514 ) we have hnew  j   = hold
+                                                                                           j + tvj , so
+∥U new      old                    2
+       − U ∥ ≤ (u0 + u1 )(2t + t ) < 2   −1504 . This is added to the error of J. The pieces (I − P )hj
+do not change, so Lemma 3.2 still applies.
+   Certificate. As in [14, Section 6], for each parity the proposer outputs rational matrices with
+denominator 2512 : centres A0 , B0 , J0 , a matrix X, W0 ≈ W(X), Y ≈ W0−1 , and congruence
+transforms for C = B − mA, W and T . The checker does not import the proposer and computes
+no eigenvalues. It verifies:
+      • all entries against the saved source balls, whose SHA-256 sums are pinned;
+      • ϵJ = 2−250 (quadrature, the δ change and rounding), ϵW = 2−350 and ϵD = 2−380 ;
+      • the inverse residual, measured by the geometric mean of the row-sum and column-sum
+        norms;
+      • η + ϵT ∥Z∥2F < 1, which gives λmin (T ) ≥ (1 − η − ϵT ∥Z∥2F )/∥Z∥2F , where ϵT = 2b2 ϵW + ϵY +
+        ϵJ + βϵD .
+
+                                                          even                    odd
+            total error ϵT                             5.53 × 10−76           5.53 × 10−76
+            certified lower bound for λmin (T )    1.2092639998 × 10−54   1.5867129002 × 10−50
+                 Table 2. The certified finite condition (3.4) at N = 832, µ = 12.
+
+
+   The checker passed at 1280 and at 1536 bits. It rejected seven altered inputs for the intended
+reasons: the sign of J reversed; an inflated declared error; B replaced by A2 ; a file changed without
+updating its hash; an understated error of J; a wrong contract; and a negative T . An independent
+reimplementation of the final check at 1664 bits, which does not share code with the checker,
+reproduced both lower bounds to more than 90 digits; it also recomputed nine further source
+entries independently. The checker runs in about 32 seconds and 1.3 GB of memory.
+Proof of Theorem M. The certificate gives (3.4) in both parities, hence G−1 + J ⪰ αI + βDM
+because W(X) ⪰ G. By (3.3), M + V ⪰ 0 on H. By (3.2), Q(f ) ≥ Cδ∥f ∥2 ≥ 2−1518 ∥f ∥2 .   □
+
+                                    6. Proof of Corollary 1.1
+  In [14] (L = 12 log 10, Ω = 256, γ = 72 , m = 12 , N = 640, u = (81, 27)), the out-of-band constant
+was δold = 2−49158 , and the certified finite margin was above 2−144 in both parities. By Theorem N
+with c = 128 log 10 ≈ 294.73 we have − log2 d(c) = 871.73 . . ., so δ = 2−872 ≤ d(c) is admissible.
+  Replacing δold by δ changes only U : with t = δ − δold , hnew
+                                                              j   = hold
+                                                                      j − tvj , and ∥U
+                                                                                         new − U old ∥ ≤
+
+108(2t+t2 ) < 2−863 . The constant δ enters nothing else in [14]: not A, B, W, nor the error budgets.
+Moreover (I − P )hj is unchanged, and ∥hnew      2
+                                             j ∥ ≤ ej , so the bounds e, n, h remain valid. The finite
+condition therefore keeps a margin above 2−144 − 2−863 > 2−145 .
+  The tail inequality of [14, Proposition 3.4] holds with δ in place of δold : the only properties used
+were I − Bband ⪰ δI, ej > δ and C0 δ > δ/16. Hence Q(f ) ≥ δ/16 ∥f ∥2 = 2−876 ∥f ∥2 .
+
+                                                  7. Remarks
+   Larger windows. Theorem N supplies an out-of-band estimate for every L > 0, replacing the
+interpolation estimate stated in [14] under the convenient sufficient condition L < 7/6. The obstacle
+for larger windows is now the prime operator. As e2L grows, s grows, hence Ω (through C > 0), N ,
+8                                                   RYOTA MORI
+
+
+and the precision. Rough estimates suggest Ω ≈ 600–900 for e2L = 15. For e2L = 20 the expected
+margin is about 10−96 , which requires error budgets below 2−340 . Both need a more economical
+implementation than ours.
+  Margins. The certified finite margins are of the same order as the numerical bottom of the
+spectrum. The final constants 2−1518 and 2−876 are much smaller because they come from the
+out-of-band bound, which is of size e−2ΩL .
+  Trust. The proof relies on the analytic lemmas above and in [14], on Arb/FLINT [1] for the ball
+enclosures, and on the checker program. It has not been checked by a proof assistant.
+
+                                                Reproducibility
+  The source matrices, the certificate, the proposer, the checker and the mutation tests
+are in the folder certificate-VII/ of release v1.5.1 of https://github.com/moriryota/
+prolate-weil-bounds (about 350 MB), with SHA-256 sums and replay instructions, archived on
+Zenodo, doi:10.5281/zenodo.23092422 (all versions). The checker runs in about 32 seconds and 1.3
+GB of memory.
+
+                                            Use of generative AI
+   This work was carried out with extensive use of generative AI systems, namely Anthropic Claude
+and OpenAI GPT. Under the direction of the author, these systems derived the analytic bounds,
+implemented and ran the computations, and reviewed one another’s work adversarially. The author
+is responsible for the content.
+
+                                                   References
+ [1] F. Johansson, Arb: efficient arbitrary-precision midpoint-radius interval arithmetic, IEEE Trans. Comput. 66
+     (2017) 1281–1292. doi:10.1109/TC.2017.2690633
+ [2] A. Bonami, A. Karoui, Uniform approximation and explicit estimates for the prolate spheroidal wave functions,
+     Constr. Approx. 43 (2016) 15–45. doi:10.1007/s00365-015-9295-1; we used arXiv:1405.3676v2.
+ [3] A. Bonami, A. Karoui, Spectral decay of time and frequency limiting operator, Appl. Comput. Harmon. Anal.
+     42 (2017) 1–20. doi:10.1016/j.acha.2015.05.003
+ [4] E. Bombieri, Remarks on Weil’s quadratic functional in the theory of prime numbers, I, Atti Accad. Naz. Lincei
+     Rend. Lincei Mat. Appl. (9) 11 (2000) 183–233.
+ [5] A. Connes, C. Consani, Weil positivity and trace formula, the archimedean place, Selecta Math. (N.S.) 27 (2021),
+     article 77. doi:10.1007/s00029-021-00689-4; we used arXiv:2006.13771v1.
+ [6] NIST Digital Library of Mathematical Functions, https://dlmf.nist.gov.
+ [7] W. H. J. Fuchs, On the eigenvalues of an integral equation arising in the theory of band-limited signals, J. Math.
+     Anal. Appl. 9 (1964) 317–330. doi:10.1016/0022-247X(64)90017-4
+ [8] Ph. Jaming, Nazarov’s uncertainty principles in higher dimension, J. Approx. Theory 149 (2007) 30–41.
+     doi:10.1016/j.jat.2007.04.005
+ [9] A. Bonami, Ph. Jaming, A. Karoui, Non-asymptotic behavior of the spectrum of the sinc-kernel operator and
+     related applications, J. Math. Phys. 62 (2021) 033511. doi:10.1063/1.5140496; we used arXiv:1804.01257v1.
+[10] V. Liu, Certified Weil positivity beyond the unit window: source-exact block-Schur and tail-compensation
+     bounds for the Riemann zeta function, manuscript, 14 September 2026, https://github.com/luciferyu666/
+     certified-weil-positivity (release v1.0-mcom-submission).
+[11] R. Mori, Weil positivity on a window of width log 5: a formal proof in Lean 4, version 2, Zenodo, 2026.
+     doi:10.5281/zenodo.23035705
+[12] R. Mori, A non-asymptotic bound with the sharp power of c for the eigenvalue defect 1 − λn (c) of time and
+     frequency limiting, preprint, Zenodo, 2026. doi:10.5281/zenodo.23092454
+[13] R. Mori, A µ9/2 log µ upper bound for windowed Weil forms, preprint, Zenodo, 2026.
+     doi:10.5281/zenodo.23175061
+[14] R. Mori, Weil positivity on the window of width log 10: an interval-arithmetic certificate, preprint, Zenodo, 2026.
+     doi:10.5281/zenodo.23238480
+[15] F. L. Nazarov, Local estimates for exponential polynomials and their applications to inequalities of the uncer-
+     tainty principle type, Algebra i Analiz 5(4) (1993) 3–66; English transl. St. Petersburg Math. J. 5(4) (1994)
+     663–717.
+                            WEIL POSITIVITY ON THE WINDOW OF WIDTH log 12                                        9
+
+
+[16] A. Osipov, Certain upper bounds on the eigenvalues associated with prolate spheroidal wave functions,
+     arXiv:1206.4541v1, 2012.
+[17] A. Osipov, V. Rokhlin, H. Xiao, Prolate Spheroidal Wave Functions of Order Zero, Applied Mathematical
+     Sciences 187, Springer, New York, 2013. doi:10.1007/978-1-4614-8259-8
+[18] D. Slepian, Some asymptotic expansions for prolate spheroidal wave functions, J. Math. and Phys. 44 (1965)
+     99–140. doi:10.1002/sapm196544199
+[19] A. Weil, Sur les “formules explicites” de la théorie des nombres premiers, Comm. Sém. Math. Univ. Lund, tome
+     supplémentaire (1952) 252–265.
+[20] H. Yoshida, On Hermitian forms attached to zeta functions, in: Zeta Functions in Geometry (Tokyo, 1990),
+     Adv. Stud. Pure Math. 21, Kinokuniya, Tokyo, 1992, 281–325. doi:10.2969/aspm/02110281
+[21] X. Zhu, Weil positivity in compact windows: a finite reduction, certified two-sided bounds, and a Landau–Widom
+     decay law, arXiv:2608.24827v2, 2026.
+
+  Independent researcher, Tokyo, Japan
+  Email address: moriryota31@gmail.com
+
