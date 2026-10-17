@@ -1,0 +1,6 @@
+L=7/5 T=1310 K=1497 comb=[2, 3, 4, 5, 7, 8, 9, 11, 13, 16] A=5.189000 beta=0.150142 lift_terms=839
+M_S <= 27969.4716  M0 <= 26.9984 [442s]
+assembly done: 2620 panels x 92 nodes [5466s]
+ parity 0: lam_est=None rE=inf quad/entry=2.174e-88 [87s]
+ dumped Atil -> atil_L140_T1310_K1497_even.json
+{"parity": "even", "degs": [0, 2992], "nodes": 241040, "quad_err_entry": 2.1741259321397103e-88, "lam_est": null, "normE_bound": Infinity, "lam0_schur": null, "first_omitted_degree": 2994, "eps_B": 5.639216062058669e-143, "eps_CDD": 2.2515938935738804e-296, "lamD_lower": 0.15014199100722578} [92s]

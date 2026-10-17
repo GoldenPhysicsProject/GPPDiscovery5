@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    print('%.4e'%(None*0.999))
+                  ~~~~^~~~~~
+TypeError: unsupported operand type(s) for *: 'NoneType' and 'float'

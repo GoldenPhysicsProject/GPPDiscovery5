@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspace/GPPDiscovery5/s58/run140/../../s55/s55_lam.py", line 59, in <module>
+    out = lam_estimate_fixed(rows, bs); out.update(file=f, K=len(rows), prec=ctx.prec, secs=round(time.time() - t0))
+  File "/workspace/GPPDiscovery5/s58/run140/../../s55/s55_lam.py", line 50, in lam_estimate_fixed
+    neg, zero = inertia_neg(rows, bs)
+                ~~~~~~~~~~~^^^^^^^^^^
+  File "/workspace/GPPDiscovery5/s58/run140/../../s55/s55_lam.py", line 36, in inertia_neg
+    M = (A22 - A21 * A11m.solve(A12).mid()).mid(); n -= b
+                     ~~~~~~~~~~^^^^^
+  File "flint/types/arb_mat.pyx", line 436, in flint.types.arb_mat.arb_mat.solve
+ZeroDivisionError: singular matrix in solve()
