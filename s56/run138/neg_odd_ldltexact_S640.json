@@ -1,0 +1,14 @@
+{
+ "dump": "atil_L138_T1160_K1305_odd.json",
+ "sha256": "a05d8e7ca7ce4f4558c62794b50c2f76f32e90e0887a3cffb0cc3ce1eab072b0",
+ "K": 1305,
+ "S": 640,
+ "pert_F": 4.406880981506872e-113,
+ "tries": [
+  {
+   "l0": "3.0492e-70",
+   "ldlt": "fail",
+   "pivot": 358
+  }
+ ]
+}

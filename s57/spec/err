@@ -1,0 +1,2 @@
+/workspace/GPPDiscovery5/s57/s57_spec.py:54: RuntimeWarning: invalid value encountered in scalar divide
+  lift_frac_in_Omega_neg=float((w * dens * lift * neg).sum() / (w * dens * lift).sum()),

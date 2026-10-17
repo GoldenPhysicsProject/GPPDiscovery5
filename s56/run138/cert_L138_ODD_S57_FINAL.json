@@ -1,0 +1,12 @@
+{
+ "L": "69/50", "support": "2.76", "parity": "odd", "lift": "torus_L1.38_buf_D9D8_cert.json (s56/lift, B&B A_cert 4.9641, used exactly)",
+ "closest_lift_char": "log 16 = 2.772589, gap 0.012589, eps*T = 14.6",
+ "T": 1160, "K": 1305, "ng": 92, "prec": 384, "beta": 0.2533, "lam_est": 2.989410255794141e-70, "rE": 6.809e-86,
+ "pd_cholres_p640": "lambda_min(Atil) >= 2.9860e-70, minpiv 1.728e-08, ||E||<=1.193e-114",
+ "pd_ldlt_exact_S640": "lambda_min >= 2.98639e-70, ||E||_F<=1.646e-114",
+ "negative_control": "ldlt_exact l0=3.0492e-70 FAILS (pivot 358)",
+ "inertia_s55_lam": "0 negative pivots, 0 zero pivots (mu = 2.98941e-70)",
+ "atil_sha256": "a05d8e7ca7ce4f4558c62794b50c2f76f32e90e0887a3cffb0cc3ce1eab072b0",
+ "certified_lower": 2.9859e-70,
+ "status": "CERTIFIED (Arb, Lean-open, two independent PD implementations, failing negative control): Q_zeta(f) >= 2.9859e-70 ||f||^2 on ODD f in L^2[-69/50, 69/50]. With cert_L138_EVEN_S56_FINAL.json: FULL COMPLEX support 2.76, Q_zeta >= 1.7199e-74 ||f||^2 (even binding). Collected Grok S57 (2026-10-17). RH OPEN."
+}

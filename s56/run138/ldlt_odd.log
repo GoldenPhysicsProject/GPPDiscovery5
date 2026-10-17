@@ -1,0 +1,3 @@
+K=1305 S=640 sha256 OK; max e_last=-114; ||Atil-N/2^S||_F <= 4.407e-113 [97s]
+ l0=2.9864e-70: minD=1.728e-08 ||E||_F<=1.646e-114 => lambda_min(sym Atil) >= 2.986400e-70 OK [LDLt 218s, residual 36s]
+DONE 350.93629121780396

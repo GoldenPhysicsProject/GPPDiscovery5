@@ -1,0 +1,13 @@
+{"mode": "bis", "sec": "odd", "p": 3, "M": 40, "EDGEK": "0", "delta_in": [0.0080566, 0.0080859], "note": "", "wall_s": 63}
+{"mode": "bis", "sec": "odd", "p": 5, "M": 40, "EDGEK": "0", "delta_in": [0.0025547, 0.0025664], "note": "", "wall_s": 86}
+{"mode": "bis", "sec": "odd", "p": 3, "M": 56, "EDGEK": "0", "delta_in": [0.0080273, 0.0080566], "note": "", "wall_s": 119}
+{"mode": "bis", "sec": "odd", "p": 5, "M": 56, "EDGEK": "0", "delta_in": [0.002543, 0.0025547], "note": "", "wall_s": 151}
+{"mode": "bis", "sec": "odd", "p": 5, "M": 80, "EDGEK": "0", "delta_in": [0.002543, 0.0025547], "note": "", "wall_s": 405}
+{"mode": "bis", "sec": "odd", "p": 7, "M": 40, "EDGEK": "0", "delta_in": [0.0019922, 0.0020156], "note": "", "wall_s": 106}
+{"mode": "bis", "sec": "odd", "p": 3, "M": 80, "EDGEK": "0", "delta_in": [0.007998, 0.0080273], "note": "", "wall_s": 713}
+{"mode": "bis", "sec": "odd", "p": 7, "M": 56, "EDGEK": "0", "delta_in": [0.0014766, 0.0015], "note": "", "wall_s": 204}
+{"mode": "bis", "sec": "odd", "p": 2, "M": 40, "EDGEK": "0", "delta_in": [0.025, 0.0250781], "note": "", "wall_s": 107}
+{"mode": "bis", "sec": "odd", "p": 2, "M": 56, "EDGEK": "0", "delta_in": [0.025, 0.0250781], "note": "", "wall_s": 203}
+{"mode": "bis", "sec": "odd", "p": 7, "M": 80, "EDGEK": "0", "delta_in": [0.0013, 0.0013047], "note": "", "wall_s": 355}
+{"mode": "bis", "sec": "odd", "p": 11, "M": 40, "EDGEK": "0", "delta_in": [0.0019062, 0.0019375], "note": "", "wall_s": 141}
+{"mode": "bis", "sec": "odd", "p": 7, "M": 104, "EDGEK": "0", "delta_in": [0.0012937, 0.0013], "note": "", "wall_s": 864}

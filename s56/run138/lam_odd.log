@@ -1,0 +1,1 @@
+{"mu_smallest_modulus": 2.989410255794141e-70, "n_neg_pivots": 0, "n_zero_pivots": 0, "lam_min_estimate": 2.989410255794141e-70, "verdict": "PD-looking (mu = lam_min)", "file": "atil_L138_T1160_K1305_odd.json", "K": 1305, "prec": 640, "secs": 353}
