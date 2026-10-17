@@ -1,0 +1,58 @@
+torus_L1.4_D10_cert.json: n=3 terms=646 (vis 7); invisibility (mpmath, independent) OK at L=7/5, min gap 1.3411e-02
+  Arb table N=2^20 built [1s]
+  it 1: boxes 1 kept 1 best_lo 2.406996 max ub 6070.712288 min w 262144
+  it 2: boxes 2 kept 2 best_lo 2.406996 max ub 3964.964283 min w 262144
+  it 3: boxes 4 kept 4 best_lo 2.406996 max ub 2541.020366 min w 131072
+  it 4: boxes 8 kept 8 best_lo 3.115468 max ub 1535.489073 min w 131072
+  it 5: boxes 16 kept 16 best_lo 3.115468 max ub 1003.127573 min w 131072
+  it 6: boxes 32 kept 32 best_lo 3.115468 max ub 645.762552 min w 65536
+  it 7: boxes 64 kept 64 best_lo 3.149076 max ub 397.783149 min w 65536
+  it 8: boxes 128 kept 128 best_lo 3.151151 max ub 263.568413 min w 65536
+  it 9: boxes 256 kept 256 best_lo 3.151151 max ub 167.333796 min w 32768
+  it 10: boxes 512 kept 512 best_lo 3.151151 max ub 103.582103 min w 32768
+  it 11: boxes 1024 kept 1024 best_lo 3.151269 max ub 68.446617 min w 32768
+  it 12: boxes 2048 kept 2048 best_lo 3.151756 max ub 45.089061 min w 16384
+  it 13: boxes 4096 kept 4096 best_lo 3.151756 max ub 28.872845 min w 16384
+  it 14: boxes 8192 kept 8191 best_lo 3.151756 max ub 20.007294 min w 8192
+  it 15: boxes 16382 kept 16283 best_lo 3.151756 max ub 14.122368 min w 8192
+  it 16: boxes 32566 kept 30251 best_lo 3.151756 max ub 9.561970 min w 8192
+  it 17: boxes 60502 kept 48970 best_lo 3.151756 max ub 7.358483 min w 4096
+  it 18: boxes 97940 kept 72201 best_lo 3.151756 max ub 5.888846 min w 4096
+  it 19: boxes 144402 kept 99589 best_lo 3.151877 max ub 4.760787 min w 2048
+  it 20: boxes 199178 kept 142676 best_lo 3.151886 max ub 4.197098 min w 2048
+  it 21: boxes 285352 kept 209072 best_lo 3.155936 max ub 3.832385 min w 2048
+  it 22: boxes 418144 kept 296816 best_lo 3.164483 max ub 3.553883 min w 1024
+  it 23: boxes 593632 kept 463085 best_lo 3.164483 max ub 3.421255 min w 1024
+  it 24: boxes 926170 kept 721822 best_lo 3.164483 max ub 3.332306 min w 1024
+  it 25: boxes 1443644 kept 1060525 best_lo 3.165551 max ub 3.266056 min w 512
+  it 26: boxes 2121050 kept 1628376 best_lo 3.166011 max ub 3.230493 min w 512
+  it 27: boxes 3256752 kept 2370143 best_lo 3.166011 max ub 3.208280 min w 512
+  it 28: boxes 4740286 kept 2314514 best_lo 3.167171 max ub 3.191421 min w 256
+  it 29: boxes 4629028 kept 7164 best_lo 3.167226 max ub 3.183032 min w 256
+  it 30: boxes 14328 kept 2735 best_lo 3.167230 max ub 3.177482 min w 256
+  it 31: boxes 5470 kept 1718 best_lo 3.167398 max ub 3.173295 min w 128
+  it 32: boxes 3436 kept 1691 best_lo 3.167398 max ub 3.171240 min w 128
+  it 33: boxes 3382 kept 1610 best_lo 3.167398 max ub 3.169854 min w 128
+  it 34: boxes 3220 kept 1388 best_lo 3.167398 max ub 3.168908 min w 64
+  it 35: boxes 2776 kept 1400 best_lo 3.167398 max ub 3.168384 min w 64
+  it 36: boxes 2800 kept 1353 best_lo 3.167398 max ub 3.168040 min w 64
+  it 37: boxes 2706 kept 1010 best_lo 3.167398 max ub 3.167778 min w 64
+  it 38: boxes 2020 kept 824 best_lo 3.167400 max ub 3.167647 min w 32
+  it 39: boxes 1648 kept 534 best_lo 3.167400 max ub 3.167560 min w 32
+  it 40: boxes 1068 kept 0 best_lo 3.167402 max ub 3.167495 min w 32
+{
+ "ok": true,
+ "cert": "torus_L1.4_D10_cert.json",
+ "target": 3.1675,
+ "L": "7/5",
+ "best_lower": 3.167402416928841,
+ "boxes": 19024265,
+ "iters": 40,
+ "M": 20,
+ "min_halfwidth_rad": 0.00019174759848570517,
+ "EF": 3.0704827378568033e-12,
+ "Eg_max": 7.716807281709058e-12,
+ "min_invisible_gap": 0.013410716760036367,
+ "elapsed_s": 290.094633102417,
+ "method": "s35_interval_bb: exact-integer phases + Arb cos/sin table (no libm), a-priori IEEE sum bounds, 2nd-order Taylor B&B"
+}

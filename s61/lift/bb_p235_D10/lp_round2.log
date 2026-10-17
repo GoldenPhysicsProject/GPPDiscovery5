@@ -1,0 +1,15 @@
+L=1.4 EPS=0.0056 minfreq=2.813411 D=10 primes=[2, 3, 5] chars=639
+init true max 3.188147 [7s]
+ it 0: LP 3.060976 true 4.256910 best 3.188147 rej r=0.025 pts=9000 [52s]
+ it 1: LP 3.110840 true 3.899826 best 3.188147 rej r=0.0125 pts=5430 [79s]
+ it 2: LP 3.142737 true 3.409747 best 3.188147 rej r=0.00625 pts=6605 [108s]
+ it 3: LP 3.160646 true 3.263549 best 3.188147 rej r=0.003125 pts=8104 [143s]
+ it 4: LP 3.170005 true 3.196629 best 3.188147 rej r=0.001563 pts=9604 [181s]
+ it 5: LP 3.174752 true 3.177042 best 3.177042 ACC r=0.002344 pts=11104 [222s]
+ it 6: LP 3.168047 true 3.192531 best 3.177042 rej r=0.001172 pts=13102 [268s]
+ it 7: LP 3.171410 true 3.172048 best 3.172048 ACC r=0.001758 pts=14602 [319s]
+ it 8: LP 3.166455 true 3.167612 best 3.167612 ACC r=0.002637 pts=16600 [380s]
+ it 9: LP 3.159243 true 3.169300 best 3.167612 rej r=0.001318 pts=18597 [450s]
+ it 10: LP 3.162860 true 3.163779 best 3.163779 ACC r=0.001978 pts=20097 [527s]
+ it 11: LP 3.157647 true 3.159847 best 3.159847 ACC r=0.002966 pts=22095 [608s]
+DONE best 3.159846939452555

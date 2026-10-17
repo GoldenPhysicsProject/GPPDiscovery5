@@ -1,0 +1,21 @@
+{
+ "gamma_modsq_reldiff_max": 4.841395333180368e-41,
+ "gamma_modsq_limit_minus_4pi2_27": "0.0",
+ "lambda0_limit": "1.0",
+ "kac_radul_ok_n_le_60": true,
+ "vir_m2_central_coeff": "1/2",
+ "int_w_minus_1_16": "0.0",
+ "fourier_minus_sech2_over16_t=0.3": "0.0",
+ "fourier_minus_sech2_over16_t=1.7918": "3.59e-43",
+ "OS_matrix": [
+  [
+   "1/25",
+   "3/98"
+  ],
+  [
+   "3/98",
+   "9/400"
+  ]
+ ],
+ "OS_det": "-891/24010000"
+}

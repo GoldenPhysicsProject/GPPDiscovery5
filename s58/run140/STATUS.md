@@ -1,12 +1,13 @@
-# s58/run140 status (Grok S58)
-- LIFT (lift/): CERTIFIED A <= 5.189 at L = 7/5 = {2,3,5} D9 <= 3.3029 (best sample 3.29991; s34 float B&B + s35 libm-free interval B&B both ok)
-  + {7,11,13} D8 <= 1.8861 (best sample 1.88349; both ok). 839 characters, group-local (s35_check_merge OK). Buffer EPS = 0.0056;
-  closest characters: log(50/3) = 2.81341 (gap 0.013411, eps*T = 17.6) and gap 0.020796 for {7,11,13}. Comb now includes n = 16.
-- EVEN (T = 1310, K = 1497, ng = 92, prec 384, beta = 0.150142, W = 3): RUNNING detached (lift done ~05:23Z, assembly started ~05:30Z; expect ~07:00Z) (chain_even.sh PID 54432, python PID 60944).
-  Outputs: run_even.log, cert_L140_T1310_K1497_ng92_p384_par0.json, atil_L140_T1310_K1497_even.json (gitignored), pd_even.log,
-  cholres_even_p640.log, ldlt_even.log, neg_ldlt_even.log, lam_even.log; done-file even.done. NOT yet certified.
-- ODD: not started (needs beta ~ 0.25, i.e. T ~ 1450, K ~ 1655). RH OPEN.
-- S60 (06:55Z+): the S58 EVEN run is VOID (not a refutation): sph_j_all backward recurrence at x = T*L = 1834, D = 2994 lost all
-  precision at SPHJ_BOOST = 1.75 (rE = inf, lam_est = None, dumped midpoints garbage up to 9e188; pd.sh aborted). No certificate.
-  Outputs moved to void_boost175/. Re-run with SPHJ_BOOST = 2.0 (verified finite balls, rad 5e-119): chain_even_r2.sh, started 07:11Z, ETA ~08:55Z,
-  same T/K/lift, W = 3; done-file even.done. Odd NOT launched (odd x = 2030 also OK at BOOST 2.0).
+# s58/run140 status (Grok, support 2.8 = L 7/5)
+- S58 LIFT (lift/): CERTIFIED A <= 5.189 ({2,3,5} D9 <= 3.3029 + {7,11,13} D8 <= 1.8861; 839 chars; 2 B&B impls each).
+- S60: first even run (SPHJ_BOOST 1.75) VOID (sph_j precision loss at x = 1834, rE = inf); outputs in void_boost175/.
+- **S61 EVEN: CERTIFIED** (chain_even_r2.sh, SPHJ_BOOST 2.0, T 1310, K 1497, beta 0.150142, S58 lift):
+  cholres >= 7.4200e-78, ldlt_exact >= 7.4197e-78, control 7.5757e-78 FAILS (pivot 406), 0 neg pivots, rE 3.3e-85.
+  => Q_zeta >= 7.4196e-78 ||f||^2 on even L^2[-1.4, 1.4]. File cert_L140_EVEN_S61_FINAL.json (atil sha256 94238400...).
+- **S61 LIFT v2: CERTIFIED A <= 5.0536** = {2,3,5} D10 <= 3.1675 (s61/lift/cert_r3: float B&B 19.0M boxes + libm-free interval
+  B&B ok, best sample 3.167402) + S58 {7,11,13} D8 <= 1.8861; 1001 chars group-local (s35_check_merge OK). torus_L1.40_buf_D10D8_cert.json.
+- **S61 ODD: RUNNING detached** chain_odd.sh (TORUS = D10D8 lift, BETA 0.26 -> T 1277, K 1459, beta 0.260009, SPHJ_BOOST 2.0, W 3),
+  started 09:15Z, ETA ~11:15Z (assembly ~80 min + PD ~25 min). Outputs run_odd.log, cert_L140_T1277_K1459_ng92_p384_par1.json,
+  pd_odd.log, cholres_odd_p640.log, ldlt_odd.log, neg_ldlt_odd.log, lam_odd.log; done-file odd.done.
+  Check: 'rE=inf' absent in run_odd.log, then ldlt/cholres OK and neg control FAILS.
+- Support 2.8 full complex: NOT yet certified (needs odd). RH OPEN.

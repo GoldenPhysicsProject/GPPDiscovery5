@@ -1,0 +1,1 @@
+TORUS=torus_L1.40_buf_D10D8_cert.json A_cert=5.0536 T=1277 K=1459 beta_target=0.26

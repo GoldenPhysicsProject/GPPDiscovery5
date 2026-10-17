@@ -1,0 +1,11 @@
+{
+ "R_r": "1/(x**2 + y**2)",
+ "detDR": "-1/(x**4 + 2*x**2*y**2 + y**4)",
+ "detDR_eq_minus_r_m2": true,
+ "DRJ_plus_JDR_zero": true,
+ "metric_pullback_ok": true,
+ "measure_pullback_abs_ok": true,
+ "omega_pullback_signed": "-1",
+ "involution_ok": true,
+ "fixed_points": "none on CP1 (|z|^2 = -1 impossible): free antiholomorphic involution, CLASSICAL"
+}
