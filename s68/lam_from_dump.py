@@ -1,0 +1,1 @@
+../s67/lam_from_dump.py

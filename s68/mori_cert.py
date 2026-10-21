@@ -1,0 +1,1 @@
+../s67/mori_cert.py

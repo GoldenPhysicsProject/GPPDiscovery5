@@ -1,0 +1,4 @@
+K=832 S=640 sha256 OK; max e_last=-158; ||Atil-N/2^S||_F <= 3.333e-157 [2s]
+ l0=2.3955e-70: minD=1.149e-08 ||E||_F<=2.340e-128 => lambda_min(sym Atil) >= 2.395500e-70 OK [LDLt 102s, residual 11s]
+ l0=2.4099e-70: fixed-point LDL^T FAILED at pivot 831 (W - l0 I numerically indefinite) [96s]
+DONE 210.82826161384583
