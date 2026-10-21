@@ -1,0 +1,11 @@
+L7150_m12_O1150_p1 assembly start 19:00:51
+L7150_m12_O1150_p1 assembled sha256 b35be82d0bb35c0a14ec82935e69b52181d906c86f8d0b7b3676f5b123672f70 20:51:37
+L7150_m12_O1150_p1 PSD test (T - 1e-250 I):
+ fac=1.0 l0=1.0000e-250: minpiv=6.039e-09 ||E||<=1.708e-190 => lambda_min(Atil) >= -1.366000e-155 NO [85s]
+L7150_m12_O1150_p1 lam_est(nearest-zero, NOT lambda_min if indefinite) 2.41585327162e-77
+ fac=0.999 l0=2.4130e-77: minpiv=6.039e-09 ||E||<=1.789e-190 => lambda_min(Atil) >= 2.413000e-77 OK [82s]
+ l0=2.4134e-77: minD=6.039e-09 ||E||_F<=5.398e-121 => lambda_min(sym Atil) >= 2.413400e-77 OK [LDLt 503s, residual 47s]
+ l0=2.4279e-77: fixed-point LDL^T FAILED at pivot 1362 (W - l0 I numerically indefinite) [488s]
+DONE 1044.0524554252625
+L7150_m12_O1150_p1 done 21:13:21
+CHAIN_S73A_DONE 21:13:21

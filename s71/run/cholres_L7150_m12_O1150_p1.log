@@ -1,0 +1,3 @@
+K=1366 prec=640 delta_str<=1.366e-155 parse [6s]
+ fac=0.999 l0=2.4130e-77: minpiv=6.039e-09 ||E||<=1.789e-190 => lambda_min(Atil) >= 2.413000e-77 OK [82s]
+DONE 87.98865509033203
