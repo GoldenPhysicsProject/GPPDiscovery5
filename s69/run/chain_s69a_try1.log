@@ -1,0 +1,8 @@
+L75_m12_O600_p0 assembly start 05:56:16
+L75_m12_O600_p0 ASSEMBLY FAILED
+    ~~~~^^
+  File "/workspace/GPPDiscovery5/s69/mori_cert.py", line 168, in main
+    assert a.delta_log2 > 0 and bool(arb(a.delta_log2) > cst['mlog2_dc']), 'need 0 < delta = 2^-k <= d(c)'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: need 0 < delta = 2^-k <= d(c)
+L75_m12_O700_p0 assembly start 06:52:30
