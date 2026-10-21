@@ -1,0 +1,2 @@
+run/chain_s67.sh: line 7: 199703 Killed                  python mori_cert.py --L 71/50 --N 1272 --Omega 536 --s 763/200 --m 1/2 --u0 308 --u1 102 --prec 512 --parity $p --workers 8 --png 96 --delta_log2 2221 --out run/cert_L7150.jsonl --dump run/T_L7150_m12_N1272_p$p.json > run/cert_L7150_p$p.log 2>&1
+ASSEMBLY_DONE 15:15:55

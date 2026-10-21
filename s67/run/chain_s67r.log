@@ -1,0 +1,23 @@
+p0 assembly start 03:54:30
+p0 assembled sha256 850d9140efc99603ec2c38500497157238e6dad9d1651d95942ccf2af557a70e 04:06:17
+p0 lam_est 1.85047476363e-81
+p0 cholres done 04:06:33
+ fac=0.999 l0=1.8490e-81: approx Cholesky FAILED at pivot 89 (A - l0 I numerically indefinite) [2s]
+ fac=1.005 l0=1.8600e-81: approx Cholesky FAILED at pivot 89 (A - l0 I numerically indefinite) [2s]
+p0 ldlt done 04:07:09
+K=636 S=640 sha256 OK; max e_last=-158; ||Atil-N/2^S||_F <= 3.005e-157 [1s]
+ l0=1.8486e-81: fixed-point LDL^T FAILED at pivot 89 (W - l0 I numerically indefinite) [18s]
+ l0=1.8597e-81: fixed-point LDL^T FAILED at pivot 89 (W - l0 I numerically indefinite) [16s]
+DONE 35.39861488342285
+p1 assembly start 04:07:09
+p1 assembled sha256 abf2aa9680e1508a22625c2fb197d496c8ba676400d63e3402cb13cd459fd20d 04:16:53
+p1 lam_est 2.85827975703e-77
+p1 cholres done 04:17:09
+ fac=0.999 l0=2.8550e-77: approx Cholesky FAILED at pivot 79 (A - l0 I numerically indefinite) [2s]
+ fac=1.005 l0=2.8730e-77: approx Cholesky FAILED at pivot 79 (A - l0 I numerically indefinite) [2s]
+p1 ldlt done 04:17:42
+K=636 S=640 sha256 OK; max e_last=-158; ||Atil-N/2^S||_F <= 3.009e-157 [1s]
+ l0=2.8554e-77: fixed-point LDL^T FAILED at pivot 79 (W - l0 I numerically indefinite) [16s]
+ l0=2.8726e-77: fixed-point LDL^T FAILED at pivot 79 (W - l0 I numerically indefinite) [15s]
+DONE 32.57194185256958
+CHAIN_S67R_DONE 04:17:42

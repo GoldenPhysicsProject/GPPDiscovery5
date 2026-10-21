@@ -1,0 +1,4 @@
+K=636 prec=640 delta_str<=6.360e-156 parse [1s]
+ fac=0.999 l0=2.8550e-77: approx Cholesky FAILED at pivot 79 (A - l0 I numerically indefinite) [2s]
+ fac=1.005 l0=2.8730e-77: approx Cholesky FAILED at pivot 79 (A - l0 I numerically indefinite) [2s]
+DONE 4.544841289520264

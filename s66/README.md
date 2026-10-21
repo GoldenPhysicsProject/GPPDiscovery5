@@ -1,5 +1,7 @@
 # Grok S66 (2026-10-17): Mori/Liu bounded comparison implemented and validated; Perron-s replay of support 2.8 at 571 modes/parity
 
+> **RETRACTION (S67-resumed, 2026-10-21):** the λ_min(T) values below for L = 7/5 and 71/50 are inverse-iteration eigenvalues NEAREST ZERO, not minima; all those T fail Cholesky and the L = 71/50 T has certified negative Rayleigh witnesses (even < −5.58e−58, odd < −1.87e−48). Only the log 12 validation is positive. See ../s67/README.md.
+
 RH OPEN. Finite windows only. φ absent. Note: GPP-bridge/work/grok/2026-10-17_s66_mori_route_validated_support28_replay.md
 
 - `prior/`: Mori VII (= Mori [9], log 12, zenodo 23265728, v2) pdf + text. Mori VIII is in `../s64/prior/`.

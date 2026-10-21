@@ -1,0 +1,49 @@
+{
+ "status": "ESTIMATE (calibrated on S66 actuals: Omega=2 pi e^{gamma+0.13}, N_total = 1.67 c, wall ~ N^3)",
+ "rows": [
+  {
+   "L": 1.4,
+   "width": "log 16.44",
+   "s": 3.7115,
+   "s_source": "S65 Arb-rechecked",
+   "gamma": 4.2115,
+   "Omega_est": 483,
+   "c": 676,
+   "modes_per_parity_est": 564,
+   "wall_rel_to_L1.42": 0.7
+  },
+  {
+   "L": 1.42,
+   "width": "log 17.12",
+   "s": 3.81418,
+   "s_source": "S65 Arb-rechecked",
+   "gamma": 4.3142,
+   "Omega_est": 535,
+   "c": 760,
+   "modes_per_parity_est": 634,
+   "wall_rel_to_L1.42": 1.0
+  },
+  {
+   "L": 1.45,
+   "width": "log 18.17",
+   "s": 3.99665,
+   "s_source": "S67 perron_schur N=20000 (float-rigorous, no Arb recheck)",
+   "gamma": 4.4966,
+   "Omega_est": 642,
+   "c": 931,
+   "modes_per_parity_est": 777,
+   "wall_rel_to_L1.42": 1.84
+  },
+  {
+   "L": 1.5,
+   "width": "log 20.09",
+   "s": 4.30297,
+   "s_source": "S67 perron_schur N=20000 (float-rigorous, no Arb recheck)",
+   "gamma": 4.803,
+   "Omega_est": 872,
+   "c": 1308,
+   "modes_per_parity_est": 1092,
+   "wall_rel_to_L1.42": 5.11
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+K=636 prec=640 delta_str<=6.360e-156 parse [1s]
+ fac=1e-20 l0=-1.0000e-20: minpiv=9.627e-09 ||E||<=1.096e-190 => lambda_min(Atil) >= -1.000000e-20 NO [10s]
+ fac=1e-30 l0=-1.0000e-30: minpiv=2.005e-09 ||E||<=1.063e-190 => lambda_min(Atil) >= -1.000000e-30 NO [9s]
+ fac=1e-40 l0=-1.0000e-40: minpiv=1.686e-09 ||E||<=1.084e-190 => lambda_min(Atil) >= -1.000000e-40 NO [9s]
+ fac=1e-50 l0=-1.0000e-50: approx Cholesky FAILED at pivot 494 (A - l0 I numerically indefinite) [5s]
+ fac=1e-55 l0=-1.0000e-55: approx Cholesky FAILED at pivot 146 (A - l0 I numerically indefinite) [3s]
+ fac=1e-57 l0=-1.0000e-57: approx Cholesky FAILED at pivot 130 (A - l0 I numerically indefinite) [3s]
+DONE 39.750245094299316
