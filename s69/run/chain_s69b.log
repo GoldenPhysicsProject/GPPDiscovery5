@@ -1,0 +1,13 @@
+L75_m12_O800_p0 assembly start 11:15:17
+L75_m12_O800_p0 assembled sha256 089907f41f8c59af080106567ec1308731f2789acac81a7df2175d3a7d2bf5e7 12:14:24
+L75_m12_O800_p0 PSD test (T - 1e-250 I):
+ fac=1.0 l0=1.0000e-250: minpiv=7.298e-09 ||E||<=1.239e-190 => lambda_min(Atil) >= -9.360000e-156 NO [27s]
+L75_m12_O800_p0 lam_est(nearest-zero, NOT lambda_min if indefinite) 8.07021795730e-79
+  "0.5": 2,
+  "0.9": 6,
+  "0.99": 10
+ },
+ "seconds": 382.5757875442505
+}
+L75_m12_O800_p0 done 12:21:47
+CHAIN_S69B_DONE 12:21:47
