@@ -1,0 +1,13 @@
+L75_m12_O800_p1 assembly start 12:28:19
+L75_m12_O800_p1 assembled sha256 8ac69c7294849eb8ef25cc4b5c384d99c4dc5fc6c494a023e8dabff755e100f7 13:12:22
+L75_m12_O800_p1 PSD test (T - 1e-250 I):
+ fac=1.0 l0=1.0000e-250: approx Cholesky FAILED at pivot 692 (A - l0 I numerically indefinite) [17s]
+L75_m12_O800_p1 lam_est(nearest-zero, NOT lambda_min if indefinite) 8.07786768190e-73
+  "0.5": 11,
+  "0.9": 15,
+  "0.99": 17
+ },
+ "seconds": 376.3803985118866
+}
+L75_m12_O800_p1 done 13:19:27
+CHAIN_S69C_DONE 13:19:27
