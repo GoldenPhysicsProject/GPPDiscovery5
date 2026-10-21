@@ -28,3 +28,19 @@ Rules out: nothing yet (no positivity claim). RH OPEN.
   certified in S63 by another route, so this is an independent cross-route confirmation (even half), not a new window and not a record.
 - Fakes: the T matrix carries zeta's prime sum, so it says nothing for DH or F_theta (no claim there); backward heat flow H_-t not addressed.
 RH OPEN.
+
+## H69c result, Omega 800 odd: NOT PSD (numerical)
+- Cholesky of T_odd - 1e-250 I fails at pivot 692; bisection lambda_min ~ -1.51e-66 (NUMERICAL), low-degree vector (centroid deg 9.06). See run/negvec_L75_m12_O800_p1.log.
+
+## H69d result, Omega 900 (N 2106, delta_log2 3720 > -log2 d(c) = 3661.08), odd parity: Mori-route T_odd CERTIFIED PSD (14:15Z)
+- Assembly certified: sha256 c381f4c3…0ae9, consts_ok true, radT_rowsum 2.80e-145, alpha+beta*b^2 = 3.83e-269.
+- Approx Cholesky of T - 1e-250 I succeeds (minpiv 3.28e-8). Nearest-zero eigenvalue estimate 2.8325e-74.
+- s36 cholres (640 bits) at 0.999 est: lambda_min(Atil) >= 2.8300e-74.
+- s37 exact fixed-point LDL^T (sha256 OK): l0 = 2.8296e-74 CERTIFIED lambda_min(sym Atil) >= 2.8296e-74 (||E||_F <= 2.49e-126);
+  CONTROL l0 = 2.8466e-74 (1.005 est) FAILS at pivot 1051. Tight to 0.6%.
+- Hence lambda_min(T_odd) >= 2.83e-74 - 2.8e-145 > 0, CERTIFIED, at L = 7/5 (support 2.8), m = 1/2, Omega 900.
+- Sign change for odd between Omega 800 (-1.51e-66 numerical) and 900 (+2.83e-74 certified).
+- Status: even certified at Omega 800, odd certified at Omega 900. Whether mixed Omega per parity is admissible in the
+  Mori-route certificate is NOT yet checked, so to be safe even Omega 900 was launched 14:16Z (run/chain_s69e.log) for a matched pair.
+- Independent cross-route check of S63 support 2.8 (both parities pending matched Omega), not a new window, not a record.
+- Fakes: T carries zeta's Euler product, so no claim for DH or F_theta; backward heat flow H_-t not addressed. RH OPEN.
