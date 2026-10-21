@@ -1,0 +1,2 @@
+{"dump": "T_L7150_m12_O1000_p1.json", "n": 200, "m": 988, "epsB": "1e-46", "epsC": "0", "b": 6.408034700853641, "e": 8.115828156551041e-06, "dQ_F": 2.804361006382058e-16, "lamS_float": -0.08176761088001605, "cert": false, "note": "float Cholesky of S_hat - tI failed", "secs": 24}
+{"dump": "T_L7150_m12_O1000_p1.json", "n": 200, "m": 988, "epsB": "1e-46", "epsC": "1e-4", "b": 6.408034700853641, "e": 8.115828156551041e-06, "dQ_F": 2.804361006382058e-16, "lamS_float": -0.08173175567375424, "cert": false, "note": "float Cholesky of S_hat - tI failed", "secs": 31}
