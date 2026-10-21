@@ -1,0 +1,11 @@
+L75_m12_O900_p0 assembly start 14:16:07
+L75_m12_O900_p0 assembled sha256 5f4e5e79a81e26d1005acefd825a31c58358feabf5c5e6d04e18b5ce6dec1485 14:58:07
+L75_m12_O900_p0 PSD test (T - 1e-250 I):
+ fac=1.0 l0=1.0000e-250: minpiv=7.308e-09 ||E||<=1.332e-190 => lambda_min(Atil) >= -1.053000e-155 NO [41s]
+L75_m12_O900_p0 lam_est(nearest-zero, NOT lambda_min if indefinite) 5.88919093429e-78
+ fac=0.999 l0=5.8830e-78: minpiv=7.308e-09 ||E||<=1.332e-190 => lambda_min(Atil) >= 5.883000e-78 OK [39s]
+ l0=5.8833e-78: minD=7.308e-09 ||E||_F<=1.530e-121 => lambda_min(sym Atil) >= 5.883300e-78 OK [LDLt 211s, residual 22s]
+ l0=5.9186e-78: fixed-point LDL^T FAILED at pivot 1047 (W - l0 I numerically indefinite) [208s]
+DONE 444.1163561344147
+L75_m12_O900_p0 done 15:07:36
+CHAIN_S69E_DONE 15:07:36
