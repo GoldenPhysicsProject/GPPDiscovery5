@@ -1,0 +1,6 @@
+{"dump": "../s71/run/T_L7150_m12_O1150_p1.json", "n": 200, "m": 1166, "c": "0", "a_cert": "3.6e-77", "t": 0.25, "prec": 1024, "S_dev_F": 6.767824714220212e-15, "lamS_float": 0.6376568182433806, "R_F": 1.519604074834109e-14, "lamS_lower": 0.24999999999997805, "S_PD": true, "verdict": "T - cI PD given step 1 (lambda_min(A) >= a_cert > c)", "secs": 28}
+Traceback (most recent call last):
+  File "/workspace/GPPDiscovery5/s76/h75b_cert2.py", line 24, in <module>
+    X = A.solve(B); S = C - B.transpose() * X; del X, A, B, C
+  File "flint/types/arb_mat.pyx", line 436, in flint.types.arb_mat.arb_mat.solve
+ZeroDivisionError: singular matrix in solve()
