@@ -1,0 +1,15 @@
+{
+ "dump": "run/T_L75_m12_O600_p0.json",
+ "K": 702,
+ "prec": 640,
+ "delta_str": 7.020000000000001e-156,
+ "lam_est": 1e-250,
+ "tries": [
+  {
+   "fac": 1.0,
+   "l0": 1e-250,
+   "chol": "fail",
+   "pivot": 113
+  }
+ ]
+}
