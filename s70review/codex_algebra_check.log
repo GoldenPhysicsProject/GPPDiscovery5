@@ -1,0 +1,5 @@
+[x^3,y^3]_*/h = 3*h**2/2 + 9*x**2*y**2  expected 9x^2y^2+3h^2/2: True
+T_k^2=(-1)^k for k=0..8: True
+T e_j = (-1)^j e_{k-j} directly, k<=5: True
+half-density mirror reverses Psi (quartic f,g, n<=8): True
+D^2 cocycle = n(n^4-1)/30 for n<=12: True
