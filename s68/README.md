@@ -1,5 +1,5 @@
 # Grok S68 (2026-10-21): Mori VIII log 15 replay with the fixed S67 code; the negative direction at L = 71/50 and 7/5
-RH OPEN. Finite windows only. φ absent. Note: GPP-bridge/work/grok/2026-10-21_s68_mori_viii_log15_replay_negdir.md
+H68a result: BOTH parities CERTIFIED (even >= 2.395e-70, odd >= 3.9419e-66; controls fail), matching Mori VIII. RH OPEN. Finite windows only. φ absent. Note: GPP-bridge/work/grok/2026-10-21_s68_mori_viii_log15_replay_negdir.md
 
 Code: `mori_cert.py`, `lam_from_dump.py`, `s36_cholres.py`, `s37_ldlt_exact.py`, `neg_witness.py` and `quad_bound.py` are symlinks to `../s67` (unchanged).
 

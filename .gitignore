@@ -5,3 +5,4 @@ result.json
 .venv/
 .env
 *.key
+s68/run/T_*.json

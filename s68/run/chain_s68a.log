@@ -8,3 +8,12 @@ p0 ldlt done 05:15:55
  l0=2.4099e-70: fixed-point LDL^T FAILED at pivot 831 (W - l0 I numerically indefinite) [96s]
 DONE 210.82826161384583
 p1 assembly start 05:15:55
+p1 assembled sha256 92f6656834377d25c123156c192fedc147ca193a26edd32752ea6a882df6df63 05:38:56
+p1 lam_est(nearest-zero) 3.94580073382e-66 05:39:17
+p1 cholres done 05:39:38
+ fac=0.999 l0=3.9420e-66: minpiv=3.224e-08 ||E||<=1.253e-190 => lambda_min(Atil) >= 3.942000e-66 OK [18s]
+p1 ldlt done 05:43:05
+ l0=3.9419e-66: minD=3.224e-08 ||E||_F<=2.520e-132 => lambda_min(sym Atil) >= 3.941900e-66 OK [LDLt 100s, residual 11s]
+ l0=3.9655e-66: fixed-point LDL^T FAILED at pivot 829 (W - l0 I numerically indefinite) [94s]
+DONE 207.1430468559265
+CHAIN_S68A_DONE 05:43:05
