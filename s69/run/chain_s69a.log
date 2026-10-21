@@ -11,3 +11,15 @@ L75_m12_O600_p0 lam_est(nearest-zero, NOT lambda_min if indefinite) 1.3155850758
 }
 L75_m12_O600_p0 done 08:56:48
 L75_m12_O700_p0 assembly start 08:56:48
+L75_m12_O700_p0 assembled sha256 835150b75e0de5cf016be29387d79a63286faef0a93e197bcaf315d76ac2e59a 11:10:02
+L75_m12_O700_p0 PSD test (T - 1e-250 I):
+ fac=1.0 l0=1.0000e-250: approx Cholesky FAILED at pivot 554 (A - l0 I numerically indefinite) [12s]
+L75_m12_O700_p0 lam_est(nearest-zero, NOT lambda_min if indefinite) 3.38196566013e-77
+  "0.5": 8,
+  "0.9": 12,
+  "0.99": 16
+ },
+ "seconds": 252.24819159507751
+}
+L75_m12_O700_p0 done 11:14:51
+CHAIN_S69A_DONE 11:14:51
