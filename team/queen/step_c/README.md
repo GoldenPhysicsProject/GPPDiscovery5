@@ -30,6 +30,18 @@ Queen of Mathematics, 2026-10-22. Daniel Toupin / Golden Physics Project, with A
   - Do **not** use the N = 24 values at L ≥ 1: they are 10⁴–10³⁹ too large.
 - **Eigenvector convergence is much better than eigenvalue convergence.** 1 − |cos(v₂^{(N)}, v₂^{(N−8)})| is ≤ 2·10⁻¹⁰ for L ≤ 1.1, 1.6e−5 to 1.0e−4 at L = 1.2–1.4, 1.3e−3 at L = 2.0 (N56 → 64), and 5e−4 to 7e−3 at L = 1.5–1.9 (N40 → 48). This is in `lambda2_Re_eigenvectors.json`.
 - **Super-exponential law (CONJECTURE, a fit to the converged points L ≤ 1.0).** log₁₀ λ₂(R_e) has slope d/dμ ≈ −3.8 to −4.9 in μ = e^{2L} (log₁₀ λ₂ = −1.92, −4.18, −7.26, −11.27, −16.33, −22.85 at μ = 2.72 … 7.39). That is consistent with Connes–Consani prolate-type smallness, λ ≈ exp(−c·μ). Extrapolating predicts ≈ 10^{−31.2} at L = 1.1, consistent with the N = 64 upper bound 1.0e−31, which is still moving 15%. It predicts λ₂ ≪ 10⁻⁶⁰ at L ≥ 1.5. Converging there would need N ≫ 64, i.e. a prolate or cosine basis as in Goddess of Prime Number Theory's K = 266–400 runs.
+- **Prior-art check of the super-exponential law (lead's review of milestone 4; status stays CONJECTURE).** Verdict: it is *plausibly the known prolate decay* identified by Connes–Consani. It is not a new phenomenon, and the constant is not matched.
+  - Connes–Consani, *Spectral triples and ζ-cycles*, arXiv:2106.01715, §2.5. They report numerically that, for the Weil form restricted to [λ⁻¹, λ], the logarithm of the smallest eigenvalues decays roughly linearly in μ = λ² (so the eigenvalues decay like exp(−C·μ)). They also find that the number of very small eigenvalues grows like μ, and they explain this by the near-radical spanned by prolate spheroidal functions PS_{2m,0}(2πλ², ·). In our half-width convention μ = e^{2L}, so "log₁₀ λ ≈ −c·e^{2L}" is the same statement. Example: their smallest even eigenvalue at μ = 11 (L ≈ 1.199) is ≈ 2.4·10⁻⁴⁸. That is for Q, not R = Q − pole; compare the cosine-basis values in `team/queen/ii/`. Background: Connes–Consani, *Weil positivity and trace formula, the archimedean place*, Selecta Math. 27 (2021), arXiv:2006.13771.
+  - Prolate eigenvalue asymptotics.
+    - Slepian, *Some asymptotic expansions for prolate spheroidal wave functions*, J. Math. Phys. (Stud. Appl. Math.) 44 (1965) 99–140, doi:10.1002/sapm196544199. For fixed n and c → ∞: 1 − λ_n(c) ≈ 2^{3n+2}√π c^{n+1/2} e^{−2c}/n! · (1 + O(1/c)).
+    - Landau–Widom, *Eigenvalue distribution of time and frequency limiting*, J. Math. Anal. Appl. 77 (1980) 469–481. This gives the plunge region: about 2c/π eigenvalues near 1, and an O(log c) transition.
+    - Bonami–Karoui, C. R. Math. Acad. Sci. Paris 352 (2014), doi:10.1016/j.crma.2014.01.004, and arXiv:1509.02646. These give explicit super-exponential decay bounds of λ_n(c) past the plunge.
+    - With CC's bandwidth c = 2πμ, Slepian's e^{−2c} predicts a log₁₀ slope of −4π/ln 10 ≈ −5.46 per unit μ. Our fitted slopes at L ≤ 1.0 are −3.8 to −4.9 and growing in magnitude. That is the same exp(−C·μ) class, with an apparent C still below the Slepian value at these small μ.
+  - Why it stays CONJECTURE.
+    - I have no proved quantitative inequality linking λ₂(R_e) to a prolate quantity 1 − λ_n(c) or λ_n(c).
+    - The identification c = 2πμ follows CC's parametrisation, and the matching of the constant is unverified.
+    - Prime terms enter Q at every μ, so the prolate picture is at best the archimedean leading behaviour.
+
 
 ## For H99a / H100a (lead)
 `lambda2_Re_eigenvectors.json` contains, per L: N, dps, the λ₂(R_e) Ritz value, a converged flag, |cos| against the N−8 vector, and the 40-digit coefficients in the basis above.
