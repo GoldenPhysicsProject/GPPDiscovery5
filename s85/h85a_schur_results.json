@@ -1,0 +1,80 @@
+[
+ {
+  "L": 0.2,
+  "N": 28,
+  "R_even_neg": 1,
+  "R_odd_neg": 0,
+  "s_even=1+p'R^-1p (<=0 iff even Weil)": -0.14629514515968078,
+  "lam_min_even": 0.09493087954648002,
+  "s_odd=1-q'R^-1q (>=0 iff odd Weil)": 0.9962177200781918,
+  "lam_min_odd": 0.6348585542450557,
+  "overlap(R^-1p, ground_even)": 0.9997748639998948,
+  "overlap(R^-1q, ground_odd)": 0.9877416523364482,
+  "s_even*|R^-1p|^-2 vs lam_min (first order: lam ~ -s/|y|^2)": 0.08327592461603972
+ },
+ {
+  "L": 0.3,
+  "N": 28,
+  "R_even_neg": 1,
+  "R_odd_neg": 0,
+  "s_even=1+p'R^-1p (<=0 iff even Weil)": -0.007387034272502424,
+  "lam_min_even": 0.007571900750221415,
+  "s_odd=1-q'R^-1q (>=0 iff odd Weil)": 0.9657267513794955,
+  "lam_min_odd": 0.22256232686864974,
+  "overlap(R^-1p, ground_even)": 0.9999935336730837,
+  "overlap(R^-1q, ground_odd)": 0.9972689462619507,
+  "s_even*|R^-1p|^-2 vs lam_min (first order: lam ~ -s/|y|^2)": 0.007527103812756439
+ },
+ {
+  "L": 0.4,
+  "N": 28,
+  "R_even_neg": 1,
+  "R_odd_neg": 0,
+  "s_even=1+p'R^-1p (<=0 iff even Weil)": -0.00015419766113899946,
+  "lam_min_even": 0.00018153443873426142,
+  "s_odd=1-q'R^-1q (>=0 iff odd Weil)": 0.48794559939243964,
+  "lam_min_odd": 0.014720681057854847,
+  "overlap(R^-1p, ground_even)": 0.9999999365550748,
+  "overlap(R^-1q, ground_odd)": 0.9999715151650947,
+  "s_even*|R^-1p|^-2 vs lam_min (first order: lam ~ -s/|y|^2)": 0.00018154557593704304
+ },
+ {
+  "L": 0.5,
+  "N": 28,
+  "R_even_neg": 1,
+  "R_odd_neg": 0,
+  "s_even=1+p'R^-1p (<=0 iff even Weil)": -7.378380739719859e-07,
+  "lam_min_even": 9.358437600061863e-07,
+  "s_odd=1-q'R^-1q (>=0 iff odd Weil)": 0.009309795326364223,
+  "lam_min_odd": 0.00019428102249097542,
+  "overlap(R^-1p, ground_even)": 0.9999999993032895,
+  "overlap(R^-1q, ground_odd)": 0.9999998710976055,
+  "s_even*|R^-1p|^-2 vs lam_min (first order: lam ~ -s/|y|^2)": 9.358682791199567e-07
+ },
+ {
+  "L": 0.6,
+  "N": 28,
+  "R_even_neg": 1,
+  "R_odd_neg": 0,
+  "s_even=1+p'R^-1p (<=0 iff even Weil)": -1.212685951657022e-09,
+  "lam_min_even": 1.617495845931665e-09,
+  "s_odd=1-q'R^-1q (>=0 iff odd Weil)": 2.4881301639245734e-05,
+  "lam_min_odd": 5.996263094280442e-07,
+  "overlap(R^-1p, ground_even)": 0.9999999999323043,
+  "overlap(R^-1q, ground_odd)": 0.9999999961950171,
+  "s_even*|R^-1p|^-2 vs lam_min (first order: lam ~ -s/|y|^2)": 1.6175092883876993e-09
+ },
+ {
+  "L": 0.7,
+  "N": 28,
+  "R_even_neg": 1,
+  "R_odd_neg": 0,
+  "s_even=1+p'R^-1p (<=0 iff even Weil)": -3.055333763768431e-13,
+  "lam_min_even": 4.2167825721545647e-13,
+  "s_odd=1-q'R^-1q (>=0 iff odd Weil)": 9.63143031995628e-09,
+  "lam_min_odd": 2.5796094102546956e-10,
+  "overlap(R^-1p, ground_even)": 0.9999999999934578,
+  "overlap(R^-1q, ground_odd)": 0.99999999982336,
+  "s_even*|R^-1p|^-2 vs lam_min (first order: lam ~ -s/|y|^2)": 4.220007486280322e-13
+ }
+]

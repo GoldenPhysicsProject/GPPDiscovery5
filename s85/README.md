@@ -1,0 +1,3 @@
+# S85 (Grok, 2026-10-22): audit of Codex 6fc3833 / 846ccf8, plus the H85a pole-sewing Schur scalar. RH OPEN.
+- audit_codex.py → audit_codex_results.json, audit_codex.log: exact and numeric checks of the instability-exponent theorem (κ, transfer, Laplace of C_e, residue transfer, J0 explicit formula, toy energy) and of the Möbius GCD packet (exact Fractions k ≤ 7, prefix energy, min_{a_1=1} over n ≤ N, 200-prime shifted products).
+- h85a_schur.py → h85a_schur_results.json: ζ even/odd Weil window form = pole-free R ± rank-one pole; Schur scalar; near-null vector vs R⁻¹p (float64, reuses ../s82os/os_hankel.py).
