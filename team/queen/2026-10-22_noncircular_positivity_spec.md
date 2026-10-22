@@ -118,6 +118,24 @@ Further observations from the same runs:
 - DH's ground state is also nodeless (PF is not guaranteed for signed M, but it holds here), so nodelessness is **not** a separator.
 - For L ≥ 1, N 24 is unconverged at the λ₂ level. The values are upper bounds, as in S91.
 
+**N-convergence caveat (lead directive, binding).** At L ≥ 1 the N = 24 basis is NOT converged at the λ₂ level. Where both exist, N 24 and N 32 differ by orders of magnitude:
+
+| L | λ₂(R_e)/‖R‖ at N 24 | at N 32 |
+|---|---|---|
+| 1.0 | 1.6e−19 | 1.1e−22 |
+| 1.2 | 8.7e−23 | 2.4e−27 |
+| 1.4 | 3.2e−24 | 5.0e−31 |
+
+So **no λ₂ or λ_min value at L ≥ 1 in this note is a converged number.** They are NUMERICAL upper bounds only.
+
+What *is* stable between N 24 and N 32 at L = 0.6, 1.0, 1.2 and 1.4:
+- the counts n₋(R_e) = 1 and n₋(R_o) = 0;
+- the nodelessness of φ_L;
+- |cos(φ_L, p)| (to 4 digits);
+- the one sign change of the second even eigenvector.
+
+These are the claims I make (NUMERICAL). The converged value is at L = 0.6, where λ₂(R_e)/‖R‖ = 1.42e−5 (N 24) against 1.26e−5 (N 32), and the counts agree. A converged λ₂(L) curve, at N = 24/32/40/48 until 2 digits are stable, is next step (c).
+
 **S98, made exact.**
 - If v ≥ 0, then g_v(u) = ∫ v(x)v(x − u) dx ≥ 0, so each atom contributes −2a_n n^{−1/2} g_v(log n) ≤ 0 when a_n > 0. This is S98's H97a observation, and it is automatic once the soft mode is nodeless; Lemma 2.1 explains why it is nodeless.
 - So positivity of prime weights is the *wrong* sign on the PF direction. The pole has to rescue that direction, and does (Cor 2.2).
@@ -230,6 +248,11 @@ More generally, among Dirichlet series with periodic coefficients, those with no
 
    - DH's prime part on this vector grows from 1.0 to 57.2, with local exponent 0.67–0.69 against 2β₀ = 0.617 plus lower-order terms.
    - DH turns negative between L 1.5 and 2, consistent with the Galerkin onset L ≈ 1.71 (S75). The vector is not optimal.
+   - **DH onset reconciliation (lead input).**
+     - Golden Eye's density heuristic predicts DH failure at L ≈ 1.61. The recorded onset (S75) is 1.7105, with DH numerically PD below it.
+     - The pair heuristic of Lemma 5.2 shows why a heuristic cannot settle a 0.1 difference. The onset is where e^{2β₀L}/(2β₀) ≈ C·log(γ₀/2π) with β₀ = 0.3085 and γ₀ = 85.70, and the O(1) constant C (on-line neighbours, arch) moves the predicted onset from L ≈ 0.8 (C = 1) to ≈ 2.6 (C = π). C ≈ 1.8 reproduces 1.71.
+     - So 1.61 vs 1.7105 is a constant-level discrepancy, not a contradiction of mechanism. The Galerkin/S75 value should be preferred, provided its PD side at 1.61 ≤ L < 1.71 is N-converged. Given the N caveat in §2, that needs checking: run DH at L = 1.60, 1.65, 1.70 at N = 24/32/40 with LDLᵀ.
+     - The explicit vector here (not optimal) only brackets the onset in (1.5, 2.0], which is consistent with both.
 2. *Riesz mean at γ₀* (`dh_riesz2.log`). R_L(γ₀) = Σ_{n<e^{2L}} c(n)n^{−1/2}cos(γ₀ log n)(1 − log n/2L) against the Perron residue −e^{2β₀L}/(2Lβ₀²):
 
    | L | 3 | 4 | 5 | 5.5 | 6 |
