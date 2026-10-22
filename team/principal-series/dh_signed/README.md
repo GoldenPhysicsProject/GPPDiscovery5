@@ -11,7 +11,18 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
 ## Files
 - `cosvec_DH_even_L3421_2000_K{60,120,180,240,300,360}.json` (L = 1.7105). K = 240–360 are the S75 witnesses; K = 60–180 are New Bot S2 runs of the unmodified script.
 - Neighbours: `L6841_4000_K300` (1.71025), `L171_100_K360` (1.71), `L1711_1000_K240` (1.711).
-- **L = 1.7104 (= 1069/625):** I had no vector at this L. K = 60, 120 and 240 runs with residuals are running (`dhritz_resid.py`) and will be added as `cosvec_DH_even_L1069_625_K*.json`, plus `resid_*.jsonl`.
+- **L = 1.7104 (= 1069/625):** `cosvec_DH_even_L1069_625_K60.json` and `_K120.json` come from `dhritz_resid.py` and carry `resid_rel` and `ritz2`. K = 240 is still running; if it finishes it will land here, otherwise see PARKED.md.
+- **L = 1.7105, residual reruns:** `cosvec_DH_even_L3421_2000_K{60,120}_resid.json`. These are the same vectors as the K60/K120 files to all 50 digits, and they carry the residual.
+- **Residuals** (‖Wv/L − RQ·v‖/‖v‖, Arb):
+
+  | L | K | residual | RQ | ritz2 |
+  |---|---|---|---|---|
+  | 1.7104 | 60 | 7.8e−50 | +2.133e−29 | 6.06e−22 |
+  | 1.7104 | 120 | 1.3e−49 | +4.437e−30 | 5.30e−22 |
+  | 1.7105 | 60 | 7.2e−50 | +2.066e−29 | 6.00e−22 |
+  | 1.7105 | 120 | 1.4e−49 | +4.067e−30 | 5.26e−22 |
+
+  The residual is set by rounding the stored vector to 50 digits. At these K, both L are still positive Ritz values: the certified negativity at 1.7105 needs K ≥ 300 (S75).
 - **Residual.** `dhritz_resid.py` is dhritz.py plus one block. It computes ‖Wv/L − RQ·v‖/‖v‖ in Arb on the stored vector (`resid_rel`) and the second Ritz value (`ritz2`). The S75 witnesses predate this block, so their residuals are not stored. For them, the K-convergence ‖v_300 − v_360‖ = 4.2e−7 (unit vectors) and ritz2 ≈ 4.9e−22 ≫ |RQ| ≈ 1e−31 are the available accuracy data.
 - `overlap.py` (float64 grid) and `ovcheck.py` (mpmath dps 40, closed form): the 1.4e−14 overlap. Outputs are in `overlap_s75.jsonl` and `overlap_moderateK.jsonl`.
 
