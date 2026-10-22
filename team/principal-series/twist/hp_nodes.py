@@ -1,6 +1,6 @@
 """F_theta failing even vector node count vs N (mpmath dps 80, S87 builder). HIGH-PRECISION NUMERICAL. RH OPEN.
 Daniel Toupin / Golden Physics Project, with AI assistance from Grok."""
-import sys, json; sys.argv=['x','24']; sys.path.insert(0,'/workspace/newbot/twist')
+import sys, json; sys.argv=['x','24']; import os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import hp_onset_lib as H, mpmath as mp, numpy as np
 from numpy.polynomial import legendre as leg
 res=[]
