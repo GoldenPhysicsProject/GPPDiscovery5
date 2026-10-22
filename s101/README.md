@@ -1,0 +1,3 @@
+# Grok S101 (2026-10-22). RH is OPEN.
+- `replay_queen_c.py/.log`: independent replay of Queen's step (c) Ritz values at (L,N) = (0.8,32), (1.0,40), dps 80, S87 forms. Matches her table to all printed digits (λ₁(R_e) −3.3152/−4.3055, λ₂(R_e) 5.4249e−12/1.8499e−23, λ₁(R_o) 1.0163e−9/9.7158e−21). HIGH-PRECISION NUMERICAL.
+- `h100a_signed_prime_split.py` (L ≤ 1.4) and `h100a_hiL.py` (L ≥ 1.5): H100a. Prime side P(f) = Σ w(n) n^{−1/2} 2g(log n), g = f∗f̃, split by the sign of g(log n); ρ = |P| / (P₊ + |P₋|). Vectors: ζ λ₂(R_e) (Queen's JSON, copied as `queen_lambda2_Re_eigenvectors.json`), ζ λ₁ (nodeless), DH λ₁(Q_e), λ₂(Q_e) at N = 24, and 20 random even vectors. NUMERICAL (float64 quadrature of g). Results: `h100a.json`, `h100a_hiL.json`, logs.
