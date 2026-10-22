@@ -1,0 +1,26 @@
+  nuZ = lambda u: np.exp(u/2)/np.sinh(u); nuD = lambda u: np.exp(-u/2)/np.sinh(u)
+  nuZ = lambda u: np.exp(u/2)/np.sinh(u); nuD = lambda u: np.exp(-u/2)/np.sinh(u)
+  nuZ = lambda u: np.exp(u/2)/np.sinh(u); nuD = lambda u: np.exp(-u/2)/np.sinh(u)
+{'t_max': 2.0, 'L': 1.25, 'DH_minR': 1.3220279737976144, 'DH_t': 1.3860000000000003, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 2.5, 'L': 1.5, 'DH_minR': 1.254632113477789, 'DH_t': 2.1980000000000013, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 3.0, 'L': 1.75, 'DH_minR': 1.148264641381839, 'DH_t': 2.6240000000000014, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 3.5, 'L': 2.0, 'DH_minR': 1.148264641381839, 'DH_t': 2.6240000000000014, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 4.0, 'L': 2.25, 'DH_minR': 1.1270604214949458, 'DH_t': 3.5660000000000025, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 4.5, 'L': 2.5, 'DH_minR': 1.1270604214949458, 'DH_t': 3.5660000000000025, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 5.0, 'L': 2.75, 'DH_minR': 1.0770244129645514, 'DH_t': 4.822000000000004, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 5.5, 'L': 3.0, 'DH_minR': 1.0770244129645514, 'DH_t': 4.822000000000004, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 6.0, 'L': 3.25, 'DH_minR': 1.0770244129645514, 'DH_t': 4.822000000000004, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 6.5, 'L': 3.5, 'DH_minR': 0.8887211256865868, 'DH_t': 6.230000000000005, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 7.0, 'L': 3.75, 'DH_minR': 0.8887211256865868, 'DH_t': 6.230000000000005, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 7.5, 'L': 4.0, 'DH_minR': 0.8887211256865868, 'DH_t': 6.230000000000005, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 8.0, 'L': 4.25, 'DH_minR': 0.8887211256865868, 'DH_t': 6.230000000000005, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 8.5, 'L': 4.5, 'DH_minR': 0.8887211256865868, 'DH_t': 6.230000000000005, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 9.0, 'L': 4.75, 'DH_minR': 0.8887211256865868, 'DH_t': 6.230000000000005, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 9.5, 'L': 5.0, 'DH_minR': 0.8887211256865868, 'DH_t': 6.230000000000005, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 10.0, 'L': 5.25, 'DH_minR': 0.8887211256865868, 'DH_t': 6.230000000000005, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 10.5, 'L': 5.5, 'DH_minR': 0.8887211256865868, 'DH_t': 6.230000000000005, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 11.0, 'L': 5.75, 'DH_minR': 0.8887211256865868, 'DH_t': 6.230000000000005, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 11.5, 'L': 6.0, 'DH_minR': 0.8887211256865868, 'DH_t': 6.230000000000005, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 12.0, 'L': 6.25, 'DH_minR': 0.8887211256865868, 'DH_t': 6.230000000000005, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+{'t_max': 12.5, 'L': 6.5, 'DH_minR': 0.8887211256865868, 'DH_t': 6.230000000000005, 'ZETA_minR': nan, 'ZETA_t': 1.0}
+C0 nan 2.003727787444091
