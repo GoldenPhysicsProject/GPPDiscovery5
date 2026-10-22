@@ -1,0 +1,5 @@
+gen 36.8 K 1024 Np 1188
+arb 1 29.56
+arb 8 7.88
+fixed 6.3
+{"name": "Cp", "k": 64, "batches": 16, "K": 1024, "b": 21, "S": 23, "P": 480, "threads": 1, "Np": 1188, "t_arb_both": 29.564, "t_mm": 18.087, "t_carry_once": 0.151, "t_carry_if_per_batch": 2.413, "t_carry_if_per_chunk64": 2.413, "maxdiff": 1.3137385557499769e-146, "max_rad_arb": 1.048934857471531e-146, "max_rad_sliced": 4.719290708199781e-146, "worst_ratio": 0.3103318705973209, "n_fail": 0, "ok": true, "t_validate": 4.3, "t_gen": 36.8, "t_fix": 6.3, "t_slice_py": 2.49, "control": false, "cell": 6, "c0": 8}
