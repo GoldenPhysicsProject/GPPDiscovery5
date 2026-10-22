@@ -1,0 +1,147 @@
+[
+ {
+  "L": 0.3,
+  "zeta_even_min": 0.007572102406148523,
+  "zeta_odd_min": 0.22256503769223224,
+  "th0.05": {
+   "F_even_min": 0.015129579308022709,
+   "F_odd_min": 0.4450768723990815,
+   "G_even_min": 0.015158830324483442,
+   "G_odd_min": 0.44518327347814457,
+   "overlap(F_vec*cosh, zeta_even_vec)": 0.999999999964745,
+   "F_vec_nodes_half": 0
+  },
+  "th0.1": {
+   "F_even_min": 0.015085702841927727,
+   "F_odd_min": 0.44491723408783246,
+   "G_even_min": 0.015202706909225221,
+   "G_odd_min": 0.44534283841384914,
+   "overlap(F_vec*cosh, zeta_even_vec)": 0.9999999994360587,
+   "F_vec_nodes_half": 0
+  },
+  "th0.25": {
+   "F_even_min": 0.014778569389890651,
+   "F_odd_min": 0.44379853197004815,
+   "G_even_min": 0.01550984517831346,
+   "G_odd_min": 0.44645856148331026,
+   "overlap(F_vec*cosh, zeta_even_vec)": 0.9999999780095536,
+   "F_vec_nodes_half": 0
+  }
+ },
+ {
+  "L": 0.4,
+  "zeta_even_min": 0.0001815706689099638,
+  "zeta_odd_min": 0.014725937735725444,
+  "th0.05": {
+   "F_even_min": 0.0003588940680357383,
+   "F_odd_min": 0.029380013114596114,
+   "G_even_min": 0.00036738460700843473,
+   "G_odd_min": 0.02952372816921395,
+   "overlap(F_vec*cosh, zeta_even_vec)": 0.9999999989043539,
+   "F_vec_nodes_half": 0
+  },
+  "th0.1": {
+   "F_even_min": 0.00034612819302582814,
+   "F_odd_min": 0.029164368055492666,
+   "G_even_min": 0.00038009047280878006,
+   "G_odd_min": 0.029739228341907873,
+   "overlap(F_vec*cosh, zeta_even_vec)": 0.9999999823948504,
+   "F_vec_nodes_half": 0
+  },
+  "th0.25": {
+   "F_even_min": 0.0002557430765614639,
+   "F_odd_min": 0.027652409949247315,
+   "G_even_min": 0.00046803876917754815,
+   "G_odd_min": 0.03124530398144893,
+   "overlap(F_vec*cosh, zeta_even_vec)": 0.9999992913784983,
+   "F_vec_nodes_half": 0
+  }
+ },
+ {
+  "L": 0.5,
+  "zeta_even_min": 9.368126376670781e-07,
+  "zeta_odd_min": 0.00019447239497064734,
+  "th0.05": {
+   "F_even_min": 3.4841831761414365e-07,
+   "F_odd_min": 0.0003644506780943823,
+   "G_even_min": 3.381501326146418e-06,
+   "G_odd_min": 0.00041339681362953756,
+   "overlap(F_vec*cosh, zeta_even_vec)": 0.9999998875529813,
+   "F_vec_nodes_half": 0
+  },
+  "th0.1": {
+   "F_even_min": -4.334288538362206e-06,
+   "F_odd_min": 0.0002907147719985229,
+   "G_even_min": 7.804103714823203e-06,
+   "G_odd_min": 0.00048650139052064444,
+   "overlap(F_vec*cosh, zeta_even_vec)": 0.9999981326029025,
+   "F_vec_nodes_half": 0
+  },
+  "th0.25": {
+   "F_even_min": -4.237687299058951e-05,
+   "F_odd_min": -0.0002363100602978498,
+   "G_even_min": 3.5058707007764605e-05,
+   "G_odd_min": 0.000987883404220616,
+   "overlap(F_vec*cosh, zeta_even_vec)": 0.9999035180269721,
+   "F_vec_nodes_half": 1
+  }
+ },
+ {
+  "L": 0.6,
+  "zeta_even_min": 1.6207803125217176e-09,
+  "zeta_odd_min": 6.016166030088902e-07,
+  "th0.05": {
+   "F_even_min": -1.3917898253227215e-06,
+   "F_odd_min": -1.1225325375157815e-05,
+   "G_even_min": 5.193165220835661e-07,
+   "G_odd_min": 1.2960246371754132e-05,
+   "overlap(F_vec*cosh, zeta_even_vec)": 0.9971380485444576,
+   "F_vec_nodes_half": 1
+  },
+  "th0.1": {
+   "F_even_min": -0.0001907245681136086,
+   "F_odd_min": -5.3223307623877315e-05,
+   "G_even_min": 1.0866951593518988e-06,
+   "G_odd_min": 4.474163574391759e-05,
+   "overlap(F_vec*cosh, zeta_even_vec)": 0.17850864516075154,
+   "F_vec_nodes_half": 1
+  },
+  "th0.25": {
+   "F_even_min": -0.0023976277835236265,
+   "F_odd_min": -0.001018882330682952,
+   "G_even_min": 1.839737664007634e-06,
+   "G_odd_min": 0.00018375493309523717,
+   "overlap(F_vec*cosh, zeta_even_vec)": 0.09242036052223236,
+   "F_vec_nodes_half": 1
+  }
+ },
+ {
+  "L": 0.7,
+  "zeta_even_min": 4.251540199665282e-13,
+  "zeta_odd_min": 2.5950485064673946e-10,
+  "th0.05": {
+   "F_even_min": -8.105106640661039e-05,
+   "F_odd_min": -0.00027967335071906705,
+   "G_even_min": 3.915822531661205e-09,
+   "G_odd_min": 9.059162776349733e-07,
+   "overlap(F_vec*cosh, zeta_even_vec)": 0.08631745595982841,
+   "F_vec_nodes_half": 2
+  },
+  "th0.1": {
+   "F_even_min": -0.0013864394097611505,
+   "F_odd_min": -0.00126509392458739,
+   "G_even_min": 1.0985620634691347e-08,
+   "G_odd_min": 1.4164977639881727e-06,
+   "overlap(F_vec*cosh, zeta_even_vec)": 0.05418054667404642,
+   "F_vec_nodes_half": 2
+  },
+  "th0.25": {
+   "F_even_min": -0.024150012482608698,
+   "F_odd_min": -0.010642992672084439,
+   "G_even_min": 4.29550807248922e-08,
+   "G_odd_min": 4.25371136320465e-06,
+   "overlap(F_vec*cosh, zeta_even_vec)": 0.021065172344246093,
+   "F_vec_nodes_half": 2
+  }
+ }
+]
