@@ -1,0 +1,15 @@
+{"form": "DH", "L": "3421/2000", "K": 266, "ref_prec": 960, "ref_first_nonpos": 240, "ref_min_pivot": "-7.3303335", "at": 240, "ref_last_pivot": "5.951221", "max_dump_rad": 9.567862109895825e-285, "sec": 10.5}
+{"K": 266, "p": 192, "float_first_nonpos": 240, "pivot": "-7.33033", "relerr": "5.1e-28", "fsec": 6.3, "ball": "UNRESOLVED", "ball_stop": 28, "ball_piv": "[+/- 2.56e+5]", "bsec": 0.2}
+{"K": 266, "p": 256, "float_first_nonpos": 240, "pivot": "-7.33033", "relerr": "8.09e-47", "fsec": 6.4, "ball": "NEG", "ball_stop": 240, "ball_piv": "[-7.3303 +/- 4.59e-5]", "bsec": 0.9}
+{"K": 266, "p": 320, "float_first_nonpos": 240, "pivot": "-7.33033", "relerr": "5.11e-67", "fsec": 7.0, "ball": "NEG", "ball_stop": 240, "ball_piv": "[-7.3303 +/- 3.35e-5]", "bsec": 1.0}
+{"K": 266, "p": 384, "float_first_nonpos": 240, "pivot": "-7.33033", "relerr": "1.87e-85", "fsec": 7.2, "ball": "NEG", "ball_stop": 240, "ball_piv": "[-7.3303 +/- 3.35e-5]", "bsec": 1.1}
+{"K": 266, "p": 448, "float_first_nonpos": 240, "pivot": "-7.33033", "relerr": "1.25e-104", "fsec": 7.8, "ball": "NEG", "ball_stop": 240, "ball_piv": "[-7.3303 +/- 3.35e-5]", "bsec": 2.3}
+{"K": 266, "p": 480, "float_first_nonpos": 240, "pivot": "-7.33033", "relerr": "1.52e-114", "fsec": 10.5, "ball": "NEG", "ball_stop": 240, "ball_piv": "[-7.3303 +/- 3.35e-5]", "bsec": 1.2}
+{"K": 266, "p": 512, "float_first_nonpos": 240, "pivot": "-7.33033", "relerr": "5.13e-124", "fsec": 9.3, "ball": "NEG", "ball_stop": 240, "ball_piv": "[-7.3303 +/- 3.35e-5]", "bsec": 1.3}
+{"K": 266, "p": 544, "float_first_nonpos": 240, "pivot": "-7.33033", "relerr": "1.13e-133", "fsec": 13.0, "ball": "NEG", "ball_stop": 240, "ball_piv": "[-7.3303 +/- 3.35e-5]", "bsec": 1.3}
+{"K": 266, "p": 576, "float_first_nonpos": 240, "pivot": "-7.33033", "relerr": "9.43e-144", "fsec": 10.6, "ball": "NEG", "ball_stop": 240, "ball_piv": "[-7.3303 +/- 3.35e-5]", "bsec": 2.3}
+{"K": 266, "p": 640, "float_first_nonpos": 240, "pivot": "-7.33033", "relerr": "8.89e-163", "fsec": 9.7, "ball": "NEG", "ball_stop": 240, "ball_piv": "[-7.3303 +/- 3.35e-5]", "bsec": 1.5}
+{"K": 266, "p": 704, "float_first_nonpos": 240, "pivot": "-7.33033", "relerr": "6.11e-182", "fsec": 10.4, "ball": "NEG", "ball_stop": 240, "ball_piv": "[-7.3303 +/- 3.35e-5]", "bsec": 1.6}
+{"K": 266, "p": 768, "float_first_nonpos": 240, "pivot": "-7.33033", "relerr": "4.48e-202", "fsec": 10.8, "ball": "NEG", "ball_stop": 240, "ball_piv": "[-7.3303 +/- 3.35e-5]", "bsec": 2.1}
+{"K": 266, "p": 832, "float_first_nonpos": 240, "pivot": "-7.33033", "relerr": "5.72e-221", "fsec": 18.0, "ball": "NEG", "ball_stop": 240, "ball_piv": "[-7.3303 +/- 3.35e-5]", "bsec": 3.2}
+{"K": 266, "p": 896, "float_first_nonpos": 240, "pivot": "-7.33033", "relerr": "4.46e-240", "fsec": 18.4, "ball": "NEG", "ball_stop": 240, "ball_piv": "[-7.3303 +/- 3.35e-5]", "bsec": 3.3}

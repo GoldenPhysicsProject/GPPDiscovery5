@@ -443,6 +443,108 @@ The prime and zero sides agree to < 0.01, consistent with the explicit formula a
 | x² + 5y² (Celestial) | no | 0.908 + 89.56i | +4.98 → −150.8 |
 | 2x² + 2xy + 3y² (Celestial zero, verified here) | no | **2.0794 + 7.6289i (Re > 1)** | −168 → −1.0·10⁵ over L 2 → 4, η̂ = 3.20 ≥ 2Θ − 1 = 3.159 |
 
+**What Lemma 5.2 and the matched family do and do not rule out.** This incorporates Golden Eye's point, relayed by the lead in S99 and credited to Golden Eye (their label: CONJECTURE).
+- **Does rule out (PROVED).**
+  - η_D ≥ 2Θ_D − 1 for every D ∈ 𝒟, so a uniform bound of the form U (η ≤ 1) excludes zeros with Re s > 1 at *every* height.
+  - With Weil's criterion, this gives **RH ⇔ η_ζ = 0 (PROVED).** Weil: RH ⇒ Q_{ζ,L} ≥ 0 for all L ⇒ η_ζ = 0. Lemma 5.2: η_ζ = 0 ⇒ λ_min ≥ −C_ε e^{εL} for every ε > 0 ⇒ Θ ≤ ½ + ε/2 for every ε.
+  - So the RH-equivalent target in this language is **η_ζ = 0**, i.e. window negativity grows sub-exponentially in L. U (η ≤ 1) is the weak, PROVED-for-ζ end of a ladder whose top rung is RH.
+- **Does not rule out (Golden Eye; I agree; status of the general claim: CONJECTURE).**
+  - Each finite certificate Q_{ζ,L}(e^{−iγx}sinh(βx)) > 0, at one (β, γ, L) or on a finite grid, is a *smoothed zero-detector*. By the identity below, its kernel K_L(γ_ρ − γ) decays like |γ_ρ − γ|^{−2}. So a positive value excludes, roughly, an off-line quartet with β′ ≳ β inside |γ′ − γ| ≲ e^{β′L}, and nothing else.
+  - Every height range so reachable is already covered by the verification of RH up to **height** 3·10¹², i.e. the lowest 12,363,153,437,138 zeros (✔ Platt–Trudgian, Bull. LMS 53 (2021) 792–797, doi:10.1112/blms.12460, Thm 1).
+  - So the matched family is a **DH-killer and node-count test, not a route to RH by itself**. Only a statement **uniform in L** (η_ζ = 0, or the Riesz-mean bound in §5.6) carries RH content, and proving such a statement is the whole problem.
+
+**Exact quartet identity on the matched vector (PROVED, elementary, given the explicit formula).** Let ρ₀ = ½ + β + iγ₀ be a zero, with quartet {½ ± β ± iγ₀}, and f = e^{−iγ₀x}sinh(βx) on [−L, L]. Write F(t) = ∫f e^{itx} dx = sinh(a₊L)/a₊ − sinh(a₋L)/a₋ with a_± = ±β + i(t − γ₀), and set S = sinh(2βL)/(2β). Then:
+- At z = γ₀ ∓ iβ one of a_± vanishes, so ĝ(z) = F(z)·conj F(z̄) = −(S − L)².
+- ‖f‖² = S − L.
+- Hence these two members contribute **exactly −2‖f‖⁴**, i.e. −2‖f‖² ≈ −e^{2βL}/(2β) to the Rayleigh quotient.
+- The mirror pair at −γ₀ adds a relative O(β²/γ₀²).
+
+Therefore
+
+  Q(f)/‖f‖² = −2‖f‖²·(1 + O(β²/γ₀²)) + R_L,  with R_L = Σ_{other ρ} ĝ(γ_ρ)/‖f‖².
+
+**This is the quantitative Lemma 5.2 on the matched vector**, with c = 1/(2β) asymptotically, *provided R_L = o(e^{2βL})*. The gap is exactly that: other off-line zeros ρ′ = ½ + β′ + iγ′ contribute terms of size ≍ e^{2β′L}/|γ′ − γ₀|² with oscillating phase, which compete when β′ ≥ β. It holds if ρ₀ maximises β over all zeros and the other zeros with β′ = β have Σ 1/|γ′ − γ₀|² ≤ (1 − ε)/(2β). It is unproved when sup β is not attained (DH: Saias–Weingartner density up to σ_DH). Status: CONJECTURE in general; PROVED under that separation hypothesis, modulo convergence of the zero sum, which holds since ĝ(γ) = O(e^{2βL}/γ²) on the line.
+
+Numerical confirmation of the identity (`quartet_identity.py/.log`, NUMERICAL):
+
+| L | DH Q/‖f‖² | DH quartet | DH residual R_L | Epstein Q/‖f‖² | Epstein quartet | Epstein R_L |
+|---|---|---|---|---|---|---|
+| 2 | −0.243 | −1.095 | +0.852 | −168.3 | −170.1 | +1.8 |
+| 3 | −3.086 | −4.064 | +0.978 | −4243.7 | −4237.4 | −6.3 |
+| 4 | −10.50 | −10.99 | +0.489 | −101768 | −101241 | −526 (0.5%) |
+| 5 | −24.44 | −25.37 | +0.932 | – | – | – |
+| 6 | −52.95 | −53.66 | +0.706 | – | – | – |
+
+For DH the residual stays O(1) and positive (on-line zeros). So the DH negativity on this vector *is* the single quartet at 0.8085 + 85.70i, to within 1.3% at L = 6.
+
+**Explicit zero with Re s > 1 (Epstein control).** The control comes from Goddess of Celestial CFT (GPPDiscovery5 `team/celestial-cft` 95bd200, bridge 0b35884), credited to Celestial.
+- **Verified here** (`epstein_check.py/.log`, NUMERICAL; findroot at dps 30, |Z| = 2·10⁻³²): Z_Q(s) = Σ′(2m² + 2mn + 3n²)^{−s} has a zero at **ρ₀ = 2.0794141048 + 7.6288675878i**.
+- **Convention:** this is the standard normalisation. Z_Q(s) converges for Re s > 1, Λ(s) = (√20/2π)^sΓ(s)Z_Q(s) = Λ(1 − s), and the critical line is Re s = ½.
+- **Method:** Z_Q = ζ·L(χ₋₂₀) − L(χ₋₄)L(χ₅). This was checked against the direct lattice sum at s = 3 to 10⁻⁸, the truncation error. The halved-coordinate reading 1.04 + 3.81i is *not* a zero (|Z| = 1.58).
+- So β₀ = 1.5794 and 2Θ − 1 ≥ 3.1588.
+- Normalisation for the Weil form: D̃(s) = (2^s/2)Z_Q(s) = 1 + Σ_{n>2}(r(n)/2)(n/2)^{−s}, a generalised Dirichlet series with frequencies log(n/2). It has FE factor (√5/2π)^sΓ(s), poles of the completed function at 0 and 1, Ω(0) = 2log(√5/2π) + 2ψ(½), and ν(u) = 1/sinh(u/2). −D̃′/D̃ is obtained from (1 + E)*c = λE by a causal FFT recursion on a 10⁻⁵ grid (`epstein_growth.py`).
+- Lemma 5.2's proof uses only an FE, order 1 and an absolutely convergent −D′/D, so it applies to generalised frequencies verbatim.
+- **Validation:** the same code reproduces Celestial's x² + 5y² numbers exactly: +4.979, +1.588, −4.020, −21.78 at L = 2, 2.5, 3, 4.
+- **Growth on e^{−iγ₀x}sinh(β₀x)** (NUMERICAL): −Q/‖f‖² = 3.59, 34.4, 168.3, 856.9, 4243.7, 19070, 101768 at L = 1, 1.5, …, 4.
+  - Local exponents per unit L: 4.5, 3.18, 3.26, 3.20, 3.01, 3.35.
+  - Fit over L ∈ [2, 4]: **η̂ = 3.20 against 2β₀ = 2Θ − 1 ≥ 3.159.**
+  - This is consistent with Lemma 5.2, and with *equality* η = 2Θ − 1 on this vector, as the quartet identity predicts.
+- **Comparison with the x² + y² control** (Celestial: same Γ-factor and poles, with an Euler product), which stays in +1.4 to +6.8. Conclusion, Celestial's and agreed here, NUMERICAL: FE, modularity and matching Γ-data do not prevent exponential negativity; only the Euler-product cases stay positive.
+
+### 5.6 Why does Q_ζ on the DH-matched family behave as it does? (growth analysis)
+
+Correction of the premise (NUMERICAL, `dh_sinh.log`, half-width L). On its own family (β₀ = 0.308517, γ₀ = 85.699348), Q_ζ/‖f‖² = 3.69, 3.27, **3.81**, 3.06, 3.10, 1.04, 0.95, **1.79** at L = 1, 1.5, 2, 2.5, 3, 4, 5, 6.
+- It does **not** grow from +0.9 at L = 2 to +3.8 at L = 6. Those figures look like a mis-transcription: the actual values are +3.81 at L = 2 and +1.79 at L = 6.
+- It is bounded and non-monotone.
+- Celestial's caveat (ζ on the Epstein probes dips to +0.058) is the same phenomenon.
+
+**Decomposition** (NUMERICAL; columns: arch, prime, pole, zero side, from `dh_sinh.json` and `zeta_zero_side.json`; the zero side uses the first 300 zeros, tail < 5·10⁻⁴):
+
+| L | arch | −prime | pole | Q/‖f‖² (prime side) | Σ_ρ \|F(γ_ρ)\|²/‖f‖² (zero side) | zeros within ±5 of γ₀ |
+|---|---|---|---|---|---|---|
+| 1 | 2.613 | +1.079 | 0.0006 | 3.693 | 3.683 | 3.071 |
+| 2 | 2.613 | +1.198 | −0.0011 | 3.810 | 3.805 | 3.602 |
+| 3 | 2.613 | +0.490 | 0.0019 | 3.105 | 3.101 | 2.941 |
+| 4 | 2.613 | −1.576 | 0.0052 | 1.042 | 1.039 | 0.885 |
+| 5 | 2.613 | −1.654 | −0.0125 | 0.946 | 0.944 | 0.799 |
+| 6 | 2.613 | −0.807 | −0.0173 | 1.788 | 1.786 | 1.642 |
+
+The prime and zero sides agree to < 0.01, consistent with the explicit formula and the 300-zero truncation.
+- **Archimedean term (NUMERICAL):** constant, equal to Ω(γ₀) = Re ψ(¼ + iγ₀/2) − log π ≈ 2.613 to 10⁻⁴ for all L. It is the "log t" term at height γ₀, and it does *not* grow.
+- **Pole term:** negligible (|P| < 0.02).
+- **Prime term:** O(1) and oscillating in L. It is the only L-dependent piece.
+- **Zero side:** dominated by the 2–4 zeros nearest γ₀ (84.735, 87.425, 88.809, 82.910). By the identity above, on-line zeros give
+
+    K_L(Δ) = 4β(β sin ΔL − Δ cos ΔL)²/(β² + Δ²)² + (transient)
+
+  with Δ = γ_ρ − γ₀. Each kernel lies in [0, 4β/(β² + Δ²)] asymptotically, with mean 2β/(β² + Δ²). The transient decays: for the zero at 84.735 the exact value vs K_L is 2.65 vs 1.00 at L = 2.5, 1.37 vs 1.16 at L = 6, and 0.7225 vs 0.7163 at L = 12.
+
+**Conclusion (NUMERICAL plus PROVED identity).** Q_ζ/‖f_{β₀,γ₀,L}‖² is, up to a decaying transient, a bounded almost-periodic function of L. Its frequencies are 2(γ_ρ − γ₀), its mean is ≈ Σ_ρ 2β/(β² + (γ_ρ − γ₀)²) ≈ 1.04 (first 300 zeros; NUMERICAL), and its range is ⊂ [0, Σ 4β/(β² + Δ²)].
+- Nothing grows. The positivity comes from **every zero near γ₀ contributing a nonnegative kernel**, which is just Q = Σ|F(γ_ρ)|² ≥ 0 when the nearby zeros are on the line.
+- An Euler-product argument enters only in showing that no negative quartet term (−2‖f‖² for a matched quartet, or ±e^{2β′L}/Δ² for an unmatched one) is present.
+
+**What an Euler-product argument would have to prove, uniformly** (the statement is PROVED as an equivalence, sketch below; proving it is OPEN).
+- Write X = e^{2L} and s₁ = ½ − β + iγ₀.
+- In G(log n)/‖f‖², with ‖f‖² ~ e^{2βL}/(4β), the dominant pieces are:
+  - the term e^{β(2L−u)}/(4β), giving a partial sum of −ζ′/ζ at ½ + β + iγ₀, which converges only if there are no zeros to its right;
+  - the term −(2L − u)e^{βu}/4, giving −β·X^{−β}·Σ_{n≤X} log(X/n)Λ(n)n^{−s₁}.
+- So, uniformly in L, the prime term is a combination of the first Riesz means R₁(X; s) = Σ_{n≤X} log(X/n)Λ(n)n^{−s} at s = ½ ± β + iγ₀, normalised by X^{−β}.
+- By Perron with kernel X^w/w², R₁(X; s₁) = X^{1−s₁}/(1−s₁)² − Σ_ρ X^{ρ−s₁}/(ρ−s₁)² + O(1). Each on-line ρ gives a term of size X^β/|ρ − s₁|², i.e. O(1) after normalisation. An off-line ρ′ gives X^{β+β′}, i.e. e^{2β′L} growth.
+- Hence: **inf_L Q_ζ(f_{β,γ,L})/‖f‖² > −∞ for all β ∈ (0, ½) and all γ ⇔ X^{−β}R₁(X; ½ − β + iγ) = O(1) uniformly ⇔ RH.**
+  - The second ⇔ is the standard Riesz-mean/zero-free-region equivalence. The first needs the Ingham/Landau oscillation step to pass from "for all L" to "no off-line term"; I did not write out the uniform version. Status: CONJECTURE with that step missing; the sketch is in this section.
+- The Euler product would have to deliver the cancellation Σ_{n≤X} log(X/n)Λ(n)n^{−½+β−iγ} = O(X^β) *without* passing through the zeros. That is a twisted-Chebyshev square-root bound, RH-strength. No known Euler-product argument gives better than the de la Vallée-Poussin / Vinogradov–Korobov zero-free region.
+- **OPINION:** the matched-family growth question therefore reduces to the classical problem. The family contributes a clean, local, node-carrying test vector (§5 sign-change note), not new leverage.
+
+**ζ on its own family vs the controls** (all NUMERICAL, half-width L):
+
+| function | Euler product | off-line zero matched by the vector | Q/‖f‖² behaviour, L = 2…6 |
+|---|---|---|---|
+| ζ (DH vector) | yes | none (RH verified at this height) | bounded, almost periodic: 3.81 → 1.79, min 0.95 |
+| x² + y² (Celestial) | yes | none | +1.4 … +6.8 |
+| DH | no | 0.8085 + 85.70i | −2‖f‖² + O(1): −0.24 → −52.95, exponent → 2β₀ = 0.617 |
+| x² + 5y² (Celestial) | no | 0.908 + 89.56i | +4.98 → −150.8 |
+| 2x² + 2xy + 3y² (Celestial zero, verified here) | no | **2.0794 + 7.6289i (Re > 1)** | −168 → −1.0·10⁵ over L 2 → 4, η̂ = 3.20 ≥ 2Θ − 1 = 3.159 |
+
 **Why U is not RH, and what it does not do (honest).**
 - U is equivalent to η ≤ 1. Lemma 5.2 gives η ≥ 2Θ − 1, so U implies "no zeros with Re s > 1" for any D ∈ 𝒟. The converse direction is heuristic. For ζ, "no zeros with Re s > 1" is classical.
 - It does **not** see DH's strip zeros (0.8085 + 85.70i has 2β₀ = 0.617 < 1), nor F_θ (Re < 1), H₋ₜ or DMV.

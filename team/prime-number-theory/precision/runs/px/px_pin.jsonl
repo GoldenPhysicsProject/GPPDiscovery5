@@ -1,0 +1,27 @@
+{"tag":"dp20","delta":"p1e-20"}
+{"form": "ZETA", "L": "3421/2000", "K": 200, "lambda_min_ref": "LDL fails at ref (not PD)", "sec": 1.9}
+{"cert": "FLOAT_LDL_FAILED", "at": 72, "K": 200, "p": 576, "sec": 2.6}
+{"K": 200, "p": 576, "float_first_nonpos": 72, "pivot": "-3.87063e-14", "relerr": "6.32e-68", "fsec": 4.0, "ball": "UNRESOLVED", "ball_stop": 42, "ball_piv": "[+/- 1.56e-18]", "bsec": 0.2}
+{"tag":"dm20","delta":"m1e-20"}
+{"form": "ZETA", "L": "3421/2000", "K": 200, "lambda_min_ref": "LDL fails at ref (not PD)", "sec": 1.2}
+{"cert": "FLOAT_LDL_FAILED", "at": 61, "K": 200, "p": 576, "sec": 1.1}
+{"K": 200, "p": 576, "float_first_nonpos": 61, "pivot": "-4.46548e-17", "relerr": "1.05e-75", "fsec": 6.3, "ball": "UNRESOLVED", "ball_stop": 42, "ball_piv": "[+/- 1.56e-18]", "bsec": 0.3}
+{"tag":"dp60","delta":"p1e-60"}
+{"form": "ZETA", "L": "3421/2000", "K": 200, "lambda_min_ref": "6.4381899e-153", "sec": 10.1}
+{"cert": "PD", "fro_bound": "[1.2533e-21 +/- 1.54e-26]", "min_pivot": "6.3031e-21", "K": 200, "p": 576, "sec": 9.5}
+{"K": 200, "p": 576, "float_first_nonpos": null, "pivot": "6.30312e-21", "relerr": "9.92e-120", "fsec": 6.1, "ball": "UNRESOLVED", "ball_stop": 42, "ball_piv": "[+/- 1.56e-18]", "bsec": 0.3}
+{"tag":"dm60","delta":"m1e-60"}
+{"form": "ZETA", "L": "3421/2000", "K": 200, "lambda_min_ref": "6.4381899e-153", "sec": 10.1}
+{"cert": "PD", "fro_bound": "[1.2539e-21 +/- 3.43e-26]", "min_pivot": "6.3031e-21", "K": 200, "p": 576, "sec": 9.3}
+{"K": 200, "p": 576, "float_first_nonpos": null, "pivot": "6.30312e-21", "relerr": "8.81e-120", "fsec": 4.9, "ball": "UNRESOLVED", "ball_stop": 42, "ball_piv": "[+/- 1.56e-18]", "bsec": 0.1}
+{"tag":"dp100","delta":"p1e-100"}
+{"form": "ZETA", "L": "3421/2000", "K": 200, "lambda_min_ref": "6.4381899e-153", "sec": 20.1}
+{"cert": "PD", "fro_bound": "[1.2545e-21 +/- 4.70e-26]", "min_pivot": "6.3031e-21", "K": 200, "p": 576, "sec": 12.3}
+{"K": 200, "p": 576, "float_first_nonpos": null, "pivot": "6.30312e-21", "relerr": "2.39e-119", "fsec": 8.7, "ball": "UNRESOLVED", "ball_stop": 42, "ball_piv": "[+/- 1.56e-18]", "bsec": 0.3}
+{"tag":"dm100","delta":"m1e-100"}
+{"form": "ZETA", "L": "3421/2000", "K": 200, "lambda_min_ref": "6.4381899e-153", "sec": 14.7}
+{"cert": "PD", "fro_bound": "[1.2534e-21 +/- 4.90e-26]", "min_pivot": "6.3031e-21", "K": 200, "p": 576, "sec": 11.3}
+{"K": 200, "p": 576, "float_first_nonpos": null, "pivot": "6.30312e-21", "relerr": "5.58e-120", "fsec": 7.9, "ball": "UNRESOLVED", "ball_stop": 42, "ball_piv": "[+/- 1.56e-18]", "bsec": 0.3}
+{"tag":"dp140","delta":"p1e-140"}
+{"form": "ZETA", "L": "3421/2000", "K": 200, "lambda_min_ref": "6.4381899e-153", "sec": 15.0}
+{"cert": "PD", "fro_bound": "[1.2532e-21 +/- 3.93e-26]", "min_pivot": "6.3031e-21", "K": 200, "p": 576, "sec": 11.2}
