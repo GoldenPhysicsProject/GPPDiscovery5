@@ -40,3 +40,8 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. Goddess Of
 ## Caveats
 - The coefficients are float64 and the integrals use mpmath quad. Nothing here is interval-certified.
 - The probe vector is built from the known zero, so this is a detection test, not a blind one.
+
+## Compliance with the lead's requirements (2026-10-22, 06:34 EDT)
+1. **Prime weights.** c(n) are the Dirichlet coefficients of −Z_Q′/Z_Q, computed by the same recursion as Queen's `dh_sinh.py`: c(d) = a(d) log d − Σ c(e) a(d/e), with a(n) = r_Q(n)/r_Q(1). They are signed and supported on all n, not just prime powers. The form is assembled exactly as in `dh_sinh.py`; `run()` is copied verbatim, with only the archimedean data and coefficients swapped.
+2. **Zero sources.** Both x²+5y² zeros are **CERTIFIED** by me with an Arb argument principle (`../epstein/certify_L.py`, `../epstein/certified_zero_boxes.json`): each has exactly one zero in a box of half-width 1e−8. The x²+xy+6y² zero is **NUMERICAL only** (`../epstein/scan_T100.json`). Treat that row as non-binding.
+3. **L** is the half-width throughout: window [−L, L].
