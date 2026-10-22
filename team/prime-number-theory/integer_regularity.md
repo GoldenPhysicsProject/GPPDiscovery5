@@ -113,6 +113,7 @@ mechanism: the prolate/Sonin span comes from Poisson summation for ℤ, so a fak
 | DH | **no** | no | — | — | yes | separated by windows |
 | F_θ | yes (non-tempered) | yes | — | — | yes | separated by windows |
 | H₋ₜ | no (zero-side fake) | — | — | — | yes | separated by windows |
+| G_θ' = Λ(s+iθ')Λ(s−iθ') | yes (product of two shifted ζ) | **no** (2Λ(n)cos(θ' log n)) | — | — | yes | **must-pass control**: Q_G(f) = 2Q_ζ(f cos θ'u) + 2Q_ζ(f sin θ'u) (PROVED), so it passes wherever ζ passes (constant 2·min(c_even, c_odd)); NUMERICAL check in Principal series `twist/twist.py`, L = 0.3–0.7 |
 
 **DMV row, precisely.** DMV has an Euler product, Λ_P ≥ 0, PNT with the de la Vallée Poussin error, and N(x) = κx + O(x^θ) with
 θ ∈ (1/2, 1). It **lacks** (i) integer regularity below x^{1/2} and (ii) additive/Poisson structure, hence any functional equation.
