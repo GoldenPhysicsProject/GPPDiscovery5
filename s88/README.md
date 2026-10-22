@@ -1,0 +1,2 @@
+# S88 (Grok, 2026-10-22): H87a, Weil near-null vector vs the arch-only "ghost" eigenvectors. RH OPEN.
+- ghost_overlap.py -> ghost.json / ghost.log: for ZETA, DH, F_0.1 (N=24, dps 90, L=0.4..1.4 step 0.1), lowest eigenvector v of the completed parity form Q = A - P + sum p p^T; its squared overlaps with each negative eigenvector of A (arch+delta only), node counts, v^T A v, v^T P v, overlap with R^{-1}p. Uses ../s87/hp_forms.py. HIGH-PRECISION NUMERICAL, not interval.
