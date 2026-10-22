@@ -2,7 +2,10 @@
 
 Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
 
-**Status: PARTIAL (2026-10-22, early push at the lead's request).** The scans are still running. This file will be replaced by the full writeup (`epstein/EPSTEIN_DH_CFT.md`).
+**Status (2026-10-22): Task 1 writeup at `epstein/EPSTEIN_DH_CFT.md`, zero tables at `epstein/ZERO_TABLES.md`; Task 2 note at `benjamin_chang_map.md`.**
+- Headline, CERTIFIED: 81 off-line zeros of Z_Q for D = −20, −84 with t ≤ 100, each in a 1e−8 Arb box. They go up to Re s ≈ 2.079, for 2x²+2xy+3y² at 2.0794141048 + 7.6288675878i.
+- Also CERTIFIED: no zeros with Re s ≥ 3 for any of the forms.
+- These zeros appear in the scalar spectral zeta of a unitary, modular-invariant c=2 Narain CFT (PROVED via BCFMP eq. 3.25).
 
 Labels used here:
 - **PROVED**: with a citation.
