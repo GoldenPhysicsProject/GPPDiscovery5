@@ -1,0 +1,34 @@
+[
+ {
+  "L": 1.0,
+  "sector": "even",
+  "k": 266,
+  "lam": "1.4041013729104130085e-23",
+  "lam_prev_k": 200,
+  "lam_prev": "1.4094435987792664012e-23",
+  "extrap": "1.39958e-23",
+  "extrap_p": "2.736",
+  "rel_change_last_step": 0.0038047294674885606,
+  "residual": 6.56718420234582e-89,
+  "weyl": 0.0,
+  "one_minus_abs_cos_nested": 1.2281152007251871e-11,
+  "one_minus_abs_cos_vs_legendre_N64": 2.0392554381098465e-10,
+  "legendre_N64_lam": "1.41673258016465521666606386375e-23"
+ },
+ {
+  "L": 1.0,
+  "sector": "odd",
+  "k": 266,
+  "lam": "8.3138729228339753471e-21",
+  "lam_prev_k": 200,
+  "lam_prev": "8.3519787041852370336e-21",
+  "extrap": "8.22102e-21",
+  "extrap_p": "1.206",
+  "rel_change_last_step": 0.004583397136923336,
+  "residual": 1.0102735975384106e-82,
+  "weyl": 0.0,
+  "one_minus_abs_cos_nested": 3.848237730256254e-11,
+  "one_minus_abs_cos_vs_legendre_N64": null,
+  "legendre_N64_lam": "8.1749e-21"
+ }
+]
