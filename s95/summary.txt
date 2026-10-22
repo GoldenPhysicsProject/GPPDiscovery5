@@ -1,0 +1,56 @@
+0.6 ZETA A 0.0007025 True None S+ 3.00231e-10 neg 0 True None 1-|M| 5.48489e-9 qe 3.00702e-10 qo 1.11617e-7 nQ 0 idErr 1.8e-91
+0.6 DH A 0.07212 True None S+ 0.0233703 neg 0 True None 1-|M| 0.161424 qe 0.025689 qo 0.233346 nQ 0 idErr 9.7e-92
+0.6 FT0.1 A 0.0006998 True None S+ -8.35197e-5 neg 2 None 2 1-|M| -0.0013349 qe -1.76925e-5 qo -4.93723e-6 nQ 2 idErr 2.12e-91
+0.6 HT-2 A 0.0004545 True None S+ 6.84584e-11 neg 0 True None 1-|M| 1.27307e-9 qe 6.85692e-11 qo 2.48892e-8 nQ 0 idErr 1.9e-91
+0.8 ZETA A 1.784e-5 True None S+ 3.36981e-18 neg 0 True None 1-|M| 6.19224e-17 qe 3.37185e-18 qo 3.32839e-15 nQ 0 idErr 4.06e-91
+0.8 DH A 0.05092 True None S+ 0.0012836 neg 0 True None 1-|M| 0.00986612 qe 0.00129422 qo 0.0879596 nQ 0 idErr 2.08e-91
+0.8 FT0.1 A 1.7e-5 True None S+ -0.00493403 neg 5 None 5 1-|M| -0.0273146 qe -0.000534342 qo -0.000672454 nQ 5 idErr 6.86e-91
+0.8 HT-2 A 9.255e-6 True None S+ -3.99783e-6 neg 3 None 3 1-|M| -0.000164952 qe -1.61238e-8 qo -5.39046e-7 nQ 3 idErr 1.29e-90
+1.0 ZETA A 9.676e-8 True None S+ 6.00825e-23 neg 0 True None 1-|M| 1.13375e-21 qe 6.01421e-23 qo 3.73806e-20 nQ 0 idErr 1.29e-89
+1.0 DH A 0.03064 True None S+ 7.13305e-6 neg 0 True None 1-|M| 5.64938e-5 qe 7.14149e-6 qo 0.00250217 nQ 0 idErr 1.36e-91
+1.0 FT0.1 A -2.214e-7 False 1 S+ -0.0479836 neg 8 None 8 1-|M| A not PD: S_+ criterion not applicable qe -0.00226858 qo -0.00219845 nQ 9 idErr 5.54e-90
+1.0 HT-2 A 3.078e-8 True None S+ -0.00119007 neg 4 None 4 1-|M| -0.0138129 qe -5.50071e-9 qo -0.000187615 nQ 4 idErr 2.42e-89
+1.2 ZETA A 1.921e-10 True None S+ 7.85096e-27 neg 0 True None 1-|M| 1.62407e-25 qe 7.85709e-27 qo 6.27603e-24 nQ 0 idErr 3.27e-87
+1.2 DH A 0.01472 True None S+ 1.62763e-9 neg 0 True None 1-|M| 1.28214e-8 qe 1.62834e-9 qo 1.688e-6 nQ 0 idErr 1.5e-91
+1.2 FT0.1 A -9.947e-6 False 2 S+ -0.00911689 neg 10 None 10 1-|M| A not PD: S_+ criterion not applicable qe -0.00371424 qo -0.00346297 nQ 12 idErr 1.41e-89
+1.2 HT-2 A 6.027e-11 True None S+ -1.24552e-7 neg 5 None 5 1-|M| -8.22762e-6 qe -1.23819e-8 qo -6.99189e-11 nQ 5 idErr 1.72e-86
+0.6 e ns [2, 4]
+    ZETA off 0.2286 corr None slope None pos True ray/def ['1.66', '0.79'] wmin ['4.08e-10', '2.75e-5']
+    DH off 0.7107 corr None slope None pos True ray/def ['5.07e+8', '8.52e+3'] wmin ['0.053', '0.364']
+    FT0.1 off 1.782 corr None slope None pos False ray/def ['-1.2e+3', '-0.363'] wmin ['-1.33e-5', '6.41e-7']
+    HT-2 off 0.977 corr None slope None pos True ray/def ['2.56e+4', '30.0'] wmin ['3.02e-7', '0.00105']
+0.6 o ns [3, 5]
+    ZETA off 0.1329 corr None slope None pos True ray/def ['0.949', '0.573'] wmin ['1.37e-7', '0.00219']
+    DH off 0.3817 corr None slope None pos True ray/def ['1.87e+6', '92.2'] wmin ['0.241', '0.345']
+    FT0.1 off 0.3339 corr None slope None pos False ray/def ['-28.9', '0.522'] wmin ['-4.69e-6', '0.00201']
+    HT-2 off 0.8222 corr None slope None pos True ray/def ['697.0', '1.85'] wmin ['3.46e-5', '0.0068']
+0.8 e ns [2, 4, 6, 8]
+    ZETA off 0.1773 corr 0.836 slope 0.035 pos True ray/def ['-0.000207', '1.15', '0.853', '0.581'] wmin ['5.38e-18', '2.69e-12']
+    DH off 0.7494 corr 0.917 slope 0.002 pos True ray/def ['-4.81e+12', '1.23e+11', '2.05e+6', '307.0'] wmin ['0.00261', '0.377']
+    FT0.1 off 1.202 corr 0.937 slope 0.01 pos False ray/def ['5.08e+6', '-7.76e+6', '-1.71e+3', '0.176'] wmin ['-0.000529', '-6.87e-7']
+    HT-2 off 0.9984 corr 0.913 slope 0.011 pos True ray/def ['-9.98e+7', '1.82e+8', '4.98e+4', '16.1'] wmin ['1.02e-10', '1.98e-6']
+0.8 o ns [3, 5, 7, 9]
+    ZETA off 0.2114 corr 0.841 slope 0.032 pos True ray/def ['-0.179', '0.767', '0.872', '0.45'] wmin ['4.42e-15', '7.2e-10']
+    DH off 0.523 corr 0.616 slope 0.001 pos True ray/def ['-1.13e+13', '3.35e+8', '1.48e+4', '9.12'] wmin ['0.103', '0.317']
+    FT0.1 off 0.996 corr 0.812 slope 0.009 pos False ray/def ['7.93e+7', '-9.27e+4', '-24.1', '0.435'] wmin ['-0.000664', '-6.15e-6']
+    HT-2 off 0.9956 corr 0.92 slope 0.009 pos True ray/def ['-1.69e+9', '2.4e+6', '839.0', '0.773'] wmin ['1.51e-8', '0.000107']
+1.0 e ns [2, 4, 6, 8, 10, 12, 14]
+    ZETA off 0.9964 corr 0.873 slope 0.036 pos True ray/def ['-7.36e-7', '-0.00557', '-9.19', '460.0', '7.73', '0.993', '0.511'] wmin ['7.24e-23', '2.65e-19']
+    DH off 0.7705 corr 0.795 slope 0.001 pos True ray/def ['-4.73e+12', '-1.09e+13', '-1.44e+13', '1.11e+12', '4.06e+7', '6.31e+3', '7.13'] wmin ['1.61e-5', '0.189']
+    FT0.1 off 0.9995 corr 0.774 slope 0.009 pos False ray/def ['3.03e+6', '4.42e+8', '8.59e+9', '-1.53e+9', '-7.27e+4', '-15.4', '0.48'] wmin ['-0.00257', '-0.000959']
+    HT-2 off 0.9994 corr 0.791 slope 0.009 pos True ray/def ['-5.66e+7', '-9.8e+9', '-2.34e+11', '5.55e+10', '2.78e+6', '650.0', '1.46'] wmin ['2.27e-15', '2.29e-10']
+1.0 o ns [3, 5, 7, 9, 11, 13]
+    ZETA off 0.9701 corr 0.876 slope 0.031 pos True ray/def ['-2.72e-5', '-0.132', '-110.0', '24.4', '2.99', '0.548'] wmin ['4.23e-20', '5.0e-17']
+    DH off 0.5383 corr 0.964 slope 0.001 pos True ray/def ['-1.1e+13', '-1.07e+13', '-1.28e+13', '5.11e+9', '4.43e+5', '130.0'] wmin ['0.00546', '0.317']
+    FT0.1 off 0.9985 corr 0.677 slope 0.005 pos False ray/def ['4.68e+7', '2.03e+9', '2.13e+10', '-5.16e+6', '-1.32e+3', '0.219'] wmin ['-0.0022', '-0.000885']
+    HT-2 off 0.9984 corr 0.711 slope 0.006 pos True ray/def ['-9.49e+8', '-4.95e+10', '-6.6e+11', '2.1e+8', '5.15e+4', '11.6'] wmin ['9.87e-13', '2.81e-8']
+1.2 e ns [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+    ZETA off 0.9887 corr 0.682 slope 0.025 pos True ray/def ['-0.000577', '-1.88', '-1.27e+3', '-3.08e+5', '-1.92e+7', '-7.43e+8', '-8.13e+9', '6.52e+6', '2.48e+4', '61.2'] wmin ['1.13e-26', '2.02e-22']
+    DH off 0.7835 corr 0.504 slope 0.001 pos True ray/def ['-5.35e+12', '-1.31e+13', '-1.79e+13', '-2.0e+13', '-2.44e+13', '-3.13e+13', '-8.21e+13', '2.94e+9', '5.79e+5', '390.0'] wmin ['4.78e-8', '0.00265']
+    FT0.1 off 0.9998 corr 0.598 slope 0.007 pos False ray/def ['2.48e+6', '4.0e+8', '8.61e+9', '3.1e+10', '2.94e+10', '9.92e+10', '1.73e+11', '-5.5e+6', '2.26e+4', '60.0'] wmin ['-0.00481', '-0.00279']
+    HT-2 off 0.9996 corr 0.468 slope 0.005 pos True ray/def ['-4.49e+7', '-8.59e+9', '-2.25e+11', '-1.08e+12', '-1.14e+12', '-4.14e+12', '-5.86e+12', '4.42e+8', '9.37e+4', '71.5'] wmin ['4.2e-21', '1.6e-15']
+1.2 o ns [3, 5, 7, 9, 11, 13, 15, 17, 19, 21]
+    ZETA off 0.9566 corr 0.764 slope 0.025 pos True ray/def ['-0.0184', '-10.7', '-4.37e+3', '-8.23e+5', '-1.25e+8', '-2.27e+9', '2.29e+8', '2.7e+5', '991.0', '2.88'] wmin ['6.47e-24', '3.51e-20']
+    DH off 0.6027 corr 0.588 slope 0.001 pos True ray/def ['-1.14e+13', '-1.16e+13', '-1.19e+13', '-1.81e+13', '-2.73e+13', '-2.44e+13', '2.18e+11', '2.56e+7', '1.01e+4', '14.1'] wmin ['1.17e-5', '0.0521']
+    FT0.1 off 1.081 corr 0.697 slope 0.007 pos False ray/def ['3.57e+7', '1.73e+9', '1.85e+10', '1.7e+10', '6.67e+10', '4.58e+10', '-6.79e+8', '1.56e+5', '952.0', '2.84'] wmin ['-0.00345', '-0.0021']
+    HT-2 off 0.9991 corr 0.563 slope 0.005 pos True ray/def ['-6.99e+8', '-4.09e+10', '-5.49e+11', '-6.89e+11', '-2.52e+12', '-1.9e+12', '3.23e+10', '4.25e+6', '1.76e+3', '2.77'] wmin ['2.72e-18', '1.87e-13']
