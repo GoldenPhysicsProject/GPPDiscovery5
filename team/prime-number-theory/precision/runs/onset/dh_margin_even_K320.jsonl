@@ -1,0 +1,14 @@
+{"form": "DH", "L": "15000/10000", "K": 320, "lambda_min_ref": "4.4149155e-18", "sec": 44.9}
+{"cert": "PD", "fro_bound": "[8.6541e-60 +/- 2.69e-65]", "min_pivot": "0.00081414", "K": 320, "p": 256, "sec": 30.1}
+{"form": "DH", "L": "16052/10000", "K": 320, "lambda_min_ref": "3.486767e-23", "sec": 43.0}
+{"cert": "PD", "fro_bound": "[1.5034e-54 +/- 2.23e-60]", "min_pivot": "0.000242", "K": 320, "p": 256, "sec": 30.3}
+{"form": "DH", "L": "16578/10000", "K": 320, "lambda_min_ref": "3.8933743e-26", "sec": 62.2}
+{"cert": "PD", "fro_bound": "[4.0746e-51 +/- 4.32e-56]", "min_pivot": "7.524e-5", "K": 320, "p": 256, "sec": 48.5}
+{"form": "DH", "L": "16973/10000", "K": 320, "lambda_min_ref": "2.4353568e-28", "sec": 66.3}
+{"cert": "PD", "fro_bound": "[1.0757e-48 +/- 9.31e-54]", "min_pivot": "6.8627e-5", "K": 320, "p": 256, "sec": 44.4}
+{"form": "DH", "L": "17072/10000", "K": 320, "lambda_min_ref": "2.5221529e-29", "sec": 52.8}
+{"cert": "PD", "fro_bound": "[1.1436e-47 +/- 4.34e-52]", "min_pivot": "1.3529e-5", "K": 320, "p": 256, "sec": 26.9}
+{"form": "DH", "L": "17103/10000", "K": 320, "lambda_min_ref": "6.1052531e-31", "sec": 32.3}
+{"cert": "PD", "fro_bound": "[4.8645e-46 +/- 4.59e-52]", "min_pivot": "1.375e-5", "K": 320, "p": 256, "sec": 26.8}
+{"form": "DH", "L": "17105/10000", "K": 320, "lambda_min_ref": "LDL fails at ref (not PD)", "sec": 36.6}
+{"cert": "FLOAT_LDL_FAILED", "at": 240, "K": 320, "p": 256, "sec": 31.4}

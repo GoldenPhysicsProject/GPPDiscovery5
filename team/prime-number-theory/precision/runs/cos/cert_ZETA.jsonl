@@ -1,0 +1,40 @@
+{"form": "ZETA", "L": "3421/2000", "K": 120, "lambda_min_ref": "7.6651148e-137", "sec": 3.0}
+{"cert": "PD", "fro_bound": "[8.2599e-9 +/- 6.57e-15]", "min_pivot": "6.3031e-21", "K": 120, "p": 480, "sec": 1.6}
+{"cert": "PD", "fro_bound": "[1.2599e-13 +/- 1.92e-18]", "min_pivot": "6.3031e-21", "K": 120, "p": 496, "sec": 1.9}
+{"cert": "PD", "fro_bound": "[4.9231e-16 +/- 1.14e-21]", "min_pivot": "6.3031e-21", "K": 120, "p": 504, "sec": 2.3}
+{"cert": "PD", "fro_bound": "[1.9236e-18 +/- 1.57e-24]", "min_pivot": "6.3031e-21", "K": 120, "p": 512, "sec": 2.4}
+{"cert": "PD", "fro_bound": "[7.5194e-21 +/- 1.16e-27]", "min_pivot": "6.3031e-21", "K": 120, "p": 520, "sec": 1.9}
+{"cert": "PD", "fro_bound": "[2.9354e-23 +/- 3.46e-28]", "min_pivot": "6.3031e-21", "K": 120, "p": 528, "sec": 1.7}
+{"cert": "PD", "fro_bound": "[4.4779e-28 +/- 1.47e-34]", "min_pivot": "6.3031e-21", "K": 120, "p": 544, "sec": 2.1}
+{"cert": "PD", "fro_bound": "[1.0422e-37 +/- 1.59e-42]", "min_pivot": "6.3031e-21", "K": 120, "p": 576, "sec": 1.4}
+{"cert": "PD", "fro_bound": "[5.6495e-57 +/- 4.84e-62]", "min_pivot": "6.3031e-21", "K": 120, "p": 640, "sec": 1.4}
+{"form": "ZETA", "L": "3421/2000", "K": 160, "lambda_min_ref": "1.3228447e-148", "sec": 7.3}
+{"cert": "FLOAT_LDL_FAILED", "at": 158, "K": 160, "p": 480, "sec": 3.5}
+{"cert": "PD", "fro_bound": "[0.074911 +/- 4.92e-7]", "min_pivot": "6.3031e-21", "K": 160, "p": 496, "sec": 4.9}
+{"cert": "PD", "fro_bound": "[0.00028763 +/- 2.37e-9]", "min_pivot": "6.3031e-21", "K": 160, "p": 504, "sec": 3.4}
+{"cert": "PD", "fro_bound": "[1.1238e-6 +/- 4.05e-11]", "min_pivot": "6.3031e-21", "K": 160, "p": 512, "sec": 3.3}
+{"cert": "PD", "fro_bound": "[4.3928e-9 +/- 1.55e-14]", "min_pivot": "6.3031e-21", "K": 160, "p": 520, "sec": 3.2}
+{"cert": "PD", "fro_bound": "[1.7149e-11 +/- 2.29e-16]", "min_pivot": "6.3031e-21", "K": 160, "p": 528, "sec": 2.8}
+{"cert": "PD", "fro_bound": "[2.6160e-16 +/- 2.61e-21]", "min_pivot": "6.3031e-21", "K": 160, "p": 544, "sec": 3.3}
+{"cert": "PD", "fro_bound": "[6.0885e-26 +/- 2.31e-31]", "min_pivot": "6.3031e-21", "K": 160, "p": 576, "sec": 3.0}
+{"cert": "PD", "fro_bound": "[3.3004e-45 +/- 6.15e-51]", "min_pivot": "6.3031e-21", "K": 160, "p": 640, "sec": 3.8}
+{"form": "ZETA", "L": "3421/2000", "K": 200, "lambda_min_ref": "6.4381899e-153", "sec": 9.8}
+{"cert": "FLOAT_LDL_FAILED", "at": 158, "K": 200, "p": 480, "sec": 4.3}
+{"cert": "NOT_CERTIFIED", "fro_bound": "[4.6646e+19 +/- 4.04e+13]", "min_pivot": "6.3031e-21", "K": 200, "p": 496, "sec": 5.0}
+{"cert": "NOT_CERTIFIED", "fro_bound": "[2.4174e+12 +/- 4.16e+7]", "min_pivot": "6.3031e-21", "K": 200, "p": 504, "sec": 6.3}
+{"cert": "NOT_CERTIFIED", "fro_bound": "[1.4297e+5 +/- 2.98]", "min_pivot": "6.3031e-21", "K": 200, "p": 512, "sec": 6.9}
+{"cert": "PD", "fro_bound": "[0.010018 +/- 3.66e-7]", "min_pivot": "6.3031e-21", "K": 200, "p": 520, "sec": 5.6}
+{"cert": "PD", "fro_bound": "[3.7571e-7 +/- 2.02e-12]", "min_pivot": "6.3031e-21", "K": 200, "p": 528, "sec": 5.7}
+{"cert": "PD", "fro_bound": "[5.3848e-12 +/- 5.48e-18]", "min_pivot": "6.3031e-21", "K": 200, "p": 544, "sec": 5.6}
+{"cert": "PD", "fro_bound": "[1.2533e-21 +/- 2.86e-26]", "min_pivot": "6.3031e-21", "K": 200, "p": 576, "sec": 5.7}
+{"cert": "PD", "fro_bound": "[6.7937e-41 +/- 4.97e-46]", "min_pivot": "6.3031e-21", "K": 200, "p": 640, "sec": 7.3}
+{"form": "ZETA", "L": "3421/2000", "K": 266, "lambda_min_ref": "3.0940127e-153", "sec": 22.4}
+{"cert": "FLOAT_LDL_FAILED", "at": 158, "K": 266, "p": 480, "sec": 6.0}
+{"cert": "NOT_CERTIFIED", "fro_bound": "[4.1158e+21 +/- 4.21e+15]", "min_pivot": "6.3031e-21", "K": 266, "p": 496, "sec": 13.9}
+{"cert": "NOT_CERTIFIED", "fro_bound": "[1.6854e+14 +/- 2.57e+9]", "min_pivot": "6.3031e-21", "K": 266, "p": 504, "sec": 14.1}
+{"cert": "NOT_CERTIFIED", "fro_bound": "[9.9869e+6 +/- 49.2]", "min_pivot": "6.3031e-21", "K": 266, "p": 512, "sec": 21.6}
+{"cert": "PD", "fro_bound": "[0.60609 +/- 4.83e-6]", "min_pivot": "6.3031e-21", "K": 266, "p": 520, "sec": 19.9}
+{"cert": "PD", "fro_bound": "[9.7453e-7 +/- 6.65e-13]", "min_pivot": "6.3031e-21", "K": 266, "p": 528, "sec": 15.3}
+{"cert": "PD", "fro_bound": "[1.1206e-11 +/- 2.19e-16]", "min_pivot": "6.3031e-21", "K": 266, "p": 544, "sec": 19.7}
+{"cert": "PD", "fro_bound": "[2.6081e-21 +/- 4.45e-26]", "min_pivot": "6.3031e-21", "K": 266, "p": 576, "sec": 16.7}
+{"cert": "PD", "fro_bound": "[1.4138e-40 +/- 4.28e-45]", "min_pivot": "6.3031e-21", "K": 266, "p": 640, "sec": 20.1}

@@ -1,0 +1,46 @@
+L     T*      N  Nsm   | source               lambda            -ln     C_eff(exactN)  C_eff(smoothN)
+0.7     25.48   3   2.50 | Zhu T1 even (ref)    4.1800e-13         28.50   10.438   10.446
+0.8     31.12   4   3.85 | Zhu T1 even (ref)    1.6500e-17         38.64   13.393   13.534
+0.9     38.01   6   5.71 | Zhu T1 even (ref)    4.1400e-23         51.54   15.391   15.720
+1       46.43   8   8.26 | Zhu T1 even (ref)    5.8800e-30         67.31   17.495   17.200
+1.1     56.71  12  11.71 | Zhu T1 even (ref)    2.0400e-38         86.79   17.971   18.239
+1.2     69.26  16  16.31 | Zhu T1 even (ref)    7.9400e-49        110.75   19.192   18.960
+1.2     69.26  16  16.31 | Zhu T3 even (upper)  9.9800e-49        110.53   19.153   18.921
+1.4    103.32  30  30.48 | Zhu T3 even (upper)  1.9100e-77        176.65   20.028   19.806
+1.6    154.14  55  54.85 | Zhu T3 even (upper)  8.6100e-121       276.46   20.143   20.185
+1.8    229.95  96  96.03 | Zhu T3 even (upper)  7.8600e-186       426.22   20.265   20.260
+2      343.05 165 164.67 | Zhu T3 even (upper)  3.1900e-283       650.47   20.129   20.161
+1.3     84.60  22  22.42 | team even LOWER      3.6340e-62        141.47   19.877   19.626
+1.35    93.49  26  26.17 | team even LOWER      5.2650e-70        159.52   19.990   19.899
+1.35    93.49  26  26.17 | team even UPPER      2.7691e-69        157.86   19.782   19.692
+1.4    103.32  30  30.48 | team even LOWER      7.4196e-78        177.60   20.135   19.912
+1.4    103.32  30  30.48 | team even UPPER      1.6486e-77        176.80   20.044   19.823
+1.42   107.54  33  32.37 | team even LOWER      1.0711e-81        186.44   19.754   20.029
+1.42   107.54  33  32.37 | team even UPPER      4.4445e-81        185.02   19.604   19.876
+1.7125  193.04  75  75.38 | team even UPPER      2.6287e-149       342.12   19.695   19.619
+1       46.43   8   8.26 | Legendre N=64 even   5.8985e-30         67.30   17.494   17.200
+1.35    93.49  26  26.17 | Legendre N=64 even   3.8763e-58        132.20   16.566   16.491
+0.8     31.12   4   3.85 | Legendre N=32 even   1.7026e-17         38.61   13.382   13.523
+1.2     69.26  16  16.31 | Legendre N=64 even   7.0066e-48        108.58   18.815   18.587
+1.4    103.32  30  30.48 | Legendre N=48 even   1.5243e-51        117.01   13.266   13.119
+
+odd/even ratio: Zhu law 10^(2.07L+1.32) vs team brackets (lower_odd/upper_even .. upper_odd/lower_even)
+  L=1.35  law 1.3e+04   team ratio in [5.65e+03, 6.43e+04]
+  L=1.40  law 1.65e+04   team ratio in [7.56e+03, 3.36e+04]
+  L=1.42  law 1.82e+04   team ratio in [5.43e+03, 6.66e+04]
+
+Predictions at L = 1.7105 and 1.71:
+  L=1.7100 T*=192.07 N=75 Nsm=74.85  C=19.74 exactN    -ln lam = 342.9  -> lam ~ 1e-148.9
+  L=1.7100 T*=192.07 N=75 Nsm=74.85  C=19.74 smoothN   -ln lam = 342.4  -> lam ~ 1e-148.7
+  L=1.7100 T*=192.07 N=75 Nsm=74.85  C=20.13 exactN    -ln lam = 349.7  -> lam ~ 1e-151.9
+  L=1.7100 T*=192.07 N=75 Nsm=74.85  C=20.13 smoothN   -ln lam = 349.2  -> lam ~ 1e-151.6
+  L=1.7100 T*=192.07 N=75 Nsm=74.85  C=20.60 exactN    -ln lam = 357.8  -> lam ~ 1e-155.4
+  L=1.7100 T*=192.07 N=75 Nsm=74.85  C=20.60 smoothN   -ln lam = 357.3  -> lam ~ 1e-155.2
+  L=1.7105 T*=192.27 N=75 Nsm=74.96  C=19.74 exactN    -ln lam = 342.9  -> lam ~ 1e-148.9
+  L=1.7105 T*=192.27 N=75 Nsm=74.96  C=19.74 smoothN   -ln lam = 342.8  -> lam ~ 1e-148.9
+  L=1.7105 T*=192.27 N=75 Nsm=74.96  C=20.13 exactN    -ln lam = 349.7  -> lam ~ 1e-151.9
+  L=1.7105 T*=192.27 N=75 Nsm=74.96  C=20.13 smoothN   -ln lam = 349.5  -> lam ~ 1e-151.8
+  L=1.7105 T*=192.27 N=75 Nsm=74.96  C=20.60 exactN    -ln lam = 357.8  -> lam ~ 1e-155.4
+  L=1.7105 T*=192.27 N=75 Nsm=74.96  C=20.60 smoothN   -ln lam = 357.7  -> lam ~ 1e-155.3
+  interpolated Zhu upper-bound curve at L=1.7100: -ln = 350.8 -> 1e-152.3
+  interpolated Zhu upper-bound curve at L=1.7105: -ln = 351.2 -> 1e-152.5

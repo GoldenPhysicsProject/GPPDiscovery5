@@ -1,0 +1,8 @@
+{"form": "DH", "L": "3421/2000", "K": 200, "lambda_min_ref": "6.9310147e-31", "sec": 11.1}
+{"cert": "PD", "fro_bound": "[4.2969e-46 +/- 4.03e-51]", "min_pivot": "1.4144e-5", "K": 200, "p": 256, "sec": 6.6}
+{"cert": "PD", "fro_bound": "[3.7091e-123 +/- 1.54e-128]", "min_pivot": "1.4144e-5", "K": 200, "p": 512, "sec": 7.6}
+{"cert": "PD", "fro_bound": "[1.0894e-161 +/- 6.67e-167]", "min_pivot": "1.4144e-5", "K": 200, "p": 640, "sec": 6.7}
+{"form": "DH", "L": "3421/2000", "K": 266, "lambda_min_ref": "LDL fails at ref (not PD)", "sec": 11.4}
+{"cert": "FLOAT_LDL_FAILED", "at": 240, "K": 266, "p": 256, "sec": 6.9}
+{"cert": "FLOAT_LDL_FAILED", "at": 240, "K": 266, "p": 512, "sec": 10.4}
+{"cert": "FLOAT_LDL_FAILED", "at": 240, "K": 266, "p": 640, "sec": 10.3}

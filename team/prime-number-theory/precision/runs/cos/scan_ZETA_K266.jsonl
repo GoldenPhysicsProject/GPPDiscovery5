@@ -1,0 +1,15 @@
+{"form": "ZETA", "L": "3421/2000", "K": 266, "ref_prec": 960, "ref_first_nonpos": null, "ref_min_pivot": "6.3031208e-21", "at": 24, "ref_last_pivot": "4.8936319", "max_dump_rad": 8.862959321191263e-285, "sec": 10.7}
+{"K": 266, "p": 192, "float_first_nonpos": 31, "fsec": 6.3, "ball": "UNRESOLVED", "ball_stop": 14, "ball_piv": "[+/- 2.60e-15]", "bsec": 0.2}
+{"K": 266, "p": 256, "float_first_nonpos": 42, "fsec": 6.4, "ball": "UNRESOLVED", "ball_stop": 18, "ball_piv": "[+/- 7.70e-19]", "bsec": 0.2}
+{"K": 266, "p": 320, "float_first_nonpos": 68, "fsec": 7.0, "ball": "UNRESOLVED", "ball_stop": 23, "ball_piv": "[+/- 8.52e-17]", "bsec": 0.2}
+{"K": 266, "p": 384, "float_first_nonpos": 86, "fsec": 7.4, "ball": "UNRESOLVED", "ball_stop": 28, "ball_piv": "[+/- 2.73e-17]", "bsec": 0.2}
+{"K": 266, "p": 448, "float_first_nonpos": 125, "fsec": 7.3, "ball": "UNRESOLVED", "ball_stop": 33, "ball_piv": "[+/- 2.07e-16]", "bsec": 0.2}
+{"K": 266, "p": 480, "float_first_nonpos": 158, "fsec": 10.5, "ball": "UNRESOLVED", "ball_stop": 35, "ball_piv": "[+/- 2.86e-16]", "bsec": 0.4}
+{"K": 266, "p": 512, "float_first_nonpos": null, "pivot": "6.30312e-21", "relerr": "3.29e-100", "fsec": 9.9, "ball": "UNRESOLVED", "ball_stop": 38, "ball_piv": "[+/- 4.46e-14]", "bsec": 0.2}
+{"K": 266, "p": 544, "float_first_nonpos": null, "pivot": "6.30312e-21", "relerr": "5.63e-110", "fsec": 9.3, "ball": "UNRESOLVED", "ball_stop": 40, "ball_piv": "[+/- 8.55e-18]", "bsec": 0.4}
+{"K": 266, "p": 576, "float_first_nonpos": null, "pivot": "6.30312e-21", "relerr": "7.89e-120", "fsec": 10.6, "ball": "UNRESOLVED", "ball_stop": 42, "ball_piv": "[+/- 1.56e-18]", "bsec": 0.4}
+{"K": 266, "p": 640, "float_first_nonpos": null, "pivot": "6.30312e-21", "relerr": "1.17e-139", "fsec": 11.2, "ball": "UNRESOLVED", "ball_stop": 47, "ball_piv": "[+/- 9.00e-17]", "bsec": 0.3}
+{"K": 266, "p": 704, "float_first_nonpos": null, "pivot": "6.30312e-21", "relerr": "1.56e-158", "fsec": 10.4, "ball": "UNRESOLVED", "ball_stop": 53, "ball_piv": "[+/- 5.08e-11]", "bsec": 0.3}
+{"K": 266, "p": 768, "float_first_nonpos": null, "pivot": "6.30312e-21", "relerr": "2.16e-177", "fsec": 10.5, "ball": "UNRESOLVED", "ball_stop": 58, "ball_piv": "[+/- 1.33e-12]", "bsec": 0.3}
+{"K": 266, "p": 832, "float_first_nonpos": null, "pivot": "6.30312e-21", "relerr": "7.08e-197", "fsec": 12.5, "ball": "UNRESOLVED", "ball_stop": 63, "ball_piv": "[+/- 4.56e-13]", "bsec": 0.7}
+{"K": 266, "p": 896, "float_first_nonpos": null, "pivot": "6.30312e-21", "relerr": "6.78e-216", "fsec": 19.8, "ball": "UNRESOLVED", "ball_stop": 68, "ball_piv": "[+/- 2.52e-14]", "bsec": 0.9}
