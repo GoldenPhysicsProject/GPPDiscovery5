@@ -1,0 +1,9 @@
+start 22:41:37 02:41:37Z
+assembled sha256 dada6eb4ba125eb5073fa9728dd7d45eb56c4a8c4de7bcf9c858d7cdeb630c84 23:07:26
+{"K": 1188, "identical_strings": 0, "total": 1411344, "max_abs_diff": 2.782395338713682e-144, "argmax": [31, 1156], "tol": 7.653135936605002e-145, "ratio": 3.63562775019514, "PASS": false}
+lam_est 1.07214622023e-81
+ fac=0.999 l0=1.0710e-81: minpiv=1.708e-09 ||E||<=1.528e-190 => lambda_min(Atil) >= 1.071000e-81 OK [53s]
+ l0=1.0711e-81: minD=1.708e-09 ||E||_F<=4.740e-118 => lambda_min(sym Atil) >= 1.071100e-81 OK [LDLt 296s, residual 29s]
+ l0=1.0775e-81: fixed-point LDL^T FAILED at pivot 1183 (W - l0 I numerically indefinite) [286s]
+DONE 614.4502327442169
+CHAIN_S83_DONE 23:19:34

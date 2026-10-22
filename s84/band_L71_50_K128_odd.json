@@ -1,0 +1,18 @@
+{
+ "file": "cosvec_ZETA_odd_L71_50_K128.json",
+ "L": "71/50",
+ "T*": 107.5415265441257,
+ "frac_|t|<50": "1.0",
+ "frac_|t|<100": "1.0",
+ "frac_|t|<150": "1.0",
+ "frac_|t|<236": "1.0",
+ "frac_|t|<300": "1.0",
+ "frac_|t|<500": "1.0",
+ "frac_|t|<108": "1.0",
+ "frac_|t|<1200": "1.0",
+ "mode_mass_top10": "8.207e-79",
+ "mode_mass_top25pct": "1.98e-77",
+ "mean_mode_freq": "5.1338",
+ "sign_changes_(0,L)_mp": 0,
+ "max|f|/rms": "2.321"
+}
