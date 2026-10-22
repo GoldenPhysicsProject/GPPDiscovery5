@@ -1,5 +1,5 @@
 """basis-convergence check of zeta lam_even, kappa at N=40, dps 80 (HIGH-PRECISION NUMERICAL)."""
-import sys; sys.argv=['x','40']; sys.path.insert(0,'/workspace/newbot/twist')
+import sys; sys.argv=['x','40']; import os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import hp_onset_lib as H, mpmath as mp, json
 res=[]
 for L in ['0.6','0.8','1.0','1.2']:

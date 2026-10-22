@@ -1,4 +1,4 @@
-# principal_series/dh_queen (New Bot, session 2; RH OPEN)
+# team/principal-series/dh_queen (New Bot, session 2; RH OPEN)
 Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
 L = HALF-width throughout (window [-L,L]); s75/dhritz.py and team/queen dh_sinh.py both use it.
 - overlap.py: node counts of DH lowest even Ritz vectors (s75 cosvec witnesses + moderate K) and overlap with Queen's f_Q = e^{-i g0 x} sinh(b0 x). -> overlap_s75.jsonl, overlap_moderateK.jsonl

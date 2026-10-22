@@ -4,7 +4,7 @@ v = lowest even eigvec of Q_zeta.  Derived from the PROVED identity
   Q_F(f) = Q_zeta(f cosh(theta u)) - Q_zeta(f sinh(theta u))  (builder normalisation, kernel cosh(theta r) W_zeta(r)).
 HIGH-PRECISION NUMERICAL (not interval).  RH OPEN.  Daniel Toupin / Golden Physics Project, with AI assistance from Grok."""
 import sys, json, time
-sys.path.insert(0, '/workspace/GPPDiscovery5/s87')
+import os; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', 's87'))
 import hp_forms as H, mpmath as mp
 DPS = 80; H.setup(DPS); NB = int(sys.argv[1]) if len(sys.argv) > 1 else 24
 def forms(form, L, N, th=0):
