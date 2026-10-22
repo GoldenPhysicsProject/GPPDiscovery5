@@ -1,0 +1,28 @@
+{"tag":"zeta29","gprimes":"2,3,5,7,11,13,17,19,23,29","L":"3421/2000"}
+{"form": "ZETA", "L": "3421/2000", "K": 200, "lambda_min_ref": "6.4381899e-153", "sec": 21.7}
+{"cert": "PD", "fro_bound": "[1.2533e-21 +/- 2.86e-26]", "min_pivot": "6.3031e-21", "K": 200, "p": 576, "sec": 15.9}
+{"K": 200, "p": 320, "float_first_nonpos": 68, "fsec": 7.0, "ball": "UNRESOLVED", "ball_stop": 23, "ball_piv": "[+/- 8.52e-17]", "bsec": 0.2}
+{"tag":"m29p","gprimes":"2,3,5,7,11,13,17,19,23,29.001","L":"3421/2000"}
+{"form": "ZETA", "L": "3421/2000", "K": 200, "lambda_min_ref": "LDL fails at ref (not PD)", "sec": 1.0}
+{"cert": "FLOAT_LDL_FAILED", "at": 10, "K": 200, "p": 576, "sec": 0.8}
+{"K": 200, "p": 320, "float_first_nonpos": 10, "pivot": "-1.98742e-17", "relerr": "2.12e-68", "fsec": 5.0, "ball": "NEG", "ball_stop": 10, "ball_piv": "[-1.9874e-17 +/- 1.51e-22]", "bsec": 0.1}
+{"tag":"m29m","gprimes":"2,3,5,7,11,13,17,19,23,28.999","L":"3421/2000"}
+{"form": "ZETA", "L": "3421/2000", "K": 200, "lambda_min_ref": "LDL fails at ref (not PD)", "sec": 0.3}
+{"cert": "FLOAT_LDL_FAILED", "at": 6, "K": 200, "p": 576, "sec": 0.3}
+{"K": 200, "p": 320, "float_first_nonpos": 6, "pivot": "-4.17e-15", "relerr": "1.14e-77", "fsec": 3.7, "ball": "NEG", "ball_stop": 6, "ball_piv": "[-4.1700e-15 +/- 3.71e-21]", "bsec": 0.1}
+{"tag":"del29","gprimes":"2,3,5,7,11,13,17,19,23","L":"3421/2000"}
+{"form": "ZETA", "L": "3421/2000", "K": 200, "lambda_min_ref": "LDL fails at ref (not PD)", "sec": 0.9}
+{"cert": "FLOAT_LDL_FAILED", "at": 5, "K": 200, "p": 576, "sec": 0.8}
+{"K": 200, "p": 320, "float_first_nonpos": 5, "pivot": "-8.34015e-14", "relerr": "7.79e-81", "fsec": 6.4, "ball": "NEG", "ball_stop": 5, "ball_piv": "[-8.3402e-14 +/- 4.94e-19]", "bsec": 0.2}
+{"tag":"syn2","gprimes":"2,3,5,7,11,13,17,19,23,24.7,28.3","L":"3421/2000"}
+{"form": "ZETA", "L": "3421/2000", "K": 200, "lambda_min_ref": "LDL fails at ref (not PD)", "sec": 0.9}
+{"cert": "FLOAT_LDL_FAILED", "at": 0, "K": 200, "p": 576, "sec": 1.0}
+{"K": 200, "p": 320, "float_first_nonpos": 0, "pivot": "-0.00176029", "relerr": "2.24e-97", "fsec": 9.5, "ball": "NEG", "ball_stop": 0, "ball_piv": "[-0.0017603 +/- 1.03e-8]", "bsec": 0.3}
+{"tag":"syn2_L162","gprimes":"2,3,5,7,11,13,17,19,23,24.7,28.3","L":"81/50"}
+{"form": "ZETA", "L": "81/50", "K": 160, "lambda_min_ref": "LDL fails at ref (not PD)", "sec": 0.4}
+{"cert": "FLOAT_LDL_FAILED", "at": 2, "K": 160, "p": 576, "sec": 0.3}
+{"K": 160, "p": 320, "float_first_nonpos": 2, "pivot": "-5.69377e-10", "relerr": "1.57e-89", "fsec": 3.6, "ball": "NEG", "ball_stop": 2, "ball_piv": "[-5.6938e-10 +/- 3.37e-15]", "bsec": 0.1}
+{"tag":"zeta_L162","gprimes":"2,3,5,7,11,13,17,19,23","L":"81/50"}
+{"form": "ZETA", "L": "81/50", "K": 160, "lambda_min_ref": "9.4521392e-126", "sec": 7.3}
+{"cert": "PD", "fro_bound": "[1.2492e-48 +/- 3.30e-53]", "min_pivot": "2.676e-18", "K": 160, "p": 576, "sec": 5.8}
+{"K": 160, "p": 320, "float_first_nonpos": 71, "fsec": 3.2, "ball": "UNRESOLVED", "ball_stop": 24, "ball_piv": "[+/- 6.72e-14]", "bsec": 0.1}

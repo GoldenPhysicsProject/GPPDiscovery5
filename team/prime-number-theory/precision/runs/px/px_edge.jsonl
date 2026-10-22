@@ -1,0 +1,21 @@
+{"tag":"edge","gprimes":"2,3,5,7,11,13,17,19,23,24.7","L":"16035/10000"}
+{"form": "ZETA", "L": "16035/10000", "K": 160, "lambda_min_ref": "2.2427087e-121", "sec": 6.4}
+{"cert": "PD", "fro_bound": "[6.6304e-53 +/- 2.86e-58]", "min_pivot": "2.9706e-18", "K": 160, "p": 576, "sec": 3.7}
+{"K": 160, "p": 576, "float_first_nonpos": null, "pivot": "2.97062e-18", "relerr": "1.75e-132", "fsec": 3.8, "ball": "UNRESOLVED", "ball_stop": 45, "ball_piv": "[+/- 1.62e-10]", "bsec": 0.1}
+{"tag":"edgeref(zeta)","L":"16035/10000"}
+{"form": "ZETA", "L": "16035/10000", "K": 160, "lambda_min_ref": "2.2959139e-121", "sec": 6.9}
+{"cert": "PD", "fro_bound": "[6.4783e-53 +/- 2.30e-58]", "min_pivot": "2.9707e-18", "K": 160, "p": 576, "sec": 3.8}
+{"tag":"edge","gprimes":"2,3,5,7,11,13,17,19,23,24.7","L":"16043/10000"}
+{"form": "ZETA", "L": "16043/10000", "K": 160, "lambda_min_ref": "LDL fails at ref (not PD)", "sec": 0.3}
+{"cert": "FLOAT_LDL_FAILED", "at": 30, "K": 160, "p": 576, "sec": 0.3}
+{"K": 160, "p": 576, "float_first_nonpos": 30, "pivot": "-2.11929e-15", "relerr": "1.35e-113", "fsec": 1.9, "ball": "NEG", "ball_stop": 30, "ball_piv": "[-2.1193e-15 +/- 7.18e-21]", "bsec": 0.1}
+{"tag":"edgeref(zeta)","L":"16043/10000"}
+{"form": "ZETA", "L": "16043/10000", "K": 160, "lambda_min_ref": "1.4592364e-121", "sec": 5.6}
+{"cert": "PD", "fro_bound": "[1.0087e-52 +/- 4.30e-57]", "min_pivot": "9.1792e-18", "K": 160, "p": 576, "sec": 3.6}
+{"tag":"edge","gprimes":"2,3,5,7,11,13,17,19,23,24.7","L":"16100/10000"}
+{"form": "ZETA", "L": "16100/10000", "K": 160, "lambda_min_ref": "LDL fails at ref (not PD)", "sec": 0.3}
+{"cert": "FLOAT_LDL_FAILED", "at": 6, "K": 160, "p": 576, "sec": 0.2}
+{"K": 160, "p": 576, "float_first_nonpos": 6, "pivot": "-1.18859e-12", "relerr": "1.12e-156", "fsec": 2.6, "ball": "NEG", "ball_stop": 6, "ball_piv": "[-1.1886e-12 +/- 1.17e-17]", "bsec": 0.1}
+{"tag":"edgeref(zeta)","L":"16100/10000"}
+{"form": "ZETA", "L": "16100/10000", "K": 160, "lambda_min_ref": "4.3240778e-123", "sec": 4.4}
+{"cert": "PD", "fro_bound": "[3.1654e-51 +/- 3.20e-56]", "min_pivot": "2.4078e-18", "K": 160, "p": 576, "sec": 5.3}
