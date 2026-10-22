@@ -307,6 +307,10 @@ What was run instead (`dh_torus.py`, NUMERICAL):
 - Golden Eye's 2Lγ/π ≈ 93 at L = 1.71 matches with **L = half-width**.
 - The failing DH vector is thus a modulated "edge" vector carrying ≈ 2Lγ₀/π nodes, sign-changing as S98 requires. It is the opposite of ζ's nodeless soft mode, where Λ ≥ 0 hurts.
 - **Caveat on the onset direction** (credited to Goddess of Prime Number Theory, S100, NUMERICAL, her label): DH's first failing direction at onset (L* = 1.7104 ± 0.0001, half-width, stable to K = 400) is **nodeless**, about 80% mode 0. Our quartet vector e^{−iγ₀x}sinh(β₀x) is therefore a valid negative direction for L ≳ 2, carrying the exponential rate 2β₀ (§5 quartet identity), but it is **not the first direction to go negative**. Onset and asymptotics are governed by different vectors.
+  - **Overlap check (Queen, NUMERICAL; `onset_overlap.py/.log`).** Her deposited witness (`team/prime-number-theory` runs/cos/dh_witness.json) is at L = 1.7105, half-width, K = 266. Only the mode weights were deposited, not the signs: 0.7987, 0.1969, 0.0027 and 0.0017 in cos((2m+1)πu/2L), m = 0..3.
+  - A sign-free Cauchy–Schwarz bound gives |⟨v_onset, f₀⟩|/(‖v‖‖f₀‖) ≤ **4.5·10⁻⁴** from the listed modes. Adding √(unlisted mass) ≤ √(3·10⁻⁴) ≈ 0.017 for rounding and modes ≥ 8 gives a conservative ≤ 0.018.
+  - The per-mode overlaps |⟨b_m, f₀⟩|/‖f₀‖ are 1.6·10⁻⁴ to 2.4·10⁻³ for m ≤ 7. That is expected: f₀ lives at frequency γ₀ = 85.7, i.e. mode m ≈ 2Lγ₀/π ≈ 93.
+  - So the onset direction and f₀ are **essentially orthogonal**. Also, Q_DH(f₀) > 0 at L = 1.5 (+1.90), and f₀ only turns negative between L = 1.5 and 2 (§5 check 1).
 
 **What Lemma 5.2 and the matched family do and do not rule out.** This incorporates Golden Eye's point, relayed by the lead in S99 and credited to Golden Eye (their label: CONJECTURE).
 - **Does rule out (PROVED).**
@@ -318,21 +322,50 @@ What was run instead (`dh_torus.py`, NUMERICAL):
   - Every height range so reachable is already covered by the verification of RH up to **height** 3·10¹², i.e. the lowest 12,363,153,437,138 zeros (✔ Platt–Trudgian, Bull. LMS 53 (2021) 792–797, doi:10.1112/blms.12460, Thm 1).
   - So the matched family is a **DH-killer and node-count test, not a route to RH by itself**. Only a statement **uniform in L** (η_ζ = 0, or the Riesz-mean bound in §5.6) carries RH content, and proving such a statement is the whole problem.
 
-**Exact quartet identity on the matched vector (PROVED, elementary, given the explicit formula).** Let ρ₀ = ½ + β + iγ₀ be a zero, with quartet {½ ± β ± iγ₀}, and f = e^{−iγ₀x}sinh(βx) on [−L, L]. Write F(t) = ∫f e^{itx} dx = sinh(a₊L)/a₊ − sinh(a₋L)/a₋ with a_± = ±β + i(t − γ₀), and set S = sinh(2βL)/(2β). Then:
-- At z = γ₀ ∓ iβ one of a_± vanishes, so ĝ(z) = F(z)·conj F(z̄) = −(S − L)².
-- ‖f‖² = S − L.
-- Hence these two members contribute **exactly −2‖f‖⁴**, i.e. −2‖f‖² ≈ −e^{2βL}/(2β) to the Rayleigh quotient.
-- The mirror pair at −γ₀ adds a relative O(β²/γ₀²).
+**Quartet identity (PROVED, elementary, given the explicit formula; corrected S100, homogeneous form, after Spectrum & Measure's audit via the lead).**
 
-Therefore
+*Conventions.*
+- Inner product ⟨u, v⟩ = ∫_{−L}^{L} u(x) conj v(x) dx on L²[−L, L] with dx (half-width L).
+- Fourier transform F(t) = f̂(t) = ∫ f(x) e^{itx} dx.
+- g = f * f̃ with f̃(x) = conj f(−x), so ĝ(t) = |F(t)|² on ℝ, and ĝ(z) = F(z)·conj F(z̄) for complex z.
+- Q(f) = Σ_ρ m_ρ ĝ(γ_ρ) over the non-trivial zeros, with ρ = ½ + iγ_ρ.
 
-  Q(f)/‖f‖² = −2‖f‖²·(1 + O(β²/γ₀²)) + R_L,  with R_L = Σ_{other ρ} ĝ(γ_ρ)/‖f‖².
+*Derivation.* Let ρ₀ = ½ + β + iγ₀, so γ_{ρ₀} = γ₀ − iβ, and let its FE partner be 1 − ρ̄₀ = ½ − β + iγ₀, so γ = γ₀ + iβ. Define on [−L, L]
 
-**This is the quantitative Lemma 5.2 on the matched vector**, with c = 1/(2β) asymptotically, *provided R_L = o(e^{2βL})*. The gap is exactly that: other off-line zeros ρ′ = ½ + β′ + iγ′ contribute terms of size ≍ e^{2β′L}/|γ′ − γ₀|² with oscillating phase, which compete when β′ ≥ β. It holds if ρ₀ maximises β over all zeros and the other zeros with β′ = β have Σ 1/|γ′ − γ₀|² ≤ (1 − ε)/(2β). It is unproved when sup β is not attained (DH: Saias–Weingartner density up to σ_DH). Status: CONJECTURE in general; PROVED under that separation hypothesis, modulo convergence of the zero sum, which holds since ĝ(γ) = O(e^{2βL}/γ²) on the line.
+  ψ_± := e^{−iγ₀x}e^{±βx},  φ_L := e^{−iγ₀x}sinh(βx) = (ψ₊ − ψ₋)/2,  χ_L := e^{−iγ₀x}cosh(βx) = (ψ₊ + ψ₋)/2.
+
+Then:
+- F(γ₀ − iβ) = ∫ f e^{iγ₀x}e^{βx} = ⟨f, ψ₊⟩ and F(γ₀ + iβ) = ⟨f, ψ₋⟩.
+- So the pair {ρ₀, 1 − ρ̄₀} contributes ⟨f, ψ₊⟩·conj⟨f, ψ₋⟩ + ⟨f, ψ₋⟩·conj⟨f, ψ₊⟩ = 2Re(a b̄), with a = ⟨f, ψ₊⟩ and b = ⟨f, ψ₋⟩.
+- Polarising, with a + b = 2⟨f, χ_L⟩ and a − b = 2⟨f, φ_L⟩:
+
+  **pair(f) = 2|⟨f, χ_L⟩|² − 2|⟨f, φ_L⟩|²**  (signature (1, 1), exactly like the pole term's cosh/sinh pair).
+
+- The mirror pair {ρ̄₀, 1 − ρ₀} gives the same expression with γ₀ → −γ₀, using φ′_L, χ′_L built from e^{+iγ₀x}.
+- Quartet total: Σ_quartet(f) = 2(|⟨f, χ_L⟩|² + |⟨f, χ′_L⟩|² − |⟨f, φ_L⟩|² − |⟨f, φ′_L⟩|²). This is quadratic and homogeneous in f.
+
+*Specialisation to the amplitude-one vector f₀ := φ_L.*
+- ⟨f₀, χ_L⟩ = ∫ sinh(βx)cosh(βx) dx = 0 (odd integrand).
+- ⟨f₀, φ_L⟩ = ∫ sinh²(βx) dx = ‖f₀‖² = S − L, with S = sinh(2βL)/(2β).
+- So the matched pair gives exactly −2(∫_{−L}^{L} sinh²(βx) dx)² = −2‖f₀‖⁴. For f₀ only, that is −2‖f₀‖² ≈ −e^{2βL}/(2β) in the Rayleigh quotient.
+- The mirror-pair terms ⟨f₀, φ′_L⟩ and ⟨f₀, χ′_L⟩ are integrals against e^{2iγ₀x}, giving a relative O(β²/γ₀²).
+- (The earlier wording "the quartet contributes −2‖f‖⁴" was correct only for f = f₀ at unit amplitude. It is not homogeneous and is withdrawn as a general statement.)
+
+Therefore, for f₀ = φ_L,
+
+  Q(f₀)/‖f₀‖² = −2‖f₀‖²·(1 + O(β²/γ₀²)) + R_L,  with R_L = Σ_{ρ ∉ quartet} m_ρ ĝ(γ_ρ)/‖f₀‖².
+
+**Quantitative Lemma 5.2 on the matched vector.** λ_min(Q_L) ≤ Q(f₀)/‖f₀‖² ≈ −e^{2βL}/(2β) + R_L, i.e. c = 1/(2β) asymptotically, *provided R_L = o(e^{2βL})*.
+- The gap is exactly that. Other off-line zeros ρ′ = ½ + β′ + iγ′ contribute terms of size ≍ e^{2β′L}/|γ′ − γ₀|² with oscillating phase, and these compete when β′ ≥ β.
+- It holds if ρ₀ maximises β over all zeros and a uniform tail bound for Σ_{ρ′} over the remaining zeros holds.
+- It is unproved when sup β is not attained (DH: Saias–Weingartner density up to σ_DH).
+- Status: CONJECTURE in general. Under the separation hypothesis it is PROVED only in sketch: the uniform tail bound is not written out. I have downgraded this from "PROVED", S100.
+
+The numerics below used f₀ at unit amplitude and computed every quartet term exactly from F. They are therefore **unchanged** by the correction: DH residual 1.3% at L = 6, Epstein 0.5% at L = 4.
 
 Numerical confirmation of the identity (`quartet_identity.py/.log`, NUMERICAL):
 
-| L | DH Q/‖f‖² | DH quartet | DH residual R_L | Epstein Q/‖f‖² | Epstein quartet | Epstein R_L |
+| L | DH Q(f₀)/‖f₀‖² | DH quartet(f₀)/‖f₀‖² | DH residual R_L | Epstein Q(f₀)/‖f₀‖² | Epstein quartet(f₀)/‖f₀‖² | Epstein R_L |
 |---|---|---|---|---|---|---|
 | 2 | −0.243 | −1.095 | +0.852 | −168.3 | −170.1 | +1.8 |
 | 3 | −3.086 | −4.064 | +0.978 | −4243.7 | −4237.4 | −6.3 |
@@ -386,7 +419,7 @@ The prime and zero sides agree to < 0.01, consistent with the explicit formula a
 
 **Conclusion (NUMERICAL plus PROVED identity).** Q_ζ/‖f_{β₀,γ₀,L}‖² is, up to a decaying transient, a bounded almost-periodic function of L. Its frequencies are 2(γ_ρ − γ₀), its mean is ≈ Σ_ρ 2β/(β² + (γ_ρ − γ₀)²) ≈ 1.04 (first 300 zeros; NUMERICAL), and its range is ⊂ [0, Σ 4β/(β² + Δ²)].
 - Nothing grows. The positivity comes from **every zero near γ₀ contributing a nonnegative kernel**, which is just Q = Σ|F(γ_ρ)|² ≥ 0 when the nearby zeros are on the line.
-- An Euler-product argument enters only in showing that no negative quartet term (−2‖f‖² for a matched quartet, or ±e^{2β′L}/Δ² for an unmatched one) is present.
+- An Euler-product argument enters only in showing that no negative quartet term (−2|⟨f, φ_L⟩|² for a matched quartet, i.e. −2‖f₀‖² on f₀, or ±e^{2β′L}/Δ² for an unmatched one) is present.
 
 **What an Euler-product argument would have to prove, uniformly** (the statement is PROVED as an equivalence, sketch below; proving it is OPEN).
 - Write X = e^{2L} and s₁ = ½ − β + iγ₀.
@@ -406,7 +439,7 @@ The prime and zero sides agree to < 0.01, consistent with the explicit formula a
 |---|---|---|---|
 | ζ (DH vector) | yes | none (RH verified at this height) | bounded, almost periodic: 3.81 → 1.79, min 0.95 |
 | x² + y² (Celestial) | yes | none | +1.4 … +6.8 |
-| DH | no | 0.8085 + 85.70i | −2‖f‖² + O(1): −0.24 → −52.95, exponent → 2β₀ = 0.617 |
+| DH | no | 0.8085 + 85.70i | on f₀: −2‖f₀‖² + O(1): −0.24 → −52.95, exponent → 2β₀ = 0.617 |
 | x² + 5y² (Celestial) | no | 0.908 + 89.56i | +4.98 → −150.8 |
 | 2x² + 2xy + 3y² (Celestial zero, verified here) | no | **2.0794 + 7.6289i (Re > 1)** | −168 → −1.0·10⁵ over L 2 → 4, η̂ = 3.20 ≥ 2Θ − 1 = 3.159 |
 
