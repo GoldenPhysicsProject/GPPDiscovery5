@@ -306,6 +306,7 @@ What was run instead (`dh_torus.py`, NUMERICAL):
 - Exact formulas: Re = 2⌊Lγ₀/π + ½⌋ + 1 (the cos zeros plus the sinh sign change at 0); Im = 2⌊Lγ₀/π⌋ (the sin zero at 0 is a double zero with sinh, so no sign change there).
 - Golden Eye's 2Lγ/π ≈ 93 at L = 1.71 matches with **L = half-width**.
 - The failing DH vector is thus a modulated "edge" vector carrying ≈ 2Lγ₀/π nodes, sign-changing as S98 requires. It is the opposite of ζ's nodeless soft mode, where Λ ≥ 0 hurts.
+- **Caveat on the onset direction** (credited to Goddess of Prime Number Theory, S100, NUMERICAL, her label): DH's first failing direction at onset (L* = 1.7104 ± 0.0001, half-width, stable to K = 400) is **nodeless**, about 80% mode 0. Our quartet vector e^{−iγ₀x}sinh(β₀x) is therefore a valid negative direction for L ≳ 2, carrying the exponential rate 2β₀ (§5 quartet identity), but it is **not the first direction to go negative**. Onset and asymptotics are governed by different vectors.
 
 **What Lemma 5.2 and the matched family do and do not rule out.** This incorporates Golden Eye's point, relayed by the lead in S99 and credited to Golden Eye (their label: CONJECTURE).
 - **Does rule out (PROVED).**
