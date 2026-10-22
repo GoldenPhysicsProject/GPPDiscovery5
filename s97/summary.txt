@@ -1,0 +1,33 @@
+== h=0.02, T<=3, dps 60 ==
+ZETA         PD(T<=3)=True T_fail=None max|kappa|=0.259934 chol_before=None chol_at=None
+FT0.1        PD(T<=3)=True T_fail=None max|kappa|=0.259935 chol_before=None chol_at=None
+DH           PD(T<=3)=True T_fail=None max|kappa|=0.223771 chol_before=None chol_at=None
+ZETA-drop2   PD(T<=3)=False T_fail=0.76 max|kappa|=11.1089 chol_before=True chol_at=False
+ZETA-drop3   PD(T<=3)=False T_fail=1.1400000000000001 max|kappa|=5.13163 chol_before=True chol_at=False
+ZETA-drop5   PD(T<=3)=False T_fail=1.6400000000000001 max|kappa|=84.1026 chol_before=True chol_at=False
+ZETA-drop7   PD(T<=3)=False T_fail=1.98 max|kappa|=21.2712 chol_before=True chol_at=False
+  drop2: T_fail - log p = 0.067
+  drop3: T_fail - log p = 0.041
+  drop5: T_fail - log p = 0.031
+  drop7: T_fail - log p = 0.034
+  first kappa sign mismatch: zeta vs FT0.1 at T=1.76, zeta vs DH at T=0.66
+  ZETA top-10 |d2 kappa| lags: [1.06, 1.08, 1.9, 2.04, 2.16, 2.36, 2.52, 2.8, 2.88, 2.9]
+  DH top-10 |d2 kappa| lags: [1.34, 1.36, 1.78, 2.16, 2.18, 2.36, 2.38, 2.6, 2.62, 2.9]
+  FT0.1 top-10 |d2 kappa| lags: [1.06, 1.08, 1.9, 2.16, 2.36, 2.5, 2.52, 2.8, 2.88, 2.9]
+== h=0.01, T<=3, dps 60 ==
+ZETA         PD(T<=3)=True T_fail=None max|kappa|=0.21064 chol_before=None chol_at=None
+FT0.1        PD(T<=3)=False T_fail=2.0300000000000002 max|kappa|=11.1464 chol_before=True chol_at=False
+DH           PD(T<=3)=True T_fail=None max|kappa|=0.143824 chol_before=None chol_at=None
+ZETA-drop2   PD(T<=3)=False T_fail=0.75 max|kappa|=142.111 chol_before=True chol_at=False
+ZETA-drop3   PD(T<=3)=False T_fail=1.1400000000000001 max|kappa|=12.1461 chol_before=True chol_at=False
+ZETA-drop5   PD(T<=3)=False T_fail=1.6400000000000001 max|kappa|=12.553 chol_before=True chol_at=False
+ZETA-drop7   PD(T<=3)=False T_fail=1.97 max|kappa|=10.7772 chol_before=True chol_at=False
+  drop2: T_fail - log p = 0.057
+  drop3: T_fail - log p = 0.041
+  drop5: T_fail - log p = 0.031
+  drop7: T_fail - log p = 0.024
+  first kappa sign mismatch: zeta vs FT0.1 at T=1.12, zeta vs DH at T=0.67
+  ZETA top-10 |d2 kappa| lags: [1.08, 1.09, 1.59, 1.6, 2.18, 2.38, 2.39, 2.54, 2.81, 2.92]
+  DH top-10 |d2 kappa| lags: [1.38, 1.77, 1.78, 2.19, 2.38, 2.39, 2.62, 2.63, 2.75, 2.92]
+  FT0.1 top-10 |d2 kappa| lags: [2.01, 2.02, 2.03, 2.1, 2.11, 2.12, 2.91, 2.92, 2.93, 2.97]
+log n (prime powers): [0.693, 1.099, 1.386, 1.609, 1.946, 2.079, 2.197, 2.398, 2.565, 2.773, 2.833, 2.944]
