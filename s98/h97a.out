@@ -1,0 +1,48 @@
+== h=0.02: Q_p on zeta soft mode just past log p ==
+ p=2 T=0.72 lam_min=7.143e-05 Q_p(v)=-9.097e-06 Q_p/lam=-0.13 nodeless=True drop_lam_min=+7.841e-05
+ p=2 T=0.76 lam_min=6.002e-05 Q_p(v)=-3.537e-05 Q_p/lam=-0.59 nodeless=True drop_lam_min=-3.333e-04
+ p=2 T=0.90 lam_min=4.472e-05 Q_p(v)=-2.589e-04 Q_p/lam=-5.79 nodeless=True drop_lam_min=-3.999e-03
+ p=2 T=1.10 lam_min=2.523e-05 Q_p(v)=-2.540e-03 Q_p/lam=-100.68 nodeless=True drop_lam_min=-8.546e-03
+ p=3 T=1.12 lam_min=2.408e-05 Q_p(v)=-1.330e-06 Q_p/lam=-0.06 nodeless=True drop_lam_min=+2.499e-05
+ p=3 T=1.16 lam_min=2.244e-05 Q_p(v)=-7.837e-06 Q_p/lam=-0.35 nodeless=True drop_lam_min=-1.108e-03
+ p=3 T=1.30 lam_min=1.933e-05 Q_p(v)=-1.287e-04 Q_p/lam=-6.66 nodeless=True drop_lam_min=-6.717e-03
+ p=3 T=1.50 lam_min=1.471e-05 Q_p(v)=-1.075e-03 Q_p/lam=-73.07 nodeless=True drop_lam_min=-1.127e-02
+ p=5 T=1.62 lam_min=1.191e-05 Q_p(v)=-2.091e-07 Q_p/lam=-0.02 nodeless=True drop_lam_min=+1.207e-05
+ p=5 T=1.66 lam_min=1.145e-05 Q_p(v)=-2.265e-06 Q_p/lam=-0.20 nodeless=True drop_lam_min=-1.533e-03
+ p=5 T=1.80 lam_min=9.761e-06 Q_p(v)=-9.024e-05 Q_p/lam=-9.24 nodeless=True drop_lam_min=-8.960e-03
+ p=5 T=2.00 lam_min=7.375e-06 Q_p(v)=-7.096e-04 Q_p/lam=-96.21 nodeless=True drop_lam_min=-1.318e-02
+ p=7 T=1.96 lam_min=7.677e-06 Q_p(v)=-1.870e-07 Q_p/lam=-0.02 nodeless=True drop_lam_min=+7.805e-06
+ p=7 T=2.00 lam_min=7.375e-06 Q_p(v)=-2.041e-06 Q_p/lam=-0.28 nodeless=True drop_lam_min=-2.557e-03
+ p=7 T=2.14 lam_min=6.365e-06 Q_p(v)=-6.033e-05 Q_p/lam=-9.48 nodeless=True drop_lam_min=-1.032e-02
+ p=7 T=2.34 lam_min=5.299e-06 Q_p(v)=-3.951e-04 Q_p/lam=-74.56 nodeless=True drop_lam_min=-1.361e-02
+== h=0.02: per-atom contribution -2 a_n g_v(log n)/sqrt(n) on the soft mode ==
+ ZETA T=1.5 lam_min=1.47e-05 nodeless=True 2:a=+0.693,g+,-6.7e-03 3:a=+1.099,g+,-1.1e-03 4:a=+0.693,g+,-1.1e-05
+ ZETA T=2.2 lam_min=5.97e-06 nodeless=True 2:a=+0.693,g+,-1.3e-02 3:a=+1.099,g+,-8.3e-03 4:a=+0.693,g+,-2.1e-03 5:a=+1.609,g+,-1.7e-03 7:a=+1.946,g+,-1.3e-04 8:a=+0.693,g+,-4.6e-06 9:a=+1.099,g+,-1.1e-08
+ ZETA T=3.0 lam_min=3.32e-06 nodeless=True 2:a=+0.693,g+,-1.5e-02 3:a=+1.099,g+,-1.4e-02 4:a=+0.693,g+,-5.2e-03 5:a=+1.609,g+,-7.4e-03 7:a=+1.946,g+,-3.6e-03 8:a=+0.693,g+,-8.2e-04 9:a=+1.099,g+,-8.4e-04 11:a=+2.398,g+,-7.2e-04 13:a=+2.565,g+,-2.7e-04 16:a=+0.693,g+,-9.0e-06 17:a=+2.833,g+,-1.4e-05 19:a=+2.944,g+,-7.2e-07
+ DH T=1.5 lam_min=3.47e-04 nodeless=True 2:a=+0.197,g+,-2.7e-03 3:a=-0.312,g+,+9.7e-04 4:a=-1.442,g+,+3.5e-04
+ DH T=2.2 lam_min=1.01e-05 nodeless=True 2:a=+0.197,g+,-3.1e-03 3:a=-0.312,g+,+1.5e-03 4:a=-1.442,g+,+1.9e-03 6:a=+1.936,g+,-1.3e-04 7:a=+0.553,g+,-5.7e-06 8:a=+0.016,g+,-1.6e-08 9:a=-2.286,g+,+9.3e-09
+ DH T=3.0 lam_min=4.48e-06 nodeless=True 2:a=+0.197,g+,-4.4e-03 3:a=-0.312,g+,+3.9e-03 4:a=-1.442,g+,+1.0e-02 6:a=+1.936,g+,-5.4e-03 7:a=+0.553,g+,-9.7e-04 8:a=+0.016,g+,-1.8e-05 9:a=-2.286,g+,+1.6e-03 11:a=+2.398,g+,-6.6e-04 12:a=-0.763,g+,+1.3e-04 13:a=-0.729,g+,+6.9e-05 14:a=-2.852,g+,+1.5e-04 16:a=+1.382,g+,-1.6e-05 17:a=+0.805,g+,-3.8e-06 18:a=+0.887,g+,-1.4e-06 19:a=-2.944,g+,+8.9e-07
+== h=0.01: Q_p on zeta soft mode just past log p ==
+ p=2 T=0.71 lam_min=1.817e-05 Q_p(v)=-1.801e-06 Q_p/lam=-0.10 nodeless=True drop_lam_min=+1.961e-05
+ p=2 T=0.75 lam_min=1.261e-05 Q_p(v)=-1.140e-05 Q_p/lam=-0.90 nodeless=True drop_lam_min=-7.308e-05
+ p=2 T=0.89 lam_min=6.902e-06 Q_p(v)=-8.516e-05 Q_p/lam=-12.34 nodeless=True drop_lam_min=-1.913e-03
+ p=2 T=1.09 lam_min=4.408e-06 Q_p(v)=-8.916e-04 Q_p/lam=-202.28 nodeless=True drop_lam_min=-4.199e-03
+ p=3 T=1.12 lam_min=3.958e-06 Q_p(v)=-3.508e-07 Q_p/lam=-0.09 nodeless=True drop_lam_min=+4.175e-06
+ p=3 T=1.16 lam_min=3.478e-06 Q_p(v)=-2.674e-06 Q_p/lam=-0.77 nodeless=True drop_lam_min=-6.380e-04
+ p=3 T=1.30 lam_min=2.896e-06 Q_p(v)=-3.546e-05 Q_p/lam=-12.25 nodeless=True drop_lam_min=-3.416e-03
+ p=3 T=1.50 lam_min=2.122e-06 Q_p(v)=-4.667e-04 Q_p/lam=-219.95 nodeless=True drop_lam_min=-5.675e-03
+ p=5 T=1.63 lam_min=1.684e-06 Q_p(v)=-8.966e-08 Q_p/lam=-0.05 nodeless=True drop_lam_min=+1.732e-06
+ p=5 T=1.67 lam_min=1.610e-06 Q_p(v)=-7.518e-07 Q_p/lam=-0.47 nodeless=True drop_lam_min=-1.290e-03
+ p=5 T=1.81 lam_min=1.429e-06 Q_p(v)=-3.107e-05 Q_p/lam=-21.74 nodeless=True drop_lam_min=-4.762e-03
+ p=5 T=2.01 lam_min=1.150e-06 Q_p(v)=-2.951e-04 Q_p/lam=-256.57 nodeless=True drop_lam_min=-6.681e-03
+ p=7 T=1.97 lam_min=1.187e-06 Q_p(v)=-7.536e-08 Q_p/lam=-0.06 nodeless=True drop_lam_min=-2.368e-04
+ p=7 T=2.01 lam_min=1.150e-06 Q_p(v)=-6.428e-07 Q_p/lam=-0.56 nodeless=True drop_lam_min=-2.043e-03
+ p=7 T=2.15 lam_min=1.017e-06 Q_p(v)=-2.540e-05 Q_p/lam=-24.98 nodeless=True drop_lam_min=-5.417e-03
+ p=7 T=2.35 lam_min=8.429e-07 Q_p(v)=-2.082e-04 Q_p/lam=-246.98 nodeless=True drop_lam_min=-6.901e-03
+== h=0.01: per-atom contribution -2 a_n g_v(log n)/sqrt(n) on the soft mode ==
+ ZETA T=1.5 lam_min=2.12e-06 nodeless=True 2:a=+0.693,g+,-3.3e-03 3:a=+1.099,g+,-4.7e-04 4:a=+0.693,g+,-2.7e-06
+ ZETA T=2.2 lam_min=9.61e-07 nodeless=True 2:a=+0.693,g+,-6.2e-03 3:a=+1.099,g+,-4.0e-03 4:a=+0.693,g+,-9.6e-04 5:a=+1.609,g+,-7.9e-04 7:a=+1.946,g+,-5.8e-05 8:a=+0.693,g+,-1.8e-06 9:a=+1.099,g+,-1.3e-09
+ ZETA T=3.0 lam_min=4.73e-07 nodeless=True 2:a=+0.693,g+,-7.7e-03 3:a=+1.099,g+,-7.1e-03 4:a=+0.693,g+,-2.7e-03 5:a=+1.609,g+,-4.0e-03 7:a=+1.946,g+,-2.0e-03 8:a=+0.693,g+,-4.6e-04 9:a=+1.099,g+,-4.7e-04 11:a=+2.398,g+,-4.0e-04 13:a=+2.565,g+,-1.5e-04 16:a=+0.693,g+,-4.5e-06 17:a=+2.833,g+,-6.6e-06 19:a=+2.944,g+,-2.4e-07
+ DH T=1.5 lam_min=1.68e-04 nodeless=True 2:a=+0.197,g+,-1.3e-03 3:a=-0.312,g+,+4.9e-04 4:a=-1.442,g+,+1.7e-04
+ DH T=2.2 lam_min=1.48e-06 nodeless=True 2:a=+0.197,g+,-1.5e-03 3:a=-0.312,g+,+7.4e-04 4:a=-1.442,g+,+9.0e-04 6:a=+1.936,g+,-4.7e-05 7:a=+0.553,g+,-1.7e-06 8:a=+0.016,g+,-3.3e-09 9:a=-2.286,g+,+7.8e-10
+ DH T=3.0 lam_min=7.28e-07 nodeless=True 2:a=+0.197,g+,-2.2e-03 3:a=-0.312,g+,+1.9e-03 4:a=-1.442,g+,+5.0e-03 6:a=+1.936,g+,-2.5e-03 7:a=+0.553,g+,-4.4e-04 8:a=+0.016,g+,-7.9e-06 9:a=-2.286,g+,+7.0e-04 11:a=+2.398,g+,-2.7e-04 12:a=-0.763,g+,+4.9e-05 13:a=-0.729,g+,+2.5e-05 14:a=-2.852,g+,+4.8e-05 16:a=+1.382,g+,-4.2e-06 17:a=+0.805,g+,-8.1e-07 18:a=+0.887,g+,-2.4e-07 19:a=-2.944,g+,+1.3e-07
