@@ -1,0 +1,124 @@
+0.6 e dimS 2 dimSperp 22 nlow 1 arch n- full 1 on Sperp 0 0.079338
+0.6 e P rebuild rel err 1.76e-69
+0.6 e ZETA full 3.4408e-10 0 | S 4.0797e-10 0 | Sperp 0.046224 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.046224 | inSchur None nG 0 | low 0.29998 0
+0.8 e dimS 4 dimSperp 20 nlow 3 arch n- full 2 on Sperp 0 0.14946
+0.6 e DH full 0.029395 0 | S 0.05296 0 | Sperp 0.46612 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.46612 | inSchur None nG 0 | low 0.68484 0
+0.6 e FT0.1 full -2.0245e-5 1 | S -1.3318e-5 1 | Sperp 0.045642 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.045642 | inSchur None nG 0 | low 0.29975 0
+0.6 e HT-2 full 7.8461e-11 0 | S 3.0193e-7 0 | Sperp 0.016843 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.016843 | inSchur None nG 0 | low 0.25818 0
+0.6 e HT-4 full -0.19865 4 | S 3.8562e-7 0 | Sperp -0.19864 2 {'ldl_n_neg': 2} | out -0.19864 | inSchur None nG 0 | low 0.2186 0
+0.6 e Z_remove_2 full -0.044817 1 | S -0.0086454 1 | Sperp 0.070367 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.070367 | inSchur None nG 0 | low 0.30534 0
+0.6 e Z_flip_2 full -0.12032 1 | S -0.017294 1 | Sperp 0.024425 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.024425 | inSchur None nG 0 | low 0.3107 0
+0.8 e P rebuild rel err 5.18e-69
+0.6 e Z_remove_3 full -0.00028587 1 | S -8.0873e-8 1 | Sperp 0.12294 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.12294 | inSchur None nG 0 | low 0.34638 0
+0.8 e ZETA full 3.8913e-18 0 | S 5.3815e-18 0 | Sperp 0.1423 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.1423 | inSchur None nG 0 | low 0.41364 0
+0.6 e Z_flip_3 full -0.0020051 1 | S -1.7051e-7 1 | Sperp 0.14078 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.14078 | inSchur None nG 0 | low 0.39279 0
+0.8 e DH full 0.0014936 0 | S 0.0026054 0 | Sperp 0.48663 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.48663 | inSchur None nG 0 | low 0.8399 0
+0.6 e Z_scale_0.01 full -0.0010241 1 | S -0.0010201 1 | Sperp 0.04465 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.04465 | inSchur None nG 0 | low 0.29946 0
+0.8 e FT0.1 full -0.00061666 3 | S -0.00052851 2 | Sperp 0.14134 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.14134 | inSchur None nG 0 | low 0.41323 0
+0.6 e Z_scale_-0.01 full -8.7031e-5 1 | S -8.1796e-5 1 | Sperp 0.047796 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.047796 | inSchur None nG 0 | low 0.3005 0
+1.0 e dimS 7 dimSperp 17 nlow 5 arch n- full 2 on Sperp 0 0.1718
+0.8 e HT-2 full -1.8608e-8 2 | S 1.0233e-10 0 | Sperp 0.05778 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.05778 | inSchur None nG 0 | low 0.30386 0
+0.6 o dimS 2 dimSperp 22 nlow 1 arch n- full 1 on Sperp 0 0.15378
+0.8 e HT-4 full -0.10138 4 | S 1.2667e-10 0 | Sperp -0.10118 2 {'ldl_n_neg': 2} | out -0.10118 | inSchur None nG 0 | low 0.10802 0
+0.8 e Z_remove_2 full -0.11484 1 | S -0.11429 1 | Sperp 0.20082 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.20082 | inSchur None nG 0 | low 0.38031 0
+0.8 e Z_flip_2 full -0.23033 1 | S -0.22864 1 | Sperp 0.12252 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.12252 | inSchur None nG 0 | low 0.33696 0
+0.8 e Z_remove_3 full -0.084423 2 | S -0.065862 2 | Sperp 0.18771 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.18771 | inSchur None nG 0 | low 0.47324 0
+0.8 e Z_flip_3 full -0.19484 2 | S -0.13204 2 | Sperp 0.11865 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.11865 | inSchur None nG 0 | low 0.48784 0
+0.8 e Z_scale_0.01 full -0.0023052 3 | S -0.0022208 3 | Sperp 0.14012 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.14012 | inSchur None nG 0 | low 0.41301 0
+0.8 e Z_scale_-0.01 full -0.00069831 1 | S -0.00068244 1 | Sperp 0.14448 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.14448 | inSchur None nG 0 | low 0.41427 0
+0.6 o P rebuild rel err 1.76e-69
+0.8 o dimS 4 dimSperp 20 nlow 2 arch n- full 1 on Sperp 0 0.16707
+0.6 o ZETA full 1.1162e-7 0 | S 1.3711e-7 0 | Sperp 0.1401 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.1401 | inSchur None nG 0 | low 0.35017 0
+1.0 e P rebuild rel err 1.39e-67
+0.6 o DH full 0.23335 0 | S 0.24054 0 | Sperp 0.46464 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.46464 | inSchur None nG 0 | low 0.68493 0
+1.0 e ZETA full 6.8453e-23 0 | S 7.2426e-23 0 | Sperp 0.20168 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.20168 | inSchur None nG 0 | low 0.26975 0
+1.0 e DH full 8.1283e-6 0 | S 1.6077e-5 0 | Sperp 0.4592 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.4592 | inSchur None nG 0 | low 0.87614 0
+1.0 e FT0.1 full -0.0025821 5 | S -0.0025734 4 | Sperp 0.20051 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.20051 | inSchur None nG 0 | low 0.2685 0
+0.6 o FT0.1 full -4.9372e-6 1 | S -4.6868e-6 1 | Sperp 0.13997 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.13997 | inSchur None nG 0 | low 0.35003 0
+1.0 e HT-2 full -6.2608e-9 2 | S 2.2674e-15 0 | Sperp 0.014964 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.014964 | inSchur None nG 0 | low 0.16818 0
+1.0 e HT-4 full -0.75182 5 | S 3.005e-16 0 | Sperp -0.72282 3 {'ldl_n_neg': 3} | out -0.72282 | inSchur None nG 0 | low -0.16986 1
+1.0 e Z_remove_2 full -0.12602 3 | S -0.126 2 | Sperp 0.22915 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.22915 | inSchur None nG 0 | low 0.37616 0
+0.6 o HT-2 full 2.4889e-8 0 | S 3.4599e-5 0 | Sperp 0.082439 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.082439 | inSchur None nG 0 | low 0.31483 0
+1.0 e Z_flip_2 full -0.25209 3 | S -0.25203 2 | Sperp 0.1706 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.1706 | inSchur None nG 0 | low 0.46751 0
+0.8 o P rebuild rel err 4.98e-69
+1.0 e Z_remove_3 full -0.14758 2 | S -0.14748 2 | Sperp 0.26287 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.26287 | inSchur None nG 0 | low 0.32991 0
+1.0 e Z_flip_3 full -0.29535 3 | S -0.29509 2 | Sperp 0.16349 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.16349 | inSchur None nG 0 | low 0.32783 0
+0.8 o ZETA full 3.3284e-15 0 | S 4.4203e-15 0 | Sperp 0.15859 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.15859 | inSchur None nG 0 | low 0.37277 0
+0.6 o HT-4 full -0.16814 4 | S 4.2882e-5 0 | Sperp -0.16812 2 {'ldl_n_neg': 2} | out -0.16812 | inSchur None nG 0 | low 0.30066 0
+1.0 e Z_remove_5 full -0.090333 4 | S -0.076461 3 | Sperp 0.17224 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.17224 | inSchur None nG 0 | low 0.29973 0
+0.8 o DH full 0.08796 0 | S 0.10291 0 | Sperp 0.45743 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.45743 | inSchur None nG 0 | low 0.73432 0
+1.0 e Z_flip_5 full -0.20933 4 | S -0.1566 3 | Sperp 0.1006 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.1006 | inSchur None nG 0 | low 0.31571 0
+0.6 o Z_remove_2 full -0.087683 1 | S -0.086124 1 | Sperp 0.16317 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.16317 | inSchur None nG 0 | low 0.37761 0
+0.8 o FT0.1 full -0.00067245 2 | S -0.00066374 2 | Sperp 0.15796 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.15796 | inSchur None nG 0 | low 0.37225 0
+1.0 e Z_remove_7 full -0.00037282 2 | S -9.9536e-5 1 | Sperp 0.20021 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.20021 | inSchur None nG 0 | low 0.26823 0
+0.6 o Z_flip_2 full -0.17736 1 | S -0.17284 1 | Sperp 0.097717 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.097717 | inSchur None nG 0 | low 0.40505 0
+0.8 o HT-2 full -5.3905e-7 1 | S 1.5089e-8 0 | Sperp 0.054546 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.054546 | inSchur None nG 0 | low 0.289 0
+1.0 e Z_flip_7 full -0.0037612 2 | S -0.0017437 1 | Sperp 0.19629 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.19629 | inSchur None nG 0 | low 0.26114 0
+1.2 e dimS 10 dimSperp 14 nlow 6 arch n- full 3 on Sperp 0 0.21076
+1.0 e Z_scale_0.01 full -0.0040468 5 | S -0.004043 5 | Sperp 0.19911 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.19911 | inSchur None nG 0 | low 0.26757 0
+0.8 o HT-4 full -0.086766 4 | S 1.2566e-8 0 | Sperp -0.083678 2 {'ldl_n_neg': 2} | out -0.083678 | inSchur None nG 0 | low 0.19114 0
+0.6 o Z_remove_3 full -0.028517 1 | S -0.019316 1 | Sperp 0.12602 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.12602 | inSchur None nG 0 | low 0.363 0
+1.0 e Z_scale_-0.01 full -0.0012584 1 | S -0.0012575 1 | Sperp 0.20425 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.20425 | inSchur None nG 0 | low 0.27193 0
+0.8 o Z_remove_2 full -0.096085 2 | S -0.096012 2 | Sperp 0.1867 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.1867 | inSchur None nG 0 | low 0.34729 0
+0.6 o Z_flip_3 full -0.085154 1 | S -0.040817 1 | Sperp 0.083137 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.083137 | inSchur None nG 0 | low 0.37583 0
+1.0 o dimS 6 dimSperp 18 nlow 4 arch n- full 2 on Sperp 0 0.17068
+0.8 o Z_flip_2 full -0.19231 2 | S -0.19207 2 | Sperp 0.10742 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.10742 | inSchur None nG 0 | low 0.29428 0
+0.6 o Z_scale_0.01 full -3.3751e-5 1 | S 7.7276e-5 0 | Sperp 0.13952 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.13952 | inSchur None nG 0 | low 0.34977 0
+0.8 o Z_remove_3 full -0.11998 2 | S -0.1182 2 | Sperp 0.17162 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.17162 | inSchur None nG 0 | low 0.40249 0
+0.6 o Z_scale_-0.01 full -0.0006389 1 | S -0.00059854 1 | Sperp 0.14068 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.14068 | inSchur None nG 0 | low 0.35058 0
+0.8 o Z_flip_3 full -0.24276 2 | S -0.23819 2 | Sperp 0.10132 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.10132 | inSchur None nG 0 | low 0.42246 0
+0.8 o Z_scale_0.01 full -0.0014302 2 | S -0.0014174 2 | Sperp 0.15708 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.15708 | inSchur None nG 0 | low 0.37177 0
+0.8 o Z_scale_-0.01 full -0.0015547 1 | S -0.0015497 1 | Sperp 0.16008 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.16008 | inSchur None nG 0 | low 0.37377 0
+1.2 e P rebuild rel err 5.45e-65
+1.2 e ZETA full 1.0188e-26 0 | S 1.1283e-26 0 | Sperp 0.38497 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.38497 | inSchur None nG 0 | low 0.51314 0
+1.2 e DH full 2.1113e-9 0 | S 4.7784e-8 0 | Sperp 0.42501 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.42501 | inSchur None nG 0 | low 1.0325 0
+1.0 o P rebuild rel err 1.44e-67
+1.2 e FT0.1 full -0.0048159 6 | S -0.0048087 5 | Sperp 0.38418 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.38418 | inSchur None nG 0 | low 0.5127 0
+1.0 o ZETA full 3.7381e-20 0 | S 4.2316e-20 0 | Sperp 0.13538 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.13538 | inSchur None nG 0 | low 0.24187 0
+1.2 e HT-2 full -1.6054e-8 3 | S 4.2028e-21 0 | Sperp 0.21371 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.21371 | inSchur None nG 0 | low 0.40038 0
+1.2 e HT-4 full -1.4948 6 | S -0.046823 3 | Sperp -0.96585 2 {'ldl_n_neg': 2} | out -0.96585 | inSchur None nG 0 | low -0.24925 1
+1.0 o DH full 0.0025022 0 | S 0.005458 0 | Sperp 0.38287 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.38287 | inSchur None nG 0 | low 0.74044 0
+1.2 e Z_remove_2 full -0.14945 4 | S -0.14943 4 | Sperp 0.31246 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.31246 | inSchur None nG 0 | low 0.51847 0
+1.0 o FT0.1 full -0.0021984 4 | S -0.0021956 4 | Sperp 0.13397 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.13397 | inSchur None nG 0 | low 0.24074 0
+1.2 e Z_flip_2 full -0.29894 4 | S -0.29887 4 | Sperp 0.22474 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.22474 | inSchur None nG 0 | low 0.5237 0
+1.2 e Z_remove_3 full -0.18757 3 | S -0.18601 3 | Sperp 0.39708 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.39708 | inSchur None nG 0 | low 0.59453 0
+1.0 o HT-2 full -0.00018761 2 | S 9.8745e-13 0 | Sperp 0.022661 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.022661 | inSchur None nG 0 | low 0.19583 0
+1.2 e Z_flip_3 full -0.37733 4 | S -0.37227 3 | Sperp 0.31741 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.31741 | inSchur None nG 0 | low 0.44597 0
+1.0 o HT-4 full -0.73858 5 | S 2.1974e-14 0 | Sperp -0.73753 3 {'ldl_n_neg': 3} | out -0.73753 | inSchur None nG 0 | low -0.25502 1
+1.2 e Z_remove_5 full -0.19579 4 | S -0.19436 4 | Sperp 0.3819 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.3819 | inSchur None nG 0 | low 0.51429 0
+1.2 e Z_flip_5 full -0.39297 4 | S -0.38907 4 | Sperp 0.25442 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.25442 | inSchur None nG 0 | low 0.51542 0
+1.0 o Z_remove_2 full -0.10754 3 | S -0.10676 3 | Sperp 0.17843 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.17843 | inSchur None nG 0 | low 0.34042 0
+1.2 e Z_remove_7 full -0.14237 5 | S -0.12732 4 | Sperp 0.39707 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.39707 | inSchur None nG 0 | low 0.51102 0
+1.0 o Z_flip_2 full -0.21582 3 | S -0.21364 3 | Sperp 0.10902 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.10902 | inSchur None nG 0 | low 0.35639 0
+1.2 e Z_flip_7 full -0.30663 5 | S -0.25646 4 | Sperp 0.3786 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.3786 | inSchur None nG 0 | low 0.50859 0
+1.2 e Z_remove_11 full 1.0619e-26 0 | S 1.1765e-26 0 | Sperp 0.388 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.388 | inSchur None nG 0 | low 0.51749 0
+1.0 o Z_remove_3 full -0.12993 2 | S -0.12993 2 | Sperp 0.19291 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.19291 | inSchur None nG 0 | low 0.30333 0
+1.2 e Z_flip_11 full 1.0843e-26 0 | S 1.2051e-26 0 | Sperp 0.39011 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.39011 | inSchur None nG 0 | low 0.52042 0
+1.0 o Z_flip_3 full -0.25986 3 | S -0.25986 2 | Sperp 0.13179 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.13179 | inSchur None nG 0 | low 0.34968 0
+1.2 e Z_scale_0.01 full -0.0069515 7 | S -0.0069131 7 | Sperp 0.38446 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.38446 | inSchur None nG 0 | low 0.51199 0
+1.0 o Z_remove_5 full -0.13629 4 | S -0.13075 3 | Sperp 0.12811 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.12811 | inSchur None nG 0 | low 0.2687 0
+1.2 e Z_scale_-0.01 full -0.0020352 2 | S -0.0020266 2 | Sperp 0.38547 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.38547 | inSchur None nG 0 | low 0.51428 0
+1.0 o Z_flip_5 full -0.27819 4 | S -0.26183 3 | Sperp 0.065534 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.065534 | inSchur None nG 0 | low 0.27447 0
+1.2 o dimS 10 dimSperp 14 nlow 6 arch n- full 2 on Sperp 0 0.17595
+1.0 o Z_remove_7 full -0.034283 2 | S -0.023973 2 | Sperp 0.1263 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.1263 | inSchur None nG 0 | low 0.22644 0
+1.0 o Z_flip_7 full -0.097565 2 | S -0.050836 2 | Sperp 0.10245 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.10245 | inSchur None nG 0 | low 0.20966 0
+1.0 o Z_scale_0.01 full -0.0025655 4 | S -0.0025487 4 | Sperp 0.13294 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.13294 | inSchur None nG 0 | low 0.23977 0
+1.0 o Z_scale_-0.01 full -0.0025338 2 | S -0.0025271 2 | Sperp 0.13781 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.13781 | inSchur None nG 0 | low 0.24396 0
+1.2 o P rebuild rel err 5.95e-65
+1.2 o ZETA full 6.276e-24 0 | S 6.4672e-24 0 | Sperp 0.36114 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.36114 | inSchur None nG 0 | low 0.46773 0
+1.2 o DH full 1.688e-6 0 | S 1.1683e-5 0 | Sperp 0.35011 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.35011 | inSchur None nG 0 | low 0.74601 0
+1.2 o FT0.1 full -0.003463 6 | S -0.0034523 5 | Sperp 0.36126 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.36126 | inSchur None nG 0 | low 0.46754 0
+1.2 o HT-2 full -6.9919e-11 2 | S 2.7192e-18 0 | Sperp 0.18159 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.18159 | inSchur None nG 0 | low 0.40525 0
+1.2 o HT-4 full -1.4183 5 | S -0.27201 2 | Sperp -1.1828 2 {'ldl_n_neg': 2} | out -1.1828 | inSchur None nG 0 | low 0.27404 0
+1.2 o Z_remove_2 full -0.11693 5 | S -0.11685 5 | Sperp 0.28501 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.28501 | inSchur None nG 0 | low 0.46962 0
+1.2 o Z_flip_2 full -0.2341 5 | S -0.23388 5 | Sperp 0.20125 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.20125 | inSchur None nG 0 | low 0.46846 0
+1.2 o Z_remove_3 full -0.13574 3 | S -0.13558 3 | Sperp 0.30909 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.30909 | inSchur None nG 0 | low 0.48398 0
+1.2 o Z_flip_3 full -0.27187 5 | S -0.27139 3 | Sperp 0.2205 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.2205 | inSchur None nG 0 | low 0.37563 0
+1.2 o Z_remove_5 full -0.15299 4 | S -0.15298 4 | Sperp 0.34765 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.34765 | inSchur None nG 0 | low 0.4666 0
+1.2 o Z_flip_5 full -0.30601 4 | S -0.30598 4 | Sperp 0.23231 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.23231 | inSchur None nG 0 | low 0.46404 0
+1.2 o Z_remove_7 full -0.15092 6 | S -0.14908 5 | Sperp 0.35787 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.35787 | inSchur None nG 0 | low 0.46304 0
+1.2 o Z_flip_7 full -0.30451 6 | S -0.29944 5 | Sperp 0.32451 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.32451 | inSchur None nG 0 | low 0.45553 0
+1.2 o Z_remove_11 full 5.5879e-24 0 | S 5.8337e-24 0 | Sperp 0.36108 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.36108 | inSchur None nG 0 | low 0.46762 0
+1.2 o Z_flip_11 full 3.4273e-24 0 | S 4.5013e-24 0 | Sperp 0.36098 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.36098 | inSchur None nG 0 | low 0.46739 0
+1.2 o Z_scale_0.01 full -0.0030587 6 | S -0.0030552 6 | Sperp 0.36162 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.36162 | inSchur None nG 0 | low 0.46721 0
+1.2 o Z_scale_-0.01 full -0.0035209 2 | S -0.0035132 2 | Sperp 0.36061 0 {'chol_PD': True, 'chol_half_margin': True} | out 0.36061 | inSchur None nG 0 | low 0.46825 0
