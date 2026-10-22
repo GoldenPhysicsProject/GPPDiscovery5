@@ -300,7 +300,23 @@ def sph_j_rows(xs, N, p):
     old = ctx.prec; ctx.prec = WP + int(1.0 * xmax) + 128
     try:
         X = np.array(xs, dtype=object)
-        def top(d): return np.array([(arb.pi() / (2 * x)).sqrt() * x.bessel_j(arb(d) + arb(1) / 2) for x in xs], dtype=object)
+        tgt = ctx.prec
+        def top1(x, d):
+            # Arb's J_nu(x) loses all accuracy near the turning point x ~ nu at modest precision (observed:
+            # x = 1420, nu = 2376.5 at 2000 bits gives a ball of width 1e380).  Raise precision until the
+            # enclosure has relative radius <= 2^-(tgt+32), then round back.  Still a rigorous ball throughout.
+            pr = tgt
+            while True:
+                o2 = ctx.prec; ctx.prec = pr
+                try:
+                    v = (arb.pi() / (2 * x)).sqrt() * x.bessel_j(arb(d) + arb(1) / 2)
+                finally:
+                    ctx.prec = o2
+                if v.is_finite() and v.mid() != 0 and bool(v.rad() < abs(v.mid()) * arb(2) ** (-(tgt + 32))):
+                    return +v
+                pr *= 2
+                assert pr <= 64 * tgt + 100000, 'bessel_j precision blow-up'
+        def top(d): return np.array([top1(x, d) for x in xs], dtype=object)
         jn1 = top(N); jn = top(N - 1); rows = {}
         if (N - 1) % 2 == p: rows[N - 1] = jn
         Xi = np.array([1 / x for x in xs], dtype=object)
