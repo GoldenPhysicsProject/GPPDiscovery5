@@ -22,6 +22,24 @@ def divisors(n):
         d+=1
     return r
 
+def Kbest(z, nu):
+    # Arb's K_nu(z) is rigorous, but its radius is erratic near its internal algorithm switch (seen for z ~ 40-140).
+    # Every enclosure is valid, so try bessel_k and K = sqrt(pi) (2z)^nu e^{-z} U(nu+1/2, 2nu+1, 2z) at several
+    # precisions and keep the tightest one.
+    p0=ctx.prec; best=None
+    try:
+        for p in (p0, p0+64, 2*p0, 4*p0):
+            ctx.prec=p; z_=acb(z); nu_=acb(nu)
+            for meth in (0,1):
+                v = z_.bessel_k(nu_) if meth==0 else acb.pi().sqrt()*(2*z_)**nu_*(-z_).exp()*(2*z_).hypgeom_u(nu_+0.5,2*nu_+1)
+                if not v.is_finite(): continue
+                r=float(abs(v).rad())
+                if best is None or r<best[0]: best=(r,v)
+            if best is not None and best[0] < 2.0**(-p0+8)*float(abs(best[1]).mid()): break
+    finally:
+        ctx.prec=p0
+    return +best[1]
+
 def tau_of(Q):
     a,b,c=Q; D=b*b-4*a*c
     return (arb(-b)/(2*a), arb(-D).sqrt()/(2*a)), D
@@ -52,23 +70,35 @@ def _eis(x,y,s,N,outprec):
     for n in range(1,N+1):
         sg=acb(0)
         for d in divisors(n): sg+= acb(d)**(1-2*s)
-        S+= acb(n)**(s-half)*sg*acb(2*pi*n*y).bessel_k(nu)*(2*pi*n*x).cos()
+        S+= acb(n)**(s-half)*sg*Kbest(2*pi*n*y,nu)*(2*pi*n*x).cos()
     # rigorous tail
     mu=arb(max(abs(sig_hi-0.5),abs(sig_lo-0.5)))
     A=sig_hi+max(0.0,1-2*sig_lo)
     M=N+1
     rate=arb(A)/M-2*pi*y
     assert float(rate.mid())<-0.1
-    Kb=acb(2*pi*M*y).bessel_k(acb(mu)).real
+    Kb=Kbest(2*pi*M*y,acb(mu)).real
     tail=2*Kb*arb(M)**arb(A)/(1-rate.exp())
-    tail=abs(pref)*tail
+    # (tail bounds the bracketed sum S; pref multiplies S below. An earlier version multiplied by |pref| twice.)
     S=S+acb(arb(0,tail.upper()), arb(0,tail.upper()))
     return out+pref*S
 
 def Z_Q(Q, s, N=None):
-    (x,y),D=tau_of(Q)
-    s=acb(s)
-    return (acb(2)/arb(-D).sqrt())**s*eisenstein(x,y,s,N)
+    # tau_Q must be formed at the raised working precision; otherwise its rounding radius is amplified by ~e^{pi t/2}.
+    s=acb(s); t0=abs(float(s.imag.mid())); old=ctx.prec
+    ctx.prec=64+int(2.6*t0)+20+old
+    try:
+        (x,y),D=tau_of(Q)
+        pre=(acb(2)/arb(-D).sqrt())**s
+        ctx.prec=old
+        E=eisenstein(x,y,s,N)
+        ctx.prec=64+int(2.6*t0)+20+old
+        return _fin(pre*E, old)
+    finally:
+        ctx.prec=old
+
+def _fin(v, p):
+    ctx.prec=p; return +v
 
 def Lambda_Q(Q, s, N=None):
     (x,y),D=tau_of(Q)

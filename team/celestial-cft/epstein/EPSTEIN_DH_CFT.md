@@ -28,7 +28,7 @@ For a positive-definite integral binary quadratic form Q = [a,b,c] with D = b² 
    S(s) := Σ'_{scalar primaries} Δ^{−s} = |D|^{s/2} E_s(iρ₂) Z_Q(s).
    - The pure-momentum part alone is (ρ₂√|D|)^s Z_Q(s).
    - **NUMERICAL** (`scalar_zeta_identity.log`, `momentum_identity.py`): both identities agree at s = 3 to about 1e−7 / 1e−9 (lattice truncation), for ρ₂ ∈ {1, 1.3} and {1, 1.7}.
-3. **PROVED (Davenport–Heilbronn, J. London Math. Soc. 11 (1936) 181 and 307; Voronin; Lee 2014 Thm 1.3).** When h(D) > 1:
+3. **PROVED (Davenport–Heilbronn, J. London Math. Soc. 11 (1936) 181–185, 307–312; anticipated by Potter–Titchmarsh 1935; Voronin; Lee 2014 Thm 1.3).** When h(D) > 1:
    - Z_Q has infinitely many zeros in Re s > 1 (DH);
    - it has ≍ T zeros in every strip ½ < σ₁ < Re s < σ₂ ≤ 1 (Voronin, Lee).
    - Hence S(s) has zeros off Re s = ½ as well; E_s(iρ₂) has no zeros or poles there to cancel them, for generic ρ₂ (CONJECTURE for specific ρ₂; it holds at ρ₂ = 1, where E_s(i) ∝ ζ(s)L(s,χ₋₄)/ζ(2s)).
@@ -38,10 +38,13 @@ For a positive-definite integral binary quadratic form Q = [a,b,c] with D = b² 
 - Unitarity, a unique vacuum, discreteness and full modular invariance do **not** force the zeros of a CFT's (scalar) spectral zeta onto Re s = ½. This is a genuine CFT, not just a "fake Z": the Narain OPE is consistent.
 - The mechanism is exactly DH's: Z_{x²+5y²} = ζ(s)L(s,χ₋₂₀) + L(s,χ₋₄)L(s,χ₅), a sum of two Euler products, with χ₅ of DH's conductor 5 (genus-character decomposition; PROVED; checked to 27 digits in `zq_L.py`).
 
-## 2. Prior art (checked by search, 2026-10-22)
-- Potter–Titchmarsh, "The zeros of Epstein's zeta-functions", Proc. LMS (2) 39 (1935) 372: infinitely many zeros on the line; the class-number dichotomy.
-- Davenport–Heilbronn 1936; Voronin (1970s); Bombieri–Mueller, Forum Math. 20 (2008) 359 (x²+5y² and 2x²+2xy+3y²: σ(Q) numerically, zero counts in Re s > 1); Lee, Forum Math. 26 (2014) (asymptotic counts).
-- Bombieri–Hejhal (almost all zeros of such combinations are on the line, assuming GRH).
+## 2. Prior art (checked by search and full-text grep, 2026-10-22)
+Off-line zeros of Epstein zeta functions are classical. The Epstein side of this note is not new; only the CFT packaging and the certificates are.
+- **H. S. A. Potter and E. C. Titchmarsh, "The zeros of Epstein's zeta-functions", Proc. London Math. Soc. (2) 39 (1935) 372–384, doi:10.1112/plms/s2-39.1.372.** They prove infinitely many zeros on Re s = ½ for integral forms, and they remark that the "Riemann hypothesis" for Z_Q is probably false. The off-line zeros are anticipated here.
+- **H. Davenport and H. Heilbronn, "On the zeros of certain Dirichlet series" I, II, J. London Math. Soc. 11 (1936) 181–185 and 307–312.** They prove that Z_Q has infinitely many zeros in Re s > 1 when h(D) > 1. This is the theorem we use, §1 item 3.
+- **E. Bombieri and D. A. Hejhal, "On the distribution of zeros of linear combinations of Euler products", Duke Math. J. 80 (1995) 821–862.** Under GRH plus a spacing hypothesis, almost all zeros of such combinations (Z_Q included) lie on the line. The off-line zeros are a density-zero set.
+- Voronin (1970s): ≫ T zeros in every strip ½ < σ₁ < σ < σ₂ ≤ 1. Lee, Forum Math. 26 (2014): asymptotic counts.
+- E. Bombieri and J. Mueller, "On the zeros of certain Epstein zeta functions", Forum Math. 20 (2008) 359–385, doi:10.1515/FORUM.2008.018. Class number 2 (x²+5y², 2x²+2xy+3y²): upper and lower bounds on how fast zeros approach the boundary of the zero-free half-plane Re s > σ(Q). Our CERTIFIED zero 2.0794 + 7.6289i of 2x²+2xy+3y² gives σ(Q) ≥ 2.0794, and `dominant_abscissa.py` gives σ(Q) ≤ 2.4102; see §3.
 - Travěnec–Šamaj, Appl. Math. Comput. 2022 (off-critical zeros of hypercubic Epstein zetas).
 - Nakamura–Pańkowski arXiv:1212.5890 (spectral zetas with off-line zeros).
 - CFT side:
@@ -49,6 +52,7 @@ For a positive-definite integral binary quadratic form Q = [a,b,c] with D = b² 
   - Benjamin–Chang 2208.02259 (scalar crossing ↔ ζ zeros);
   - Angelantonj–Florakis–Pioline 1110.5318 (constrained Epstein series);
   - "Fake Z" (JHEP 06 (2023) 043, arXiv:2211.15699): modular-invariant, positive, integral but non-CFT partition functions.
+- **BCFMP 2107.10744 does not state off-line zeros.** A grep of its full text (2026-10-22) finds no mention of Davenport–Heilbronn, class number, or zeros of the Narain spectral zeta off Re s = ½. Its "critical line" hits are the Eisenstein continuum and the no-poles condition (3.51)–(3.52). We credit BCFMP for the spectral identity only (§1 item 2).
 - **Not found:** an explicit statement that Narain-CFT scalar spectral zetas have certified off-line zeros. The novelty claim is limited to this packaging plus the certificates. The underlying mathematics is DH 1936.
 
 ## 3. Computation
