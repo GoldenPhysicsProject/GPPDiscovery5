@@ -278,7 +278,7 @@ More generally, among Dirichlet series with periodic coefficients, those with no
 
 What was run instead (`dh_torus.py`, NUMERICAL):
 - **Torus surrogate.** For f = e^{−itx}sinh(0.6x) on [−L, L], the prime part depends on t only through the torus point (p^{−it})_{p<e^{2L}}, and Kronecker realises any such point. Maximising the prime part over that torus by coordinate ascent:
-  - DH, P*/‖f‖²: 23.2, 57.3, 111.3, 401.9, 636.3 at L = 3, 3.5, 4, 5, 5.5 (fitted exponent 1.32, against 2σ_DH − 1 = 1.24; the optimiser is heuristic, and L 4.5 underperforms);
+  - DH, P*/‖f‖²: 23.2, 57.3, 111.3, 173.6, 401.9, 636.3 at L = 3, 3.5, …, 5.5. The fitted exponent is ≈ 1.32, against 2σ_DH − 1 = 1.24. The optimiser is heuristic: at L = 4.5 it reaches only 80% of the trivial upper bound. That bound, the coefficient mass Σ|c|n^{−1/2}·sup, gives 31.6 → 762.7, exponent 1.27;
   - ζ: 18.6 → 242.7 (exponent 1.03, i.e. e^L, the Chebyshev mass).
   
   **Caveat:** the Kronecker heights needed to align all primes below e^{2L} have log t ≈ π(e^{2L})·log(1/ε) ≫ e^{1.3L}. There the archimedean term Ω_D(t) ≈ log t dominates, so the surrogate does not exhibit negativity. It confirms only the exponent of the prime part. Not a proof of anything.
@@ -308,7 +308,7 @@ What was run instead (`dh_torus.py`, NUMERICAL):
 - The failing DH vector is thus a modulated "edge" vector carrying ≈ 2Lγ₀/π nodes, sign-changing as S98 requires. It is the opposite of ζ's nodeless soft mode, where Λ ≥ 0 hurts.
 
 **Why U is not RH, and what it does not do (honest).**
-- U is equivalent to η ≤ 1. Lemma 5.2 gives η ≥ 2Θ − 1, so U implies "no zeros with Re s > 1" for any D ∈ 𝒟. The converse direction is heuristic. That is classical for ζ.
+- U is equivalent to η ≤ 1. Lemma 5.2 gives η ≥ 2Θ − 1, so U implies "no zeros with Re s > 1" for any D ∈ 𝒟. The converse direction is heuristic. For ζ, "no zeros with Re s > 1" is classical.
 - It does **not** see DH's strip zeros (0.8085 + 85.70i has 2β₀ = 0.617 < 1), nor F_θ (Re < 1), H₋ₜ or DMV.
 - Its value is that it is the first statement on the team's books that is (a) uniform in L, (b) proved for ζ, (c) fatal to DH, and (d) uses infinitely many primes (Chebyshev for all x). It also shows the hybrid-lemma obstruction does not bind once statements are asymptotic in L.
 
@@ -333,7 +333,7 @@ What was run instead (`dh_torus.py`, NUMERICAL):
    - DH turns negative between L 1.5 and 2, consistent with the Galerkin onset L ≈ 1.71 (S75). The vector is not optimal.
    - **DH onset reconciliation (lead input).**
      - Golden Eye's density heuristic predicts DH failure at L ≈ 1.61. The recorded onset (S75) is 1.7105, with DH numerically PD below it.
-     - The pair heuristic of Lemma 5.2 shows why a heuristic cannot settle a 0.1 difference. The onset is where e^{2β₀L}/(2β₀) ≈ C·log(γ₀/2π) with β₀ = 0.3085 and γ₀ = 85.70, and the O(1) constant C (on-line neighbours, arch) moves the predicted onset from L ≈ 0.8 (C = 1) to ≈ 2.6 (C = π). C ≈ 1.8 reproduces 1.71.
+     - The single-pair heuristic (§5, gap in Lemma 5.2) shows why a heuristic cannot settle a 0.1 difference. The onset is where e^{2β₀L}/(2β₀) ≈ C·log(γ₀/2π) with β₀ = 0.3085 and γ₀ = 85.70, and the O(1) constant C (on-line neighbours, arch) moves the predicted onset from L ≈ 0.8 (C = 1) to ≈ 2.6 (C = π). C ≈ 1.8 reproduces 1.71.
      - So 1.61 vs 1.7105 is a constant-level discrepancy, not a contradiction of mechanism. The Galerkin/S75 value should be preferred, provided its PD side at 1.61 ≤ L < 1.71 is N-converged. Given the N caveat in §2, that needs checking: run DH at L = 1.60, 1.65, 1.70 at N = 24/32/40 with LDLᵀ.
      - The explicit vector here (not optimal) only brackets the onset in (1.5, 2.0], which is consistent with both.
 2. *Riesz mean at γ₀* (`dh_riesz2.log`). R_L(γ₀) = Σ_{n<e^{2L}} c(n)n^{−1/2}cos(γ₀ log n)(1 − log n/2L) against the Perron residue −e^{2β₀L}/(2Lβ₀²):
@@ -389,7 +389,7 @@ What was run instead (`dh_torus.py`, NUMERICAL):
 
 ## 8. Next
 
-- **(a) Write Lemma 5.2 rigorously.** The same-real-part clustering step via a Turán power sum.
+- **(a′) Quantitative Lemma 5.2.** Qualitative version DONE (PROVED, Landau). Still open: an explicit c in −λ_min ≥ c·e^{2βL}. This needs a Turán-type lower bound for Σ m_ρ ĝ(γ_ρ)e^{(ρ−½)L} over the zeros near the top real part.
   - Then locate one DH zero with σ > 1 (cheap with mpmath; DH is a combination of two L(s, χ mod 5)).
   - Then extend `dh_sinh.py` to it, to *see* η_DH > 1.
 - **(b) CONJECTURE N (frequency-localised density dictionary).** For δ > 0, H → ∞ and L ≥ L₀(δ), let ν(L, T, H; δ) be the number of eigenvalues below −e^{δL} of Q_L compressed to {f ∈ L²[−L, L] : f̂ essentially supported in [T, T + H]}.
