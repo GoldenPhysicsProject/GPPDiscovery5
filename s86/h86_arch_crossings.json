@@ -1,0 +1,10 @@
+{
+ "o: eigenvalue #0 of A crosses 0 at L": 0.37702455520629885,
+ "e: eigenvalue #1 of A crosses 0 at L": 0.6190181732177734,
+ "prime entries (L)": {
+  "Hankel n=2": 0.34657359027997264,
+  "Hankel n=3": 0.5493061443340549,
+  "Hankel n=4": 0.6931471805599453,
+  "Toeplitz n=2": 0.6931471805599453
+ }
+}
