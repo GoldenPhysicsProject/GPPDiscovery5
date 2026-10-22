@@ -33,7 +33,7 @@ vanishes at the edge. That is why there is a short grace interval.
 | result | not PD | not PD | not PD | not PD | PD (CERT), λ = 6.4389e-153 | PD (CERT), λ = 6.4375e-153 | PD (CERT), λ unchanged to 8 digits | not PSD (CERT) |
 
 The response is linear: dλ_min/dδ ≈ +7e-117. The extrapolated tolerance on the −δ side is |δ| ≈ λ/|dλ/dδ| ≈ **1e-36**
-(NUMERICAL). So **the window form at L = 1.7105 pins the position of the prime 29 to about 36 decimal places.** The pinning is much weaker
+(NUMERICAL). So **the K = 200 even-sector section of the window form at L = 1.7105 pins the position of the prime 29 to about 36 decimal places.** This figure is **K-dependent**. Both λ_min and dλ_min/dδ change with K: λ_min drops from 6.4e-153 at K = 200 to 3.1e-153 at K = 266. The tolerance for the full form (K → ∞) is therefore not established by this run. It is quoted only for the K = 200 section. The pinning is much weaker
 than the 1e-153 margin would suggest, because the soft eigenvector's autocorrelation g_v is tiny near u = log 29, i.e. close to the window edge 2L = 3.421.
 Interpretation (for "where do the integers enter"): at finite L, positivity is not stable under moving a prime. ζ's prime configuration
 sits on the edge of the PSD cone, at the 10^{-36} level for the outermost prime.
