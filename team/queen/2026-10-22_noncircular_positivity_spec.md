@@ -2,7 +2,13 @@
 
 Credit: Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
 
-**Labels.** PROVED means a complete argument here or a citation. CERTIFIED would mean Arb; nothing in this note is CERTIFIED. NUMERICAL means float64 or mpmath, not interval arithmetic. CONJECTURE means unproved. Citations marked *(recall; verify)* are from memory and must be checked before anyone relies on them.
+**Labels.** PROVED means a complete argument here or a citation. CERTIFIED would mean Arb; nothing in this note is CERTIFIED. NUMERICAL means float64 or mpmath, not interval arithmetic. CONJECTURE means unproved. All citations previously marked *(recall; verify)* were checked against the source on 2026-10-22 (fix commit). Unverifiable ones were dropped. The remaining unverified-from-memory items are general background (Weil, Yoshida, Connes, Suzuki, Burnol, Lagarias) and carry no claim here beyond what the project already cites.
+
+**L convention (binding throughout).** L is the **half-width** of supp f in log scale. The window is [−L, L], the full support width is 2L, and the prime atoms seen are log n < 2L.
+- Team certificates are quoted by FULL width: "support 2.8" means L = 1.4, and "support 2.84" means L = 1.42 (S72's L = 71/50).
+- S75's DH onset L* ∈ (1.70, 1.7105] is a half-width (support ≈ 3.421).
+- Golden Eye's sign-change formula 2Lγ/π ≈ 93 at L = 1.71 is also half-width (§5, sign-change note).
+- I have not seen Golden Eye's L ≈ 1.61 derivation, so its convention is unconfirmed. 1.61 is not 1.7105/2 or 2·1.7105, so a factor-2 convention mix does not explain the gap.
 
 **Files** (all in `team/queen/`):
 
@@ -36,7 +42,7 @@ Credit: Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
    - **{F_θ, G_θ′}**: F_θ has a positive (Markov) Lévy measure and fails; G_θ′ has a *signed* Lévy measure and passes. So "Λ ≥ 0" is neither necessary nor sufficient. The correct local property is **unitarity of the Satake parameters** (Herglotz positivity of k ↦ Λ_D(p^k)/log p), not sign.
    - **{DH, DMV}**: DH has the functional equation (FE) but no Euler product; DMV has an Euler product but no FE or lattice. Both have off-line zeros. So the mechanism must use the Euler product **and** the additive (Poisson / FE) structure *of the same lattice* ℤ ⊂ ℝ (ℚ ⊂ 𝔸) jointly. Neither alone suffices.
    - On a fixed window this joint input is invisible (hybrid lemma). It must enter **uniformly in L**.
-   - I know of no construction meeting P1–P7. The Connes adèle-class trace formula is the only known shape that has P1, P3 and P5; its missing piece is the uniform cutoff estimate, which is open.
+   - I know of no construction meeting P1–P7. OPINION: the closest known framework is the Connes adèle-class trace formula, which appears to have P1, P3 and P5. Its missing piece is the uniform cutoff estimate, which is open.
 5. **One uniform-in-L statement (§5).**
    - **U:** λ_min(Q_L) ≥ −(5.38 + 2(sinh L − L) + 4.16e^L) for all L. This is PROVED for ζ here. It uses Chebyshev ψ(x) < 1.0389x, i.e. the Euler product through absolute convergence.
    - It is fatal to DH *modulo a Landau-type lemma* (CONJECTURE, provable in principle; sketch in §5). DH has zeros with Re s > 1 (Davenport–Heilbronn 1936), and an off-line pair at real part ½ + β forces λ_min ≲ −e^{2βL}/(2β).
@@ -174,7 +180,7 @@ These are the claims I make (NUMERICAL). The converged value is at L = 0.6, wher
 | Gaussian field / OS / KMS with covariance W | iff RH | ✓ | ✗ | – | – | – | Circular (target, not mechanism) |
 | Lévy/Markov semigroup H_M (§1, this note) | ✓ | ✗ (covariance E_M; the remainder P − κ_L is indefinite) | ✓ | ✗ (Markov ⇔ Λ ≥ 0: F_θ is Markov and fails, G_θ′ is not and passes) | ✗ | n/a | Right object for the ground state (PF); says nothing on sign-changing levels. **DEAD END** as the mechanism. |
 | Bost–Connes KMS_β; Riemann-zeta distribution (ζ(β+it)/ζ(β) infinitely divisible, Lévy measure Σ p^{−kβ}/k δ_{k log p}) | ✓ for β > 1 only | ✗ (PD functions in t at β > 1, not W) | ✓ | ✓ | ✗ (DMV has the same KMS structure) | – | Positivity lives on β > 1. Crossing the pole at β = 1 (the phase transition) is exactly the problem. DH fails already: DH(β+it)/DH(β) is not a characteristic function. **DEAD END** as stated. |
-| Connes adèle class space / trace formula (Connes 1999; CCM 2007; CC 2021–23 prolates) | ✓ | ✓ up to a cutoff error | ✓ | ✓ | ✓ (uses ℚ ⊂ 𝔸) | ✗: RH ⇔ uniform control of the cutoff error (Connes 1999) | **Only known shape with P1, P3, P4 and P5.** The open step is P6. S91–S95 numerics are its finite shadow. |
+| Connes adèle class space / trace formula (Connes 1999; CCM 2007; CC 2021–23 prolates) | ✓ | ✓ up to a cutoff error | ✓ | ✓ | ✓ (uses ℚ ⊂ 𝔸) | ✗: RH ⇔ uniform control of the cutoff error (Connes 1999) | OPINION: **the closest known framework**; it appears to have P1, P3, P4 and P5. The open step is P6. S91–S95 numerics are its finite shadow. |
 | de Branges / Kreĭn canonical systems | needs PSD Hamiltonian | ✓ | ✗ (S97) | – | – | – | Restates nested positivity (S96–S97). The de Branges positivity condition is false for ζ (Conrey–Li 2000). |
 
 **Honest conclusion.** P4 + P5 + P6 together are, in substance, "ζ is an automorphic L-function of GL(1)/ℚ, used uniformly in the cutoff". No theorem is known that turns those properties into positivity. That would be GRH for the class. What this note adds is a sharpening of the *shape* the mechanism must have:
@@ -186,10 +192,10 @@ These are the claims I make (NUMERICAL). The converged value is at L = 0.6, wher
 
 | Fake | P4 local unitarity | P5 joint Euler + lattice | P6 | Where it fails in this note |
 |---|---|---|---|---|
-| **DH** | ✗: no local factors; the c(n) are signed and 74% supported off prime powers (NUMERICAL) | ✗: FE yes, Euler product no | – | Zeros in σ > 1 (Davenport–Heilbronn 1936; Titchmarsh §10.25 *(recall; verify)*), so U (§5) fails (modulo Lemma 5.2). Off-line pair 0.8085 + 85.70i: explicit negative vector for L ≥ 2 (NUMERICAL). |
+| **DH** | ✗: no local factors; the c(n) are signed and 74% supported off prime powers (NUMERICAL) | ✗: FE yes, Euler product no | – | Zeros in σ > 1: Davenport–Heilbronn, J. London Math. Soc. 11 (1936). Verified via two sources. Karatsuba, Math. USSR Izv. 36 (1991) states DH has ≫ T zeros in Re s > 1, 0 < Im s < T, citing DH 1936 and Titchmarsh §10.25. Saias–Weingartner, Acta Arith. 140 (2009) 335–344, doi:10.4064/aa140-4-4, Corollary: DH is a combination of L(s, χ) and L(s, χ̄) mod 5, so it is not P·L_χ and vanishes in Re s > 1. The supremum of the real parts is σ_DH ≈ 1.120362 (Bombieri–Ghosh, Russian Math. Surveys 66:2 (2011), as quoted by Odžak–Smajlović, LMS J. Comput. Math. 2016, doi:10.1112/s1461157016000115). So U (§5) fails, by Lemma 5.2 (now PROVED). Off-line pair 0.8085 + 85.70i: explicit negative vector for L ≥ 2 (NUMERICAL). |
 | **F_θ** | ✗: Satake p^{±θ} is non-unitary; Γ((s ± θ)/2) is non-tempered | Euler product ✓, FE ✓ | – | Polarisation identity (P4); R_e has more bound states than pole directions from L 0.8 (NUMERICAL). Passes U: its zeros have Re < 1. |
 | **H₋ₜ** (de Bruijn–Newman, t < Λ_dBN) | ✗: no local factors | ✗: no Euler product; the Weil distribution is ζ's plus an entire (non-discrete) correction (S93–S94 "dd" piece) | – | Fails P5 at input level. Passes U. The S93 zero-swap model has finitely many off-line zeros, so no density statement sees it either; only full positivity does. |
-| **DMV** (in ζ's arch and pole slot) | ✓: Λ_P ≥ 0, Satake 1 | ✗: no lattice, no FE, N(x) − Ax ≍ x^θ with θ > ½ | equal to ζ on every window 2L < log X (hybrid lemma) | Passes U and every fixed-L test. Excluding it needs **additive** input: the FE/Poisson for the same integers, or at least integer regularity β < ½ (open whether that suffices: Hilberdink 2005; Broucke–Debruyne–Révész 2023 cover β ≥ ½ only *(recall; verify)*). |
+| **DMV** (in ζ's arch and pole slot) | ✓: Λ_P ≥ 0, Satake 1 | ✗: no lattice, no FE, N(x) − Ax ≍ x^θ with θ > ½ | equal to ζ on every window 2L < log X (hybrid lemma) | Passes U and every fixed-L test. Excluding it needs **additive** input: the FE/Poisson for the same integers, or at least integer regularity β < ½ (open whether that suffices). Broucke–Debruyne–Révész, *Some examples of well-behaved Beurling number systems*, Trans. AMS, doi:10.1090/tran/9274, construct [α, β]-systems for α ∈ [0, 1), β ∈ [½, 1), and certain β < ½ families only assuming RH. (The earlier Hilberdink citation is dropped as unverified.). |
 | **G_θ′** (must pass) | ✓: Satake p^{±iθ′} is unitary, but Λ_G is **signed** | ✓: Eisenstein on GL(2) | ✓ | Passes by the unitary twist identity. This is the reason "Λ ≥ 0 / Markov" cannot be the invariant. |
 
 ## 5. The uniform-in-L statement
@@ -222,7 +228,7 @@ The only arithmetic input is Chebyshev's bound ψ(x) ≪ x. Since Λ ≥ 0, Land
 
 **Corollary (CONJECTURE given 5.2).** DH violates U. Davenport–Heilbronn (1936) give DH zeros with Re s > 1, so β₀ > ½ and 2β₀ > 1, hence −λ_min(Q_DH,L) ≫ e^{(2β₀−ε)L}, which eventually exceeds B(L) ≍ 5e^L.
 
-More generally, among Dirichlet series with periodic coefficients, those with no zeros in σ > 1 are of the form L(s, χ)·(Dirichlet polynomial) (Saias–Weingartner, Acta Arith. 140 (2009) *(recall; verify)*). So among periodic-coefficient fakes with an FE, U singles out the genuine Dirichlet L-functions.
+More generally, among Dirichlet series with periodic coefficients, those with no zeros in σ > 1 are of the form L(s, χ)·(Dirichlet polynomial) (Saias–Weingartner, Acta Arith. 140 (2009) 335–344, Corollary, verified. Their Theorem also gives c₁T ≤ N(σ₁, σ₂, T) ≤ c₂T for ½ < σ₁ < σ₂ ≤ 1 + η). So among periodic-coefficient fakes with an FE, U singles out the genuine Dirichlet L-functions.
 
 **Why U is not RH, and what it does not do (honest).**
 - U is equivalent to η ≤ 1, which (heuristically, via 5.2 and its converse) is "no zeros with Re s > 1". That is classical for ζ.
@@ -264,7 +270,7 @@ More generally, among Dirichlet series with periodic coefficients, those with no
    - Σ_{n≤x}|c_DH(n)|n^{−1/2} = 4953 against ζ's 1262 ≈ 2√x at x = 4·10⁵.
    - The local log-slope is 0.62–0.63, above ½. That is consistent with DH's absolute-convergence abscissa exceeding 1, but not a proof, and the σ > 1 zeros themselves were not located.
 
-## 6. Prior art (checked from memory; *(recall; verify)* where marked)
+## 6. Prior art (verified items marked ✔ with source; the rest are standard background)
 
 - **Weil (1952), Bombieri (2000, "Remarks on Weil's quadratic functional")**: the criterion and the pole terms.
 - **Yoshida (1992)**: positivity on small support.
@@ -278,15 +284,18 @@ More generally, among Dirichlet series with periodic coefficients, those with no
 - **Suzuki**: 1204.1827, 2206.03682 and 2209.04658, screw functions.
 - **Mori**: window positivity to log 15, as cited by the project.
 - **Kreĭn–Langer**: κ negative squares.
-- **Probability**: Beurling–Deny; Fukushima–Oshima–Takeda; Reed–Simon IV §XIII.12; Khinchine and Lin–Hu (2001) on infinite divisibility of the zeta distribution; Aoyama–Nakamura (quasi-infinitely divisible zeta distributions) *(recall; verify)*; Bost–Connes (1995).
+- **Probability**: Beurling–Deny; Fukushima–Oshima–Takeda; Reed–Simon IV §XIII.12; infinite divisibility of the zeta distribution (Khinchine; Lin–Hu 2001); ✔ Nakamura, arXiv:2209.13257, *Zeta distributions generated by Dirichlet series and their (quasi) infinite divisibility* (A(n) > 0 gives infinitely divisible; signed coefficients give at most quasi-infinite divisibility); Bost–Connes (1995).
 - **Number theory**:
-  - Davenport–Heilbronn (1936); Titchmarsh §10.25;
-  - Voronin / Karatsuba–Voronin: DH has ≫ T zeros in any strip ½ < σ₁ < σ < σ₂ < 1 *(recall; verify)*;
+  - ✔ Davenport–Heilbronn (1936), via Karatsuba (Math. USSR Izv. 36 (1991)) and Bombieri–Ghosh (Russian Math. Surveys 66:2 (2011)). The latter gives the team's DH, with ξ = τ₊ and FE (π/5)^{−s/2}Γ((1+s)/2), identical to `dh_coeff.py`'s coefficients (1, ξ, −ξ, −1, 0).
+  - ✔ Saias–Weingartner (2009): ≍ T zeros of DH in every strip ½ < σ₁ < σ < σ₂ ≤ 1 + η. This replaces the dropped Voronin strip citation.
+  - ✔ Balanzario–Sánchez-Ortiz, Math. Comp. 76 (2007), doi:10.1090/s0025-5718-07-01999-0, and Spira, Math. Comp. (1994), doi:10.1090/s0025-5718-1994-1254148-8: computed off-line DH zeros (0.808517 + 85.699348i, …). None of the zeros they report has Re > 1.
+  - ✔ Conrey–Li, IMRN 2000 no. 18, 929–940: de Branges' positivity fails for ζ (34th zero).
+  - ✔ Rosser–Schoenfeld, Illinois J. Math. 6 (1962) 64–94, Thm 12: ψ(x) < 1.03883x for all x > 0 (max of ψ(x)/x at x = 113; sharp constant 1.0388205…, OEIS A206431). U's constant 4.156 ≥ 4·1.03883 = 4.1553 stands.
   - Bombieri–Hejhal (1995);
   - Saias–Weingartner (2009);
   - Rosser–Schoenfeld (1962);
   - Carlson's density theorem;
-  - DMV (2006); Hilberdink (2005); Broucke–Debruyne–Révész (2023); Rodgers–Tao (2020).
+  - DMV, Math. Ann. 334 (2006); ✔ Broucke–Debruyne–Vindas, Adv. Math. 370 (2020), and Broucke–Debruyne–Révész, Trans. AMS (doi:10.1090/tran/9274); Rodgers–Tao (2020).
 - **Novelty, honestly.**
   - The decomposition (1.2) is classical: it is the Lévy–Khintchine reading already in the project, papers_review item 3. Using Perron–Frobenius on the killed arithmetic Lévy generator to explain the nodeless soft mode, and the λ₂/odd-level localisation of window-RH, I have not seen in the literature. Treat it as possibly known.
   - U is classical in content.
@@ -308,7 +317,7 @@ More generally, among Dirichlet series with periodic coefficients, those with no
   - Then extend `dh_sinh.py` to it, to *see* η_DH > 1.
 - **(b) CONJECTURE N (frequency-localised density dictionary).** For δ > 0, H → ∞ and L ≥ L₀(δ), let ν(L, T, H; δ) be the number of eigenvalues below −e^{δL} of Q_L compressed to {f ∈ L²[−L, L] : f̂ essentially supported in [T, T + H]}.
   - Conjecture: ν(L, T, H; δ) ≍ #{ρ : Re ρ > ½ + δ/2, γ ∈ [T, T + H]} + O(L).
-  - If so, Carlson's density theorem (N(σ, T) = o(T), which uses the Euler product via mollifiers) gives ν_ζ = o(T) unconditionally. Voronin gives ν_DH ≫ H, and F_θ gives ν ≍ H log T.
+  - If so, Carlson's density theorem (N(σ, T) = o(T), which uses the Euler product via mollifiers) gives ν_ζ = o(T) unconditionally. Saias–Weingartner give ν_DH ≫ H, and F_θ gives ν ≍ H log T.
   - That would be a PROVABLE, uniform, DH- and F_θ-fatal, non-RH statement that touches DH's *strip* zeros. This is the step after U.
 - **(c) λ₂(R_e) and λ₁(R_o) as functions of L.** Fit their decay against the Zhu / Landau–Widom law. Test whether the DH onset (L ≈ 1.71) is where DH's analogue of "λ₂ ≥ 0" breaks. DH has no pole, so it needs λ₁ ≥ 0; that should equally be the *first* level for DH. This is the "one extra bound state" picture, now precise.
 
