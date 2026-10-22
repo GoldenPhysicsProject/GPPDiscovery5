@@ -6,7 +6,7 @@ Adapted (copied, not modified in place) from GPPDiscovery5/s82os/os_hankel.py (G
 import math, json, sys
 import numpy as np
 from numpy.polynomial import legendre as leg
-sys.path.insert(0, '/workspace/GPPDiscovery5/s82os')
+import os; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', 's82os'))
 from os_hankel import mang
 
 def build(L, N, g, poles, M=96, S=160):

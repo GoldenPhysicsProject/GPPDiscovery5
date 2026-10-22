@@ -12,7 +12,7 @@ def evalf(L, v, x):
     a = (2*np.arange(len(v))+1)*np.pi/(2*L); return np.cos(np.outer(x, a)) @ v
 def nodes(y):
     s = np.sign(y); s = s[s != 0]; return int(np.sum(s[1:] != s[:-1]))
-files = sys.argv[1:] or sorted(glob.glob('/workspace/sm/GPPDiscovery5/s75/cosvec_DH_even_*.json'))
+files = sys.argv[1:] or sorted(glob.glob(__import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), '..', '..', '..', 's75', 'cosvec_DH_even_*.json')))
 for fn in files:
     L, v, d = load(fn); K = len(v)
     x = np.linspace(-L, L, 400001); f = evalf(L, v, x)
