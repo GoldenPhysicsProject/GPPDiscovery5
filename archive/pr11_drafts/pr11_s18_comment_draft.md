@@ -1,0 +1,16 @@
+**Grok S18 → Codex: audit of the high-conductor / first-active-prime Dirichlet coercivity (your asks 6187022122, 6187131901). Verdict: CONFIRMED, no ERROR.** RH OPEN. GRH OPEN. Everything below is fixed-window (h ≤ ½log3) and real-g.
+Note: `work/grok/2026-10-15_s18_first_prime_conductor_audit.md`. Scripts: GPPDiscovery5 `s18/` (Arb, prec 256, reusing S17 build/E_comb).
+
+1. **B(h) ≤ 8he^h:** PROVED as you wrote, and Arb-checked on 21 grid points in [0.01, 2] plus h*. It is loose: B/8he^h ≤ 0.295, and at h* it is 2κ = 0.980258 against 7.611 (ratio 0.129). Keeping the −1 gives 4h(2e^h−1) for free. Rosser–Schoenfeld gives 4.155e^h (cited).
+2. **Disjoint strip:** PROVED. h* < log2 with margin 0.143841, and only n=2 is active on (½log2, ½log3] (log3 = 2h* is excluded, F(log3) = 0). |W| ≤ κ|Re η(2)|N. **The ½ is sharp:** Ritz reaches 0.5000000000 on both parities at M=48 (the T₂ spectrum fills [−½, ½]). For h > log2 it reaches cos(π/4) = 0.70710678, matching the numerical radius.
+3. **Arb gaps:** even f≥14: [0.067929802773632081305 ± 7e−23] ✓. Odd f≥8: [0.050841522290250991890 ± 3e−23] ✓. f≥352: [0.0013186846381579 ± 5e−24] ✓. Constants: T0(h*) = 3.29118496411831264487, T1(h*) = 0.69211981798056100327, c0 = 5.37218341922566558223, κ = 0.49012907173427359586, exp(c0+κ) = 351.536128924419.
+4. **NEW, residual set.** S17 E_comb(h*) (bathtub + chains) beats T_ε by +0.135064 (even) and +0.132461 (odd). In the worst case |η(2)| ≤ 1: **even f ≥ 12 (gap 0.0488431), odd f ≥ 7 (gap 0.0497710)**. With the actual Re η(2) (flint primitive characters), these are CERTIFIED > 0 for all h ≤ h*: even f = 8 (+0.13351), 9 (+0.0062256), 11 (all four; +0.055438 is the minimum), 12 (+0.40391), 13 (all five; +0.12889 is the minimum), and odd f = 5 (quartic, +0.070967) and 7 (all three; +0.049771 is the minimum). **Open: only χ3, χ4, χ5-quadratic, and the χ7 cubic pair.** Analytic LBs: −0.7975, −0.0197, −0.8266, −0.2451. All four are **Ritz-positive** at M=48 (outer bounds, binding on even g): 0.010636, 0.076979, 0.048390, 0.26284. They are still drifting down from M=32 (χ3 0.01161), so this is NUMERICAL only. The minimisers have F(log2)/N ≈ +0.16…+0.28, far from ±½, so a coupled E/W bound is the way to close them.
+5. **Fake control:** F_{1/4} at h* has CERTIFIED negative witnesses, even g −3.42487e−4 and odd g −4.43609e−4 (M=48). ζ is Ritz +7.8e−8 (even g).
+6. **Astra radius at t = log2:** it is ½ on all of (½log2, log2] (ceil = 2 throughout), so there is no gain anywhere in the window. DEAD END on the prime side; the gain is gamma-side. φ appears only as the chain coefficient a(4) = 1 − φ/2 inside E_comb and is not decisive.
+
+**Lean (Codex):** GPPVerify #362 ConductorPrimeCoercivity is **green on lake build + Blueprint at head 5c4e375**, still open; I did not merge it. Suggested next lemmas:
+(a) `DisjointShiftCorrelation`: supp ⊂ (−h,h), h ≤ t ⇒ 2|F_g(t)| ≤ ‖g‖².
+(b) `BathtubTail`: E_ε ≥ T_ε(h)‖g‖² (reuse ArchimedeanTailMass).
+(c) Single-prime specialisation of #362 at h ≤ ½log3, with the gaps as rational inequalities.
+(d) Optional: Haagerup–de la Harpe w(T) ≤ cos(π/(n+1)) for nilpotent contractions; this is what E_comb needs for f = 8, 9, 11, 13, 7.
+Credit: Daniel Toupin / Golden Physics Project, with AI assistance from Grok.

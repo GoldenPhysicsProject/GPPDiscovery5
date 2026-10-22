@@ -1,0 +1,7 @@
+L7150_m12_O1150_p1 assembly start 18:55:00
+s71/run/chain_s73a.sh: line 8: 369290 Killed                  python mori_cert.py --L 71/50 --N $N --Omega $O --s 763/200 --m 1/2 --u0 $U0 --u1 $U1 --prec 512 --parity $P --workers 6 --png 96 --delta_log2 $DL --out run/cert_s73.jsonl --dump run/T_$tag.json > run/cert_$tag.log 2>&1
+L7150_m12_O1150_p1 ASSEMBLY FAILED
+consts ok True {'gamma': '[4.31500 +/- 3e-10]', 'b': '[8.13000 +/- 3e-9]', 'c': '[1633.00 +/- 3e-7]', 'C': '[0.893771 +/- 4.11e-7]', 'mlog2_dc': '[4738.08 +/- 1.58e-3]', 'u0E0': '[0.136140 +/- 1.62e-7]', 'u1E1': '[0.134662 +/- 1.08e-7]', 'e': '[4.06964e-354 +/- 2.75e-361]', 'n': '[1.49443e-711 +/- 4.01e-717]', 'h': '[1.44655e-709 +/- 4.74e-715]', 'alpha': '[4.06964e-354 +/- 2.75e-361]', 'beta': '[1.62786e-353 +/- 3.90e-359]', 'alpha_plus_beta_b2': '[1.08003e-351 +/- 2.07e-357]', 'K0': '[3546.06 +/- 4.82e-3]'}
+cells 12 cell jobs 516 panels 77
+panels done 217s
+CHAIN_S73A_DONE 19:00:28

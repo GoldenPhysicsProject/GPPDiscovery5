@@ -1,0 +1,21 @@
+{
+ "dump": "run/T_L7150_m12_N1272_p1.json",
+ "K": 636,
+ "prec": 640,
+ "delta_str": 6.36e-156,
+ "lam_est": -1.0,
+ "tries": [
+  {
+   "fac": 1e-40,
+   "l0": -1e-40,
+   "chol": "fail",
+   "pivot": 496
+  },
+  {
+   "fac": 1e-50,
+   "l0": -1e-50,
+   "chol": "fail",
+   "pivot": 108
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "dump": "run/s66check/L7150_m12_N1272_p1.json",
+ "K": 636,
+ "prec": 640,
+ "delta_str": 6.36e-156,
+ "lam_est": 2.85828e-77,
+ "tries": [
+  {
+   "fac": 0.999,
+   "l0": 2.855e-77,
+   "chol": "fail",
+   "pivot": 79
+  }
+ ]
+}

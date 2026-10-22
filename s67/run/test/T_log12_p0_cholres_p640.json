@@ -1,0 +1,15 @@
+{
+ "dump": "run/test/T_log12_p0.json",
+ "K": 416,
+ "prec": 640,
+ "delta_str": 4.1600000000000003e-156,
+ "lam_est": 1.20926402186e-54,
+ "tries": [
+  {
+   "fac": 1.01,
+   "l0": 1.221e-54,
+   "chol": "fail",
+   "pivot": 414
+  }
+ ]
+}

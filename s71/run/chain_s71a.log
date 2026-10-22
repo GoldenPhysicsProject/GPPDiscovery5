@@ -9,3 +9,16 @@ L7150_m12_O1000_p0 lam_est(nearest-zero, NOT lambda_min if indefinite) 1.0721462
 DONE 688.5271852016449
 L7150_m12_O1000_p0 done 17:27:49
 L7150_m12_O1000_p1 assembly start 17:27:49
+L7150_m12_O1000_p1 assembled sha256 358aabcb0503796ef739b8e57a62d9355bf6d36a973f9a541c2999b3e4614bf8 18:37:41
+L7150_m12_O1000_p1 PSD test (T - 1e-250 I):
+ fac=1.0 l0=1.0000e-250: approx Cholesky FAILED at pivot 1174 (A - l0 I numerically indefinite) [36s]
+L7150_m12_O1000_p1 lam_est(nearest-zero, NOT lambda_min if indefinite) -4.12156186199e-78
+Terminated
+l0=-1e-77.3853 ok=False piv=1187 [1040s]
+l0=-1e-77.3792 ok=True piv=None [1079s]
+l0=-1e-77.3822 ok=True piv=None [1117s]
+l0=-1e-77.3837 ok=True piv=None [1155s]
+l0=-1e-77.3845 ok=True piv=None [1217s]
+l0=-1e-77.3849 ok=True piv=None [1255s]
+L7150_m12_O1000_p1 done 19:00:48
+CHAIN_S71A_DONE 19:00:48

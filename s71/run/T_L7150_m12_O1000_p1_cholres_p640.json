@@ -1,0 +1,15 @@
+{
+ "dump": "run/T_L7150_m12_O1000_p1.json",
+ "K": 1188,
+ "prec": 640,
+ "delta_str": 1.188e-155,
+ "lam_est": 1e-250,
+ "tries": [
+  {
+   "fac": 1.0,
+   "l0": 1e-250,
+   "chol": "fail",
+   "pivot": 1174
+  }
+ ]
+}

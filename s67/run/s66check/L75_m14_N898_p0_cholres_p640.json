@@ -1,0 +1,15 @@
+{
+ "dump": "run/s66check/L75_m14_N898_p0.json",
+ "K": 449,
+ "prec": 640,
+ "delta_str": 4.4900000000000005e-156,
+ "lam_est": 9.45608e-78,
+ "tries": [
+  {
+   "fac": 0.999,
+   "l0": 9.447e-78,
+   "chol": "fail",
+   "pivot": 48
+  }
+ ]
+}

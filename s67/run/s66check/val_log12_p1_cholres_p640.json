@@ -1,0 +1,21 @@
+{
+ "dump": "run/s66check/val_log12_p1.json",
+ "K": 416,
+ "prec": 640,
+ "delta_str": 4.16e-137,
+ "lam_est": 1.58671301389e-50,
+ "tries": [
+  {
+   "fac": 0.999,
+   "l0": 1.585e-50,
+   "chol": "fail",
+   "pivot": 415
+  },
+  {
+   "fac": 1.01,
+   "l0": 1.603e-50,
+   "chol": "fail",
+   "pivot": 412
+  }
+ ]
+}

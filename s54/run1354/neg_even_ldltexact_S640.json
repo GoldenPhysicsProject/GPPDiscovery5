@@ -1,0 +1,14 @@
+{
+ "dump": "atil_L1354_T800_K884_even.json",
+ "sha256": "0869ad0f2e6bec50651a8abfae376249c8f2fc578440bcb4984e4cad263d0c7a",
+ "K": 884,
+ "S": 640,
+ "pert_F": 3.532036375578595e-113,
+ "tries": [
+  {
+   "l0": "1.2805e-70",
+   "ldlt": "fail",
+   "pivot": 56
+  }
+ ]
+}

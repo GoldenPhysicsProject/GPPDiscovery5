@@ -132,6 +132,7 @@ def main():
     G['shifts'] = sh
     cst, ok = consts(L, Om, s, m, int(a.u0), int(a.u1), N)
     print('consts ok', ok, {k: v.str(6) for k, v in cst.items()}, flush=True)
+    assert a.delta_log2 > 0 and bool(arb(a.delta_log2) > cst['mlog2_dc']), 'need 0 < delta = 2^-k <= d(c) (S69 fix: checked before assembly)'
     # cells on [0, L]
     #bps = sorted(set([0.0, float(L.mid())] + [abs(float(ell.mid())) - float(L.mid()) if float(ell.mid()) > 0 else None for (ell, _) in sh if float(ell.mid()) > 0]) - {None})
     cand = []
