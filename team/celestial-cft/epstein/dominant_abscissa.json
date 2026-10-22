@@ -1,0 +1,158 @@
+[
+ {
+  "form": [
+   1,
+   0,
+   1
+  ],
+  "m": 1,
+  "r_m": 4,
+  "sigma_dom_lo": 1.6017,
+  "sigma_dom_up": 1.6023,
+  "certified_up": true,
+  "certified_lo": true
+ },
+ {
+  "form": [
+   1,
+   0,
+   5
+  ],
+  "m": 1,
+  "r_m": 2,
+  "sigma_dom_lo": 1.4509,
+  "sigma_dom_up": 1.452,
+  "certified_up": true,
+  "certified_lo": true
+ },
+ {
+  "form": [
+   2,
+   2,
+   3
+  ],
+  "m": 2,
+  "r_m": 2,
+  "sigma_dom_lo": 2.4101,
+  "sigma_dom_up": 2.4102,
+  "certified_up": true,
+  "certified_lo": true
+ },
+ {
+  "form": [
+   1,
+   1,
+   6
+  ],
+  "m": 1,
+  "r_m": 2,
+  "sigma_dom_lo": 1.4203,
+  "sigma_dom_up": 1.4219,
+  "certified_up": true,
+  "certified_lo": true
+ },
+ {
+  "form": [
+   2,
+   1,
+   3
+  ],
+  "m": 2,
+  "r_m": 2,
+  "sigma_dom_lo": 2.1554,
+  "sigma_dom_up": 2.1555,
+  "certified_up": true,
+  "certified_lo": true
+ },
+ {
+  "form": [
+   1,
+   0,
+   14
+  ],
+  "m": 1,
+  "r_m": 2,
+  "sigma_dom_lo": 1.2809,
+  "sigma_dom_up": 1.2875,
+  "certified_up": true,
+  "certified_lo": true
+ },
+ {
+  "form": [
+   2,
+   0,
+   7
+  ],
+  "m": 2,
+  "r_m": 2,
+  "sigma_dom_lo": 1.5481,
+  "sigma_dom_up": 1.5487,
+  "certified_up": true,
+  "certified_lo": true
+ },
+ {
+  "form": [
+   3,
+   2,
+   5
+  ],
+  "m": 3,
+  "r_m": 2,
+  "sigma_dom_lo": 2.0434,
+  "sigma_dom_up": 2.0435,
+  "certified_up": true,
+  "certified_lo": true
+ },
+ {
+  "form": [
+   1,
+   0,
+   21
+  ],
+  "m": 1,
+  "r_m": 2,
+  "sigma_dom_lo": 1.2362,
+  "sigma_dom_up": 1.2463,
+  "certified_up": true,
+  "certified_lo": true
+ },
+ {
+  "form": [
+   3,
+   0,
+   7
+  ],
+  "m": 3,
+  "r_m": 2,
+  "sigma_dom_lo": 1.7177,
+  "sigma_dom_up": 1.7183,
+  "certified_up": true,
+  "certified_lo": true
+ },
+ {
+  "form": [
+   2,
+   2,
+   11
+  ],
+  "m": 2,
+  "r_m": 2,
+  "sigma_dom_lo": 1.4394,
+  "sigma_dom_up": 1.441,
+  "certified_up": true,
+  "certified_lo": true
+ },
+ {
+  "form": [
+   5,
+   4,
+   5
+  ],
+  "m": 5,
+  "r_m": 4,
+  "sigma_dom_lo": 1.7462,
+  "sigma_dom_up": 1.7468,
+  "certified_up": true,
+  "certified_lo": true
+ }
+]
