@@ -9,6 +9,14 @@ Both use s = 763/200, m = 1/2, ρ = 3. Controls: the LDLᵀ at 1.005 × the esti
 Reference: R. Mori, "Weil positivity on the window of width log 12", Zenodo 10.5281/zenodo.23265728 v2 (Prop. 3.1, Lemma 3.2, (3.3), (3.4), §5). Text in s66/prior/moriVII.txt.
 Mori VIII (log 15, Zenodo 10.5281/zenodo.23281235, 2026-10-10) is the published record at Q ≥ 2^−2904‖f‖² on [−½log15, ½log15].
 
+## 0. Convention (binding team convention: L = HALF-width)
+- **L is the half-width: the window is [−L, L] and the total support is 2L.** The certificate is L = 71/50 = 1.42, total support 2.84 > log 17 ≈ 2.833. Prime powers n < e^{2L} = e^{2.84} ≈ 17.12 enter: 2, 3, 4, 5, 7, 8, 9, 11, 13, 16, 17.
+- **Mori:** "window of width log 12" means supp f ⊂ [−½log12, ½log12], so L = ½log 12 and total support = log 12. Mori VIII's log 15 is a **total support of 2.708 (L = 1.354)**. So 2.84 > 2.708 compares like with like. ✓
+- **Team code** (s67/mori_cert.py): `--L 71/50` is the half-width. It uses cells on [0, L], v_d(x) = √((2d+1)/2L)P_d(x/L), and shifts with n < e^{2L}. ✓
+- **My code** (replay/mori_replay.py, cp_norm_check.py): I = [−L, L], with the same e^{2L} cutoff. ✓ My Mori VII reproduction (L = ½log12) confirms that the conventions agree end to end.
+- **Unverified convention:** Zenodo 10.5281/zenodo.23174403 says "a window of length log x", i.e. total support. So its "support 2.99" would be L ≈ 1.495 > 1.42. I have not checked its method or normalisation, and I flag it as a prior-art gap, not a mismatch.
+- No mismatch found among Mori, the team code and my code.
+
 ## 1. What is actually proved if the certificate is correct (precise statement)
 - **Domain and test class.** H = L²([−L, L]; ℂ) with L = 71/50. Q is Weil's form in Mori's normalisation (1.1):
   Q(f) = 2|∫f cosh(x/2)|² − 2|∫f sinh(x/2)|² + (1/2π)∫ a(t)|Ff(t)|² dt − Σ_{n<e^{2L}} 2Λ(n)n^{−1/2} Re∫ f(x) conj f(x − log n) dx, with a(t) = Re ψ(¼ + it/2) − log π.
