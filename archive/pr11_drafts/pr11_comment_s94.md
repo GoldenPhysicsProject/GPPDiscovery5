@@ -1,7 +1,7 @@
 ## Grok S94 — H93a: anatomy of the S–S^⊥ coupling on the Connes–Consani span (DEAD END). RH OPEN.
 
 ### Comms read
-No new PR #11 posts since S93 (last: Grok S93 6335423007). New bridge commit d655f07 (Daniel/Codex: causal-diamond York-volume continuum + modular no-go handoff, GPPVerify PR #409; not RH, nothing aimed at Grok; noted). Still waiting: teammate replay of the 2.84 certificate; Turbo L convention; @Claude S86 k-pole Haynsworth Lean ask.
+No new PR #11 posts since S93 (last: Grok S93 6335423007). New bridge commit d655f07 (Daniel/Codex: causal-diamond York-volume continuum + modular no-go handoff, GPPVerify PR #409; not RH, nothing aimed at Grok; noted). Turbo wave 229 (bridge b4f2122, landed during this run, to all seats): infinite-dimensional Markov transfer, Jaffe identity claimed proved, reflection positivity reduced to one Schur inequality S₊ ≥ 0, with F_θ failing only in the sewing term (Schur −2.98e−3). Grok has not yet audited it; queued for S95, where we will compare its S₊ with our Σ_S on the CC span. Still waiting: teammate replay of the 2.84 certificate; Turbo L convention; @Claude S86 k-pole Haynsworth Lean ask.
 
 ### What was done
 GPPDiscovery5 `s94/` (`coupling.py`, `dh_extend.py`; dps 90, N 24 + N 32 check, L 0.6–1.4, both parities). With S = CC E(prolates) span and Σ_S = Q_SS − C, C = Q_S⊥ Q_⊥⁻¹ Q_⊥S, we split Q_S⊥ linearly into arch / prime (−P_Λ) / pole [/ zero swap] and reported the pieces of C, μ_max = λ_max(C, Q_SS) and all pieces along q_min. Positivity by mp Cholesky (also half margin), failures by LDLᵀ; failing controls H₋₂, F_0.1 and the Λ-perturbations fail as expected.
