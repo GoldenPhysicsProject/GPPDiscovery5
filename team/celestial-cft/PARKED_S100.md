@@ -30,7 +30,7 @@ No process is running. Every in-flight run below was killed at 07:50 EDT. Nothin
 2. **x²+5y² zero with Re s > 1** (Θ > 1 anchor).
    - Found **ρ = 1.0110493340435507 + 1193.9464045288462i**: a Newton-refined zero of the exact 1 + ζL₋₂₀/(L₋₄L₅) (Arb Hurwitz L-values). NUMERICAL.
    - The certificate was started and interrupted. Not certified yet.
-   - Earlier float winding found no zero with Re s > 1.01 for t ≤ 1000. That run's output was not committed, and it does not cover 1 < Re s ≤ 1.01.
+   - Earlier float winding found no zero with Re s > 1.01 for t ≤ 1000. That run is saved as `search_re_gt1_s1.01_T1000.json` and `search_re_gt1.log`. It does not cover 1 < Re s ≤ 1.01.
    - So "first" is NOT established. The hunt (`hunt_re_gt1.py 1.03 0 300000`) was killed partway, with only this one hit logged.
    - Bracket if it certifies: 1.0110 ≤ Θ(x²+5y²) ≤ 1.452. The upper bound is CERTIFIED (DOMINANT_ABSCISSA.md).
    - Bohr heuristic: σ(Q) ≈ 1.1–1.15 (the phase budget 2 atan 2^{−σ} + 4 Σ_{p≡3,7 (20)} atan p^{−σ} = π). HEURISTIC.
