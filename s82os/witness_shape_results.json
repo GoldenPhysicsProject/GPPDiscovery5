@@ -1,0 +1,35 @@
+[
+ {
+  "kind": "float shape of certified witness",
+  "file": "cosvec_DH_even_L3421_2000_K300.json",
+  "L": 1.7105,
+  "K": 300,
+  "RQ_certified": "[-2.06397269788653440724994198972e-31 +/- 1.7",
+  "sign_changes_on_[0,L]": 0,
+  "min/max": 2.926672103174929e-17,
+  "overlap_cosh(u/2)": 0.6193995928538999,
+  "overlap_first_cosine": 0.8936963612410082
+ },
+ {
+  "kind": "float shape of certified witness",
+  "file": "cosvec_DH_even_L137_80_K129.json",
+  "L": 1.7125,
+  "K": 129,
+  "RQ_certified": "[-2.06863376668449699887179092080e-30 +/- 3.0",
+  "sign_changes_on_[0,L]": 0,
+  "min/max": 2.965613959716545e-17,
+  "overlap_cosh(u/2)": 0.6188654926409449,
+  "overlap_first_cosine": 0.8933520522279591
+ },
+ {
+  "kind": "float shape of certified witness",
+  "file": "cosvec_ZETA_even_L137_80_K129.json",
+  "L": 1.7125,
+  "K": 129,
+  "RQ_certified": "[9.40325369652450181276991397246e-63 +/- 5.41",
+  "sign_changes_on_[0,L]": 256,
+  "min/max": -0.6648578828625303,
+  "overlap_cosh(u/2)": 0.09163270243338228,
+  "overlap_first_cosine": 0.028092819892071366
+ }
+]
