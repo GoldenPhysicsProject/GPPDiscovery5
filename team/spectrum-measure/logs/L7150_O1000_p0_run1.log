@@ -1,0 +1,36 @@
+06:19:12 consts {"gamma": "[4.3150000 +/- 3e-12]", "b": "[8.1300000 +/- 3e-11]", "c": "[1420.0000 +/- 3e-9]", "C": "[0.75387821 +/- 2.58e-9]", "C_mono": "[0.75487817 +/- 9.07e-10]", "mlog2_dc": "[4123.0877 +/- 3.05e-5]", "E0": "[0.00022431975 +/- 2.17e-12]", "E1": "[0.00067343306 +/- 2.98e-13]", "u0E0": "[0.13616209 +/- 4.36e-10]", "u1E1": "[0.13468661 +/- 2.06e-9]", "rN": "[2.1276407e-311 +/- 4.14e-319]", "K0": "[3083.5263 +/- 4.84e-5]", "Hp": "[2.1281383 +/- 3.75e-8]", "qN": "[8.1352847e-7345 +/- 6.3e-7355]", "e": "[1.1598296e-307 +/- 2.51e-315]", "e_paper_literal": "[1.1066461e-307 +/- 3.63e-315]", "n": "[1.3958676e-618 +/- 4.73e-626]", "h": "[1.1767994e-616 +/- 2.42e-624]", "alpha": "[1.1598296e-307 +/- 2.51e-315]", "beta": "[4.6393185e-307 +/- 1.03e-317]", "final_constant_log2": "[-4200.4076 +/- 3.39e-6]"}
+06:19:12 checks {'C_pos': True, 'C_mono_ge_C_log': True, 'c_gt_2': True, 'Om_ge_15_4': True, 'delta_le_dc': True, 'u0E0_le_C': True, 'u1E1_le_C': True, 'n_lt_m': True}
+06:19:12 cells 12 [0.0, 0.033706, 0.189438, 0.321388, 0.52591, 0.659442, 0.726853, 0.777225, 0.977895, 1.144949, 1.352589, 1.413213, 1.42]
+06:29:08 cell (0, 'done 596s')
+06:29:12 cell (1, 'done 601s')
+06:29:16 cell (3, 'done 604s')
+06:29:50 cell (2, 'done 638s')
+06:40:01 cell (6, 'done 645s')
+06:40:18 cell (4, 'done 670s')
+06:40:33 cell (5, 'done 680s')
+06:41:15 cell (7, 'done 685s')
+06:58:18 cell (8, 'done 1096s')
+06:59:33 cell (9, 'done 1155s')
+06:59:39 cell (10, 'done 1146s')
+07:00:43 cell (11, 'done 1167s')
+07:00:43 panels 68 nodes 6848
+07:02:35 panel group (0, 'done 112s')
+07:02:35 panel group (2, 'done 112s')
+07:02:38 panel group (1, 'done 115s')
+07:02:38 panel group (3, 'done 115s')
+07:03:57 panel group (4, 'done 82s')
+07:04:03 panel group (7, 'done 85s')
+07:04:06 panel group (5, 'done 90s')
+07:04:10 panel group (6, 'done 92s')
+07:13:01 assembled {'eps_J': inf, 'eps_inv': 5.7988776295164456e-111, 'normR': 4.216062220621297e-113, 'normY': 137.5425059230245, 'maxradT': inf, 'errJ_entry': 1.2999710936010625e-150, 'errb_entry': 3.964673113350216e-151, 'Np': 1188}
+Traceback (most recent call last):
+  File "/workspace/sm/GPPDiscovery5/team/spectrum-measure/replay/mori_replay.py", line 542, in <module>
+    main()
+    ~~~~^^
+  File "/workspace/sm/GPPDiscovery5/team/spectrum-measure/replay/mori_replay.py", line 532, in main
+    est = lam_estimate(T); res['lam_est_numerical'] = est; log('lam_est (NUMERICAL, inverse iteration)', est)
+  File "/workspace/sm/GPPDiscovery5/team/spectrum-measure/replay/mori_replay.py", line 484, in lam_estimate
+    Ti = Tm.solve(I, algorithm='approx').mid()
+         ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "flint/types/arb_mat.pyx", line 436, in flint.types.arb_mat.arb_mat.solve
+ZeroDivisionError: singular matrix in solve()
