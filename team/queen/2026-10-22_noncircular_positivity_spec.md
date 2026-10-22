@@ -217,27 +217,104 @@ Equivalently, the *negativity exponent* η := limsup_{L→∞} L^{−1} log⁺(�
 
 The only arithmetic input is Chebyshev's bound ψ(x) ≪ x. Since Λ ≥ 0, Landau's theorem makes that equivalent to absolute convergence of the Euler product on σ > 1.
 
-**Lemma 5.2 (CONJECTURE; provable in principle).** Let D be an entire L-datum with FE and explicit formula; its window forms Q_{D,L} are defined as in (1.2) with D's coefficients, Γ-factor and poles. Suppose D has a zero ρ₀ = ½ + β₀ + iγ₀ with β₀ > 0. Then for every ε > 0, −λ_min(Q_{D,L}) ≥ c_ε e^{(2β₀−ε)L} for a sequence L → ∞.
+**Class 𝒟.** D(s) = Σ a(n)n^{−s}, with real a(n) and a(1) = 1, and these properties:
+- D continues meromorphically with finitely many poles;
+- Λ_D(s) = γ_D(s)D(s) = εΛ_D(1 − s), where γ_D is a product of Γ_ℝ-factors and Λ_D has order 1;
+- −D′/D = Σ c(n)n^{−s} converges absolutely on some line Re s = σ₀.
 
-*Sketch.*
-1. Test with f_L = e^{−iγ₀x} sinh(β₀x)·1_{[−L,L]}, so ‖f_L‖² = sinh(2β₀L)/(2β₀) − L.
-2. The pair (γ₀ ∓ iβ₀) contributes 2Re(f̂(γ₀−iβ₀) · conj f̂(γ₀+iβ₀)) ≈ −e^{2β₀L}/(2β₀)·‖f_L‖².
-3. On-line zeros contribute +Σ 4β₀/(β₀² + Δ²)·O(1) = O(log γ₀)·‖f_L‖².
-4. Zeros with smaller real part contribute O(1) per unit Δ.
-5. The only danger is other zeros with the *same* real part β₀. Their terms are of the same exponential order but carry phases e^{iΔL}. Choosing L along a Kronecker/Dirichlet sequence, or using a Turán power-sum lower bound, should handle this. That step is unwritten.
+For such D and real even g ∈ C_c^∞(ℝ), the explicit formula reads
 
-**Corollary (CONJECTURE given 5.2).** DH violates U. Davenport–Heilbronn (1936) give DH zeros with Re s > 1, so β₀ > ½ and 2β₀ > 1, hence −λ_min(Q_DH,L) ≫ e^{(2β₀−ε)L}, which eventually exceeds B(L) ≍ 5e^L.
+  W_D(g) := Σ_ρ m_ρ ĝ(γ_ρ) = [poles] − Σ c(n)n^{−1/2}(g(log n) + g(−log n)) + arch_D(g),
 
-More generally, among Dirichlet series with periodic coefficients, those with no zeros in σ > 1 are of the form L(s, χ)·(Dirichlet polynomial) (Saias–Weingartner, Acta Arith. 140 (2009) 335–344, Corollary, verified. Their Theorem also gives c₁T ≤ N(σ₁, σ₂, T) ≤ c₂T for ½ < σ₁ < σ₂ ≤ 1 + η). So among periodic-coefficient fakes with an FE, U singles out the genuine Dirichlet L-functions.
+summed over the non-trivial zeros ρ = ½ + iγ_ρ with multiplicity m_ρ, and absolutely convergent. This is PROVED, standard: Weil (1952). The contour proof shifts from Re s = σ₀ to 1 − σ₀ and uses only absolute convergence of −D′/D on Re s = σ₀, the FE and order 1. For DH, σ₀ = 2 works.
+
+Q_{D,L}(f) := W_D(f * f̃) for f ∈ L²[−L, L] (half-width convention). ζ and DH are in 𝒟.
+
+**Lemma 5.2 (PROVED, qualitative; Landau).** Let D ∈ 𝒟. If there are b ≥ 0, C and L₀ with λ_min(Q_{D,L}) ≥ −Ce^{2bL} for all L ≥ L₀, then every non-trivial zero satisfies Re ρ ≤ ½ + b.
+
+Equivalently, with η_D := limsup_{L→∞} L^{−1} log⁺(−λ_min(Q_{D,L})) and Θ_D := sup Re ρ:
+
+  **η_D ≥ 2Θ_D − 1.**
+
+*Proof.*
+0. **The bound extends to all L.** Each Q_{D,L} is bounded below: arch ≥ min Ω_D, the prime part is a finite sum, and the poles are bounded. λ_min(Q_{D,L}) is non-increasing in L (nested windows). So, enlarging C, the bound holds for all L ≥ ℓ/2, for any fixed ℓ > 0.
+1. **Test vectors.** Take real φ ∈ C_c^∞(0, ℓ) with φ ≥ 0, g = φ * φ̃, and f_t = φ − τ_tφ for t ≥ 0. Then f_t * f̃_t = 2g − τ_tg − τ_{−t}g. W_D is even (the zeros are symmetric under ρ ↦ 1 − ρ by the FE, and ĝ is even), so Q(f_t) = 2C(0) − 2C(t), where C(t) := W_D(τ_tg).
+2. **One-sided bound.** f_t is supported in an interval of length ℓ + t, and W_D is translation invariant (it depends on f only through f * f̃). So Q(f_t) ≥ −Ce^{b(ℓ+t)}‖f_t‖² ≥ −4Ce^{bℓ}‖φ‖²e^{bt}. Hence h(t) := C(0) + Me^{bt} − C(t) ≥ 0, with M = 2Ce^{bℓ}‖φ‖².
+3. **Zero expansion.** (τ_tg)^(z) = e^{izt}ĝ(z) and e^{iγ_ρt} = e^{(ρ−½)t}, so C(t) = Σ_ρ m_ρ ĝ(γ_ρ)e^{(ρ−½)t}.
+   - Here ĝ(z) = φ̂(z)φ̂(−z) and |φ̂(z)| ≤ C_k e^{ℓ|Im z|}(1 + |z|)^{−k}.
+   - The zeros lie in a vertical strip with N(T) ≪ T log T.
+   - So Σ m_ρ|ĝ(γ_ρ)| < ∞, the series converges absolutely, and C(t) = O(e^{Bt}), where B = Θ_D − ½.
+4. **Laplace transform.** For Re s > max(b, B),
+
+     H(s) := ∫₀^∞ h(t)e^{−st} dt = C(0)/s + M/(s − b) − Σ_ρ m_ρ ĝ(γ_ρ)/(s − (ρ − ½)).
+
+   Termwise integration is justified by absolute convergence. The right side is meromorphic on ℂ, with simple poles at s = ρ − ½ of residue −m_ρ ĝ(γ_ρ), and at 0 and b. The series converges locally uniformly off its poles, since Σ m_ρ|ĝ(γ_ρ)| < ∞.
+5. **Choice of φ.** Suppose a zero ρ₀ = ½ + β₀ + iγ₀ has β₀ > b. Choose φ (still ≥ 0) with ĝ(γ_{ρ₀}) = φ̂(γ_{ρ₀})φ̂(−γ_{ρ₀}) ≠ 0. This is possible because, for fixed w, {φ : φ̂(w) = 0} is a closed hyperplane, and φ₀ + εψ with φ₀ > 0 on supp ψ stays ≥ 0. Then H has a pole with real part β₀ > b, so the abscissa of convergence satisfies σ_c ≥ β₀ > max(b, 0).
+6. **Landau gives the contradiction.** Since h ≥ 0, Landau's theorem (Widder, *The Laplace Transform*, Ch. II §5) says the real point σ_c is a singularity of H. The only real singularities of H in (b, ∞) are poles s = ρ₁ − ½ coming from **real** zeros ρ₁ > ½ + b.
+   - Their residue is −m ĝ(−i(ρ₁ − ½)) = −m (∫φe^{β₁x})(∫φe^{−β₁x}) < 0, because φ ≥ 0.
+   - A negative-residue pole at σ_c forces H(σ) → −∞ as σ ↓ σ_c. That contradicts H(σ) = ∫ h e^{−σt} ≥ 0.
+   - If σ_c is not such a point, H is analytic at σ_c, which contradicts Landau directly.
+
+   Hence no zero has β₀ > b. ∎
+
+**What is and is not proved.**
+- PROVED: the qualitative growth η_D ≥ 2Θ_D − 1, for every D ∈ 𝒟. This is the window-form analogue of the Fixed-Window paper's Landau step (RH map R1) at exponential scale.
+- NOT proved: the quantitative form −λ_min(Q_{D,L}) ≥ c·e^{2β₀L} with an explicit c, on the vector e^{−iγ₀x}sinh(β₀x). The gap is precise. Other zeros with real part ≥ β₀ contribute terms of the same or larger exponential order with phases e^{iΔL}, and for DH such zeros accumulate up to σ_DH (Saias–Weingartner density, Bombieri–Ghosh supremum). So a single zero cannot be isolated by this vector without a Turán-type power-sum lower bound, which I have not supplied. Status: CONJECTURE.
+- Multiplicity m enters only through the residue; m ≥ 1 changes nothing.
+
+**Corollary 5.3 (PROVED, given Lemma 5.2 and the verified citations).** DH violates U.
+- Θ_DH > 1: Davenport–Heilbronn 1936, via Karatsuba 1991 and Saias–Weingartner 2009 Cor. Indeed Θ_DH = σ_DH ≈ 1.120362 (Bombieri–Ghosh 2011 via Odžak–Smajlović 2016).
+- So η_DH ≥ 2Θ_DH − 1 > 1, with ≈ 1.2407 at the quoted σ_DH.
+- U gives η_ζ ≤ 1.
+
+Hence ζ and DH are separated uniformly in L by the exponent of the window negativity. NUMERICAL consistency check: DH's coefficient mass Σ_{n≤x}|c(n)|n^{−1/2} has local log-slope 0.62–0.63 in x, i.e. exponent 1.24–1.26 in L, matching 2σ_DH − 1 = 1.2407. ζ's slope is ½, i.e. exponent 1 in L.
+
+More generally, among Dirichlet series with periodic coefficients, those with no zeros in σ > 1 are of the form L(s, χ)·(Dirichlet polynomial). This is Saias–Weingartner (2009), Corollary, verified; their theorem also gives c₁T ≤ N(σ₁, σ₂, T) ≤ c₂T for ½ < σ₁ < σ₂ ≤ 1 + η. So among periodic-coefficient fakes in 𝒟, U plus Lemma 5.2 singles out the genuine Dirichlet L-functions.
+
+**Explicit DH zero with Re s > 1: BLOCKER (not computable here).**
+- The computed DH zero lists (Spira 1994; Balanzario–Sánchez-Ortiz 2007) contain off-line zeros with Re < 1 only.
+- By Bombieri–Ghosh's criterion, a zero in σ > 1 requires log(L(s, χ̄)/L(s, χ)) = 2iθ + (2k+1)πi. That needs the phases p^{−it} of essentially all primes up to ~10³ to align simultaneously, so the first such zeros sit at astronomically large heights (Kronecker, log t ≫ 10²). They cannot be evaluated with mpmath Hurwitz at those heights.
+- I therefore did **not** locate one, and claim nothing NUMERICAL or CERTIFIED about a specific zero.
+
+What was run instead (`dh_torus.py`, NUMERICAL):
+- **Torus surrogate.** For f = e^{−itx}sinh(0.6x) on [−L, L], the prime part depends on t only through the torus point (p^{−it})_{p<e^{2L}}, and Kronecker realises any such point. Maximising the prime part over that torus by coordinate ascent:
+  - DH, P*/‖f‖²: 23.2, 57.3, 111.3, 401.9, 636.3 at L = 3, 3.5, 4, 5, 5.5 (fitted exponent 1.32, against 2σ_DH − 1 = 1.24; the optimiser is heuristic, and L 4.5 underperforms);
+  - ζ: 18.6 → 242.7 (exponent 1.03, i.e. e^L, the Chebyshev mass).
+  
+  **Caveat:** the Kronecker heights needed to align all primes below e^{2L} have log t ≈ π(e^{2L})·log(1/ε) ≫ e^{1.3L}. There the archimedean term Ω_D(t) ≈ log t dominates, so the surrogate does not exhibit negativity. It confirms only the exponent of the prime part. Not a proof of anything.
+- **Lemma 5.2's own vectors** (`dh_lemma_vectors.py`; φ a C^∞ bump on (0, 0.5)): R(t) = Q_DH(f_t)/‖f_t‖² stays ≥ 0.889 for t ≤ 12.4 (L ≤ 6.45).
+  - This is expected. These low-frequency vectors see the zero at 85.7i only through |ĝ(γ₀)|, which is tiny for a smooth bump. Their negativity is purely asymptotic.
+  - The modulated vectors of §5 check 1 (e^{−iγ₀x}sinh(β₀x)) are the efficient ones, negative from L ∈ (1.5, 2].
+
+**Growth-exponent fit for the 0.8085 + 85.70i pair** (`dh_sinh.log`, NUMERICAL):
+- −Q/‖f‖² = 3.09, 10.50, 24.44, 52.95 at L = 3, 4, 5, 6, giving local exponents 1.22, 0.85, 0.77 per unit L.
+- The prime part's local exponent is 0.67–0.69.
+- Both are drifting toward 2β₀ = 0.617, with lower-order (1/L, arch) corrections still visible at L ≤ 6. This pair has 2β₀ < 1, so it does not by itself violate U, consistent with Lemma 5.2.
+
+**Sign-change note** (half-width convention; vector e^{−iγ₀x}sinh(β₀x), γ₀ = 85.699348, β₀ = 0.308517; counted on a 2·10⁶-point grid of [−L, L]):
+
+| L | Re sign changes | Im sign changes | 2Lγ₀/π |
+|---|---|---|---|
+| 0.5 | 29 | 26 | 27.3 |
+| 1.0 | 55 | 54 | 54.6 |
+| 1.4 | 77 | 76 | 76.4 |
+| 1.42 | 79 | 76 | 77.5 |
+| 1.61 | 89 | 86 | 87.8 |
+| 1.7105 | 95 | 92 | 93.3 |
+| 2.0 | 111 | 108 | 109.1 |
+
+- Exact formulas: Re = 2⌊Lγ₀/π + ½⌋ + 1 (the cos zeros plus the sinh sign change at 0); Im = 2⌊Lγ₀/π⌋ (the sin zero at 0 is a double zero with sinh, so no sign change there).
+- Golden Eye's 2Lγ/π ≈ 93 at L = 1.71 matches with **L = half-width**.
+- The failing DH vector is thus a modulated "edge" vector carrying ≈ 2Lγ₀/π nodes, sign-changing as S98 requires. It is the opposite of ζ's nodeless soft mode, where Λ ≥ 0 hurts.
 
 **Why U is not RH, and what it does not do (honest).**
-- U is equivalent to η ≤ 1, which (heuristically, via 5.2 and its converse) is "no zeros with Re s > 1". That is classical for ζ.
+- U is equivalent to η ≤ 1. Lemma 5.2 gives η ≥ 2Θ − 1, so U implies "no zeros with Re s > 1" for any D ∈ 𝒟. The converse direction is heuristic. That is classical for ζ.
 - It does **not** see DH's strip zeros (0.8085 + 85.70i has 2β₀ = 0.617 < 1), nor F_θ (Re < 1), H₋ₜ or DMV.
 - Its value is that it is the first statement on the team's books that is (a) uniform in L, (b) proved for ζ, (c) fatal to DH, and (d) uses infinitely many primes (Chebyshev for all x). It also shows the hybrid-lemma obstruction does not bind once statements are asymptotic in L.
 
 **The ladder (what strengthening costs).**
 
-| Statement | Equivalent to (heuristic via 5.2 + converse) | Status for ζ | Kills |
+| Statement | Equivalent to (≥ direction PROVED by Lemma 5.2; ≤ direction heuristic) | Status for ζ | Kills |
 |---|---|---|---|
 | η ≤ 1 (U) | no zeros in σ > 1 | PROVED | DH (given 5.2) |
 | −λ_min = o(e^L) | *not* PNT: zeros at the de la Vallée Poussin boundary 1 − c/log γ with log γ ≈ L² would give ≈ e^L(1 − O(1/L)) | OPEN (**DEAD END** as "PNT-provable", logged) | DH |
