@@ -1,0 +1,27 @@
+[
+ {
+  "theta": 0.25,
+  "onset_direct_bisect": 0.4354455947875977,
+  "onset_predicted_first_order": 0.4400000000000001
+ },
+ {
+  "theta": 0.1,
+  "onset_direct_bisect": 0.4758546829223633,
+  "onset_predicted_first_order": 0.48000000000000015
+ },
+ {
+  "theta": 0.03,
+  "onset_direct_bisect": 0.5288026809692383,
+  "onset_predicted_first_order": 0.5300000000000002
+ },
+ {
+  "theta": 0.01,
+  "onset_direct_bisect": 0.5658452987670899,
+  "onset_predicted_first_order": 0.5700000000000003
+ },
+ {
+  "theta": 0.003,
+  "onset_direct_bisect": 0.6027048110961915,
+  "onset_predicted_first_order": 0.6100000000000003
+ }
+]

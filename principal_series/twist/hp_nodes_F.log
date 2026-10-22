@@ -1,0 +1,4 @@
+{'theta': 0.1, 'L': '0.5', 'N': 24, 'lam_min_even': '-2.1671443e-6', 'nodes_on_[0,L]': 0}
+{'theta': 0.1, 'L': '0.5', 'N': 32, 'lam_min_even': '-2.1681747e-6', 'nodes_on_[0,L]': 0}
+{'theta': 0.1, 'L': '0.5', 'N': 40, 'lam_min_even': '-2.1685222e-6', 'nodes_on_[0,L]': 0}
+{'theta': 0.1, 'L': '0.6', 'N': 24, 'lam_min_even': '-9.5362284e-5', 'nodes_on_[0,L]': 1}
