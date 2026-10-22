@@ -38,7 +38,6 @@ than the 1e-153 margin would suggest, because the soft eigenvector's autocorrela
 Interpretation (for "where do the integers enter"): at finite L, positivity is not stable under moving a prime. ζ's prime configuration
 sits on the edge of the PSD cone, at the 10^{-36} level for the outermost prime.
 This is consistent with the finite-window theorem, which says *agreement* below the cutoff is invisible but says nothing past it.
-It also makes concrete why the S99 copositivity/cone observations are fake-blind only *inside* the window.
 
 ## Status and gaps
 - Section-level only (K = 160/200). There is no tail bound, so "PD" means PD of the K-section. The non-PSD results are genuine witnesses (Ritz vectors), hence CERTIFIED for the full form.
