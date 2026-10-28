@@ -263,7 +263,7 @@ R-line: R1, the GAP is the Λ → ∞ uniformity, i.e. Connes' own "uniformity" 
 2. G.5 (T1): replace "it cancels against θ's −√x" by the S103b ψ-repair wording.
 3. §0.3: confirm `rh_iff_weil_pairedForm_nonneg` is cited with its scope, i.e. finite paired form over the zero set, not the explicit-formula window form.
 
-## Q.8 Lean names used (all present in GPPVerify `5f54359`; no `sorry`/`axiom` in the cited files)
+## Q.L Lean names used (all present in GPPVerify `5f54359`; no `sorry`/`axiom` in the cited files)
 
 | Lean name | file |
 |---|---|
@@ -285,6 +285,9 @@ Not cited, per instructions:
 - `ArithmeticTemperedPrincipalSeries`;
 - the `HaarPositivityWeil` `open_*` True-placeholders;
 - `ArithmeticCoPoissonOrientationTemplate`.
+
+## Q.8 Off-line residual theorem and the R6 identity
+See [`ARP_queen_Q8.md`](ARP_queen_Q8.md) (2026-10-28). It also records corrections: (c1) the Gram step of Connes' Lemma 3; (c2) for ℚ, Q′ ≤ S_Λ is not exact with the prolate B_Λ, so §Q.4 item 2's "free positivity" is exact only for function fields, and the exact ℚ object is Δ^♮_Λ; (c3) the F_θ OS2a wording is reconciled with §P.3.
 
 ## References
 - Weil 1952, "Sur les 'formules explicites' de la théorie des nombres premiers".
