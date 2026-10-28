@@ -2,7 +2,7 @@
 
 Daniel Toupin / Golden Physics Project, with AI assistance from Grok. 2026-10-22. **RH is OPEN.** Nothing here proves or implies RH.
 
-**Status update 2026-10-28.** The derivation is now `ARP_principal-series.md` (§P). Its P.10 lists the label changes to this plan; in particular the §5 F_θ row is corrected (GL(2) data unitary, Knapp–Stein PD for 0<θ<½; the filter acts on the GL(1) constituents) and §4's R4 conjecture is superseded. The text below is kept unchanged for the record.
+**Status update 2026-10-28.** The derivation is now `ARP_principal-series.md` (§P). Its P.11 lists the label changes to this plan; in particular the §5 F_θ row is corrected (GL(2) data unitary, Knapp–Stein PD for 0<θ<½; the filter acts on the GL(1) constituents) and §4's R4 conjecture is superseded. The text below is kept unchanged for the record.
 
 **Status.** This file is a plan. `ARP_principal-series.md` is **on hold** until the lead's `derivation/LEAN_INVENTORY.md` lands on GPPDiscovery5 main; it had not landed as of 07:55 EDT.
 
@@ -57,7 +57,7 @@ intertwines (Connes 1999; Meyer 2005). No place-by-place positivity is claimed o
 - **Positive-type basics (HaarPositivityWeil):** `PositiveType.even`, `positive_type_at_zero`, `const_one_positive_type`.
 - **Weil criterion, zero side only:** `GppWeilCriterion.rh_iff_weil_pairedForm_nonneg` (WeilPositivityCriterion.lean) and `rh_iff_two_point_pairedForm_nonneg` (TwoPointCriterion.lean).
   - *Caveat:* these are statements about the zero-side paired form, i.e. combinatorial bookkeeping. They are **not** Weil's test-function criterion, and the file says so.
-- **Support fact (Goddess):** `GppWeilSupportLadder.convolution_hasSupportIn`, `primeSide_eq_truncation`, `primeSide_eq_zero_of_support_lt_log_two`. On [−L, L], Q_L only sees n < e^{2L}.
+- **Support fact (Goddess):** `GppWeilLadder.convolution_hasSupportIn`, `primeSide_eq_truncation`, `primeSide_eq_zero_of_support_lt_log_two`. On [−L, L], Q_L only sees n < e^{2L}.
   - `weil_nonneg_of_arch_nonneg_rung_zero` is **conditional** on `0 ≤ arch`. Cite it as a reduction, not as positivity.
 - **Tate, local p-adic:** `GppPadicFullZeta…tate_local_zeta_integral` (PadicZetaIntegralClosedForm.lean, ∫_{ℤ_p}‖x‖^s dμ in closed form) and `euler_factor_bridge` (PadicEulerFactorBridge.lean, which matches Mathlib's `riemannZeta_eulerProduct_tprod`).
 - **Ideles:** `RationalIdeleGroup := (AdeleRing ℤ ℚ)ˣ`, `diagonalEmbedding_injective` (IdeleGroup.lean). Mathlib has `NumberField.AdeleRing`.
