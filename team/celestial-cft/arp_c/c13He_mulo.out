@@ -1,0 +1,6 @@
+even T=12.875 M=320: max mu_lo with mu_hi*>c2: 0.04505; best pair for C.13.H' (mu_lo, mu_hi)=(0.03323, 0.6257) -> l_H = 7.27e-04
+even T=14.0 M=320: max mu_lo with mu_hi*>c2: 0.04752; best pair for C.13.H' (mu_lo, mu_hi)=(0.03445, 0.6329) -> l_H = 7.41e-04
+even T=16.0 M=320: max mu_lo with mu_hi*>c2: 0.04832; best pair for C.13.H' (mu_lo, mu_hi)=(0.03503, 0.6496) -> l_H = 7.42e-04
+odd T=12.875 M=320: max mu_lo with mu_hi*>c2: 0.57206; best pair for C.13.H' (mu_lo, mu_hi)=(0.37899, 0.9275) -> l_H = 9.69e-03
+odd T=14.0 M=320: max mu_lo with mu_hi*>c2: 0.56212; best pair for C.13.H' (mu_lo, mu_hi)=(0.42159, 1.0430) -> l_H = 1.13e-02
+odd T=16.0 M=320: max mu_lo with mu_hi*>c2: 0.55366; best pair for C.13.H' (mu_lo, mu_hi)=(0.48445, 1.1576) -> l_H = 1.30e-02
