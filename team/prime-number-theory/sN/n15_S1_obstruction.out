@@ -1,0 +1,4 @@
+2L=log2+0.028  S1-only bound form: even <=  0.0061   odd <=  0.4786
+2L=log2+0.1    S1-only bound form: even <= -0.2388   odd <=  0.2458
+2L=log3        S1-only bound form: even <= -0.8762   odd <= -0.1944
+2L=log3+0.028  S1-only bound form: even <= -0.9309   odd <= -0.2709

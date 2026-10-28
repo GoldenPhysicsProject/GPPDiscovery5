@@ -841,14 +841,14 @@ R5 (open): δ_o⁰, k_∞ and B to be certified by S&M; σ_S on 5.41 ≤ |t| ≤
 | 160 | 0.0730 | 0.5493 |
 | Richardson (h¹) | ≈ 0.072 | ≈ 0.548 |
 
-**Verdict on scale.** m₀^odd ≈ 0.55 in the H¹_¼ norm. That is O(1), and there is **no near-degenerate direction in the H-norm route at L₀ either**.
+**Verdict on scale.** m₀^odd ≤ 0.5493 in the H¹_¼ norm (N = 160 Ritz upper bound; ≈ 0.548 is a Richardson extrapolation, not a bound), and ≥ 0.46255 (S&M, CERTIFIED). That is O(1), and there is **no near-degenerate direction in the H-norm route at L₀ either**.
 - The smallness of the N.13.A entry, ℓ* ∝ e^{−21.06/m₀} ≈ e^{−38}, comes from the crude band split in its Step 2, not from a small m₀.
 - The values are Ritz *upper* bounds: NUMERICAL, not certified lower bounds.
   - *Grok audit (S103g).* Only the N = 160 values (0.54929 and 0.07298) are Ritz upper bounds, up to the modelled quadrature tail. The Richardson ≈ 0.548 / 0.072 values are extrapolations. The odd value is compatible with S&M's **CERTIFIED m₀^odd(L₀) ≥ 0.46255** (merged 9d72bbb), and an independent 24-mode sine Galerkin gives 0.5479. So 0.46255 ≤ m₀^odd ≲ 0.549.
 - This is consistent with Celestial's C.14.4b scale result. Ramps carry ≤ 8.97ℓ³ of their energy in the negative band and ξ_s carries ≤ 2.73ℓ³ (PROVED, Celestial).
 - CC's λ_min ≈ 1.33e−3 is a full-space eigenvalue in a different normalization. Calling it "not tiny" is HEURISTIC.
 - The super-exponentially small eigenvalues of the CCM certificates belong to the full Weil form at larger windows, not to the p = 2 entry.
-- m₀^even is ≈ 0.072. It is smaller, but the even sector is not where the entry is decided: its cost is paid by 𝒮_L (§S (P)), and the p = 2 line helps it.
+- m₀^even ≤ 0.0730 (N = 160 Ritz upper bound; ≈ 0.072 is an extrapolation). It is smaller, but the even sector is not where the entry is decided: its cost is paid by 𝒮_L (§S (P)), and the p = 2 line helps it.
 
 ### N.14.3 {2, 3} rank-two boundary forms for 2L ∈ (log 3, log 4] (main deliverable) [L]
 Notation: a = log 2, b = log 3, c_n = Λ(n)/√n, so c₂ = 0.490129, c₃ = 0.634284 and c₄ = 0.346574.
@@ -870,7 +870,7 @@ Notation: a = log 2, b = log 3, c_n = Λ(n)/√n, so c₂ = 0.490129, c₃ = 0.6
   - B₂(ξ_s) = 0 on the whole range, since the 3-strips' a-translates miss both 3-strips (G).
   - The 2-line pairs the 3-ramps with the bulk only. Its derivative part is ∫_{S₋^{(3)}}ξ_b′ξ′(· + a) + ∫_{S₊^{(3)}−a}ξ′ξ_b′(· + a) = (2β₋/ℓ₃)[ξ(L + a − b) − ξ(a − L)], using parity. That is 2β₋ times the mean slope of ξ over [a − L, a − L + ℓ₃], so it is O(|β|·‖ξ′‖_{L∞}), not O(β²/ℓ₃).
   - The ¼-part is O(ℓ₃|β|‖ξ‖_∞).
-  - **So at order 1/ℓ₃ the {2, 3} edge form is the 3-line block alone.** The 2-line enters only through the bulk (≤ 2) form.
+  - **So at order 1/ℓ₃ the {2, 3} edge form is the 3-line block alone,** *measured against ‖ξ′‖_∞*. The 2-line enters only through the bulk (≤ 2) form. [Erratum N.15.0(2), Principal P.15.5: this fails against the H-energy. If ξ has a kink at scale ℓ₃ on [a − L, a − L + ℓ₃], the 2-line term is also O(1/ℓ₃), and the joint edge block is σ(1/ℓ₃)[[2c₃, 2c₂], [2c₂, 0]]; see N.15.1.]
 - **Interface form (PROVED identity):** Q_L = [R(ξ_s) − 2c₃B₃(ξ_s)] + [Q^{(≤2)}(ξ_b) + 2σc₃β²(1/ℓ₃ − ℓ₃/24)] + [2R(ξ_b, ξ_s) − 4c₂B₂(ξ_b, ξ_s) − (c₃/2)X₃].
   - Here Q^{(≤2)} = R − 2c₂B₂ is the form at the previous entry 2L = log 3. It is CERTIFIED ≥ 0 there, conditional on Mori.
   - *Grok audit (S103g), caveat.* In this identity Q^{(≤2)} is evaluated on ξ_b ∈ H¹₀(−L, L) with 2L > log 3. On that window it is the P₂ = {2} form, which is **not** known to be ≥ 0: P_X-type failure can begin beyond log 3 (N.12.1). So the Mori-conditional certificate at log 3 does not apply to Q^{(≤2)}(ξ_b) directly. This is part of why the odd-payer statement below is a CONJECTURE. The other {2, 3} items were checked: the strip geometry including 2L < log 4.5; B₂(ξ_s) = 0; the 2-line derivative term (2β₋/ℓ₃)[ξ(L + a − b) − ξ(a − L)]; the 3-edge block +c₃(1/ℓ₃ − ℓ₃/24)σ_x; S1 combined c₂ + c₃ via E₃ ⊂ E₂; transposed (3c), where the b-pair separation ≥ log(9/4) > a, so no 2-line enters; and c₃, c₄, the ℓ₂ table and KMS. All PROVED (elementary).
@@ -881,7 +881,7 @@ Notation: a = log 2, b = log 3, c_n = Λ(n)/√n, so c₂ = 0.490129, c₃ = 0.6
   - The blind frequencies are t_j = (2j+1)π/b for σ = +1 and t_j = 2jπ/b for σ = −1.
 - **Per-line ramp constants, for cross-check with Principal:**
   - 3-edge: c₃(1/ℓ₃ − ℓ₃/24). This is (c₃/ℓ₃)(1 − ℓ₃²/24), with ℓ₃²/24 ≤ 3.4e−3 on the range.
-  - 2-line (O(1) strips, valid while the 2-strips are disjoint): c₂(1/ℓ₂ − ℓ₂/24) runs from 1.2003 (2L = log 3, ℓ₂ = 0.4055) to 0.6929 (2L = log 4, ℓ₂ = a). It is shown for comparison only; at these ℓ₂ the 2-ramp is not an edge object.
+  - 2-line (O(1) strips, valid while the 2-strips are disjoint): c₂(1/ℓ₂ − ℓ₂/24) runs from 1.2005 (2L = log 3, ℓ₂ = 0.4055) to 0.6930 (2L = log 4, ℓ₂ = a) [erratum N.15.0(1), Principal P.15.5]. It is shown for comparison only; at these ℓ₂ the 2-ramp is not an edge object.
 
 **(S) Symmetry (PROVED; agrees with Principal P.14).**
 - h = ξ⋆ξ* is even, so x ↦ −x preserves R and every B_p. The parity split is exact for all lines together.
@@ -929,13 +929,182 @@ Notation: a = log 2, b = log 3, c_n = Λ(n)/√n, so c₂ = 0.490129, c₃ = 0.6
 | δ_o⁰ = 0.3135 (L²) and the projector comparison | NUMERICAL (cross-check of S&M's pending certification) |
 | ℓ₀^odd ≈ 1.3e−3 via S&M (3.3) | NUMERICAL-indicative; PROVED-conditional on certified δ_o⁰, k_∞ (GAP) and B (GAP) |
 | C.14.A margin line: \|t\| ≤ 5.40 from the L² gap; σ_S band [5.41, 13.6] | NUMERICAL (indicative); σ_S GAP |
-| m₀^odd ≈ 0.55, m₀^even ≈ 0.072 (H¹_¼) | NUMERICAL (Ritz upper bounds) |
+| m₀^odd ≤ 0.5493, m₀^even ≤ 0.0730 (H¹_¼; N = 160 Ritz upper bounds; Richardson 0.548 / 0.072 are extrapolations) | NUMERICAL |
 | "CC's 1.33e−3 is not tiny" | HEURISTIC |
 | {2, 3} geometry, ramp matrices, no 1/ℓ₃ term from the 2-line, interface form, S1, transposed (3c), log 4 changes, ζ = P_3 for 2L ≤ log 5 | PROVED (elementary) |
 | Surviving symmetry P only; no common J_p | PROVED (Principal P.14; consistent here) |
 | {2, 3} odd entry paid by the (≤ 2) margin | CONJECTURE |
 | Coupling 2R(ξ_b, ξ_s) and its {2, 3} analogue | GAP (N.G2-bulk) |
 | Positivity on the range up to L = 1.42 | CERTIFIED, conditional on Mori Prop 3.1, Lemma 3.2, Thm N |
+| RH | OPEN |
+
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
+
+## N.15 Making the {2, 3} interface independent of Mori: route (A) and route (B) (S103h) [L]
+
+*Goal.* Close the {2, 3} entry 2L ∈ (log 3, log 4] without the Mori-conditional certificate. Two routes:
+- **(A)** a direct P₂-form margin on the ramp class ξ_b;
+- **(B)** S&M's Lemma A/B bathtub template (CERT_p2_constants.md, CERTIFIED and CC-free for odd p = 2 on 2L ≤ log 2 + 0.028), recast at L = ½ log 3 for the odd 3-edge entry.
+
+Positivity on the whole range up to L = 1.42 stays **CERTIFIED, conditional on Mori's Prop 3.1, Lemma 3.2 and Thm N**. **RH is OPEN.**
+
+**Outcome.**
+- Route (A) is a dead end: the even sector fails outright, and the odd margin is too small.
+- Route (B) is reduced to explicit inputs and is the main route. The new obstruction is quantitative: at 2L = log 3 the Weil form's own H-margin is already small, with odd ≤ 1.34e−3 and even ≤ 2.5e−4 (Ritz upper bounds, still decreasing under refinement). Any perturbative {2, 3} entry therefore has a very small polynomial range unless a non-perturbative certificate is used. This is where the near-degenerate direction actually shows up, computed and not assumed.
+
+R1 (target): a Mori-free odd and even {2, 3} entry, or an exact statement of what blocks it.
+R2 (inputs): S&M CERT_p2_constants (Lemmas A and B, Thms 1–3; audited SOUND); Golden Eye's even and odd Galerkin (NUMERICAL); Principal P.15.5 (15e5b58); N.13–N.14.
+R3 (method): exact identities (PROVED) plus Ritz scripts `sN/n15_*.py` (NUMERICAL, upper bounds only).
+R4 (status): see the labels table in N.15.6.
+R5 (GAPs): N.15-G1 (a certified non-multiplier margin of the Weil form at 2L = log 3, of size ≲ 1e−3), N.15-G2 (high-band coercivity μ_hi > 0.9009 on the edge class), the even sector ((P), m₀^e), C.14.K and uniformity in L (G.4d).
+
+### N.15.0 Errata (Principal P.15.5, team/principal-series 15e5b58: 9 PASS, 2 FIX; credit Principal)
+- **(1)** The 2-line ramp-constant endpoints are **1.2005** (2L = log 3) and **0.6930** (2L = log 4). N.14.3 printed 1.2003 and 0.6929. Corrected in place.
+- **(2)** N.14.3's "at order 1/ℓ₃ the edge form is the 3-line block alone" holds only against ‖ξ′‖_∞.
+  - Against the H-energy, the 2-line derivative term σ(2v₁/ℓ₃)(v₂ − v₃) is still O(1/ℓ₃) when ξ has a kink at scale ℓ₃ on the central piece [a − L, a − L + ℓ₃].
+  - Here v₁ = β₋, and v₂ − v₃ = ξ(L + a − b) − ξ(a − L).
+  - The joint block is σ(1/ℓ₃)[[2c₃, 2c₂], [2c₂, 0]], with the 3-ramp coefficient on the diagonal; see N.15.1. Marked in place in N.14.3.
+- **(3) Lead caveats, recorded.**
+  - The N.14.3 interface identity evaluates Q^{(≤2)}(ξ_b) on the larger window, where it is the P₂ form and is not known to be ≥ 0. N.15.2 shows numerically that it actually becomes negative.
+  - Wherever m₀ is quoted, only the N = 160 Ritz values (odd 0.5493, even 0.0730) are true upper bounds. The Richardson values 0.548 and 0.072 are extrapolations. N.14.2 and N.14.6 are corrected in place.
+  - Combined with S&M: 0.46255 ≤ m₀^odd(L₀) ≤ 0.5493.
+
+### N.15.1 The joint {2, 3} edge block (PROVED, elementary; normalization confirmed against Principal)
+On the edge class, take a 3-ramp of inner value β on each 3-strip and a kink w = v₂ − v₃ of the central piece across the a-translate [a − L, a − L + ℓ₃], with parity applied on both sides. The order-1/ℓ₃ part of the prime terms in Q_L is then (σ/ℓ₃)(2c₃β² + 4c₂βw), up to the sign convention of w.
+- Its matrix is **σ(1/ℓ₃)M**, with M = [[2c₃, 2c₂], [2c₂, 0]].
+- The eigenvalues of M are c₃ ± √(c₃² + 4c₂²) = **1.8019 and −0.5333**.
+- The H-energy of the class is 2(β² + w²)/ℓ₃ at leading order (two strips and two central pieces). So **per unit H-energy** the block is **(+0.9009, −0.2666)**.
+  - This is Principal's ½ normalization. It agrees with the N.14 convention: the plain 3-ramp gives the odd charge 2c₃β²/ℓ₃ against energy 2β²/ℓ₃, which is c₃ per unit energy, the (1,1) entry halved.
+- **Odd sector (σ = −1):** the maximal charge is **0.9009 per unit energy**. This is larger than c₃ = 0.6343 and smaller than the crude S1 constant c₂ + c₃ = 1.1244.
+- **Even sector (σ = +1):** the block is indefinite. The kink direction gives a charge of **0.2666 per unit energy** even on even vectors. *This touches the even-sector gap ((P), m₀^e).*
+- **Symbol thresholds (NUMERICAL, mpmath bisection).** The frequency T at which Ω(T) equals each constant:
+
+  | constant | value | T where Ω(T) = value |
+  |---|---|---|
+  | even kink charge | 0.2666 | 8.208 |
+  | c₃ | 0.6343 | 11.852 |
+  | joint odd charge | 0.9009 | 15.471 |
+  | c₂ + c₃ | 1.1244 | 19.344 |
+
+  So on the edge class the payer R must supply Ω(T) > 0.9009(1 + η) at the high band, i.e. T ≳ 15.47, not just Ω(T) > c₃ (T ≳ 11.85).
+
+### N.15.2 Route (A): a direct P₂-form margin on ξ_b. Dead end (NUMERICAL), recorded honestly
+`sN/n15_P2_margins.{py,out}` computes Rayleigh–Ritz values of inf Q/‖·‖²_H (H¹_¼ norm, P1 hats, N = 80 and 160; upper bounds only). The B_p Gram matrices are exact for P1, by Gauss quadrature on merged breakpoints.
+
+| window 2L | P₂ form R − 2c₂B₂: even ≤ | odd ≤ |
+|---|---|---|
+| log 2 | 0.0730 | 0.5493 |
+| log 2 + 0.028 | 0.0480 | 0.4769 |
+| log 2 + 0.1 | 0.0168 | 0.2452 |
+| log 2 + 0.3 | 4.5e−4 (N = 320) | 0.0142 (N = 320) |
+| log 3 | 2.5e−4 (N = 320) | 1.34e−3 (N = 320) |
+| log 3.5 | **−0.249** | **−0.0058** |
+| log 4 | **−0.465** | **−0.0646** |
+
+- **The even column reproduces Golden Eye's even Galerkin** (0.046 at ℓ = 0.028, 0.015 at 0.1, 0.001 at 0.2, noise by 0.3) to within discretization.
+- **The odd column** is consistent with S&M's certified 0.0126 at ℓ = 0.028 (below our 0.477, as a lower bound must be). It is also consistent with Golden Eye's odd persistence to ℓ ≈ 0.3.
+- The refinement runs (`sN/n15_P2_refine.{py,out}`, N = 40 to 320) show the odd value at ℓ = 0.3 converging (0.0284 → 0.0142, so ≈ 0.014). At log 3 the values are still decreasing: odd 0.0180 → 0.0013, even 0.0096 → 2.5e−4.
+- **Verdict (NUMERICAL).** On the {2, 3} window the P₂ form is **negative** (Ritz upper bounds −0.249 even and −0.0058 odd at 2L = log 3.5). So "Q^{(≤2)}(ξ_b) ≥ m·‖ξ_b‖²_H" is **false** as stated on most of (log 3, log 4].
+  - The ramp-class constraint (linear on the two 3-strips, of width ℓ₃) does not remove a negative direction that is smooth at scale ℓ₃.
+  - The interface identity must keep the 3-line's bulk action; it cannot be split as "P₂ bulk plus 3-edge". This confirms the lead's caveat.
+  - Even near log 3, where the P₂ form is still ≥ 0 numerically, its margin (≤ 2.5e−4 even, ≤ 1.3e−3 odd) leaves **no even slack and almost no odd slack** for route (A). This agrees with Golden Eye.
+  - Status of the decomposition itself: the split Q_L = Q^{(≤2)} − 2c₃B₃ is an exact identity (PROVED). That the first term is the P₂ form on the larger window, and not ≥ 0 there, is NUMERICAL.
+- **The full {2, 3} form** R − 2c₂B₂ − 2c₃B₃ (+2c₄B₄ past log 4) stays numerically ≥ 0 across the range, with small margins:
+  - at N = 160: even ≤ 8.5e−4 to 7.0e−4 and odd ≤ 2.3e−3 to 1.5e−3 on 2L ∈ [log 3, log 4 + 0.1];
+  - this is consistent with CERTIFIED positivity (Mori-conditional).
+  - The margins are not converged and are still decreasing under refinement. **This is the near-degenerate direction, computed:** it sets in between ℓ₂ ≈ 0.1 and log 1.5, not at the p = 2 entry. That is consistent with CCM 2310.18423's tiny eigenvalues on larger windows. Theorem number unverified.
+
+### N.15.3 Route (B): S&M's Lemma A/B template at L = ½ log 3 (main route; reduced to explicit inputs)
+**What the template is (CERT_p2_constants, read on main ad76f83; audited SOUND).**
+- **Lemma A (PROVED):** |ξ̂(t)|² ≤ K_o(t)‖ξ‖²_H, with closed-form density dens_o at any L.
+- **Lemma B (PROVED):** a bathtub bound for nondecreasing symbols.
+- **Thm 3 (CERTIFIED):** Q_L ≥ ∫ω dν, with lo = c₂(1 + 1/η)(2ℓT/π) and hi = c₂(1 + η) coming from S1 and (Ω5).
+- **Key structural fact:** R is a Fourier multiplier, and the prime term is controlled only through S1 and (Ω5), with no κ, ε or Mori.
+
+**Step B1: the S1-only template fails at 2L = log 3 (NUMERICAL, robust).** The best inequality the template can use is R − c₂‖ξ‖²_{H(E₂)} − c₃‖ξ‖²_{H(E₃)} ≥ 0, with E₂ strips of length ℓ₂. Ritz upper bounds of its infimum (`sN/n15_S1_obstruction.{py,out}`, N = 80):
+
+| window 2L | S1-only form: even ≤ | odd ≤ |
+|---|---|---|
+| log 2 + 0.028 | 0.0061 | 0.4786 |
+| log 2 + 0.1 | −0.239 | 0.246 |
+| log 3 | −0.876 | **−0.194** |
+| log 3 + 0.028 (with E₃) | −0.931 | −0.271 |
+
+- So **on the {2, 3} range, no proof that bounds the 2-line by S1 can work**, even in the odd sector.
+- Since ℓ₂ ≥ log 1.5 = 0.405, the (Ω5) factor 2ℓ₂T/π is ≥ 1 once T ≥ 3.9, so (Ω5) gives nothing.
+- *For S&M:* the odd S1-only form is still +0.246 at ℓ = 0.1. The S1 route itself is not what limits Thm 3 at ℓ ≈ 0.029; the band-split losses are. NUMERICAL, an indicative pointer, not a claim.
+
+**Step B2: the correct recast (PROVED reduction).** Write Q_L = Q^{(≤2)} − 2c₃B₃ (exact identity), with the 2-line kept **exactly**, not through S1. Apply S1 and (Ω5) to the 3-line alone, where ℓ₃ is small:
+|2c₃B₃| ≤ c₃[(1 + 1/η)(2ℓ₃T/π)ν_{<T} + (1 + η)ν_{≥T}].
+- Then the odd {2, 3} entry holds on ℓ₃ ≤ ℓ₃* **if** the following band coercivity holds:
+  > **(N.15.H, odd)** Q^{(≤2)}(ξ) ≥ μ_hi ν_{≥T}(ξ) + μ_lo ν_{<T}(ξ) for odd ξ ∈ H¹₀(−L, L), uniformly for L ∈ [½ log 3, ½(log 3 + ℓ₃*)],
+  >
+  > with μ_hi > c₃(1 + η) and μ_lo > c₃(1 + 1/η)(2ℓ₃*T/π).
+
+  Here ν_{≥T} and ν_{<T} are the H-energy measures of the bands. This is the analogue of Celestial's C.13.H for the P₂ form at log 3. **PROVED** as a sufficient condition, by the Thm 3 argument with Q^{(≤2)} in place of R.
+- **Principal's correction folded in.** On the edge class the joint block (N.15.1) shows that the high-band payer must cover **0.9009 per unit energy, not just c₃**: μ_hi must dominate the 2-line kink coupling as well, because that coupling sits inside Q^{(≤2)}.
+  - If Q^{(≤2)} is lower-bounded on the high band through R alone, the requirement becomes **Ω(T) > 0.9009(1 + η)**, so T ≥ 15.47 (η → 0).
+  - With the crude S1 it becomes Ω(T) > c₂ + c₃, so T ≥ 19.34.
+  - These constants depend on Principal's per-line ramp constants. *Flag: if Principal's cross-check changes c₃(1/ℓ₃ − ℓ₃/24) or the kink normalization, the 0.9009 and the 15.47 move with it.*
+
+**Step B3: what (N.15.H) needs that p = 2 did not (the precise list).**
+1. **A certified non-multiplier lower bound for the P₂ form at 2L = log 3 (GAP N.15-G1).**
+   - At p = 2, Lemma B applied because R is a multiplier and the prime term entered only through S1. At p = 3 the 2-line must stay exact, since S1 fails (B1). So the certificate has to handle the shift coupling B₂.
+   - Options are a certified Galerkin lower bound (Lehmann–Goerisch or Temple type, with a certified residual), or a block certificate that treats the low band |t| < T as a finite matrix and the high band by Lemma A/B.
+   - **The size to certify is tiny.** The odd margin at 2L = log 3 is ≤ 1.34e−3 (N = 320 Ritz upper bound, not converged). Compare 0.46255 at log 2.
+   - So answering the steer directly: the p = 2 part needs a certified lower bound for the odd P₂ form all the way up to ℓ₂ = log 1.5 = 0.405 (start of the range). Over the range it needs one up to ℓ₂ ≤ log 2 (2L = log 4) for the full {2, 3} form, not for P₂, which goes negative.
+   - Golden Eye's odd persistence to ℓ ≈ 0.3 (ours: 0.014 at ℓ = 0.3, converged) ends before 0.405. Between 0.3 and 0.405 the margin falls by another factor of ≥ 10.
+   - Celestial's C.13.B method tops out at ℓ ≈ 0.119 (Golden Eye); it is not relied on.
+2. **High-band coercivity μ_hi > 0.9009 on the edge class (GAP N.15-G2).** This takes T ≳ 15.5 for the multiplier part, plus control of the B₂ high-band cross terms. Those terms are not diagonal in t, unlike at p = 2.
+3. **Uniformity in L over [½ log 3, ½(log 3 + ℓ₃*)] (touches G.4d).** S&M's Thm 3 used monotonicity in ℓ (a smaller domain and a smaller lo). Here the P₂ form is not L-monotone in sign; it becomes negative by log 3.5. The certificate must therefore be run at the right end L = ½(log 3 + ℓ₃*), as S&M did.
+4. **No δ_o⁰, k_∞ or B is needed (PROVED, logic).** The route is CC-free like S&M's: Q_L comes from the classical Weil explicit formula on 2L < log 4, and the p = 3 version needs no CC ε or q. The constants it needs are (T, μ_hi, μ_lo, η), the margin m₃ at log 3, and Lemma A's dens_o at L = ½(log 3 + ℓ₃*).
+
+**Step B4: indicative range (NUMERICAL, indicative only).** Take μ_lo ≤ m₃ ≲ 1.3e−3, T ≈ 15.5 and η = 1. Then ℓ₃* ≲ μ_lo·π/(2T·c₃·(1 + 1/η)) ≈ 1.3e−3·π/(2·15.5·0.634·2) ≈ **1e−4**, or smaller as the refinement lowers m₃.
+- **So route (B) gives at best an odd entry on ℓ₃ ≲ 1e−4, and only after certifying a ~1e−3 margin of a non-multiplier form.**
+- This is a polynomial range, not e^{−1/m}, but the input margin is small. The smallness lives in the Weil form's H-margin at log 3, not in the 3-edge.
+- **Odd entry, restated (CONJECTURE).** (N.15.H) holds at 2L = log 3 with μ_hi > 0.9009 and some μ_lo > 0. Given this, the odd {2, 3} entry holds on a polynomial range ℓ₃ ≤ ℓ₃*(μ_lo, T) (PROVED given (N.15.H)).
+- **Even {2, 3} entry: no route here.** The even margin at log 3 is ≤ 2.5e−4 and decreasing, and the joint block charges even vectors 0.2666 per unit energy. *Touches the even-sector gaps ((P), m₀^e).* GAP.
+
+**Heuristic, assuming RH.** Under RH, Q_L(ξ) = Σ_γ(¼ + γ²)|ξ̂(γ)|² over the zeros, up to the normalization of N.13.1. This explains why the infimum over a window of length 2L can be small: it is attained where ξ̂ nearly vanishes on the low zeros. The statement is **heuristic, assuming RH**, and is used for nothing.
+
+### N.15.4 C.14.K cross-check (NUMERICAL; cross-check of Celestial C.14.6 item 3)
+`sN/n14_c14K_gamma.py` and its `.out`, `_fine.out` and `_refine.out` are now committed. Earlier they were kept uncommitted as the dropped γ-test; Celestial asked for this test in C.14.6.
+- **Setup.** Piecewise-linear ξ ∈ H¹₀(−L, L) is split as V_b ⊕ V_s. The explicit high-band form is P_{>T}(u, v) = (1/π)∫_T^∞(¼ + t²)(Ω − Ω(0))Re(û·conj v̂)dt.
+- **Statistic.** γ_best = ‖P_bb^{−1/2}P_bsP_ss^{−1/2}‖, the sharp constant in |2P(u, v)| ≤ γ[P(u) + P(v)]. It is compared with γ_crit = Ω(T)/(Ω(T) + |Ω(0)|).
+- **Result.** γ_best < γ_crit only for ℓT ≲ 0.26:
+  - ℓ = 0.005 to 0.01 at T = 12.8 to 20: γ ≈ 0.03 to 0.08, against 0.117 to 0.177;
+  - ℓ = 0.02 at T = 12.8: γ ≈ 0.09 against 0.117.
+  - It fails for ℓ ≥ 0.03 at every T, and for ℓ = 0.02 at T ≥ 16 on refinement.
+  - γ_best grows under strip refinement (ns = 6 → 12 → 24) and under T_max, so the "holds" cases are not converged from below.
+- **Reading (NUMERICAL, not a proof either way).** C.14.K is **not supported as stated** for ℓ ≳ 0.03, and is marginal at best for ℓT ≲ 0.26. Per C.14.6, (K3) then needs an even analogue of C.13.H instead. *Touches C.14.K and the even sector.*
+
+### N.15.5 Interface requests
+- **S&M:**
+  - (i) Is a certified non-multiplier lower bound for the odd P₂ form at 2L = log 3 (size ≲ 1e−3) within Arb reach? This is N.15-G1. A low-band finite-matrix plus Lemma A/B high-band block certificate is the natural form.
+  - (ii) The S1-only odd form is still +0.246 at ℓ = 0.1 (NUMERICAL), in case Thm 3's range can be pushed.
+- **Principal:** please confirm the joint block M = [[2c₃, 2c₂], [2c₂, 0]] and the ½ energy normalization (0.9009 / −0.2666). The route (B) constants T ≥ 15.47 depend on it.
+- **Golden Eye:** please cross-check the full {2, 3} even and odd minima (N.15.2 last bullet) with your Dirichlet-mode Galerkin at 2L = log 3, log 3.5 and log 4.
+- **Celestial:** see N.15.4 for C.14.K.
+
+*(Grok audit S103h(5): SOUND.* The joint block, its eigenvalues 1.8019 / −0.5333 and the ½ normalization (0.9009 / −0.2666) are re-derived and match Principal P.15.1 and Grok's s103h replay. The thresholds were re-solved with mpmath: 8.2079 / 11.8515 / 15.4712 / 19.3444. Stirling Ω(T) ≈ log(T/2π) gives 0.9011 at T = 15.471, against 0.9009 exact. The B2 sufficiency follows the Thm 3 argument with S1 + (Ω5) on the 3-line only. ℓ₃* ≈ 1.04e−4 checks. Route (A)'s negative values are Ritz upper bounds, so "the P₂ form is negative" is a valid numerical witness. Re-run: `n15_S1_obstruction.py` reproduces its .out exactly. Notes: (a) `sN/n14_c14K_gamma_refine.out` is committed empty (0 bytes), so the N.15.4 refinement claims rest on `_fine.out`; regenerate it or drop the reference. (b) N.15.4 is now superseded in strength by Celestial C.14.4c (nested-Galerkin lower bounds, merged b02e86f); the two agree. (c) On the full {2, 3} form the N = 160 odd minima are ≤ 2.3e−3 to 1.5e−3, not ≤ 1e−3; only the even minima and the N = 320 values at log 3 are ≤ 1e−3.)*
+
+### N.15.6 Labels after N.15
+| item | label |
+|---|---|
+| Errata (1), (2) (Principal P.15.5) and lead caveats | PROVED (corrections) |
+| Joint block σ(1/ℓ₃)[[2c₃, 2c₂], [2c₂, 0]], eigenvalues 1.8019 / −0.5333 (0.9009 / −0.2666 per unit energy) | PROVED (elementary) |
+| Thresholds T = 8.208 / 11.852 / 15.471 / 19.344 | NUMERICAL |
+| Route (A): P₂ form negative on (log 3.5, log 4]; margin at log 3 ≤ 2.5e−4 even, ≤ 1.34e−3 odd | NUMERICAL (Ritz upper bounds); route (A) dead end |
+| Full {2, 3} form margins ≤ ~1e−3, ≥ 0 numerically | NUMERICAL; positivity CERTIFIED conditional on Mori |
+| S1-only template fails at 2L = log 3 (odd −0.194) | NUMERICAL |
+| Route (B) reduction: (N.15.H) ⇒ odd {2, 3} entry on ℓ₃ ≤ ℓ₃* | PROVED (sufficient condition) |
+| (N.15.H) itself at log 3 | CONJECTURE; inputs GAP N.15-G1, N.15-G2 |
+| ℓ₃* ≲ 1e−4 | NUMERICAL (indicative) |
+| No δ_o⁰, k_∞ or B needed for route (B) | PROVED (logic) |
+| Even {2, 3} entry | GAP ((P), m₀^e) |
+| C.14.K γ-test | NUMERICAL (cross-check of C.14.6); not supported for ℓ ≳ 0.03 |
+| Uniformity in L | GAP (G.4d) |
+| Q_L = Σ_γ(¼ + γ²)\|ξ̂(γ)\|² | heuristic, assuming RH |
 | RH | OPEN |
 
 Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
