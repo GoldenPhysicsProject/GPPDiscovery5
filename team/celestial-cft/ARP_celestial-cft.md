@@ -836,7 +836,7 @@ Decomposition ξ = ξ_b + ξ_s as in N.13.4: α₋ = ξ(−L + ℓ), α₊ = ξ(
 
 > **Conjecture C.14.K (high-band almost-orthogonality of the ramp split).** There are T ≥ 12.8, γ < Ω(T)/(Ω(T) + |Ω(0)|) and ℓ_K > 0 such that for all ξ ∈ H¹₀(−L, L), ℓ ≤ ℓ_K:
 > |2P_{>T}(ξ_b, ξ_s)| ≤ γ[P_{>T}(ξ_b) + P_{>T}(ξ_s)].
-(Cauchy–Schwarz gives γ = 1; the conjecture asks for an angle bounded away from 0 between ramp-split pieces in the P_{>T} geometry. **Tested in C.14.4c: C.14.K FAILS (NUMERICAL) for ℓ ≳ 0.02–0.06, in both sectors, at every T tested; it is unresolved at ℓ = 0.01.**)
+(Cauchy–Schwarz gives γ = 1; the conjecture asks for an angle bounded away from 0 between ramp-split pieces in the P_{>T} geometry. **Tested in C.14.4c: C.14.K FAILS (NUMERICAL) for ℓ ≳ 0.02–0.06, in both sectors, at every T tested; it is unresolved at ℓ = 0.01.** **Update (C.15.E): refuted numerically on the useful range (ℓ_K ≳ 0.03; ℓ = 0.01 extrapolates to 0.104 < 0.130; T = 10 lies outside T ≥ 12.8); CERTIFIED false (Arb) at (ℓ, T) = (a/6, 14) and (a/13, 14).**)
 
 **Corollary C.14.D (what closes, given what).**
 - **(K2), odd.** Already closed **without any coupling bound** by Prop C.13.H′ given C.13.H (polynomial range ℓ_H), or by Thm N.13.A given m₀^o (exponential range). The coupling is not needed for (K2). The odd p = 2 cost 2c₂α²(1/ℓ − ℓ/24) is paid by the archimedean margin (mechanism as in N.13.4).
@@ -950,8 +950,8 @@ Then C.13.H^e holds with μ^e_hi = μ_hi and μ^e_lo = ε′(1⁺)δ_e/(¼ + T²
 **Conclusion for (K3) on ℓ ∈ [0.05, 0.1].**
 - Neither C.14.K (false) nor band-split + S1 (range ≲ 10⁻³) reaches this range. The route that can is a **direct certified even certificate of the full Q_L, with the p = 2 term kept signed**, as in S&M's odd direct method.
 - **What certified Galerkin lower bound suffices (PROVED as a reduction; the values to certify are NUMERICAL targets).**
-  - At each ℓ on a grid in [0.05, 0.1], certify λ_min(Q_L|even) ≥ m_cert > 0 in the H-norm. Use a finite even basis V_N (interval arithmetic for the finite matrix), plus a certified complement bound: for ξ ⊥ V_N, Q_L(ξ) ≥ (Ω(t_N) − 2c₂ − (tail of the cross terms))‖ξ‖²_H, with Schur on V_N ⊕ V_N^⊥. *(Grok audit S103h(3): the reduction (finite interval matrix + Schur + ℓ-Lipschitz) is sound as a plan, but the complement bound "Q_L(ξ) ≥ (Ω(t_N) − 2c₂ − tail)‖ξ‖²_H for ξ ⊥ V_N" is not proved here: H-orthogonality to a Dirichlet basis does not make ξ high-frequency for the Ω multiplier, and the tail and C_B are unspecified. That bound is a GAP to be supplied and certified with the matrix; read the item as a REMARK/plan until then.)*
-  - Then pass between grid points with a Lipschitz bound in ℓ (N.13.3 Step 1 dilation, loss ≤ 24.88Δℓ on R, plus the variation of the p = 2 term). Golden Eye's minima (0.046 at ℓ = 0.028, 0.015 at ℓ = 0.1) leave room for **m_cert ≈ 0.005 at ℓ = 0.1** (three times the 10⁻³ discretisation error), with grid spacing Δℓ ≲ m_cert/(24.88 + C_B) (about 2×10⁻⁴, i.e. ~250 grid points on [0.05, 0.1], or fewer with a sharper ℓ-Lipschitz bound).
+  - At each ℓ on a grid in [0.05, 0.1], certify λ_min(Q_L|even) ≥ m_cert > 0 in the H-norm. Use a finite even basis V_N (interval arithmetic for the finite matrix), plus a certified complement bound: for ξ ⊥ V_N, Q_L(ξ) ≥ (Ω(t_N) − 2c₂ − (tail of the cross terms))‖ξ‖²_H, with Schur on V_N ⊕ V_N^⊥. *(Grok audit S103h(3): the reduction (finite interval matrix + Schur + ℓ-Lipschitz) is sound as a plan, but the complement bound "Q_L(ξ) ≥ (Ω(t_N) − 2c₂ − tail)‖ξ‖²_H for ξ ⊥ V_N" is not proved here: H-orthogonality to a Dirichlet basis does not make ξ high-frequency for the Ω multiplier, and the tail and C_B are unspecified. That bound is a GAP to be supplied and certified with the matrix; read the item as a REMARK/plan until then.)* **Supplied in C.15:** Thm C.15.A (comparison form Q′_T = q_T‖·‖²_H + band-limited 𝒜_T, trace bounds via Lemma C.15.K) is the proved complement bound.
+  - Then pass between grid points with a Lipschitz bound in ℓ (N.13.3 Step 1 dilation, loss ≤ 24.88Δℓ on R, plus the variation of the p = 2 term). Golden Eye's minima (0.046 at ℓ = 0.028, 0.015 at ℓ = 0.1) leave room for **m_cert ≈ 0.005 at ℓ = 0.1** (three times the 10⁻³ discretisation error), with grid spacing Δℓ ≲ m_cert/(24.88 + C_B) (about 2×10⁻⁴, i.e. ~250 grid points on [0.05, 0.1], or fewer with a sharper ℓ-Lipschitz bound). **Withdrawn (C.15.B):** λ_e is nonincreasing in L (domain inclusion, L-independent form), so one certificate at ℓ = 0.1 covers all of (0, 0.1]; dilation gives no finite C_B for the signed p = 2 term in the H-norm.
   - No m₀^e, C.14.K or (P) is then needed on that range. (P) and m₀^e remain the inputs for the *small-ℓ* even entry via C.13.H^e″/C.13.H^e′.
 - At ℓ = 0.2–0.3 the even margin (0.001 → noise) is too thin for a certificate at this resolution: CONJECTURE / GAP.
 
@@ -992,7 +992,7 @@ R-lines for C.14.4c. **R1** γ-table and minima per ℓ; one rule per ℓ-range.
 | (K3) in the frame | GAP |
 | Thm C.14.B coupling bound | PROVED |
 | Thm C.14.C (i)–(iii) obstructions | PROVED ((i) with Arb-certified kernel sign) |
-| Conjecture C.14.K | CONJECTURE; **fails NUMERICALLY** for ℓ ≳ 0.02–0.06 (C.14.4c); unresolved at ℓ = 0.01 |
+| Conjecture C.14.K | CONJECTURE; **fails NUMERICALLY** for ℓ ≳ 0.02–0.06 (C.14.4c); unresolved at ℓ = 0.01 ; refuted numerically on the useful range; **CERTIFIED false at (a/6, 14)** (C.15.E) |
 | C.14.4c γ table (nested-Galerkin lower bounds, monotone under refinement) | NUMERICAL |
 | Conjecture C.13.H^e (band-split even coercivity at L₀) | CONJECTURE (Galerkin evidence: holds with μ^e_lo < 0.048) |
 | Prop C.13.H^e′ (C.13.H^e ⇒ (K3), ℓ ≤ ℓ_H) | PROVED given C.13.H^e |
@@ -1008,3 +1008,180 @@ R-lines for C.14.4c. **R1** γ-table and minima per ℓ; one rule per ℓ-range.
 | DH: frame absent | PROVED (structural); truth fake-blind |
 
 - **R1** one rule per ℓ-range. **R2** FE through Ω, σ_S and κ; Euler product only through L_2. **R3** the p = 2 term is used with its sign in N.13.4/C.14.D, and through its Fejér minimum in C.14.A. **R4** pole pair spent at T4; odd ξ̂(0) = 0; the even ξ₀ direction is the GAP. **R5** DH is structurally excluded; truth fake-blind. **R6** "no MF-relative margin" PROVED; "closing step must be an exact identity" CONJECTURE ((I1) is an exact identity; the positivity steps are not).
+
+## C.15 Even (K3) certificate framework on 2L ∈ (log 2, log 2 + ℓ_max], and the rigorous C.14.K refutation (S103i, 2026-10-28, 01:58 EDT)
+
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok. RH is OPEN. Scripts: arp_c/c15_even_schur.{py,out}, c15_entries_ref.{py,out}, c14K_refute_arb.{py,out}.
+
+This section answers the lead's 1:41 task and the 1:48 steering. The even certificate is split: Celestial writes the analytic framework (this section); S&M runs the Arb certification. It replaces the complement step of C.14.4c, which the lead recorded as a GAP ("Q_L(ξ) ≥ (Ω(t_N) − 2c₂ − tail)‖ξ‖²_H for ξ ⊥ V_N"), with a proved bound. It also replaces the ℓ-Lipschitz grid with an exact monotonicity.
+
+**Set-up and normalisation (PROVED; as in C.14).**
+- a = log 2, c₂ = (log 2)/√2 = 0.4901290717, ℓ = 2L − a, and 2L ≤ log 3, so only n = 2 enters the prime side.
+- ξ̂(t) = ∫ξ(x)e^{−itx}dx, and ‖ξ‖²_H = ∫(ξ′² + ¼ξ²) = (1/2π)∫(¼ + t²)|ξ̂|².
+- Ω(t) = Re ψ(¼ + it/2) − log π = ½[ψ(¼ + it/2) + ψ(¼ − it/2)] − log π. The second form is holomorphic near ℝ, so it can be used in acb.integral. Ω(0) = −5.3721834.
+- For real even ξ ∈ H¹₀(−L, L):
+  Q_L(ξ) = R(ξ) − 2c₂B(ξ) = (1/2π)∫(¼ + t²) q(t)|ξ̂(t)|² dt, with q(t) = Ω(t) − 2c₂cos(at),
+  where B(ξ) = ∫_{−L}^{L−a}[ξ′(x)ξ′(x+a) + ¼ξ(x)ξ(x+a)]dx = (1/2π)∫(¼ + t²)cos(at)|ξ̂|².
+- **Pole and Q terms.** Work in Q-coordinates: g = Qh, Q = −d² + ¼, h = ξ ⋆ ξ*. Then ĝ(t) = (¼ + t²)ξ̂(t)ξ̂(−t)* vanishes at t = ±i/2. So the pole terms ĝ(±i/2) are identically 0, and **there is no separate pole entry**. The only trace of Q is the weight (¼ + t²) and the H-norm.
+- The p = 2 term is kept **signed** throughout, through −2c₂cos(at) inside q.
+
+**Basis (PROVED properties).**
+- Use even Dirichlet modes: e_k(x) = L^{−1/2}cos(ω_k x), ω_k = (k + ½)π/L, k ≥ 0, normalised as f_k = e_k/√(ω_k² + ¼).
+- They are eigenfunctions of −d² + ¼ on H¹₀,even(−L, L), so ⟨f_j, f_k⟩_H = δ_jk. The H-Gram matrix is the identity.
+- The H-orthogonal complement of V_N = span{f_0, …, f_{N−1}} is W = closed span{f_k : k ≥ N}, where −d² + ¼ ≥ ω_N² + ¼.
+- Transform: ê_k(t) = (−1)^k·2ω_k cos(tL)/(√L(ω_k² − t²)) = √L[sinc((ω_k − t)L) + sinc((ω_k + t)L)], where sinc x = sin x/x. This is entire, real and even in t, with ê_k(ω_k) = √L.
+- **Why this basis (and not, e.g., Golden Eye's N ≈ 24 or a hat/Legendre basis).**
+  - (i) The Gram matrix is exactly diagonal, so no Gram inversion needs to be enclosed.
+  - (ii) The complement W is explicit, with a closed-form pointwise kernel (Lemma C.15.K below), so the trace bounds are finite one-dimensional integrals.
+  - (iii) ê_k is entire, so acb.integral applies directly.
+  - (iv) N is set by the band cutoff T: we need ω_N ≫ T. At T = 60 and ℓ = 0.1, N = 40 already certifies (λ = 0.01386), and **N = 64 is recommended** (ω_64 ≈ 510). At N = 24, ω_24 ≈ 193 is too close to the T needed for a sharp A_N.
+
+**Why the naive modal Schur fails (obstruction, NUMERICAL + PROVED mechanism).**
+- In the f-basis, the full R has off-diagonal entries R̃_jk ≈ ±1/(2(j + k + 1)). This is a Hankel (Hilbert-type), scale-invariant coupling coming from the log-growth of Ω.
+- So the block coupling V_N to W in the *full* Q does not decay with N. Neither a Schur bound with "Ω(t_N) − 2c₂" on V_N^⊥, nor any pointwise-kernel bound on the full symbol, gives a usable c_tail and ‖B‖.
+- This is exactly the lead's objection: being H-orthogonal to V_N does not make ξ high-frequency for Ω.
+- The fix below takes all of the unbounded part of the symbol out *as a multiple of the H-norm*, which is diagonal, and leaves only a band-limited remainder.
+
+**Lemma C.15.K (tail kernel; PROVED, closed form from S&M Lemma A, 7906287).**
+- For w = Σ_{k≥N} c_k f_k ∈ W: |ŵ(t)|² ≤ K_W(t)‖w‖²_H, by Cauchy–Schwarz, where K_W(t) = Σ_{k≥N} f̂_k(t)² = K_e(t) − Σ_{k<N} f̂_k(t)².
+- K_e(t) = Σ_{k≥0} f̂_k(t)² = [L + sin(2tL)/(2t) − 2cos(tL)(½tanh(L/2)cos(tL) + t sin(tL))/(t² + ¼)]/(¼ + t²). This is S&M's even kernel; we checked it against the mode sum to 1e-15 at t = 0, 3, 10, 40 with L = 0.4.
+- Hence, for any weight g ≥ 0 on [0, T]: (1/2π)∫_{|t|<T}(¼ + t²)g|ŵ|² ≤ ε^g_N‖w‖²_H, where ε^g_N := (1/π)∫_0^T(¼ + t²)g(t)K_W(t)dt.
+- *Enclosure.* Either use the closed form, which involves cancellation of relative size ~1e-5 and so needs ≥ 128 bits, or use the mode sum k = N … K − 1 plus the remainder. For k ≥ K, t ≤ T < ω_K: f̂_k² ≤ 4/(L(ω_k − T)⁴), so the remainder is ≤ sup g·(T/4 + T³/3)/π·(4/L)·(L/π)/(3(ω_K − π/L − T)³). The two routes agree: 3.65388e-5 against 3.65389e-5 (g ≡ 1, ℓ = 0.1, T = 60, N = 64).
+
+**Theorem C.15.A (Schur bound with a coercive comparison form; PROVED).**
+- Fix T > 0. Put q_T := Ω(T) − 2c₂ and a_T(t) := q(t) − q_T on |t| < T. Define:
+  - 𝒜_T(ξ) := (1/2π)∫_{|t|<T}(¼ + t²)a_T(t)|ξ̂|²;
+  - Q′_T := q_T‖·‖²_H + 𝒜_T;
+  - A_N := the matrix of Q′_T on V_N in the f-basis, with μ_A := λ_min(A_N);
+  - m_abs, m_neg ≥ 0: any measurable majorants of |a_T| and of (a_T)₋ = max(0, −a_T) on [0, T];
+  - s_V := λ_max of the m_abs-weighted band form on V_N (a finite matrix, entries below);
+  - β := (s_V·ε^{m_abs}_N)^{1/2} and c_tail := q_T − ε^{m_neg}_N.
+- Then, for every even ξ ∈ H¹₀(−L, L) with 2L ≤ log 3:
+  **Q_L(ξ) ≥ λ_cert‖ξ‖²_H, where λ_cert := ½[μ_A + c_tail − √((μ_A − c_tail)² + 4β²)].**
+  Equivalently, for λ < c_tail: λ_min ≥ μ_A − β²/(c_tail − λ). Here ‖B‖ ≤ β.
+
+*Proof.*
+1. **Q_L ≥ Q′_T.** For |t| ≥ T: q(t) − q_T = [Ω(t) − Ω(T)] + 2c₂[1 − cos at] ≥ 0, because Ω is increasing on [0, ∞) (the Re ψ line, C.14) and cos ≤ 1. So Q_L − Q′_T = (1/2π)∫_{|t|≥T}(¼ + t²)(q − q_T)|ξ̂|² ≥ 0. The p = 2 term stays signed on |t| < T and is only dropped where it is helped.
+2. **Split.** Write ξ = v + w with v ∈ V_N and w ∈ W. Then ‖ξ‖²_H = ‖v‖² + ‖w‖², and the q_T-part has no cross term. So Q′_T(ξ) = Q′_T(v) + 2𝒜_T(v, w) + q_T‖w‖² + 𝒜_T(w).
+3. **Block.** Q′_T(v) ≥ μ_A‖v‖².
+4. **Off-diagonal.** By Cauchy–Schwarz in the measure (¼ + t²)|a_T|dt: |𝒜_T(v, w)| ≤ 𝒜^{m_abs}(v)^{½}𝒜^{m_abs}(w)^{½} ≤ (s_V‖v‖²)^{½}(ε^{m_abs}_N‖w‖²)^{½}, using Lemma C.15.K for w.
+5. **Tail.** 𝒜_T(w) ≥ −𝒜^{m_neg}(w) ≥ −ε^{m_neg}_N‖w‖², so q_T‖w‖² + 𝒜_T(w) ≥ c_tail‖w‖².
+6. **Combine.** Q′_T(ξ) ≥ μ_A x² − 2βxy + c_tail y² with x = ‖v‖, y = ‖w‖. The quadratic form of [[μ_A, −β], [−β, c_tail]] is ≥ λ_cert(x² + y²). ∎
+- *This is the lead's suggested comparison (−d² + ¼ on H¹₀, eigenvalues on V_N^⊥ ≥ ω_N² + ¼), realised in Fourier.* The coercive part q_T(−d² + ¼) is H-diagonal. The perturbation 𝒜_T is band-limited, so its mass on W is O((T/ω_N)³), via the trace ε. Both the R part and the p = 2 part of the perturbation sit inside a_T.
+
+**Recommended majorants (all integrands analytic on [0, T], hence directly Arb-integrable).**
+- m_abs(t) = Ω(T) − Ω(t) + 2c₂(1 − cos at) ≥ |a_T(t)|, and m_neg(t) = Ω(T) − Ω(t) ≥ (a_T)₋.
+- Both hold on [0, T] because a_T = −(Ω(T) − Ω(t)) + 2c₂(1 − cos at) and Ω is increasing.
+- The sharper choice m = |a_T| needs a_T's zeros isolated; that is an option, not needed.
+
+**Key constants (NUMERICAL, float; c15_even_schur.out; to be enclosed by S&M).** T = 60, N = 64, q_T = Ω(60) − 2c₂ = 1.27619777770742.
+
+| ℓ | μ_A = λ_min(A_N) | majorant | s_V | ε^{abs} | ε^{neg} | ‖B‖ ≤ β | c_tail ≥ | λ_cert |
+|---|---|---|---|---|---|---|---|---|
+| 0.05 | 0.02980 | sharp (\|a_T\|, (a_T)₋) | 1.2602 | 3.70e-5 | 2.59e-6 | 0.00683 | 1.27620 | **+0.02976** |
+| 0.1 | 0.01398 | sharp | 1.2724 | 2.79e-5 | 1.95e-6 | 0.00596 | 1.27620 | **+0.01395** |
+| 0.1 | 0.01398 | analytic (recommended) | 3.4704 | 4.91e-5 | 1.26e-5 | 0.01306 | 1.27619 | **+0.01385** |
+| 0.15 | 0.00597 | sharp | 1.2754 | 3.92e-5 | 3.64e-6 | 0.00707 | 1.27619 | +0.00593 |
+| 0.2 | 0.00225 | sharp | 1.2773 | 4.75e-5 | 4.26e-6 | 0.00779 | 1.27619 | +0.00221 |
+| 0.2 | 0.00225 | analytic | 3.7576 | 7.49e-5 | 1.80e-5 | 0.01677 | 1.27618 | +0.00203 |
+
+- At ℓ = 0.1, varying the parameters gives: λ_cert = 0.01386 (T = 60, N = 40; ‖B‖ ≤ 0.0122), 0.01397 (T = 60, N = 96; ‖B‖ ≤ 0.0032), and 0.01491 (T = 100, N = 64; q_T = 1.787, ‖B‖ ≤ 0.0168).
+- The cost of dropping G_T (the |t| ≥ T part) is small. The full-Q Galerkin value is 0.01619 (N = 64), against μ_A = 0.01398 (T = 60) and 0.01507 (T = 100).
+- The Schur loss β²/(c_tail − μ_A) is ≤ 1.4e-4 in every row.
+
+**Proposition C.15.B (monotonicity in L; replaces the ℓ-Lipschitz grid; PROVED).**
+- Let λ_e(L) := inf{Q_L(ξ)/‖ξ‖²_H : 0 ≠ ξ ∈ H¹₀,even(−L, L)}. Then λ_e is **nonincreasing** in L on 2L ≤ log 3.
+- *Proof.* The representation Q_L(ξ) = (1/2π)∫(¼ + t²)q|ξ̂|² does not depend on L for 2L ≤ log 3, since no prime n ≥ 3 enters. Extension by zero maps H¹₀,even(−L, L) into H¹₀,even(−L′, L′) for L < L′, and preserves ξ̂, Q and the H-norm. An infimum over a larger set is smaller. ∎
+- **Consequences.**
+  - A certificate at the right endpoint ℓ_max implies Q_L ≥ λ_cert(ℓ_max)‖·‖²_H on the even sector for **all** 2L ≤ log 2 + ℓ_max. That covers [0.05, 0.1] with ℓ_max = 0.1. **Grid rule: one point, ℓ = ℓ_max. Grid size 1.**
+  - Galerkin numbers are consistent with this: Golden Eye 0.046 / 0.015 / 0.001 at ℓ = 0.028 / 0.1 / 0.2; ours 0.0473 / 0.0343 / 0.0162 / 0.0071 / 0.0027 at ℓ = 0.028 / 0.05 / 0.1 / 0.15 / 0.2 (N = 64); and Prime's ≤ 2.5e−4 at 2L = log 3.
+- **Correction to C.14.4c (Celestial's own claim).** "Δℓ ≲ m_cert/(24.88 + C_B) ≈ 2×10⁻⁴, ~250 grid points" is **withdrawn**.
+  - It is unnecessary, by Prop C.15.B.
+  - As stated, it was also unproved. The dilation of N.13.3 Step 1 controls R (24.88Δℓ), but for the signed p = 2 term the dilated multiplier difference |cos(at/s) − cos(at)| ≤ a|1 − 1/s||t| is unbounded relative to the H-weight. So no finite C_B in the H-norm comes out of dilation without a frequency cutoff.
+  - No Lipschitz constant is needed: C := not used.
+
+**(c) Exact matrix entries for S&M (PROVED formulas; NUMERICAL reference values).** Indices j, k = 0 … N − 1; f̂_k = ê_k/√(ω_k² + ¼).
+1. **Band block (what is certified).** A_jk = q_T δ_jk + (1/π)∫_0^T(¼ + t²)a_T(t) f̂_j(t)f̂_k(t) dt, with a_T(t) = Ω(t) − Ω(T) − 2c₂(cos at − 1).
+   - For s_V, use the same entries with a_T replaced by m_abs, and take λ_max.
+   - For ε^m_N, use (1/π)∫_0^T(¼ + t²)m(t)K_W(t)dt (Lemma C.15.K).
+   - The integrands are analytic: ψ at ¼ ± it/2, sinc and cos. Splitting [0, T] into unit panels works well (16-point Gauss–Legendre per panel in floating point).
+2. **p = 2 entries in closed form (exact; the full-Q reference).** B_jk = ∫_{−L}^{L−a}[e_j′(x)e_k′(x+a) + ¼e_j(x)e_k(x+a)]dx
+   = (1/2L)[(ω_jω_k + ¼)C(ω_j − ω_k, −ω_k a) + (¼ − ω_jω_k)C(ω_j + ω_k, ω_k a)],
+   where C(ν, φ) = [sin(ν(L − a) + φ) − sin(−νL + φ)]/ν for ν ≠ 0, and C(0, φ) = ℓ cos φ. Then 2c₂B_jk/√((ω_j² + ¼)(ω_k² + ¼)) is the signed p = 2 entry.
+3. **Archimedean entries (full-Q reference).**
+   - Off-diagonal (j ≠ k): R_jk = (−1)^{j+k}·4ω_jω_k[J(ω_j) − J(ω_k)]/(L(ω_k² − ω_j²)).
+   - Diagonal: R_kk = (4ω_k²/L)[(¼ + ω_k²)I₂(ω_k) − I(ω_k)].
+   - Here J(ω) = (¼ + ω²)I(ω), I(ω) = (1/2π)∫_ℝ(Ω(t) − Ω(ω))cos²(tL)/(ω² − t²)dt, and I₂(ω) = (1/2π)∫_ℝ Ω(t)cos²(tL)/(ω² − t²)²dt.
+   - These follow from the partial fractions (¼ + t²)/((ω_j² − t²)(ω_k² − t²)) = [(¼ + ω_j²)/(ω_j² − t²) − (¼ + ω_k²)/(ω_k² − t²)]/(ω_k² − ω_j²) and (¼ + t²)/(ω² − t²)² = (¼ + ω²)/(ω² − t²)² − 1/(ω² − t²).
+   - Constants drop out because ∫cos²(tL)/(ω_k² − t²)dt = 0 (sin 2ω_kL = 0).
+   - The full Q is not needed for the certificate (A_N suffices); it is given for cross-checks and for a sharper variant.
+4. **Reference table (NUMERICAL, mpmath at 30 digits; c15_entries_ref.out).** ℓ = 0.1, L = 0.39657359027997265471, T = 60.
+   - ω_0 … ω_3 = 3.96092015528807, 11.8827604658642, 19.8046007764403, 27.7264410870165.
+   - B_jk (unnormalised), rows j = 0 … 3:
+     [−3.75001999723247, 8.97463044518596, −8.73361794097086, 3.1072870525255];
+     [8.97463044518596, −20.5311166305402, 16.864704621404, 1.37824923416854];
+     [−8.73361794097086, 16.864704621404, −3.17984096422806, −30.062455061541];
+     [3.1072870525255, 1.37824923416854, −30.062455061541, 77.8289561783128].
+     The closed form agrees with 400-node Gauss–Legendre to 2.8e-12.
+   - A_jk = Q′_T(f_j, f_k), rows j = 0 … 3:
+     [0.207950766678, −0.381518175204, 0.220969487769, −0.0975943904542];
+     [−0.381518175204, 0.892990625409, −0.14157757611, 0.0410416374567];
+     [0.220969487769, −0.14157757611, 1.20151232126, 0.0260117645367];
+     [−0.0975943904542, 0.0410416374567, 0.0260117645367, 1.39953509124].
+     These agree with the float pipeline (frame.Qprime) to 1e-9.
+
+**(d) Target Theorem C.15.D (CONJECTURE / target until S&M's Arb run is in).**
+- *If* S&M encloses, in Arb, μ_A, s_V, ε^{m_abs}_N and ε^{m_neg}_N at ℓ_max = 0.1 (T = 60, N = 64, analytic majorants) with λ_cert > 0 (float value 0.01385), *then* Q_L(ξ) ≥ λ_cert‖ξ‖²_H for every even ξ ∈ H¹₀(−L, L) and every 2L ≤ log 2 + 0.1. That is **even (K3) on ℓ ∈ (0, 0.1] ⊃ [0.05, 0.1]**, with the p = 2 term signed.
+- The implication is PROVED (Thm C.15.A + Prop C.15.B). The input λ_cert > 0 is NUMERICAL until the Arb run.
+- Stretch target: ℓ_max = 0.2 (float λ_cert = 0.00203 analytic, 0.00221 sharp) would cover (0, 0.2] with the same single run.
+- Credit: Golden Eye's even Galerkin (24 modes) located the range and the margins.
+
+**(e) Prime's numbers in the even accounting (credit Prime, team/prime-number-theory cd94c27, §N.15 and P.15.1).**
+- C.15's range is 2L ≤ log 2 + 0.2 < log 3, so only n = 2 enters. The {2, 3} joint edge block, which charges even vectors **0.2666 per unit H-energy** (P.15.1), does **not** enter here. It enters only for 2L > log 3.
+- There, Prime's even P₂ form has margin **≤ 2.5e−4 at 2L = log 3** (Ritz upper bound, N = 320, still decreasing). By Prop C.15.B this is the continuation of the monotone decrease 0.0162 → 0.0027 (ℓ = 0.1 → 0.2).
+- Consequence: no perturbative even {2, 3} entry is possible. A margin of ≤ 2.5e−4 against a 0.2666-per-energy charge leaves nothing. Even past log 3 stays a GAP (Prime N.15; (P), m₀^e).
+
+**C.15.E C.14.K: wording and rigorous refutation.**
+- **Quantifier (adopting G.4h's wording).** Conjecture C.14.K is **refuted numerically on the useful range**:
+  - every ℓ_K ≳ 0.03 is refuted at every tested T ≥ 12.8;
+  - at ℓ = 0.01 the extrapolation gives γ ≈ 0.104 < γ* = 0.130, so it is not refuted there, but that range is useless for (K3) (C.14.4c);
+  - the T = 10 rows of C.14.4c lie outside the conjecture's range T ≥ 12.8 and are illustrative only.
+- **CERTIFIED refutation (Arb, python-flint 0.9, 128 bits; arp_c/c14K_refute_arb.{py,out}).**
+  - Setting: ℓ = a/6 = 0.11552453 (M = 28 elements, n_s = 4 strip elements, h = 2L/M), T = 14, even sector.
+  - P is computed from the exact closed form of the position kernel: K(d) = Σ_{n≥0}e^{−c_n|d|}(c_n^{−2} − ¼c_n^{−4}) − |d|ζ(3, ¼)/32, with c_n = 2n + ½. Here K(0) = ζ(2, ¼)/4 − ζ(4, ¼)/64, and the n-tail for n ≥ 4000 is enclosed by e^{−c_N d}/(c_N²(1 − e^{−2d})). This reproduces c14K's Φ₁/2 + Ψ to 1e-15.
+  - P_{<T} uses acb.integral of (1/π)(¼ + t²)(Ω − Ω(0))h²sinc⁴(th/2)cos(kht) on [0, 14]. P_{>T} = P − P_{<T}.
+  - **Profile pair** (node values at x_j = −L + jh, j = 1 … 27; piecewise linear, H¹₀, even):
+    - ξ_b = (0.047324, 0.094648, 0.141972, 0.189296, 0.276588, 0.375185, 0.481845, 0.59168, 0.698958, 0.797597, 0.881675, 0.945938, 0.986258, 1, mirror). It is exactly linear on each strip (α = 0.189296).
+    - ξ_s = (−0.030639, −0.041429, −0.031284, 0, …, 0, −0.031284, −0.041429, −0.030639). It is supported in the open strips.
+  - **Arb values:**
+    - P_{>T}(ξ_b) = 1.08051358448008893710633 ± 6e-29;
+    - P_{>T}(ξ_s) = 1.08052298337737851415 ± 7e-33;
+    - P_{>T}(ξ_b, ξ_s) = −0.80845238610558032736 ± 4e-31;
+    - ratio |2P_{>T}(ξ_b, ξ_s)|/[P_{>T}(ξ_b) + P_{>T}(ξ_s)] = **0.748207964761198 ± 1e-29**, against γ*(14) = Ω(14)/(Ω(14) + |Ω(0)|) = 0.129750187531026 ± 1e-38.
+  - **CERTIFIED: C.14.K is false at (ℓ, T) = (a/6, 14).** C.14.K asserts the bound for all ℓ ≤ ℓ_K, so this single instance refutes it at T = 14 for every ℓ_K ≥ a/6 (and the a/13 instance below for every ℓ_K ≥ 0.0533). The float γ at this level was 0.748, which matches.
+  - A second certified instance: ℓ = a/13 = 0.05332, M = 28, n_s = 2, T = 14, ratio 0.293197 ± 2e-30 > 0.12975. In the out file.
+  - Rigorous for T = 14 only; other T are NUMERICAL (C.14.4c tables).
+- **Cross-check (NUMERICAL; credit Prime, cd94c27 §N.15.4).** Prime's independent run finds γ < γ_crit only for ℓT ≲ 0.26 (e.g. ℓ = 0.02, T = 12.8: γ ≈ 0.09 < 0.117), and failure for ℓ ≥ 0.03 at every T. This agrees with C.14.4c and with the certified instances.
+
+**C.15 labels.**
+| item | label |
+|---|---|
+| Q_L = (1/2π)∫(¼+t²)(Ω − 2c₂cos at)\|ξ̂\|², no pole entry (ĝ(±i/2) = 0) | PROVED |
+| Lemma C.15.K (tail kernel K_W = K_e − Σ_{k<N}f̂_k², closed form) | PROVED (K_e: S&M Lemma A; checked NUMERICAL to 1e-15) |
+| Thm C.15.A (Schur with comparison form Q′_T; λ_cert formula) | PROVED |
+| naive modal Schur on full Q: N-independent Hankel coupling ±1/(2(j+k+1)) | NUMERICAL (mechanism: log symbol) |
+| Prop C.15.B (λ_e nonincreasing in L; grid = 1 point) | PROVED |
+| C.14.4c "Δℓ ≲ m_cert/(24.88 + C_B) ≈ 2e-4" grid and "Ω(t_N) − 2c₂ − tail" step | WITHDRAWN (superseded by C.15.A/B) |
+| entry formulas (A_jk, B_jk, R_jk, I, I₂, J) | PROVED |
+| reference table, constants table, λ_cert(0.1) = 0.01385 (analytic majorants) | NUMERICAL |
+| Thm C.15.D (even (K3) on ℓ ∈ (0, 0.1]) | CONJECTURE / target (implication PROVED; input pending S&M Arb) |
+| C.14.K false at (ℓ, T) = (a/6, 14) and (a/13, 14) | CERTIFIED (Arb) |
+| C.14.K "refuted numerically on the useful range" (ℓ_K ≳ 0.03; ℓ = 0.01 extrapolates to 0.104 < 0.130) | NUMERICAL |
+| Prime's 0.2666 / 2.5e−4 (enter only past log 3) | NUMERICAL (Prime); even past log 3: GAP |
+
+- **R1** One rule per ℓ-range. For (0, ℓ_max], use C.15.A at ℓ_max plus C.15.B. For small ℓ, C.13.H^e″ remains an alternative. Past log 3: GAP.
+- **R2** FE through Ω only; the Euler product enters only through the n = 2 line.
+- **R3** The p = 2 term is signed everywhere. It is dropped only on |t| ≥ T, where it helps (1 − cos ≥ 0).
+- **R4** No pole entry in Q-coordinates. The even ξ̂(0)/ĝ(0) direction is inside V_N (f_0 carries it) and is certified in the matrix, not assumed.
+- **R5** The certificate is ζ-specific through the n = 2 line with coefficient c₂. DH has no such line, so it is fake-blind as an archimedean bound but structurally absent as a certificate.
+- **R6** "No MF-relative margin": PROVED. "The closing step must be an exact identity": CONJECTURE. Here the closing step is an inequality (Schur), not an identity.
