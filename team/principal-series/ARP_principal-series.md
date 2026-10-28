@@ -662,6 +662,161 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
    - The Λ > 1 CC Thm 1 / Lemma 6.10 GAP [S&M] is **closed**: PROVED given CERTIFIED CC Lemma 6.10, uniformly in Λ, with the same γ and c. It is weaker than Λ = 1, since Λ = 1 is optimal in the Sonin family.
    - The naive ε^{(Λ)}∘Q-only analogue fails (P10.5); its fixed-Λ form is a GAP (S&M-pending inputs).
 
+14. **S103g (P.14):**
+   - The p = 2 edge form is **not** the 2-adic Tate reflection restricted. It is the edge compression of the m = 1 time delay γ₂^*[U, γ₂] in the Q-norm (PROVED).
+   - The even-help / odd-charge split comes from J = V(2)P (archimedean-global).
+   - Sign fix for the N.13.4 D_L edge block (+c₂(1/ℓ − ℓ/24)σ_x) and the G.4h item-2 display. The exact constant is (1/ℓ − ℓ/24).
+
+## P.14 The p = 2 line as local Tate data: is Prime's edge form the 2-adic Tate reflection? (S103g; analytic only; [Cel]/[Q], support track L, Λ = 1)
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OPEN. Nothing in P.14 proves or implies RH.** On the range treated here (2L ∈ (log 2, log 4)), ζ ≡ P_X for X ≥ 2, so everything is **RH-silent**. Positivity on the range is already CERTIFIED (Mori-conditional, main 992a011); P.14 is about **mechanism**.
+- **Sources** (read this session): main 3470f1f (ARP G.4g, G.4h; §N N.12–N.13 merged), team/celestial-cft 9f0473b (§C.13, C.13.B, Lemma C.13.B, Conj C.13.H), team/queen ARP_queen_M1.md, ARP_queen_Q8.md (Q.8.E (I1)–(I2)). Celestial C.14 is **not yet pushed**; its coupling bound on 2R(ξ_b, ξ_s) is cited as pending.
+- **Notation** (ξ-coordinates, as N.12.0/N.13): a = log 2, c₂ = Λ(2)·2^{−1/2} = a/√2, 2c₂ = 0.98026, ℓ = 2L − a, S₋ = [−L, −L + ℓ], S₊ = S₋ + a, J x = −a − x on S₋, P x = −x (global inversion; the I of F = I∘u, CC (25)), τ_a f(x) = f(x + a) =: V(2) (dilation by 2 in u = log|x|), ‖u‖²_H = ∫(u′² + ¼u²).
+  - Q_L(Qh) = R(ξ) − 2c₂B(ξ), B(ξ) = ⟨ξ, τ_aξ⟩_H = (1/2π)∫(¼ + t²)cos(ta)|ξ̂|² (N.12.1, C.13.A).
+- **Credits.** Prime (N.12.3 parity/J split, N.13.4 ramp form), Celestial (C.13 T7–T9, C.13.B (3a)–(3d)), Golden Eye (J-commutation; the G.4h sign and −ℓ/24 points), Queen (Q.8.E).
+
+### P.14.1 The core answer
+**No: Prime's rank-two edge form is not the local Tate reflection at p = 2 restricted to edge traces.**
+- **What it is (PROVED, P.14.2–P.14.3):** it is the edge-trace compression of the **m = 1 Fourier mode of the phase derivative (Wigner–Smith time delay) of the local Tate unitary γ₂ at p = 2**, measured in the Q-norm H = H¹_¼.
+  - The 2-adic input is (a, c₂) only.
+  - The reflection that produces the even-help / odd-cost split is **J = V(2)∘P**, an archimedean-global involution: the global inversion P composed with one 2-step. J is not the 2-adic Tate reflection Θ₂.
+  - **What breaks the identification** (P.14.4):
+    - (i) a derivative, shown by the factor Λ(2) = log 2;
+    - (ii) winding number (J ~ V(2), Θ₂ ~ P);
+    - (iii) rank/normalization (Θ₂ has a diagonal ½ and asymmetric hops);
+    - (iv) the −ℓ/24 term is the ¼ of Q, from the global pole pair, not 2-adic.
+- **Sign (Golden Eye (1)), PROVED from first principles (P.14.5):** even edge pairs are **helped** and odd pairs are **charged** exactly 2c₂α²(1/ℓ − ℓ/24).
+  - The G.4h item-2 display −2c₂(1/ℓ − ℓ/24)α₋α₊ is correct **only as the (IF) left side 2c₂B(ξ_b)**, i.e. the subtracted quantity.
+  - As a contribution to Q_L, or as a block of D_L, the sign is **+**. N.13.4's D_L bullet "−c₂(1/ℓ − ℓ/24)·[[0,1],[1,0]]" has the **wrong sign**: it must be +c₂(1/ℓ − ℓ/24)σ_x, with eigenvalue + on the even pair.
+  - The text "even helped, odd charged" (N.13.4, G.4g, G.4h) is **right**. The displays are what need fixing: the G.4h item-2 display and the N.13.4 D_L-matrix bullet.
+
+### P.14.2 Local Tate data at p = 2 in the ζ-sector — PROVED (Tate thesis §2; elementary) [Q]
+- **Schwartz–Bruhat side.** On S(ℚ₂), with ψ₂ standard and vol(ℤ₂) = 1, F₂1_{ℤ₂} = 1_{ℤ₂} and F₂1_{2^kℤ₂} = 2^{−k}1_{2^{−k}ℤ₂}.
+  - Z(1_{2^kℤ₂}, s) = 2^{−ks}L₂(s), with L₂(s) = (1 − 2^{−s})^{−1}. The local FE is Z(F₂φ, 1 − s) = γ₂(s)Z(φ, s), with **γ₂(s) = L₂(1 − s)/L₂(s)**, ε₂ = 1 (unramified).
+- **Unitarity.** On Re s = ½, with c := 2^{−1/2} and V := e^{−iat} (the Mellin symbol of V(2)): **γ₂(½ + it) = (1 − cV)(1 − cV̄)^{−1}, |γ₂| = 1.** This is G.6 Lean ask 3, `local_gamma_unitary`.
+- **Operator form on the ζ-sector.** In the ζ-sector L²(ℝ_u) the ℤ₂^*-invariant 2-adic data become functions of V(2), via E's q = 2^{±1} summands, the only non-isometric step (P.6).
+  - So the local Tate unitary is the bounded translation-invariant operator γ₂(V(2)) = (1 − cV(2))(1 − cV(2)^*)^{−1}.
+  - The **local Tate reflection** is **Θ₂ := P∘γ₂(V(2))**. It is a unitary involution, because Pγ₂(V)P = γ₂(V^*) = γ₂(V)^*.
+  - Its archimedean counterpart is Θ_∞ = P∘γ_∞, which is CC's F = I∘u (Lemma 1.3, (25)) in Mellin form.
+  - Note that the global P is the product of the local inversions. On C_ℚ only the product exists, so the local I₂ cannot be separated from I_∞ in the ζ-sector.
+- **Action on 1_{ℤ₂} and on the q = 2^{±} shifts.** In ℓ²(valuations) ≅ L²(2^ℤ ⊂ ℝ_u), the expansion is
+  γ₂(V) = (1 − c²) − cV + c(1 − c²)V^* + Σ_{n≥2} c^n(1 − c²)V^{*n}.
+  - So on the unit-shell vector δ₀ (the image of 1_{ℤ₂^*}), γ₂ has stay-amplitude ½, hop +1 amplitude −2^{−1/2}, and hop −1 amplitude 2^{−3/2}.
+  - On the window (2L < 2a), only the n = 0, ±1 terms survive the compression S·S.
+
+### P.14.3 The p = 2 Weil operator is the time delay of γ₂ — PROVED (elementary; normalization checked against (IF-F)) [Q]/[Cel]
+- **Phase.** Let φ₂(t) := arg γ₂(½ + it) = −2 arg L₂(½ + it) = 2Σ_{m≥1}(c^m/m) sin(mat). Then
+  **φ₂′(t) = Σ_{m≥1} 2Λ(2^m)2^{−m/2} cos(m t log 2),**
+  and with U = multiplication by u (Mellin: U ↔ −i∂_t),
+  **(P14.1)  γ₂(V(2))^*[U, γ₂(V(2))] = φ₂′(D) = Σ_{m≥1} Λ(2^m)2^{−m/2}(V(2)^m + V(2)^{−m}).**
+- **Archimedean analogue.** γ_∞(½ + it) = Γ_ℝ(½ − it)/Γ_ℝ(½ + it) = e^{−2iθ(t)}, so −(arg γ_∞)′ = 2θ′ = Ω.
+- **The Weil multiplier as time delays.** The Weil multiplier on this range is therefore −Σ_v (arg γ_v)′ truncated by the support:
+  **Q_L(Qh) = (1/2π)∫(¼ + t²)[Ω(t) − φ₂′(t)]_{trunc}|ξ̂|²dt = R(ξ) − ⟨ξ, φ₂′(D)ξ⟩_H|_{window}.**
+  - For 2L < log 4 only m = 1 survives, and the m = 1 part of φ₂′ is **2c₂cos(ta)**, exactly the (IF-F) multiplier. In operator form it is **c₂(V(2) + V(2)^*)**. So −c₂S(V(2) + V(2)^*)S is the window compression of the m = 1 mode of (P14.1).
+  - This is the 2-adic analogue of CC's local trace formula T1 (W_ℝ = phase derivative of u_∞), and Connes 1999 §VII's local term ∫′ h(u^{−1})/|1 − u| d^*u at v = 2.
+- **Normalization (REMARK; PROVED by a diagonal-sum computation).**
+  - In the **form picture** (ξ ↦ ⟨ξ, ·ξ⟩_H on 𝒯_L), the line is the uncompressed c₂(V(2) + V(2)^*), with weight 1.
+  - In Q.8.E's **trace picture** (I1), D_L enters only through its diagonal sums d(b) = ∫D(x, x + b)dx. For S = 1_{[−L,L]} (= S_Λ at Λ = e^L), SV(2)S has kernel 1_S(x)δ(y − x − a)1_S(y), so d(b) = |S ∩ (S − a)|δ_a(b) = **ℓ·δ_a**.
+  - So the block "−c₂S_Λ(V(2) + V(2)^*)S_Λ" (C.13.4, N.12.5, G.4g) carries −c₂ℓ(δ_a + δ_{−a}), **off by the factor ℓ**. A weight-1 block is −(c₂/ℓ)S(V + V^*)S, or −c₂(V(2)M_ρ + M_ρV(2)^*) with ρ ≥ 0, ∫ρ = 1 on S ∩ (S − a).
+  - Since (I1) fixes only diagonal sums, the block is not unique, and (I2) depends on the choice. Nothing in (IF), N.12 or N.13 uses the block, so no result changes.
+
+### P.14.4 What breaks the "local Tate reflection" identification — PROVED (each item elementary) [Q]
+1. **Derivative, not the reflection: the Λ(2) factor.**
+   - Every matrix coefficient of γ₂(V(2)) and Θ₂ lies in ℚ(√2): powers of 2^{−1/2} and (1 − c²) = ½.
+   - The edge form's weight is c₂ = (log 2)·2^{−1/2}, which contains Λ(2) = log 2. Only ∂_t brings it down, i.e. the commutator with U in (P14.1).
+   - So the edge form is (a compression of) **γ₂^*[U, γ₂]**, the infinitesimal generator of the 2-adic scattering phase, and not a restriction of Θ₂ or γ₂.
+2. **Winding number (parity of the reflection).**
+   - J = V(2)P = Pτ_{−a} is the reflection about −a/2. Its "Tate symbol" is V(2)^{±1} = e^{∓iat}, of winding number ±1 on the valuation circle t ∈ ℝ/(2π/a)ℤ.
+   - Θ₂ = Pγ₂(V(2)), and γ₂(e^{−iat}) = (1 − cV)/(1 − cV̄) has **winding number 0**, since c = 2^{−1/2} < 1. So Θ₂ is homotopic, through unitary involutions P∘γ, to P, and **not** to J.
+   - Formally γ₂ → −V as c → 1, i.e. as if the local factor sat on the line Re s = 0: then Θ₂ → −PV = −(reflection about +a/2). That is J's mirror with a sign, and it is reached only at the edge of unitarity.
+3. **Rank and normalization on edge traces.**
+   - On the two-site edge space (u₋ on S₋, u₊ = τ_aξ|_{S₋}), the compression of γ₂ is [[½, −c], [c/2, ½]] (stay ½; hops −2^{−1/2} and 2^{−3/2}). It is not symmetric, has nonzero diagonal, and does not act as ±1 on the even/odd edge pairs.
+   - The edge form is the symmetric, traceless c₂·σ_x (from c₂(V + V^*)). Its ± eigenvectors are exactly the J-parity pairs.
+4. **The −ℓ/24 is the ¼ of Q (global pole pair), not 2-adic.** On the unit ramp r on S₋ (r(−L) = 0, r(−L + ℓ) = 1), τ_ar₊ = Jr. Hence
+   ⟨r, Jr⟩_H = ‖P₊r‖²_H − ‖P₋r‖²_H with **P₊r = ½·1_{S₋}** (because r + Jr ≡ 1) and P₋r = r − ½. So
+   **‖P₊r‖²_H = ℓ/16,  ‖P₋r‖²_H = 1/ℓ + ℓ/48,  ⟨r, Jr⟩_H = ℓ/24 − 1/ℓ  (exact).**
+   - The 1/ℓ is the H¹ seminorm of the J-odd linear part P₋r.
+   - The −ℓ/24 in (1/ℓ − ℓ/24) = ‖P₋r‖²_H − ‖P₊r‖²_H is exactly the ¼-mass term: ¼(‖P₋r‖²_{L²} − ‖P₊r‖²_{L²}) = ¼(ℓ/12 − ℓ/4) = −ℓ/24.
+   - The ¼ is the constant in ¼ + t² = s(1 − s) at s = ½ + it, i.e. the pole-removal Q = −∂² + ¼ from the global poles at s = 0, 1 (OS4, spent once at C.13 T4; P.8a).
+   - So any "Tate identification" reproduces −ℓ/24 only through the **global** factor s(1 − s), never from γ₂. It is not a non-local correction to a local identity. It is the Q-geometry, where H¹_¼ is the pole-free norm.
+
+### P.14.5 The sign, from first principles (Golden Eye (1)); which display is wrong — PROVED [Cel]/[Q]
+- **Even ξ.** ξ(x + a) = ξ(−a − x), so τ_aξ|_{S₋} = J(ξ|_{S₋}) and B(ξ_e) = ⟨u, Ju⟩_H.
+- **Odd ξ.** B(ξ_o) = −⟨u, Ju⟩_H. Equivalently τ_a = J∘P on the strip, the two unitary involutions of the problem: J on H(S₋) (an isometry of the Q-norm) and P (global inversion).
+- **On the edge ramp** u = αr: ⟨r, Jr⟩_H = ℓ/24 − 1/ℓ < 0 (P.14.4 item 4), because a monotone edge trace is dominantly J-odd. So:
+  - **even:** B(ξ_b) = α²(ℓ/24 − 1/ℓ) < 0, and the Q_L-contribution is −2c₂B = **+2c₂α²(1/ℓ − ℓ/24)** (help);
+  - **odd:** B(ξ_b) = α²(1/ℓ − ℓ/24) > 0, and the Q_L-contribution is **−2c₂α²(1/ℓ − ℓ/24)** (charge).
+- **Rule.** The sign of the p = 2 contribution on an edge trace = −(P-eigenvalue)·(J-eigenvalue of the dominant component) = −σ·(−1) = σ. The local unitarity behind the split is that of **J (archimedean, on H¹_¼(S₋)) together with P**. The 2-adic Θ₂ gives no sign split (item 3: diagonal +½ on both parities).
+- **Which side has the error.**
+  - N.13.4's identity 2c₂B(ξ) = 2c₂B(ξ_s) − 2c₂α₋α₊(1/ℓ − ℓ/24) + (c₂/2)X is **correct**. So is its interface form [R(ξ_b) + 2σc₂α²(1/ℓ − ℓ/24)].
+  - **Wrong sign:** N.13.4's "D_L … is the matrix −c₂(1/ℓ − ℓ/24)·[[0,1],[1,0]] in (α₋, α₊)" should be **+c₂(1/ℓ − ℓ/24)σ_x**, since D_L carries −c₂(V + V^*) and ⟨ramp₋, τ_a ramp₊⟩_H < 0.
+  - G.4h item 2's display is the (IF) left side, not the Q_L form. It should read "the (IF) left side on ramps is 2c₂B(ξ_b) = −2c₂(1/ℓ − ℓ/24)α₋α₊, i.e. Q_L gains +2c₂(1/ℓ − ℓ/24)α₋α₊".
+  - "Charged exactly 2c₂α²/ℓ" (G.4g, G.4h) should be **2c₂α²(1/ℓ − ℓ/24)** (Golden Eye (2)). The parity verdict is unchanged.
+  - **Consistency check on the identification:** a genuine Θ₂-restriction would give the same sign on both parities, contradicting the PROVED help/charge split. This independently confirms P.14.4 item 3.
+
+### P.14.6 Support: isotypic decomposition of −c₂S(V(2) + V(2)^*)S — PROVED (elementary) [Cel]
+- **Dihedral structure.** The group generated by P and V(2) is the infinite dihedral group D_∞. J = V(2)P is a reflection in it.
+  - V(2) + V(2)^* is central in C^*(D_∞): every reflection conjugates V to V^*, which is C.13.B (3a) in group form.
+  - It acts on the irreducible π_θ (θ = ta mod 2π) by the scalar 2cos θ. So the cosine multiplier 2c₂cos(ta) is literally the central character.
+- **Isotypic piece hit.** On the two-site edge space, (P, J, V(2) = JP) act by commuting signs. The harmful pieces are exactly the **V(2) = +1** pieces:
+  - (P, J) = (+, +), the even harmful cone of N.12.3 (K3);
+  - (P, J) = (−, −), the odd harmful cone (K2).
+  - The helped pieces are V(2) = −1, i.e. (+, −) and (−, +). These are the θ = 0 and θ = π endpoints of the D_∞ dual.
+  - On the Fourier side, Celestial's blind frequencies t_j = (2j + 1)π/a, for symmetric pairs, are exactly the θ = π frequencies. The archimedean interference factor 1 + cos ta vanishes on the frequencies whose global character is V(2) = −1, while the harmful edge piece has two-site label V(2) = +1. That is C.13.B (3c) restated.
+- **Can it beat the harmful cones?**
+  - Even (K3): on edge traces the p = 2 line itself pays, through the sign above. What remains is the ĝ(0) cost paid by 𝒮_L (G.4h, (P), GAP b-1) and the coupling (N.G2-bulk).
+  - Odd (K2): the p = 2 line is a pure cost, 2c₂α²(1/ℓ − ℓ/24). No 2-adic structure can pay it (P.14.4: Θ₂ has no sign split), so it must come from R's margin (N.G2-m₀; S&M Thm 2.1 / Prime Thm N.13.A).
+  - For ξ odd, ĝ(0) = 0, so (K2) at ℓ = 0 is exactly CC Thm 1 (≥ 0, no margin).
+  - PROVED as bookkeeping; the closures are GAPs as in G.4h.
+- **Golden Eye's commutation.** B and R_L commute with J on strip-supported vectors (C.13.B (3a)). J swaps the two pole functionals ∫k e^{±x/2} with weights 2^{∓1/2}: ∫(Jk)e^{x/2} = 2^{−1/2}∫k e^{−x/2}.
+  - The 2^{−1/2} is the same half-density factor as in c₂ = Λ(2)·2^{−1/2} (PROVED, one line). So J intertwines the two pole conditions, and the pole pair is still spent once (T4).
+- **Sonin/prolate.** V(2) = ϑ(2) moves the Sonin family along the orbit ab = 1 (P.9.2(a)): ϑ(2)S^{So}_{(1,1)}ϑ(2)^* = S^{So}_{(2,1/2)} ≠ S^{So}_{(1,1)}.
+  - So V(2) has no isotypic component inside the Sonin/prolate decomposition. It is an intertwiner between members of the family, not an endomorphism. This is the operator form of C.13 T9 (σ_S is smooth, so it carries no cos(ta)). REMARK, PROVED as stated.
+- **χ_Λ and Queen's leak.** Nothing exact relates χ_Λ (P.9) to the p = 2 line or to M1 here. Not claimed.
+
+### P.14.7 Placement in G.4h's four-part split of N.G2
+| G.4h piece | what P.14 adds | label |
+|---|---|---|
+| 1 strip-localized cone (Lemma C.13.B, ℓ ≤ 0.119) | the harm there is the V(2) = +1 piece; absorbed by Ω's high band. No 2-adic input beyond (a, c₂) | PROVED (bookkeeping) |
+| 2 edge traces (ramps) | the form is the edge compression of the m = 1 time delay of γ₂ (P14.1) in the Q-norm. The help/charge split comes from J∘P (archimedean-global), not Θ₂. **Sign fix**: Q_L gains +2c₂(1/ℓ − ℓ/24)α₋α₊, D_L edge block is +c₂(1/ℓ − ℓ/24)σ_x. Exact constant (1/ℓ − ℓ/24), with −ℓ/24 = ¼-mass term of Q | PROVED |
+| 3 coupling 2R(ξ_b, ξ_s) | unchanged; Celestial C.14 pending | GAP N.G2-bulk |
+| 4 archimedean margin at ½ log 2 | the odd cost cannot be paid 2-adically (no sign split in Θ₂), so it must be R's margin | PROVED (as stated); value GAP N.G2-m₀ |
+
+### P.14.8 Remark for Prime's §N.14 ({2, 3} lines, 2L ∈ (log 3, log 4]) — REMARK / CONJECTURE [Cel]
+- **Every reflection.** Every reflection x ↦ c − x conjugates V(p) to V(p)^*, so each V(p) + V(p)^* commutes with every reflection on L²(ℝ). The window [−L, L] is preserved only by c = 0. So **P is the unique window-preserving reflection commuting with every B_p** (PROVED).
+- **Strip reflections.** The strip reflections J_p: x ↦ −log p − x are p-dependent. J₂ and J₃ generate a D_∞ whose translation is log(3/2), so there is **no common J** (PROVED). The local Tate data γ₂(V(2)) and γ₃(V(3)) commute with each other and with nothing reflection-like except through P.
+- **CONJECTURE (prediction for N.14).**
+  - The {2, 3} parity split is by P, with per-line J_p on the nested strip pairs (lengths 2L − log 2 ⊃ 2L − log 3). The two lines' edge forms interact through the overlap of their strips.
+  - The rank-two ramp structure persists per line, with per-line constants c_p(1/ℓ_p − ℓ_p/24).
+  - Since J is not 2-adic, no 2-adic/3-adic local reflection will appear as the commuting symmetry.
+
+### P.14.9 Labels and R-line
+| item | label | track |
+|---|---|---|
+| γ₂ unitary, Θ₂ = Pγ₂(V(2)) involution, action on 1_{ℤ₂}/shifts | PROVED | [Q] |
+| (P14.1) p = 2 Weil operator = time delay of γ₂; m = 1 mode = c₂(V + V^*) | PROVED | [Q]/[Cel] |
+| core: edge form is not Θ₂ restricted (items 1–4) | PROVED | [Q] |
+| sign: even helped, odd charged 2c₂α²(1/ℓ − ℓ/24); D_L edge block sign fix | PROVED | [Cel] |
+| −ℓ/24 = ¼-mass term of Q (global pole pair) | PROVED | [Cel] |
+| D_∞ isotypic decomposition; harmful = V(2) = +1 | PROVED | [Cel] |
+| (I1) pairing normalization of −c₂(V + V^*) | REMARK | [Q] |
+| Sonin/prolate: V(2) intertwines S(1,1) → S(2,½) | REMARK (PROVED as stated) | [Cel] |
+| {2, 3}: P unique common reflection, no common J (PROVED); N.14 prediction | REMARK / CONJECTURE | [Cel] |
+| N.G2-bulk, N.G2-m₀, (P) | GAP (unchanged) | [Cel] |
+| RH | OPEN | — |
+
+**R-line:**
+- **R1:** one rule on 2L ∈ (log 2, log 4). (P14.1) holds on every window, with more primes added.
+- **R2:** the Euler product enters through the local γ₂ at p = 2 (its time delay); the FE through γ_∞ (Ω = −(arg γ_∞)′).
+- **R3:** the sign of B by J∘P parity, not weight signs.
+- **R4:** the pole pair is spent once at T4. Its ¼ reappears as −ℓ/24, and J intertwines the two pole functionals.
+- **R5, where each fake breaks:**
+  - **F_θ:** its constituents γ₂^{(±θ)} are not unitary (G.6 ask 3), so (P14.1) is not a self-adjoint time delay. The p = 2 weight becomes c₂·cosh(θa), a polarization: it breaks at the time-delay step (norm → polarization, P.4).
+  - **DH:** no Euler product, no γ₂, no a-line. Breaks at P.14.2.
+  - **H₋ₜ:** no Euler product after deformation (no γ₂), and γ_∞ is not Tate's (Ω deformed). Breaks at P.14.2/P.14.3.
+  - **DMV (glued) / P_X:** coincide with ζ on this window (N.12.1), so they pass every step here. They are fake-blind on this range, and break only past the ladder (G.4e/G.4f).
+  - **G_θ′:** passes. Its local factors are unitary twists, the time delay is shifted t → t ± θ′, and Q_G is a sum of two ζ-forms (G.4e).
+- **R6:** (P14.1) and the ramp identities are exact. The closures stay GAPs.
+
 ## References (added to ARP G.7)
 - Knapp, A. W. & Stein, E. M., "Intertwining operators for semisimple groups", Ann. of Math. 93 (1971) 489–578.
 - Knapp, A. W., *Representation Theory of Semisimple Groups: An Overview Based on Examples*, Princeton (1986), Ch. II, VII.
