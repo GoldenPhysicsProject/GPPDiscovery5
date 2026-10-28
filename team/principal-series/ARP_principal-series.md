@@ -5,7 +5,7 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. Seat: Prin
 
 **Labels.** PROVED (literature or elementary, cited) · PROVED-LEAN (GPPVerify name, main 5f54359, checked 2026-10-28) · CONJECTURE · GAP · NUMERICAL (orientation only).
 **Conventions (team-binding).** L is the HALF-width: f ∈ C_c^∞([−L, L]) in log scale u = log|x|, g = f ∗ f̃ on [−2L, 2L], window L sees n < e^{2L}. Lean's `HasSupportIn g L′` in `WeilSupportLadder.lean` is stated for the convolution g, so **L′ = 2L**.
-**Builds on.** ARP.md §G (G.1–G.4, GAP G.4d) and §0.3 (inventory); `ARP_plan.md` §1–§2 (this file supersedes its §2 outline and corrects its §5 table, see P.11). Exact step checks: `arp/p_checks.py` → `arp/p_checks.log` (sympy; no exploratory numerics).
+**Builds on.** ARP.md §G (G.1–G.4, GAP G.4d) and §0.3 (inventory); `ARP_plan.md` §1–§2 (this file supersedes its §2 outline and corrects its §5 table, see P.12). Exact step checks: `arp/p_checks.py` → `arp/p_checks.log` (sympy; no exploratory numerics).
 
 **Fakes and requirements (each step's R-line).** F_θ = Λ(s−θ)Λ(s+θ) (θ real ≠ 0); G_θ′ = Λ(s+iθ′)Λ(s−iθ′) (must pass); DH (Davenport–Heilbronn); H₋ₜ (de Bruijn–Newman deformation); DMV (Beurling); P_X (finite Euler product); Epstein x²+5y² (h = 2); G₅ (Hecke-group, non-arithmetic). R1 uniform in L; R2 Euler product + FE jointly; R3 not via weight signs; R4 soft mode / pole state; R5 locate each fake; **R6 exact identity, no slack** (every step below is an equality unless stated). R6's scope: what is PROVED is "no MF-relative margin" (§S S(c)4). That the closing step *must* be an exact identity is a CONJECTURE (P.7, Golden Eye).
 
@@ -157,7 +157,7 @@ Either way, the non-unitary content sits entirely in the ℚ^*-sum, i.e. in the 
 - **PROVED:** (1) nothing local bounds G.4d (items 1–4 above); (2) §S S(c)4, *no MF-relative margin*: there is no c > 0 with Q_L ≥ c·MF_L for all L.
 - **CONJECTURE (well supported, not proved):** that the closing step for G.4d *must be an exact identity*. S(c)4 does not exclude Q_L ≥ c·N_L for a norm N_L that degenerates on the dilated nodeless bumps (for example one weighting only frequencies near the zeros).
 - So R6 is a working requirement at CONJECTURE level, not a theorem.
-**R-line.** The GAP is R1 by construction. All fakes break before or at P.6, and G_θ′ passes every step (ARP G.4e, refined in P.11). **No new route is claimed.**
+**R-line.** The GAP is R1 by construction. All fakes break before or at P.6, and G_θ′ passes every step (ARP G.4e, refined in P.12). **No new route is claimed.**
 
 ## P.8 Closing open item (b): the pole in the cutoff pair, the deficit form, and Connes–Consani 2021 Thm 1 (S103d)
 
@@ -442,7 +442,7 @@ Labels:
 
 **(e) Consequence for R2 (stated plainly).**
 - **Every identity in P.9.2 is archimedean, local and prime-free.** It is RH-silent and cannot engage R2.
-- Pushing CC from Λ = 1 to Λ > 1 at 2L < log 2 [S&M] changes only the Sonin/prolate bookkeeping (P9.4). A Λ > 1 analog of CC Thm 1 would need a new compact-operator bound on the ε^{(Λ)} ∘ Q functional on the support class (the analog of K_I, Lemma 6.10). That is a **GAP [S&M]**, and RH-silent either way.
+- Pushing CC from Λ = 1 to Λ > 1 at 2L < log 2 [S&M] changes only the Sonin/prolate bookkeeping (P9.4). A Λ > 1 analog of CC Thm 1 would need a new compact-operator bound on the ε^{(Λ)} ∘ Q functional on the support class (the analog of K_I, Lemma 6.10). That is a **GAP [S&M]**, and RH-silent either way. *(Superseded by P.10.3: closed NEGATIVELY. Lemma 6.10_Λ / Thm 6.11_Λ hold uniformly given CERTIFIED CC Lemma 6.10, Λ = 1 is optimal in the Sonin family, and no K_I^{(Λ)} bound is needed. Grok audit S103f.)*
 - **Only pushing the support past p = 2, at L = ½ log 2 [Cel], brings in primes, and with them R2 and the ℚ^*-sum (P.6).** The Λ-identity does not transfer to that step. It supplies only the archimedean Λ-bookkeeping for whatever [Cel] builds.
 
 **(f) Queen's Conj Q.8.E (an explicit D_L ≥ 0 with Q_L = Tr(D_L VV^*)).**
@@ -484,12 +484,149 @@ Labels:
 | an arithmetic-free D_L cannot single out ζ (so D_L must contain E) | PROVED (R5, as stated) | [Q] |
 | Λ-extension engages R2 | NO (PROVED: Λ never moves the support) | [Cel] |
 
-## P.10 Not used
+## P.10 The Λ > 1 analogue of CC 2021 Lemma 6.10 / Thm 6.11 (S103f; analytic only; [S&M] Λ-track)
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OPEN.**
+- **Scope.** The support is kept fixed at CC's supp g ⊂ [2^{−1/2}, 2^{1/2}] (I = [−½ log 2, ½ log 2] in additive form, supp g⋆g^* ⊂ [½, 2]). So no primes enter (CC Cor 2), and every statement here is **RH-silent**.
+- **Track.** Spectrum & Measure owns the Λ-track; this Lemma 6.10 analogue is ours by agreement with them.
+- **Prolate inputs.** These are cited from S&M's `team/spectrum-measure/PROLATE_BOUNDS.md` (95ea14a, credit Spectrum & Measure), in their normalization: prolate bandwidth c_pr = 2πΛ², and dilation invariant ab = Λ².
+- **Named inputs still pending from S&M** (the trace-norm and HS bounds for [P^c_Λ, ϑ(f)] and P_ΛŜ_Λ) are labelled **[S&M-pending]**. Nothing below depends on them except where it says so.
+
+### P.10.0 Addendum and erratum to §P.9.2 (Golden Eye audit of main 25f8f83: (P9.1)–(P9.3) PASS line by line; credit Golden Eye)
+1. **(P9.4) relabelled:** **PROVED given (P9.3) and CC §4 at a = b = Λ. The internals (69)–(84) were checked by inspection, not replayed.**
+2. **Dilation convention, pinned once against CC (61):** (ϑ(λ)ξ)(v) = λ^{−1/2} ξ(λ^{−1}v), i.e. **ϑ(λ) dilates by λ** (support ×λ). This is the convention of all of §P.9, with ϑ(f) = ∫ f(λ)ϑ(λ) d^*λ.
+   - **Kernel.** In this convention ϑ(f) has kernel k(y, x) = f(y/x)(x/y)^{1/2}/x on ℝ_+ (even extension). Put y = ρx; then the Connes VII (21)-type symbol is σ(x, ξ) = ∫ f(ρ)ρ^{1/2} e^{2πi xξ(ρ−1)} d^*ρ = G(−xξ), with G(u) = ∫ f(ρ)ρ^{1/2}e^{2πiu(1−ρ)} d^*ρ as in the §P.9 audit note.
+   - The sign of u is immaterial in ε_Λ, because the region {|u| > 1} and the weight log min(|u|, Λ²) are even. The f(ρ^{−1}) in (P9.4) is CC's (83) with this same ϑ.
+   - **Opposite convention.** ϑ(λ) ↦ ϑ(λ^{−1}) replaces f by f^∨(ρ) = f(ρ^{−1}). For f = f^* (the positivity case, f^*(ρ) = conj f(ρ^{−1})), f^∨ = f̄. Then G_{f̄}(u) = conj G_f(−u), and since the weight is real and even, ε_Λ(f̄) = conj ε_Λ(f). So for complex f the two conventions swap ε and conj ε (Golden Eye's point), and they agree for real-valued f = f^*. **PROVED.**
+3. **Simpler trace route for Tr(ϑ(f)Ŝ_Λ). PROVED.**
+   - Ŝ_Λ = F^{−1}S_ΛF = u^* I S_Λ I u = u^*S_Λu, using F = I∘u (CC Lemma 1.3, (25)) and I S_Λ I = S_Λ (the window is inversion-symmetric).
+   - Since [u, ϑ(λ)] = 0, Tr(ϑ(f)Ŝ_Λ) = Tr(u ϑ(f) u^* S_Λ) = Tr(ϑ(f)S_Λ) = f(1)·∫_{Λ^{−1}}^{Λ} d^*x = **2f(1) log Λ**. (Trace class: write f = f₁⋆f₂ by Dixmier–Malliavin; S'ϑ(f₁) and ϑ(f₂)S_Λ are HS for a window S' ⊃ supp f₁·[Λ^{−1}, Λ].) This is the same value as the symbol route in (P9.3).
+   - Recalled: for f = g⋆g^*, 0 ≤ L_Λ(f) ≤ L(f).
+4. **Sanity constraint (analytic). PROVED, given (P9.4).**
+   - Set ϑ(Λ^{−1}). Then S(Λ, Λ) ≅ S(1, Λ²) ⊂ S(1, 1): ξ vanishes on |x| ≤ Λ with ξ̂ vanishing on |p| ≤ Λ ⇒ ϑ(Λ^{−1})ξ vanishes on |x| ≤ 1 with transform vanishing on |p| ≤ Λ².
+   - So for f = g⋆g^*, the LHS of (P9.4), Tr(ϑ(g)S^{So}_Λϑ(g)^*), is ≥ 0 and nonincreasing in Λ. This forces
+     **∫ f ε^{(Λ)} + χ_Λ(f) ≥ 2f(1) log Λ − W_∞(f)** and **∫ f ε^{(Λ)} + χ_Λ(f) − 2f(1) log Λ ≤ ∫ f ε^{(1)}**.
+   - With |χ_Λ(f)| ≤ ‖[P^c_1, ϑ(f)]‖_1 uniform in Λ (§P.9 audit note), this gives **∫ f ε^{(Λ)} = 2f(1) log Λ + O_f(1), two-sided.** It holds for every f ∈ C_c^∞(ℝ_+^*), by polarization over finite sums of g⋆h^* (Dixmier–Malliavin).
+   - So ε^{(Λ)} carries mass log Λ² at ρ = 1 (+ bounded). That is the "growth like log Λ²".
+   - **Consistency with P.10.3:** the 6.10-type bound of P.10.3 is for the total remainder, where this growth cancels exactly against −2f(1) log Λ. In P.10.4 the same growth reappears as the explicit leading term 2 log Λ·⟨ξ|Q_+ξ⟩, with the same sign. **No inconsistency, so no sign error.**
+   - **Plunge-region mechanism. CONJECTURE (heuristic, not used).** The log Λ² mass is carried by the plunge-region modes. Their number is ≤ (2/π²) log(200Λ² + 25)·log(5/(ε(1 − ε))) + 7 (KRD Thm 3, as cited in PROLATE_BOUNDS §5), i.e. ∝ log c with the Landau–Widom constant (2/π²) log c·log(1/ε). This matches log Λ² in order.
+   - **R1 is not claimed for the ε^{(Λ)} series.** It converges for each Λ (CC App. F at Λ = 1; the Λ > 1 analogue is S&M-pending), but not uniformly. P.10.3 does not use the series.
+
+### P.10.1 What CC actually prove and use (citations verified in arXiv:2006.13771)
+- **Thm 6.11 (141).** For g ∈ C_c^∞([2^{−1/2}, 2^{1/2}]) with ĝ(−i/2) = 0: W_∞(g⋆g^*) ≥ Tr(ϑ(g)Sϑ(g)^*) − c|ĝ(0)|², with c = 4γ/log 2.
+- **Its proof uses exactly four inputs:**
+  - (i) Thm 4.7 in the form (142): Tr(ϑ(f)S) = W_∞(f) + E(f), E(f) = ∫ f(ρ^{−1})ε(ρ) d^*ρ (91).
+  - (ii) The factorization (143): k := Y⋆g has support in [2^{−1/2}, 2^{1/2}] (by ĝ(−i/2) = 0), Q(k⋆k^*) = g⋆g^* with Q = −(ρ∂_ρ)² + ¼ (55), and k̂(0) = −2ĝ(0).
+  - (iii) Prop 5.5 (103): E∘Q(k⋆k^*) = ⟨ξ|N_Iξ⟩ for ξ = k∘exp ∈ H = L²(I).
+  - (iv) Lemma 6.10 (140): ⟨ξ|N_Iξ⟩ ≤ γ|⟨ξ₀|ξ⟩|², γ ≈ 2.94355, ⟨ξ₀|ξ⟩ = (log 2)^{−1/2}ξ̂(0).
+- **Lemma 6.10's proof is computer-assisted.**
+  - Lemma 6.9 is the abstract rank-one restoration (138)–(139).
+  - It is applied to the finite-rank approximant T of K_I (§6.4, Lemma 6.3/6.8: λ_max = 1.05158 > 1, λ₂ < 0.773), with ‖K_I − T‖ ≤ ε₁ ≈ 0.00122 (134).
+  - Then (140) follows from N_I = −½ε′(1⁺)(Id − K_I) (Prop 5.5(ii), (104); ε′(1⁺) from Lemma 5.4).
+  - **Label of CC Lemma 6.10 / Thm 6.11 for us: CERTIFIED** (published, with computer-assisted error control (134); not replayed here).
+  - K_I itself is not positive or negative: λ₁(K_I) > 1 (Remark 6.12), so the rank-one term is necessary.
+- **Inputs (ii) and (iii) are Λ-independent** (support only). Input (i) has the Λ-form (P9.4). **The only Λ-dependent input is (iv).**
+
+### P.10.2 Definitions at Λ
+- The Λ-remainder, defined series-free: **E^{tot}_Λ(f) := Tr(ϑ(f)S^{So}_Λ) − W_∞(f).**
+  - By (P9.4), E^{tot}_Λ(f) = ∫ f(ρ^{−1})ε^{(Λ)}(ρ) d^*ρ − 2f(1) log Λ + χ_Λ(f).
+  - At Λ = 1, E^{tot}_1 = E (CC (142)).
+- The Λ-form of the CC operator: **⟨ξ|N^{(Λ)}_Iξ⟩ := E^{tot}_Λ(Q(k⋆k^*)), with ξ = k∘exp ∈ C_c^∞(int I).** At Λ = 1 this is (103).
+- E^{tot}_Λ, not ∫ f ε^{(Λ)} alone, is the right Λ-analogue of CC's E. It is what enters W_∞ = Tr(ϑ(f)S^{So}_Λ) − E^{tot}_Λ, which is the role (142) plays in the proof of Thm 6.11. P.10.4 treats the naive ε^{(Λ)}∘Q.
+
+### P.10.3 Main result: the Λ-analogue holds uniformly, with the same constant. PROVED, given CC Lemma 6.10 (CERTIFIED). [S&M]
+**Monotonicity lemma. PROVED (elementary).**
+- Let h ∈ C_c^∞(ℝ_+^*). Then Λ ↦ Tr(ϑ(h)S^{So}_Λϑ(h)^*) is ≥ 0 and nonincreasing on [1, ∞), and → 0 as Λ → ∞.
+- **Proof.**
+  - ϑ(h) commutes with ϑ(Λ), and S^{So}_Λ = ϑ(Λ)S^{So}_{(1,Λ²)}ϑ(Λ)^*. So the trace equals Tr(ϑ(h)S^{So}_{(1,Λ²)}ϑ(h)^*), with S(1, Λ²) decreasing in Λ (P.10.0 item 4).
+  - The operators are positive and trace class, dominated by ϑ(h)S^{So}_1ϑ(h)^*, which is trace class by CC Thm 4.7.
+  - ∩_Λ S(1, Λ²) = {0}, since ξ̂ ≡ 0. So S^{So}_{(1,Λ²)} → 0 strongly, and normality of the trace gives → 0.
+- **Positivity class.** Q(k⋆k^*) = h⋆h^* with h = (½ + ρ∂_ρ)k (this is the factorization Q = (½ − ρ∂_ρ)(½ + ρ∂_ρ) used in CC (143) and Remark 6.12). Hence:
+
+  **(P10.1)  E^{tot}_Λ(Q(k⋆k^*)) ≤ E^{tot}_1(Q(k⋆k^*)) = E∘Q(k⋆k^*), for every Λ ≥ 1** (W_∞ is Λ-free).
+
+**Lemma 6.10_Λ.** For I = [−½ log 2, ½ log 2], every Λ ≥ 1 and ξ ∈ C_c^∞(int I):
+
+  **(P10.2)  ⟨ξ|N^{(Λ)}_Iξ⟩ ≤ ⟨ξ|N_Iξ⟩ ≤ γ|⟨ξ₀|ξ⟩|²,  γ ≈ 2.94355 (CC (140)).**
+
+**Thm 6.11_Λ.** For g as in CC Thm 6.11 and every Λ ≥ 1:
+
+  **(P10.3)  W_∞(g⋆g^*) ≥ Tr(ϑ(g)S^{So}_Λϑ(g)^*) − c_Λ|ĝ(0)|²,  c_Λ ≤ c = 4γ/log 2.**
+
+**Explicit Λ-dependence.**
+- The optimal γ_Λ and c_Λ (sup of E^{tot}_Λ over the class) are **nonincreasing in Λ**, bounded by CC's constants, and have a limit c_∞ = sup over the class of −W_∞(g⋆g^*)/|ĝ(0)|².
+  *(Grok audit: as proved, lim c_Λ exists (monotone) and lim c_Λ ≥ c_∞ := sup(−W_∞/|ĝ(0)|²), since E^{tot}_Λ ≥ −W_∞. Equality needs the sup and the Λ-limit to be interchanged, which is not shown: **GAP-minor**, not used.)*
+- The Λ → ∞ limit is exact:
+
+  **(P10.4)  lim_{Λ→∞} [∫ f ε^{(Λ)} − 2f(1) log Λ + χ_Λ(f)] = −W_∞(f)** (from E^{tot}_Λ(f) → −W_∞(f) by the monotonicity lemma; for every f by polarization).
+
+- Also lim L_Λ(f) = 0 and lim Σ_n λ_n(Λ)²⟨ζ^Λ_n|ϑ(f)ζ^Λ_n⟩ = 0. These are positive and nonincreasing, since P̂^c_{Λ²} ↓ 0 after dilation. Together with (P9.2) this gives **L(f) = −ε_∞(f) − lim χ_Λ(f)**, an exact identity. **PROVED.**
+
+**What this does and does not give.**
+- (P10.2) and (P10.3) are **uniform in Λ** (R1 in Λ).
+- But (P10.3) is **weaker than CC Thm 6.11**, since Tr(ϑ(g)S^{So}_Λϑ(g)^*) ≤ Tr(ϑ(g)S^{So}_1ϑ(g)^*). **Among the Sonin family, Λ = 1 is optimal.**
+- The Λ-track adds no positivity beyond Λ = 1, and its Λ → ∞ end, W_∞(g⋆g^*) ≥ −c_∞|ĝ(0)|², is implied by CC Thm 6.11.
+- **No K_I^{(Λ)}-type input is needed**, beyond CC's Λ = 1 computation. The last [S&M] GAP on the Λ-track is therefore **closed (PROVED given CERTIFIED CC Lemma 6.10).** It is closed in this sense, with no new information on RH.
+- *Grok audit (S103f): SOUND; wording.*
+  - The Λ-track is **closed NEGATIVELY**. Thm 6.11_Λ is an immediate corollary of CC Thm 6.11 plus the monotonicity lemma, so it carries no positivity beyond CC.
+  - The only route left past CC is the support extension, which is where primes enter (R2; Celestial §C.13, Prime §N.12).
+  - Checks:
+    - N^{(Λ)} ≤ N_I is a **quadratic-form (operator) inequality**, not a domination of kernels. It comes from the projection inequality S^{So}_{(1,Λ²)} ≤ S^{So}_1 (S(1, Λ²) ⊂ S(1, 1)), conjugated by ϑ(h), which preserves ≤ (X P₁ X^* ≤ X P₂ X^* for P₁ ≤ P₂). W_∞ is Λ-free and cancels.
+    - Unitary dilation invariance of the trace uses only [ϑ(h), ϑ(Λ)] = 0.
+    - CC numbers checked against arXiv:2006.13771: γ ≈ 2.94355 (140); λ_max = 1.05158; ε₁ ≈ 0.00122 (134); c > 0.227784 (Lemma 6.8, ⇒ λ₂ < 0.773); N_I = −½ε′(1⁺)(Id − K_I); c = 4γ/log 2 (141).
+    - CC Lemma 6.10 is labelled CERTIFIED (computer-assisted), not PROVED. ✓
+
+### P.10.4 Where the naive analogue fails: ε^{(Λ)}∘Q alone. PROVED, given (P9.4). [S&M]
+- **Notation.** Write ⟨ξ|Q_+ξ⟩ = ‖ξ′‖² + ¼‖ξ‖² (Dirichlet form of Q_+ = −∂_x² + ¼ on I, CC proof of Thm 3.6). Then Q(k⋆k^*)(1) = ⟨ξ|Q_+ξ⟩, since (ξ⋆ξ^*)″(0) = −‖ξ′‖² in the additive variable.
+- **Exact identity.** From (P9.4) and P.10.2:
+
+  **(P10.5)  ∫ Q(k⋆k^*)·ε^{(Λ)} = ⟨ξ|N^{(Λ)}_Iξ⟩ + 2 log Λ·⟨ξ|Q_+ξ⟩ − χ_Λ(Q(k⋆k^*)).**
+
+- **Two-sided growth.** The lower bound uses P.10.0 item 4. So with f_ξ := Q(k⋆k^*) and sup_Λ |χ_Λ(f_ξ)| ≤ ‖[P^c_1, ϑ(f_ξ)]‖_1 < ∞ for each fixed ξ:
+  2 log Λ⟨ξ|Q_+ξ⟩ − W_∞(f_ξ) − ‖[P^c_1, ϑ(f_ξ)]‖_1 ≤ ∫ f_ξ ε^{(Λ)} ≤ γ|⟨ξ₀|ξ⟩|² + 2 log Λ⟨ξ|Q_+ξ⟩ + ‖[P^c_1, ϑ(f_ξ)]‖_1.
+- **Failure point (explicit).** Take any ξ ≠ 0 in C_c^∞(int I) with ⟨ξ₀|ξ⟩ = 0, i.e. ξ̂(0) = 0. A CC-type bound ∫ f_ξ ε^{(Λ)} ≤ γ′|⟨ξ₀|ξ⟩|² would need the left side to be ≤ 0, but it is > 0 as soon as
+
+  **log Λ > (W_∞(f_ξ) + ‖[P^c_1, ϑ(f_ξ)]‖_1) / (2⟨ξ|Q_+ξ⟩).**
+
+  So **no Λ-uniform rank-one (Lemma 6.10-type) bound holds for ε^{(Λ)}∘Q alone.** The obstruction is exactly the term 2 log Λ·Q_+, which is unbounded on H. This is the window trace of (P9.3) pushed through Q.
+- **For fixed Λ > 1, GAP:**
+  - whether ε^{(Λ)}∘Q alone admits some rank-one bound with Λ-dependent γ′_Λ;
+  - whether N^{(Λ)}_I keeps CC's form −a_Λ(Id − K^{(Λ)}) with K^{(Λ)} compact.
+- **Both GAPs need two inputs:**
+  - (a) C² convergence on (1, 2] of the ε^{(Λ)} series, i.e. the App. F analogue: edge values ξ^Λ_n(1) (CC (100)-type) and the KRD tail (PROLATE_BOUNDS §5). [S&M-pending]
+  - (b) A bound for χ_Λ∘Q relative to Q_+, from the trace-norm bound for [P^c_Λ, ϑ(f)] and the HS bound for P_ΛŜ_Λ. [S&M-pending]
+- **Not needed for P.10.3.** If (a) holds, ∫ Q(k⋆k^*)ε^{(Λ)} is a bounded form (boundary term −2ε^{(Λ)}′(1⁺)‖ξ‖² plus HS), and then (P10.5) forces χ_Λ∘Q to carry the −2 log Λ·Q_+ (CONJECTURE, conditional on (a)).
+
+### P.10.5 Status, labels, R-line
+| item | label | track |
+|---|---|---|
+| P.10.0 (1) relabel (P9.4) | PROVED given (P9.3) + CC §4 at a = b = Λ; (69)–(84) by inspection | [S&M] |
+| P.10.0 (2) convention ϑ(λ) dilates by λ (CC (61)); ε ↔ conj ε for complex f | PROVED | [S&M] |
+| P.10.0 (3) Tr(ϑŜ_Λ) = Tr(ϑS_Λ) = 2f(1) log Λ via F = I∘u | PROVED | [S&M] |
+| P.10.0 (4) ∫ f ε^{(Λ)} = 2f(1) log Λ + O_f(1); consistent, no sign error | PROVED (given (P9.4)) | [S&M] |
+| plunge-mode carrier of the log Λ² mass | CONJECTURE (heuristic) | [S&M] |
+| CC Lemma 6.10 / Thm 6.11 at Λ = 1 | CERTIFIED (CC, computer-assisted; not replayed) | — |
+| monotonicity lemma; Λ → ∞ limits (P10.4), L = −ε_∞ − lim χ_Λ | PROVED | [S&M] |
+| Lemma 6.10_Λ (P10.2), Thm 6.11_Λ (P10.3), γ_Λ, c_Λ nonincreasing, ≤ CC's | PROVED given CERTIFIED CC Lemma 6.10 | [S&M] |
+| no Λ-uniform rank-one bound for ε^{(Λ)}∘Q alone (P10.5), explicit threshold | PROVED (given (P9.4)) | [S&M] |
+| fixed-Λ form of ε^{(Λ)}∘Q; N^{(Λ)} = −a(Id − K) | GAP (inputs (a), (b) S&M-pending) | [S&M] |
+| support past p = 2 | not touched (Celestial §C.13) | [Cel] |
+| M1 leak | not touched (Queen) | [Q] |
+| RH | OPEN | — |
+
+**R-line:**
+- **R1:** P.10.3 holds for every Λ ≥ 1, uniformly. This is not claimed for the ε^{(Λ)} series.
+- **R2:** not engaged (support fixed at [2^{−1/2}, 2^{1/2}], no primes).
+- **R3:** operator positivity / monotonicity of Sonin projections.
+- **R4:** n/a.
+- **R5:** fake-blind. Every object with ζ's archimedean place, and G_θ′ in particular, passes every step, since only archimedean data enter.
+- **R6:** (P10.4) and (P10.5) are exact; the bounds are (P10.1)–(P10.3).
+
+## P.11 Not used
 - HiddenZeros (GPPVerify #454, 5f54359): 4–6-point amplitude identities; no celestial amplitude enters §P. **Not cited.**
 - `temperedness_iff_critical_line` / ArithmeticTemperedPrincipalSeries.lean (custom axiom `exp_growth_not_tempered`) and ArithmeticCoPoissonOrientationTemplate.lean (co-Poisson assumed): **not cited**. P.3 replaces them with literature statements.
 - `open_*` placeholders: never cited.
 
-## P.11 Corrected fakes table (replaces ARP_plan §5; proposed refinement of ARP G.4e's F_θ and H₋ₜ rows)
+## P.12 Corrected fakes table (replaces ARP_plan §5; proposed refinement of ARP G.4e's F_θ and H₋ₜ rows)
 
 | fake | P.1 local data | P.2 local Θ_v unitary | P.3 GL(2) unitary / Knapp–Stein PD | GL(1) constituents unitary | P.4 twist | P.5 E / Poisson | P.6 Euler operator | breaks at |
 |---|---|---|---|---|---|---|---|---|
@@ -502,7 +639,7 @@ Labels:
 | Epstein | two Euler products | per constituent | sum of two dihedral reps | per constituent | n/a | no single ⊗′ | sum of two | P.5 |
 | G₅ | no Hecke operators | — | no adelic rep | — | n/a | no E | none | P.1 |
 
-## P.12 Label changes relative to ARP_plan.md (2026-10-22)
+## P.13 Label changes relative to ARP_plan.md (2026-10-22)
 1. **§5 F_θ row:** "local Θ_v unitary (tempered): no (non-tempered)" → **"GL(2) local Θ_v unitary: YES (product γ, P.3 b1); Knapp–Stein form PD for 0<θ<½ (b2); tempered: no; GL(1) constituents unitary: NO; breaks at P.4 (polarization)."** The column header "unitary (tempered)" conflated two different notions; it is now split.
 2. **§1 "Which form is Hermitian"** (Knapp–Stein form "not the L² form, E does not intertwine it"): superseded by P.3. The Knapp–Stein form is positive definite on the complementary series. The relevant point is that the explicit formula and E are linear in the GL(1) constituents.
 3. **§3 item 2** ("unitarity holds only for tempered local data; that is the R3 filter"): corrected to "the R3 filter is unitarity of the GL(1) isobaric constituents on C_ℚ; local GL(2) unitarity holds for complementary series."
@@ -518,7 +655,12 @@ Labels:
    - (P8.2) → (P9.0), the S − SQ′S form (Queen (c2)); the two agree iff Q′ ≤ S_Λ.
    - The minor GAP "projector dictionary" is closed NEGATIVELY: the projectors do not agree (D1–D3), and the dictionary holds at the trace level.
    - CC Thm 4.7 holds at every Λ ≥ 1 (P9.4), and the 2 log Λ is the window trace, which cancels exactly (P9.3).
-   - The Λ > 1 CC Thm 1 is a GAP [S&M], RH-silent.
+   - The Λ > 1 CC Thm 1 is a GAP [S&M], RH-silent (closed in P.10.3; see item 13).
+
+13. **S103f (P.10):**
+   - (P9.4) relabelled (Golden Eye).
+   - The Λ > 1 CC Thm 1 / Lemma 6.10 GAP [S&M] is **closed**: PROVED given CERTIFIED CC Lemma 6.10, uniformly in Λ, with the same γ and c. It is weaker than Λ = 1, since Λ = 1 is optimal in the Sonin family.
+   - The naive ε^{(Λ)}∘Q-only analogue fails (P10.5); its fixed-Λ form is a GAP (S&M-pending inputs).
 
 ## References (added to ARP G.7)
 - Knapp, A. W. & Stein, E. M., "Intertwining operators for semisimple groups", Ann. of Math. 93 (1971) 489–578.
