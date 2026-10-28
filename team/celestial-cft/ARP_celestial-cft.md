@@ -546,7 +546,9 @@ G.4d deficit convention: the deficit lives on coker E = ker E*, and the positive
 - *Grok audit notes on T6/T8 (labels unchanged).*
   - T8 obstructs only the *CC ε-margin* route, i.e. bounding W_2 by the O(‖ξ‖²) margin of T5. It is **not** an obstruction to (IF).
   - On the same edge pairs, 𝒮_L is also of order m²‖ξ‖²_{L²}, since σ_S ~ log|t| multiplies (¼ + t²)|ξ̂|². So (IF) is dominated at high frequency provided σ_S ≥ 2c₂ there (item (i) of (IF-F)).
-  - In CC 2106.01715 §2.2, the "archimedean contribution" whose positivity is lost includes the rank-one pole term w_{0,2} (CC Lemma 2.7). So "the archimedean form alone loses positivity" is a NUMERICAL statement about that matrix. It has not been shown separately for W_∞ on the pole-free class.
+  - In CC 2106.01715 §2.2, the "archimedean contribution" whose positivity is lost (−W_ℝ, possibly with the rank-one pole matrix w_{0,2} of CC Lemma 2.7; §2.2 does not say unambiguously) is the matrix on the **full** even/odd test space, with no pole-free restriction.
+    - So "the archimedean form alone loses positivity" is a NUMERICAL statement about that matrix.
+    - Loss of positivity on the full space does not by itself imply loss on the codimension-one pole-free hyperplane, by Cauchy interlacing, when there is a single negative eigenvalue. So it is not established for W_∞ on the pole-free class.
 - **The p = 2 prime term** −c₂(g(log 2) + g(−log 2)) enters at T7. It is bounded on L² before conditioning, |·| ≤ √2·log 2·‖k‖² ≈ 0.980‖k‖², but it is non-compact and indefinite: a compressed translation coupling the two edge strips. After the pole-removing Q (T4) it is order 2 (T8).
 - **The 2 log Λ term** (Connes 1999 §VIII eq. (16), Thm 5 eqs. (17)–(26)) is absent on this track. Λ = 1 is fixed, and in T0 it cancels (P8.2(ii)). The test is vacuous at Λ = 1 (P.8c). It belongs to **[Λ, §S]**.
 - **No equality becomes an inequality** in T0–T5: these are identities valid for every L. The only inequality step is T6 (Id − K_L ≥ 0 after conditioning). Past 2L = log 2 it must be replaced by the interface inequality below, which is again an *identity-plus-sign* statement (R6).
