@@ -2,6 +2,8 @@
 
 Daniel Toupin / Golden Physics Project, with AI assistance from Grok. 2026-10-22. **RH is OPEN.** Nothing here proves or implies RH.
 
+**Status update 2026-10-28.** The derivation is now `ARP_principal-series.md` (§P). Its P.10 lists the label changes to this plan; in particular the §5 F_θ row is corrected (GL(2) data unitary, Knapp–Stein PD for 0<θ<½; the filter acts on the GL(1) constituents) and §4's R4 conjecture is superseded. The text below is kept unchanged for the record.
+
 **Status.** This file is a plan. `ARP_principal-series.md` is **on hold** until the lead's `derivation/LEAN_INVENTORY.md` lands on GPPDiscovery5 main; it had not landed as of 07:55 EDT.
 
 **Labels.**
