@@ -1,0 +1,28 @@
+# p17_probe.py -- NUMERICAL (float64, trapezoid quadrature, no remainders). Not a certificate. RH OPEN.
+# Part A: Ritz upper bounds for the full {2,3} Weil form (sine basis N=60, Tmax=3000).
+A odd l3=0.00 min<=9.4798e-04 gramdev=3.9e-04
+A odd l3=0.01 min<=7.6133e-04 gramdev=3.9e-04
+A odd l3=0.03 min<=4.7161e-04 gramdev=3.8e-04
+A odd l3=0.05 min<=2.8330e-04 gramdev=3.7e-04
+A odd l3=0.10 min<=6.9129e-05 gramdev=3.6e-04
+A odd 2L=1.25276 min<=1.1892e-05 gramdev=3.4e-04
+A odd 2L=1.36098 min<=2.9954e-07 gramdev=3.1e-04
+A odd 2L=1.38629 min<=1.0079e-07 gramdev=3.1e-04
+A even l3=0.00 min<=1.2458e-04 gramdev=4.2e-04
+A even l3=0.01 min<=1.4387e-04 gramdev=4.1e-04
+A even l3=0.03 min<=1.4093e-04 gramdev=4.1e-04
+A even l3=0.05 min<=1.3981e-04 gramdev=4.1e-04
+A even l3=0.10 min<=1.3939e-04 gramdev=4.0e-04
+A even 2L=1.25276 min<=1.3150e-04 gramdev=3.9e-04
+A even 2L=1.36098 min<=2.2589e-05 gramdev=3.8e-04
+A even 2L=1.38629 min<=1.0504e-05 gramdev=3.7e-04
+# Part B: C.15.A-type Schur bound extended to {2,3} (float, Riemann-sum eps).
+B odd 0.01 100 64 qT=5.1846e-01 muA=5.7285e-04 sV=5.1079e+00 eabs=1.4808e-03 eneg=1.5876e-04 beta=8.6969e-02 ctail=5.1830e-01 lam=-1.3646e-02
+B odd 0.01 100 128 qT=5.1846e-01 muA=5.7285e-04 sV=5.1079e+00 eabs=1.8000e-04 eneg=1.9585e-05 beta=3.0322e-02 ctail=5.1844e-01 lam=-1.1965e-03
+B odd 0.01 100 200 qT=5.1846e-01 muA=5.7285e-04 sV=5.1079e+00 eabs=4.7023e-05 eneg=5.1310e-06 beta=1.5498e-02 ctail=5.1846e-01 lam=1.0947e-04
+B odd 0.01 60 128 qT=7.6296e-03 muA=1.4694e-04 sV=4.5905e+00 eabs=4.1323e-05 eneg=4.2051e-06 beta=1.3773e-02 ctail=7.6254e-03 lam=-1.0385e-02
+B odd 0.01 100 300 qT=5.1846e-01 muA=5.7285e-04 sV=5.1079e+00 eabs=1.3927e-05 eneg=1.5213e-06 beta=8.4342e-03 ctail=5.1846e-01 lam=4.3553e-04
+B odd 0.02 100 300 qT=5.1846e-01 muA=4.4817e-04 sV=5.1227e+00 eabs=1.2347e-05 eneg=1.5639e-06 beta=7.9530e-03 ctail=5.1846e-01 lam=3.2609e-04
+B odd 0.03 100 300 qT=5.1846e-01 muA=3.4703e-04 sV=5.1344e+00 eabs=1.0719e-05 eneg=1.6070e-06 beta=7.4187e-03 ctail=5.1846e-01 lam=2.4082e-04
+B odd 0.05 100 300 qT=5.1846e-01 muA=2.0471e-04 sV=5.1524e+00 eabs=1.1441e-05 eneg=1.6926e-06 beta=7.6779e-03 ctail=5.1846e-01 lam=9.0986e-05
+B even 0.0 100 300 qT=1.7870e+00 muA=1.2115e-05 sV=4.6164e+00 eabs=5.8014e-06 eneg=1.4896e-06 beta=5.1751e-03 ctail=1.7870e+00 lam=-2.8720e-06

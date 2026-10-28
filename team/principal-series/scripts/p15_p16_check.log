@@ -19,3 +19,15 @@
    Omega(19.35) = [1.12470401849 +/- 4.94e-12]  Omega - c0* = [0.22377640 +/- 2.24e-9]  Omega - (c2+c3) = [0.00029084616 +/- 3.10e-12]
    Omega(38.1) = [1.80230850850 +/- 5.37e-13]  Omega - c0* = [0.90138089 +/- 2.24e-9]  Omega - (c2+c3) = [0.67789534 +/- 3.84e-9]
    eta_max(T=16) = Omega(16)/c0* - 1 = [0.037318389 +/- 4.61e-10]
+6. s23 - (qT + aT) = 0
+   s23 - qT - [Om(t)-Om(T)] - lines = 0
+   mabs - aT = 2*Omega(T) - 2*Omega(t)  ; mabs + aT = 0 (+2*lines)
+   aT + mneg - lines = 0
+   2x2 Schur: lambda_cert is an eigenvalue: True
+   det(M - mu I) - [(mu_A-mu)(c_tail-mu) - beta^2] = 0
+   det(M) = mu_A c_tail - beta^2  (so lambda_cert > 0 iff s_V eps_abs < mu_A c_tail, given mu_A, c_tail > 0): -beta**2 + c_tail*mu_A
+7. Arb: 2(c2+c3) = [2.24882634466368 +/- 4.86e-15]
+   q_T(T=59) = Omega - 2(c2+c3) = [-0.00917793750964 +/- 2.06e-15]
+   q_T(T=60) = Omega - 2(c2+c3) = [0.00762957651229 +/- 4.97e-15]
+   q_T(T=100) = Omega - 2(c2+c3) = [0.518462608175 +/- 4.84e-13]
+   q_T(T=150) = Omega - 2(c2+c3) = [0.923930031157 +/- 2.04e-14]

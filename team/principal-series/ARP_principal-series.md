@@ -670,13 +670,17 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
 15. **S103h (P.15):**
    - The {2,3} prediction of P.14.8 is refined: per-line constants are confirmed, and "P-parity decides per line" is refuted at the p = 3 entry (PROVED). The orbit-closed node set is forced.
    - The Q.8.E weight-1 block has spectrum {0, ±c₂/ℓ}. Positive line blocks cost exactly c₂·g(0) (sharp). A separable (I2) implies a global S2 (⇒ only; REMARK); S2 stays a GAP. *(Grok audit S103h(2): "equivalent … (PROVED)" overstates P.15.2. What is proved is the ⇒ direction (necessary condition) for separable choices whose line block has diagonal sums only at {0, ±a} on (−2L, 2L). The converse needs an operator D^∞ ≥ 0 realizing the given diagonal sums and is not shown. So read "(I2)-separable ⇔ global S2" as a REMARK; global S2 itself is a GAP.)*
-   - Status: C.14 is merged; C.14.K is a CONJECTURE; the C.14.A indicative failure is NUMERICAL (Celestial's). Piece 4 is the sole odd payer, in band-split form.
+   - Status: C.14 is merged; C.14.K is a CONJECTURE *(S103j: CERTIFIED false at (log 2/6, 14))*; the C.14.A indicative failure is NUMERICAL (Celestial's). Piece 4 is the sole odd payer, in band-split form.
    - N.14.3 cross-check: the identities agree. "No 1/ℓ₃ term from the 2-line" holds in ‖ξ′‖_∞ but not in H-energy. (L4) is consistent with P.14.3. The N.13.4 D_L sign was fixed by N.14.0(a), so nothing is left open from P.14.
 
 16. **S103i (P.16):**
    - The sharp joint S1 constant on (log 3, log 4) is c₀\* = ½(c₃ + √(c₃² + 4c₂²)) = 0.90093 (fibre decomposition into 4-paths; PROVED). The N.14.3 c₂ + c₃ sharpness claim gets a FIX.
    - The high band pays the joint charge for T ≥ 16 (CERTIFIED Ω). The 3-entry follows for ℓ₃ ≤ πμ/(4c₀\*(1 + 1/η)T), given the low-band GAP (H₃^σ). No unconditional range in either sector.
    - Q.8.E (I2): D_L = A_LM_ρA_L^\* with an invisible correction n_L. (I2) ⇔ s_L ≥ 0 ⇔ Q_L ≥ 0 (Krein, cited). The explicit n_L is the GAP.
+
+17. **S103j (P.16 fixes, P.17):**
+   - P.16 wording: T = 16 (η ≤ 0.0373) is the usable certified point; Krein step restated for (¼ − ∂²)d with weak invisibility, a verified distributional citation and a measure identity; "(H₃^σ) = N.15.H" downgraded to REMARK; C.14.K status lines updated to CERTIFIED false at (log 2/6, 14).
+   - P.17: (H₃^σ) at T = 16 is NUMERICALLY false; Q^G_L is not monotone in L, the full Weil form is; Temple–Lehmann lemma for Q_L (PROVED) with a C.15-type ν₂ lemma (PROVED) and an exact H\*-residual formula; odd 3-entry range via one certificate at the right endpoint; Celestial certification list; coupled line cost reduced to a strip-supported moment problem on ℤ² (duality PROVED, value → c₀\* NUMERICAL, exact attainment GAP).
 
 ## P.14 The p = 2 line as local Tate data: is Prime's edge form the 2-adic Tate reflection? (S103g; analytic only; [Cel]/[Q], support track L, Λ = 1)
 Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OPEN. Nothing in P.14 proves or implies RH.** On the range treated here (2L ∈ (log 2, log 4)), ζ ≡ P_X for X ≥ 2, so everything is **RH-silent**. Positivity on the range is already CERTIFIED (Mori-conditional, main 992a011); P.14 is about **mechanism**.
@@ -791,7 +795,7 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
 |---|---|---|
 | 1 strip-localized cone (Lemma C.13.B, ℓ ≤ 0.119) | the harm there is the V(2) = +1 piece; absorbed by Ω's high band. No 2-adic input beyond (a, c₂) | PROVED (bookkeeping) |
 | 2 edge traces (ramps) | the form is the edge compression of the m = 1 time delay of γ₂ (P14.1) in the Q-norm. The help/charge split comes from J∘P (archimedean-global), not Θ₂. Sign: Q_L gains +2c₂(1/ℓ − ℓ/24)α₋α₊ (as in G.4h item 2 since 5354fde); the N.13.4 D_L edge block is +c₂(1/ℓ − ℓ/24)σ_x (fixed by N.14.0(a), 656de12). Exact constant (1/ℓ − ℓ/24), with −ℓ/24 = ¼-mass term of Q | PROVED |
-| 3 coupling 2R(ξ_b, ξ_s) | Celestial C.14 merged (c7c94ee): Thm C.14.B PROVED, C.14.C obstructions PROVED, closure reduced to Conj C.14.K (CONJECTURE) + m₀^e. P.14 adds nothing 2-adic here | GAP N.G2-bulk |
+| 3 coupling 2R(ξ_b, ξ_s) | Celestial C.14 merged (c7c94ee): Thm C.14.B PROVED, C.14.C obstructions PROVED, closure reduced to Conj C.14.K (CONJECTURE; S103j: CERTIFIED false at (log 2/6, 14)) + m₀^e. P.14 adds nothing 2-adic here | GAP N.G2-bulk |
 | 4 archimedean margin at ½ log 2 | the odd cost cannot be paid 2-adically (no sign split in Θ₂), so it must be R's margin. The ℓ-independent frame version (Thm C.14.A) indicatively fails on 7.4 ≲ \|t\| ≲ 13 (Celestial ff3a9dc, NUMERICAL/indicative); the band-split routes remain (P.15.3) | PROVED (as stated); value GAP N.G2-m₀ |
 
 ### P.14.8 Remark for Prime's §N.14 ({2, 3} lines, 2L ∈ (log 3, log 4]) — REMARK / CONJECTURE [Cel]
@@ -815,7 +819,7 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
 | (I1) pairing normalization of −c₂(V + V^*) | REMARK | [Q] |
 | Sonin/prolate: V(2) intertwines S(1,1) → S(2,½) | REMARK (PROVED as stated) | [Cel] |
 | {2, 3}: P unique common reflection, no common J (PROVED); N.14 prediction | REMARK / CONJECTURE | [Cel] |
-| N.G2-bulk, N.G2-m₀, (P) | GAP (unchanged; C.14 merged, C.14.K CONJECTURE; see P.15.3) | [Cel] |
+| N.G2-bulk, N.G2-m₀, (P) | GAP (unchanged; C.14 merged; C.14.K CERTIFIED false at (log 2/6, 14), S103j; see P.15.3) | [Cel] |
 | RH | OPEN | — |
 
 **R-line:**
@@ -959,7 +963,7 @@ The p = 2 term of Q_L is −c₂(g(a) + g(−a)), with a = log 2.
 - **C.14 is merged** (a4153a8, audit c7c94ee) and is no longer pending.
   - Thm C.14.A is PROVED as a sufficient criterion ("iff" corrected to sufficient in the audit).
   - Thm C.14.B (coupling bound) and Thm C.14.C (obstructions) are PROVED.
-  - **Conjecture C.14.K (high-band almost-orthogonality) is a CONJECTURE.**
+  - **Conjecture C.14.K (high-band almost-orthogonality) is a CONJECTURE.** *(S103j status: CERTIFIED false at (ℓ, T) = (log 2/6, 14); ARP G.4i.)*
   - Cor C.14.D is PROVED given its inputs.
   - So piece 3 (N.G2-bulk) is a GAP reduced to C.14.K + m₀^e. P.14.7 and P.14.9 are updated accordingly.
 - **Celestial's indicative check (team/celestial-cft ff3a9dc; NUMERICAL/indicative, hers).**
@@ -1002,7 +1006,7 @@ The p = 2 term of Q_L is −c₂(g(a) + g(−a)), with a = log 2.
 | D_n^{(2)} = A_nM_ρA_n^* ≥ 0, cost c₂sec(π/(n + 2))g(0); infimum c₂ sharp (not attained by A_nM_ρA_n^*) | PROVED | [Q] |
 | separable (I2) ⇒ R ≥ c₂‖·‖²_H on 𝒯_L (global S2); ⇒ only, line blocks with diagonal sums at {0, ±a} | REMARK; S2 GAP (HEURISTIC false) | [Q]/[S&M] |
 | trace picture cannot localize to H(E) | PROVED | [Q] |
-| C.14 merged; C.14.K | CONJECTURE (hers) | [Cel] |
+| C.14 merged; C.14.K | ~~CONJECTURE~~ **CERTIFIED false** at (ℓ, T) = (log 2/6, 14) (S103j status update, ARP G.4i) | [Cel] |
 | C.14.A symbol inequality fails on ≈ 7.4 ≤ \|t\| ≤ 13 (proxy 0.58); ≈ [5.41, 13.6] with actual K_L | NUMERICAL (indicative; Celestial ff3a9dc / Prime N.14.1) | [S&M] |
 | cross-check of N.14.3: identities agree; "no 1/ℓ₃ term" holds in ‖ξ′‖_∞, not in H-energy | PROVED | [Cel] |
 | (L4): c₄ line = m = 2 time-delay mode, trace block −(c₄/ℓ₄)S(V(2)² + V(2)^{*2})S | PROVED | [Q] |
@@ -1096,11 +1100,13 @@ As ℓ₃ ↓ 0, F₃ shrinks to measure 0 and Q^G_L tends to the full {2}-form 
 - Suppose Ω(T) ≥ c₀\*(1 + η). Then the high-band part of the joint 4-path charge is covered by R alone:
   > R(ξ^{≥T}) − c₀\*(1 + η)‖ξ^{≥T}‖²_H ≥ [Ω(T) − c₀\*(1 + η)]‖ξ^{≥T}‖²_H ≥ 0.
 - Arb (part 5):
-  - Ω(15.5) − c₀\* ∈ [0.0018618 ± 7e−12] > 0;
+  - Ω(15.5) − c₀\* ∈ [0.0018618 ± 7e−12] > 0 (Principal's own Arb value, p15_p16_check part 5; not an S&M certificate; at T = 15.5 it allows only η ≤ 2.07e−3);
   - Ω(16) = 0.934548783922(±4e−13), the same value as S&M's certified Ω(16) = 0.93455, so **η ≤ 0.0373183 at T = 16**;
   - Ω(19.35) = 1.124704 (η ≤ 0.2484);
   - Ω(38.1) = 1.802309 (η ≤ 1.0005).
 - By (Ω2), PROVED, each inequality holds for all |t| ≥ T. **CERTIFIED.**
+- **Usable certified point (S103j wording fix): T = 16 with η ≤ 0.0373** (S&M's certified Ω(16)). The T = 15.5 statement rests on Principal's own Arb value only and gives η ≤ 2.07e−3; it is not used below.
+- *(S103j: at T = 16 the high-band part of Thm P.16.A is CERTIFIED, but the companion low-band hypothesis (H₃^σ)(16, 0.0373, μ) is NUMERICALLY false for every μ ≥ −1, in both parities (P.17.0). So the T = 16 and T = 19.35 rows of the P.16.B table are vacuous as they stand.)*
 - By contrast, the old constant c₂ + c₃ needs T ≥ 19.35 even at η = 0, since Ω(19.35) − (c₂ + c₃) = 2.9e−4 and Ω(16) < c₂ + c₃. The sharp c₀\* lowers the high-band threshold to S&M's certified T = 16.
 - *(Grok audit S103h(6): the script was re-run and its output is byte-identical to the log. The enclosures are genuine Arb: python-flint acb.digamma at 128 bits, with T given as exact decimals. Ω(15.5) − c₀\* ∈ [0.0018617842 ± 7e−12] and Ω(16) = [0.934548783922 ± 3.4e−13], which agrees with S&M's certified 0.93455. Precision: T = 15.5 lies **below** S&M's Ω(16), so the T ≥ 15.5 statement rests on Principal's own Arb value, not on S&M's. At T = 15.5 it allows only η ≤ 2.07e−3, and Thm P.16.B needs η > 0. The usable certified point is T = 16 with η ≤ 0.0373.)*
 - Ramp-scale content, at frequency ~π/ℓ₃, lies above T = 16 when ℓ₃ ≲ π/16 = 0.196 (REMARK).
@@ -1154,17 +1160,24 @@ Notation as in P.15.2: Λ = e^L, S_Λ = 1_{[−L, L]}, V the translation group, 
   - Here σ_S(t) + 2ε′(1⁺)(1 − κ̂_L)/(¼ + t²) = Ω(t) is the S&M (5.2) split of the archimedean symbol into its 𝒮-part and its ε-part. K_L is the compression of the convolution by κ_L = q/(2ε′(1⁺)).
   - Let A_L be the Fourier multiplier with |â_L|² = s_L (taken where s_L ≥ 0), ρ ≥ 0 a fixed L-independent bounded density with compact support and ∫ρ = 1, and
   > **D_L := A_L M_ρ A_L^\*.**
-  - Then d_{D_L} = (∫ρ)·š_L, and **Tr(D_L V(f)V(f)^\*) = (1/2π)∫s_L|f̂|² = Q_L(f)** for real f ∈ 𝒯_L, since n_L is invisible on supp g ⊂ [−2L, 2L]. So (I1) holds. If s_L is bounded, D_L is bounded and D_LS_ΛV(f) is HS (‖S_ΛV(f)‖²_HS = 2L‖f‖²₂).
+  - Then d_{D_L} = (∫ρ)·š_L, and **Tr(D_L V(f)V(f)^\*) = (1/2π)∫s_L|f̂|² = Q_L(f)** for real f ∈ 𝒯_L, since n_L is invisible on supp g ⊂ [−2L, 2L]. So (I1) holds.
+  - *(S103j wording fix.)* "Invisible" is used in the **weak sense**: (¼ − ∂²)n_L is supported off (−2L, 2L). Then n_L pairs to zero with every pole-free g (g = ξ∗ξ\*, ξ ∈ H¹₀(−L, L)), which is all (I1) needs; supp n_L itself may meet (−2L, 2L), since (¼ − ∂²)⁻¹ is non-local. In the weak sense n_L = αe^{x/2} + βe^{−x/2} on (−2L, 2L) (PROVED: the kernel of ¼ − ∂² on the interval).
+  - The earlier sentence "if s_L is bounded, D_L is bounded" is **vacuous** and is withdrawn: s_L is never bounded in this ansatz (REMARK P.17.5(e), PROVED). So D_L = A_LM_ρA_L^\* is an unbounded operator, and Queen's boundedness requirement in (I1) needs a non-multiplier D (GAP).
 - **(b) The (I2) criterion (PROVED).**
   - The construction is available, and then D_L ≥ 0, exactly when s_L ≥ 0 a.e. (|â_L|² = s_L).
   - Conversely, every D ≥ 0 has positive-definite diagonal sums: d_D is a sum of autocorrelations Σλ_k e_k ⋆ ẽ_k. So any (I1) + (I2) solution has d̂_D = s_L for some invisible n_L.
-  - Existence of an invisible n_L with s_L ≥ 0 is **equivalent to Q_L ≥ 0 on the pole-free 𝒯_L**. The ⇐ direction is Krein's extension theorem for positive-definite distributions on an interval (Krein 1940; Sasvári 1994, theorem number unverified), which makes it **PROVED by citation**. The extension is not explicit, so R6 explicitness remains the GAP of Q.8.E.
+  - Existence of an invisible n_L with s_L ≥ 0 is **equivalent to Q_L ≥ 0 on the pole-free 𝒯_L**, with s_L read as a measure (below). The extension is not explicit, so R6 explicitness remains the GAP of Q.8.E.
+  - **(S103j restatement of the ⇐ direction; PROVED by citation.)**
+    - Apply the extension theorem to d′ := (¼ − ∂²)d, not to d. d′ is a positive-definite distribution on (−2L, 2L): ⟨d′, ξ∗ξ\*⟩ = Q_L(ξ) ≥ 0 for all ξ ∈ C_c^∞(−L, L), and this class is dense in the pole-free 𝒯_L.
+    - d′ has atoms (from the line terms) and a log-singular archimedean part, so the continuous (Krein 1940) and measurable (Sasvári 1994, Thm 4.2.3, Artjomenko) versions do not apply. The distributional version used is: *a positive-definite (tempered) distribution on a finite open interval has a positive-definite extension to ℝ* — Jorgensen, Pedersen & Tian, "Positive definite (p.d.) functions vs p.d. distributions", arXiv:1712.07264, **Corollary 2.2** (statement read and verified this session; its proof rests on their monograph *Extensions of Positive Definite Functions*, LNM 2160, Springer 2016, theorem number there unverified). Schwartz's Bochner theorem then writes the extension as the Fourier transform of a **positive tempered measure** σ_L. Alternatives: Krein–Langer, IEOT 78 (2014) 1–69, Thm 4.4 is the *continuous* case (verified via the MaRDI review); its §5 screw-function continuation fits W = −g″ with g continuous (theorem number unverified). Gel'fand–Vilenkin vol. 4, Ch. II (p. 197 attributes the even-function representation to Krein; exact theorem number unverified).
+    - **Measure form of the identity.** The conclusion is σ_L ≥ 0 with σ̌_L = d′ on (−2L, 2L). Then n_L is any tempered solution of (¼ − ∂²)n_L = σ̌_L − d′ (with d′ taken on all of ℝ). The right side is supported off (−2L, 2L), so n_L is weakly invisible, and it is unique up to the kernel αe^{x/2} + βe^{−x/2} on the interval. The old "|â_L|² = s_L" is the **density** statement 2π dσ_L = (¼ + t²)s_L dt, which holds only when σ_L is absolutely continuous. In general (¼ + t²)s_L dt must be read as the measure 2π dσ_L, and Q_L(ξ) = ∫|ξ̂(t)|² dσ_L(t) for ξ ∈ C_c^∞(−L, L) (same normalisation as the trace identity in (a)) is the identity of record.
+    - **REMARK (PROVED, elementary).** If D ≥ 0 has Σλ_k‖e_k‖²₂ < ∞, then d̂_D = Σλ_k|ê_k|² ∈ L¹, which is absolutely continuous. So a singular part of σ_L cannot be realized by such a D, and the A_LM_ρA_L^\* realization needs an absolutely continuous extension. Whether one exists (extensions are not unique) is a GAP.
   - *(Grok audit S103h(6), Krein step:*
     - *⇒ is trivial: D ≥ 0 gives Tr(DV(f)V(f)\*) ≥ 0.*
     - *For ⇐, apply Krein to d′ := (¼ − ∂²)d, i.e. the symbol (¼ + t²)s, which is positive-definite on (−2L, 2L) against all ξ∗ξ\* with ξ ∈ H¹₀(−L, L). The resulting n is then invisible in the weaker sense that (¼ − ∂²)n is supported off (−2L, 2L), meaning it pairs to zero with every pole-free g. Its support need not avoid (−2L, 2L), since (¼ − ∂²)⁻¹ is non-local. That suffices for (I1) on the pole-free class, but the definition in (a) should say so.*
     - *Since d has atoms at ±log 2 and ±log 3 and a log-singular archimedean part, the distributional form of the extension theorem is needed. Krein's 1940 theorem is for continuous functions. Sasvári 1994, Ch. 4 §4.2 "The one dimensional case", has it for measurable functions (Thm 4.2.3, Artjomenko). Cite a distributional version explicitly, e.g. Gel'fand–Vilenkin vol. 4 or Krein–Langer.*
     - *The extension is in general a measure, so |â_L|² = s_L needs s_L to be a function. Otherwise read D_L ≥ 0 via a spectral measure.*
-    - *Label kept: PROVED by citation, with the citation to be sharpened.)*
+    - *Label kept: PROVED by citation, with the citation to be sharpened.)* *(S103j: sharpened as above.)*
 - **(c) The line part and its minimal cost (PROVED).**
   - Put the line atoms with an invisible line correction n^F: λ(t) := −2c₂cos(at) − 2c₃cos(bt) + n̂^F(t). Any such choice has
   > **sup_t(−λ(t)) ≥ c₀\* = 0.90093** on (log 3, log 4).
@@ -1180,31 +1193,33 @@ Notation as in P.15.2: Λ = e^L, S_Λ = 1_{[−L, L]}, V the translation group, 
   - So, for Q.8.E: **D_L = A_LM_ρA_L^\* with s_L as in (a) is the coupled (I2) operator.** (I1) is exact for every invisible n_L, and (I2) ⇔ s_L ≥ 0. On every window where Q_L ≥ 0 on the pole-free class, some n_L exists (PROVED by citation), non-explicitly. The explicit rule is the GAP.
 
 ### P.16.5 Relation to Prime §N.15 (cd94c27, merged 7953486; read after the first draft of P.16) — REMARK, with labels as marked [S&M]/[Cel]
-- **N.15.1** reproduces P.15.1's (0.9009, −0.2666) in the same normalization (PASS). P.16.1 shows this is the **global** sharp joint constant on 𝒯_L in both parities, not only the edge-class value. This answers N.15's flag: the per-line constants and the kink normalization are unchanged, so the 0.9009 and the 15.47 threshold stand. The Arb value is Ω(15.5) − c₀\* = 1.86e−3 > 0 (CERTIFIED). N.15's 15.471 is the mpmath root.
+- **N.15.1** reproduces P.15.1's (0.9009, −0.2666) in the same normalization (PASS). P.16.1 shows this is the **global** sharp joint constant on 𝒯_L in both parities, not only the edge-class value. This answers N.15's flag: the per-line constants and the kink normalization are unchanged, so the 0.9009 and the 15.47 threshold stand. The Arb value is Ω(15.5) − c₀\* = 1.86e−3 > 0 (Principal's own Arb, 128 bits; the usable certified point is T = 16, η ≤ 0.0373, S103j). N.15's 15.471 is the mpmath root.
 - **N.15.3 B1** (the S1-only template fails at log 3; NUMERICAL, Ritz) agrees with the REMARK in P.16.2. The sharper (P16.1) does not rescue it, because at ℓ₃ → 0 the F₃ part vanishes and the form is R − c₂‖ξ‖²_{H(E₂)}, which N.15 finds ≤ −0.194 (odd) at log 3.
 - **N.15.H vs (H₃^σ).**
-  - Both are PROVED sufficient conditions.
+  - Both are PROVED sufficient conditions (each implies its 3-entry statement).
   - N.15.H keeps Q^{(≤2)} = R − 2c₂B₂ and needs μ_hi > c₃(1 + η). The 0.9009 enters there only heuristically ("folded in"): the 2-line's kink coupling stays inside Q^{(≤2)}, which is N.15-G2's "B₂ high-band cross terms".
   - (H₃^σ) moves exactly those 4-path a-edges into K_F, which is bounded fibrewise by c₀\* on F₃ (|F₃| = 4ℓ₃). This makes the 0.9009 requirement **exact**, and the cross terms of the joint block are handled by (P16.1) with no t-diagonality needed. The remaining 2-path part K_G is O(1)-supported and stays inside the hypothesis.
-  - So **(H₃^σ) is N.15.H with N.15-G2's joint-block part discharged** (PROVED). The non-multiplier certificate N.15-G1 is still needed, now for Q^G_L in place of Q^{(≤2)}; the two agree as ℓ₃ ↓ 0.
+  - ~~So (H₃^σ) is N.15.H with N.15-G2's joint-block part discharged (PROVED).~~ **S103j: downgraded to a REMARK.** (H₃^σ) and N.15.H are different forms (Q^G_L vs Q^{(≤2)} = Q^G_L − ⟨K_F^{(a)}⟩) and neither implies the other. **What is PROVED** is narrower: Thm P.16.B needs no G2-type control of the 4-path a-edges, because those are bounded exactly by (P16.1). The non-multiplier certificate N.15-G1 is still needed, now for Q^G_L; the two forms agree as ℓ₃ ↓ 0.
   - *(Grok audit S103h(6): what is PROVED is that Thm P.16.B needs no G2-type control of the 4-path a-edges, because those are bounded exactly by (P16.1). (H₃^σ) and N.15.H are different hypotheses: they concern Q^G_L and Q^{(≤2)} = Q^G_L − (a-edges of K_F), and neither implies the other in general. So "=" is a REMARK identification. N.15-G1 for Q^G_L is still required.)*
 - **Size (NUMERICAL, Prime's Ritz upper bounds).** At 2L = log 3 the margins are m ≲ 1.34e−3 (odd) and ≲ 2.5e−4 (even), not converged. With μ ≤ m, Thm P.16.B gives at best ℓ₃\* ≲ 1.34e−3/87 ≈ **1.5e−5** (odd; T = 38.1, η = 1), against N.15 B4's ≈ 1e−4. The difference comes from the 4ℓ₃ (four node pieces) and the c₀\* in place of c₃. Both are indicative only.
 - **N.15.2:** the P₂ form becomes negative by log 3.5 (NUMERICAL). So (H₃^σ) and (M₃^σ) can hold only near ℓ₃ = 0, and P.16.B/C are perturbative entries, like S&M Thm 3. A non-perturbative certificate is needed beyond that.
-- **Status, for the record (main).** C.14.K is refuted numerically on the useful range (Celestial C.14.4c, audited S103h(3)). This does not affect P.16, which does not use C.14.K.
+- **Status, for the record (main 5acc5e5, ARP G.4i).** C.14.K is **CERTIFIED false** (Arb, 128 bits) at (ℓ, T) = (log 2/6, 14) and at (log 2/13, 14), and refuted NUMERICALLY on the rest of the useful range ℓ_K ≳ 0.03 (Celestial C.15; credit Prime cd94c27). This does not affect P.16, which does not use C.14.K.
 
 ### P.16.6 Labels and R-line
 | item | label | track |
 |---|---|---|
 | Prop P.16.1: 4-path/2-path fibres; ‖compressed K‖ = c₀\* on (log 3, log 4); (P16.1); sharp in both parities | PROVED (sympy-checked) | [Cel] |
 | N.14.3 "c₂ + c₃ cannot be improved": FIX (sharp is c₀\* on 𝒯_L); P.15.5 S1 row amended; P.15.4 "0.9009 sharp" CONJECTURE → PROVED | PROVED | [Cel] |
-| Thm P.16.A: high band pays the joint charge for T ≥ 16 (η ≤ 0.0373), T ≥ 15.5 (η = 0) | CERTIFIED (Arb Ω; (Ω2) PROVED) | [S&M] |
+| Thm P.16.A: high band pays the joint charge for T ≥ 16 (η ≤ 0.0373): **the usable certified point** (S&M Ω(16)). T ≥ 15.5 (η ≤ 2.07e−3) rests on Principal's own Arb only | CERTIFIED (Arb Ω; (Ω2) PROVED) | [S&M] |
 | Thm P.16.B: ℓ₃\* = πμ/(4c₀\*(1 + 1/η)T) | PROVED given (H₃^σ) | [S&M] |
 | Thm P.16.C: exponential range from a plain margin m | PROVED given (M₃^σ) | [S&M] |
 | (H₃^σ), (M₃^σ): low-band margins of Q^G_L near log 3, both sectors | GAP (= N.15-G1 for Q^G; sizes ≲ 1.3e−3 odd, 2.5e−4 even, NUMERICAL Prime) | [S&M] |
-| (H₃^σ) = N.15.H with N.15-G2's joint-block part discharged | PROVED | [S&M]/[Cel] |
+| (H₃^σ) "=" N.15.H: different forms, neither implies the other | REMARK (S103j downgrade) | [S&M]/[Cel] |
+| Thm P.16.B needs no G2 control of the 4-path a-edges ((P16.1) bounds them exactly) | PROVED | [S&M]/[Cel] |
+| (H₃^σ)(16, 0.0373, μ) at 2L = log 3, both parities | NUMERICALLY false for every μ ≥ −1 (P.17.0) | [S&M] |
 | unconditional 3-entry range, odd and even | none | — |
 | P.16.4(a)–(b): (I1) family D_L = A_LM_ρA_L^\*; D_L ≥ 0 ⇔ s_L ≥ 0 | PROVED | [Q] |
-| (I2) solvable ⇔ Q_L ≥ 0 on pole-free 𝒯_L | PROVED by citation (Krein extension; number unverified) | [Q] |
+| (I2) solvable ⇔ Q_L ≥ 0 on pole-free 𝒯_L, as a measure identity (σ_L ≥ 0, σ̌_L = (¼ − ∂²)d on (−2L, 2L); weak invisibility) | PROVED by citation (Jorgensen–Pedersen–Tian arXiv:1712.07264 Cor 2.2, verified; LNM 2160 number unverified) + Schwartz–Bochner. A.c. realization: GAP | [Q] |
 | line cost ≥ c₀\*; separable Fejér cost c₂ + c₃; coupled reach of c₀\* | PROVED / PROVED / GAP (CONJECTURE yes) | [Q] |
 | separable split ⇒ global S2 (c₀ ≥ c₀\*) | REMARK (⇒ only); S2 GAP | [Q] |
 | RH | OPEN | — |
@@ -1222,7 +1237,262 @@ Notation as in P.15.2: Λ = e^L, S_Λ = 1_{[−L, L]}, V the translation group, 
   - **G_θ′:** passes. Q_G is a sum of two ζ-forms, and every statement above is linear in the form or a bound on it.
 - **R6:** P.16.1 and the (I1) family are exact. The closures (H₃^σ)/(M₃^σ) and the explicit n_L are GAPs. RH OPEN.
 
+## P.17 The odd entry at log 3 and the first odd 3-entry range: Temple–Lehmann lemma, monotonicity, Celestial certification list, and the coupled line cost (S103j; analytic first; [Cel]/[S&M]/[Q])
+
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OPEN. Nothing in P.17 proves or implies RH.**
+
+**Sources** (main 5acc5e5): Celestial §C.15 (Thm C.15.A, Lemma C.15.K, Prop C.15.B; merged, audited SOUND), Golden Eye's extension of C.15.B to the full Weil form at every L and its Temple–Lehmann PROPOSAL (room, S103j), Prime §N.16 (merged), S&M CERT_p2_constants, P.15–P.16 above.
+
+**Input discipline (steering S103j).**
+- **No zero-side input.** Every quantity below is on the prime/archimedean side: Ω, the line atoms Λ(n)/√n for n ≤ 4, and window geometry. Per N.16, the zero side gives only *upper* bounds on margins. Lower bounds come from the prime side (G1) only.
+- Any picture of the form Q_L = Σ_γ(¼ + γ²)|ξ̂(γ)|² assumes RH. It is **heuristic, assuming RH**, and is never an input here.
+- Numbers from Golden Eye or from my float probes are **NUMERICAL**. They are reference values for the certifiers, not results.
+
+**Verification.**
+- `scripts/p15_p16_check.py` parts 6–7 (new): sympy identities for the {2,3} comparison symbol and the 2×2 Schur step, and Arb values of q_T = Ω(T) − 2(c₂ + c₃). Parts 1–5 reproduce the merged log byte for byte.
+- `scripts/p17_h3_probe.py`, `p17_probe.py`, `p17_temple_probe.py`, `p17_strip_sdp.py` (+ logs): float64 probes, NUMERICAL.
+
+### P.17.0 What changed: (H₃^σ) at T = 16 fails, and only the full form is monotone
+**(i) (H₃^σ)(16, 0.0373, μ) is NUMERICALLY false at 2L = log 3, in both parities, for every μ ≥ −1** (`p17_h3_probe.log`; sine basis N = 20/40/60, quadrature to t = 4000).
+- At ℓ₃ = 0, Q^G_L is the {2}-form Q₂. (H₃^σ) at T = 16 asks Q₂ − Ω(16)Π_{≥16} ≥ μΠ_{<16}.
+- λ_min(Q₂ − Ω(16)Π_{≥16}) ≤ −0.1734 (odd) and ≤ −0.2156 (even), stable in N. These are Ritz *upper* bounds, so the failure is robust up to quadrature.
+- **Mechanism (REMARK).** The 2-line charges 2c₂cos(at) on the high band near t ≈ 4π/a = 18.13, just above T = 16. There R's slack Ω(t) − Ω(16) is still small, so handing the whole high band to Ω(16) over-spends it. The first T where the high-band part is compatible is ≈ 30 (NUMERICAL, from the S103j h3_scan). The best indicative P.16.B ranges are then ℓ₃\* ≈ 5e−6 (odd, T = 55, η = 1) and ≈ 1e−6 (even).
+- **Consequence.** The lead's route (ii), "P.16 at T = 16, η ≤ 0.0373, plus G1", has no admissible input. The requested μ_σ for Q^G_L at T = 16 does not exist. P.16.B/C stay PROVED as conditional statements, but they are superseded by P.17.3.
+
+**(ii) Monotonicity.**
+- **Full Weil form (PROVED; C.15.B as extended by Golden Eye).**
+  - Write W(ξ) := R(ξ) − Σ_n (Λ(n)/√n)·2⟨ξ, τ_{log n}ξ⟩_H. This is one L-independent form on C_c^∞(ℝ), and for ξ ∈ 𝒯_L only the terms with log n < 2L survive.
+  - Extension by zero maps 𝒯_L^σ into 𝒯_{L′}^σ isometrically for L < L′, preserving parity (symmetric windows) and ξ̂. So λ₁^σ(L) := inf W/‖·‖²_H over 𝒯_L^σ is **nonincreasing in L**.
+  - **Endpoint atoms vanish.** For ξ ∈ H¹₀(−L, L), g = ξ∗ξ\* is continuous and g(±2L) = 0. So the n = 3 atom at 2L = log 3 and the n = 4 atom (Λ(4)/√4 = a/2) at 2L = log 4 contribute 0. The closed endpoints are fine, and no δ-shift or extra c₄ term is needed (PROVED).
+  - **Hence one certificate λ₁^σ(L\*) ≥ μ > 0 covers every 2L ≤ 2L\*, in that parity.**
+- **The partial form Q^G_L is not monotone (PROVED, elementary). The reason:**
+  - Q^G_L = R − ⟨ξ, K_G(L)ξ⟩_H, where K_G(L) keeps only the a-edges whose endpoints have *no* b-neighbour inside the window (the 2-path edges, P.16.1).
+  - Take ξ ∈ 𝒯_L ⊂ 𝒯_{L′}. Then Q^G_{L′}(ξ) − Q^G_L(ξ) = 2c₂·(the a-edge form of ξ restricted to the edges that are 2-path edges for L but 4-path edges for L′). Those are the a-edges near the window ends whose b-partner lies in (−L′, L′) ∖ (−L, L).
+  - That restricted edge form takes both signs (two bumps on one such edge, with equal or opposite signs). So neither Q^G_{L′} ≥ Q^G_L nor ≤ holds on 𝒯_L.
+  - Q^G is not the restriction of an L-independent form: its line part depends on L through G(L) = [ℓ₃, b − a).
+- **Answer to Golden Eye (1).** Yes, §P.17's target is phrased for the **full Weil form**, so C.15.B applies.
+  - A single certificate at 2L = log 4 would cover all of (log 3, log 4]. But the margin there is ≲ 1.0e−7 (odd) and ≲ 1.1e−5 (even) (NUMERICAL, `p17_probe.log` Part A), consistent with N.16's super-exponential decay.
+  - **Certification across the whole of (log 3, log 4] is not viable (HEURISTIC; the lead's record).** The obstruction is the size of the margin, not coverage.
+  - REMARK on "block Lehmann on the cluster would cover log 4 only": by the monotonicity just stated, a positive λ₁ certificate at 2L = log 4 would cover every 2L ≤ log 4 in that parity. The difficulty is getting a positive certificate there at all.
+- **Golden Eye's consistency test** (NUMERICAL, `p17_probe.log` Part A, N = 60):
+  - Odd: Ritz upper bounds 9.48e−4 (log 3) → 1.19e−5 (log 3.5) → 1.0e−7 (log 4). Nonincreasing: **PASS**.
+  - Even: 1.246e−4 (log 3) but 1.315e−4 (log 3.5). This **FAILS** at N = 60, which shows the even Ritz value at log 3 is not converged; N.16 already says the true even margin there is likely ≲ 1e−4. Celestial's N = 64 floats are to be trusted over N = 24, and even N = 60 is not enough for even.
+
+### P.17.1 The Temple–Lehmann lemma for Q_L in the H¹_¼ / dual-norm setting — PROVED (by citation + elementary)
+**Setting.**
+- Fix 2L ∈ [log 2, log 4] and a parity σ. Let 𝓗 := 𝒯_L^σ, the real parity-σ subspace of H¹₀(−L, L), with ⟨u, v⟩_H = ∫(u′v′ + ¼uv) = (1/π)∫_0^∞(¼ + t²)Re(û v̂‾)dt.
+- **Multiplier identity (PROVED).** For ξ ∈ 𝓗:
+  > Q_L(ξ) = (1/π)∫_0^∞(¼ + t²)s_L(t)|ξ̂(t)|²dt, with s_L = Ω − 2c₂cos(at) − 2c₃cos(bt)·1[2L > b],
+  - The n = 4 term vanishes by the endpoint remark in P.17.0. This is the prime/archimedean side of the classical Weil form, with no zero-side input.
+- **Operator (PROVED).**
+  - Ω(t) ≥ Ω(0) (Ω is increasing in |t|) and the line part is bounded by 2(c₂ + c₃).
+  - So Q_L is a closed form on 𝓗, bounded below by Ω(0) − 2(c₂ + c₃). Its form domain is {ξ ∈ 𝓗 : ∫(¼ + t²)log(2 + t)|ξ̂|² < ∞}. It is the restriction to a closed subspace of a closed form plus a bounded one.
+  - By Kato's first representation theorem it defines a self-adjoint A = A_L^σ on 𝓗, bounded below, with Q_L(u, η) = ⟨Au, η⟩_H for u ∈ D(A) and η in the form domain.
+- **Residual in the dual norm.** For v in the form domain define the functional r_v(η) := Q_L(v, η) − ρ⟨v, η⟩_H.
+  - v ∈ D(A) iff r_v is bounded on 𝓗. In that case ‖r_v‖_{𝓗\*} = ‖(A − ρ)v‖_H (Riesz).
+  - A sufficient condition: ∫(¼ + t²)s_L²|v̂|² < ∞, by Cauchy–Schwarz. Finite combinations of Dirichlet modes satisfy it, since v̂ = O(t⁻²).
+
+**Lemma P.17.A (Temple 1928; Kato 1949; Lehmann 1949/50).**
+- **Hypotheses.**
+  - (T1) v ∈ D(A), ‖v‖_H = 1, ρ := Q_L(v).
+  - (T2) ν is a lower bound for the second spectral point: σ(A) ∩ (−∞, ν) consists of at most one point counted with multiplicity. Equivalently, the second min-max value λ₂(A) ≥ ν.
+  - (T3) ρ < ν.
+- **Conclusion.**
+  > **λ₁(A) ≥ ρ − ‖r_v‖²_{𝓗\*}/(ν − ρ).**
+- *Proof.* On σ(A) ⊂ {λ₁} ∪ [ν, ∞) one has (λ − λ₁)(λ − ν) ≥ 0, so ⟨(A − λ₁)(A − ν)v, v⟩ ≥ 0 by the spectral theorem. Expanding gives ‖Av‖² − (λ₁ + ν)ρ + λ₁ν ≥ 0. Then use ‖Av‖² − ρ² = ‖(A − ρ)v‖² = ‖r_v‖²_{𝓗\*}. ∎
+- **Citations** (bibliographic data verified this session):
+  - G. Temple, Proc. Roy. Soc. A 119 (1928) 276–293, doi 10.1098/rspa.1928.0098;
+  - T. Kato, J. Phys. Soc. Japan 4 (1949) 334–339, doi 10.1143/JPSJ.4.334 (two-sided "Kato–Temple" form);
+  - N. J. Lehmann, ZAMM 29 (1949) 341–356 and 30 (1950) 1–16 (the block / interval-enclosure generalisation).
+  - The exact statement above, for lower-semibounded self-adjoint A with ψ ∈ D(A) and ⟨ψ, Aψ⟩ below a lower bound for the second eigenvalue, is quoted e.g. in arXiv:1912.08408, eqs. (4.1)–(4.2) (read this session).
+  - The theorem numbers inside the 1928/1949 papers are not used.
+- **Monotonicity in the inputs (PROVED).** Let R := ‖r_v‖_{𝓗\*}. The bound g(ρ, R, ν) = ρ − R²/(ν − ρ) is increasing in ν, decreasing in R, and increasing in ρ when R < ν − ρ. So interval enclosures are evaluated at (ρ̲, R̄, ν̲), with R computed from the same ρ-interval.
+- **Loss is quadratic in the residual (REMARK).** For the bound to stay positive one needs R² < ρ(ν − ρ).
+
+**Lemma P.17.B (coarse lower bound ν₂ for the second eigenvalue; PROVED).**
+- **Data**, as in Thm C.15.A, extended to {2,3} when 2L > log 3 (P.17 sympy part 6):
+  - q_T = Ω(T) − 2c₂ − 2c₃·1[2L > b];
+  - a_T = s_L − q_T on [0, T];
+  - m_abs = Ω(T) − Ω(t) + 2c₂(1 − cos at) + 2c₃(1 − cos bt)·1[2L > b];
+  - m_neg = Ω(T) − Ω(t);
+  - A_N = the matrix of q_T‖·‖² + 𝒜_T on V_N = span{f_0, …, f_{N−1}}, the H-orthonormal parity-σ Dirichlet modes;
+  - s_V ≥ λ_max(m_abs-Gram on V_N);
+  - ε^{abs}, ε^{neg} ≥ (1/π)∫_0^T(¼ + t²)m·K_{W_N} (Lemma C.15.K);
+  - β² := s_Vε^{abs};
+  - c_tail := q_T − ε^{neg}.
+- **Conclusion.** For every δ > 0:
+  > **λ₂(A) ≥ ν₂ := min{λ₂(A_N) − δ, c_tail − β²/δ}.**
+- *Proof.*
+  - Q_L ≥ Q′_T as forms (C.15.A step, {2,3} majorant identity of part 6), so λ_k(A) ≥ λ_k(Q′_T) by min-max.
+  - For ξ = v + w with v ∈ V_N and w ⊥ V_N: Q′_T(ξ) ≥ ⟨A_N c, c⟩ − 2β‖v‖‖w‖ + c_tail‖w‖² ≥ ⟨(A_N − δ)c, c⟩ + (c_tail − β²/δ)‖w‖². The cross term is as in C.15.A; then use 2β‖v‖‖w‖ ≤ δ‖v‖² + (β²/δ)‖w‖².
+  - The right side is the form of (A_N − δ) ⊕ (c_tail − β²/δ)I. The second-smallest point of its spectrum is ≥ the stated min. ∎
+- This lemma *is* the non-multiplier Lemma A/B the lead asked for:
+  - Lemma C.15.K's tail kernel replaces the bathtub Lemma A, and it sees the window constraint, which is the only non-multiplier feature of Q_L.
+  - The 2×2 split replaces Lemma B.
+  - Only O(β²/δ) and O(δ) losses enter, i.e. coarse (~1e−4 to 1e−2), as Golden Eye proposed.
+
+**Exact residual formula (PROVED).**
+- Let v = Σ_{j<n} c_j f_j. Parseval in the H-orthonormal basis {f_k} gives:
+  > ‖r_v‖²_{𝓗\*} = Σ_{k<M} (Σ_{j<n} Q_{kj}c_j − ρc_k)² + τ_M², with Q_{kj} := Q_L(f_k, f_j), M ≥ n,
+  >
+  > τ_M := sup{|Q_L(v, w)| : w ⊥ V_M, ‖w‖_H = 1}, since ⟨v, w⟩_H = 0 there.
+- **Tail bound (PROVED).** For any T₁ > 0:
+  > **τ_M ≤ (1/π)∫_0^{T₁}(¼ + t²)|s_L||v̂|·√K_{W_M} dt + [(1/π)∫_{T₁}^∞(¼ + t²)s_L²|v̂|²dt]^{1/2}.**
+  - The first term uses |ŵ(t)|² ≤ K_{W_M}(t)‖w‖²_H (C.15.K).
+  - The second term uses Cauchy–Schwarz against (1/π)∫(¼ + t²)|ŵ|² ≤ 1.
+- The second term is O(log T₁/√T₁) for v̂ = O(t⁻²). Imposing the single linear condition v′(±L) = 0 on the coefficients makes v̂ = O(t⁻⁴): v″ = −Σc_jω_j²f_j already vanishes at ±L. That term then becomes O(log T₁·T₁^{−5/2}). **Recommended.**
+
+**Reference values (NUMERICAL; `p17_temple_probe.log`; Löwdin-orthonormalised quadrature, M = 160, the τ_M tail not included).**
+
+| sector, 2L | n | ρ | λ₂ (float) | Σ_{k<160} part of ‖r‖ | Temple with ν = λ₂ | Temple with ν = 0.44 |
+|---|---|---|---|---|---|---|
+| odd, log 3 | 40 | 9.541e−4 | 0.6635 | 5.96e−3 | 9.01e−4 | 8.73e−4 |
+| odd, log 3 + 0.03 | 40 | 4.742e−4 | 0.5335 | 4.55e−3 | 4.35e−4 | 4.27e−4 |
+| even, log 3 | 40 | 1.247e−4 | **0.0763** | 8.26e−4 | 1.16e−4 | (ν = 0.44 invalid: λ₂ < 0.44) |
+
+- **Odd at log 3** agrees with Golden Eye's numbers (λ₂ ≈ 0.66, λ₁ ≈ 9.5e−4; NUMERICAL). The positivity budget is R < √(ρ(ν − ρ)) ≈ 2.5e−2. For μ ≥ ρ/2 the budget is ≈ 1.8e−2 (ν = 0.66) or 1.4e−2 (ν = 0.44).
+- **Even at log 3 (stretch).** Here λ₂ ≈ 0.076 (NUMERICAL), much smaller than odd. The positivity budget is ≈ 3.1e−3, and ≈ 2.2e−3 for μ ≥ ρ/2. *Flag:* this is looser than the room's "≲ 7e−4". The difference is in the assumed ν₂ and target, and should be reconciled with Golden Eye before Celestial sizes the even run.
+
+### P.17.2 What the certificate gives — PROVED given the certified inputs
+**Cor P.17.C.** Suppose Celestial certifies (T1)–(T3) for A_{L\*}^σ with enclosures giving μ_σ(L\*) := ρ̲ − R̄²/(ν̲₂ − ρ̄) > 0. Then:
+> **Q_L(ξ) ≥ μ_σ(L\*)‖ξ‖²_H for all ξ ∈ 𝒯_L^σ and every 2L ≤ 2L\*.**
+
+*Proof.* Lemma P.17.A, then the monotonicity of P.17.0(ii). ∎ No CC input is used. This is CC-free and classical on 2L ≤ log 4.
+
+### P.17.3 The odd 3-entry range in terms of μ_odd
+- **(Direct; the deliverable; PROVED given the certificate.)** Let 2L\* = log 3 + ℓ₃\* and μ_odd := μ_odd(L\*) > 0. Then:
+  > **the odd sector is paid on all of (log 3, log 3 + ℓ₃\*], with margin ≥ μ_odd,**
+  - and also on (0, log 3] (monotonicity).
+  - The range formula is just "ℓ₃ ≤ ℓ₃\*, the largest certified right endpoint". μ_odd enters only through its positivity at L\*. No (1 + 1/η), c₀\* or T factor is lost.
+  - **Recommended targets** (NUMERICAL margins, `p17_probe.log` Part A and Temple table):
+    - ℓ₃\* = 0.03 primary (λ₁ ≈ 4.7e−4; Temple float 4.35e−4);
+    - 0.01 fallback (≈ 7.6e−4);
+    - 0.05 stretch (≈ 2.8e−4).
+  - Because the full form is monotone, the first certificate needed is **odd at log 3** (target (i)). The second is the same pipeline at log 3 + ℓ₃\* (target (ii)).
+- **(Perturbative, via P.16; kept for the record; PROVED given its hypothesis.)** Given (H₃^o)(T, η, μ_H) at **each** 2L in the range (Q^G is not monotone, so a certificate at one L does not propagate):
+  > ℓ₃ ≤ πμ_H/(4c₀\*(1 + 1/η)T).
+  - μ_H is a band-split margin of Q^G_L. It is **not** λ₁(Q_{log 3}): a plain λ₁ ≥ μ_odd does not imply (H₃^o), and at T = 16 (H₃^o) is false (P.17.0(i)).
+  - Using P.16.C with a plain margin of Q^G_L gives ℓ₃ ≤ πθm/(8c₀\*(1 + 1/η)T) with T exponential in 1/m. For m ~ 1e−3 that is vacuous.
+  - So the lead's (ii) "P.16 (T = 16, η ≤ 0.0373) + G1" should be replaced by "Cor P.17.C at L\* = ½(log 3 + ℓ₃\*)" (my recommendation; the lead decides).
+- **Even.** At log 3 this is a stretch goal (P.17.1 table). An even 3-entry range would come from the same Cor P.17.C. Its float margin stays ~1.3e−4 for ℓ₃ ≤ 0.1, but it is not converged (consistency FAIL above): NUMERICAL, not a target yet.
+- **Comparison-form-only route (C.15.A extended to {2,3}; NUMERICAL, `p17_probe.log` Part B).**
+  - At T = 100 and N = 300, the float λ_cert is +4.36e−4 (ℓ₃ = 0.01), +2.41e−4 (0.03) and +9.1e−5 (0.05).
+  - It is negative at N ≤ 128, so it needs N ≈ 200–300. For T ≈ 60 it is negative, since q_T(60) = 0.0076 (Arb part 7).
+  - It works without Temple, but at roughly 5× the matrix size. Temple only needs ν₂ coarse.
+
+### P.17.4 What Celestial must certify (Arb, 128 bits; prime/archimedean side only)
+For each target:
+- (i) odd, 2L = log 3;
+- (ii) odd, 2L\* = log 3 + ℓ₃\* with ℓ₃\* ∈ {0.03; fallback 0.01; stretch 0.05};
+- (iii) stretch: even, 2L = log 3.
+
+Here s_L = Ω − 2c₂cos(at) − 2c₃cos(bt)·1[2L > log 3]. The n = 3 and n = 4 endpoint atoms contribute 0.
+
+1. **Closed-form trial vector v.**
+   - v = Σ_{j<n} c_j f_j with n = 40 (odd) or n = 40–60 (even).
+   - f_j are the H-normalised parity-σ Dirichlet modes on (−L, L): odd sin(jπx/L), even cos((j + ½)πx/L), with ‖·‖²_H = L(ω_j² + ¼).
+   - c_j are **exact dyadic rationals** (rounded float Ritz coefficients, ≥ 40 bits), published with the certificate.
+   - Recommended: impose Σ_j c_j f_j′(L) = 0, so that v̂ = O(t⁻⁴).
+2. **ρ.** Enclose ρ = Σ_{jk} c_jc_kQ_{jk}/Σc_j², with Q_{jk} = R_{jk} − 2c₂B²_{jk} − 2c₃B³_{jk}, in the C.15 closed forms plus Arb quadrature with a certified remainder for R_{jk}. Absolute precision 1e−10.
+3. **Residual, finite part.** Enclose r_k = Σ_{j<n}Q_{kj}c_j − ρc_k for k < M (M = 160–400) at 1e−12 per entry, and output an upper bound for Σ_{k<M}r_k².
+4. **Residual tail τ_M.**
+   - Upper-bound the two-term bound of P.17.1: ∫_0^{T₁}(¼ + t²)|s_L||v̂|√K_{W_M} plus [∫_{T₁}^∞(¼ + t²)s_L²|v̂|²]^{1/2}, each /π.
+   - v̂ in closed form. K_{W_M} = K_σ − Σ_{k<M}|f̂_k|², with K_σ in the C.15.K closed form (odd analogue to be derived; S&M Lemma A's dens_σ gives K_σ = π·dens_σ/(¼ + t²); please confirm the normalisation). The [T₁, ∞) term uses |s_L| ≤ |Ω| + 2(c₂ + c₃) with Ω ≤ log(t/2π) + O(1/t²) (S&M (Ω2)) and v̂'s explicit decay.
+   - Target: **R̄ := (Σ_{k<M}r_k² + τ̄_M²)^{1/2} ≤ 1.2e−2** (odd, ensures μ ≥ ½ρ at ν₂ = 0.44), or ≤ 2.2e−3 (even).
+5. **ν₂ (Lemma P.17.B).**
+   - T = 60–100, N = 64 (Celestial's N = 64 floats are trusted over N = 24); choose δ.
+   - Certify the **inertia**: A_N − (ν₂ + δ)I has at most one negative eigenvalue, by interval LDLᵀ with every pivot sign-determined. This is not an enclosed float λ₂.
+   - Certify s_V from above by Cholesky of sI − M_abs (Frobenius is affordable as a fallback). Certify ε^{abs} and ε^{neg} from above (C.15.K, relative 1e−3), and c_tail − β²/δ ≥ ν₂.
+   - Targets: ν₂ ≥ 0.44 (odd, log 3), ν₂ ≥ 0.40 (odd, L\*), ν₂ ≥ 0.05 (even). At 2L = log 3, q_T = Ω(T) − 2c₂ (no c₃), so c_tail is large and ν₂ is limited by λ₂(A_N) − δ.
+6. **Output.** μ = ρ̲ − R̄²/(ν̲₂ − ρ̄), with ρ̄ < ν̲₂ checked.
+7. **Consistency checks.**
+   - μ_odd(L\*) ≤ ρ(log 3) (monotonicity).
+   - ρ(L\*) ≤ ρ(log 3) up to Ritz error.
+   - The full {2,3} Ritz values at log 3.5 and log 4 must be ≤ the log 3 value (Golden Eye; odd PASS, even FAIL at N = 60, P.17.0).
+8. **Not allowed:** any zero-side input, open_\* placeholders, or custom-axiom Lean theorems as unconditional inputs.
+
+### P.17.5 Question (c): can a coupled invisible n^F reach the line cost c₀\*? — duality PROVED; value → c₀\* NUMERICAL; exact attainment GAP
+Setting as in P.16.4(c):
+- λ(t) = −F(t) + n̂^F(t), with F := 2c₂cos(at) + 2c₃cos(bt), and cost c(n^F) := sup_t(−λ).
+- The class 𝒩: finite **discrete** real even measures supported in |x| ≥ 2L.
+- c_min := inf_{𝒩} c(n^F). Already PROVED: c_min ≥ c₀\* (P.16.4(c)), and the separable Fejér split costs c₂ + c₃ = 1.1244.
+
+**(a) Prop P.17.D (dual problem; PROVED).**
+> **c_min = max{2c₂G(1, 0) + 2c₃G(0, 1) : G positive definite on ℤ², G(0, 0) = 1, G(m, n) = 0 whenever |ma + nb| ≥ 2L}.**
+- *Proof.*
+  - All symbols are almost periodic, so sup_t = max over the Bohr compactification bℝ. Then c_min = inf_{h∈𝒩̂} p(F − h), with p(u) = max u on C(bℝ) sublinear.
+  - Hahn–Banach gives c_min = max{ℓ(F) : ℓ ≤ p linear, ℓ|_{𝒩̂} = 0}. Here ℓ ≤ p means ℓ is a probability measure on bℝ, and G(x) := ℓ(e^{ixt}) is positive definite on ℝ_discrete with G(0) = 1 and G = 0 on |x| ≥ 2L.
+  - Restrict to the subgroup Γ = aℤ + bℤ ≅ ℤ² (a/b irrational). Conversely, a PD G on Γ extended by zero is PD on ℝ_d (coset splitting) and satisfies the support constraint. ∎
+- The visible set S = {(m, n) : |ma + nb| < 2L} is an infinite strip in ℤ². So (c) is exactly a **2-D trigonometric moment problem with strip-supported moments**, the problem P.16.4(c) called a 2-D Fejér–Riesz problem.
+- The window feasible point G(m, n) = (χ∗χ̃)(ma + nb)/‖χ‖²₂, with χ the Perron bumps on one 4-path, gives c₀\*.
+
+**(b) Primal certificates are explicit (PROVED, structure).**
+- Truncate to the box |m|, |n| ≤ K and keep only the finite Toeplitz section [G(p − q)]_{p,q∈box} ⪰ 0. This is a relaxation with value v_K ≥ c_min, nonincreasing in K.
+- Its SDP dual is: c − F(θ, φ) − h(θ, φ) = Σ_i|P_i(θ, φ)|², with P_i supported in the box and h having Fourier support off S.
+- That **is** a coupled invisible n^F: atoms at ma + nb with |ma + nb| ≥ 2L, |m|, |n| ≤ 2K, of cost v_K. The Gram matrix Z ⪰ 0 of the SOS is an explicit positive line block for Queen's D (R6-explicit at finite K).
+
+**(c) Values (NUMERICAL; `p17_strip_sdp.log`, CLARABEL).**
+
+| K | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|---|---|---|---|---|---|---|---|
+| v_K − c₀\* (2L = log 3 + 0.05) | 1.08e−1 | 5.69e−2 | 3.53e−2 | 2.42e−2 | 1.76e−2 | 1.34e−2 | 1.05e−2 |
+
+- The same values hold to 1e−4 at 2L = log 3 + 0.2 and log 4 − 0.01. The fitted decay is ≈ K^{−1.8}.
+- So **coupled invisible n^F beat the separable cost decisively**: v_8 = 0.9115 vs c₂ + c₃ = 1.1244 (NUMERICAL; an exact rational rounding of the K = 8 dual would make it CERTIFIED).
+- The data are consistent with c_min = c₀\*.
+
+**(d) Answer: GAP, with the exact obstruction.**
+- c_min = c₀\* holds iff every PD G on ℤ² with moments supported in the strip S satisfies 2c₂G(1, 0) + 2c₃G(0, 1) ≤ c₀\*.
+- The window points G = (χ∗χ̃)∘(a, b) achieve c₀\*. The gap would be closed by showing these are extremal, i.e. a 1-D Krein/Boas–Kac-type factorisation for strip-supported PD functions on ℤ² (pulled back along (m, n) ↦ ma + nb).
+- For a general box truncation the relaxation gap is positive at every K tested. So **c₀\* is at best an infimum over finite n^F (NUMERICAL)**, and attaining it exactly needs infinitely many atoms. This is the 2-D Fejér–Riesz degree obstruction: in two variables, nonnegative trigonometric polynomials need not be sums of squares at the same degree (Rudin, Illinois J. Math. 7 (1963) 532–539, the extension problem on a square; bibliographic data unverified).
+- **Label: duality PROVED; lower bound c₀\* PROVED; c_min = c₀\* CONJECTURE (yes), NUMERICAL support; GAP = extremality of window moments in the strip moment problem.**
+
+**(e) REMARK (PROVED): s_L is unbounded in the multiplier ansatz.**
+- Weak invisibility forces n = αe^{x/2} + βe^{−x/2} on (−2L, 2L), so n is smooth there, and local averages of n̂ against φ ≥ 0 with φ̌ ∈ C_c^∞(−2L, 2L) vanish.
+- The line atoms average to O(1), while the Ω part averages to → ∞ like log|t|. So s_L is unbounded, and so is D_L = A_LM_ρA_L^\*.
+- Hence P.16.4(a)'s "if s_L is bounded" was vacuous (fixed there). Queen's Q.8.E with bounded D needs a non-multiplier D: GAP.
+- This does **not** affect (b): the SOS line block is bounded, and only the archimedean part is unbounded.
+
+### P.17.6 Labels and R-line
+| item | label | track |
+|---|---|---|
+| (H₃^σ)(16, 0.0373, μ) at 2L = log 3, both parities, every μ ≥ −1 | NUMERICALLY false (λ_min ≤ −0.173 odd, −0.216 even) | [S&M] |
+| full Weil form monotone in L; endpoint atoms n = 3, 4 vanish; one certificate at L\* covers 2L ≤ 2L\* | PROVED (C.15.B + Golden Eye extension) | [Cel] |
+| Q^G_L not monotone (2-path/4-path edge reassignment, signed) | PROVED (elementary) | [Cel] |
+| certification across all of (log 3, log 4] | not viable (HEURISTIC; margin ≲ 1e−7 odd at log 4, NUMERICAL) | [Cel] |
+| Lemma P.17.A (Temple–Kato–Lehmann for Q_L on 𝓗, dual-norm residual) | PROVED (by citation; proof given) | [Cel] |
+| Lemma P.17.B (ν₂ via C.15-type split) | PROVED | [Cel] |
+| exact H\*-residual formula and tail bound τ_M | PROVED | [Cel] |
+| Cor P.17.C (odd margin on 2L ≤ 2L\* from one Temple certificate) | PROVED given the certified inputs | [Cel] |
+| μ_odd(log 3) ≈ 9.0e−4, μ_odd(log 3 + 0.03) ≈ 4.35e−4, μ_even(log 3) ≈ 1.2e−4; λ₂ ≈ 0.66 / 0.53 / 0.076 | NUMERICAL (float; τ_M excluded; partly Golden Eye's numbers) | [Cel] |
+| first unconditional odd 3-entry range | none yet: pending Celestial's Arb run (target ℓ₃\* = 0.03) | [Cel] |
+| {2,3} C.15.A-only route: λ_cert > 0 at T = 100, N = 300 for ℓ₃ ≤ 0.05 (odd) | NUMERICAL | [S&M]/[Cel] |
+| Prop P.17.D (coupled line cost = strip moment problem on ℤ²) | PROVED | [Q] |
+| coupled n^F with cost 0.9115 at K = 8 (< c₂ + c₃) | NUMERICAL | [Q] |
+| c_min = c₀\* | CONJECTURE (yes); GAP = extremality of window moments | [Q] |
+| s_L unbounded in the multiplier ansatz; bounded D needs non-multiplier | REMARK (PROVED) / GAP | [Q] |
+| Σ_γ(¼ + γ²)\|ξ̂(γ)\|² picture | heuristic, assuming RH; not used | — |
+| RH | OPEN | — |
+
+**R-line:**
+- **R1:** one rule per certificate. Monotonicity turns the certificate at L\* into the whole range 2L ≤ 2L\*, and T, N and δ are fixed per target.
+- **R2:** the Euler product enters through the atoms Λ(n)/√n, n ≤ 4, and the fibres of {log 2, log 3}; the FE enters through Ω.
+- **R3:** the signs are kept: s_L is signed, Temple uses the signed form, and the line cost comes from the strip moment problem, not from weight signs.
+- **R4:** the pole pair is spent once (pole-free 𝒯_L, g(0) = ‖ξ‖²_H).
+- **R5, where each fake breaks:**
+  - **F_θ:** c_p → c_p cosh(θ log p) changes s_L. The Temple certificate is form-specific, so a fake needs its own certificate, and the margins ~1e−3 are not stable under θ ≠ 0 of size ≳ 1e−3 (HEURISTIC). It breaks structurally at P.4.
+  - **DH:** no Euler product, so the atom weights are not Λ(n)/√n. Breaks at P.14.2.
+  - **H₋ₜ:** Ω is deformed, so the Arb inputs do not transfer.
+  - **DMV / P_X (X ≥ 5):** these agree with ζ on 2L ≤ log 4. They are fake-blind here, as every finite-window certificate is.
+  - **G_θ′:** passes. All statements are linear in the form or are bounds on it.
+- **R6:** Lemmas P.17.A/B, Cor P.17.C and Prop P.17.D are explicit. The certificates are pending Celestial's Arb run, and c_min = c₀\* is a GAP. RH OPEN.
+
 ## References (added to ARP G.7)
+- Temple, G., "The theory of Rayleigh's principle as applied to continuous systems", Proc. Roy. Soc. A 119 (1928) 276–293.
+- Kato, T., "On the upper and lower bounds of eigenvalues", J. Phys. Soc. Japan 4 (1949) 334–339.
+- Lehmann, N. J., "Beiträge zur numerischen Lösung linearer Eigenwertprobleme" I, II, ZAMM 29 (1949) 341–356; 30 (1950) 1–16.
+- Jorgensen, P., Pedersen, S. & Tian, F., "Positive definite (p.d.) functions vs p.d. distributions", arXiv:1712.07264 (Cor 2.2); *Extensions of Positive Definite Functions*, LNM 2160, Springer (2016).
+- Rudin, W., "The extension problem for positive-definite functions", Illinois J. Math. 7 (1963) 532–539 (bibliographic data unverified).
 - Knapp, A. W. & Stein, E. M., "Intertwining operators for semisimple groups", Ann. of Math. 93 (1971) 489–578.
 - Knapp, A. W., *Representation Theory of Semisimple Groups: An Overview Based on Examples*, Princeton (1986), Ch. II, VII.
 - Shahidi, F., Ann. of Math. 132 (1990) 273–330; *Eisenstein Series and Automorphic L-functions*, AMS Colloq. Publ. 58 (2010).
