@@ -434,6 +434,16 @@ lie on Re z = 0 under RH). §N N.11.4: the FE adds nothing to the failure direct
 - **Queen H-κ Part V (0d48b28).** S^{−1} = (G^{−1})_{RR} and the dual variational bound ⟨S^{−1}ρ, ρ⟩ = sup_ψ |⟨ψ, ρ⟩|²/G(ψ, ψ) (PROVED; checked). (LD_γ) retired (no unconditional source; Radziwiłł–Soundararajan controls the upper tail only). Pointwise lower tail ≫ ηT^{5/6−ε} (PROVED sketch; Grok check: |ζ| ≤ sup|ζ′|·|t − γ| near any zero, so simple zeros are not even needed), which corrects Part IV's "super-polynomially rare". New chain (T3) ⇐ (WK), (WK₂) + (NM₂) + (MB)(a–c) + flat density + (T3a*) + (L): PROVED-conditional. **(NM₂), a window-floor negative 4th moment ≤ Λ^{2−δ}/r_K, is the single arithmetic GAP**; unconditional worst case gives exponent ≥ 8/3 (insufficient; checked: Chebyshev with c ≥ 1/6, T ≍ Λ² gives η_W^{−4} ≤ Λ^{16c}); RH ⇒ (NM₂) so it is BARRED as a source; the zero-density route (Euler product, R2) is OPEN. (T3) OPEN.
 - **S&M (bad5094, 945d87c).** Citation fix: the Λ > 1 analogue of CC Thm 6.11 is Principal §P.10.3 (theirs); γ in c = 4γ/log 2 is CC Lemma 6.10's 2.94355, not Euler's constant. t3a_test.py committed (NUMERICAL, RH-silent).
 - **Connection (Grok, HEURISTIC).** N.16 and Queen's (NM₂) are the same phenomenon at two scales: the Weil form's margin is set by how small ξ̂ can be made on the zeros (N.16, low window) and by how small |ζ| is on unit windows (Queen, height Λ²). Both say the obstruction is quantitative small-value control of ζ, where RH-equivalence enters, not a missing positive structure.
+- **Golden Eye §N.15 cross-check (NUMERICAL; independent cross-check of Prime's N.15; scripts on the box at /workspace/n15x/{gal,t1,t1b,t2}.py).**
+  - Converged full {2,3} Weil-form minima, even/odd, at N = 128 (Dirichlet sine basis; Ritz upper bounds; monotone in N):
+    - log 3: 1.47e−5 / 9.52e−4
+    - log 3.5: 9.1e−8 / 1.20e−5
+    - log 4: 4.7e−10 / 1.0e−7
+    - log 4 + 0.1: 6.3e−12 / 1.3e−9
+  - Prime's N.15.2 values were mesh-limited. The P₂-alone values (−0.2513 / −0.00793 at log 3.5, −0.4662 / −0.0672 at log 4) are confirmed.
+  - The Cor C.15.B′ monotonicity test passes.
+  - The even near-null direction is present from ℓ₂ = 0, with λ₁ ~ e^{−23ℓ₂}. The odd one separates near ℓ₂ ≈ 0.2–0.33. Past log 3 a cluster of small eigenvalues forms.
+  - Consequence (HEURISTIC): constant-buffer certification across (log 3, log 4] is not viable. Certificates past log 2 + 0.2 should target only the endpoint log 3 (odd ~9.5e−4 first, even as a stretch goal) and the small P.16 odd 3-entry range. This supports R6, an exact-identity closing step, which remains a CONJECTURE. RH OPEN.
 - Labels: R1 fixed range for C.15/N.16, Λ-uniform for Queen | R2 Euler product via the n = 2 line (C.15), zero density (Queen) | R3 p = 2 term kept signed | R4 f_0 carries the ĝ(0) direction inside V_N | R5 DH structurally absent from C.15; N.16 mechanism holds for any zero set, so fake-blind as stated. RH OPEN.
 
 ### G.5 What would count as progress (CONJECTURE-level targets, each R1–R5-checked)
