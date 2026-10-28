@@ -1,0 +1,27 @@
+(1) mirror overlap = ratio of truncated Euler products
+  P=   100 sigma=0.30  prodR=  0.35041166  zeta_P ratio=  0.35041166  diff=2.87e-41
+  P=   100 sigma=0.40  prodR=  0.79493752  zeta_P ratio=  0.79493752  diff=1.15e-41
+  P=   100 sigma=0.45  prodR=  0.94595644  zeta_P ratio=  0.94595644  diff=5.74e-41
+  P=   100 sigma=0.50  prodR=         1.0  zeta_P ratio=         1.0  diff=0.0
+  P=  1000 sigma=0.30  prodR= 0.068234909  zeta_P ratio= 0.068234909  diff=4.3e-42
+  P=  1000 sigma=0.40  prodR=   0.5940498  zeta_P ratio=   0.5940498  diff=6.89e-41
+  P=  1000 sigma=0.45  prodR=  0.88485713  zeta_P ratio=  0.88485713  diff=8.04e-41
+  P=  1000 sigma=0.50  prodR=         1.0  zeta_P ratio=         1.0  diff=0.0
+  P= 10000 sigma=0.30  prodR=0.0023573874  zeta_P ratio=0.0023573874  diff=1.35e-43
+  P= 10000 sigma=0.40  prodR=  0.37598635  zeta_P ratio=  0.37598635  diff=4.59e-41
+  P= 10000 sigma=0.45  prodR=  0.80287467  zeta_P ratio=  0.80287467  diff=1.84e-40
+  P= 10000 sigma=0.50  prodR=         1.0  zeta_P ratio=         1.0  diff=0.0
+(2) susceptibility (uses only Mertens/PNT mean)
+  P=   1000 chi_P=95.85994713  2(log P)^2=95.43416599
+  P=  10000 chi_P=169.4722973  2(log P)^2=169.6607395
+  P= 100000 chi_P=264.5524565  2(log P)^2=265.0949055
+(3) raw doubled kernel h_r(v) = 1/(1+r^2-2r cosh v), r=1/p
+  p= 2 h(0)=4.0 h(x-y)=4.7322291 (> h(0): True)  2x2 det=-0.249394
+  p= 3 h(0)=2.25 h(x-y)=2.6383049 (> h(0): True)  2x2 det=-0.239244
+  p= 5 h(0)=1.5625 h(x-y)=1.8043764 (> h(0): True)  2x2 det=-0.221104
+  p=17 h(0)=1.1289062 h(x-y)=1.2471566 (> h(0): True)  2x2 det=-0.163283
+(4) Hankel OS Gram of the BC/primon kernel: G_theta' (must-pass) vs F_theta
+  zeta (a=0)               min eig =   2.55082e-8   diag K(2*6)=0.000241755
+  G_theta', a=pi/log2      min eig =    -0.820344   diag K(2*6)=-0.000238647
+  G_theta', a=14.134725    min eig =     -3.54959   diag K(2*6)=-0.000225217
+  F_theta, a=0.1           min eig =   1.41079e-8   diag K(2*6)=0.000210805
