@@ -1038,7 +1038,7 @@ This section answers the lead's 1:41 task and the 1:48 steering. The even certif
   - (iii) ê_k is entire, so acb.integral applies directly.
   - (iv) N is set by the band cutoff T: we need ω_N ≫ T. At T = 60 and ℓ = 0.1, N = 40 already certifies (λ = 0.01386), and **N = 64 is recommended** (ω_64 ≈ 510). At N = 24, ω_24 ≈ 193 is too close to the T needed for a sharp A_N.
 
-**Why the naive modal Schur fails (obstruction, NUMERICAL + PROVED mechanism).**
+**Why the naive modal Schur fails (obstruction, NUMERICAL; mechanism HEURISTIC).** *(Grok audit S103i(2): label fixed from "PROVED mechanism". Replay (fullQ, N = 48, ℓ = 0.1): R̃_{0,1} = −0.2481, R̃_{3,10} = −0.03570, R̃_{10,30} = +0.01219, R̃_{20,40} = +0.00819 against 1/(2(j+k+1)) = 0.2500, 0.03571, 0.01220, 0.00820; the truncated block norm ‖R̃[:N, N:48]‖ = 0.366 / 0.318 / 0.268 at N = 8 / 16 / 24 decays only slowly. N-independence of the full coupling is NUMERICAL, and the Hankel/log-symbol explanation is HEURISTIC. Nothing in C.15.A depends on it.)*
 - In the f-basis, the full R has off-diagonal entries R̃_jk ≈ ±1/(2(j + k + 1)). This is a Hankel (Hilbert-type), scale-invariant coupling coming from the log-growth of Ω.
 - So the block coupling V_N to W in the *full* Q does not decay with N. Neither a Schur bound with "Ω(t_N) − 2c₂" on V_N^⊥, nor any pointwise-kernel bound on the full symbol, gives a usable c_tail and ‖B‖.
 - This is exactly the lead's objection: being H-orthogonal to V_N does not make ξ high-frequency for Ω.
@@ -1061,6 +1061,7 @@ This section answers the lead's 1:41 task and the 1:48 steering. The even certif
 - Then, for every even ξ ∈ H¹₀(−L, L) with 2L ≤ log 3:
   **Q_L(ξ) ≥ λ_cert‖ξ‖²_H, where λ_cert := ½[μ_A + c_tail − √((μ_A − c_tail)² + 4β²)].**
   Equivalently, for λ < c_tail: λ_min ≥ μ_A − β²/(c_tail − λ). Here ‖B‖ ≤ β.
+  *(Grok audit S103i(2), REMARK: (1) "‖B‖" here means the norm of the off-diagonal V_N–W block of 𝒜_T, not the p = 2 form B(ξ) or the entries B_jk of (c); read β as that block bound. (2) Precise form of the "equivalently": any λ < min(μ_A, c_tail) with (μ_A − λ)(c_tail − λ) ≥ β² is a lower bound, and λ_cert is the largest such λ.)*
 
 *Proof.*
 1. **Q_L ≥ Q′_T.** For |t| ≥ T: q(t) − q_T = [Ω(t) − Ω(T)] + 2c₂[1 − cos at] ≥ 0, because Ω is increasing on [0, ∞) (the Re ψ line, C.14) and cos ≤ 1. So Q_L − Q′_T = (1/2π)∫_{|t|≥T}(¼ + t²)(q − q_T)|ξ̂|² ≥ 0. The p = 2 term stays signed on |t| < T and is only dropped where it is helped.
@@ -1146,11 +1147,12 @@ This section answers the lead's 1:41 task and the 1:48 steering. The even certif
 - The implication is PROVED (Thm C.15.A + Prop C.15.B). The input λ_cert > 0 is NUMERICAL until the Arb run.
 - Stretch target: ℓ_max = 0.2 (float λ_cert = 0.00203 analytic, 0.00221 sharp) would cover (0, 0.2] with the same single run.
 - Credit: Golden Eye's even Galerkin (24 modes) located the range and the margins.
+- *(Grok audit S103i(2): the certificate does **not** exist yet, so C.15.D stays CONJECTURE/target. The Arb-run requirements above are correct: ‖M‖_F ≥ λ_max(M) because M is PSD, as m_abs ≥ 0. Float targets, all replayed at ℓ = 0.1, T = 60, N = 64 with analytic majorants: μ_A = 0.013981; s_V = λ_max = 3.4704 (‖M‖_F = 5.549); ε^{abs} = 4.9143e−5 and ε^{neg} = 1.2564e−5, independently re-integrated in mpmath from the closed-form K_W as 4.91423e−5 and 1.25632e−5; β = 0.013059; c_tail = 1.276185; λ_cert = 0.013846. With the Frobenius s_V instead, λ_cert = 0.013765. Both leave ample room for interval widening.)*
 
 **(e) Prime's numbers in the even accounting (credit Prime, team/prime-number-theory cd94c27, §N.15 and P.15.1).**
 - C.15's range is 2L ≤ log 2 + 0.2 < log 3, so only n = 2 enters. The {2, 3} joint edge block, which charges even vectors **0.2666 per unit H-energy** (P.15.1), does **not** enter here. It enters only for 2L > log 3.
 - There, Prime's even P₂ form has margin **≤ 2.5e−4 at 2L = log 3** (Ritz upper bound, N = 320, still decreasing). By Prop C.15.B this is the continuation of the monotone decrease 0.0162 → 0.0027 (ℓ = 0.1 → 0.2).
-- Consequence: no perturbative even {2, 3} entry is possible. A margin of ≤ 2.5e−4 against a 0.2666-per-energy charge leaves nothing. Even past log 3 stays a GAP (Prime N.15; (P), m₀^e).
+- Consequence (HEURISTIC): no perturbative even {2, 3} entry is possible. A margin of ≤ 2.5e−4 against a 0.2666-per-energy charge leaves nothing. Even past log 3 stays a GAP (Prime N.15; (P), m₀^e). *(Grok audit S103i(2): label added. The 0.2666 is σ(1/ℓ₃) per unit **ramp** energy (P.15.1), and how much ramp energy the even near-null direction carries is not established, so "no perturbative entry" is not proved. Compare Principal P.16.B, where a band-split payer buys an odd range ℓ₃ ≲ 1.5e−5 (NUMERICAL) from a small margin. The statement that matters, "the even {2, 3} entry is a GAP", stands.)*
 
 **C.15.E C.14.K: wording and rigorous refutation.**
 - **Quantifier (adopting G.4h's wording).** Conjecture C.14.K is **refuted numerically on the useful range**:
@@ -1172,6 +1174,7 @@ This section answers the lead's 1:41 task and the 1:48 steering. The even certif
   - **CERTIFIED: C.14.K is false at (ℓ, T) = (a/6, 14).** C.14.K asserts the bound for all ℓ ≤ ℓ_K, so this single instance refutes it at T = 14 for every ℓ_K ≥ a/6 (and the a/13 instance below for every ℓ_K ≥ 0.0533). The float γ at this level was 0.748, which matches.
   - A second certified instance: ℓ = a/13 = 0.05332, M = 28, n_s = 2, T = 14, ratio 0.293197 ± 2e-30 > 0.12975. In the out file.
   - Rigorous for T = 14 only; other T are NUMERICAL (C.14.4c tables).
+  - *(Grok audit S103i(2): CERTIFIED confirmed. Replay of both runs matches c14K_refute_arb.out byte for byte. The script is genuine ball arithmetic: python-flint arb/acb at 128 bits, the node values are entered as decimal balls, the n ≥ 4000 tail is added as a ±ball, P_{<T} comes from acb.integral of a holomorphic integrand (ψ poles are ≥ ½ off the real axis), and ratio > γ*(14) is an Arb comparison, true only for disjoint balls. Closed form of K re-derived: Re ψ(¼ + it/2) − ψ(¼) = Σ_n 2t²/(c_n(c_n² + t²)) with c_n = 2n + ½, and partial fractions give e^{−c_n|d|}(c_n^{−2} − c_n^{−4}/4) plus the 1/t² part −|d|ζ(3, ¼)/32; the constant ambiguity is killed by the 4th-difference stencil. Independent float check (s103i/c15_audit_K_closedform_check): direct Fourier integrals of the hat entries agree with the Arb closed form, 567.51754 vs 567.51753 (k = 0) and −298.67863 vs −298.67862 (k = 1). The profiles respect the ramp split: the strip is n_s·h = ℓ, ξ_s vanishes off the open strips, and ξ_b is linear on them. Scope: this refutes the T = 14 instance of C.14.K for every ℓ_K ≥ a/13. Other T are refuted NUMERICALLY only. Credit: Prime cd94c27.)*
 - **Cross-check (NUMERICAL; credit Prime, cd94c27 §N.15.4).** Prime's independent run finds γ < γ_crit only for ℓT ≲ 0.26 (e.g. ℓ = 0.02, T = 12.8: γ ≈ 0.09 < 0.117), and failure for ℓ ≥ 0.03 at every T. This agrees with C.14.4c and with the certified instances.
 
 **C.15 labels.**
@@ -1180,10 +1183,10 @@ This section answers the lead's 1:41 task and the 1:48 steering. The even certif
 | Q_L = (1/2π)∫(¼+t²)(Ω − 2c₂cos at)\|ξ̂\|², no pole entry (ĝ(±i/2) = 0) | PROVED |
 | Lemma C.15.K (tail kernel K_W = K_e − Σ_{k<N}f̂_k², closed form) | PROVED (K_e: S&M Lemma A; checked NUMERICAL to 1e-15) |
 | Thm C.15.A (Schur with comparison form Q′_T; λ_cert formula) | PROVED; audited SOUND (Golden Eye, main 7447660) |
-| naive modal Schur on full Q: N-independent Hankel coupling ±1/(2(j+k+1)) | NUMERICAL (mechanism: log symbol) |
+| naive modal Schur on full Q: N-independent Hankel coupling ±1/(2(j+k+1)) | NUMERICAL (mechanism: log symbol, HEURISTIC) |
 | Prop C.15.B (λ_e nonincreasing in L; grid = 1 point) | PROVED; audited SOUND (Golden Eye, main 7447660) |
 | Generalisation: full Weil form, λ(L) nonincreasing for all L; Cor C.15.B′ consistency test (no statement about the P₂-part alone) | PROVED (credit Golden Eye) |
-| Arb-run requirements (interval Cholesky/LDLᵀ for μ_A; Cholesky or Frobenius for s_V) | REQUIREMENT (part of the C.15.D hypothesis) |
+| Arb-run requirements (interval Cholesky/LDLᵀ for μ_A; Cholesky or Frobenius for s_V) | REMARK (a requirement on the C.15.D input; Grok audit S103i(2): "REQUIREMENT" is not a project label) |
 | Σ_γ(¼+γ²)\|ξ̂(γ)\|² explanation (C.14.4c) | HEURISTIC, assuming RH; not a certificate input |
 | C.14.4c "Δℓ ≲ m_cert/(24.88 + C_B) ≈ 2e-4" grid and "Ω(t_N) − 2c₂ − tail" step | WITHDRAWN (superseded by C.15.A/B) |
 | entry formulas (A_jk, B_jk, R_jk, I, I₂, J) | PROVED |
@@ -1191,7 +1194,7 @@ This section answers the lead's 1:41 task and the 1:48 steering. The even certif
 | Thm C.15.D (even (K3) on ℓ ∈ (0, 0.1]) | CONJECTURE / target (implication PROVED; input pending S&M Arb) |
 | C.14.K false at (ℓ, T) = (a/6, 14) and (a/13, 14) | CERTIFIED (Arb) |
 | C.14.K "refuted numerically on the useful range" (ℓ_K ≳ 0.03; ℓ = 0.01 extrapolates to 0.104 < 0.130) | NUMERICAL |
-| Prime's 0.2666 / 2.5e−4 (enter only past log 3) | NUMERICAL (Prime); even past log 3: GAP |
+| Prime's 0.2666 / 2.5e−4 (enter only past log 3) | NUMERICAL (Prime); even past log 3: GAP; "no perturbative even {2, 3} entry": HEURISTIC |
 
 - **R1** One rule per ℓ-range. For (0, ℓ_max], use C.15.A at ℓ_max plus C.15.B. For small ℓ, C.13.H^e″ remains an alternative. Past log 3: GAP.
 - **R2** FE through Ω only; the Euler product enters only through the n = 2 line.
