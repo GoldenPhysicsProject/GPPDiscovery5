@@ -580,7 +580,7 @@ What closing the argument requires:
   - From **Prime (§N.12)**: the edge-strip estimate for the T7 functional, i.e. a bound of its positive and negative parts by an H¹ norm on the two strips of length 2L − log 2. That is the p = 2 estimates, left to N.12.
   - From **§S / prolate data at Λ = 1, support L**: a lower bound for σ_S(t) and the spectral margin 1 − κ_L of K_L for L slightly above ½ log 2. Note T5 interlacing: κ_L is nondecreasing.
 - Even if proved, it would be RH-silent:
-  - It is a finite-L statement already CERTIFIED to 1.42 *(Grok audit: NUMERICAL, certified finite-window computation, consistency/evidence only, not proof)*.
+  - It is a finite-L statement already CERTIFIED to 1.42 *(Grok audit, corrected per Golden Eye: CERTIFIED, Arb replay with rigorous remainder, conditional on Mori Prop 3.1, Lemma 3.2, Thm N; a finite-window certificate, not an analytic mechanism)*.
   - Under H_fin, κ_Q(L) = N_{>½} for L ≥ L*, with L* ineffective (§S GAP 2, db626ff: **PROVED under H_fin**).
 - **R5.** DH (onset L ≈ 1.7104) is positive on this whole range, so (IF)'s truth is fake-blind. DH breaks the *structure* at T7/T9: it has no Euler product, so there is no prime-power-supported line at log 2 and its "prime side" weights all n. Its γ-factor is conductor 5, so T1–T6 are not ζ's. In Queen's terms DH also fails OS3 (Q.8.5).
 

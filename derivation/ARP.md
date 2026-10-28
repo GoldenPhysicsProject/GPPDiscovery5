@@ -265,7 +265,7 @@ lie on Re z = 0 under RH). §N N.11.4: the FE adds nothing to the failure direct
   - R_L = 𝒮_L + 2ε′(1⁺)(‖ξ‖² − ⟨ξ, K_Lξ⟩) = W_∞(Qh) is the archimedean form.
   - The reformulation is PROVED (§C C.13.A). Only n = 2 enters, with tail vanishing PROVED-LEAN `GppWeilLadder.primeSide_eq_truncation` / `primeSide_eq_zero_of_support_lt_log_two`.
   - Status: **GAP**, RH-silent on this range (ζ ≡ P_X for X ≥ 2 here).
-  - Positivity up to L = 1.42 is CERTIFIED (main 2576c89). That is NUMERICAL, used for consistency only, and is not an analytic L₀.
+  - Positivity up to L = 1.42 is CERTIFIED (Arb replay with rigorous remainder, main 2576c89), conditional on Mori's Prop 3.1, Lemma 3.2 and Thm N (unrefereed). So positivity on (½ log 2, ½ log 3] is already CERTIFIED (conditional). The analytic p = 2 step is for mechanism (which step carries positivity), not to establish the result; it is not an analytic L₀. (Label corrected per Golden Eye; was NUMERICAL.)
 - **CC's verbatim chain fails at T8 (PROVED).** The p = 2 term is unbounded on L² after Q, of order c₂m². So CC's ε-margin cannot absorb it.
   - This obstructs only the margin route, not (IF). 𝒮_L is also of order m², and (IF) is dominated at high frequency where σ_S ≥ 2c₂.
 - **Prime-side reduction (§N N.12, PROVED).**
