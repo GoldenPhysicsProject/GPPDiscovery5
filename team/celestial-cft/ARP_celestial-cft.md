@@ -917,7 +917,7 @@ Bold means the lower bound already exceeds γ*, so C.14.K fails there. ↑ means
 
 - So the archimedean R alone loses even positivity at **ℓ ≈ 0.050** (ours; Golden Eye ≈ 0.06 on a coarser ℓ-grid).
 - Past that, the p = 2 term must pay in the *bulk* too, not only at the edge.
-- Golden Eye's full even Q_L minima are 0.046 (ℓ = 0.028), 0.015 (0.1) and 0.001 (0.2), reaching noise at 0.3. Mechanism: Q_L = Σ_γ(¼ + γ²)|ξ̂(γ)|², and a wider window lets ξ̂ nearly vanish at the low zeros (R6 context).
+- Golden Eye's full even Q_L minima are 0.046 (ℓ = 0.028), 0.015 (0.1) and 0.001 (0.2), reaching noise at 0.3. Mechanism *(HEURISTIC, assuming RH; not an input to any certificate)*: Q_L = Σ_γ(¼ + γ²)|ξ̂(γ)|² with real γ, so a wider window lets ξ̂ nearly vanish at the low zeros (R6 context). RH-free rephrasing: the low zeros (verified on the line) are where a wide-window ξ̂ can nearly vanish; no statement about the remaining zeros is used.
 
 **Does C.14.K + m₀^e ≈ 0.07 + the p = 2 budget close (K3) on ℓ ∈ [0.05, 0.1]? No (NUMERICAL verdict; the logic is PROVED).** There are three independent reasons.
 1. C.14.K fails there (γ_even ≥ 0.45 against γ* = 0.13 at T = 14).
@@ -1013,6 +1013,8 @@ R-lines for C.14.4c. **R1** γ-table and minima per ℓ; one rule per ℓ-range.
 
 Daniel Toupin / Golden Physics Project, with AI assistance from Grok. RH is OPEN. Scripts: arp_c/c15_even_schur.{py,out}, c15_entries_ref.{py,out}, c14K_refute_arb.{py,out}.
 
+**Audit status:** Thm C.15.A and Prop C.15.B audited **SOUND** by Golden Eye against main 7447660.
+
 This section answers the lead's 1:41 task and the 1:48 steering. The even certificate is split: Celestial writes the analytic framework (this section); S&M runs the Arb certification. It replaces the complement step of C.14.4c, which the lead recorded as a GAP ("Q_L(ξ) ≥ (Ω(t_N) − 2c₂ − tail)‖ξ‖²_H for ξ ⊥ V_N"), with a proved bound. It also replaces the ℓ-Lipschitz grid with an exact monotonicity.
 
 **Set-up and normalisation (PROVED; as in C.14).**
@@ -1092,6 +1094,8 @@ This section answers the lead's 1:41 task and the 1:48 steering. The even certif
 **Proposition C.15.B (monotonicity in L; replaces the ℓ-Lipschitz grid; PROVED).**
 - Let λ_e(L) := inf{Q_L(ξ)/‖ξ‖²_H : 0 ≠ ξ ∈ H¹₀,even(−L, L)}. Then λ_e is **nonincreasing** in L on 2L ≤ log 3.
 - *Proof.* The representation Q_L(ξ) = (1/2π)∫(¼ + t²)q|ξ̂|² does not depend on L for 2L ≤ log 3, since no prime n ≥ 3 enters. Extension by zero maps H¹₀,even(−L, L) into H¹₀,even(−L′, L′) for L < L′, and preserves ξ̂, Q and the H-norm. An infimum over a larger set is smaller. ∎
+- **Generalisation (PROVED; credit Golden Eye).** The full Weil form W(ξ) = R(ξ) − Σ_n (Λ(n)/√n)·2(Qh)(log n), with h = ξ ⋆ ξ*, is one form on C_c^∞(ℝ) that does not depend on L. Only n ≤ e^{2L} contribute, automatically, through supp h ⊂ [−2L, 2L]. So the same extension-by-zero argument gives: λ(L) := inf over H¹₀(−L, L) (each parity sector, or both) of W/‖·‖²_H is **nonincreasing for all L**. The restriction 2L ≤ log 3 above is needed only for the single-symbol form q(t) = Ω(t) − 2c₂cos(at).
+- **Corollary C.15.B′ (consistency test; PROVED).** Every full {2, 3} minimum at L > ½ log 3 must be ≤ the value at 2L = log 3 in the same sector. So a certified lower bound past log 3 that exceeds a certified upper bound at log 3 (e.g. Prime's Ritz values ≤ 2.5e−4 even, ≤ 1.34e−3 odd) signals an error. The test says nothing about the P₂-part taken alone past log 3: that part is not the Weil form there (it omits n = 3), so the monotonicity of W does not transfer to it.
 - **Consequences.**
   - A certificate at the right endpoint ℓ_max implies Q_L ≥ λ_cert(ℓ_max)‖·‖²_H on the even sector for **all** 2L ≤ log 2 + ℓ_max. That covers [0.05, 0.1] with ℓ_max = 0.1. **Grid rule: one point, ℓ = ℓ_max. Grid size 1.**
   - Galerkin numbers are consistent with this: Golden Eye 0.046 / 0.015 / 0.001 at ℓ = 0.028 / 0.1 / 0.2; ours 0.0473 / 0.0343 / 0.0162 / 0.0071 / 0.0027 at ℓ = 0.028 / 0.05 / 0.1 / 0.15 / 0.2 (N = 64); and Prime's ≤ 2.5e−4 at 2L = log 3.
@@ -1129,6 +1133,13 @@ This section answers the lead's 1:41 task and the 1:48 steering. The even certif
      [0.220969487769, −0.14157757611, 1.20151232126, 0.0260117645367];
      [−0.0975943904542, 0.0410416374567, 0.0260117645367, 1.39953509124].
      These agree with the float pipeline (frame.Qprime) to 1e-9.
+
+**Arb-run requirements (for S&M; part of the C.15.D hypothesis).**
+- **μ_A** must be certified as a lower bound μ by an interval Cholesky (or LDLᵀ) factorisation showing A_N − μI ≻ 0, with the entries of A_N enclosed as balls. An enclosed float eigenvalue is not acceptable.
+- **s_V** must be certified as an upper bound s by a Cholesky factorisation of sI − M ≻ 0, where M is the m_abs-weighted band matrix. The cruder s := ‖M‖_F (Frobenius norm, enclosed) is also acceptable, because it enters only through β = (s·ε^{m_abs}_N)^{1/2} and the Schur loss is ≈ 1e−4 against λ_cert ≈ 0.014.
+- **ε^{m_abs}_N, ε^{m_neg}_N:** enclosed integrals (Lemma C.15.K), with the remainder bound if the mode-sum route is used.
+
+**What pays past ℓ ≈ 0.06 (analytic statement for the lead; checked against this file).** R alone loses positivity at ℓ ≈ 0.05–0.06 (λ_min(R|even) = +0.00018 at ℓ = 0.05, −0.068 at 0.1; c15_even_schur.out), so past that point the signed p = 2 term pays. In C.15 it is not separated out: −2c₂cos(at) sits inside a_T on |t| < T, hence inside A_N (through μ_A) and inside the cross bound β (through m_abs = Ω(T) − Ω(t) + 2c₂(1 − cos at)). On |t| ≥ T it is dropped only where it helps (q − q_T ≥ 0). **The certificate itself is the analytic statement:** λ_cert bounds the full Q_L = R − 2c₂B from below, with the p = 2 contribution included. No separate R / p = 2 decomposition or mechanism is claimed (label: PROVED as a reading of Thm C.15.A; the numbers are NUMERICAL until S&M's Arb run).
 
 **(d) Target Theorem C.15.D (CONJECTURE / target until S&M's Arb run is in).**
 - *If* S&M encloses, in Arb, μ_A, s_V, ε^{m_abs}_N and ε^{m_neg}_N at ℓ_max = 0.1 (T = 60, N = 64, analytic majorants) with λ_cert > 0 (float value 0.01385), *then* Q_L(ξ) ≥ λ_cert‖ξ‖²_H for every even ξ ∈ H¹₀(−L, L) and every 2L ≤ log 2 + 0.1. That is **even (K3) on ℓ ∈ (0, 0.1] ⊃ [0.05, 0.1]**, with the p = 2 term signed.
@@ -1168,9 +1179,12 @@ This section answers the lead's 1:41 task and the 1:48 steering. The even certif
 |---|---|
 | Q_L = (1/2π)∫(¼+t²)(Ω − 2c₂cos at)\|ξ̂\|², no pole entry (ĝ(±i/2) = 0) | PROVED |
 | Lemma C.15.K (tail kernel K_W = K_e − Σ_{k<N}f̂_k², closed form) | PROVED (K_e: S&M Lemma A; checked NUMERICAL to 1e-15) |
-| Thm C.15.A (Schur with comparison form Q′_T; λ_cert formula) | PROVED |
+| Thm C.15.A (Schur with comparison form Q′_T; λ_cert formula) | PROVED; audited SOUND (Golden Eye, main 7447660) |
 | naive modal Schur on full Q: N-independent Hankel coupling ±1/(2(j+k+1)) | NUMERICAL (mechanism: log symbol) |
-| Prop C.15.B (λ_e nonincreasing in L; grid = 1 point) | PROVED |
+| Prop C.15.B (λ_e nonincreasing in L; grid = 1 point) | PROVED; audited SOUND (Golden Eye, main 7447660) |
+| Generalisation: full Weil form, λ(L) nonincreasing for all L; Cor C.15.B′ consistency test (no statement about the P₂-part alone) | PROVED (credit Golden Eye) |
+| Arb-run requirements (interval Cholesky/LDLᵀ for μ_A; Cholesky or Frobenius for s_V) | REQUIREMENT (part of the C.15.D hypothesis) |
+| Σ_γ(¼+γ²)\|ξ̂(γ)\|² explanation (C.14.4c) | HEURISTIC, assuming RH; not a certificate input |
 | C.14.4c "Δℓ ≲ m_cert/(24.88 + C_B) ≈ 2e-4" grid and "Ω(t_N) − 2c₂ − tail" step | WITHDRAWN (superseded by C.15.A/B) |
 | entry formulas (A_jk, B_jk, R_jk, I, I₂, J) | PROVED |
 | reference table, constants table, λ_cert(0.1) = 0.01385 (analytic majorants) | NUMERICAL |
