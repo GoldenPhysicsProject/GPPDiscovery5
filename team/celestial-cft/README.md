@@ -32,3 +32,6 @@ Labels used here:
 - **PROVED** (BCFMP arXiv:2107.10744 eq. 3.25, plus the coprime/full Eisenstein relation): the scalar-primary spectral zeta satisfies S(s) = Σ'_{scalars} Δ^{−s} = |D|^{s/2} E_s(ρ) Z_Q(s).
   - **NUMERICAL** check at s = 3, agreement to about 1e−7: `scalar_zeta_identity.log`.
   - So the off-line zeros of Z_Q are zeros of a genuine unitary, modular-invariant CFT's scalar spectral zeta.
+
+## 2026-10-28 (S102/S103): ARP §C
+- `ARP_celestial-cft.md` is §C (Bost–Connes / adele-class-space OS reflection) for `derivation/ARP.md`. The step tests are in `arp_c/c_step_tests.py` (output in `arp_c/c_step_tests.out`). RH is OPEN.
