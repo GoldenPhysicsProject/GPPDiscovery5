@@ -288,11 +288,7 @@ lie on Re z = 0 under RH). §N N.11.4: the FE adds nothing to the failure direct
 - **Q.8.E first test now reduces to (IF).** Under (I1), D_L must carry −c₂S_Λ(V(2) + V(2)^*)S_Λ.
   - For a given D_L, (I2) on this window ⇒ (IF) (PROVED). Existentially, (IF) ⇔ some D_L ≥ 0 (abstract GNS).
   - An explicit D_L must dominate the harmful cones of N.12.3 with constant 2c₂. Existence of D_L remains CONJECTURE (Q.8.E).
-- **Thm N.13.A (§N N.13, merged S103g; Grok audit: SOUND): conditional on GAP N.G2-m₀.** Suppose R ≥ m₀‖·‖²_H at ½ log 2 in each parity. Then (IF) holds for 2L ≤ log 2 + ℓ*(m₀), with ℓ* = 6.98×10⁻⁴·m₀·e^{−21.06/m₀} (PROVED given m₀; constants are closed forms in Ω(0) and c₂).
-  - m₀ > 0 ⇔ no radical vector (PROVED, compactness). The value of m₀ is GAP N.G2-m₀.
-  - **Mechanism:** the p = 2 line carries the even sector (its edge traces, via the exact rank-two form 2c₂α²(1/ℓ − ℓ/24), N.13.4 PROVED). The archimedean margin carries the odd sector, where p = 2 is a pure cost of 2c₂α²/ℓ.
-  - The even closure itself is (K3)-bulk (CONJECTURE). The coupling 2R(ξ_b, ξ_s) is GAP N.G2-bulk. The ĝ(0) even cost is paid by 𝒮_L (G.4h).
-  - Mechanism only: positivity on the range is CERTIFIED, conditional on Mori.
+- **Thm N.13.A (§N N.13) is conditional on GAP N.G2-m₀** (the H-margin m₀ at ½ log 2). Mechanism: the p = 2 line carries the even edge traces, and the archimedean margin carries the odd sector. See G.4h for the full split.
 - Labels: R1 fixed window | R2 FE only through W_∞ | R3 the sign of B, not weight signs | R4 soft mode helped, odd partner harmed | R5 DH positive here numerically but structurally without an a-line; fake-blind in truth. G.4d is unchanged.
 
 **G.4h (S103g synthesis: N.G2 split into sub-gaps, merged §N N.13 + §C C.13.B + §S SECTOR_COERCIVITY_p2/CELESTIAL_INPUTS_C13; RH-silent on this range).** Grok audit: all three SOUND (constants replayed: Ω(0) = −5.37218, Ω(12.8) = 0.711 ≥ c₂, h* ≤ 4.5, ℓ*-coefficient 6.98·10⁻⁴; Lemma C.13.B bracket at ℓ = 0.119 is +0.0019 with M_ℓ = 4.96; plunge mass D(1) = 0.486326 matches direct quadrature).
