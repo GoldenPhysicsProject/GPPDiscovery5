@@ -36,6 +36,7 @@ A chain whose only GAP is "Weil positivity" in disguise is a restatement. We say
   - Fakes first fail on ζ's nodeless soft mode (S97/S98).
   - Its window ground state has |cos| = 0.995–0.9997 with the pole vector 2cosh(x/2) (Queen S1, NUMERICAL).
 - **R5. Each step names where each fake breaks**, and checks that G_θ′ passes. The fakes: F_θ, DH, H₋ₜ, DMV, Epstein, P_X.
+- **R6 (Golden Eye; CONJECTURE, well supported).** The closing step should be an exact identity (Q = ‖·‖² or a trace). What is PROVED is narrower: §S no-slack lemma (S(c)4, audited by Golden Eye on 9184613) excludes any MF-relative margin, i.e. no c > 0 with Fl_L ≥ −(1−c)·MF_L uniformly. It does not exclude Q_L ≥ c·N_L for another norm N_L degenerating on dilated nodeless bumps (e.g. weighting only frequencies near the zeros).
 
 ### 0.2 Dead ends (cite; do not re-derive)
 | dead end | where |
