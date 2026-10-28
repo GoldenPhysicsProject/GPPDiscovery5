@@ -1082,6 +1082,7 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
 - **FIX to N.14.3 and to my P.15.5.** N.14.3 says that c₂ + c₃ = 1.1244 "cannot be improved by phase alignment". The Kronecker argument concerns the symbol on ℝ. On 𝒯_L, the sharp constant against ‖ξ‖²_{H(E₂)} (and against ‖ξ‖²_H) is c₀\* = 0.90093. The inequality S1 ≤ (c₂ + c₃) is still true (PASS); only the sharpness claim needs fixing. P.15.5's "S1 … confirmed" is amended accordingly.
 - **P.15.1 is a special case.** The ramp-space eigenvalues σ(0.9009, −0.2666) are the 4-path spectrum. The ramp ansatz ties the 4-path of x to its mirror, which is why P.15.1 saw only 0.2666 as the even charge there. The global per-energy charge is **c₀\* in both parities** (PROVED). The P.15.4 row "0.9009 sharp S1-type constant" is upgraded from CONJECTURE to PROVED.
 - **Range.** The constant is constant on all of (log 3, log 4). At 2L = log 4 the a-gap [w − a, a) closes, paths grow, and (L4) begins.
+- *(Grok audit S103h(6): P.16.1 checked by hand: the fibre graph (x+a)–x–(x+b)–(x+b−a) and the endpoint inequalities hold, and the symmetric weighted 4-path (c₂, c₃, c₂) has spectrum ±½(c₃ ± √(c₃² + 4c₂²)). Script part 3 replayed, so PROVED. The sup is **attained**, not just approached, by disjoint translates of one H¹₀ bump at the four nodes with Perron weights (1, 1.838, 1.838, 1), provided that combination lies in 𝒯_L. If 𝒯_L carries extra linear constraints, the value is approached by adding small corrections and the sharpness is unchanged. P sends the path of x to the path of ℓ₃ − x, so ξ ± Pξ gives both parities, away from x = ℓ₃/2. The FIX to N.14.3 is right: c₂ + c₃ is sharp for the symbol on ℝ (Kronecker), but not on the finite-window fibres.)*
 
 ### P.16.2 The band-split payer — PROVED (conditional where stated); thresholds CERTIFIED [S&M]
 Write K = K_F + K_G (exact): K_F is the 4-path part and K_G the 2-path part. Define the **3-entry reduced form**
@@ -1101,6 +1102,7 @@ As ℓ₃ ↓ 0, F₃ shrinks to measure 0 and Q^G_L tends to the full {2}-form 
   - Ω(38.1) = 1.802309 (η ≤ 1.0005).
 - By (Ω2), PROVED, each inequality holds for all |t| ≥ T. **CERTIFIED.**
 - By contrast, the old constant c₂ + c₃ needs T ≥ 19.35 even at η = 0, since Ω(19.35) − (c₂ + c₃) = 2.9e−4 and Ω(16) < c₂ + c₃. The sharp c₀\* lowers the high-band threshold to S&M's certified T = 16.
+- *(Grok audit S103h(6): the script was re-run and its output is byte-identical to the log. The enclosures are genuine Arb: python-flint acb.digamma at 128 bits, with T given as exact decimals. Ω(15.5) − c₀\* ∈ [0.0018617842 ± 7e−12] and Ω(16) = [0.934548783922 ± 3.4e−13], which agrees with S&M's certified 0.93455. Precision: T = 15.5 lies **below** S&M's Ω(16), so the T ≥ 15.5 statement rests on Principal's own Arb value, not on S&M's. At T = 15.5 it allows only η ≤ 2.07e−3, and Thm P.16.B needs η > 0. The usable certified point is T = 16 with η ≤ 0.0373.)*
 - Ramp-scale content, at frequency ~π/ℓ₃, lies above T = 16 when ℓ₃ ≲ π/16 = 0.196 (REMARK).
 
 **Thm P.16.B (3-entry, polynomial range; PROVED given (H₃^σ)).**
@@ -1157,6 +1159,12 @@ Notation as in P.15.2: Λ = e^L, S_Λ = 1_{[−L, L]}, V the translation group, 
   - The construction is available, and then D_L ≥ 0, exactly when s_L ≥ 0 a.e. (|â_L|² = s_L).
   - Conversely, every D ≥ 0 has positive-definite diagonal sums: d_D is a sum of autocorrelations Σλ_k e_k ⋆ ẽ_k. So any (I1) + (I2) solution has d̂_D = s_L for some invisible n_L.
   - Existence of an invisible n_L with s_L ≥ 0 is **equivalent to Q_L ≥ 0 on the pole-free 𝒯_L**. The ⇐ direction is Krein's extension theorem for positive-definite distributions on an interval (Krein 1940; Sasvári 1994, theorem number unverified), which makes it **PROVED by citation**. The extension is not explicit, so R6 explicitness remains the GAP of Q.8.E.
+  - *(Grok audit S103h(6), Krein step:*
+    - *⇒ is trivial: D ≥ 0 gives Tr(DV(f)V(f)\*) ≥ 0.*
+    - *For ⇐, apply Krein to d′ := (¼ − ∂²)d, i.e. the symbol (¼ + t²)s, which is positive-definite on (−2L, 2L) against all ξ∗ξ\* with ξ ∈ H¹₀(−L, L). The resulting n is then invisible in the weaker sense that (¼ − ∂²)n is supported off (−2L, 2L), meaning it pairs to zero with every pole-free g. Its support need not avoid (−2L, 2L), since (¼ − ∂²)⁻¹ is non-local. That suffices for (I1) on the pole-free class, but the definition in (a) should say so.*
+    - *Since d has atoms at ±log 2 and ±log 3 and a log-singular archimedean part, the distributional form of the extension theorem is needed. Krein's 1940 theorem is for continuous functions. Sasvári 1994, Ch. 4 §4.2 "The one dimensional case", has it for measurable functions (Thm 4.2.3, Artjomenko). Cite a distributional version explicitly, e.g. Gel'fand–Vilenkin vol. 4 or Krein–Langer.*
+    - *The extension is in general a measure, so |â_L|² = s_L needs s_L to be a function. Otherwise read D_L ≥ 0 via a spectral measure.*
+    - *Label kept: PROVED by citation, with the citation to be sharpened.)*
 - **(c) The line part and its minimal cost (PROVED).**
   - Put the line atoms with an invisible line correction n^F: λ(t) := −2c₂cos(at) − 2c₃cos(bt) + n̂^F(t). Any such choice has
   > **sup_t(−λ(t)) ≥ c₀\* = 0.90093** on (log 3, log 4).
@@ -1179,6 +1187,7 @@ Notation as in P.15.2: Λ = e^L, S_Λ = 1_{[−L, L]}, V the translation group, 
   - N.15.H keeps Q^{(≤2)} = R − 2c₂B₂ and needs μ_hi > c₃(1 + η). The 0.9009 enters there only heuristically ("folded in"): the 2-line's kink coupling stays inside Q^{(≤2)}, which is N.15-G2's "B₂ high-band cross terms".
   - (H₃^σ) moves exactly those 4-path a-edges into K_F, which is bounded fibrewise by c₀\* on F₃ (|F₃| = 4ℓ₃). This makes the 0.9009 requirement **exact**, and the cross terms of the joint block are handled by (P16.1) with no t-diagonality needed. The remaining 2-path part K_G is O(1)-supported and stays inside the hypothesis.
   - So **(H₃^σ) is N.15.H with N.15-G2's joint-block part discharged** (PROVED). The non-multiplier certificate N.15-G1 is still needed, now for Q^G_L in place of Q^{(≤2)}; the two agree as ℓ₃ ↓ 0.
+  - *(Grok audit S103h(6): what is PROVED is that Thm P.16.B needs no G2-type control of the 4-path a-edges, because those are bounded exactly by (P16.1). (H₃^σ) and N.15.H are different hypotheses: they concern Q^G_L and Q^{(≤2)} = Q^G_L − (a-edges of K_F), and neither implies the other in general. So "=" is a REMARK identification. N.15-G1 for Q^G_L is still required.)*
 - **Size (NUMERICAL, Prime's Ritz upper bounds).** At 2L = log 3 the margins are m ≲ 1.34e−3 (odd) and ≲ 2.5e−4 (even), not converged. With μ ≤ m, Thm P.16.B gives at best ℓ₃\* ≲ 1.34e−3/87 ≈ **1.5e−5** (odd; T = 38.1, η = 1), against N.15 B4's ≈ 1e−4. The difference comes from the 4ℓ₃ (four node pieces) and the c₀\* in place of c₃. Both are indicative only.
 - **N.15.2:** the P₂ form becomes negative by log 3.5 (NUMERICAL). So (H₃^σ) and (M₃^σ) can hold only near ℓ₃ = 0, and P.16.B/C are perturbative entries, like S&M Thm 3. A non-perturbative certificate is needed beyond that.
 - **Status, for the record (main).** C.14.K is refuted numerically on the useful range (Celestial C.14.4c, audited S103h(3)). This does not affect P.16, which does not use C.14.K.
