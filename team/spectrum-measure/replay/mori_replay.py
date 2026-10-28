@@ -420,6 +420,10 @@ def assemble(P, a, outdir, cst):
     T = Y + J - cst['alpha'] * I - cst['beta'] * (B - A * A)
     T = (T + T.transpose()) / 2
     maxradT = max(float(T[i, j].rad()) for i in range(Np) for j in range(Np))
+    # Guard (root cause of run 1's crash): a non-finite ball anywhere in J (Arb bessel_j at the turning point) makes every
+    # entry of T = [0 +/- inf]; mid(T) = 0 and the later solve dies with "singular matrix".  Refuse to save such a T.
+    if not (math.isfinite(maxradT) and math.isfinite(eps_J) and math.isfinite(eps_inv)):
+        raise FloatingPointError('non-finite T: maxradT=%r eps_J=%r eps_inv=%r (check J panels / bessel top values)' % (maxradT, eps_J, eps_inv))
     budget = dict(eps_J=eps_J, eps_inv=eps_inv, normR=float(nR.upper()), normY=float(nY.upper()), maxradT=maxradT,
                   errJ_entry=errJ, errb_entry=errb, Np=Np)
     save(os.path.join(outdir, 'T.pkl'), dict(T=mat_to_fixed(T), budget=budget))
@@ -470,13 +474,15 @@ def ldl_congruence(M, prec):
     finally:
         ctx.prec = old
 
-def certify(T, ell, prec):
-    """Returns dict: pd (bool, rigorous: diag dominance of S = Z(T - ell I)Z^T), neg_index (rigorous negative diagonal), etc."""
+def certify(T, ell, prec, shift=None):
+    """Returns dict: pd (bool, rigorous: diag dominance of S = Z(T - shift I)Z^T), neg_index (rigorous negative diagonal), etc.
+    shift: exact arb point actually subtracted (defaults to arb(ell)); ell is kept only as a label."""
     old = ctx.prec; ctx.prec = prec
     try:
         n = T.nrows()
         I = arb_mat([[arb(1) if i == j else arb(0) for j in range(n)] for i in range(n)])
-        Ts = T - arb(ell) * I
+        sh = arb(ell) if shift is None else shift
+        Ts = T - sh * I
         t0 = time.time(); Z, d = ldl_congruence(Ts, prec); t1 = time.time()
         S = Z * Ts * Z.transpose(); t2 = time.time()
         neg = [i for i in range(n) if bool(S[i, i] < 0)]
@@ -488,7 +494,7 @@ def certify(T, ell, prec):
             r = float(S[i, i].mid()); minpiv = r if minpiv is None or r < minpiv else minpiv
             q = float((off / abs(S[i, i])).upper()) if bool(S[i, i] != 0) else float('inf')
             worst = q if worst is None or q > worst else worst
-        return dict(ell=ell, pd_certified=dom_ok, neg_pivots=neg[:10], n_neg=len(neg), min_pivot=minpiv, worst_offdiag_ratio=worst,
+        return dict(ell=ell, shift=sh.str(20, radius=False), shift_minus_ell=(float((sh - arb(Fraction(str(ell)).numerator) / arb(Fraction(str(ell)).denominator)).mid()) if shift is not None else 0.0), pd_certified=dom_ok, neg_pivots=neg[:10], n_neg=len(neg), min_pivot=minpiv, worst_offdiag_ratio=worst,
                     t_ldl=t1 - t0, t_ball=t2 - t1)
     finally:
         ctx.prec = old
@@ -542,16 +548,31 @@ def main():
         T, budget = assemble(P, a, a.out, cst); log('assembled', budget)
     if a.stage in ('certify', 'all'):
         D = pickle.load(open(os.path.join(a.out, 'T.pkl'), 'rb')); budget = D['budget']
+        if not math.isfinite(D['T']['rad']) or not all(math.isfinite(budget[k]) for k in ('eps_J', 'eps_inv', 'maxradT')):
+            raise FloatingPointError('T.pkl has non-finite radii/budget %r; re-run panels+assemble' % budget)
         T = fixed_to_mat(D['T'])
         sha = hashlib.sha256(json.dumps(D['T']['ints'][:1000] + [len(D['T']['ints'])]).encode()).hexdigest()
         res = dict(budget=budget, args=vars(a))
         est = lam_estimate(T); res['lam_est_numerical'] = est; log('lam_est (NUMERICAL, inverse iteration)', est)
-        ells = [float(x) for x in a.ells.split(',')] if a.ells else [0.999 * est, 1.005 * est]
-        res['certs'] = []
-        for ell in ells:
-            r = certify(T, ell, a.cert_prec); res['certs'].append(r); log('certify', r)
+        ells = a.ells.split(',') if a.ells else [repr(0.999 * est), repr(1.005 * est)]
+        # Rigorous budget: T_true = W^{-1} + J_exact - alpha - beta(B - A^2) differs from the stored ball matrix T by at most
+        # eps_inv (approximate inverse, Neumann bound) + eps_J (Gauss-Legendre remainder of the J band and of h, Bernstein
+        # ellipses) in operator norm.  The floats were formed with upward-safe factors; doubling covers double rounding.
         extra = budget['eps_J'] + budget['eps_inv']
         res['extra_scalar_budget'] = extra
+        ctx.prec = a.cert_prec
+        ext = arb(2 * extra)
+        res['certs'] = []
+        for es in ells:
+            fr = Fraction(es.strip()); ell_b = arb(fr.numerator) / arb(fr.denominator)       # ball containing the decimal ell
+            # PD claim:  T - s_up I > 0 with s_up >= ell + ext  =>  lambda_min(T_true) > ell   (CERTIFIED lower bound)
+            s_up = (ell_b + ext).upper()
+            r = certify(T, es.strip(), a.cert_prec, shift=s_up); r['mode'] = 'pd_claim: lambda_min(T_true) > ell iff pd_certified'
+            res['certs'].append(r); log('certify', r)
+            # FAIL claim: certified negative diagonal of Z(T - s_lo I)Z^T, s_lo <= ell - ext  =>  lambda_min(T_true) < ell
+            s_lo = (ell_b - ext).lower()
+            r = certify(T, es.strip(), a.cert_prec, shift=s_lo); r['mode'] = 'fail_claim: lambda_min(T_true) < ell iff n_neg > 0'
+            res['certs'].append(r); log('certify', r)
         json.dump(res, open(os.path.join(a.out, 'certify_%s.json' % time.strftime('%H%M%S')), 'w'), indent=1)
 
 if __name__ == '__main__':

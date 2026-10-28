@@ -1,0 +1,89 @@
+{
+ "budget": {
+  "eps_J": 8.336028209166118e-149,
+  "eps_inv": 1.2838488104691346e-112,
+  "normR": 1.674365906035285e-114,
+  "normY": 76.67671718836822,
+  "maxradT": 2.3235551864185666e-120,
+  "errJ_entry": 1.9143412832126485e-151,
+  "errb_entry": 2.5199329045197882e-152,
+  "Np": 416
+ },
+ "args": {
+  "stage": "certify",
+  "L": "log12/2",
+  "Omega": "416",
+  "s": "57/16",
+  "m": "1/2",
+  "N": 832,
+  "parity": 0,
+  "u0": 207,
+  "u1": 68,
+  "delta_log2": 1515,
+  "workers": 3,
+  "chunk": 96,
+  "out": "log12_p0",
+  "ells": "1.2092639998e-54,1.2153e-54",
+  "cert_prec": 576
+ },
+ "lam_est_numerical": 1.2092640218631771e-54,
+ "extra_scalar_budget": 1.2838488104691346e-112,
+ "certs": [
+  {
+   "ell": "1.2092639998e-54",
+   "shift": "1.2092639998000000000e-54",
+   "shift_minus_ell": 2.5676976209382693e-112,
+   "pd_certified": true,
+   "neg_pivots": [],
+   "n_neg": 0,
+   "min_pivot": 3.327683483832886e-07,
+   "worst_offdiag_ratio": 1.0747101064840257e-57,
+   "t_ldl": 1.635636329650879,
+   "t_ball": 3.6969826221466064,
+   "mode": "pd_claim: lambda_min(T_true) > ell iff pd_certified"
+  },
+  {
+   "ell": "1.2092639998e-54",
+   "shift": "1.2092639998000000000e-54",
+   "shift_minus_ell": -2.5676976209382693e-112,
+   "pd_certified": true,
+   "neg_pivots": [],
+   "n_neg": 0,
+   "min_pivot": 3.327683483832886e-07,
+   "worst_offdiag_ratio": 1.0679097404332484e-57,
+   "t_ldl": 1.4886775016784668,
+   "t_ball": 3.7047717571258545,
+   "mode": "fail_claim: lambda_min(T_true) < ell iff n_neg > 0"
+  },
+  {
+   "ell": "1.2153e-54",
+   "shift": "1.2153000000000000000e-54",
+   "shift_minus_ell": 2.5676976209382693e-112,
+   "pd_certified": false,
+   "neg_pivots": [
+    414
+   ],
+   "n_neg": 1,
+   "min_pivot": -0.1893543027476959,
+   "worst_offdiag_ratio": 3.79045024718536e-62,
+   "t_ldl": 1.6334071159362793,
+   "t_ball": 3.7350919246673584,
+   "mode": "pd_claim: lambda_min(T_true) > ell iff pd_certified"
+  },
+  {
+   "ell": "1.2153e-54",
+   "shift": "1.2153000000000000000e-54",
+   "shift_minus_ell": -2.5676976209382693e-112,
+   "pd_certified": false,
+   "neg_pivots": [
+    414
+   ],
+   "n_neg": 1,
+   "min_pivot": -0.1893543027476959,
+   "worst_offdiag_ratio": 3.7675174627579665e-62,
+   "t_ldl": 1.6112711429595947,
+   "t_ball": 3.6345791816711426,
+   "mode": "fail_claim: lambda_min(T_true) < ell iff n_neg > 0"
+  }
+ ]
+}

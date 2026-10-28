@@ -1,0 +1,9 @@
+07:25:29 panels 68 nodes 6848
+07:29:16 panel group (0, 'done 227s')
+07:29:37 panel group (1, 'done 248s')
+07:33:25 panel group (2, 'done 249s')
+07:33:41 panel group (3, 'done 244s')
+08:03:31 assembled {'eps_J': 1.720167851179534e-147, 'eps_inv': 5.7988776295164456e-111, 'normR': 4.216062220621297e-113, 'normY': 137.5425059230245, 'maxradT': 1.5490377671408462e-120, 'errJ_entry': 1.2999710936010628e-150, 'errb_entry': 3.964673113350216e-151, 'Np': 1188}
+08:04:13 lam_est (NUMERICAL, inverse iteration) 1.0721462202283773e-81
+08:05:51 certify {'ell': 1.0711e-81, 'pd_certified': True, 'neg_pivots': [], 'n_neg': 0, 'min_pivot': 1.7084297487740532e-09, 'worst_offdiag_ratio': 7.374168418274888e-31, 't_ldl': 24.42038369178772, 't_ball': 72.46016144752502}
+08:07:27 certify {'ell': 1.07645555e-81, 'pd_certified': False, 'neg_pivots': [1184], 'n_neg': 1, 'min_pivot': -0.1586878996675267, 'worst_offdiag_ratio': 2.733249161159632e-29, 't_ldl': 22.948147296905518, 't_ball': 72.33433413505554}
