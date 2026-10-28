@@ -48,6 +48,7 @@ A chain whose only GAP is "Weil positivity" in disguise is a restatement. We say
 | Connes' trace formula: the open step is uniformity in the cutoff | Connes 1999; Connes–Consani 2021 |
 | η_ζ = 0 is RH-equivalent, not a route | S100 (Queen's quartet identity) |
 | Positive prime weights / signed prime split as a forcing | S100–S101 (H100a) |
+- **Bost–Connes / KMS / Astra mirror-OS route (S103c, §C C.2d, C.8a, C.9).** KMS/primon OS ⇔ prime weights ≥ 0 (range-side, wrong sign under the deficit); no covariant KMS identity equals Q_L; every reading of Astra's H1 (zero ↔ coherent mode) is either ⇔ RH/G.4d or an RH-silent unconditional theorem; DMV is a countermodel for any H1 weaker than H1-unitary. Adds nothing beyond G.4d.
 
 ### 0.3 Inventory (build on these definitions; do not reinvent)
 - **Lean OS/RP inventory.** Bridge `work/grok/2026-10-21_reflection_positivity.md` §0a/§0b, GPPVerify e1c1aa9: `reflectionForm_nonneg_iff`, `rh_iff_weil_pairedForm_nonneg`, `osReflection`, `ArithmeticOSGram`, `ArithmeticPrimeLocalOS`, `CriticalRiggedGram`, `SemigroupPosDef`, `PositiveDefiniteGNS`, `HaarSquareNotReflection`, `GaussianHeatOS`, `ShadowCutOSObstruction`, …
