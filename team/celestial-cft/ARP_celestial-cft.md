@@ -1183,7 +1183,7 @@ This section answers the lead's 1:41 task and the 1:48 steering. The even certif
 | naive modal Schur on full Q: N-independent Hankel coupling ±1/(2(j+k+1)) | NUMERICAL (mechanism: log symbol) |
 | Prop C.15.B (λ_e nonincreasing in L; grid = 1 point) | PROVED; audited SOUND (Golden Eye, main 7447660) |
 | Generalisation: full Weil form, λ(L) nonincreasing for all L; Cor C.15.B′ consistency test (no statement about the P₂-part alone) | PROVED (credit Golden Eye) |
-| Arb-run requirements (interval Cholesky/LDLᵀ for μ_A; Cholesky or Frobenius for s_V) | REQUIREMENT (part of the C.15.D hypothesis) |
+| Arb-run requirements (interval Cholesky/LDLᵀ for μ_A; Cholesky or Frobenius for s_V) | REMARK (Arb-run hypotheses of C.15.D) |
 | Σ_γ(¼+γ²)\|ξ̂(γ)\|² explanation (C.14.4c) | HEURISTIC, assuming RH; not a certificate input |
 | C.14.4c "Δℓ ≲ m_cert/(24.88 + C_B) ≈ 2e-4" grid and "Ω(t_N) − 2c₂ − tail" step | WITHDRAWN (superseded by C.15.A/B) |
 | entry formulas (A_jk, B_jk, R_jk, I, I₂, J) | PROVED |
