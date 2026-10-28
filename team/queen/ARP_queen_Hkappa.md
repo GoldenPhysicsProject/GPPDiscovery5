@@ -21,6 +21,7 @@ R-lines as in §Q (R1 uniform in L; R2 Euler product + FE; R3 not via weight sig
 - (H.3) Survivability. With κ ≤ Λ^{o(1)}, M1 needs only ε_Λ/Λ + ρ_Λ ≤ Λ^{−δ}. With the unconditional κ ≤ Λ^B it needs
   ε_Λ/Λ + ρ_Λ ≤ Λ^{−B−δ}. That is available (CONJECTURE, for Spectrum) only for a **trimmed** prolate space; for Connes' untrimmed B_Λ
   (which keeps half the plunge) it is unknown, because B is not explicit.
+- **Part II (below, H.8–H.11).** Window-average Lemma H.2′ (PROVED (citation)) ⇒ Theorem H.1′ κ ≤ Λ^{B′} (PROVED (sketch)). Λ^{o(1)} is not reachable by this route. Trimmed space: M1^{(K)} holds for K ≥ 2B + 8 (Theorem H.9, PROVED-conditional on the H.1 sketch + M1.1 GAP-minor). The only open interface item is (T3), the trimming-harmless check.
 
 ## H.0 Precise statement
 
@@ -191,7 +192,8 @@ From M1.C (ℓ_Λ ≤ 2κ_Λ(ε_Λ/Λ + 4ζ(1+σ)²ρ_Λ)) and M1.5 (the diagona
   - With trimmed retention I_Λ^{(K)} := {n : 1 − λ_n ≤ Λ^{−K}}: κ only improves (H.0). Plateau endpoint values and remainder tails
     should then be O(Λ^{−K′}) with K′ → ∞ as K → ∞ (CONJECTURE, for Spectrum: via ∂_cλ_n = (2/c)λ_nψ_n(1)² and plateau bounds on
     1 − λ_n). That makes any polynomial κ survivable.
-  - Cost of trimming. It removes O(log Λ · K) plunge states from Q′_Λ. Their Mellin mass sits at heights ≍ Λ² (H.1b), where ĥ(s) is
+    *(Part II, H.9: now settled without Spectrum. The endpoint bound is Lemma H.9.1 (elementary, exponent 2/3), and Theorem H.9 gives ℓ^{(K)} ≤ CΛ^{−1} for K ≥ 2B + 8.)*
+  - Cost of trimming. It removes O(K log²Λ) plunge states from Q′_Λ *(Queen correction, Part II (T1): was "O(log Λ · K)"; with ε = Λ^{−K} the KRD count is β_Λ log(1/ε) ≍ K log²Λ)*. Their Mellin mass sits at heights ≍ Λ² (H.1b), where ĥ(s) is
     negligible for smooth h. So the change in Tr(Q′V(h)) should be o(1) for fixed f (CONJECTURE; it needs a plunge-state Mellin
     localization bound, which is Spectrum's type of input). It must then be checked against M2's counting term.
 
@@ -230,7 +232,208 @@ From M1.C (ℓ_Λ ≤ 2κ_Λ(ε_Λ/Λ + 4ζ(1+σ)²ρ_Λ)) and M1.5 (the diagona
 | (Z-avg⁻) | CONJECTURE (expected under RH; HEURISTIC via Selberg CLT); GAP |
 | zeros/gaps/multiplicity not the obstruction | PROVED (elementary) |
 | H.5 sharp payoff: ℓ_Λ = o(log^{−2}Λ) given (Z-avg) and Spectrum's Λ^{−δ} | PROVED-conditional; may be RH-conditional through (Z-avg), so barred from any route to RH (circularity flag) |
-| H.5 polynomial loss survivable with trimmed retention | CONJECTURE (needs Spectrum's trimmed bounds and the trimming-harmless check) |
+| H.5 polynomial loss survivable with trimmed retention | superseded by H.9: M1 for the trimmed space PROVED-conditional (H.1 sketch + M1.1 GAP-minor); trimming-harmless (T3) open, split (T3a) HEURISTIC/Spectrum + (T3b) GAP/Queen |
 | H.6 polynomial H-κ holds for DH and Epstein ⇒ RH-silent | PROVED (sketch) |
+
+Not cited: ArithmeticTemperedPrincipalSeries, rh_iff_weil_pairedForm_nonneg, or any True-placeholder.
+
+---
+
+# Part II (2026-10-28, after the H-κ audit): window-average conditioning, and the trimmed-space interface
+
+Against GPPDiscovery5 main `0000f61` (contains 8ecee4f; H-κ merged at 47a8109, main a864c92). Analytic only: **no numerics were run.**
+RH is OPEN. Nothing in Part II assumes RH, except the one flagged line in H.10, which is barred from every route.
+
+**Part II headline.**
+- (H.8) **Lemma H.2′ (window average; PROVED (citation)).** On every window of length a ≤ 1 at height ≤ T, the average of log|ζ(½+is)| is ≥ −C log T · log(e/a). The source is Titchmarsh's local factorization (Thm 9.6(B)) plus the zero count (Thm 9.2). Off-line zeros only help.
+  - Consequence: thickness at level T^{−O(log(e/a))}, instead of T^{−C₀/a}.
+  - **Theorem H.1′ (PROVED (sketch)):** κ_Λ ≤ Λ^{B′}, B′ absolute. The η-part of the exponent drops from O(1/a) to O(log(e/a)), but the shape stays polynomial.
+  - The other regime, a ≍ 1/log Λ, gives exp(O(log Λ · log log Λ)), which is worse.
+  - **Λ^{o(1)} is not reachable by this route.** The O(log t) error in 9.6(B) and the zero count both cost T^{−c}.
+  - Fake-blind: DH and Epstein (PROVED (sketch)).
+- (H.9) **Trimmed space.** Let I^{(K)} := {n ∈ I_Λ : 1 − λ_n ≤ Λ^{−K}} and K ≥ 2B + 8, where B is any exponent with κ_Λ ≤ CΛ^B (H.1/H.1′). Then **ℓ_Λ^{(K)} ≤ CΛ^{−1}, so M1 holds for the trimmed space, diagonal included, at rate O(Λ^{−1/2} log^{1/2}Λ).**
+  - Label: PROVED-conditional on Theorem H.1/H.1′ (PROVED (sketch)) and on the GAP-minor extension of Lemma M1.1. **No Spectrum input is needed for this.**
+  - Every archimedean input ((T1), (T2a–c)) is proved here. They come from KRD as verified in Spectrum's PROLATE_BOUNDS §5, from an elementary endpoint lemma, and from Bernstein.
+  - What is left is the **trimming-harmless check (T3)**: Tr(S_Λ ΔQ S_Λ V(h)) = o(1), with ΔQ = Q′_Λ − Q′^{(K)}_Λ, of rank O(K log²Λ). It is exactly equivalent to Q.8.C ⇔ Q.8.C^{(K)}, and it is the M2-compatibility condition. Split: (T3a) archimedean low-Mellin mass of plunge states (Spectrum; HEURISTIC) and (T3b) E-transport (Queen; GAP).
+  - Correction to H.5: trimming removes O(K log²Λ) plunge states, not O(K log Λ).
+- (H.10) (Z-avg⁻) under RH: one flagged line only.
+
+## H.8 Lemma H.2′ and Theorem H.1′ (window-average form)
+
+**Citation (PROVED (citation)).** E. C. Titchmarsh, *The Theory of the Riemann Zeta-Function*, 2nd ed., revised by D. R. Heath-Brown (Oxford, 1986).
+- §9.6, Theorem 9.6(B): log ζ(s) = Σ_{|t−γ|<1} log(s − ρ) + O(log t), **uniformly for −1 ≤ σ ≤ 2** (t ≥ 2), summed over zeros ρ = β + iγ with |t − γ| < 1.
+- §9.2, Theorem 9.2: N(T + 1) − N(T) = O(log T).
+- *What I checked.* The form and uniformity above are as I know them from §9.6, where (B) is obtained by integrating 9.6(A), ζ′/ζ(s) = Σ_{|t−γ|<1} 1/(s−ρ) + O(log t), along σ from 2. The exact page and the strict-vs-non-strict "<1" were **not re-verified against the book this session** (no copy on the box). Both are immaterial below: only the **real part** is used, which is free of branch conventions, and the zero set is enlarged to a fixed S₀ anyway.
+- Real part: log|ζ(σ+it)| = Σ_{|t−γ|<1} log|σ + it − ρ| + O(log t), uniformly for −1 ≤ σ ≤ 2, t ≥ 2, including at zeros (where it reads −∞ = −∞).
+
+**Lemma H.2′ (window average; PROVED (citation: Titchmarsh 9.6(B), 9.2), elementary given these).** There are absolute C₁, T₀ with the following property. Let T ≥ T₀, |t₀| ∈ [3, T], 0 < a ≤ 1, and W := [t₀ − a/2, t₀ + a/2]. Then
+
+  (1/a) ∫_W log|ζ(½ + it)| dt ≥ −C₁ log T · log(e/a).
+
+*Proof.* By conjugation take t₀ > 0.
+1. **Fix the zero set.** S₀ := {ρ : |γ − t₀| < 2}. For t ∈ W, every zero with |t − γ| < 1 lies in S₀.
+   - For ρ ∈ S₀ with |t − γ| ≥ 1: 1 ≤ |½ + it − ρ| ≤ ½ + 5/2 = 3, so log|½ + it − ρ| ∈ [0, log 3].
+   - #S₀ ≤ N(t₀ + 2) − N(t₀ − 2) ≤ C log T (Thm 9.2, four times; for t₀ ≤ T₀ + 2 it is bounded).
+   - So, uniformly in t ∈ W: log|ζ(½+it)| = Σ_{ρ∈S₀} log|½ + it − ρ| + θ(t)·C log T with |θ| ≤ 1. The added terms are ≤ #S₀ log 3 = O(log T).
+2. **Off-line zeros only help.** |½ + it − ρ| = |(½ − β) + i(t − γ)| ≥ |t − γ|, for any β.
+3. **One zero.** For c ∈ ℝ, g(c) := (1/a)∫_{−a/2}^{a/2} log|x − c| dx satisfies g′(c) = (1/a)(log|c + a/2| − log|c − a/2|). This has the sign of c, so g is minimized at c = 0, where g(0) = log(a/2) − 1 = −log(2e/a).
+   Hence (1/a)∫_W log|½ + it − ρ| dt ≥ −log(2e/a) for every ρ (a multiple zero counts with multiplicity, and each copy pays the same).
+4. Summing: average ≥ −#S₀ · log(2e/a) − C log T ≥ −C₁ log T · log(e/a), using log(2e/a) ≤ 2 log(e/a) since log(e/a) ≥ 1. ∎
+
+R-line H.2′: R1 window-uniform, no L | R2 Euler product only through Thm 9.6's anchor |ζ(2+it)| ≫ 1; FE through growth/zero count | R3 n/a | R4 n/a | R5 fake-blind (below) | R6 n/a.
+
+**Corollary H.2′′ (thickness; PROVED).** Let U := sup_{|t|≤T+1} log|ζ(½+it)| ≤ (¼ + o(1)) log T (convexity) and V := C₁ log T · log(e/a). Put
+
+  η′_a(T) := exp(−U − 2V) = T^{−¼ − 2C₁ log(e/a) − o(1)}.
+
+Then E′_a(T) := {s : |ζ(½+is)| ≥ η′_a(T)} ∪ {|s| ≤ 4} ∪ {|s| > T} is (½, a)-thick.
+*Proof.* Take a window W of centre t₀ with 3 ≤ |t₀| ≤ T + ½ (other windows lie in {|s| ≤ 4} ∪ {|s| > T}, as in the audit note to Lemma H.2), and apply H.2′ with T + 1. Let F := {t ∈ W : log|ζ| < −Y} and θ := |F|/a. Then −V ≤ avg_W log|ζ| ≤ (1 − θ)U − θY, so θ ≤ (U + V)/(U + Y). With Y := U + 2V this gives θ ≤ ½. ∎
+Compare Lemma H.2: there the level was T^{−C₀/a}. Here it is T^{−O(log(e/a))}, so the dependence on a goes from 1/a to log(1/a).
+
+**Theorem H.1′ (PROVED (sketch); constants untracked, like H.1).** m_Λ ≥ cΛ^{−B′} for all large Λ, with B′ absolute. Same proof as Theorem H.1, with E′_a(T), η′_a(T) in place of E_a(T), η_a(T). Bookkeeping of the exponent (no explicit Kovrijkine constants):
+- Step 2 (Kovrijkine) gives K = Λ^{e_K}·O(1), where e_K := C a(2 + A₁) log(2C).
+- Step 3 (left-tail/remainder) requires e_K < 5A₁/4. This is the only constraint, and it forces a < a* := 5/(4C log(2C)) (absolute) for every A₁.
+- Steps 4–5: T = C′Λ²K² = Λ^{2+2e_K+o(1)}, and
+
+  m_Λ ≥ η′_a(T)²(4K)^{−2} = Λ^{−B′}, B′ = 2e_K + (2 + 2e_K)(½ + 4C₁ log(e/a)) + o(1).
+
+**Shape (the question asked).**
+- **a fixed (0 < a < a*, absolute; A₁ fixed with e_K < 5A₁/4):** κ_Λ ≤ Λ^{B′}, with B′ = O(1 + log(e/a)) at fixed e_K. This is the best shape from this route.
+  - Versus H.1: the η-part of B goes from O(1/a) to O(log(e/a)). The Kovrijkine part e_K is unchanged.
+  - Taking a small now costs only log(1/a), so one may take a ≪ a* and A₁ = O(1) with e_K ≍ a·A₁ small. Then B′ = 1 + O(log(e/a)) + O(e_K).
+  - "B′ absolute" is meant as before: absolute, not explicit.
+- **a ≍ 1/log Λ (with A = O(1), so aℓ = O(1) and K = O(1)):** the remainder constraint becomes e^{−5A/2} ≪ 1 (fine), but η′ = T^{−O(log log Λ)} with T ≍ Λ². So m_Λ ≥ exp(−O(log Λ · log log Λ)). This is **worse** than polynomial, so a ~ 1/log Λ is not the right choice.
+- **Λ^{o(1)} is not reachable by the factorization route (PROVED (elementary), as a statement about the method).**
+  - Its inputs allow a background loss of size O(log T) in 9.6(B).
+  - The count #S₀ ≍ log T allows c log T zeros (with multiplicity) to sit in one window of length a. That configuration is not excluded by 9.2 and 9.6 alone.
+  - Either effect makes the lower bound on avg log|ζ| as small as −c log T, i.e. a loss of T^{−c} = Λ^{−2c}.
+  - Reaching Λ^{o(1)} needs average information beyond counting: (Z-avg⁻) of H.4 (GAP), or an equivalent zero-clustering bound.
+
+**Fake-blind check (R5; PROVED (sketch)).** The proof of Thm 9.6 uses three inputs:
+- (i) an anchor where the function is ≫ 1;
+- (ii) polynomial growth in a fixed disc around the anchor;
+- (iii) the Borel–Carathéodory / Jensen lemma (Titchmarsh §3.9, Lemma α type) on that disc. It gives ζ′/ζ = Σ_{|ρ−s₀|≤r/2} 1/(s−ρ) + O(M/r) on |s − s₀| ≤ r/4, with log of the growth ratio ≤ M = O(log t), and also the count of zeros in the disc ≪ M = O(log t).
+
+These carry over to the fakes as follows.
+- **Davenport–Heilbronn.**
+  - Anchor s₀ = 3 + it₀: |f_DH(3+it)| ≥ 1 − (ζ(3) − 1) > 0.79, as in H.6.
+  - f_DH is entire with |f_DH| ≪ |t|^{A} on −2 ≤ σ ≤ 4 (FE + Phragmén–Lindelöf).
+  - Take r = 16, so the disc |s − s₀| ≤ r/4 = 4 covers −1 ≤ σ ≤ 2. Integrating from the anchor, then trimming to |t − γ| < 1 exactly as in Thm 9.6, gives log|f_DH(s)| = Σ_{|t−γ|<1} log|s − ρ| + O(log t). The zero count O(log t) comes from Jensen on the same disc.
+  - Steps 1–4 of H.2′ then go through verbatim. Step 2 is where DH's **off-line zeros** enter, and they only increase |s − ρ|.
+  - So Lemma H.2′, Corollary H.2′′ and Theorem H.1′ hold for DH. Their constants depend on DH's growth exponent, not on its zeros' real parts.
+- **Epstein ζ_Q (x² + 5y²).**
+  - Anchor at σ₀ large: Z_Q(s) = Σ r_Q(n) n^{−s} with r_Q(1) = 2, and |Z_Q(σ₀ + it)/2 − 1| ≤ ½ for σ₀ ≥ σ_Q.
+  - Polynomial growth comes from the FE and Phragmén–Lindelöf. The pole at s = 1 is avoided by |t₀| ≥ 3, as for ζ.
+  - Same conclusion: PROVED (sketch).
+- Hence the window-average form is **fake-blind**, so it carries no RH content. That is consistent with H.6.
+
+## H.9 Trimmed prolate space: the interface with Spectrum (and what is already proved)
+
+**Conventions.**
+- (ψ_n) are the even prolates of M1.4: L²[−Λ, Λ]-normalized truncations of whole-line prolates g_n.
+- g_n is band-limited to |ξ| ≤ Λ, with ‖g_n‖²_{L²(ℝ)} = 1/λ_n by double orthogonality.
+- Spectrum's normalization: c = 2πΛ², M = 4Λ², β_Λ := (2/π²) log(200Λ² + 25) = (4/π² + o(1)) log Λ.
+- I_Λ is Connes' retention (λ_n ≥ ½ − o(1)).
+- Define I^{(K)} := {n ∈ I_Λ : 1 − λ_n ≤ Λ^{−K}}, B^{(K)}_{Λ,0} := span{ψ_n : n ∈ I^{(K)}} ∩ {φ(0) = φ̂(0) = 0} ⊂ B_{Λ,0}, and Q′^{(K)}_Λ := projection onto E(B^{(K)}_{Λ,0}), with ΔQ := Q′_Λ − Q′^{(K)}_Λ ≥ 0.
+- Write κ^{(K)}, ℓ^{(K)}, ε^{(K)} for the trimmed quantities.
+
+**Requested inputs, with owners and labels.**
+
+| Input | Statement | Label | Owner |
+|---|---|---|---|
+| (T0) | κ^{(K)} ≤ κ_Λ ≤ CΛ^B | PROVED (H.0 monotonicity) + Thm H.1/H.1′ PROVED (sketch) | Queen (done) |
+| (T1) count | r_K := #(I_Λ \ I^{(K)}) ≤ β_Λ(K log Λ + log 10) + 7 = (4/π² + o(1)) K log²Λ; I^{(K)} ⊇ {even k ≤ ⌊M⌋ − 7 − β_Λ(K log Λ + log 10)} | PROVED (citation: KRD Thm 3 / Cor 3, as verified in Spectrum PROLATE_BOUNDS §5) | Spectrum (done; quoted) |
+| (T2a) endpoints | |ψ_n(Λ)|² ≤ (64π)^{2/3} Λ (1 − λ_n)^{2/3} for λ_n ≥ ½; so ε^{(K)} := Σ_{I^{(K)}} |ψ_n(Λ)|² ≤ CΛ^{3−2K/3} | PROVED (elementary; Lemma H.9.1 below) | Queen (done). *Optional* for Spectrum: exponent 1 in place of 2/3 via ∂_cλ_n = (2/c)λ_nψ_n(1)² (would relax only the non-binding endpoint constraints; not needed) |
+| (T2b) tails | ∫_{|ξ|>X} |Fψ_n|² ≤ ∫_{|ξ|>Λ} |Fψ_n|² = 1 − λ_n ≤ Λ^{−K} for X ≥ Λ | PROVED (M1.1 bullet; definition of I^{(K)}) | done |
+| (T2c) smoothness | Σ_{n∈I^{(K)}} q₂(ψ_n) ≤ CΛ^7, with q₂(φ) := |φ′(Λ)|² + Λ‖φ″‖²_{L²[−Λ,Λ]} | PROVED (Bernstein; below) | done |
+| (T3a) archimedean low-Mellin mass of the removed states | ω^{arch}_Λ(S) := sup over unit φ ∈ span{ψ_n : n ∈ I_Λ \ I^{(K)}} of ∫_{|s|≤S} |Mφ|² / ∫|Mφ|² ≤ Λ^{−B−2−δ} for S = log Λ (any polynomial rate faster than Λ^{−B−2} suffices) | HEURISTIC (plunge states live in phase space near |x| ≈ Λ, |ξ| ≈ Λ, i.e. at Mellin height s ≍ 2πΛ², H.1b) | **Spectrum (requested; RH-silent)** |
+| (T3b) E-transport | the E-orthogonal complement of B^{(K)}_{Λ,0} in B_{Λ,0}, and its S_Λ-cut, inherit (T3a) up to a factor Λ^{O(1)} | **GAP** | **Queen** |
+
+**Lemma H.9.1 (endpoint value from out-of-band mass; PROVED (elementary)).** If λ_n ≥ ½, then |ψ_n(Λ)|² ≤ (64π)^{2/3} Λ (1 − λ_n)^{2/3}.
+*Proof.* Put g := g_n and v := |g(Λ)| = |ψ_n(Λ)|.
+- Bernstein and Cauchy–Schwarz: ‖g‖_∞ ≤ ‖ĝ‖_1 ≤ (2Λ)^{1/2}‖g‖_2 ≤ (2Λ)^{1/2}λ_n^{−1/2} ≤ 2Λ^{1/2}, and ‖g′‖_∞ ≤ 2πΛ‖g‖_∞ ≤ 4πΛ^{3/2} =: D.
+- So |g| ≥ v/2 on [Λ, Λ + v/(2D)], and ∫_{x>Λ}|g|² ≥ v³/(8D).
+- But ∫_{|x|>Λ}|g|² = 1/λ_n − 1 ≤ 2(1 − λ_n). Hence v³ ≤ 16D(1 − λ_n) = 64πΛ^{3/2}(1 − λ_n). ∎
+- *Grok audit (S103g), checked line by line.*
+  - Under ĝ(ξ) = ∫g e^{−2πixξ} with band |ξ| ≤ Λ (so c = 2πΛ²), ‖g‖_∞ ≤ ‖ĝ‖₁ ≤ (2Λ)^{1/2}‖g‖₂, and ‖g‖²₂ = 1/λ_n ≤ 2.
+  - Bernstein gives ‖g′‖_∞ ≤ 2πΛ‖g‖_∞. Since |g| is D-Lipschitz, the bound |g| ≥ v/2 on a length v/(2D) holds.
+  - ∫_{|x|>Λ}|g|² = (1 − λ_n)/λ_n.
+  - The exponent: (16D)^{2/3} = (64π)^{2/3}Λ. PROVED (elementary) stands.
+- With |I^{(K)}| ≤ |I_Λ| ≤ 4Λ² + O(log Λ) (Spectrum §4, index location; the even states are about half of these), this gives ε^{(K)} ≤ CΛ^{3−2K/3}.
+
+**(T2c) proof.** ‖g′‖²_∞ ≤ 16π²Λ³ (above), and ‖g″‖²_{L²(ℝ)} ≤ (2πΛ)⁴‖g‖²_2 ≤ 32π⁴Λ⁴. So q₂(ψ_n) ≤ CΛ⁵ for each n, and summing over ≤ 5Λ² indices gives CΛ⁷. ∎
+
+**Theorem H.9 (M1 on the trimmed space; PROVED-conditional on Thm H.1/H.1′ (PROVED (sketch)) and on the Lemma M1.1 extension (GAP-minor)).** Let κ_Λ ≤ CΛ^B and K ≥ 2B + 8. Then ℓ^{(K)}_Λ := ‖(1 − S_Λ)Q′^{(K)}_Λ‖²_HS ≤ CΛ^{−1}. Hence, by Theorem M1.A (which holds for any finite-rank projection Q′), for every f ∈ L¹ ∩ L²:
+
+  |Lk^{(K)}_Λ(f ∗ f^*)| ≤ C‖f‖₁² Λ^{−1} + C‖f‖₁‖f‖₂ Λ^{−1/2}(log Λ)^{1/2} → 0, including on the diagonal Λ = e^L.
+
+*Proof.* Run the proof of Theorem M1.C on B^{(K)}_{Λ,0} with σ = ½, but bound each remainder trace by the **smaller of two positive forms**. For X ≥ Λ, by Lemma M1.2:
+- Q1_X(φ) := 2∫_{|ξ|>X}|Fφ|² + (4/(π²X))|φ(Λ)|² ≥ ∫_{|ξ|>X}|R_φ|², because R = Fφ − jump and ∫_{|ξ|>X}|jump|² ≤ 2|φ(Λ)|²/(π²X).
+- Q2_X(φ) := q₂(φ)/(3π⁴X³) ≥ ∫_{|ξ|>X}|R_φ|², because (|φ′(Λ)|/2 + ‖φ″‖₁/4)² ≤ q₂(φ)/2 and ∫_{|ξ|>X} ξ^{−4} = 2/(3X³).
+
+Both are positive forms. So, as in M1.C, Σ_j ∫_{|ξ|>X}|R_{φ_j}|² ≤ κ^{(K)} min(Tr Q1_X, Tr Q2_X). By (T2a–c):
+- Tr Q1_X ≤ C(Λ^{2−K} + Λ^{3−2K/3}/X);
+- Tr Q2_X ≤ CΛ^7/X³.
+
+With X = mΛ, split at m = Λ^p, p := 2(B + 5)/3:
+
+  Σ_m m^{1/2} min(·, ·) ≤ C(Λ^{2−K+3p/2} + Λ^{2−2K/3+p/2} + Λ^{4−3p/2}).
+
+The jump part is 2κ^{(K)}ε^{(K)}/Λ ≤ CΛ^{B+2−2K/3}. Multiplying by κ^{(K)} ≤ CΛ^B, the four exponents are:
+- 2B + 7 − K;
+- (4B + 11 − 2K)/3 *(Grok audit S103g: was (4B + 8 − 2K)/3. Since p/2 = (B + 5)/3, the exponent is B + 2 − 2K/3 + p/2 = (4B + 11 − 2K)/3. This is still ≤ −5/3 at K = 2B + 8, so the conclusion is unchanged.)*;
+- −1;
+- B + 2 − 2K/3.
+
+All are ≤ −1 once K ≥ 2B + 8. ∎
+
+- B is absolute but not explicit, so K(B) = 2B + 8 is absolute, not explicit. Spectrum's optional exponent-1 endpoint bound would **not** change K(B): the binding constraint, 2B + 7 − K ≤ −1, comes from the tail term (T2b), not from the endpoints.
+- R-line H.9: R1 Λ-uniform, no L | R2 E's ℤ-sum only via the sawtooth (as in M1) | R3 n/a | R4 φ(0) = φ̂(0) = 0 kept | R5 fake-blind: the archimedean inputs are identical, and κ for DH/Epstein comes from H.1′ | R6 n/a.
+
+**(T3): trimming-harmless check, and M2-compatibility.**
+- *Exact reduction (PROVED, algebra).* Since Q′ = Q′^{(K)} + ΔQ, we have Tr(S Q′ S V(h)) − Tr(S Q′^{(K)} S V(h)) = Tr(S ΔQ S V(h)) = ‖V(f)^* S ΔQ‖²_HS ≥ 0. Define
+  **Conj Q.8.C^{(K)}** (CONJECTURE): Tr(S_Λ Q′^{(K)}_Λ S_Λ V(h)) = 2‖f‖² log Λ − 𝒮(f) + o(1). Then
+  **Q.8.C ⇔ Q.8.C^{(K)} ⇔ (T3): Tr(S_Λ ΔQ S_Λ V(h)) = o(1) for each fixed f ∈ C_c^∞.** (Each equivalence assumes the other side's statement; precisely, Q.8.C and Q.8.C^{(K)} differ by exactly this term.) *Grok audit (S103g): read the chain as "given Q.8.C, Q.8.C^{(K)} ⇔ (T3); given Q.8.C^{(K)}, Q.8.C ⇔ (T3)". The three statements are not mutually equivalent: (T3) alone implies neither conjecture. The algebra is exact, Tr(SΔQSV(h)) = ‖ΔQ S V(f)‖²_HS ≥ 0, because Q′^{(K)} ≤ Q′ are nested projections.*
+- *M2-compatibility (PROVED, same algebra).* S ⊖ S E(B^{(K)}) is S ⊖ S E(B) plus a piece of rank ≤ r_K, and its V(h)-trace exceeds M2's by exactly Tr(S ΔQ S V(h)). So M2 for the trimmed space has the **same** counting term 2‖f‖² log Λ − PV and the same zero-vector Gram/Poisson sum **iff (T3)**. M3 is unaffected, since the zero vectors live at fixed heights.
+- *Sufficient condition (PROVED, elementary).* For x ∈ L²(du), ‖V(f)^*x‖² = (1/2π)∫|f̂(s)|²|x̂(s)|² ds, and |f̂(s)| ≤ C_N(1+|s|)^{−N}. So, for S = log Λ,
+  Tr(S ΔQ S V(h)) ≤ r_K (‖f‖₁² ω_Λ(S) + C_N S^{−2N}), where ω_Λ(S) := sup over unit x ∈ ran(S_Λ ΔQ) of (1/2π)∫_{|s|≤S}|x̂|².
+  With r_K = O(K log²Λ), **(T3) ⇐ ω_Λ(log Λ) = o(1/log²Λ).**
+- *Reduction of ω_Λ to (T3a) + (T3b).*
+  - If x were E(φ) with φ ∈ span{removed ψ_n}, then x̂ ∝ ζ(½+is)Mφ(s). By the definition of m_Λ, ∫|ζ|²|Mφ|² ≥ m_Λ∫|Mφ|² ≥ cΛ^{−B}∫|Mφ|².
+  - With max_{|s|≤log Λ}|ζ(½+is)|² ≤ C log Λ, this gives ω ≤ CΛ^{B} log Λ · ω^{arch}_Λ(log Λ), which is o(1/log²Λ) under (T3a).
+  - The two real issues are:
+    - **(T3b)**: ran ΔQ is the E-orthogonal complement of E(B^{(K)}_0) inside E(B_0). Its φ's are not in the removed span; they are mixed with kept states through the E-Gram matrix.
+    - The S_Λ-cut, which smears s at scale 1/log Λ (harmless at height log Λ, but must be written).
+  - Owner Queen; GAP.
+- **Recommendation (OPINION).** Make the trimmed space the primary object of the program: Q.8.C^{(K)}, M2^{(K)}, M3^{(K)}. M1^{(K)} is now proved (modulo sketch/GAP-minor). (T3) is then needed only to identify the limit with Connes' own Q′_Λ.
+  - Reason: for Connes' untrimmed retention, M1 is **not** expected to follow from M1.A. Spectrum §5′ shows that the archimedean HS² leak of the full prolate span, with N pushed to the plunge, is ≍ (2/π²) log Λ, not small.
+  - M1 itself may fail at O(1) there. This is OPINION; there is no lower bound for ℓ_Λ (untrimmed) here.
+
+## H.10 (Z-avg⁻) under RH (flagged; one line only)
+
+**Under RH (flagged: barred from every route to RH by the circularity flag, and untestable on DH/Epstein, which violate RH):** (Z-avg⁻) keeps the status of H.4. It is CONJECTURE, expected via the RH-conditional Selberg/Soundararajan-type explicit formulae (HEURISTIC). Nothing in H.8–H.9 uses it.
+
+## H.11 Part II summary table
+
+| Claim | Label |
+|---|---|
+| Titchmarsh 9.6(B) real-part form, uniform on −1 ≤ σ ≤ 2; 9.2 zero count | PROVED (citation; page/strictness not re-verified this session, immaterial) |
+| Lemma H.2′ window average ≥ −C₁ log T log(e/a); off-line zeros only help | PROVED (citation + elementary) |
+| Cor H.2′′ (½, a)-thickness at level T^{−¼−2C₁ log(e/a)} | PROVED |
+| Thm H.1′ κ_Λ ≤ Λ^{B′}, B′ absolute; η-part O(log(e/a)) instead of O(1/a) | PROVED (sketch; constants untracked) |
+| a ≍ 1/log Λ gives only exp(O(log Λ log log Λ)) | PROVED (sketch; as a statement about the method) |
+| Λ^{o(1)} unreachable via 9.6(B) + 9.2 alone | PROVED (elementary; method limitation) |
+| H.2′/H.1′ for DH and Epstein (fake-blind) | PROVED (sketch) |
+| (T1) r_K ≤ (4/π² + o(1)) K log²Λ (corrects H.5's O(K log Λ)) | PROVED (citation: KRD via Spectrum §5) |
+| Lemma H.9.1 / (T2a) endpoint bound, ε^{(K)} ≤ CΛ^{3−2K/3} | PROVED (elementary) |
+| (T2b), (T2c) | PROVED |
+| Thm H.9: K ≥ 2B + 8 ⇒ ℓ^{(K)} ≤ CΛ^{−1}; M1 for the trimmed space, diagonal included | PROVED-conditional on Thm H.1/H.1′ (sketch) and the Lemma M1.1 extension (GAP-minor) |
+| Q.8.C ⇔ Q.8.C^{(K)} ⇔ (T3); M2-compatibility ⇔ (T3) | PROVED (algebra) |
+| (T3) ⇐ ω_Λ(log Λ) = o(1/log²Λ) | PROVED (elementary) |
+| (T3a) plunge-state low-Mellin mass ≤ Λ^{−B−2−δ} | HEURISTIC; requested from Spectrum (RH-silent) |
+| (T3b) E-transport of (T3a) to ran ΔQ and its S_Λ-cut | GAP (Queen) |
+| Conj Q.8.C^{(K)} | CONJECTURE (unconditional; not RH-equivalent) |
+| M1 for Connes' untrimmed space may fail at O(1) | OPINION |
+| (Z-avg⁻) under RH | flagged one-liner; barred; CONJECTURE/HEURISTIC |
 
 Not cited: ArithmeticTemperedPrincipalSeries, rh_iff_weil_pairedForm_nonneg, or any True-placeholder.
