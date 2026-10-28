@@ -26,32 +26,93 @@ Parent: ARP_spectrum-measure.md S(b)3.6–3.8 (this file opens the S(b)3.7 GAP).
   exactly like the pair form below. We use only the point-value form. The limit identity lim_Λ Δ_Λ = Σ m_ρ∫ĝ dμ_ρ is PROVED for
   function fields only (Connes 1999 §VIII Lemma 3), CONJECTURE for ℚ (G.4d), and **is not used here**.
 
-## 1. What Bombieri states, and what the secondary sources say (citations verified 2026-10-28)
+## 1. What Bombieri states, and what the secondary sources say (citation audit 2026-10-28, PDFs read with pdftotext)
 
-- **Bombieri 2000** (Rend. Lincei (9) 11, 183–233), abstract, verbatim: "if the Riemann Hypothesis is false but only with finitely
-  many non-trivial zeros off the critical line we show that the number of negative eigenvalues is precisely one-half of the number
-  of zeros failing to satisfy the Riemann Hypothesis, provided the truncation is big enough."
-  Introduction (verbatim excerpts, bdim.eu text via search index): the functional's "Fourier transform … is easily interpreted as a
-  quadratic form in infinitely many variables", "the eigenvalue 0 cannot occur for the finite dimensional approximations", and
-  "the results obtained for the finite dimensional case carry over to the infinite dimensional case, provided we deal with negative
-  eigenvalues bounded away from 0". The full PDF (bdim.eu) returned HTTP 500 again this session, so the theorem number, the exact
-  truncation, and the multiplicity convention are **not verified from the source**.
-- **Suzuki, arXiv 2606.09096 v3 (23 Sep 2026), "Weil's quadratic form via the screw function"** (read in full this session):
-  - restates Yoshida 1992 as cited: [Yoshida, Lemma 2] positivity for small a; [Lemma 3] positivity on K_N(a) of finite codimension;
-    [Theorem 2] RH ⇔ nondegeneracy on the completion of K(a); [Proposition 1] odd/even sectors;
-  - restates Bombieri as cited: [Bombieri 2000, Problem 1] (H_0^1(−a,a)) and [Problem 2] (L²(𝓔)); [Theorem 3] minimizer exists;
-    [Theorem 4] negative infimum attained in L²(−a,a); [Theorem 5] continuity of the even/odd infima (Suzuki: "details … not fully
-    provided"); [Lemma 1] Bombieri's Lagrangian; [Lemma 3] the explicit formula. Bombieri 2003 (CPAM 56, 1151–1164) Thms 4.3, 4.4;
-  - proves: Q_L = form of a self-adjoint A_L (Connes–Consani–Moscovici arXiv 2511.22755, Thm 3.6: lower bounded, discrete spectrum),
-    A_L = Friedrichs extension of D*G_L D (Thm 1.1); C_c^∞(−L, L) is a form core (Cor. 1.2); λ_L = min spec A_L is continuous in L
-    (Thm 1.3); for small L, λ_L > 0, simple, even eigenvector (Thm 1.4). The span of e^{iπnx/L} is a form core (Connes–Consani 2023,
-    Prop. 2.3, as cited by Suzuki).
+Labels: **verified** = statement quoted verbatim from the source PDF (arXiv) read this session; **via restatement** = only a
+secondary source's wording was checked (quoted verbatim from that secondary source). Changes made by this audit are listed in §1.9.
+
+1.1 **Bombieri 2000** (Rend. Lincei (9) 11, 183–233) — **via restatement** (full text bdim.eu HTTP 500 again; abstract/introduction
+  excerpts only, from the search index, verbatim): "if the Riemann Hypothesis is false but only with finitely many non-trivial zeros
+  off the critical line we show that the number of negative eigenvalues is precisely one-half of the number of zeros failing to
+  satisfy the Riemann Hypothesis, provided the truncation is big enough." Introduction excerpts: the functional's "Fourier transform
+  … is easily interpreted as a quadratic form in infinitely many variables", "the eigenvalue 0 cannot occur for the finite dimensional
+  approximations", "the results obtained for the finite dimensional case carry over to the infinite dimensional case, provided we
+  deal with negative eigenvalues bounded away from 0". Theorem number, exact truncation and multiplicity convention: **not verified**.
+  Numbered items as restated by Suzuki 2606.09096 (verbatim from Suzuki):
+  - "Bombieri [1, 2] addressed the minimization of the Rayleigh quotient on the Sobolev space H₀¹(−a, a) [1, Problem 1] (and
+    [2, Problem B]) and on L²(E) for a finite union of intervals E [1, Problem 2] (and [2, Problem A]). While the existence of a
+    minimizer for the lower bound on L²(E) was established in [1, Theorem 3] (and [2, Theorem 4.3]) … it was claimed in
+    [1, Theorem 5] that the lower bound varies continuously when the minimization is restricted to the subspaces of either even or
+    odd functions" (§1); "in [1, Theorem 5] (and [2, Theorem 4.4]) … their continuity with respect to a is asserted, but the details
+    of the proof are not fully provided there" (§2).
+  - "[1, Theorem 4] asserts that if this infimum is negative, then it is attained in L²(−a, a)" (§8.4).
+  - "[1, Lemma 3 and its proof]" (explicit formula), "[1, Lemma 1], [2, Sections 5–6]" (Lagrangian), "[2, Theorem 5.1]".
+  - Bombieri 2003 = [2] in Suzuki: "A variational approach to the explicit formula", Comm. Pure Appl. Math. 56 (2003), no. 8,
+    1151–1164 — via restatement.
+  Alpöge–Furman's attribution of the count (verbatim, verified in their PDF, §7.1): "That the negative index of finite truncations of
+  Weil's form equals the number of off-line zero pairs seen by the truncation was observed by Bombieri [Bom00] (Introduction); see also
+  Yoshida [Yos92] for the positivity of W on small support." §1.3: "The observation that the negative index of truncations of W counts
+  off-line pairs is Bombieri's [Bom00]". So "pairs" (distinct) is the secondary reading; Bombieri's own convention stays unverified.
+
+1.2 **Yoshida 1992** (On Hermitian forms attached to zeta functions, Adv. Stud. Pure Math. 21, 281–325) — **via restatement**
+  (Suzuki 2606.09096 §1, verbatim): "In [17, Proposition 1], Yoshida further demonstrated that the condition QW(v) ≥ 0 for all
+  non-zero odd functions v ∈ Cc∞(ℝ) implies RH, while a similar condition for all non-zero even functions implies RH except for
+  possible real zeros. … proving that it is positive for sufficiently small a > 0 [17, Lemma 2] or for appropriate subspaces K_N(a)
+  of finite codimension [17, Lemma 3]. The non-degeneracy of QW on the 'completion' K̂(a) (↪ L²(−a, a)) was shown to be equivalent
+  to RH in [17, Theorem 2]."
+
+1.3 **Suzuki, arXiv 2606.09096 v3, "Weil's quadratic form via the screw function"** — **verified** (verbatim):
+  - (3.1) "QW(v₁, v₂) = Σ_{γ∈Γ} m_γ v̂₁(γ) \overline{v̂₂(γ̄)}", Γ = zeros of z ↦ ξ(1/2 − iz), m_γ the multiplicity; f̂(z) = ∫f(x)e^{izx}dx
+    (same convention as ours; Suzuki's a = our L).
+  - Thm 1.1: "For each a > 0, the self-adjoint operator Aa defined by (1.1) is the Friedrichs extension of the symmetric operator Ba
+    defined by (1.6)."
+  - Cor 1.2: "For each a > 0, any function attaining the infimum in (1.7) belongs to the closure of Cc∞(−a, a) with respect to the
+    form norm associated with QW^a. In particular, λa is the infimum of the Rayleigh quotient ⟨Ba v, v⟩/∥v∥² over Cc∞(−a, a)."
+  - Thm 1.3: "The lowest eigenvalue λa is continuous in a."
+  - Thm 1.4: "For sufficiently small a > 0, the lowest eigenvalue λa is positive, simple, and satisfies λa = log(1/a) + µ1 − log(2π)
+    + ψ(2) − 1 + O(a) as a → 0+, for some constant µ1 > 0. Furthermore, the corresponding eigenfunction is even."
+  - Lemma 3.1 proof: "The space E is a core for the quadratic form QW^a [3, Proposition 2.3]", E = span{exp(iπnx/a)}.
   - Suzuki does **not** restate the negative-eigenvalue count.
-- **Alpöge–Furman, arXiv 2608.13637 (24 Aug 2026)** (accessible secondary restatement): "That the negative index of finite truncations
-  of Weil's form equals the number of off-line zero pairs seen by the truncation was observed by Bombieri [Bom00] (Introduction)"
-  (§7.1; also §1.3). Their Prop. 4.1 proves the inertia bound n_±(off-line part) ≤ #pairs via the pull-back of ⊕ m_ρ diag(1, −1),
-  i.e. **per distinct pair, independent of m_ρ**. (They also note DH and Epstein as controls, §1.4.)
-- **Yoshida 1992** (Adv. Stud. Pure Math. 21, 281–325): cited only through Suzuki 2206.03682 and 2606.09096 (numbers as above).
+
+1.4 **Connes–Consani–Moscovici, arXiv 2511.22755, "Zeta Spectral Triples"** — author list **verified** (Alain Connes, Caterina
+  Consani, Henri Moscovici). Verified verbatim: Thm 3.6 "The selfadjoint operator Aλ has discrete lower bounded spectrum."
+  Cor 3.7 "Let λ > 1. There exists an element ϕ ∈ L²([λ⁻¹, λ], d*u) such that Aλ(ϕ) = µλ ϕ where µλ is the largest lower bound of
+  the spectrum of Aλ." Their λ is the support cutoff: [λ⁻¹, λ] ↔ [−L, L], λ = e^L.
+
+1.5 **Connes–Consani 2023, "Spectral triples and ζ-cycles"**, Enseign. Math. 69 (2023), no. 1–2, 93–148 (= Suzuki's [3];
+  arXiv 2106.01715) — **verified** (arXiv v1 read). Prop 2.1: "Let λ > 1. The following formula defines a lower bounded lower
+  semi-continuous quadratic form QWλ : L²([λ⁻¹, λ], d*u) → (−∞, +∞]" (2.11; primes 1 < n ≤ λ²). Prop 2.3: "Let λ > 1. The quadratic
+  form QWλ : L²([λ⁻¹, λ], d*u) → (−∞, +∞] of (2.11) fulfills, for any f ∈ L²([λ⁻¹, λ], d*u), QWλ(f) = lim inf QWλ(gn),
+  gn ∈ C[U, U⁻¹], gn → f" (2.20); the proof uses "the density of C[U, U⁻¹] in the domain of QWλ for the graph-norm shown in
+  Lemma 2.2". This is the form-core statement Suzuki cites.
+
+1.6 **Suzuki, arXiv 2206.03682, "Aspects of the screw function corresponding to the Riemann zeta-function"**, J. Lond. Math. Soc.
+  108 (2023), no. 4, 1448–1487 — **verified**. Thm 6.1: "Suppose that the RH is false. Then there exists a0 > 0 and a
+  non-identically vanishing sequence of complex numbers {wγ}γ such that Σ_γ wγ (e^{iγt} − 1)/γ² = 0 on the interval (−a0, a0) as a
+  function of t." (Also Thm 1.3/1.4: RH ⇔ positivity / nondegeneracy on every window; Thm 1.5: G_g[a] trace class.)
+
+1.7 **Alpöge–Furman, arXiv 2608.13637, "More than two thirds of the zeros of the Riemann zeta function are simple and on the
+  critical line"** — **verified**. Lemma 3.1 (Inertia under pull-back): "Let Q0 be a Hermitian form on Cᵐ and A : Cᵈ → Cᵐ linear.
+  Then n+(A*Q0A) ≤ n+(Q0)." Prop 4.1 (Block structure): "P ⪰ 0 with rank P ≤ N0*(I′) and tr P ≤ N0(I′); and n+(Q) ≤ ½ #off."
+  Proof: "pair off as {ρ, 1 − ρ̄} … Q is the pull-back of ⊕_pairs mρ diag(1, −1), whose positive index is the number of pairs".
+  NB their bound is on the **positive** index n₊ in their sign normalization (our negative index after the sign flip); it is per
+  distinct pair, independent of mρ. §1.4: "insensitive to o(N) off-line zeros and hold for Davenport–Heilbronn and Epstein zeta
+  functions".
+
+1.8 **Weil 1952** (explicit formula / positivity ⇔ RH) — via restatement (Alpöge–Furman §1.2, verbatim: "its positivity on all of
+  Cc²(ℝ) is equivalent to the Riemann hypothesis [Wei52, Bom00]").
+
+1.9 **Changes made by this audit** (2026-10-28):
+  - (i) A–F Prop 4.1: wording corrected from "n_±(off-line part) ≤ #pairs" to the exact "n+(Q) ≤ ½ #off" (positive index in their
+    normalization; #off counts off-line zeros as a set, so ½#off = #pairs). No dependent label changes (G2.1 is proved here directly).
+  - (ii) Connes–Consani 2023 Prop 2.3: upgraded from "as cited by Suzuki" to verified; full reference added. The "GAP (citation)" in
+    G2.4's truncation-matching paragraph is narrowed to Bombieri's own truncation only.
+  - (iii) CCM 2511.22755: author list verified; Thm 3.6 and Cor 3.7 quoted. No change of number.
+  - (iv) Bombieri [1, Theorem 4] ("negative infimum attained in L²(−a, a)"): checked — it **is** in Suzuki (§8.4), so kept, now quoted.
+  - (v) Yoshida and Bombieri 2000/2003: labelled via restatement; reference details (pages, CPAM title) taken from Suzuki's list.
+  - (vi) Suzuki 2206.03682: journal reference added (JLMS 108 (2023) 1448–1487); Thm 6.1 quoted; G2.5 use unchanged (the identification
+    of jump points with Thm 6.1's degeneracy stays CONJECTURE).
+  - No cited statement was found missing, so no step label was downgraded.
 
 ## 2. Statements
 
@@ -111,7 +172,7 @@ If ζ has only finitely many off-line zeros, then with p = #{distinct ρ : Re ρ
 - **Matching to Bombieri's truncation.** "Truncation big enough" = (support parameter t = L ≥ L*_p) and (finite-dim compression large
   enough, G2.0). With G2.0, Bombieri's statement for any truncation scheme that exhausts a form core of the window space is equivalent
   to (b)+(c). Whether his truncations are of that kind (likely the exponential/Fourier basis on [−t, t], which is a form core by
-  Connes–Consani 2023 Prop. 2.3 via Suzuki) is **GAP (citation)** only; (a)–(e) do not depend on it.
+  Connes–Consani 2023 Prop. 2.3 + Lemma 2.2, verified §1.5) is **GAP (citation)** only for Bombieri's own text; (a)–(e) do not depend on it.
 R1 no effective L*_p; finite-window data cannot bound p | R2 FE only (pairing); no Euler product ⇒ no RH content | R3 — | R4 onset is
 governed by E_L (soft-mode energy) | R5 see §3: any fake satisfying H_fin obeys the same count; fakes with p = ∞ are outside H_fin.
 
@@ -152,10 +213,9 @@ same degeneracy point as Suzuki Thm 6.1; not checked).
   any certified window. A certified window positivity (e.g. the 2.84 replay, 4cf1bfd) gives κ_ζ(L) = 0 there and nothing about p.
 - What separates ζ from DH is not the count (G2.4 is fake-blind) but whether p = 0, i.e. RH itself.
 
-## 4. Discrepancy flagged
-- KREIN_LANGER_S97.md §A.1 says κ(∞) = #{ρ : Re ρ > ½} "(multiplicity)". By G2.1 the Weil form's negative index counts **distinct**
-  zeros (a pole of i(ξ′/ξ)(½ − iz) in ℂ₊ is simple whatever m is, so the generalized-Nevanlinna count is also per distinct zero).
-  Not edited here (one file per commit); suggested fix: replace "(multiplicity)" with "(distinct zeros)".
+## 4. Discrepancy flagged (resolved)
+- KREIN_LANGER_S97.md §A.1 said κ(∞) = #{ρ : Re ρ > ½} "(multiplicity)". By G2.1 the Weil form's negative index counts **distinct**
+  zeros (a pole of i(ξ′/ξ)(½ − iz) in ℂ₊ is simple whatever m is). Fixed on this branch in commit 1cc191b (distinct pairs, citing G2.4).
 
 ## 5. Remaining gap
 1. **GAP (citation):** Bombieri 2000's exact truncation, theorem number, and multiplicity convention (full text inaccessible; bdim.eu 500).
@@ -166,11 +226,15 @@ same degeneracy point as Suzuki Thm 6.1; not checked).
 4. No RH content: G2.4 is a counting identity, true for every L-function-like object with H_fin. RH ⇔ p = 0 ⇔ κ_Q ≡ 0 (Weil) is unchanged
    and OPEN.
 
-## References (checked this session unless marked)
+## References (label per §1)
 - E. Bombieri, Remarks on Weil's quadratic functional in the theory of prime numbers, I, Rend. Lincei (9) Mat. Appl. 11 (2000) 183–233
-  (abstract and introduction only; full text not accessible). E. Bombieri, CPAM 56 (2003) 1151–1164 (as cited by Suzuki).
-- M. Suzuki, Weil's quadratic form via the screw function, arXiv:2606.09096 v3 (2026). M. Suzuki, arXiv:2206.03682.
-- L. Alpöge, R. Furman, arXiv:2608.13637 (2026), §§1.3, 1.4, Prop. 4.1, §7.1.
-- H. Yoshida, On Hermitian forms attached to zeta functions, Adv. Stud. Pure Math. 21 (1992) (via Suzuki).
-- A. Connes, C. Consani, H. Moscovici, arXiv:2511.22755, Thm 3.6 (via Suzuki). A. Connes, C. Consani (2023), Prop. 2.3 (via Suzuki).
+  — via restatement. E. Bombieri, A variational approach to the explicit formula, Comm. Pure Appl. Math. 56 (2003) 1151–1164 — via restatement.
+- M. Suzuki, Weil's quadratic form via the screw function, arXiv:2606.09096 v3 (2026) — verified.
+- M. Suzuki, Aspects of the screw function corresponding to the Riemann zeta-function, J. Lond. Math. Soc. 108 (2023) 1448–1487,
+  arXiv:2206.03682 — verified.
+- L. Alpöge, R. Furman, arXiv:2608.13637 (2026), §§1.2–1.4, Lemma 3.1, Prop. 4.1, §7.1 — verified.
+- H. Yoshida, On Hermitian forms attached to zeta functions, Adv. Stud. Pure Math. 21 (1992) 281–325 — via restatement (Suzuki).
+- A. Connes, C. Consani, H. Moscovici, Zeta Spectral Triples, arXiv:2511.22755, Thm 3.6, Cor 3.7 — verified.
+- A. Connes, C. Consani, Spectral triples and ζ-cycles, Enseign. Math. 69 (2023) 93–148, arXiv:2106.01715, Props 2.1, 2.3 — verified.
+- A. Weil 1952 — via restatement (Alpöge–Furman).
 - H. Davenport, H. Heilbronn, J. London Math. Soc. 11 (1936) (not re-checked). B. Rodgers, T. Tao, Forum Math. Pi 8 (2020) (not re-checked).
