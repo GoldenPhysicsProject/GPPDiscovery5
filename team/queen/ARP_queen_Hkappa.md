@@ -347,7 +347,9 @@ These carry over to the fakes as follows.
 | (T2b) tails | ∫_{|ξ|>X} |Fψ_n|² ≤ ∫_{|ξ|>Λ} |Fψ_n|² = 1 − λ_n ≤ Λ^{−K} for X ≥ Λ | PROVED (M1.1 bullet; definition of I^{(K)}) | done |
 | (T2c) smoothness | Σ_{n∈I^{(K)}} q₂(ψ_n) ≤ CΛ^7, with q₂(φ) := |φ′(Λ)|² + Λ‖φ″‖²_{L²[−Λ,Λ]} | PROVED (Bernstein; below) | done |
 | (T3a) archimedean low-Mellin mass of the removed states | ω^{arch}_Λ(S) := sup over unit φ ∈ span{ψ_n : n ∈ I_Λ \ I^{(K)}} of ∫_{|s|≤S} |Mφ|² / ∫|Mφ|² ≤ Λ^{−B−2−δ} for S = log Λ (any polynomial rate faster than Λ^{−B−2} suffices) | HEURISTIC (plunge states live in phase space near |x| ≈ Λ, |ξ| ≈ Λ, i.e. at Mellin height s ≍ 2πΛ², H.1b) | **Spectrum (requested; RH-silent)** |
+| ~~(T3a)~~ → (T3a*) *(Part III)* | **Withdrawn**: the rate Λ^{−B−2−δ} and the edge-localization premise are expected FALSE (Spectrum 65bba74: plunge states oscillate at |ξ| ≈ Λ at all x; low-Mellin fraction ≍ (log Λ)/Λ²). Replaced by the trace-form (T3a*), 𝒟_rem(s) ≤ C r_K(1+|s|)^AΛ^{−2}, H.13.3 | CONJECTURE (Spectrum: HEURISTIC + NUMERICAL) | Spectrum (after Arb work) |
 | (T3b) E-transport | the E-orthogonal complement of B^{(K)}_{Λ,0} in B_{Λ,0}, and its S_Λ-cut, inherit (T3a) up to a factor Λ^{O(1)} | **GAP** | **Queen** |
+| (T3b) *(Part III)* | reduced to (PD) (profile domination; GAP) + (L) (HEURISTIC); worst case closes iff B < 2 | see H.13 | Queen |
 
 **Lemma H.9.1 (endpoint value from out-of-band mass; PROVED (elementary)).** If λ_n ≥ ½, then |ψ_n(Λ)|² ≤ (64π)^{2/3} Λ (1 − λ_n)^{2/3}.
 *Proof.* Put g := g_n and v := |g(Λ)| = |ψ_n(Λ)|.
@@ -430,10 +432,213 @@ All are ≤ −1 once K ≥ 2B + 8. ∎
 | Thm H.9: K ≥ 2B + 8 ⇒ ℓ^{(K)} ≤ CΛ^{−1}; M1 for the trimmed space, diagonal included | PROVED-conditional on Thm H.1/H.1′ (sketch) and the Lemma M1.1 extension (GAP-minor) |
 | Q.8.C ⇔ Q.8.C^{(K)} ⇔ (T3); M2-compatibility ⇔ (T3) | PROVED (algebra) |
 | (T3) ⇐ ω_Λ(log Λ) = o(1/log²Λ) | PROVED (elementary) |
-| (T3a) plunge-state low-Mellin mass ≤ Λ^{−B−2−δ} | HEURISTIC; requested from Spectrum (RH-silent) |
+| (T3a) plunge-state low-Mellin mass ≤ Λ^{−B−2−δ} | **withdrawn (Part III)**: expected FALSE per Spectrum 65bba74; replaced by (T3a*) at rate r_K/Λ² |
 | (T3b) E-transport of (T3a) to ran ΔQ and its S_Λ-cut | GAP (Queen) |
+| (T3b) *(Part III)* | reduced to (PD) (profile domination; GAP) + (L) (HEURISTIC); worst case closes iff B < 2 | see H.13 | Queen |
 | Conj Q.8.C^{(K)} | CONJECTURE (unconditional; not RH-equivalent) |
 | M1 for Connes' untrimmed space may fail at O(1) | OPINION |
 | (Z-avg⁻) under RH | flagged one-liner; barred; CONJECTURE/HEURISTIC |
+
+Not cited: ArithmeticTemperedPrincipalSeries, rh_iff_weil_pairedForm_nonneg, or any True-placeholder.
+
+---
+
+# Part III (2026-10-28): (T3b) E-transport, profile-weighted; density extension of Lemma M1.1
+
+Against GPPDiscovery5 main `9cd3187` (Part II audited SOUND, merged at f847b98; the lead's fixes are kept). Analytic only: **no numerics were run by Queen.** RH is OPEN. Nothing here assumes RH.
+Spectrum input: team/spectrum-measure `65bba74`, T3a_plunge_mellin.md (credit: God of the Spectrum & Measure Theory). (T3a) itself is Spectrum's job, after their Arb work. Below I only **state the interface I need** from it.
+
+**Part III headline.**
+- **(B) closed.** Lemma M1.1 holds on all of B_{Λ,0} (truncated prolates, with φ(0) = φ̂(0) = 0). Mellin–Plancherel and κ are well defined there. PROVED (H.12; Dirichlet–Jordan + Mellin mollification).
+  - So Theorem H.9 (M1 for the trimmed space) is now **PROVED-conditional only on Theorem H.1/H.1′ (PROVED (sketch))**. The GAP-minor is gone.
+- **(T3a) corrected.** My Part II request (T3a): ω^{arch} ≤ Λ^{−B−2−δ}, together with its HEURISTIC premise (plunge states localized near |x| ≈ Λ), is **withdrawn**.
+  - Spectrum 65bba74 shows that plunge states oscillate at |ξ| ≈ Λ at *all* x. Their model |M cos(c·)|² = π/(2c) is PROVED. Their low-Mellin fraction is ≍ (log Λ)/Λ² (CONJECTURE: HEURISTIC + NUMERICAL).
+  - New interface **(T3a*)**, a basis-free **Mellin density of states** of the removed span at the corrected rate r_K/Λ².
+- **(T3b) profile-weighted transport (H.13).** **Theorem H.13 (PROVED-conditional):** (T3a*) + (PD) + (L) ⇒ Tr(S_Λ ΔQ S_Λ V(h)) = O(K (log Λ)^{A+2} Λ^{−2}) + o(1) → 0, **with no Λ^B loss and no B < 2 condition**.
+  - (L) is the low-pass of the leak. Its jump (sawtooth) part is PROVED; this is exactly where the integers enter. The rest of (L) is HEURISTIC.
+  - **(PD), profile domination of the E-orthonormalized complement, is the one remaining GAP (Queen).** This is where the ζ-weight enters. It is supported by fixed-weight mean values (Hardy–Littlewood / Balasubramanian–Ramachandra; PROVED pieces H.13.3) rather than by the worst-case m_Λ.
+  - The worst-case route (PROVED) closes only if B < 2, matching Spectrum's T4.
+- Fake-blind (DH, Epstein): every ingredient is a second-moment, Poisson/FE, or archimedean statement. So this stays **RH-silent**.
+
+## H.12 (B) Density extension of Lemma M1.1 to B_{Λ,0}: PROVED
+
+Setting: φ ∈ B_{Λ,0}, i.e. even, supported in [−Λ, Λ], smooth on [−Λ, Λ] (a finite combination of truncated prolates), with a jump of size φ(Λ) at ±Λ, φ(0) = 0 and φ̂(0) := ∫φ = 0. Write E(φ)(u) := e^{u/2} Σ_{n≠0} φ(n e^u). For each u this is a finite sum, defined at all u with Λe^{−u} ∉ ℤ, using midpoint values at jumps.
+
+**Step 1 (the pointwise Poisson identity, without density; PROVED).** For x > 0 with Λ/x ∉ ℤ:
+
+  Σ_{n≠0} φ(nx) = x^{−1} lim_{N→∞} Σ_{0<|k|≤N} Fφ(k/x).
+
+*Proof.* g(t) := Σ_{n∈ℤ} φ(x(t + n)) is 1-periodic and of bounded variation, since locally it is a finite sum of BV functions. Its Fourier coefficients are ∫_ℝ φ(xy)e^{−2πiky}dy = x^{−1}Fφ(k/x).
+- By the Dirichlet–Jordan test (Zygmund, *Trigonometric Series*, Vol. I, Ch. II §8; theorem number not re-verified this session), the symmetric partial sums at t = 0 converge to ½(g(0+) + g(0−)).
+- This equals g(0) unless some nx = ±Λ, i.e. unless Λ/x ∈ ℤ.
+- The **pole terms** are the n = 0 and k = 0 terms, φ(0) and x^{−1}Fφ(0) = x^{−1}φ̂(0). Both vanish by the constraints. ∎
+
+With x = e^u this is E(φ)(u) = E(Fφ)(−u) (symmetric summation) for a.e. u. That is Lemma Q.8.2 on B_{Λ,0}, with **no density argument needed** for the identity itself.
+
+**Step 2 (the leak formula; PROVED).** For u < −log Λ, substitute y = e^{−u}:
+
+  ‖(1 − S_Λ)E(φ)‖² = ∫_{−∞}^{−log Λ} |e^{−u/2} Σ_{n≠0} Fφ(n e^{−u})|² du = ∫_Λ^∞ |Σ_{n≠0} Fφ(ny)|² dy,
+
+with the symmetric sum. Lemma M1.2 then splits it into:
+- the sawtooth part: boundedly convergent, Σ_{n≥1} sin(2πnΛy)/n = π(½ − {Λy}) for Λy ∉ ℤ;
+- an absolutely convergent remainder, |R(ξ)| ≪ ξ^{−2}.
+
+So the right side is finite, and Lemma M1.1 holds as stated on B_{Λ,0}.
+
+**Step 3 (consistency with the closure of E, and Mellin–Plancherel on B_{Λ,0}; PROVED).**
+- **Decay of Mφ.** F_φ(u) = e^{u/2}φ(e^u) has F_φ′ ∈ L¹ apart from one jump of size Λ^{1/2}φ(Λ) at u = log Λ. So |Mφ(s)| ≤ (‖F_φ′‖₁ + Λ^{1/2}|φ(Λ)|)/|s|.
+- With ∫_{|s|≤T}|ζ(½+is)|² ≪ T log T (Hardy–Littlewood; Titchmarsh §7.3), this gives ‖φ‖²_ζ := (1/2π)∫|ζ(½+is)|²|Mφ(s)|² ds < ∞.
+- **Approximation.** Let ρ_k ∈ C_c^∞(ℝ_+^*) be a multiplicative approximate identity (∫ρ_k d^*y = 1, supp ρ_k → {1}), and put φ_k(x) := ∫ φ(x/y)ρ_k(y) d^*y.
+  - φ_k is even and C_c^∞; the jump is smoothed. Since φ is smooth near 0, φ_k is smooth at 0.
+  - φ_k(0) = φ(0) = 0 and ∫φ_k = φ̂(0)·∫yρ_k(y)d^*y = 0. So φ_k ∈ S_0^ev.
+  - Mφ_k = Mφ · Mρ_k with |Mρ_k| ≤ 1 and Mρ_k → 1 pointwise. By dominated convergence, ‖φ_k − φ‖_ζ → 0.
+  - *Grok audit (S103g), small fix.* With x = yz one gets M(φ_k)(s) = Mφ(s)·∫ρ_k(y)y^{½+is}d^*y. So the multiplier is bounded by ∫ρ_k y^{½}d^*y ≤ sup_{supp ρ_k} y^{½}, which is → 1 and ≤ 2 for large k; it is not ≤ 1 as stated. Either normalize ∫ρ_k y^{½}d^*y = 1, or use the bound 2. Dominated convergence is unaffected, and so is ∫φ_k = φ̂(0)∫yρ_k d^*y = 0.
+- **Identification of the limit.** On S_0^ev, ‖E(·)‖² = 2‖·‖²_ζ-type (M1.4; Connes 1999 §III), so E(φ_k) is Cauchy in L²(du).
+  - Its limit equals the pointwise E(φ) a.e.: E(φ_k)(u) → E(φ)(u) at every u with Λe^{−u} ∉ ℤ, since these are finite sums and φ_k → φ at continuity points. Pass to an a.e.-convergent subsequence.
+  - Hence the closure of E coincides with the pointwise E on B_{Λ,0}. Mellin–Plancherel, ‖E(φ)‖² = (2/π)∫|ζ(½+is)|²|Mφ(s)|² ds (M1.4 normalization, using ∫|Mφ|² = π‖φ‖²), holds on B_{Λ,0}. So does the definition of κ_Λ.
+- **Continuity of both sides of M1.1 in ‖·‖_ζ (the alternative route).**
+  - LHS: ‖(1 − S)E(·)‖ is ‖·‖_ζ-continuous.
+  - RHS: by Step 1, the RHS equals the LHS identically, so it is continuous as well. No separate continuity estimate is needed.
+- **Status.** The GAP-minor in M1 (Lemma M1.1 extension) is **closed: PROVED**.
+
+**Effect.** Theorem H.9 (M1^{(K)} for K ≥ 2B + 8) becomes PROVED-conditional on Theorem H.1/H.1′ only. Since those are PROVED (sketch), M1^{(K)} is **PROVED (sketch)**.
+R-line H.12: R1 Λ-uniform | R2 Poisson (FE half) only, through the ℤ-sum | R3 n/a | R4 the pole terms φ(0) and φ̂(0) are exactly what vanish | R5 DH: periodic a_n, so the Poisson dual is the FE-dual periodic sequence (Gauss sums), and the same BV argument applies; Epstein: 2-dimensional Poisson on the lattice, BV in each fibre | R6 exact identity.
+
+## H.13 (T3b) E-transport, profile-weighted
+
+### H.13.0 Prior art (checked in local copies: /workspace/queen/papers)
+- **Connes–Consani, arXiv 2106.01715 ("Spectral triples and ζ-cycles"), §3 "Eigenfunctions and the prolate projection Π(λ,k)".**
+  - E on S_0^ev, (3.1), and the Poisson relation E(f̂)(x) = E(f)(x^{−1}), (3.2), quoted: "E(f̂)(x) = E(f)(x^{−1}), ∀f ∈ S_0^ev".
+  - Slepian–Pollak prolates as the "approximate intersection" P_λ ∩₀ P̂_λ, used to build the near-radical of QW_λ.
+  - They give **no** conditioning, leak, or trimming estimates for E on the prolate span. (T3b) is not there.
+- **Connes–Consani, arXiv 2006.13771 ("Weil positivity and trace formula, the archimedean place"; Selecta 2021), Lemma 1.4, Prop. 1.5 and the justification after (33).**
+  - The **commutator trace-class technique**: "it is enough … to show that the commutator [P, ϑ_m(f)] is of trace class". Here ϑ_m(f) is multiplicative convolution, i.e. a Mellin multiplier f̂(s), and P is a cutoff. The kernel of [P, T] is (P(λ) − P(μ))k(λ, μ).
+  - I use this in H.13.2 for [S_Λ, V(f)]. It is trace class with a Λ-independent norm, because the kernel is (1_S(u) − 1_S(v))f(u − v) at two boundary points. It is used **only as bookkeeping**: an O(1) bound, not o(1).
+- **Connes–Consani–Moscovici, arXiv 2310.18423 ("Zeta zeros and prolate wave operators").**
+  - Semilocal prolate operators, Sonin spaces, and the Jacobi-matrix form of W_λ in the Mellin picture. Abstract: the negative spectrum reproduces "the ultraviolet behavior" of the zeros, and the Sonin space corresponds to it.
+  - This is consistent with Spectrum's finding that transition-band states spread across all Mellin heights. There is **no** E-conditioning estimate.
+- **Conclusion.** No prior art bounds the E-transport of low-Mellin mass. (T3b) is new as stated.
+
+### H.13.1 Exact structure (PROVED)
+- Let R₀ := B_{Λ,0} ⊖_{L²} B^{(K)}_{Λ,0}, the L²-orthogonal complement inside B_{Λ,0}. Then dim R₀ = dim B_{Λ,0} − dim B^{(K)}_{Λ,0} ≤ r_K + 2.
+- R₀ ⊂ span{removed ψ_n} ⊕ span{k₀, k₁}, where k₀ := Σ_{kept} ψ_n(0)ψ_n and k₁ := Σ_{kept}(∫ψ_n)ψ_n are the constraint-correction vectors in the kept span.
+- Since E is injective, E(B_{Λ,0}) = E(B^{(K)}_{Λ,0}) ∔ E(R₀), so
+
+  ran ΔQ = (1 − Q′^{(K)}) E(R₀) = E(R̃), R̃ := {φ ∈ B_{Λ,0} : Eφ ⊥ E(B^{(K)}_{Λ,0})}.
+
+- Let (φ_i) be a basis of R̃ that is orthonormal for the **E-inner product**, so (Eφ_i) is an ONB of ran ΔQ. Then, exactly,
+
+  Tr(S ΔQ S V(h)) = Σ_i ‖V(f)^* S E φ_i‖²  (H.13.a)
+
+### H.13.2 Where each ingredient enters
+
+Split S Eφ_i = Eφ_i − (1 − S)Eφ_i. Then (H.13.a) ≤ 2Σ_i‖V^* Eφ_i‖² + 2Σ_i‖V^*(1 − S)Eφ_i‖².
+
+**(i) The ζ-weight enters here, exactly (PROVED, Mellin–Plancherel via H.12):**
+
+  Σ_i ‖V(f)^* Eφ_i‖² = c₀ ∫ |f̂(s)|² |ζ(½+is)|² 𝒟(s) ds (c₀ absolute, M1.4 normalization), where 𝒟(s) := Σ_i |Mφ_i(s)|².
+
+𝒟 is basis-free for the E-inner product on R̃: it is the diagonal of the kernel of the E-orthogonal projection, in Mellin form. Since f is fixed and |f̂| decays faster than any power, only |s| ≤ Λ^ε matters. The tail is ≤ C_N Λ^{−2Nε} Σ_i‖Eφ_i‖² = C_N Λ^{−2Nε}(r_K + 2).
+
+**(ii) The integers (sawtooth, Lemma M1.2) enter here: the low-pass of the leak.** By H.12, for u < −log Λ, (1 − S)Eφ(u) = e^{−u/2} Σ_{n≠0}Fφ(ne^{−u}), the jump part plus the remainder.
+- **Jump part (PROVED, elementary).** It equals 2φ(Λ)e^{u/2}(½ − {Λe^{−u}}). Its Fourier transform in u at frequency s is 2φ(Λ)Λ^{½−is} ∫_{Λ²}^∞ w^{−3/2+is}(½ − {w}) dw (substitute y = e^{−u}, then w = Λy).
+  - ½ − {w} has mean 0 and a bounded primitive (≤ 1/8). One integration by parts gives modulus ≤ C|φ(Λ)|(1 + |s|)Λ^{−5/2}.
+  - Hence ‖V^*·jump‖² ≤ C_f |φ(Λ)|² Λ^{−5}.
+  - **This is the only use of ℤ, and it helps:** the sawtooth's mean zero kills the low-s content.
+  - Summed over an L²-ONB this is ≤ C_f Λ^{−5} Σ|ψ_n(Λ)|² ≤ C_f Λ^{−2} (Lemma H.9.1 and |I_Λ| ≤ 5Λ²). Over the E-ONB (φ_i) there is an extra factor sup‖φ_i‖²_{L²}; see (PD).
+- **Remainder part: input (L), HEURISTIC.** Σ_i ‖V^*·(remainder leak of Eφ_i)‖² = O(r_K Λ^{−2}(log Λ)^{O(1)}).
+  - Reason: by Poisson the leak near u = −log Λ is y^{1/2}Fφ(y) with y ≳ Λ. The out-of-band tail of a prolate oscillates at frequency ≈ Λ with a slowly varying amplitude. In u this is Mellin frequency ≍ Λ², so the low-pass gains Λ^{−2} per integration by parts.
+  - A proof needs derivative bounds on the non-oscillatory amplitude of the tail. That is an archimedean, RH-silent input (Spectrum type). Crude Bernstein bounds do **not** suffice, because they lose Λ per derivative.
+- **[S, V(f)] (CC 2006.13771 technique; PROVED, O(1) only).** Moving S through V costs ‖[S, V(f)]‖₁ ≤ C_f, uniformly in Λ. It is not used for the o(1) claim. It is recorded because the naive "Tr(SΔQSV) ≈ Tr(ΔQV)" is false to O(1) without (ii).
+
+**(iii) Where κ would enter (worst case; PROVED).** E-orthonormality gives ‖φ_i‖²_{L²} ≤ κ_Λ. Hence 𝒟(s) ≤ κ_Λ · sup_{unit φ∈R̃}|Mφ(s)|²·(r_K + 2). Also the φ_i are not in the removed span: they carry kept components Q′^{(K)}-feedback. Combined with Spectrum's corrected ω^{arch}, the worst case gives (T3) only if Λ^{B−2}(log Λ)^{O(1)} = o(1), i.e. **B < 2**. This is PROVED given (T3a*), and agrees with Spectrum 65bba74 T4. B is not explicit, so the worst case does not close.
+
+### H.13.3 The profile-weighted route (avoids Λ^B)
+
+**Interface requested from Spectrum: (T3a*), at the corrected rate.** CONJECTURE (Spectrum: HEURISTIC + NUMERICAL, 65bba74 §§1–2). First-principles proof: GAP on their side.
+
+  𝒟_rem(s) := Σ_{n ∈ I_Λ \ I^{(K)}} |Mψ_n(s)|² ≤ C_A r_K (1 + |s|)^{A} Λ^{−2} for |s| ≤ Λ^{ε}, and ∫𝒟_rem = π r_K.
+
+- This is the **trace** (basis-free) form. It is weaker than a sup over the span, and it is exactly what (H.13.a) consumes.
+- It matches the model |M cos(c·)|² = π/(2c), c = 2πΛ², and the measured per-state low-Mellin fraction (0.1–0.2)(log Λ)/Λ² at S = log Λ.
+- The same bound is asked for k₀ and k₁ (the two constraint-correction vectors), with r_K replaced by O(1). Spectrum's ψ_n(0)² = O(1) is relevant here (NUMERICAL).
+
+**Input (PD), profile domination (GAP; owner Queen; this is where the ζ-weight must be used against the actual profile).** For |s| ≤ Λ^{ε},
+
+  𝒟(s) = Σ_i |Mφ_i(s)|² ≤ (log Λ)^{A} (𝒟_rem(s) + 𝒟_{k₀,k₁}(s)).
+
+In words, the E-orthogonal complement R̃, normalized in the E-norm, has low-s Mellin density no larger than the removed prolates themselves, up to a polylog.
+
+*Grok audit (S103g) of H.12: SOUND, PROVED.*
+- Step 1: g is 1-periodic BV with coefficients x^{−1}Fφ(k/x). Dirichlet–Jordan gives the symmetric sums at every point. The Zygmund theorem-number caveat stays.
+- Step 2: the substitution y = e^{−u} is right. The leak lives only on u < −log Λ, since E(φ)(u) = 0 for u > log Λ.
+- Step 3: |Mφ| ≤ TV(F_φ)/|s|, which is finite because F_φ → 0 at −∞. The approximate identity lands in S_0^ev: φ_k is even and C_c^∞, φ_k(0) = 0 and ∫φ_k = 0. The Cauchy-limit identification uses finite sums at continuity points. One multiplier-bound wording fix is noted above.
+
+*Grok audit (S103g) of H.13.1–H.13.2.*
+- Checked: dim R₀ ≤ r_K + 2; R₀ ⊂ removed ⊕ span{k₀, k₁}, since the kept-span complement of B^{(K)}_0 is spanned by the projections of δ₀ and 1; ran ΔQ = E(R̃); (H.13.a), with V(h) = V(f)V(f)^*; and (i) via Mellin–Plancherel (H.12).
+- Jump formula checked: the sawtooth gives 2φ(Λ)e^{u/2}(½ − {Λe^{−u}}). The transform is Λ^{½−is}∫_{Λ²}^∞ w^{−3/2+is}(½ − {w})dw. One integration by parts with the primitive bounded by 1/8 gives (1 + |s|)Λ^{−5/2}, hence C_f|φ(Λ)|²Λ^{−5}.
+- **Gap in the proof of Thm H.13 (label correction).** The jump sum over the E-ONB needs Σ_i|φ_i(Λ)|², or Σ_i‖φ_i‖²_{L²}. (PD) as stated controls 𝒟 only on |s| ≤ Λ^ε, so it does not give ∫𝒟 = πΣ_i‖φ_i‖². The fix is to state (PD) in integrated form as well: **Σ_i‖φ_i‖²_{L²} ≤ (log Λ)^A(r_K + 2)**. Then |φ_i(Λ)|² ≤ 4Λ‖φ_i‖² (Bernstein, λ ≥ ½, as in H.9.1) makes the jump sum ≤ C_f(log Λ)^A r_K Λ^{−4}. Thm H.13 is therefore PROVED-conditional on (T3a*) + (PD, including this integrated form) + (L), at the stated rate.
+- **Worst case (iii) (label correction).** R̃ is not contained in the removed span plus span{k₀, k₁}: the φ_i carry kept feedback χ_i. So "(T3) ⇐ (T3a*) if B < 2" is **not** PROVED given (T3a*) alone. It also needs the worst-case transport of the kept feedback (Part II's (T3b)). This matches S&M T4 as audited (65bba74 note: T4 also needs (T3b) and the T2 upper bound). B < 2 is a necessary condition on this route, not a sufficient one, and B′ is not explicit.
+- **Status: (T3) is NOT proved.** It is reduced to (T3a*) (CONJECTURE, Spectrum) + (PD) (GAP, Queen) + (L) (HEURISTIC).
+
+**Theorem H.13 (PROVED-conditional on (T3a*), (PD), (L)).** For fixed f ∈ C_c^∞:
+
+  Tr(S_Λ ΔQ S_Λ V(h)) ≤ C_f (log Λ)^{A} r_K Λ^{−2} ∫|f̂|²|ζ(½+is)|²(1 + |s|)^{A} ds + O(r_K Λ^{−2}(log Λ)^{O(1)}) + o(1) = O(K(log Λ)^{A+2}Λ^{−2}) → 0.
+
+*Proof.*
+- (H.13.a) with (i): use (PD), then (T3a*). ∫|f̂|²|ζ|²(1+|s|)^A < ∞ because f̂ is Schwartz and |ζ(½+is)| ≪ (1+|s|)^{1/6}.
+- The leak terms: (ii), using the jump part (PROVED) and (L). The factor ‖φ_i‖²_{L²} in the jump sum is absorbed by (PD) as well, via Plancherel ‖φ_i‖² = (1/π)∫|Mφ_i|².
+- r_K = O(K log²Λ) by (T1). ∎
+
+So (T3) closes **without B < 2**, given (T3a*), (PD) and (L). Then Q.8.C ⇔ Q.8.C^{(K)}, read as in the lead's audit: given either one, the other ⇔ (T3). M2-compatibility follows.
+
+**Evidence for (PD): what is PROVED, and what is HEURISTIC.**
+- *(PD-1) Lower E-norm for flat profiles; PROVED (citation: Balasubramanian–Ramachandra via Prop H.4).* If |Mρ|² is θ-flat at scale H ≥ C log log Λ on its support, then ‖Eρ‖² ≥ cθ log H·‖ρ‖².
+  - So E-normalization *shrinks* flat profiles, by 1/log H. It does not inflate them by Λ^B.
+  - This replaces m_Λ by a fixed-weight mean, which is exactly Spectrum's point (65bba74 T5): the plunge profile is spread, so B–R and short-interval second moments apply to it, unlike the minimum.
+- *(PD-2) Upper mean; PROVED (citation: Hardy–Littlewood mean value, Titchmarsh §7.3, plus Lemma H.2′ style windowing).* For a profile with |Mρ|² ≤ C‖ρ‖²Λ^{−2} on |s| ≤ CΛ² and negligible beyond, ∫|ζ|²|Mρ|² ≤ C log Λ·‖ρ‖².
+- *(PD-3) The obstruction: kept feedback; GAP.*
+  - φ_i = ρ_i − χ_i, where χ_i ∈ B^{(K)} is the ζ-weighted best approximation of ρ_i by kept states.
+  - If |ζ|² were constant, χ_i = 0, since kept ⊥ removed in L². So χ_i is driven only by the **fluctuation** |ζ|² − (mean). In the approximate functional equation, the off-diagonal terms (m/n)^{is}, m ≠ n, are the ℤ-structure of E again, now as dilation-correlations ⟨ρ_i(m·/n), χ⟩.
+  - (PD) asks that this feedback not move Mellin mass from the flat, height-≍Λ² bulk into |s| ≤ Λ^ε beyond a polylog factor.
+  - HEURISTIC support: |ζ|² is diagonal in s, the removed profiles are already flat in s, and the slowly varying mean part has trace-class commutators with prolate projections (CC 2006.13771 technique). So the feedback should be s-local.
+  - What is missing is a **Mellin-local inverse bound for the ζ-weighted Gram on B_{Λ,0}**: a Demko–Moss–Smith-type decay statement for its inverse in the s-variable, with condition-number loss only polylog on the low band. I do not have it. Label: **GAP**.
+- **Honest summary.** (T3b) is reduced to one named statement, (PD). The κ-free route requires it. The worst-case route is PROVED but closes only if B < 2.
+
+### H.13.4 Fake-blindness (R5): RH-silent
+- **Davenport–Heilbronn.** Every step has a DH analogue with DH's own data.
+  - (H.13.a) is exact for any E_a(φ) = x^{1/2}Σa_nφ(nx).
+  - (i) uses Mellin–Plancherel with |f_DH|² in place of |ζ|².
+  - (ii) uses Poisson with the FE-dual periodic sequence. The sawtooth becomes a mean-zero periodic function (finite Fourier series of period 5 times sawtooths). Same bound.
+  - (PD-1): B–R's σ + 2 method needs only a Dirichlet series anchor and convexity; sketch.
+  - (PD-2): Montgomery–Vaughan mean value with |a_n| ≤ 1 gives ∫_0^T|f_DH|² ≪ T log T.
+  - Off-line zeros of DH play no role anywhere.
+- **Epstein ζ_Q.** Same, with 2-dimensional lattice Poisson. The leak's periodic part becomes a lattice-point discrepancy, which is mean-zero but larger. HEURISTIC for the analogue of (ii); the rest is the same.
+- Hence Theorem H.13 is fake-blind as a reduction. (T3), and with it M1/M2 compatibility, carries **no RH content**. That is consistent with Q.8.C being "unconditional, not RH-equivalent".
+
+R-line H.13: R1 Λ-uniform, no L | R2 Poisson through the sawtooth (ii); the Euler product only through ζ's mean values (Hardy–Littlewood, B–R) | R3 n/a | R4 pole terms vanish (H.12), and the constraint vectors k₀, k₁ are tracked | R5 fake-blind | R6 the reduction (H.13.a) is exact.
+
+## H.14 Part III summary table
+
+| Claim | Label |
+|---|---|
+| H.12 Step 1: pointwise Poisson for BV compactly supported φ, symmetric sums, pole terms vanish | PROVED (citation: Dirichlet–Jordan, Zygmund Vol. I Ch. II §8; thm no. not re-verified) |
+| H.12: Lemma M1.1 and Mellin–Plancherel/κ on B_{Λ,0}; closure of E = pointwise E | PROVED |
+| ⇒ the GAP-minor in M1 is closed; Thm H.9 (M1^{(K)}) is PROVED-conditional on H.1/H.1′ only, i.e. PROVED (sketch) | PROVED (sketch) |
+| (T3a) at Λ^{−B−2−δ} and its "edge-localized" premise | **withdrawn**; expected FALSE (Spectrum 65bba74: CONJECTURE, HEURISTIC + NUMERICAL) |
+| (T3a*) 𝒟_rem(s) ≤ C r_K(1+|s|)^A Λ^{−2} on |s| ≤ Λ^ε (trace form, corrected rate) | CONJECTURE; requested from Spectrum (RH-silent) |
+| H.13.1 ran ΔQ = (1 − Q′^{(K)})E(R₀) = E(R̃); trace formula (H.13.a) | PROVED |
+| H.13.2(i) ζ-weight enters as ∫|f̂|²|ζ|²𝒟 | PROVED (exact) |
+| H.13.2(ii) jump/sawtooth leak low-pass ≤ C_f|φ(Λ)|²Λ^{−5} (mean-zero sawtooth) | PROVED (elementary) |
+| (L) remainder leak low-pass O(r_KΛ^{−2}polylog) | HEURISTIC (needs tail-amplitude derivative bounds; archimedean) |
+| ‖[S_Λ, V(f)]‖₁ ≤ C_f (CC 2006.13771 technique) | PROVED (O(1) bookkeeping only) |
+| Worst-case transport: (T3) ⇐ (T3a*) if B < 2 | PROVED-conditional on (T3a*) **and** worst-case kept-feedback transport (Grok audit S103g); agrees with Spectrum T4 as audited |
+| (PD) profile domination of the E-orthonormal complement | **GAP (Queen)**: needs a Mellin-local inverse bound for the ζ-weighted Gram |
+| (PD-1) flat profiles: ‖Eρ‖² ≥ cθ log H‖ρ‖² | PROVED (citation: B–R via Prop H.4) |
+| (PD-2) flat profiles: ‖Eρ‖² ≤ C log Λ‖ρ‖² | PROVED (citation: Hardy–Littlewood, Titchmarsh §7.3) |
+| Thm H.13: (T3a*) + (PD) + (L) ⇒ (T3), rate O(K(log Λ)^{A+2}Λ^{−2}), no B < 2 | PROVED-conditional; (PD) also needed in integrated form Σ‖φ_i‖² ≤ (log Λ)^A(r_K + 2) for the jump sum (Grok audit S103g) |
+| **(T3) itself** | **NOT proved** (reduced to (T3a*) CONJECTURE + (PD) GAP + (L) HEURISTIC) |
+| H.13 fake-blind (DH, Epstein) ⇒ RH-silent | PROVED (sketch) as a reduction |
+| Prior art (CC 2106.01715 §3, CC 2006.13771 §1, CCM 2310.18423) contains no (T3b) | checked in local copies |
 
 Not cited: ArithmeticTemperedPrincipalSeries, rh_iff_weil_pairedForm_nonneg, or any True-placeholder.
