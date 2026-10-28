@@ -665,16 +665,17 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
 14. **S103g (P.14):**
    - The p = 2 edge form is **not** the 2-adic Tate reflection restricted. It is the edge compression of the m = 1 time delay γ₂^*[U, γ₂] in the Q-norm (PROVED).
    - The even-help / odd-charge split comes from J = V(2)P (archimedean-global).
-   - Sign fix for the N.13.4 D_L edge block (+c₂(1/ℓ − ℓ/24)σ_x); still needed on main 9cd3187. The exact constant is (1/ℓ − ℓ/24). *(Reworded S103h: the G.4h item-2 display was already correct in 5354fde, and the complaint about it was written against 3470f1f and is withdrawn.)*
+   - Sign fix for the N.13.4 D_L edge block (+c₂(1/ℓ − ℓ/24)σ_x). It was applied on main by Prime's erratum N.14.0(a) (656de12, merged 77730c4), so P.14 no longer asks for it. The exact constant is (1/ℓ − ℓ/24). *(Reworded S103h: the G.4h item-2 display was already correct in 5354fde, and the complaint about it was written against 3470f1f and is withdrawn.)*
 
 15. **S103h (P.15):**
    - The {2,3} prediction of P.14.8 is refined: per-line constants are confirmed, and "P-parity decides per line" is refuted at the p = 3 entry (PROVED). The orbit-closed node set is forced.
    - The Q.8.E weight-1 block has spectrum {0, ±c₂/ℓ}. Positive line blocks cost exactly c₂·g(0) (sharp). A separable (I2) is equivalent to a global S2 (PROVED); its truth is a GAP.
    - Status: C.14 is merged; C.14.K is a CONJECTURE; the C.14.A indicative failure is NUMERICAL (Celestial's). Piece 4 is the sole odd payer, in band-split form.
+   - N.14.3 cross-check: the identities agree. "No 1/ℓ₃ term from the 2-line" holds in ‖ξ′‖_∞ but not in H-energy. (L4) is consistent with P.14.3. The N.13.4 D_L sign was fixed by N.14.0(a), so nothing is left open from P.14.
 
 ## P.14 The p = 2 line as local Tate data: is Prime's edge form the 2-adic Tate reflection? (S103g; analytic only; [Cel]/[Q], support track L, Λ = 1)
 Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OPEN. Nothing in P.14 proves or implies RH.** On the range treated here (2L ∈ (log 2, log 4)), ζ ≡ P_X for X ≥ 2, so everything is **RH-silent**. Positivity on the range is already CERTIFIED (Mori-conditional, main 992a011); P.14 is about **mechanism**.
-- **Sources** (read this session): main 3470f1f (ARP G.4g, G.4h; §N N.12–N.13 merged), team/celestial-cft 9f0473b (§C.13, C.13.B, Lemma C.13.B, Conj C.13.H), team/queen ARP_queen_M1.md, ARP_queen_Q8.md (Q.8.E (I1)–(I2)). *Status update (S103h, main 9cd3187):* Celestial §C.14 has been merged since c7c94ee (merge a4153a8) and is no longer pending. Its coupling bound Thm C.14.B is PROVED, Conjecture C.14.K is a CONJECTURE, and Celestial's indicative C.14.A check (team/celestial-cft ff3a9dc, not yet on main) is NUMERICAL/indicative. See P.15.3.
+- **Sources** (read this session): main 3470f1f (ARP G.4g, G.4h; §N N.12–N.13 merged), team/celestial-cft 9f0473b (§C.13, C.13.B, Lemma C.13.B, Conj C.13.H), team/queen ARP_queen_M1.md, ARP_queen_Q8.md (Q.8.E (I1)–(I2)). *Status update (S103h, main 9cd3187):* Celestial §C.14 has been merged since c7c94ee (merge a4153a8) and is no longer pending. Its coupling bound Thm C.14.B is PROVED, Conjecture C.14.K is a CONJECTURE, and Celestial's indicative C.14.A check (ff3a9dc, merged 220f19c) is NUMERICAL/indicative. Prime §N.14 is merged (77730c4), and S&M's CERT_p2_constants is merged (9d72bbb). Main is now b104678. See P.15.3.
 - **Notation** (ξ-coordinates, as N.12.0/N.13): a = log 2, c₂ = Λ(2)·2^{−1/2} = a/√2, 2c₂ = 0.98026, ℓ = 2L − a, S₋ = [−L, −L + ℓ], S₊ = S₋ + a, J x = −a − x on S₋, P x = −x (global inversion; the I of F = I∘u, CC (25)), τ_a f(x) = f(x + a) =: V(2) (dilation by 2 in u = log|x|), ‖u‖²_H = ∫(u′² + ¼u²).
   - Q_L(Qh) = R(ξ) − 2c₂B(ξ), B(ξ) = ⟨ξ, τ_aξ⟩_H = (1/2π)∫(¼ + t²)cos(ta)|ξ̂|² (N.12.1, C.13.A).
 - **Credits.** Prime (N.12.3 parity/J split, N.13.4 ramp form), Celestial (C.13 T7–T9, C.13.B (3a)–(3d)), Golden Eye (J-commutation; the G.4h sign and −ℓ/24 points), Queen (Q.8.E).
@@ -691,8 +692,8 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
     - (iv) the −ℓ/24 term is the ¼ of Q, from the global pole pair, not 2-adic.
 - **Sign (Golden Eye (1)), PROVED from first principles (P.14.5):** even edge pairs are **helped** and odd pairs are **charged** exactly 2c₂α²(1/ℓ − ℓ/24).
   - As a contribution to Q_L, or as a block of D_L, the sign is **+**: Q_L gains +2c₂(1/ℓ − ℓ/24)α₋α₊. G.4h item 2 on main has read exactly this since 5354fde, and it is correct. *(Reworded S103h. The first version of this bullet called the G.4h display wrong; it was written against 3470f1f, was out of date, and is withdrawn.)*
-  - N.13.4's D_L bullet "−c₂(1/ℓ − ℓ/24)·[[0,1],[1,0]]" is still on main 9cd3187 (§N.13.4, "In D_L language" sub-bullet) and still has the **wrong sign**. It must be +c₂(1/ℓ − ℓ/24)σ_x, with eigenvalue + on the even pair, as Celestial C.14.1 also records.
-  - The text "even helped, odd charged" (N.13.4, G.4g, G.4h) is **right**. Only the N.13.4 D_L-matrix bullet needs fixing.
+  - N.13.4's D_L bullet "−c₂(1/ℓ − ℓ/24)·[[0,1],[1,0]]" had the wrong sign. It must be +c₂(1/ℓ − ℓ/24)σ_x, with eigenvalue + on the even pair, as Celestial C.14.1 also records. *(S103h: fixed on main by Prime's erratum N.14.0(a), 656de12. Nothing is left to fix.)*
+  - The text "even helped, odd charged" (N.13.4, G.4g, G.4h) is **right**.
 
 ### P.14.2 Local Tate data at p = 2 in the ζ-sector — PROVED (Tate thesis §2; elementary) [Q]
 - **Schwartz–Bruhat side.** On S(ℚ₂), with ψ₂ standard and vol(ℤ₂) = 1, F₂1_{ℤ₂} = 1_{ℤ₂} and F₂1_{2^kℤ₂} = 2^{−k}1_{2^{−k}ℤ₂}.
@@ -757,7 +758,7 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
   - **Wrong sign:** N.13.4's "D_L … is the matrix −c₂(1/ℓ − ℓ/24)·[[0,1],[1,0]] in (α₋, α₊)" should be **+c₂(1/ℓ − ℓ/24)σ_x**, since D_L carries −c₂(V + V^*) and ⟨ramp₋, τ_a ramp₊⟩_H < 0.
   - *Grok audit (S103g): main 5354fde had already fixed the G.4h item-2 display. It now reads "contribution to Q_L … +2c₂(1/ℓ − ℓ/24)α₋α₊". This section was written against 3470f1f. The N.13.4 D_L-bullet finding is confirmed: team/prime-number-theory/ARP_prime-number-theory.md, §N.13.4 "Interface form", second-bracket sub-bullet.*
   - *Withdrawn (S103h):* the earlier claim that G.4h item 2's display had the (IF)-side sign. On main 5354fde and later it reads "contribution to Q_L … +2c₂(1/ℓ − ℓ/24)α₋α₊", which is correct. The complaint referred to 3470f1f.
-  - "Charged exactly 2c₂α²(1/ℓ − ℓ/24)" (Golden Eye (2)) is now on main in G.4h item 2 and the P.14 record. N.13.4 still says "exactly 2c₂α²/ℓ" in two places (the "no smaller cost" and "Odd entry" bullets); that is the upper bound, not the exact value. The parity verdict is unchanged.
+  - "Charged exactly 2c₂α²(1/ℓ − ℓ/24)" (Golden Eye (2)) is now on main in G.4h item 2 and the P.14 record. N.13.4's two "exactly 2c₂α²/ℓ" occurrences were corrected by erratum N.14.0(a). The parity verdict is unchanged.
   - **Consistency check on the identification:** a genuine Θ₂-restriction would give the same sign on both parities, contradicting the PROVED help/charge split. This independently confirms P.14.4 item 3.
 
 ### P.14.6 Support: isotypic decomposition of −c₂S(V(2) + V(2)^*)S — PROVED (elementary) [Cel]
@@ -784,7 +785,7 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
 | G.4h piece | what P.14 adds | label |
 |---|---|---|
 | 1 strip-localized cone (Lemma C.13.B, ℓ ≤ 0.119) | the harm there is the V(2) = +1 piece; absorbed by Ω's high band. No 2-adic input beyond (a, c₂) | PROVED (bookkeeping) |
-| 2 edge traces (ramps) | the form is the edge compression of the m = 1 time delay of γ₂ (P14.1) in the Q-norm. The help/charge split comes from J∘P (archimedean-global), not Θ₂. Sign: Q_L gains +2c₂(1/ℓ − ℓ/24)α₋α₊ (as in G.4h item 2 since 5354fde); the N.13.4 D_L edge block should be +c₂(1/ℓ − ℓ/24)σ_x (still to fix on main). Exact constant (1/ℓ − ℓ/24), with −ℓ/24 = ¼-mass term of Q | PROVED |
+| 2 edge traces (ramps) | the form is the edge compression of the m = 1 time delay of γ₂ (P14.1) in the Q-norm. The help/charge split comes from J∘P (archimedean-global), not Θ₂. Sign: Q_L gains +2c₂(1/ℓ − ℓ/24)α₋α₊ (as in G.4h item 2 since 5354fde); the N.13.4 D_L edge block is +c₂(1/ℓ − ℓ/24)σ_x (fixed by N.14.0(a), 656de12). Exact constant (1/ℓ − ℓ/24), with −ℓ/24 = ¼-mass term of Q | PROVED |
 | 3 coupling 2R(ξ_b, ξ_s) | Celestial C.14 merged (c7c94ee): Thm C.14.B PROVED, C.14.C obstructions PROVED, closure reduced to Conj C.14.K (CONJECTURE) + m₀^e. P.14 adds nothing 2-adic here | GAP N.G2-bulk |
 | 4 archimedean margin at ½ log 2 | the odd cost cannot be paid 2-adically (no sign split in Θ₂), so it must be R's margin. The ℓ-independent frame version (Thm C.14.A) indicatively fails on 7.4 ≲ \|t\| ≲ 13 (Celestial ff3a9dc, NUMERICAL/indicative); the band-split routes remain (P.15.3) | PROVED (as stated); value GAP N.G2-m₀ |
 
@@ -827,17 +828,17 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
 
 ## P.15 The {2, 3} window, the Q.8.E weight-1 block and its (I2) choice, and the status of piece 4 after C.14 (S103h; analytic only; [Cel]/[Q]/[S&M])
 Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OPEN. Nothing in P.15 proves or implies RH.** On 2L ≤ log 4 we have ζ ≡ P_X for X ≥ 3, so everything here is **RH-silent**. Positivity on the range is already CERTIFIED (Mori-conditional, main 992a011); P.15 is about **mechanism**.
-- **Sources** (read this session, main 9cd3187):
+- **Sources** (read this session; written on main 9cd3187 and revised on main b104678):
   - ARP G.4g/G.4h (with the lead's Q.8.E factor-ℓ fix);
   - team/queen/ARP_queen_Q8.md, Conjecture Q.8.E (I1)–(I3) and Lemma Q.8.5, whose notation is used in P.15.2;
   - Celestial §C.14 (merged a4153a8, audited c7c94ee);
   - Celestial's indicative C.14.A evaluation at team/celestial-cft ff3a9dc (**not yet on main**; cited as hers, NUMERICAL/indicative);
   - Prime §N.13 (611e39a).
-- **Prime §N.14 is not pushed.** No §N.14 exists on origin/team/prime-number-theory (head 611e39a) or on main 9cd3187. P.15.1 is therefore written as an input for N.14, not as a check against it.
+- **Prime §N.14 is merged** (cf4ee37/656de12, merge 77730c4, audit b104678). It was not on main when the first version of this section (641b63c) was written. P.15.1 now cross-checks N.14.3, answering its interface request N.14.4 "Principal: cross-check the per-line ramp constants and the (L4) chain". S&M CERT_p2_constants (merged 9d72bbb) is used in P.15.3.
 - **Notation** as in P.14: ‖u‖²_H = ∫(u′² + ¼u²), B_p(ξ) := ⟨ξ, τ_{log p}ξ⟩_H, c_p := Λ(p)p^{−1/2}, so c₂ = log 2/√2 and **c₃ = log 3/√3**. a₂ = log 2, a₃ = log 3, ℓ_p := 2L − log p.
 - **Method.** The algebraic identities in P.15.1 were also checked symbolically and exactly (sympy, piecewise integration with symbolic L; `B2 − hand = 0`, `B3 − hand = 0`). This is a check of the algebra, not exploratory numerics. Decimal values below are one-line evaluations of closed forms.
 
-### P.15.1 The two lines on 2L ∈ (log 3, log 4]: per-line constants and the strip-overlap interaction (with Prime's N.14; N.14 not yet pushed) — PROVED [Cel]
+### P.15.1 The two lines on 2L ∈ (log 3, log 4]: per-line constants and the strip-overlap interaction (with Prime's §N.14.3, merged 77730c4) — PROVED [Cel]
 On this range, Q_L(Qh) = R(ξ) − 2c₂B₂(ξ) − 2c₃B₃(ξ). At 2L = log 4 the p = 4 term sits at the boundary of supp h and vanishes.
 
 **Lemma P.15.A (orbit-closed node set).** Put x₁ := L − log 3, w := −L + log(3/2) and x₂ := L − log 2. Then
@@ -891,6 +892,27 @@ So the strip-overlap interaction is concrete. **The p = 2 line couples the p = 3
   - Both costs sit at frequency ~π/ℓ₃, where Ω is large. So an analogue of Lemma C.13.B (strip-localized absorption by the high band of Ω) is the natural tool. **The constant to beat per unit energy is ½(c₃ + √(c₃² + 4c₂²)) = 0.9009, not c₃** (CONJECTURE that this is the sharp S1-type constant at the p = 3 entry; the upper bound is PROVED on the ramp space only).
   - No 2-adic or 3-adic local reflection appears as the commuting symmetry. This is consistent with P.14.4 and confirms that part of the prediction.
 
+**Cross-check with Prime §N.14.3 (merged 77730c4) — PROVED [Cel].**
+- **Agreement.** The following agree with N.14.3, as identities:
+  - the strip geometry (G), including 2L < log 4.5;
+  - the 3-edge block +c₃(1/ℓ₃ − ℓ₃/24)σ_x and the odd charge 2c₃β²(1/ℓ₃ − ℓ₃/24) (= B₃ in Thm P.15.B, with β₋ = v₁);
+  - B₂(ξ_s) = 0 for Prime's ξ_s ∈ H¹₀(3-strips) (τ_{log 2} maps I₁ onto −I₃, not onto a 3-strip);
+  - the symmetry statement (S).
+- **Prime's 2-line derivative term is the hyperbolic term of Thm P.15.B.**
+  - In our nodes, a − L = −x₂ and L + a − b = −w, so Prime's (2β₋/ℓ₃)[ξ(L + a − b) − ξ(a − L)] = σ(2v₁/ℓ₃)(v₂ − v₃).
+  - "No 1/ℓ₃ term from the 2-line" is right relative to ‖ξ′‖_{L∞}: the term is 2β₋ times a mean slope.
+  - It is **not** lower order relative to the H-energy. A profile with a kink at scale ℓ₃ on the central piece I₃ (|v₃ − v₂| ~ |v₁|) has mean slope ~|v₁|/ℓ₃ there. The term is then of the same order 1/ℓ₃ as the 3-edge block, and the combined order-1/ℓ₃ block is the indefinite σ(1/ℓ₃)[[2c₃, 2c₂], [2c₂, 0]] above.
+  - Prime's interface form is exact and puts this term inside Q^{(≤2)}(ξ_b), since his ξ_b contains the central pieces. So both statements are correct: they measure the 2-line term in different norms.
+- **Consequence for Prime's {2, 3} odd-entry CONJECTURE.**
+  - The odd 3-charge must be paid together with the 2-line's 1/ℓ₃-coupling to the central pieces. The worst per-energy odd charge of the two lines on the joint ramp space is **0.9009, not c₃ = 0.6343**.
+  - The even sector at the 3-entry has a charged direction (−0.2666 per unit energy).
+  - Both live at frequency ~π/ℓ₃, so they are high-band objects: a C.13.B-type absorption, not the low-band (≤ 2) margin, is the natural payer.
+  - This sharpens the Grok caveat that Q^{(≤2)} on the larger window is the P₂ form, not known to be ≥ 0. It does not refute the conjecture. REMARK.
+- **(L4) chain against the P.14 normalization (PROVED).**
+  - The p² = 4 line is the m = 2 mode of (P14.1): Λ(4)·4^{−1/2}(V(2)² + V(2)^{−2}) = c₄(V(2)² + V(2)^{*2}), with c₄ = (log 2)/2.
+  - Its weight-1 trace block is −(c₄/ℓ₄)S_Λ(V(2)² + V(2)^{*2})S_Λ, with ℓ₄ = |S ∩ (S − 2a)| = 2L − log 4. In the form picture its edge block is +c₄(1/ℓ₄ − ℓ₄/24)σ_x. Both agree with N.14.3 (L4).
+  - Prime's KMS note: Σ_{m≠0} r^{|m|}e^{imat}·log 2 = φ₂′(t) exactly (P14.1), with r = 2^{−1/2}. So the "full 2-adic multiplier −log 2(P_r(at) − 1)" is −φ₂′, the 2-adic time delay, and its Toeplitz sections are the KMS matrices. This is consistent with P.14.3, and no Tate reflection is involved (P.14.4).
+
 ### P.15.2 Q.8.E: the weight-1 (I1) block and the (I2) choice, in Queen's notation — PROVED [Q]
 Queen's notation (Q.8.E): Λ = e^L, S_Λ = 1_{[−L, L]}, V(u) is the translation group on L²(ℝ_u), and V(f) = ∫f(u)V(u)du. (I1) reads Q_L(f) = Tr(D_L V(f)V(f)^*) for real f ∈ 𝒯_L, with D_L S_Λ V(f) Hilbert–Schmidt. (I2) reads D_L ≥ 0. Let g := f ∗ f^*. For real f, g is even and supported in [−2L, 2L]. For bounded D with kernel D(x, y),
 > Tr(D V(f)V(f)^*) = ∫ d_D(b)g(b)db,  d_D(b) := ∫D(x, x + b)dx (the diagonal sums; g even, so the orientation of b drops out).
@@ -939,6 +961,11 @@ The p = 2 term of Q_L is −c₂(g(a) + g(−a)), with a = log 2.
   - Inputs: 1 − κ^{odd}_{L₀} = 0.58 (Golden Eye sinc-kernel proxy, not proved), so 2ε′(1⁺)·0.58 = 26.68.
   - With σ_S ≥ max(0, 2θ′ − B/(¼ + t²)), the C.14.A symbol inequality fails on |t| ∈ [7.37, 11.78] (B = 46, worst deficit 0.222) and on [7.37, 12.96] (B = 66, deficit 0.267).
   - That is, it **fails around 7.4 ≲ |t| ≲ 13**: the ε-term 26.68/(¼ + t²) drops below c₂ beyond 7.37, and 2θ′ < c₂ below 10.26.
+  - *Superseded (main b104678; NUMERICAL).* With the actual K_L, δ_o⁰ = 0.3135 (Prime N.14.1), so the ε-term is 14.42/(¼ + t²). The failing band widens to **≈ [5.41, 13.6]**, with worst deficits 0.345 (B = 46) and 0.369 (B = 66). The 0.58 proxy overestimated the gap about 1.85×.
+  - *New certified input (S&M CERT_p2_constants, merged 9d72bbb; CERTIFIED, Arb):*
+    - odd (K2) holds on 2L ∈ (log 2, log 2 + 0.028], CC-free, with Q_L ≥ 0.0126‖ξ‖²_H;
+    - m₀^odd(L₀) ≥ 0.46255 (H-margin, O(1)).
+    - The frame route is off the odd critical path on that sub-window.
 - **What it means for piece 4 as the only payer of the odd cost 2c₂α²(1/ℓ − ℓ/24).**
   1. *What fails is the ℓ-independent, globally charged route, not piece 4 itself (PROVED, bookkeeping).*
      - C.14.A charges the line by its Fejér minimum −c₂ at **every** frequency. By P.15.2 this global charge is all a translation-invariant (multiplier or trace-picture) block can do.
@@ -950,10 +977,11 @@ The p = 2 term of Q_L is −c₂(g(a) + g(−a)), with a = log 2.
      - So for small ℓ the odd cost can be charged in the high band, and only the bulk low band needs the L²-gap δ_o⁰.
   3. *Consequence (PROVED as bookkeeping; values GAP).*
      - Piece 4 remains the **only** payer of the odd cost. P.14 shows there is no 2-adic payer; P.15.1 shows none appears from p = 3 either, since the {2,3} odd entry is worse; and Cor C.14.D shows the odd sector needs no coupling bound, so piece 3 is not on the odd critical path.
-     - But piece 4 must now be paid in **band-split, ℓ-dependent form**: S&M Thm 2.1/(3.3) with δ_o⁰ (polynomial range), C.13.H′, or Thm N.13.A with m₀^o (exponential range). It cannot be paid in the ℓ-independent frame form, unless S&M's σ_S clears c₂ − 2ε′(1⁺)(1 − κ^{odd}_{L₀})/(¼ + t²) on 7.37 ≤ |t| ≤ 13.
+     - On 2L ∈ (log 2, log 2 + 0.028] piece 4 **is paid**, CERTIFIED (S&M CERT_p2_constants: S1 + (Ω5) + Lemmas A/B, a band-type argument, CC-free). That is a band-split payment, consistent with this item.
+     - Beyond log 2 + 0.028 the odd entry is open analytically (CERTIFIED only conditional on Mori). Piece 4 must there be paid in **band-split, ℓ-dependent form**: S&M Thm 2.1/(3.3) with δ_o⁰ (polynomial range), C.13.H′, or Thm N.13.A with m₀^o (exponential range). It cannot be paid in the ℓ-independent frame form, unless a certified σ_S clears c₂ − 2ε′(1⁺)(1 − κ^{odd}_{L₀})/(¼ + t²) on the band (≈ [5.41, 13.6] with δ_o⁰ = 0.3135, NUMERICAL).
      - For the band-split route, the threshold must be T ≳ 13 (where σ_S ≥ c₂(1 + η) is plausible). This shrinks the range through ν_T(ℓ) ∝ T³ℓ³. The range is a GAP until δ_o⁰ and σ_S are supplied.
   4. *For Queen (Q.8.E):* by P.15.2, a separable (I2) is the global-charging route, so the same indicative failure applies to its pointwise version. Q.8.E's D_L near the p = 2 entry should be built band-split, coupling the line block to the ε-part. REMARK.
-- **Display fix still open on main 9cd3187:** N.13.4's D_L bullet should read +c₂(1/ℓ − ℓ/24)σ_x (Prime's file; not touched here). The G.4h item-2 complaint is withdrawn (P.14.1, P.14.5).
+- **Display fixes: none open.** Prime's erratum N.14.0(a) (656de12) fixed N.13.4's D_L bullet. The G.4h item-2 complaint is withdrawn (P.14.1, P.14.5).
 
 ### P.15.4 Labels and R-line
 | item | label | track |
@@ -970,7 +998,10 @@ The p = 2 term of Q_L is −c₂(g(a) + g(−a)), with a = log 2.
 | separable (I2) ⇒ R ≥ c₂‖·‖²_H on 𝒯_L (global S2) | PROVED; truth GAP (HEURISTIC false) | [Q]/[S&M] |
 | trace picture cannot localize to H(E) | PROVED | [Q] |
 | C.14 merged; C.14.K | CONJECTURE (hers) | [Cel] |
-| C.14.A symbol inequality fails on ≈ 7.4 ≤ \|t\| ≤ 13 | NUMERICAL (indicative; hers, ff3a9dc) | [S&M] |
+| C.14.A symbol inequality fails on ≈ 7.4 ≤ \|t\| ≤ 13 (proxy 0.58); ≈ [5.41, 13.6] with actual K_L | NUMERICAL (indicative; Celestial ff3a9dc / Prime N.14.1) | [S&M] |
+| cross-check of N.14.3: identities agree; "no 1/ℓ₃ term" holds in ‖ξ′‖_∞, not in H-energy | PROVED | [Cel] |
+| (L4): c₄ line = m = 2 time-delay mode, trace block −(c₄/ℓ₄)S(V(2)² + V(2)^{*2})S | PROVED | [Q] |
+| odd (K2) on (log 2, log 2 + 0.028]; m₀^odd ≥ 0.46255 | CERTIFIED (S&M, cited) | [S&M] |
 | piece 4 sole odd payer, band-split form needed | PROVED as bookkeeping; values GAP N.G2-m₀ | [S&M] |
 | RH | OPEN | — |
 
