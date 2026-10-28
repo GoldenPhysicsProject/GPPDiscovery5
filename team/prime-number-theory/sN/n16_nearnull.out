@@ -1,0 +1,16 @@
+(i) model: margin^sigma(L) ~ min_N log(g_{N+1}/2pi) * (1 - lambda_{2N+2+sigma}(c = L g_{N+1}))
+  2L=log2      mu=2.000 D(t*)= 0.125  even ~ 1.80e-01 (kill N=0, c=4.90, k=2)   odd ~ 5.56e-01 (N=0, c=4.90, k=3)   N.15 Ritz <= (0.073, 0.5493)
+  2L=log2+0.1  mu=2.210 D(t*)= 0.335  even ~ 8.07e-02 (kill N=0, c=5.61, k=2)   odd ~ 3.81e-01 (N=0, c=5.61, k=3)   N.15 Ritz <= (0.0168, 0.2452)
+  2L=log2+0.3  mu=2.700 D(t*)= 0.825  even ~ 1.13e-02 (kill N=0, c=7.02, k=2)   odd ~ 1.08e-01 (N=0, c=7.02, k=3)   N.15 Ritz <= (0.00045, 0.0142)
+  2L=log3      mu=3.000 D(t*)= 1.125  even ~ 3.38e-03 (kill N=1, c=11.55, k=4)   odd ~ 3.58e-02 (N=1, c=11.55, k=5)   N.15 Ritz <= (0.00025, 0.00134)
+  2L=log3.5    mu=3.500 D(t*)= 1.625  even ~ 2.77e-04 (kill N=1, c=13.17, k=4)   odd ~ 3.84e-03 (N=1, c=13.17, k=5)   N.15 Ritz <= ('-', '-')
+  2L=log4      mu=4.000 D(t*)= 2.125  even ~ 2.89e-05 (kill N=1, c=14.57, k=4)   odd ~ 4.72e-04 (N=1, c=14.57, k=5)   N.15 Ritz <= ('-', '-')
+(ii) ONE check at 2L = log 3, N = 320 (Ritz vectors of R - 2c2 B2, the full form there)
+  even eig#0: Ritz value 2.5379e-04 | zero sum: 2*sum_(n<=400) = 1.4262e-05, density tail above g_400 = 2.3687e-04, total = 2.5114e-04
+     (1/4+g^2)|xi^(g)|^2 at g1..g5 = 2.23e-09, 7.06e-10, 5.79e-08, 9.80e-07, 1.69e-06;  max over t<=40 of (1/4+t^2)|xi^|^2 = 0.508 at t = 5.46
+  even eig#1: Ritz value 7.7841e-02 | zero sum: 2*sum_(n<=400) = 7.4373e-02, density tail above g_400 = 3.8087e-03, total = 7.8182e-02
+     (1/4+g^2)|xi^(g)|^2 at g1..g5 = 1.19e-03, 5.04e-03, 5.93e-03, 6.08e-03, 1.60e-03;  max over t<=40 of (1/4+t^2)|xi^|^2 = 0.430 at t = 10.20
+  odd eig#0: Ritz value 1.3436e-03 | zero sum: 2*sum_(n<=400) = 9.2856e-04, density tail above g_400 = 4.1451e-04, total = 1.3431e-03
+     (1/4+g^2)|xi^(g)|^2 at g1..g5 = 1.39e-06, 1.04e-05, 3.23e-05, 1.20e-04, 1.08e-04;  max over t<=40 of (1/4+t^2)|xi^|^2 = 0.539 at t = 7.54
+  odd eig#1: Ritz value 6.6612e-01 | zero sum: 2*sum_(n<=400) = 6.6120e-01, density tail above g_400 = 4.6699e-03, total = 6.6587e-01
+     (1/4+g^2)|xi^(g)|^2 at g1..g5 = 1.29e-02, 1.93e-01, 8.78e-02, 9.66e-04, 5.28e-03;  max over t<=40 of (1/4+t^2)|xi^|^2 = 0.514 at t = 18.45
