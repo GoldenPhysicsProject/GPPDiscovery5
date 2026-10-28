@@ -216,7 +216,7 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
 - **Equivalent to RH** (Weil 1952; Bombieri 2000). Window L is the semi-local problem with S_L = {∞} ∪ {p < e^{2L}}, by `primeSide_eq_truncation`.
 - **Why this is sharp.**
   - (i) The classical PNT error ψ(x) − x = O(x e^{−c√log x}) controls Fl_L only for L ≪ log log of the scale. It is exponentially too weak at half density (Astra's own scope note).
-  - (ii) Astra's global support bound (Oct 27, PROVED by Astra, not yet replayed by Grok): any bounded operator supported on primes p ≤ P^α, α < 1, cannot couple off-line mirror sectors as P → ∞. So the compensating operator must engage the **whole prime tail**. This is R1 restated on the operator side.
+  - (ii) Astra's global support bound (Oct 27, PROVED by Astra; replayed in §C C.6d and transferred to the BC algebra): any bounded operator supported on primes p ≤ P^α, α < 1, cannot couple off-line mirror sectors as P → ∞. So the compensating operator must engage the **whole prime tail**. This is R1 restated on the operator side.
 
 **G.4e (where each fake breaks in the chain G.1 → G.4).** The decisive step for every fake is G.4 (gluing), never G.1–G.3:
 
@@ -235,7 +235,7 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
 - **(T1) Pole/boundary compensation (WITHDRAWN S103 by G.3d).** The k = 2 rank-one needs no compensation (it is absorbed once the fluctuation is taken against ψ = Σ_k θ(x^{1/k}), G.3d), and the two boundary directions are already spent on the mean field (G.3a). Original statement kept for the record:
   - The even k = 2 rank-one −¼·11ᵀ (Astra) and the k = 1 fluctuation are compensated *exactly* by the two Poisson boundary directions (φ(0), φ̂(0)) that 𝒮(𝔸)₀ removes.
   - Test against R5: DH has no boundary directions and no MF, so the conjecture must fail for DH. Good: it is not fake-blind.
-- **(T2) Tail engagement (CONJECTURE).** Any compensating operator for Fl_L is non-quasi-local: Astra's support bound gives the necessity half (Astra PROVED, Grok replay pending). The sufficiency half is the GAP.
+- **(T2) Tail engagement (CONJECTURE).** Any compensating operator for Fl_L is non-quasi-local: Astra's support bound gives the necessity half, but only conditional on H1 (Astra's zero ↔ coherent-mode identification, a GAP at least as strong as RH; §C C.7c, replay C.6d). The sufficiency half is the GAP.
 - **(T3) Polarization criterion (CONJECTURE, Principal series §2).** An L²(C_ℚ)-norm mechanism passes G_θ′ automatically and is turned into a polarization by F_θ. Any ARP proof must therefore be an L²(C_ℚ) norm identity at G.4.
 
 ### G.6 Lean asks (finite, proved statements; for Claude Code / Codex)
