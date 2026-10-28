@@ -579,7 +579,7 @@ Write ξ = ξ_e + ξ_o for the parity parts.
   R4 soft-mode shape helped, odd partner harmed | R5 fake-blind in truth (DH positive here); breaks structurally for DH (no a-line).
 
 ### N.12.5 First test of Conj Q.8.E (consistent with §C.13.4)
-- Under (I1), D_L must carry −c₂S_Λ(V(2) + V(2)*)S_Λ. Here V(2) is translation by a in u = log|x|.
+- Under (I1), D_L must carry −(c₂/ℓ)S_Λ(V(2) + V(2)*)S_Λ [erratum N.14.0(c): the 1/ℓ was missing; Principal P.14.3, merged 9cd3187; no result used the old normalization]. Here V(2) is translation by a in u = log|x|.
 - (I2) on this window ⇔ (IF) ⇔ (K2) ∧ (K3).
   - *Grok audit (precision).* For a **given** D_L satisfying (I1), "(I2) ⇒ (IF)" is PROVED.
   - The converse holds only existentially: (IF) ⇒ some D_L ≥ 0 with (I1) exists abstractly (GNS, as in Q.8). That is not a statement about a specified D_L.
@@ -687,7 +687,7 @@ Track **[L], Λ = 1** throughout. Notation is §C.13 and §C.13.B (team/celestia
   - The constants are exact closed forms: 21.0645 = 8c₂|Ω(0)|, and 6.3524 = |Ω(0)| + 2c₂.
 - **Remarks.**
   - The e^{−c/m₀} rate is the cost of the crude low-band bound Ω ≥ Ω(0) in Step 2. It is not intrinsic.
-  - Celestial's Lemma C.13.B (strip interiors, 2L ≤ log 2 + 0.119, NUMERICAL until certified) shows that on strip-localized vectors no m₀ is needed at all.
+  - Celestial's Lemma C.13.B (strip interiors, 2L ≤ log 2 + 0.119; PROVED, computer-assisted, since c7c94ee, re-audited SOUND by Golden Eye) shows that on strip-localized vectors no m₀ is needed at all.
   - The exponential loss sits entirely in the cross-edge (bulk) part, which N.13.4 isolates.
   - This theorem is **bound-first**, and uses the p = 2 term only through |B|. It does not identify the mechanism. N.13.4 does.
 - R1 a fixed range, RH-silent | R2 FE through Ω only | R3 |B| only, no weight signs | R4 odd/even treated separately | R5 fake-blind in truth. DH has no line at a, so the theorem is not about it.
@@ -712,13 +712,13 @@ Track **[L], Λ = 1** throughout. Notation is §C.13 and §C.13.B (team/celestia
 - **The bulk edge trace of a smooth profile is an almost-extremal vector of S1.**
   - Even sector: the p = 2 line returns c₂(1 − ℓ²/8)·‖ξ_b‖²_{H(E)} = 2c₂α²(1/ℓ − ℓ/24) as **help**.
   - Odd sector: the same amount is **cost**. This is N.12.3's 2c₂s²ℓ, with α = sℓ + O(ℓ²).
-  - There is no smaller cost to find in the odd sector. The 2c₂α²/ℓ is exact, so it must be paid by R.
+  - There is no smaller cost to find in the odd sector. The charge 2c₂α²(1/ℓ − ℓ/24) is exact (2c₂α²/ℓ is only an upper bound), so it must be paid by R.
 
 **Interface form for the {∞, 2} D_L test on (K2)/(K3).**
 > Q_L(Qh) = [R(ξ_s) − 2c₂B(ξ_s)] + [R(ξ_b) + 2σc₂α²(1/ℓ − ℓ/24)] + [2R(ξ_b, ξ_s) − (c₂/2)X].
-- **First bracket:** ≥ β_ℓ(‖φ₋‖²_H + ‖φ₊‖²_H), with β_ℓ > 0 for ℓ ≤ 0.119 (Lemma C.13.B, NUMERICAL until certified).
+- **First bracket:** ≥ β_ℓ(‖φ₋‖²_H + ‖φ₊‖²_H), with β_ℓ > 0 for ℓ ≤ 0.119 (Lemma C.13.B; PROVED, computer-assisted, c7c94ee).
 - **Second bracket:** the bulk, with the q = 2^{±1} line acting as a **rank-two boundary form in (α₋, α₊)**, namely −2c₂(1/ℓ − ℓ/24)·α₋α₊ subtracted.
-  - In D_L language, the 2^{±1} summands of E restricted to the edge traces are the matrix −c₂(1/ℓ − ℓ/24)·[[0, 1], [1, 0]] in (α₋, α₊).
+  - In D_L language (contribution to Q_L), the 2^{±1} summands restricted to the edge traces are the matrix **+c₂(1/ℓ − ℓ/24)·[[0, 1], [1, 0]]** in (α₋, α₊) [erratum N.14.0(a); −c₂(…) is the matrix of +2c₂B, not of its contribution to Q_L].
   - Its eigenvectors are the even (help) and odd (cost) edge pairs.
 - **Third bracket:** (c₂/2)|X| ≤ c₂[ε'α²/ℓ + ℓ⁴‖φ′‖²/(12π²ε')] for any ε' > 0 (AM–GM).
   - This is absorbed by a fraction ε' of the second bracket's α²/ℓ and by the first bracket's β_ℓ, as soon as ℓ⁴/(12π²ε') ≪ β_ℓ.
@@ -729,7 +729,7 @@ Track **[L], Λ = 1** throughout. Notation is §C.13 and §C.13.B (team/celestia
   - Conditional (K2)-bulk (PROVED given (M₀^o)): if R ≥ m‖·‖²_H with m ≥ (2 + ε')c₂ on the span, the odd bulk closes. Since m₀ ≪ c₂ is expected, this is **not** how the odd entry closes for small m₀. The Thm N.13.A route (band split, exponential δ) is the one that works.
 - **Mechanism statement** (PROVED as a reformulation; it answers "which step carries positivity"):
   - **Even entry:** carried by the p = 2 line, through the sign of B on the ramp. Archimedean data only need to control R(ξ_b) + 2R(ξ_b, ξ_s) from below by a *negative* budget.
-  - **Odd entry:** carried by the archimedean margin, through R's coercivity at ½ log 2 and its dilation continuity (N.13.3 Step 1). The p = 2 line is a pure cost there, at exactly 2c₂α²/ℓ.
+  - **Odd entry:** carried by the archimedean margin, through R's coercivity at ½ log 2 and its dilation continuity (N.13.3 Step 1). The p = 2 line is a pure cost there, at exactly 2c₂α²(1/ℓ − ℓ/24) (≤ 2c₂α²/ℓ).
   - This matches §C.13.B.1's side remark: at ℓ = 0 the odd (K2) is CC Thm 1, so the odd entry is the CC-margin question.
   - It also matches CC 2106.01715 Fig 7: p = 2 restores the even matrix (NUMERICAL, full space).
 - R1 one rule per ℓ | R2 FE via Ω in R | R3 the sign of B is used (σ-dependent), not |weights| | R4 even nodeless is helped; the odd pole partner is charged | R5 DH: no line at a.
@@ -758,7 +758,7 @@ Track **[L], Λ = 1** throughout. Notation is §C.13 and §C.13.B (team/celestia
 | m₀ > 0 ⇔ no radical (compactness) | PROVED; strictness on the closure GAP-minor |
 | value of m₀^σ | **GAP N.G2-m₀** |
 | N.13.4 decomposition, exact boundary form, ramp sharpness 1 − ℓ²/8 | PROVED |
-| Lemma C.13.B (cited) | NUMERICAL until certified |
+| Lemma C.13.B (cited) | PROVED (computer-assisted, c7c94ee; Golden Eye SOUND) |
 | coupling 2R(ξ_b, ξ_s) | **GAP N.G2-bulk** (irreducible term) |
 | (K3)-bulk closes from the p = 2 budget | CONJECTURE |
 | positivity on the range itself | CERTIFIED (conditional on Mori Prop 3.1, Lemma 3.2, Thm N; 1.42 Arb replay; main 992a011) |
