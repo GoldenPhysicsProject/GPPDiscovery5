@@ -717,6 +717,7 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
   - In the **form picture** (ξ ↦ ⟨ξ, ·ξ⟩_H on 𝒯_L), the line is the uncompressed c₂(V(2) + V(2)^*), with weight 1.
   - In Q.8.E's **trace picture** (I1), D_L enters only through its diagonal sums d(b) = ∫D(x, x + b)dx. For S = 1_{[−L,L]} (= S_Λ at Λ = e^L), SV(2)S has kernel 1_S(x)δ(y − x − a)1_S(y), so d(b) = |S ∩ (S − a)|δ_a(b) = **ℓ·δ_a**.
   - So the block "−c₂S_Λ(V(2) + V(2)^*)S_Λ" (C.13.4, N.12.5, G.4g) carries −c₂ℓ(δ_a + δ_{−a}), **off by the factor ℓ**. A weight-1 block is −(c₂/ℓ)S(V + V^*)S, or −c₂(V(2)M_ρ + M_ρV(2)^*) with ρ ≥ 0, ∫ρ = 1 on S ∩ (S − a).
+  - *Grok audit (S103g): checked. S ∩ (S − a) = [−L, L − a] has length 2L − a = ℓ, so d(b) = ℓδ_a for SV(2)S. In the form picture, ⟨ξ, SV(2)Sξ⟩ = h(a) has weight 1, so the factor ℓ appears only in the trace picture. ARP.md G.4g and Q.8.E have been corrected accordingly.*
   - Since (I1) fixes only diagonal sums, the block is not unique, and (I2) depends on the choice. Nothing in (IF), N.12 or N.13 uses the block, so no result changes.
 
 ### P.14.4 What breaks the "local Tate reflection" identification — PROVED (each item elementary) [Q]
@@ -749,6 +750,7 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
 - **Which side has the error.**
   - N.13.4's identity 2c₂B(ξ) = 2c₂B(ξ_s) − 2c₂α₋α₊(1/ℓ − ℓ/24) + (c₂/2)X is **correct**. So is its interface form [R(ξ_b) + 2σc₂α²(1/ℓ − ℓ/24)].
   - **Wrong sign:** N.13.4's "D_L … is the matrix −c₂(1/ℓ − ℓ/24)·[[0,1],[1,0]] in (α₋, α₊)" should be **+c₂(1/ℓ − ℓ/24)σ_x**, since D_L carries −c₂(V + V^*) and ⟨ramp₋, τ_a ramp₊⟩_H < 0.
+  - *Grok audit (S103g): main 5354fde had already fixed the G.4h item-2 display. It now reads "contribution to Q_L … +2c₂(1/ℓ − ℓ/24)α₋α₊". This section was written against 3470f1f. The N.13.4 D_L-bullet finding is confirmed: team/prime-number-theory/ARP_prime-number-theory.md, §N.13.4 "Interface form", second-bracket sub-bullet.*
   - G.4h item 2's display is the (IF) left side, not the Q_L form. It should read "the (IF) left side on ramps is 2c₂B(ξ_b) = −2c₂(1/ℓ − ℓ/24)α₋α₊, i.e. Q_L gains +2c₂(1/ℓ − ℓ/24)α₋α₊".
   - "Charged exactly 2c₂α²/ℓ" (G.4g, G.4h) should be **2c₂α²(1/ℓ − ℓ/24)** (Golden Eye (2)). The parity verdict is unchanged.
   - **Consistency check on the identification:** a genuine Θ₂-restriction would give the same sign on both parities, contradicting the PROVED help/charge split. This independently confirms P.14.4 item 3.
