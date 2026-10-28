@@ -36,6 +36,7 @@ A chain whose only GAP is "Weil positivity" in disguise is a restatement. We say
   - Fakes first fail on ζ's nodeless soft mode (S97/S98).
   - Its window ground state has |cos| = 0.995–0.9997 with the pole vector 2cosh(x/2) (Queen S1, NUMERICAL).
 - **R5. Each step names where each fake breaks**, and checks that G_θ′ passes. The fakes: F_θ, DH, H₋ₜ, DMV, Epstein, P_X.
+- **R6 (Golden Eye; CONJECTURE, well supported).** The closing step should be an exact identity (Q = ‖·‖² or a trace). What is PROVED is narrower: §S no-slack lemma (S(c)4, audited by Golden Eye on 9184613) excludes any MF-relative margin, i.e. no c > 0 with Fl_L ≥ −(1−c)·MF_L uniformly. It does not exclude Q_L ≥ c·N_L for another norm N_L degenerating on dilated nodeless bumps (e.g. weighting only frequencies near the zeros).
 
 ### 0.2 Dead ends (cite; do not re-derive)
 | dead end | where |
@@ -54,7 +55,7 @@ A chain whose only GAP is "Weil positivity" in disguise is a restatement. We say
   - Tate local zeta integral, `euler_factor_bridge`;
   - `RationalIdeleGroup`;
   - `completedRiemannZeta_one_sub`;
-  - `GppWeilSupportLadder.primeSide_eq_truncation` / `primeSide_eq_zero_of_support_lt_log_two`;
+  - `GppWeilLadder.primeSide_eq_truncation` / `primeSide_eq_zero_of_support_lt_log_two`;
   - `GppNoGhost.weilForm`;
   - new since Oct 22: `GppScalarSchurForm` (#412), `GppArchimedeanHankelGram` (#413), `GppSineSquarePacket` (#416), `GppGroundStateDetector` ((GS) ⇒ RH, #418, conditional).
 - **Not citable as unconditional:**
@@ -162,7 +163,7 @@ For χ unramified trivial (with ε_p = 1),
   - This is the positive Hilbert space required by R4. It contains the soft mode by construction.
 
 **G.3b. The fluctuation (definition).**
-- E₁ := μ₁ − e^{u/2} du, with μ₁ = Σ_p (log p) p^{−1/2} δ_{log p}. This is the Chebyshev discrepancy ψ(x) − x, half-density weighted.
+- E₁ := μ₁ − e^{u/2} du, with μ₁ = Σ_p (log p) p^{−1/2} δ_{log p}. This is the θ-discrepancy θ(x) − x, half-density weighted (corrected S103c; D1 from §S). Superseded in G.3b by the ψ-fluctuation E_Λ (G.3d).
 - The k ≥ 2 prime powers are added the same way.
 - Astra's k = 2 split (Oct 27 21:47Z) is an algebraic decomposition, PROVED: the odd bulk is zero; the even bulk is −¼·11ᵀ, rank one, still to be compensated.
 - Then Q_L = MF_L + Fl_L exactly, and MF_L ≥ 0.
@@ -179,7 +180,7 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
 
 **G.3d. The k = 2 rank-one is a ψ/θ splitting artefact (PROVED, elementary; Grok S103).**
 - Statement. Put the k-th prime-power layer μ_k = Σ_p (log p) p^{−k/2} δ_{k log p}. Its PNT mean is ½·du for k = 2 (Mertens: Σ_{p≤y} (log p)/p = log y + O(1), so at u = 2 log p the mean density is ½ du), and a bounded, non-growing density for k ≥ 3. For an even g these give the rank-one term −½∫g = −½ ĝ(0) = −½|f̂(0)|² (vector 1), the shape of Astra's even bulk −¼·11ᵀ (normalisation match to Astra's ¼ not checked).
-- Proof of cancellation. Chebyshev's exact identity θ(x) = Σ_{k≥1} μ(k) ψ(x^{1/k}) gives θ(x) = x − x^{1/2} − x^{1/3} + … + (zero terms). At half density, the −x^{1/2} term of the k = 1 layer contributes −∫h(u) e^{−u/2} d(e^{u/2}) = −½∫h du, which cancels the k = 2 mean exactly; likewise −x^{1/k} cancels the k-th mean. So the sum over k of the layer means is the single PNT mean e^{u/2} du of Λ.
+- Proof of cancellation (repaired S103b after Golden Eye's audit). Use ψ(x) = Σ_{k≥1} θ(x^{1/k}) directly: the layers μ_k sum to μ_Λ = Σ_n Λ(n) n^{−1/2} δ_{log n}, the half-density of ψ, whose PNT mean is the single density e^{u/2} du. So once the fluctuation is taken against ψ rather than θ, no separate k-th layer mean (in particular the k = 2 rank-one) remains. The earlier wording "likewise −x^{1/k} cancels the k-th mean" via θ = Σ μ(k)ψ(x^{1/k}) was WRONG term by term: the k-th layer mean is (1/k)e^{(1/k−½)u}du and θ's μ(k)x^{1/k} term gives μ(k)(1/k)e^{(1/k−½)u}du, which cancel only when μ(k) = −1 (fails at k = 4, μ = 0, and at k = 6, μ = +1). Credit: Golden Eye audit. Statement unchanged; PROVED, no novelty (classical ψ/θ bookkeeping).
 - Consequence. Use the **ψ-fluctuation** E_Λ := Σ_n Λ(n) n^{−1/2} δ_{log n} − e^{u/2} du (half-density ψ(x) − x) in G.3b, not the θ-fluctuation E₁. Then Q_L = MF_L + Fl_L with no rank-one remainder, and the pole is spent exactly once, on the Ward identity G.3a.
 - Test (numerics only to test this step, per the Oct 22 pivot): `s103/k2_rank_one_cancellation.py`, primes ≤ e^16, smooth bump h on (2, 16). The k = 1 fluctuation is −3.1716 = −(k = 2 layer 2.4638) − (k ≥ 3 layers 0.7078) to 4 decimals, and the Λ-total minus the PNT mean is −1.4·10⁻⁶ (the zero sum of a smooth bump). So nothing is left over for a boundary term to compensate.
 - R-checks. Fake-blind (P_X, DMV and Epstein have the same internal cancellation; DH has no Λ); no RH content. Withdraws T1 below.
@@ -195,7 +196,7 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
 - E is C_ℚ-equivariant and intertwines the global reflection: E(F_𝔸 φ) = E(φ) ∘ inv.
 - The Euler product (⊗′) and the FE (Poisson) therefore meet in **one** operator. This is the only place R2 is met jointly.
 
-**G.4c (PROVED; Connes 1999 Thm; Meyer 2005): the spectral side.**
+**G.4c (PROVED; Connes 1999 Thm 4, §VII; Meyer 2005): the spectral side.**
 - The cokernel of E (in Connes' cutoff Hilbert space; nuclear-Fréchet in Meyer) carries the zeros as spectrum.
 - Weil positivity ⇔ Connes' global trace formula ⇔ RH.
 - The semi-local trace formula with cutoff Λ is
@@ -206,8 +207,10 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
 
 **G.4d (GAP, the shared one).**
 - **The defect.** The gluing introduces the cutoff/principal-value term:
-  - Write Q_L(f) = ‖P_Λ^⊥ E(φ)‖²-type positive part − δ_Λ(f), where δ_Λ collects the 2 log Λ cutoff term and the Σ_v ∫′ remainders.
-  - Equivalently, in §G.3's language, Q_L = MF_L + Fl_L, with Fl_L the E₁-fluctuation.
+  - Sign (settled S103c, Queen §Q.7 + Principal §P.5–P.6, per Connes 1999 §VIII Thm 5/Lemma 3 and Meyer 2005 §5.4): the positive object is a trace over the **complement of range(E)** (cokernel deficit, S_Λ − Q′, which is free), not ‖P^⊥Eφ‖². Range positivity enters Δ_Λ with a minus sign and gives only the trivial upper bound, so "additive positivity transfers through E" is WRONG-SIGN and withdrawn. The 2 log Λ term cancels exactly against Tr(S_Λ V(h)) and is not part of δ_Λ; source: Connes 1999 §VIII, eq. (16) and the proof of Thm 5, eqs. (17)–(26) (Queen sign_check.md). Connes–Consani 2021 Thm 1 confirms the deficit sign only: it is the Λ = 1 (Sonin) case, where 2 log Λ = 0, so it cannot test this cancellation (Golden Eye audit).
+  - Definition of μ_ρ: for a zero ρ = ½ + β + iγ, μ_ρ is the harmonic (Poisson-kernel) measure of ρ with respect to the critical line, a positive probability measure on ℝ, with μ_ρ = δ_γ when β = 0. The identity lim Δ_Λ(f) = Σ_ρ m_ρ ∫ĝ dμ_ρ is PROVED for function fields (Connes 1999 §VIII Lemma 3); for ℚ it is Connes' stated analogue (§VIII, last part), labelled CONJECTURE here until a proof for ℚ is cited.
+  - GAP in this language: lim_Λ Δ_Λ = Weil, i.e. δ_Λ → 0 (RH-equivalent); off-line residual Σ_ρ m_ρ[∫ĝ dμ_ρ − ĝ(γ_ρ)]. Sign audit (Golden Eye, S103c): SOUND on all three tests; shared GAP sign SETTLED, with the ℚ-case of the μ_ρ residual formula still CONJECTURE.
+  - Equivalently, in §G.3's language, Q_L = MF_L + Fl_L, with Fl_L the E_Λ-fluctuation (ψ-fluctuation, G.3d; corrected S103b from E₁).
   - Nothing local (G.1–G.2) bounds δ_Λ or Fl_L.
 - **The GAP statement.** Show Fl_L(f) ≥ −MF_L(f) for all f ∈ C_c^∞([−L, L]), **uniformly in L** (R1).
 - **Equivalent to RH** (Weil 1952; Bombieri 2000). Window L is the semi-local problem with S_L = {∞} ∪ {p < e^{2L}}, by `primeSide_eq_truncation`.
@@ -220,16 +223,16 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
 | fake | G.1 local Θ_p | G.2 Θ_∞ | G.3 MF ≥ 0 | G.4 gluing (E intertwines F_𝔸 and inv) | verdict |
 |---|---|---|---|---|---|
 | **G_θ′** = Λ(s+iθ′)Λ(s−iθ′) | unitary (|·|^{±iθ′} unitary) | unitary | ≥ 0 | yes: E commutes with the unitary character |x|^{iθ′}. Q_G = 2Q_ζ(f cos) + 2Q_ζ(f sin) (**PROVED**, replayed S102) | **passes every step** (must-pass control) |
-| **F_θ** = ξ(s−θ)ξ(s+θ) | **product** γ unitary on Re s = ½ (replay (5): \|γ₊γ₋\| = 1), but each GL(1) constituent \|·\|^{±θ} has \|γ\| ≠ 1 (0.817, 1.224 at p = 7) | same | ≥ 0 (G.3c) | E does commute with \|x\|^θ, but the twisted form is a **polarization** 2 Re B_ζ(e^{θu}f, e^{−θu}f), not a norm (**PROVED**, replay (2)) | breaks at G.1 **only if** local data must be unitary GL(1) constituents (temperedness filter, Principal series), and at G.4 (norm → polarization) |
+| **F_θ** = ξ(s−θ)ξ(s+θ) | **product** γ unitary on Re s = ½ (replay (5): \|γ₊γ₋\| = 1), but each GL(1) constituent \|·\|^{±θ} has \|γ\| ≠ 1 (0.817, 1.224 at p = 7) | same | ≥ 0 (G.3c) | E does commute with \|x\|^θ, but the twisted form is a **polarization** 2 Re B_ζ(e^{θu}f, e^{−θu}f), not a norm (**PROVED**, replay (2)) | breaks at G.4 only (norm → polarization, §P.4). Not a GL(2) filter: for 0<θ<½ π(\|·\|^θ,\|·\|^{−θ}) is complementary series with positive-definite Knapp–Stein form (§P.3, Knapp–Stein 1971); local non-temperedness is a size shadow, not a sign condition |
 | **DH** | no local data (no Euler product) | ζ-like γ_∞ | **no MF** (entire) | no ⊗′ factorization, so E of a sum of two L-functions is not a norm of a sum | breaks at G.1/G.4 |
 | **DMV / P_X** | Beurling or truncated local data | — | ≥ 0 | **no lattice ℚ^* ⊂ 𝔸**, so no Poisson and no global reflection; P_X agrees with ζ on L ≤ (log X)/2 (R1) | breaks at G.4a |
 | **Epstein** (h = 2) | sum of two Euler products (genus characters) | γ_∞ for GL(2)/ℚ(√D) | ≥ 0 | Poisson over the lattice exists, but there is no ⊗′ of one Euler product; E of a sum of two pure tensors | breaks at G.1d/G.4b |
 | **H₋ₜ** (de Bruijn–Newman deformation) | no Euler product after deformation | **γ_∞ is not Tate's** (deformed Φ kernel) | ≥ 0 | no adelic E | breaks at G.2/G.4 |
 
-**Reading.** All six fakes break at the gluing G.4 (and DMV/P_X *only* there). F_θ additionally breaks at the local temperedness filter. G_θ′ passes everywhere. So R5 is consistent with G.4d being the true locus of RH. That is exactly Connes' "uniformity" dead end, now with every fake located. **No new route is claimed.**
+**Reading.** All six fakes break at the gluing G.4 (and DMV/P_X *only* there). (S103c: F_θ's earlier "local temperedness filter" break is withdrawn per §P.3; it breaks only at G.4.) G_θ′ passes everywhere. So R5 is consistent with G.4d being the true locus of RH. That is exactly Connes' "uniformity" dead end, now with every fake located. **No new route is claimed.**
 
 ### G.5 What would count as progress (CONJECTURE-level targets, each R1–R5-checked)
-- **(T1) Pole/boundary compensation (WITHDRAWN S103 by G.3d).** The k = 2 rank-one needs no compensation (it cancels against θ's −√x), and the two boundary directions are already spent on the mean field (G.3a). Original statement kept for the record:
+- **(T1) Pole/boundary compensation (WITHDRAWN S103 by G.3d).** The k = 2 rank-one needs no compensation (it is absorbed once the fluctuation is taken against ψ = Σ_k θ(x^{1/k}), G.3d), and the two boundary directions are already spent on the mean field (G.3a). Original statement kept for the record:
   - The even k = 2 rank-one −¼·11ᵀ (Astra) and the k = 1 fluctuation are compensated *exactly* by the two Poisson boundary directions (φ(0), φ̂(0)) that 𝒮(𝔸)₀ removes.
   - Test against R5: DH has no boundary directions and no MF, so the conjecture must fail for DH. Good: it is not fake-blind.
 - **(T2) Tail engagement (CONJECTURE).** Any compensating operator for Fl_L is non-quasi-local: Astra's support bound gives the necessity half (Astra PROVED, Grok replay pending). The sufficiency half is the GAP.

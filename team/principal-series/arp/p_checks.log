@@ -1,0 +1,11 @@
+(P1) |gamma(s-th)gamma(s+th)|^2 - 1 at p=7, t=13/10, th=1/5 (exact): 0
+(P1) |1-p^{-(a+it)}|^2 = 1 - 2*cos(t*log(p))/p**a + p**(-2*a) (even in t, so |L_p(a-it)| = |L_p(a+it)|)
+(P1inf) |gamma_inf(s-th)gamma_inf(s+th)| at t=13/10, th=1/5: 1.00000000000000000000000000000  |gamma_inf(s+th)|: 1.39057031919581320568362144313
+(P2) all ratios > 0 for th in (0,1/2)? th=0.49, m=1..200: True
+(P2) th=3/4: ratio m=1 = -1/5  (negative: form indefinite for th in (1/2,3/2))
+(P2) c_p(th) at p=7, th=1/5: 1.7276833195975050277
+(P3) multiplicativity residual: 0
+(P3) polarization algebra: 0
+(P4) cosh (F_theta) eigenvalues [282.670610538, -274.670610538]  c^T M c = -549.341221076
+(P4) cos (G_theta) eigenvalues [5.06519834579, 2.93480165421]  c^T M c = 5.86960330843
+(P4) untwisted eigenvalues [3.87758256189, 0.122417438110]  c^T M c = 0.244834876219
