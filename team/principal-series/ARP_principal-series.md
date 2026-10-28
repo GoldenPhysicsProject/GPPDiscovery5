@@ -1138,7 +1138,7 @@ As ℓ₃ ↓ 0, F₃ shrinks to measure 0 and Q^G_L tends to the full {2}-form 
 ### P.16.3 Which ℓ₃-range each sector is paid on — labels as marked [S&M]
 | sector | unconditional range | conditional range | what is missing |
 |---|---|---|---|
-| odd | **none** (the S&M odd certificate stops at 2L = log 2 + 0.028, far below log 3) | ℓ₃ ≤ πμ_o/(4c₀\*(1 + 1/η)T), given (H₃^o)(T, η, μ_o): Thm P.16.B, PROVED given input. High band CERTIFIED for T ≥ 16 (η ≤ 0.0373). Also ℓ₃ ≤ πθm_o/(8c₀\*(1 + 1/η)T) given (M₃^o): Thm P.16.C | μ_o or m_o for Q^G_L near 2L = log 3: **GAP**. Q at 2L = log 3 is ≥ 0, CERTIFIED conditional on Mori (main G.4); no H-margin is known |
+| odd | **none** (the S&M odd certificate stops at 2L = log 2 + 0.028, far below log 3; indicative ℓ₃\* ≲ 1.5e−5, NUMERICAL, P.16.5) | ℓ₃ ≤ πμ_o/(4c₀\*(1 + 1/η)T), given (H₃^o)(T, η, μ_o): Thm P.16.B, PROVED given input. High band CERTIFIED for T ≥ 16 (η ≤ 0.0373). Also ℓ₃ ≤ πθm_o/(8c₀\*(1 + 1/η)T) given (M₃^o): Thm P.16.C | μ_o or m_o for Q^G_L near 2L = log 3: **GAP**. Q at 2L = log 3 is ≥ 0, CERTIFIED conditional on Mori (main G.4); no H-margin is known |
 | even | **none** | the same formulas with (H₃^e)/(M₃^e) | μ_e/m_e: **GAP**, plus the even ĝ(0)/pole direction (C.14.3, rank-one κ^{ev} > 1) and S&M GAP m₀^e inherited from the p = 2 step |
 
 - **Parity does not change the line side at the 3-entry.** The sup of the joint charge is c₀\* in both sectors (P.16.1, sharp). Every sector difference sits in the low-band hypothesis on Q^G_L. **REMARK (PROVED).**
@@ -1171,7 +1171,19 @@ Notation as in P.15.2: Λ = e^L, S_Λ = 1_{[−L, L]}, V the translation group, 
     - on |t| < T only after adding an invisible n^{lo} whose existence is equivalent, by (b), to the low-band hypothesis (H₃^σ).
   - So, for Q.8.E: **D_L = A_LM_ρA_L^\* with s_L as in (a) is the coupled (I2) operator.** (I1) is exact for every invisible n_L, and (I2) ⇔ s_L ≥ 0. On every window where Q_L ≥ 0 on the pole-free class, some n_L exists (PROVED by citation), non-explicitly. The explicit rule is the GAP.
 
-### P.16.5 Labels and R-line
+### P.16.5 Relation to Prime §N.15 (cd94c27, merged 7953486; read after the first draft of P.16) — REMARK, with labels as marked [S&M]/[Cel]
+- **N.15.1** reproduces P.15.1's (0.9009, −0.2666) in the same normalization (PASS). P.16.1 shows this is the **global** sharp joint constant on 𝒯_L in both parities, not only the edge-class value. This answers N.15's flag: the per-line constants and the kink normalization are unchanged, so the 0.9009 and the 15.47 threshold stand. The Arb value is Ω(15.5) − c₀\* = 1.86e−3 > 0 (CERTIFIED). N.15's 15.471 is the mpmath root.
+- **N.15.3 B1** (the S1-only template fails at log 3; NUMERICAL, Ritz) agrees with the REMARK in P.16.2. The sharper (P16.1) does not rescue it, because at ℓ₃ → 0 the F₃ part vanishes and the form is R − c₂‖ξ‖²_{H(E₂)}, which N.15 finds ≤ −0.194 (odd) at log 3.
+- **N.15.H vs (H₃^σ).**
+  - Both are PROVED sufficient conditions.
+  - N.15.H keeps Q^{(≤2)} = R − 2c₂B₂ and needs μ_hi > c₃(1 + η). The 0.9009 enters there only heuristically ("folded in"): the 2-line's kink coupling stays inside Q^{(≤2)}, which is N.15-G2's "B₂ high-band cross terms".
+  - (H₃^σ) moves exactly those 4-path a-edges into K_F, which is bounded fibrewise by c₀\* on F₃ (|F₃| = 4ℓ₃). This makes the 0.9009 requirement **exact**, and the cross terms of the joint block are handled by (P16.1) with no t-diagonality needed. The remaining 2-path part K_G is O(1)-supported and stays inside the hypothesis.
+  - So **(H₃^σ) is N.15.H with N.15-G2's joint-block part discharged** (PROVED). The non-multiplier certificate N.15-G1 is still needed, now for Q^G_L in place of Q^{(≤2)}; the two agree as ℓ₃ ↓ 0.
+- **Size (NUMERICAL, Prime's Ritz upper bounds).** At 2L = log 3 the margins are m ≲ 1.34e−3 (odd) and ≲ 2.5e−4 (even), not converged. With μ ≤ m, Thm P.16.B gives at best ℓ₃\* ≲ 1.34e−3/87 ≈ **1.5e−5** (odd; T = 38.1, η = 1), against N.15 B4's ≈ 1e−4. The difference comes from the 4ℓ₃ (four node pieces) and the c₀\* in place of c₃. Both are indicative only.
+- **N.15.2:** the P₂ form becomes negative by log 3.5 (NUMERICAL). So (H₃^σ) and (M₃^σ) can hold only near ℓ₃ = 0, and P.16.B/C are perturbative entries, like S&M Thm 3. A non-perturbative certificate is needed beyond that.
+- **Status, for the record (main).** C.14.K is refuted numerically on the useful range (Celestial C.14.4c, audited S103h(3)). This does not affect P.16, which does not use C.14.K.
+
+### P.16.6 Labels and R-line
 | item | label | track |
 |---|---|---|
 | Prop P.16.1: 4-path/2-path fibres; ‖compressed K‖ = c₀\* on (log 3, log 4); (P16.1); sharp in both parities | PROVED (sympy-checked) | [Cel] |
@@ -1179,7 +1191,8 @@ Notation as in P.15.2: Λ = e^L, S_Λ = 1_{[−L, L]}, V the translation group, 
 | Thm P.16.A: high band pays the joint charge for T ≥ 16 (η ≤ 0.0373), T ≥ 15.5 (η = 0) | CERTIFIED (Arb Ω; (Ω2) PROVED) | [S&M] |
 | Thm P.16.B: ℓ₃\* = πμ/(4c₀\*(1 + 1/η)T) | PROVED given (H₃^σ) | [S&M] |
 | Thm P.16.C: exponential range from a plain margin m | PROVED given (M₃^σ) | [S&M] |
-| (H₃^σ), (M₃^σ): low-band margins of Q^G_L near log 3, both sectors | GAP | [S&M] |
+| (H₃^σ), (M₃^σ): low-band margins of Q^G_L near log 3, both sectors | GAP (= N.15-G1 for Q^G; sizes ≲ 1.3e−3 odd, 2.5e−4 even, NUMERICAL Prime) | [S&M] |
+| (H₃^σ) = N.15.H with N.15-G2's joint-block part discharged | PROVED | [S&M]/[Cel] |
 | unconditional 3-entry range, odd and even | none | — |
 | P.16.4(a)–(b): (I1) family D_L = A_LM_ρA_L^\*; D_L ≥ 0 ⇔ s_L ≥ 0 | PROVED | [Q] |
 | (I2) solvable ⇔ Q_L ≥ 0 on pole-free 𝒯_L | PROVED by citation (Krein extension; number unverified) | [Q] |
