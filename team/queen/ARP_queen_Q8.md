@@ -55,7 +55,7 @@ R-line: R1, per-window | R2, n/a | R3, n/a | R4, n/a | R5, holds for every fake 
 - One-zero residual: R_ρ(g) := ∫ ĝ dμ_ρ − ĝ(γ_ρ) = ∫ g(u) e^{iγu} (e^{−|β||u|} − e^{βu}) du. It is 0 when β = 0.
 - Total residual: Res(f) := Σ_{ρ: β≠0} m_ρ R_ρ(g).
 
-**Theorem Q.8.A (exact zero-side identity, ℚ; PROVED, unconditional).** For every L > 0 and every real f ∈ 𝒯_L:
+**Theorem Q.8.A (exact zero-side identity, ℚ; PROVED (restatement; no new RH content), unconditional).** "RH ⇔ Res ≡ 0" below is Weil's criterion re-expressed. For every L > 0 and every real f ∈ 𝒯_L:
 
   Q_L(f) = 𝒮(f) − Res(f),  with 𝒮(f) ≥ 0.
 
@@ -265,7 +265,7 @@ R-line for Q.8.E/F: R1, all L, one rule | R2, E is the only ingredient carrying 
 
 | item | label |
 |---|---|
-| Lemma Q.8.1 absolute convergence; Thm Q.8.A Q = 𝒮 − Res, 𝒮 ≥ 0, RH ⇔ Res ≡ 0 | PROVED (elementary + Weil/Bombieri) |
+| Lemma Q.8.1 absolute convergence; Thm Q.8.A Q = 𝒮 − Res, 𝒮 ≥ 0, RH ⇔ Res ≡ 0 | PROVED (restatement; no new RH content) — Weil's criterion re-expressed |
 | Thm Q.8.B function-field residual limit (Connes Lemma 3, Gram step repaired) | PROVED (simple zeros); multiple zeros PROVED in sketch; χ = 1 as stated by Connes |
 | Lemma Q.8.2 boundary data at the small-\|g\| end; one-sided placements excluded | PROVED |
 | Prop Q.8.3 P_Λ ↔ P̂_Λ placement equivalence on real f | PROVED |
