@@ -796,7 +796,7 @@ then D_L^{(w)} ≥ 0 on odd vectors, i.e. (K2) holds at L. With Fejér completio
     - B = 66: LHS ≤ c₂ on |t| ∈ [7.37, 12.96], worst deficit 0.267 at t ≈ 10.92.
   - *Model q̂ ≡ 0.* It fails at low t (−83 at t = 0). It is inconsistent with σ_S ≥ 0, so q̂ must nearly cancel 2ε′(1⁺) at low t.
   - **Verdict (indicative): with the lower bounds available, the C.14.A symbol inequality does NOT hold for all t.** The gap is the band 7.4 ≲ |t| ≲ 12–13, where neither the ε-term (26.68/(¼ + t²) ≤ c₂ beyond 7.37) nor 2θ′ (< c₂ below 10.26) suffices alone.
-  - It closes iff the true σ_S satisfies **σ_S(t) > c₂ − 26.68/(¼ + t²) on 7.37 ≤ |t| ≤ 13**, i.e. σ_S ≳ 0.27 at t ≈ 10. This is the precise S&M input for the frame (ℓ-independent) route.
+  - It closes iff the true σ_S satisfies **σ_S(t) > c₂ − 26.68/(¼ + t²) on 7.37 ≤ |t| ≤ 13**, i.e. σ_S ≳ 0.22 at t = 10, ≈ 0.27 at t = 11 and ≈ 0.33 at t = 13 *(Grok audit S103g: the earlier "≳ 0.27 at t ≈ 10" mixed up the required value with the B = 66 deficit; the deficits 0.222/0.267, the crossing 7.36, and 2θ′ = c₂ at 10.26 are checked)*. This is the precise S&M input for the frame (ℓ-independent) route.
   - The band-split route (S&M Thm 2.1 / C.13.H′) avoids this pointwise requirement, at the cost of a small ℓ-range.
 - **Necessary condition for the symbol route (PROVED).** Integrating p_w + σ_per ≥ 0 (σ_per(t) := inf_k σ_S(t + 2πk/a)) against 1 + cos(at) over one period gives (a/2π)∫_{−π/a}^{π/a}σ_per(t)(1 + cos at)dt ≥ c₂ for the pure-multiplier version (no ε-part). With the C.13 heuristic σ_S ≈ log(|t|/2π) (HEURISTIC, C.13 §(IF-F)), σ_S < 0 on the whole central period |t| ≤ π/a ≈ 4.53, so the **pure multiplier frame fails**, and the low band must be paid by the ε-part 2ε′(1⁺)(1 − κ^{odd}_L) ≈ 46(1 − κ^{odd}_L). That is a non-multiplier, K_I / Lemma 6.10 quantity. The frame criterion is therefore an S&M question about σ_S *and* about the strict gap 1 − κ^{odd}_L.
 - **m₀ from the trace side (N.13 is pushed; this answers N.13.5's request at the level available).** At L₀ = ½ log 2, κ^{odd}_{L₀} ≤ 1 (interlacing against CC Thm 6.11; odd ⇒ ξ̂(0) = 0). Hence, PROVED given CC §5 / Thm 6.11:
@@ -865,7 +865,7 @@ CCM 2310.18423 shows that E-images of prolates give the Weil form extremely smal
   4. Note that (K2) needs no coupling bound (C.14.D).
 - **From S&M:**
   1. σ_S(t) on |t| < T (μ_lo) and a lower bound on ε̂ for |t| ≥ T (μ_hi > c₂). This is C.13.H via C.13.H″.
-  2. The strict gap 1 − κ^{odd}_{L₀} (Golden Eye NUMERICAL plausibility 0.58, sinc-kernel proxy) and its growth in L; this feeds the m₀^o formula and Thm C.14.A. For the frame route specifically: σ_S(t) > c₂ − 2ε′(1⁺)(1 − κ^{odd}_{L₀})/(¼ + t²) on 7.37 ≤ |t| ≤ 13 (≈ 0.27 needed near t = 10 at gap 0.58).
+  2. The strict gap 1 − κ^{odd}_{L₀} (Golden Eye NUMERICAL plausibility 0.58, sinc-kernel proxy) and its growth in L; this feeds the m₀^o formula and Thm C.14.A. For the frame route specifically: σ_S(t) > c₂ − 2ε′(1⁺)(1 − κ^{odd}_{L₀})/(¼ + t²) on 7.37 ≤ |t| ≤ 13 (≈ 0.22 needed at t = 10, ≈ 0.27 at t = 11, at gap 0.58; Grok audit S103g).
   3. An even margin m₀^e (or κ^{ev}, ξ₀ data) for (K3).
   4. CELESTIAL_INPUTS_C13.md is not pushed (spectrum-measure 95ea14a); "σ_S ≥ 2c₂ in the high band" stays HEURISTIC.
 
