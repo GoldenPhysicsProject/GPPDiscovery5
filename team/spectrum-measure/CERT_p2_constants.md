@@ -20,6 +20,9 @@ Notation: a = log 2, c₂ = a/√2 = 0.4901290717…, L₀ = a/2, 2L = a + ℓ, 
 > - *Inputs.* Thms 1–2 use only Ω (digamma) plus Lemmas A and B. Thm 3 adds Prime S1 (N.12.2) and (Ω5), both PROVED on main and Grok-audited.
 > - *"CC-free", made precise.* No CC numerics (ε, q, ε′(1⁺)), no CC §5/Thm 6.11, no κ^odd ≤ 1, and no Mori. The only CC link is the exact form Q_L = R − 2c₂B (main G.4h "One symbol", from CC (102)), which is the classical Weil explicit formula on a window 2L < log 3.
 > - *Scope of Thm 3.* It covers only the sub-window 2L ∈ (log 2, log 2 + 0.028] of the p = 2 step (log 2, log 3], and only the odd sector.
+> - *Source of Q_L (added after Golden Eye's independent audit, S103g).* For 2L < log 3, Q_L = R − 2c₂B is the classical **Weil explicit formula** (Weil 1952; Barner 1981), with the pole terms killed by Q-conjugation. This is alongside Prime N.13.1 and main §S (CC (102)), so no CC-specific input is used.
+> - *Independent audit.* Golden Eye's independent audit of 7906287 + f6c7257 also came back **SOUND**: the Arb chain is rigorous end to end, monotonicity is analytic, Lemmas A and B hold, and CC-free / no Mori is accurate. S1 and (Ω5) were re-derived as PROVED.
+> - *Consistency.* R6, the Cor and the R-lines now all read ℓ_H = 0.0050 at T = 16. R5 is stated for real odd ξ; complex ξ follows because the form has real coefficients.
 > - *Label fixes.* The Cor (R6) values were rounded up. They should be 0.0029 (T = 12.875) and 0.0050 (T = 16); recomputed, ℓ_H = 0.002974 and 0.005061. Separately, C.14.A's pointwise σ_S condition is **not** established here; σ_S stays a GAP. The odd sector no longer needs it.
 
 ## 0. Summary (labels)
@@ -30,7 +33,7 @@ Notation: a = log 2, c₂ = a/√2 = 0.4901290717…, L₀ = a/2, 2L = a + ℓ, 
 | R2 | Lemma B: bathtub bound for increasing symbols against an H-energy CDF majorant | PROVED |
 | R3 | **m₀^odd(L₀) := inf_{odd ξ ∈ H¹₀(−L₀,L₀)} R(ξ)/‖ξ‖²_H ≥ 0.46255** | **CERTIFIED** (no CC input) |
 | R4 | **Celestial Conj C.13.H holds** (odd, L₀) with (T, μ_hi, μ_lo) = (12.875, 0.6, 0.25) and (16, 0.7, 0.3) | **CERTIFIED** (no CC input; κ^odd ≤ 1 not used) |
-| R5 | **Odd (K2) entry, direct:** Q_L(ξ) ≥ 0.0126‖ξ‖²_H for odd ξ ∈ H¹₀(−L, L), all 2L ≤ log 2 + 0.028 | **CERTIFIED** (given Prime S1, (Ω5), proved) |
+| R5 | **Odd (K2) entry, direct:** Q_L(ξ) ≥ 0.0126‖ξ‖²_H for real odd ξ ∈ H¹₀(−L, L) (complex follows by real coefficients), all 2L ≤ log 2 + 0.028 | **CERTIFIED** (given Prime S1, (Ω5), proved) |
 | R6 | Via C.13.H′ with R4: (K2) odd for ℓ ≤ 0.0050 (eval.); R5 is the stronger range | PROVED given R4 / eval. |
 | R7 | Even sector by the same method: bound ≈ 0 at ℓ = 0 (inconclusive) | eval., NUMERICAL |
 | R8 | σ_S thresholds t₀(B) for |t| ≥ t₀: σ_S ≥ c₂ | eval. given B; **B GAP (uncertified)** |

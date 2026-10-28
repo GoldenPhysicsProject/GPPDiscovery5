@@ -817,6 +817,7 @@ R5 (open): δ_o⁰, k_∞ and B to be certified by S&M; σ_S on 5.41 ≤ |t| ≤
   - With δ_o⁰ = 0.3135 and the indicative k_∞ ≈ 3 (CC Fig. 10, not a bound), this gives ℓ₀^odd ≈ min{1.9e−3, 1.3e−3} ≈ **1.3e−3**.
   - The value is indicative. It is conditional on S&M certifying δ_o⁰, k_∞ and B; k_∞ and B are GAPs.
   - This replaces the e^{−21/m₀} loss of Thm N.13.A Step 2 as the preferred route.
+  - *Grok audit (S103g).* Both routes are now superseded for the odd sector by S&M CERT_p2_constants (merged 9d72bbb). It gives odd (K2) **CERTIFIED** for 2L ≤ log 2 + 0.028, directly from S1 + (Ω5) + Lemma A/B, without δ_o⁰, k_∞ or B. S&M's cert/ does not compute δ_o⁰ (it is a GAP there), so 0.3135 has no certified counterpart and stays NUMERICAL. Arithmetic checked: 45.993 × 0.3135 = 14.419; the coverage is |t| ≤ 5.4008; the deficits are 0.3454 at t = 9.97 and 0.3694 at t = 10.92; the band ends are 12.53 (B = 46) and 13.57 (B = 66).
 - **Frame route (Celestial Thm C.14.A, PROVED).** (K2) needs no coupling bound if the symbol inequality σ_S(t) + 2ε′(1⁺)(1 − κ^odd)/(¼ + t²) > c₂ holds.
   - **Indicative margin line (NUMERICAL).** With δ_o⁰ = 0.3135, the ε-term is 14.42/(¼ + t²). It is ≥ c₂ only on **|t| ≤ 5.40**, so on that range C.14.A holds from the L² gap alone, with σ_S ≥ 0.
   - On 5.41 ≤ |t| ≲ 12.5 (B = 46) or ≲ 13.6 (B = 66), the inequality needs a certified **σ_S(t) > c₂ − 14.42/(¼ + t²)**: about 0.35 at t = 10 and 0.40 at t = 13.
@@ -843,6 +844,7 @@ R5 (open): δ_o⁰, k_∞ and B to be certified by S&M; σ_S on 5.41 ≤ |t| ≤
 **Verdict on scale.** m₀^odd ≈ 0.55 in the H¹_¼ norm. That is O(1), and there is **no near-degenerate direction in the H-norm route at L₀ either**.
 - The smallness of the N.13.A entry, ℓ* ∝ e^{−21.06/m₀} ≈ e^{−38}, comes from the crude band split in its Step 2, not from a small m₀.
 - The values are Ritz *upper* bounds: NUMERICAL, not certified lower bounds.
+  - *Grok audit (S103g).* Only the N = 160 values (0.54929 and 0.07298) are Ritz upper bounds, up to the modelled quadrature tail. The Richardson ≈ 0.548 / 0.072 values are extrapolations. The odd value is compatible with S&M's **CERTIFIED m₀^odd(L₀) ≥ 0.46255** (merged 9d72bbb), and an independent 24-mode sine Galerkin gives 0.5479. So 0.46255 ≤ m₀^odd ≲ 0.549.
 - This is consistent with Celestial's C.14.4b scale result. Ramps carry ≤ 8.97ℓ³ of their energy in the negative band and ξ_s carries ≤ 2.73ℓ³ (PROVED, Celestial).
 - CC's λ_min ≈ 1.33e−3 is a full-space eigenvalue in a different normalization. Calling it "not tiny" is HEURISTIC.
 - The super-exponentially small eigenvalues of the CCM certificates belong to the full Weil form at larger windows, not to the p = 2 entry.
@@ -871,6 +873,7 @@ Notation: a = log 2, b = log 3, c_n = Λ(n)/√n, so c₂ = 0.490129, c₃ = 0.6
   - **So at order 1/ℓ₃ the {2, 3} edge form is the 3-line block alone.** The 2-line enters only through the bulk (≤ 2) form.
 - **Interface form (PROVED identity):** Q_L = [R(ξ_s) − 2c₃B₃(ξ_s)] + [Q^{(≤2)}(ξ_b) + 2σc₃β²(1/ℓ₃ − ℓ₃/24)] + [2R(ξ_b, ξ_s) − 4c₂B₂(ξ_b, ξ_s) − (c₃/2)X₃].
   - Here Q^{(≤2)} = R − 2c₂B₂ is the form at the previous entry 2L = log 3. It is CERTIFIED ≥ 0 there, conditional on Mori.
+  - *Grok audit (S103g), caveat.* In this identity Q^{(≤2)} is evaluated on ξ_b ∈ H¹₀(−L, L) with 2L > log 3. On that window it is the P₂ = {2} form, which is **not** known to be ≥ 0: P_X-type failure can begin beyond log 3 (N.12.1). So the Mori-conditional certificate at log 3 does not apply to Q^{(≤2)}(ξ_b) directly. This is part of why the odd-payer statement below is a CONJECTURE. The other {2, 3} items were checked: the strip geometry including 2L < log 4.5; B₂(ξ_s) = 0; the 2-line derivative term (2β₋/ℓ₃)[ξ(L + a − b) − ξ(a − L)]; the 3-edge block +c₃(1/ℓ₃ − ℓ₃/24)σ_x; S1 combined c₂ + c₃ via E₃ ⊂ E₂; transposed (3c), where the b-pair separation ≥ log(9/4) > a, so no 2-line enters; and c₃, c₄, the ℓ₂ table and KMS. All PROVED (elementary).
   - The 2-line coupling B₂(ξ_b, ξ_s) is the strip–bulk term above.
 - **Combined S1 bound (PROVED):** |2c₂B₂ + 2c₃B₃| ≤ c₂‖ξ‖²_{H(E₂)} + c₃‖ξ‖²_{H(E₃)} ≤ (c₂ + c₃)‖ξ‖²_{H(E₂)}.
   - log 2/log 3 is irrational, so by Kronecker inf_t[−2c₂cos(at) − 2c₃cos(bt)] = −2(c₂ + c₃). The constant c₂ + c₃ cannot be improved by phase alignment.
