@@ -533,6 +533,10 @@ Write ξ = ξ_e + ξ_o for the parity parts.
 - **Odd ξ.** **B(ξ_o) = ‖P₋ξ_o‖²_{H(S₋)} − ‖P₊ξ_o‖²_{H(S₋)}**.
 - **Exact (IF).** (IF) ⇔ for σ ∈ {e, o}:
   > R_L(ξ_σ) + 2c₂‖P_{−s(σ)}ξ_σ‖²_{H(S₋)} ≥ 2c₂‖P_{s(σ)}ξ_σ‖²_{H(S₋)},  with s(e) = +, s(o) = −.
+- *Audit note (Golden Eye; recorded by Grok audit S103g).* The (K2) ∧ (K3) split is exact.
+  - B and R_L commute with the reflection, and the reflection swaps the two pole conditions, so the pole-free class is invariant under it.
+  - Hence Q_L is diagonal in parity on the pole-free class, with no cross terms.
+  - The reflection here is the global one, ξ(x) ↦ ξ(−x); in f-coordinates it swaps f̂(i/2) ↔ f̂(−i/2). Its restriction to the strips, composed with the shift by a, is the strip map J of N.12.0.
 - **Harmful cones** (where the p = 2 term is negative for Q): (even, J-symmetric on the strip) and (odd, J-antisymmetric on the strip).
 - **Edge expansion** (PROVED; ξ in the energy closure, edge slope s = ξ′(−L⁺)).
   - Even nodeless profile: B(ξ_e) = −s²ℓ + O(ℓ²), so the p = 2 term **helps**.
@@ -635,6 +639,14 @@ Track **[L], Λ = 1** throughout. Notation is §C.13 and §C.13.B (team/celestia
   - This follows from |E| = 2ℓ and Cauchy–Schwarz on sup|u′| and sup|u| over |t| < T.
   - **This is the explicit ℓ-rate for the bulk**: smooth (low-band) profiles carry strip mass O(ℓ).
 
+- *Grok audit (S103g).*
+  - (Ω2) monotonicity is **PROVED**: every term y²/(c_n(c_n² + y²)) of the series is increasing in |y|. This is not a numerical observation.
+  - (Ω3): the n = 0, 1 terms are exact. The tail is bounded below by ∫_{9/4}^∞, since the terms decrease in c; it equals ½ log(1 + t²/20.25).
+    - The bound at t = 12.8 is 0.49596 > c₂ = 0.49013. That is a closed-form evaluation (`sN/n13_constants.py`, mpmath 20 digits; NUMERICAL single step, margin 0.006), and monotonicity extends it to |t| ≥ 12.8.
+  - (Ω4): ∫_0^∞ 2y²c/(c² + y²)² dc = 1, max_c = 9/(8√3 y) = 0.6495/y, and ζ(3, ¼) = 64.664 ≤ 64.84. ✓
+  - (Ω5): the two Cauchy–Schwarz bounds combine, since t²/(¼ + t²) + ¼/(¼ + t²) = 1. That gives exactly 2ℓT/π. ✓
+  - `sN/n13_constants.{py,out}` is a closed-form evaluation script, not a run log. No precision/runs or zhu_law_results.json file is on main.
+
 ### N.13.3 Theorem N.13.A (conditional entry; PROVED given (M₀^σ)) [L]
 **Hypothesis (M₀^σ) (GAP N.G2-m₀).** For the parity σ ∈ {e, o}: R(η) ≥ m₀‖η‖²_H for all η ∈ 𝒯_{½ log 2} of parity σ, with 0 < m₀ ≤ 1.
 - **Status of (M₀^σ).**
@@ -647,6 +659,10 @@ Track **[L], Λ = 1** throughout. Notation is §C.13 and §C.13.B (team/celestia
     - The Ω₊ part is weakly lower semicontinuous. Hence R(ξ) ≤ 0, so ξ is radical, so ξ = 0.
     - Then the low band tends to 0, and R(ξ_n) ≥ Ω(T)‖ξ_n^{>T}‖² − o(1) → Ω(T) > 0. Contradiction. ∎
   - Strict positivity of R on V^σ at λ = √2 is asserted in CC 2106.01715's introduction ("known to be strictly positive"; source not re-verified at the closure level). So m₀^σ > 0 qualitatively is **CONJECTURE-strong / GAP-minor**, and its **value** is GAP.
+- *Grok audit (S103g), compactness.*
+  - The argument is complete, given **R ≥ 0 on V^σ** as hypothesis and T ≥ 12.8 (so Ω(T) > 0, by (Ω3)).
+  - Low-band strong convergence uses only the fixed support: |ξ̂_n(t)| ≤ √a‖ξ_n‖₂, pointwise convergence, and dominated convergence on |t| < T.
+  - The high-band part is a nonnegative closed form, hence weakly lsc. R(ξ) = 0 with R ≥ 0 makes ξ radical by Cauchy–Schwarz for the form.
 - **Step 1 (dilation, PROVED).** For ξ ∈ 𝒯_L, ξ_λ := ξ(λ·) ∈ 𝒯_{½ log 2}, with λ = 2L/a = 1 + ℓ/a, and the parity is preserved. Changing variables and using (Ω1), (Ω4) and A_λ := ¼λ^{−2} + s² ≤ ¼ + s²:
   > R(ξ) ≥ λ^{−1}R(ξ_λ) − κ(λ)‖ξ‖²_H,  κ(λ) = h* log λ + (1 − λ^{−2})|Ω(0)|.
   - Also ‖ξ_λ‖²_H ≥ λ^{−1}‖ξ‖²_H. So R ≥ m‖ξ‖²_H on 𝒯^σ_L, with m = m₀λ^{−2} − κ(λ) ≥ m₀ − 24.88ℓ.
@@ -656,6 +672,15 @@ Track **[L], Λ = 1** throughout. Notation is §C.13 and §C.13.B (team/celestia
   - Apply S1 with (a + b)² ≤ 2a² + 2b² to |2c₂B| ≤ c₂‖ξ‖²_{H(E)}, and (Ω5) to the low band.
   - Then Q_L(Qh) ≥ [θm′ + (1 − θ)Ω(T) − 2c₂]‖ξ^{>T}‖²_H + [θm′/2 − 4c₂ℓT/π]‖ξ^{<T}‖²_H.
   - The first bracket is ≥ 0 by the choice of T. The second is ≥ 0 iff ℓ ≤ πθm′/(8c₂T), and θ ≥ ½.
+- *Grok audit (S103g), derivation and constants rechecked.*
+  - Step 1:
+    - λ^{−1}R(ξ_λ) = (1/2π)∫A_λ(s)Ω(λs)|ξ̂|². The difference from R is A_λ(Ω(s) − Ω(λs)) + ¼(1 − λ^{−2})Ω(s), which gives κ(λ). ‖ξ_λ‖²_H ≥ λ^{−1}‖ξ‖²_H. ✓
+    - The slope (2 + 4.5 + 2|Ω₀|)/log 2 = 24.88 uses m₀ ≤ 1. ✓
+  - Step 2:
+    - R is diagonal in t, so there are no band cross terms. (1 − θ)|Ω₀| = θm′/2 holds exactly.
+    - The high bracket needs Ω(T) ≥ 2c₂ + 4c₂|Ω₀|/m′. The T chosen meets this via the crude bound Ω(T) ≥ Ω(0) + log 2T. ✓
+  - ℓ* = π m₀ e^{−(|Ω₀|+2c₂)} e^{−8c₂|Ω₀|/m₀}/(16c₂). Coefficient 6.98×10⁻⁴; exponent 21.0645 = 8c₂|Ω₀| (from m′ = m₀/2). ✓
+  - ℓ* ≤ m₀/50, so Step 1 applies. The constants all trace to (Ω1)–(Ω5) and S1. None is fitted.
 - **Result (PROVED given (M₀^σ)).** (IF) holds on parity σ for
   > **2L ≤ log 2 + ℓ*(m₀),  ℓ*(m₀) = (π/(16c₂e^{6.3524}))·m₀·e^{−21.0645/m₀} = 6.98×10⁻⁴·m₀·e^{−21.06/m₀},**
   - i.e. **δ(m₀) = ℓ*(m₀)/2**, and L₀ = ½ log 2 + δ(min(m₀^e, m₀^o)).
@@ -708,6 +733,17 @@ Track **[L], Λ = 1** throughout. Notation is §C.13 and §C.13.B (team/celestia
   - This matches §C.13.B.1's side remark: at ℓ = 0 the odd (K2) is CC Thm 1, so the odd entry is the CC-margin question.
   - It also matches CC 2106.01715 Fig 7: p = 2 restores the even matrix (NUMERICAL, full space).
 - R1 one rule per ℓ | R2 FE via Ω in R | R3 the sign of B is used (σ-dependent), not |weights| | R4 even nodeless is helped; the odd pole partner is charged | R5 DH: no line at a.
+
+- *Grok audit (S103g).*
+  - N.13.4 is **PROVED**, all checked:
+    - y = x + L gives ξ_b(x + a) = α₊(ℓ − y)/ℓ, and B(ξ_b) = α₋α₊(ℓ/24 − 1/ℓ).
+    - The derivative cross terms vanish, because ξ_s ∈ H¹_0 of each strip. The ¼-cross term is (c₂/2)X.
+    - ‖ξ_b‖²_{H(S)} = α²(1/ℓ + ℓ/12). The ratio (1 − ℓ²/24)/(1 + ℓ²/12) ≥ 1 − ℓ²/8.
+    - It is consistent with N.12.3: α = sℓ gives B = −s²ℓ on the even ramp.
+  - The **identity 2c₂α²(1/ℓ − ℓ/24)** (even help / odd cost) is exact.
+  - **Mechanism label.** The *mechanism statement* is a reading of exact identities. That the even entry actually closes from the p = 2 budget is **(K3)-bulk, a CONJECTURE**, and it needs the coupling **2R(ξ_b, ξ_s), a GAP (N.G2-bulk)**.
+  - Per ARP G.4h's reconciliation, the even sector also carries the CC ĝ(0) eigen-direction cost. That cost is paid by 𝒮_L (§S condition (P)), not by the p = 2 line. So "the p = 2 line carries the even sector" refers to the even **edge traces**.
+  - Positivity on the range itself stays CERTIFIED, conditional on Mori (main 992a011). N.13 is mechanism only.
 
 ### N.13.5 Interface requests (no duplication)
 - **Spectrum & Measure (archimedean/prolate):** an explicit m₀^o > 0 with R(η) ≥ m₀‖η‖²_H on odd η ∈ 𝒯_{½ log 2} (strict CC Thm 1 in H), and the even analogue. Either gives δ by Thm N.13.A. A frequency-resolved version (a margin on |t| < T only) would remove the e^{−21/m₀} loss.
