@@ -409,7 +409,28 @@ lie on Re z = 0 under RH). §N N.11.4: the FE adds nothing to the failure direct
     - The "REQUIREMENT" label becomes REMARK.
     - Notation REMARK: ‖B‖ in C.15.A is the off-diagonal block, not the p = 2 form.
   - The even {2, 3} entry past log 3 remains a GAP. RH OPEN.
-- **Prime §N.16 (5c544bf).** Mechanism for the tiny {2,3} margins (RH not assumed). *PROVED (counting):* the crossover t* = 2πe^{2L} is where the zero density (1/2π)log(t/2π) meets the window's Nyquist density 2L/2π; per parity the dimension surplus below t* is D(t*) = 2Le^{2L} − [e^{2L}(2L − 1) + 7/8] − 1 = e^{2L} − 15/8 (smoothed RvM; Grok re-derived), so for D > 0 a window-limited vector exists that vanishes at every zero below t* and pays only prolate leakage ("zero-dodging"). Even onset is below log 2, odd onset ℓ₂ ≈ 0.17 (matches N.15). *Upper bound* m^σ(L) ≤ C log t*·(1 − λ_k(Lt*)): Grok label **PROVED (sketch), constants untracked, upper bound only**. *CONJECTURE (Landau–Widom plunge):* log m^σ(L) ≈ −2π²e^{2L}/(2L + log 2πL), super-exponentially small in L, which is the analytic content of G.4d: **any step that gives up a fixed fraction of the margin closes at bounded L**. ONE check: the explicit-formula zero sum reproduces the N.15 Ritz values to ≤ 1.1%, and the even near-null vector has |ξ̂(γ₁)|², |ξ̂(γ₂)|² ~ 1e−9 of its peak; 94% of its Ritz value is discretisation, so the true even margin at log 3 is likely ≲ 1e−4 (NUMERICAL). The zero side gives no unconditional lower bound ("all terms ≥ 0" is BARRED).
+- **Prime §N.16 (5c544bf; reached main via the routine's merge 0b15e89, not a direct push).** Mechanism for the tiny {2,3} margins. RH is not assumed. *Grok audit S103i(N16): SOUND after label fixes; this bullet supersedes the routine's labels.*
+  - **Explicit formula (PROVED, classical: Weil 1952, Barner 1981).** Q_L(ξ) = Σ_ρ ĝ(γ_ρ) = Σ_ρ û(γ_ρ)·conj û(conj γ_ρ), with u = ½ξ − ξ′, ‖u‖ = ‖ξ‖_H and û(−i/2) = 0, i.e. ∫u e^{−x/2} = 0 (sign fixed). The pole terms vanish exactly.
+    - The nonnegative sampling sum Σ|û(γ)|² over real γ holds **assuming RH**. Unconditionally it holds only for the terms with |γ| ≤ 3 000 175 332 800 (Platt–Trudgian 2021, CERTIFIED).
+    - An off-line zero contributes û(γ − iβ)·conj û(γ + iβ), which is not sign-definite.
+  - **Zero side gives only upper bounds.**
+    - That an explicit witness ξ gives an unconditional upper bound on the margin is PROVED.
+    - That no uniform lower bound comes from the zero side is a REMARK; 'all terms ≥ 0' is BARRED.
+    - **So the lower bound must come from the prime side (N.15-G1 / G1 for Q^G_L).** This is a REMARK and a route decision.
+  - **Counting mechanism.**
+    - *PROVED (elementary):* the zero density (1/2π)log(t/2π) falls below the Nyquist density L/π exactly for t < t* = 2πe^{2L}.
+    - *PROVED (linear algebra; uses only zeros ≤ t* < H, so it is unconditional for L < 13.4):* a nonzero window-limited u of either ξ-parity vanishes at every ordinate ≤ t* and at −i/2.
+    - *HEURISTIC:* the surplus D(t*) = e^{2L} − 15/8 per parity (smoothed RvM; the O(1) offsets are below the Landau–Widom resolution), the onsets (even below log 2, odd ℓ₂ ≈ 0.17) and 'even < odd'. These match N.15 NUMERICALLY.
+  - **Upper bound.**
+    - The as-written m^σ ≤ C log t*·(1 − λ_k) is HEURISTIC: Plancherel–Pólya is global, the local count is log|t|, and point values need û′.
+    - The PROVED (sketch) form has an unspecified absolute C: m^σ ≤ C Σ_{n≥t*−1} log(n+2)∫_{n≤|t|≤n+1}(|û|² + |û′|²) + E_H.
+  - **CONJECTURE (Landau–Widom plunge), upper envelope only:** m^σ(L) ≲ exp(−π²(2D − σ)/log(Lt*)), i.e. log m ≲ −2π²e^{2L}/(2L + log 2πL).
+    - A two-sided 'm ≈ positive quantity for all L' would assert Weil positivity for every L (⇔ RH), so it is not claimed.
+    - 'No slack in L' is the HEURISTIC reading of G.4d.
+  - **ONE check (NUMERICAL).** The zero sum reproduces the N.15 Ritz values at log 3 to 1.06%, 0.44%, 0.04% and 0.04%. The even near-null vector has weight ~1e−9 of its peak at γ₁ and γ₂.
+    - 94% of that vector's value is the smoothed tail above γ₄₀₀, so 'true even margin ≲ 1e−4 at log 3' is HEURISTIC.
+    - 'Even sector in the plunge from log 2' is a dimension count only. It does not contradict m₀^e ≈ 0.071–0.0725 at L₀ or C.15's float λ_cert = 0.0138 (ℓ = 0.1) / 0.0020 (ℓ = 0.2); log 3 is ℓ ≈ 0.405, beyond those points.
+  - G1, G2 and G.4d are unchanged. RH OPEN.
 - **Queen H-κ Part V (0d48b28).** S^{−1} = (G^{−1})_{RR} and the dual variational bound ⟨S^{−1}ρ, ρ⟩ = sup_ψ |⟨ψ, ρ⟩|²/G(ψ, ψ) (PROVED; checked). (LD_γ) retired (no unconditional source; Radziwiłł–Soundararajan controls the upper tail only). Pointwise lower tail ≫ ηT^{5/6−ε} (PROVED sketch; Grok check: |ζ| ≤ sup|ζ′|·|t − γ| near any zero, so simple zeros are not even needed), which corrects Part IV's "super-polynomially rare". New chain (T3) ⇐ (WK), (WK₂) + (NM₂) + (MB)(a–c) + flat density + (T3a*) + (L): PROVED-conditional. **(NM₂), a window-floor negative 4th moment ≤ Λ^{2−δ}/r_K, is the single arithmetic GAP**; unconditional worst case gives exponent ≥ 8/3 (insufficient; checked: Chebyshev with c ≥ 1/6, T ≍ Λ² gives η_W^{−4} ≤ Λ^{16c}); RH ⇒ (NM₂) so it is BARRED as a source; the zero-density route (Euler product, R2) is OPEN. (T3) OPEN.
 - **S&M (bad5094, 945d87c).** Citation fix: the Λ > 1 analogue of CC Thm 6.11 is Principal §P.10.3 (theirs); γ in c = 4γ/log 2 is CC Lemma 6.10's 2.94355, not Euler's constant. t3a_test.py committed (NUMERICAL, RH-silent).
 - **Connection (Grok, HEURISTIC).** N.16 and Queen's (NM₂) are the same phenomenon at two scales: the Weil form's margin is set by how small ξ̂ can be made on the zeros (N.16, low window) and by how small |ζ| is on unit windows (Queen, height Λ²). Both say the obstruction is quantitative small-value control of ζ, where RH-equivalence enters, not a missing positive structure.

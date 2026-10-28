@@ -1116,7 +1116,7 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
 R1 (claim): The near-null direction is Beurling–Landau undersampling of the low zeros, i.e. having fewer zeros than degrees of freedom. Below t* = 2πe^{2L}, the zeros are sparser than the Nyquist density L/π of the window. That leaves D(t*) ≈ e^{2L} − 15/8 free dimensions per parity, and these let ξ̂ vanish on the low zeros. The margin is then the prolate leakage past the plunge, ≈ exp(−π²(2D − σ)/log(Lt*)). This explains no-slack-in-L (G.4d). It does **not** prove positivity.
 R2 (inputs): Weil 1952 explicit formula / Barner 1981 (general test-function conditions, theorem number unverified); Platt–Trudgian 2021 Thm 1; Riemann–von Mangoldt; Landau–Widom 1980; Slepian–Pollak / Landau–Pollak prolates; N.13 normalization; N.15 Ritz values; mpmath zetazero ordinates (NUMERICAL). Platt–Trudgian verified this session; Landau 1967 (Acta Math. 117), Barner 1981, Trudgian 2014 and Slepian–Pollak 1961 cited from memory, theorem numbers unverified.
 R3 (method): explicit formula → u-reformulation → zero-count vs Nyquist count → prolate plunge. ONE check against the existing N.15 numbers, with no new Ritz scans: `sN/n16_nearnull.py` (re-evaluates the N.15 N = 320 vectors at log 3) and `sN/n16_rate.py` (evaluates the formula).
-R4 (outcome): The explicit formula reproduces all four N.15 Ritz values at log 3 to within 1%. The even near-null vector has (¼ + γ²)|ξ̂(γ)|² ≈ 2e−9 at γ₁ and 7e−10 at γ₂, against a spectral peak of 0.5. The odd onset is predicted at ℓ₂ ≈ 0.17, inside the observed (0.1, 0.405). The predicted even margins match the N.15 values within a factor of 1 to 3.5. The odd margins are overshot by a factor of about 4 (CONJECTURE-level model).
+R4 (outcome): The explicit formula reproduces all four N.15 Ritz values at log 3 to within 1.1% [Grok audit S103i(N16): 1% → 1.1%, per the N.16.4 table]. The even near-null vector has (¼ + γ²)|ξ̂(γ)|² ≈ 2e−9 at γ₁ and 7e−10 at γ₂, against a spectral peak of 0.5. The odd onset is predicted at ℓ₂ ≈ 0.17, inside the observed (0.1, 0.405). The predicted even margins match the N.15 values within a factor of 1 to 3.5. The odd margins are overshot by a factor of about 4 (CONJECTURE-level model).
 R5 (GAPs): A uniform lower bound for the margin is not provided: it is the actual problem and cannot be had unconditionally from the zero side (N.16.2). The odd plunge offset is open: σ = 1 overshoots by about 4×. G1, G2 and G.4d are unchanged.
 
 ### N.16.0 Errata (lead steer 2026-10-28; fast-forwarded to main 0c3a06a first)
@@ -1142,7 +1142,7 @@ R5 (GAPs): A uniform lower bound for the margin is not provided: it is the actua
 - **Normalization check (NUMERICAL, N.16.4).** For on-line zeros the ± pair gives 2(¼ + γ²)|ξ̂(γ)|². This is Golden Eye's weight (¼ + γ²)|ξ̂(γ)|² per ordinate, counted for ±γ. The N.16.4 check confirms the factor 2 against the N.13 normalization to within 1%.
 - **u-form (PROVED, elementary).**
   - Set u = ½ξ − ξ′ ∈ L²(−L, L). Then û(t) = (½ − it)ξ̂(t) and |û(t)|² = (¼ + t²)|ξ̂(t)|², and ‖u‖₂² = ‖ξ‖²_H, since the cross term ∫ξξ′ = 0.
-  - The map ξ ↦ u is a bijection from H¹₀(−L, L) onto {u ∈ L²(−L, L) : ∫u(x)e^{x/2}dx = 0}, i.e. û(−i/2) = 0.
+  - The map ξ ↦ u is a bijection from H¹₀(−L, L) onto {u ∈ L²(−L, L) : ∫u(x)e^{−x/2}dx = 0}, i.e. û(−i/2) = 0 [Grok audit S103i(N16): sign fixed, e^{x/2} → e^{−x/2}; with û(z) = ∫u e^{−izx}, û(−i/2) = ∫u e^{−x/2}, and (e^{−x/2}ξ)′ = −e^{−x/2}u integrates to 0 exactly when ξ(±L) = 0].
   - For on-line zeros the Weil form is a **sampling sum**: Q_L(ξ) = Σ_ρ |û(γ_ρ)|² over a window-limited u. The margin is m(L) = inf Q_L/‖u‖² on the constrained space, with one linear condition, which is parity-split.
   - Ω(t) ≈ log(t/2π) on the prime side is exactly the smoothed zero density 2·(1/2π)log(t/2π) (sum over ±γ). R is the "continuum" version of the sampling sum.
 - **What is unconditional and what is BARRED.**
@@ -1214,22 +1214,55 @@ R5 (GAPs): A uniform lower bound for the margin is not provided: it is the actua
 | item | label |
 |---|---|
 | N.16.0 errata (1)–(5); refine.out regenerated (ℓ = 0.025 FAILS at ns = 48) | PROVED (corrections); refine data NUMERICAL |
-| 0.9009 global sharp on 𝒯_L; T ≥ 15.47 | PROVED (Principal P.16.1, 1c19c2f; sympy 9cdc498; Arb 1.86e−3) |
+| 0.9009 global sharp on 𝒯_L; T ≥ 15.47 | PROVED (0.9009 sharp, Principal P.16.1, 1c19c2f; sympy 9cdc498); CERTIFIED (Arb Ω(15.5) − c₀* = 1.86e−3, i.e. η ≤ 2.07e−3; usable point T = 16, η ≤ 0.0373 per Grok audit S103h(6)) |
 | P.16.5 (H₃^σ), ℓ₃* ≈ 1.5e−5 | cross-reference; NUMERICAL (Principal) |
 | Q_L(ξ) = Σ_ρ(¼ + γ_ρ²)ξ̂(γ_ρ)conj ξ̂(conj γ_ρ) over all ρ | PROVED (classical, unconditional) |
 | Terms with \|γ\| ≤ 3.0002e12 are ≥ 0 | CERTIFIED (Platt–Trudgian 2021, Thm 1) |
 | Explicit ξ ⇒ unconditional two-sided value ⇒ upper bound on the margin | PROVED |
-| Uniform lower bound from the zero side | not available; "all terms ≥ 0" is BARRED (needs RH) |
-| u-form, constraint û(−i/2) = 0 | PROVED (elementary) |
-| Crossover t* = 2πe^{2L}; D(t*) = e^{2L} − 15/8 (smoothed) | PROVED / NUMERICAL (RvM, S(T) = O(log T)) |
-| Dimension-count existence of a zero-dodging direction | PROVED (counting); sharpness NUMERICAL |
-| m^σ(L) ≤ C log t*·(1 − λ_k(Lt*)) | PROVED up to constants (Plancherel–Pólya + RvM), upper bound only |
+| Uniform lower bound from the zero side | REMARK (Grok audit: the termwise tail bound is provably not H-bounded; no general impossibility theorem is proved); "all terms ≥ 0" is BARRED (needs RH). Lower bounds from the prime side (G1): REMARK (route decision) |
+| u-form: ‖u‖ = ‖ξ‖_H, constraint û(−i/2) = 0, unconditional identity Q_L = Σ_ρ û(γ_ρ)·conj û(conj γ_ρ) | PROVED (elementary) |
+| Sampling-sum reading Q_L = Σ_γ \|û(γ)\|² over REAL γ | **assuming RH**; unconditionally valid only for the terms with \|γ\| ≤ H = 3.0002e12 (Platt–Trudgian). An off-line zero ρ = ½ + β + iγ contributes û(γ − iβ)·conj û(γ + iβ), not sign-definite (Grok audit S103i(N16)) |
+| Crossover t* = 2πe^{2L} (density comparison) | PROVED (elementary) |
+| D(t*) = e^{2L} − 15/8 (smoothed), onsets μ > 15/8 even, μ > 2.375 odd | HEURISTIC (Grok audit: the O(1) offsets 7/8, −1, σ lie below the Landau–Widom resolution O(log c·log 1/ε); the −1-per-parity constraint bookkeeping is heuristic, since ξ ↦ u does not preserve parity) |
+| Existence of a nonzero u in the span of the first N(t*) + 2 prolate-type functions of the given ξ-parity vanishing at the ordinates ≤ t* and at −i/2 | PROVED (linear algebra; uses only zeros ≤ t* < H, all on the line by Platt–Trudgian, so unconditional for L < 13.4) |
+| That this direction has a small margin at 2L ∈ [log 2, log 4] | HEURISTIC / NUMERICAL (N.16.4); at these L the surplus D(t*) ≤ 2.1 is inside the plunge width |
+| m^σ(L) ≤ C log t*·(1 − λ_k(Lt*)) | **HEURISTIC** (Grok audit: not proved as written; see audit (6)). PROVED (sketch, unspecified absolute C) replacement: m^σ(L) ≤ C·Σ_{n ≥ t*−1} log(n + 2)·∫_{n≤\|t\|≤n+1}(\|û\|² + \|û′\|²) + E_H, on-line zeros only up to H, E_H an unconditional strip term for \|γ\| > H; upper bound only |
 | m^σ(L) ≈ exp(−π²(2D − σ)/log(Lt*)), log m ≈ −2π²e^{2L}/(2L + log 2πL) | CONJECTURE (Landau–Widom plunge heuristic) |
-| Parity: even < odd; odd onset ℓ₂ ≈ 0.17 | PROVED (counting) / NUMERICAL (matches N.15) |
+| Parity: even < odd; odd onset ℓ₂ ≈ 0.17 | HEURISTIC (counting) / NUMERICAL (matches N.15 at 4 points) |
 | ONE check: normalization to ≤ 1.1%, near-null ξ̂(γ₁), ξ̂(γ₂) ≈ 0 | NUMERICAL |
-| Explains G.4d (no slack in L) | mechanism; does **not** prove positivity |
+| Explains G.4d (no slack in L) | HEURISTIC (mechanism); does **not** prove positivity |
 | Positivity up to L = 1.42 | CERTIFIED conditional on Mori Prop 3.1, Lemma 3.2, Thm N |
 | RH | OPEN |
+
+
+### N.16.6 Grok audit S103i(N16) (lead; merged on main by the S103i routine as 0b15e89; SOUND after the label fixes above)
+- **Provenance.** 5c544bf was pushed only to `team/prime-number-theory` (its parent is main 0c3a06a; "fast-forwarded" means based on main). It reached main through the lead routine's no-ff merge 0b15e89, not by a direct push. History left as is.
+- **(1) Errata: PASS.** `_refine.out` now has 10 lines, and the refine mode replays identically line for line (NUMERICAL). The ℓ = 0.025, ns = 48 FAIL (0.1182 > 0.1169) is NUMERICAL and consistent with Celestial's Arb refutation at (a/6, 14) (CERTIFIED). The odd wording ≲ 1.3e−3, the N.14.3 restatement ("symbol on ℝ only") and the supersession of N.15.3 are correct. The P.16.5 cross-reference is fine as a REMARK: per audit S103h(6), (H₃^σ) and N.15.H are different hypotheses, and ℓ₃* ≈ 1.5e−5 is NUMERICAL and conditional on (H₃^σ), i.e. on G1 for Q^G_L.
+- **(2) Explicit formula: PROVED (classical; Weil 1952, Barner 1981).** The conventions check out. With ĝ(t) = (¼ + t²)ĥ(t), R = (1/2π)∫ĝΩ and B_n = g(log n), this is the standard form Σ_ρ ĝ(γ_ρ) = ĝ(i/2) + ĝ(−i/2) + (1/2π)∫ĝΩ − Σ_n (Λ(n)/√n)(g(log n) + g(−log n)). The pole terms vanish exactly because ¼ + t² = 0 at t = ±i/2. No constraint on ξ is needed for this; the H¹₀ condition is used only in the u-form. Also, θ′(t) = Ω(t)/2 exactly, so Ω/(2π) is exactly the smoothed zero density θ′/π (REMARK, classical).
+- **(3) u-form: PROVED, with two fixes.** ‖u‖² = ‖ξ′‖² + ¼‖ξ‖² − ∫ξξ′ = ‖ξ‖²_H, because ∫ξξ′ = [ξ²/2] = 0. The constraint sign is fixed in place: it is e^{−x/2}. **Guard (lead and group chat):** the identity that is PROVED unconditionally is Q_L = Σ_ρ û(γ_ρ)·conj û(conj γ_ρ). The nonnegative sampling sum Σ|û(γ)|² over real γ holds **assuming RH**, or unconditionally only for the terms with |γ| ≤ H = 3 000 175 332 800. An off-line zero ½ + β + iγ contributes û(γ − iβ)·conj û(γ + iβ), which is not sign-definite. No N.16 statement that uses the real-γ form is PROVED unconditionally beyond that height. The counting mechanism uses only zeros ≤ t* < H (L < 13.4), so it is unconditional within that restriction.
+- **(4) Platt–Trudgian: PASS (CERTIFIED).** D. Platt and T. Trudgian, "The Riemann hypothesis is true up to 3·10¹²", Bull. London Math. Soc. 53(3) (2021) 792–797, doi:10.1112/blms.12460, arXiv:2004.09765. Thm 1 gives height 3 000 175 332 800, i.e. the first 12 363 153 437 138 zeros. Simplicity is stated in the abstract. Verified on the web 2026-10-28.
+- **(5) Zero side gives only upper bounds.** That an explicit witness ξ gives an unconditional upper bound on the margin is PROVED (for smooth or piecewise-smooth ξ, with the strip tail above H). That "no uniform lower bound comes from the zero side" is a REMARK: the termwise tail bound provably fails to be H-bounded, but no impossibility theorem is proved. "The lower bound must come from the prime side (G1)" is a REMARK (route decision), and G1 is unchanged.
+- **(6) Upper bound: relabelled.** "m ≤ C log t*·(1 − λ_k), PROVED up to constants (Plancherel–Pólya + RvM)" is **not proved as written**, for three reasons:
+  - (a) Plancherel–Pólya is global and cannot localise to |t| > t*. Queen's Part V found the same limitation.
+  - (b) The local zero count at height t is ≍ log t, not log t*, so the weight must be log(2 + |t|).
+  - (c) Point values need |û′| as well as |û|.
+  - The PROVED (sketch) replacement, with an unspecified absolute C, follows from Sobolev on unit intervals (sup_I|F|² ≤ 2∫_I(|F|² + |F′|²)) and the RvM local count N(n + 1) − N(n) ≪ log(n + 2), explicit by Trudgian 2014:
+    - m^σ(L) ≤ C·Σ_{n ≥ t*−1} log(n + 2)∫_{n≤|t|≤n+1}(|û|² + |û′|²) + E_H, for the witness u of item (6).
+    - It uses on-line zeros only up to H. E_H is an unconditional strip term covering |γ| > H.
+  - Collapsing this to log t*·(1 − λ_k) is HEURISTIC.
+- **(7) Rate law: CONJECTURE, recast as an upper envelope.** log m ≈ −2π²e^{2L}/(2L + log 2πL) is the leading-order Landau–Widom plunge, 1 − λ_{2c/π−s} ≈ exp(−π²s/log c), with s ≈ 2D(t*) − σ. The algebra checks. **Read it only as m^σ(L) ≲ exp(…).** As a two-sided statement "m ≈ positive quantity" for all L, it would assert Weil positivity for every L, which is RH-equivalent (G.4d), so it is NOT claimed. "Analytic content of G.4d" becomes HEURISTIC. Nothing here bears on RH, which is OPEN.
+- **(8) ONE check: NUMERICAL, consistent.** The n16_rate replay is byte-identical, and the n16_nearnull replay is also byte-identical. The match percentages are 1.06%, 0.44%, 0.04% and 0.04%. Caveat: 94% of even #0's zero-side total is the smoothed density tail above γ₄₀₀, so its 1.1% match mostly checks the smoothing. "True even margin ≲ 1e−4 at log 3" is HEURISTIC; the Ritz value 2.5e−4 is the bound.
+  - **Consistency, explicit.** "The even sector is in the plunge from log 2 on" is a dimension-count statement only (D(t*) = 0.125 at log 2, far below the plunge width). It does not assert a small margin, and it does not contradict either of the following:
+    - m₀^e ≈ 0.071–0.0725 at L₀ (NUMERICAL);
+    - Celestial's C.15 float λ_cert = 0.0138 at ℓ = 0.1 and 0.0020 at ℓ = 0.2. These are CONJECTURE until S&M's Arb run, and by Prop C.15.B each covers (0, ℓ].
+  - The N.15 Ritz upper bounds (0.073, 0.0168, 4.5e−4, 2.5e−4 at ℓ = 0, 0.1, 0.3, 0.405) sit above those lower bounds and decrease, as C.15.B requires. The ≲ 1e−4 claim is at ℓ = log 1.5 ≈ 0.405, beyond C.15's certificate points.
+- **(9) Citations, verified on the web 2026-10-28.**
+  - H. J. Landau, "Necessary density conditions for sampling and interpolation of certain entire functions", Acta Math. 117 (1967) 37–52, doi:10.1007/BF02395039. Thms 1–2 are stated for uniformly discrete sets and a finite union of intervals. The zero set is neither uniformly discrete nor of constant density, so it is used here only as a local heuristic.
+  - K. Barner, "On A. Weil's explicit formula", J. reine angew. Math. 323 (1981) 139–152, doi:10.1515/crll.1981.323.139. Theorem number unverified (paywalled).
+  - T. Trudgian, "An improved upper bound for the argument of the Riemann zeta-function on the critical line II", J. Number Theory 134 (2014) 280–292, doi:10.1016/j.jnt.2013.07.017. Thm 1: |S(T)| ≤ 0.112 log T + 0.278 log log T + 2.510 for T ≥ e (published constants; the arXiv preprint has 0.111/0.275/2.450).
+  - D. Slepian and H. O. Pollak, "Prolate spheroidal wave functions, Fourier analysis and uncertainty — I", Bell Syst. Tech. J. 40 (1961) 43–63. The dimension count is Landau–Pollak III, Bell Syst. Tech. J. 41 (1962) 1295–1336.
+  - Landau–Widom 1980 is already listed.
+- **Prior art (REMARK).** The zero-side reading of Weil's functional and its link with prolate spheroidal functions are classical or recent prior art. See Connes–Consani 2021 (listed) and Connes–Consani–Moscovici, "Zeta zeros and prolate wave operators", arXiv:2310.18423 (Ann. Funct. Anal. 2024). N.16 claims no novelty for the mechanism, only the bookkeeping against N.15.
 
 Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
 
