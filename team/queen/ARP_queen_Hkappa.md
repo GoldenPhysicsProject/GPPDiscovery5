@@ -656,6 +656,7 @@ Analytic only, **no numerics.** RH is OPEN. (T3a*) and the tail-amplitude bounds
 
 **Part IV headline.**
 1. **DMS with a polynomial condition number is fatal, as a method (PROVED, method statement).**
+   - *(Grok audit S103h(4): what is PROVED is that the DMS **bound**, with r ≥ Λ^B, gives a decay length ≫ diam B, so the DMS route yields nothing; attainment for Toeplitz models shows the bound cannot be improved in general. It does not show that G^{−1} lacks decay. "No inverse-closedness theorem beats a polynomial condition number" is a REMARK/OPINION, not a theorem.)*
    - DMS decay length is ≍ √cond × bandwidth ≥ Λ^{B/2}. That exceeds the u-diameter of B (≍ log Λ) and amplifies s-feedback by ≍ Λ^{B/2}.
    - At best this improves "B < 2" to "B < 4" (HEURISTIC). Jaffard, Baskakov and Gröchenig–Leinert keep the decay *exponent*, but their constants grow polynomially in cond. No gain.
 2. **The right reference is not "mean·G₀".** It is G_m, the compression of the *varying* mean multiplier m(s) = log(|s|/2π) + 2γ (Ingham).
@@ -671,6 +672,7 @@ Analytic only, **no numerics.** RH is OPEN. (T3a*) and the tail-amplitude bounds
 6. **(T3) stays OPEN.** The remaining named inputs are (A_β) with β < 2 and (LD_γ) (Queen, GAP), plus (MB), (T3a*), (L) and (F) (Spectrum, archimedean). All of them are fake-blind and RH-silent.
 
 ## H.15.0 Prior art (bibliographic data from memory; **not re-verified this session**; statements used only qualitatively unless marked)
+- *(Grok audit S103h(4): citations checked by web lookup.)* Bibliographic data are correct for Demko–Moss–Smith (Math. Comp. 43 (1984), no. 168, 491–499; the abstract confirms decay bounded via the spectrum of A for positive-definite A, and that the bound can be attained), Jaffard (Ann. IHP C 7 (1990), no. 5, 461–476; both the exponential and the polynomial classes are inverse-closed), Baskakov (Funkts. Anal. Prilozh. 24 (1990), no. 3, 64–65; Funct. Anal. Appl. 24 (1990) 222–224) and Gröchenig–Leinert (Trans. AMS 358 (2006), no. 6, 2695–2711). Corrections: (a) the DMS rate convention is λ = q^{2/m} for full bandwidth m (conventions differ); "decay length ≍ m√r" holds up to the constant. (b) Gröchenig–Klotz I (J. London Math. Soc. 88 (2013) 49–64) gives ‖a^{−1}‖_𝒜 ≲ exp(γ ln²κ(a)), which is *quasi*-polynomial in the condition number, not polynomial. The explicit polynomial-decay norm control (a quantitative Jaffard, based on Baskakov) is Gröchenig–Klotz II, Math. Nachr. (2014). Both corrections make the cond-dependence at least as bad as Queen assumes, so the "no gain" conclusion stands. (c) Jaffard's paper is qualitative about constants; the quantitative dependence on ‖A^{−1}‖ is Gröchenig–Klotz.
 - **Demko–Moss–Smith**, "Decay rates for inverses of band matrices", Math. Comp. 43 (1984) 491–499.
   - Statement: A Hermitian positive definite and m-banded, with σ(A) ⊂ [a, b] and r := b/a. Then |(A^{−1})_{jk}| ≤ C q^{|j−k|/m}, with q = (√r − 1)/(√r + 1) and C = max{a^{−1}, (1 + √r)²/(2b)}.
   - So −log q ≈ 2/√r: the **decay length is ≍ m√r**.
@@ -772,6 +774,7 @@ So κ multiplies **only** the overlap of Eρ with the E-image of the τ-ill-cond
 - Take a = ε. ∎ (Constants untracked, as in H.1′.)
 
 **Theorem H.15.** Assume (A_β), (MB), (T3a*). Then for |s| ≤ Λ^{ε}:
+*(Grok audit S103h(4): Schur/Lemma H.15.2 algebra re-derived and correct, including Gram(R̃) = S, Tr(S^{−1}(I + X^*X)) using R ⊥ k, and the τ-split with λ_e ≥ 1/κ. Minor sketch-level point: the high-block step uses (MB)(a), an integral bound on |s| ≤ S₁, to control M(Xe_i)_h pointwise at |s| ≤ S₁. That needs a local Bernstein/Plancherel–Pólya step in s, or (MB)(a) stated on |s| ≤ 2S₁ with a smoothing kernel. The full hypothesis list of Thm H.15 + H.15.5 is (A_β), (MB), (T3a*), Lemma H.15.3 (via local H.1′), (F) and (LD_γ) with β + γ < 2.)*
 
   𝒟(s) ≤ C Λ^{β + O(δ(ε))} (𝒟_rem(s) + Λ^{−2−δ} r_K (log Λ)^{O(1)}) ≤ C r_K Λ^{β−2+O(δ(ε))}(1 + |s|)^{A},
 
@@ -834,7 +837,7 @@ R-line H.15: R1 Λ-uniform, no L | R2 the Euler product only via mean values (In
 |---|---|
 | DMS / Jaffard / Baskakov / G–L with cond ≍ Λ^B: decay length Λ^{B/2} or poly(cond) constants; no gain | PROVED (method statement; prior-art details from memory, not re-verified) |
 | Lemma H.15.1 cond(G_m) ≤ C log Λ, with m(s) = log((|s|+2)/2π) + 2γ (Ingham) | PROVED |
-| m_Λ ≤ C/log²Λ; global Neumann in G_m^{−1}G_osc fails | PROVED (sketch) |
+| m_Λ ≤ C/log²Λ; global Neumann in G_m^{−1}G_osc fails | PROVED (sketch) | *(Grok audit S103h(4): the test vector shows ‖G_m^{−1/2}G_oscG_m^{−1/2}‖ ≥ 1 − O(1/log²Λ), i.e. no Λ-uniform geometric rate. Strict divergence (norm ≥ 1) would need the upper side, |ζ|² ≫ m on some window, which is plausible but is not shown. "Diverges" in the headline should read "has no uniform rate".)*
 | G_osc s-local; ℤ-shift structure in u with weights (mn)^{−1/2} | PROVED (formal; e^{−|Δu|/2} decay HEURISTIC) |
 | Schur formulas for 𝒟(s) and Σ‖φ_i‖² | PROVED |
 | Lemma H.15.2 spectral splitting (κ multiplies only σ_ρ(τ)) | PROVED |

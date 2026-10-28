@@ -245,6 +245,10 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
             - **(T3) reduces to (T3a*) + (PD) + (L), with no B < 2 condition.** Thm H.13 is PROVED-conditional at rate O(K(log Λ)^{A+2}Λ^{−2}). (PD), profile domination of the E-orthonormal complement, is a GAP and must also hold in integrated form for the jump sum. (L), the remainder-leak low-pass, is HEURISTIC.
             - The worst-case route still needs B < 2 plus kept-feedback transport.
             - **(T3) is NOT proved.**
+          - **Part IV update (Queen b42c7ef, merged S103h(4) fbabd66; Grok audit: SOUND, three label/citation notes).**
+            - **(T3) ⇐ (A_β) + (LD_γ) (Queen, GAP) + (MB) + (F) + (T3a*) + (L) (archimedean, Spectrum; RH-silent), with β + γ < 2.** This is Cor H.15, PROVED-conditional, via Thm H.15 ((PD) pointwise, loss Λ^{β+o(1)}) and H.15.5 ((PD) integrated), using Lemma H.15.3 (PROVED (sketch)). Exact Schur formulas and the spectral-splitting Lemma H.15.2 are PROVED. cond(G_m) ≤ C log Λ is PROVED. The BCHB range check (only |s| ≥ Λ^{4/3+ε}) is PROVED.
+            - DMS-type inversion with cond ≍ Λ^B is fatal as a method (PROVED for the bound; "no theorem beats it" is a REMARK). The global Neumann series has no uniform rate (PROVED (sketch); "diverges" is not shown). The e^{−|Δu|/2} decay of G_osc is HEURISTIC. Citations were checked; Gröchenig–Klotz I is quasi-polynomial in cond, which does not change the conclusion.
+            - Circularity flag: (A_β) and (LD_γ) must not come from RH-conditional arguments. **(T3) remains OPEN.**
           - H.10's RH-conditional line is flagged and barred.
           - The trimming count is corrected to O(K log²Λ).
     - **M1 overall: CONJECTURE.** RH-silent: no implication to or from RH.
