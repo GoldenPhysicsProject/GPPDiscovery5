@@ -216,3 +216,230 @@ The improvements, by item:
 
 Not cited: ArithmeticTemperedPrincipalSeries, rh_iff_weil_pairedForm_nonneg, or any True-placeholder.
 Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
+
+---
+
+# Part VII (2026-10-28): (I2′) the exact Hadamard form; the clean-window constant A; a moment route to (NM₂) with ν < 2; the Kovrijkine threshold
+
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OPEN; (T3) is OPEN.** Analytic only, no numerics (the arithmetic below is bookkeeping with cited constants). **No RH is used anywhere; RH-derived inputs are BARRED.** Parts V–VI are kept as merged, with the lead's audit fixes S103i(3) (1)–(4). Labels follow the project list; where Part VI said "OPEN" for (I2)/(I2′), read GAP.
+
+**Headline.**
+1. **(I2′) decisive test (PROVED (sketch)).** The exact Hadamard form gives the window *mean* with only a 1/a loss, exactly as the lead's HEURISTIC predicted:
+   mean_W log|ζ(½+it)| ≥ −(2πh_b C_S/a)log T − O(1).
+   But converting the mean into the half-measure *floor* costs the sup term. On h-clean windows,
+   **A_clean = ½ + 3A_E + 4πC_S/a ≥ ½ > θ_d/8 (< 1/7, Conrey/Baluyot).**
+   - So the graded test "A < θ_d/8 ⇒ ν = 0" **fails** for this argument.
+   - The ½ is the T^{h/2} Stirling gap between σ₁ and ½. It enters through the sup of log⁺ on the good half of W, not through the zeros.
+   - REMARK: without the sup term, A would be 4πC_S/a + 2A_E, which is < 1/7 for a > 9.2 and A_E < 1/14 − 2πC_S/a. The obstruction is exactly the sup term.
+2. **New route (PROVED (sketch)), no zero density at all.** Combine three pieces:
+   - the Hadamard window-mean bound, valid for **every** window and using no cleanliness;
+   - Jensen for log⁺;
+   - the unconditional eighth moment ∫_0^T|ζ|⁸ ≪ T^{3/2}log^{21/2}T (Hölder from Ingham's 4th moment and Heath-Brown's 12th).
+
+   Together they give **(NM₂) with ν(a) = 1 + 16D/a + ε**, where:
+   - D = 2πh_b·C_S;
+   - C_S = 0.1038 (Hasanalizade–Shen–Wong 2022) or 0.112 (Trudgian 2014);
+   - h_b = 3/2 for the fake-blind version (σ_b = 2), giving D ≈ 0.978;
+   - h_b = ½⁺ for the [EP4] version (σ_b = 1⁺), giving D ≈ 0.326.
+
+   So **ν < 2 unconditionally once a > 16D** (a > 5.2 with [EP4], a > 15.6 fake-blind). This is the first unconditional (NM₂) exponent below 2 in the project. It supersedes Part VI's 8/3 worst case and the 104/49 route bound; those remain correct statements about *their* routes.
+3. **The decision moves entirely to Kovrijkine (Spectrum).**
+   - Φ(a) = 2κ_K a + 1 + 16D/a, and min_a Φ = 1 + 8√(2κ_K D) at a* = √(8D/κ_K).
+   - **β < 2 ⇔ κ_K < 1/(128D)**: κ_K < 0.0240 [EP4] or κ_K < 0.0080 (fake-blind). In Kovrijkine's normalisation, C_K log(2C_K) < 1/(512D) ≈ 0.0060.
+   - **REMARK/HEURISTIC:** generic Logvinenko–Sereda/Kovrijkine cannot meet this. The Remez/Turán sharpness on a window holding n ≈ aℓ/2π degrees of freedom forces κ_K ≳ (2/π)log 2 ≈ 0.44, which is ~18× too big.
+   - Published explicit forms (Egidi–Veselić, Arch. Math. 111 (2018) 85–99; web-checked) carry an unspecified universal K.
+   - So β < 2 needs a **structured (WK₂)** whose a-loss beats uniform Kovrijkine by a factor ≳ 20. That is a GAP for Spectrum.
+4. (I1), the Ingham-graded log⁺, is **superseded** by item 2. The eighth-moment route is the correct "graded log⁺", giving T-exponent ½ in place of 4θ_sub ≈ 0.62. The capped 13/7 figure is no longer the relevant ceiling.
+
+## H.21.0 Inputs (RH-free; web-checked where marked)
+
+- **[S] Explicit S(t).** |S(T)| ≤ min{0.1038 log T + 0.2573 log log T + 8.3675, 0.1095 log T + 0.2042 log log T + 3.0305} for T ≥ e. Source: Hasanalizade–Shen–Wong, J. Number Theory 235 (2022), arXiv 2107.06506, Cor. 1.4 (web-checked). It improves Trudgian 2014 (C₁ = 0.112, C₂ = 0.278, C₃ = 3.385 in the N(T) form, as tabulated there).
+  - S is defined along 2 → 2+iT → ½+iT, which is the standard S.
+  - The proof uses Backlund's/Jensen's method plus bounds on the ½- and 1-lines. These are FE + Dirichlet-series *upper* bounds, so no Euler product enters: fake-blind in form (REMARK).
+  - Write S*(T) := sup_{|γ|≤2T}|S(γ)| = C_S log T + O(log log T), with C_S = 0.1038.
+- **[Θ] Density (for comparison only).** Baluyot's thesis (Rochester 2017, Thm 1.2.1; web-checked) gives N(σ,T) ≪_θ T^{1+θ(1−2σ)}log T for 0 < θ < 4/7. In Part VI's normalisation θ_d = 2θ < 8/7, so **θ_d/8 < 1/7**, confirmed. Ingham: if ζ(½+it) ≪ t^b then N(σ,T) ≪ T^{2(1+2b)(1−σ)}log⁵T, so Lindelöf ⇒ density hypothesis (web-checked, via Baluyot §1.2). This confirms Part VI's (I4) REMARK.
+- **[M4] Ingham:** ∫_0^T|ζ(½+it)|⁴dt ~ (2π²)^{−1}T log⁴T.
+- **[M12] Heath-Brown** (Quart. J. Math. 29 (1978) 443–462): ∫_0^T|ζ(½+it)|^{12}dt ≪ T²log^{17}T.
+- **[M8] Hölder of [M4] and [M12]:** ∫_0^T|ζ|⁸ ≤ (∫|ζ|⁴)^{1/2}(∫|ζ|^{12})^{1/2} ≪ T^{3/2}log^{21/2}T. More generally ∫_0^T|ζ|^p ≪ T^{1+(p−4)/8+ε} for 4 ≤ p ≤ 12. These rest on the approximate FE and divisor-type mean values; see H.21.6 for the EP status.
+- **[EP4] For σ > 1:** |ζ(σ+it)| ≥ ζ(2σ)/ζ(σ). This is the Euler product. Without it, the bound |ζ(2+it)| ≥ 2 − ζ(2) > 0.35 is fake-blind.
+- **[Had]** ξ(s) = ½s(s−1)π^{−s/2}Γ(s/2)ζ(s) is entire of order 1 and ξ(s) = ξ(0)∏_ρ(1 − s/ρ), the product taken symmetrically.
+- **[St] Stirling:** log|Γ(x+iy)| = (x−½)log|y| − π|y|/2 + ½log 2π + O_x(1/|y|).
+
+## H.21.1 The exact identity (PROVED; fake-blind)
+
+For ½ < σ_b, write h_b := σ_b − ½. For t ≥ 2:
+
+  log|ζ(½+it)| = log|ζ(σ_b+it)| − Z_b(t) + (h_b/2)log(t/2π) + O_b(1/t),  where Z_b(t) := Σ_ρ log(|σ_b+it−ρ|/|½+it−ρ|).
+
+The sum runs over all nontrivial zeros, taken symmetrically. It converges absolutely: a zero at distance u contributes h_b(h_b + 1 − 2β)/(2u²) + O(u^{−4}).
+
+*Proof.* Take [Had] at s = σ_b+it and s = ½+it and subtract. The log|ρ| terms cancel. The Γ-factor difference is (h_b/2)log(t/2) + O(1/t) by [St], and π^{−s/2} contributes −(h_b/2)log π. ∎
+
+This uses only FE and order 1. DH satisfies the analogue with log(5t/2π) for its conductor 5 and Γ((s+1)/2); so does Epstein, with its own conductor.
+
+## H.21.2 Pair domination and the window mean (PROVED (sketch); fake-blind for σ_b = 2)
+
+**Lemma H.21.2a (pair domination).** Let k_h(u) := ½log(1 + h²/u²) be the on-line kernel. For a zero pair ρ = ½ ± d + iγ with 0 ≤ d < ½ (the functional-equation pair), the pair's contribution to Z_b at t is ≤ 2k_{h_b}(t − γ) pointwise.
+
+*Proof.* Put v := d² + u² ≥ u². The pair's contribution is ½ log of
+  [((h−d)²+u²)((h+d)²+u²)]/v² = (1 + h²/v)² − 4h²d²/v² ≤ (1 + h²/v)² ≤ (1 + h²/u²)². ∎
+
+On-line zeros contribute k_{h_b}(t − γ) exactly. So Z_b(t) ≤ Σ_γ k_{h_b}(t − γ), summed with multiplicity over all zeros (∫ … dN), whatever their real parts.
+
+Per-zero totals (the lead's fix (1)): ∫_ℝ log(|σ_b+iu−(β−½)…|) du = π(|σ_b−β| − |½−β|) ≤ πh_b, consistent with ∫k_h = πh.
+
+**Lemma H.21.2b (window mean).** For every window W = [t₀, t₀+a] ⊂ [2, T]:
+
+  (1/a)∫_W log|ζ(½+it)|dt ≥ (1/a)∫_W log|ζ(σ_b+it)|dt − 2πh_b S*(2T)/a − O_b(1/t₀ + h_b²/a).
+
+*Proof.* Let K_W := 1_W * k_{h_b}. It is a symmetric unimodal convolution of two symmetric unimodal functions, with 0 ≤ K_W ≤ πh_b and ∫K_W = aπh_b.
+- By H.21.2a, ∫_W Z_b ≤ ∫K_W dN.
+- Split dN = dN₀ + dS, with N₀ = θ(γ)/π + 1 and θ′(γ) = ½log(γ/2π) + O(γ^{−2}).
+  - Then ∫K_W dN₀ = (1/2π)∫K_W(γ)log(γ/2π)dγ = (ah_b/2)·avg_W log(t/2π) + O(h_b²). The kernel is even, so the first-order Taylor term vanishes.
+  - This cancels the Stirling term **exactly**: this is the lead's "on-line cost cancels".
+- Integration by parts: ∫K_W dS = −∫S·K_W′ ≤ S*·TV(K_W) = 2S*·max K_W ≤ 2πh_b S*.
+- The region |γ − t₀| > T contributes O(a h_b² log T/T), and the conjugate zeros O(log T/T). ∎
+
+Two consequences:
+- σ_b = 2, h_b = 3/2: log|ζ(2+it)| ≥ log(2 − ζ(2)), which is fake-blind. So **mean_W log|ζ| ≥ −(3πC_S/a)log T − O(log log T/a + 1)**, with 3πC_S ≈ 0.978.
+- σ_b = 1+δ [EP4]: log|ζ(1+δ+it)| ≥ −log(1/δ) − O(1). So **mean_W log|ζ| ≥ −(π(1+2δ)C_S/a)log T − log(1/δ) − O(1)**, with πC_S ≈ 0.326.
+
+Write m_W for the window mean and D := 2πh_b C_S, so that m_W ≥ −(D/a)log T − O(1).
+
+REMARK: this is a lower bound for **every** window. No zero-free hypothesis, no cleanliness and no density are used. Off-line zeros only *help* (H.21.2a).
+
+## H.21.3 From mean to floor; the clean-window constant A (PROVED (sketch))
+
+**Lemma H.21.3 (half-measure conversion).** Recall η_W := sup{η : |{t∈W : |ζ| ≥ η}| ≥ a/2}. Then
+
+  log(1/η_W) ≤ min( sup_W log⁺|ζ| − 2m_W , 2M⁺_W − 2m_W ),  where M⁺_W := (1/a)∫_W log⁺|ζ(½+it)|dt.
+
+*Proof.* Suppose the bad set {log|ζ| < −V} has measure ≥ a/2. Then
+  a·m_W ≤ ∫_good log|ζ| − (a/2)V ≤ min((a/2)sup⁺, aM⁺) − (a/2)V. ∎
+
+**Clean-window constant (the lead's test).** Take an h-clean window (Part VI H.19.2) and σ_b = σ₁ = ½ + h.
+- Selberg's lemma [EP2] gives |log|ζ(σ₁+it)|| ≤ A_E h log T + O_h(1).
+- For the near zeros, Z_b ≥ −O(h): each k_ρ ≥ 0 when β − ½ ≤ h/2.
+- So sup⁺ ≤ (½ + A_E)h log T + O_h(1), and m_W ≥ −(A_E + 2πC_S/a)h log T − O_h(1).
+
+Hence
+
+  **η_W^{−1} ≤ T^{A h}, with A_clean = ½ + 3A_E + 4πC_S/a.**
+
+**Decisive test (PROVED for this argument).** A_clean ≥ ½ > 1/7 > θ_d/8 for every a and every A_E ≥ 0. So the graded strategy cannot reach ν = 0 by this route.
+- REMARK: this is what the argument extracts. It is not a lower bound on true floors.
+- The obstruction is the sup⁺ term (½)h log T, i.e. the T^{h/2} Γ-gap. Replacing sup⁺ by M⁺ removes it, but M⁺ is not ∝ h; that is the next section.
+- Under the lead's HEURISTIC, A ≈ (S-const + A_E)/a: correct for m_W (coefficient 2πC_S/a), but the floor needs the extra ½.
+
+## H.21.4 The moment route: (NM₂) with ν(a) = 1 + 16D/a (PROVED (sketch))
+
+From H.21.3 with the M⁺ branch and H.21.2b:
+
+  η_W^{−4} ≤ exp(8M⁺_W − 8m_W) ≤ T^{8D/a}·(log T)^{O(1/a)}·exp(8M⁺_W).
+
+**Bounding exp(8M⁺_W).**
+- log⁺x ≤ ½log(1 + x²), and Jensen gives M⁺_W ≤ ½log(1 + avg_W|ζ|²).
+- So exp(8M⁺_W) ≤ (1 + avg_W|ζ|²)⁴ ≤ 8(1 + avg_W|ζ|⁸), by the power-mean inequality.
+- Average over the windows tiling [−T, T] (using |ζ(½−it)| = |ζ(½+it)|) with [M8]:
+
+  (1/T)∫_{|s|≤T} η_{W(s)}^{−4} ds ≪ T^{8D/a}·(1 + T^{−1}∫_0^{2T}|ζ|⁸) ≪ T^{½ + 8D/a + ε}.
+
+Windows below a fixed height T₀ are finitely many, each with η_W > 0. With T = 2πΛ²:
+
+  **(NM₂)(ν) holds with ν(a) = 1 + 16D/a + ε.**
+
+| version | σ_b | D = 2πh_b C_S | ν(a) | ν < 2 iff |
+|---|---|---|---|---|
+| fake-blind | 2 | 3πC_S ≈ 0.978 (Trudgian: 1.056) | 1 + 15.65/a | a > 15.7 |
+| [EP4] | 1+δ, δ → 0 slowly | πC_S ≈ 0.326 (Trudgian: 0.352) | 1 + 5.22/a | a > 5.3 |
+
+Labels:
+- **PROVED (sketch):** for fixed a > 16D, (NM₂) holds with ν < 2 unconditionally.
+- **REMARK:** the "1" is [M8]'s T^{1/2}. The conjectural eighth moment T log^{16}T (CONJECTURE, CFKRS/Keating–Snaith) would give ν = 16D/a.
+- **REMARK:** S large-deviation (Selberg/Tsang moments) gives only sub-power savings on T^{8D/a}, because the S tails at level ≍ log T are exp(−c√log T)-type unconditionally. So D is the right constant for this method.
+
+**Generalised thickness γ (REMARK).** Suppose the floor uses fraction γ in place of ½ (Kovrijkine then uses (γ, a)-thickness). The conversion gives log(1/η) ≤ (M⁺ − m)/(1 − γ), and the needed moment is p = 4/(1 − γ). Then [M4]–[M12] give
+
+  ν(a, γ) = (γ + 8D/a)/(1 − γ).
+
+As γ → 0 this tends to 8D/a, using Ingham only. But the Kovrijkine loss grows like log(1/γ); see H.21.5.
+
+## H.21.5 Joint optimisation with Kovrijkine; the exact threshold on κ_K (PROVED bookkeeping + HEURISTIC sharpness)
+
+At γ = ½: **Φ(a) = 2κ_K a + 1 + 16D/a.**
+
+The minimum is at a* = √(8D/κ_K), where Φ(a*) = 1 + 8√(2κ_K D). Hence:
+
+  **β < 2 ⇔ κ_K < 1/(128D)**, i.e.:
+  - κ_K < 0.0240 ([EP4], HSW) / 0.0222 ([EP4], Trudgian);
+  - κ_K < 0.0080 (fake-blind).
+
+  The admissible window is the open interval of a with 2κ_K a² − a + 16D < 0, namely
+  a ∈ ((1 − √(1 − 128κ_K D))/(4κ_K), (1 + √(1 − 128κ_K D))/(4κ_K)).
+
+In Kovrijkine's normalisation, κ_K = 4C_K log(2C_K) at γ = ½, so the threshold is **C_K log(2C_K) < 1/(512D) ≈ 0.0060 [EP4]**.
+
+At general γ the condition is
+
+  min_a [(γ + 8D/a)/(1 − γ) + 2κ_K(γ)a] < 2.
+
+This requires γ < 2/3, and 16D·κ_K(γ)/(1 − γ) < (2 − 3γ)²/(1 − γ)²·…; explicitly:
+
+  **κ_K(γ) < (2 − 3γ)²/(64D(1 − γ)).**
+
+At γ = ½ this gives back 1/(128D). The largest admissible κ_K is 1/(16D) ≈ 0.19, reached as γ → 0.
+
+**Can known Kovrijkine constants meet it? (HEURISTIC: no.)**
+- Model the restriction of B to a window as exponential polynomials with n ≈ aℓ/2π frequencies, where ℓ = 2log Λ + O(1).
+- The Remez/Nazarov–Turán lemma is sharp up to the base: ‖p‖_W ≤ (c/γ)^{n−1}‖p‖_E, and Chebyshev-type examples show (1/γ)^{n(1−o(1))} is attained.
+- Hence any *uniform* Kovrijkine constant satisfies K_W ≳ (1/γ)^{aℓ/2π}, i.e. κ_K(γ) ≳ (2/π)log(1/γ).
+- At γ = ½: κ_K ≳ 0.44 ≫ 0.024.
+- At small γ: (2/π)log(1/γ) ≥ 1.47 at γ = 0.1, while the allowance tends to 1/(16D) ≈ 0.19.
+- So no γ works: the uniform loss exceeds the allowance by a factor ≥ 8 at every γ.
+- Egidi–Veselić's explicit form has an unspecified universal K (web-checked), so no published constant is close.
+
+**Verdict (Part VII).**
+- **(NM₂) itself now holds with ν < 2 unconditionally**, at fixed a > 16D (PROVED (sketch)).
+- **β < 2 is decided entirely by (WK₂)'s a-dependence.** It needs κ_K < 1/(128D) (≈ 0.024 [EP4]), which is GAP for Spectrum.
+- Uniform Kovrijkine/Logvinenko–Sereda cannot provide it (HEURISTIC, Remez sharpness). So a **structured (WK₂)** is required, exploiting that the low set of ω is where |ζ| is small rather than an arbitrary thick set. Its status is GAP.
+- This replaces Part VI's verdict as the operative bottleneck. Part VI's "NO for the zero-density route" stands, scoped to that route.
+
+## H.21.6 Euler-product flags and fake behaviour (R2, R5)
+
+| Step | Uses | DH | Epstein |
+|---|---|---|---|
+| H.21.1 identity, H.21.2a domination, H.21.2b with σ_b = 2 | FE + order 1 + Stirling; bound at σ = 2 trivially from coefficients | holds (conductor 5) | holds |
+| [S] explicit S(t) | Backlund/Jensen + upper bounds on lines | analogue holds with other constants (REMARK) | same |
+| [EP4] σ_b = 1+δ lower bound | **Euler product** | **fails**: f_DH has zeros with σ > 1 (Davenport–Heilbronn 1936) | **fails** (same) |
+| [EP2] Selberg's lemma (clean-window A only) | Λ(n) | fails | fails |
+| [M4]/[M12]/[M8] moments | approximate FE + Dirichlet-polynomial mean values with divisor-bounded coefficients; no Euler product needed beyond d_k(n) ≪ n^ε | analogue for linear combinations of L-functions mod 5 plausible (REMARK, not verified) | similar (REMARK) |
+| Kovrijkine | archimedean | holds | holds |
+
+**R5 consequence (REMARK, important for the chain).** The σ_b = 2 version of H.21.4 is **fake-blind**: (NM₂) with ν(a) = 1 + 16D_fake/a is expected to hold for DH as well. That is not a contradiction, because (NM₂) is one input of (T3), not (T3). But it means **the arithmetic of the (T3) chain must enter elsewhere**: (MB)(c), full-range flat density, (T3a*), or a structured (WK₂). It must not be assumed to come from (NM₂).
+- The [EP4] version is arithmetic, but only through the constant D (0.326 vs 0.978), not qualitatively.
+- I flag this to the lead and to Spectrum as an R5 checkpoint for the chain.
+- No RH or RH-derived input is used (BARRED). Under RH, S* = O(log T/log log T), D → 0 and ν → 1. This is noted only to show the T^{1/2} moment floor is not RH-sensitive; it is not used.
+
+R-line H.21: R1 Λ-uniform | R2 Euler product only at [EP2] (clean-A, which fails anyway) and [EP4] (optional constant) | R3 n/a | R4 n/a | R5 the σ_b = 2 route is fake-blind, flagged | R6 the bookkeeping is exact.
+
+## H.22 Summary table (Part VII)
+
+| Claim | Label |
+|---|---|
+| Exact identity log|ζ(½+it)| = log|ζ(σ_b+it)| − Z_b + (h_b/2)log(t/2π) + O(1/t) | PROVED (citation: Hadamard + Stirling) |
+| Pair domination: zero pair ≤ 2k_{h_b} pointwise | PROVED |
+| Window mean m_W ≥ −(2πh_b C_S/a)log T − O(1) for every window; C_S = 0.1038 (HSW 2022) | PROVED (sketch) |
+| Half-measure conversion log(1/η_W) ≤ min(sup⁺ − 2m, 2M⁺ − 2m) | PROVED |
+| A_clean = ½ + 3A_E + 4πC_S/a ≥ ½ > θ_d/8: graded ν = 0 test fails for this argument | PROVED (sketch); REMARK: argument-specific, not a bound on true floors |
+| (NM₂) with ν(a) = 1 + 16D/a + ε; D = 3πC_S (fake-blind) or πC_S [EP4] | PROVED (sketch) |
+| ν < 2 at fixed a > 16D (a > 5.3 [EP4]) | PROVED (sketch) |
+| Φ(a) = 2κ_K a + 1 + 16D/a; β < 2 ⇔ κ_K < 1/(128D) ≈ 0.024 [EP4]; general-γ threshold κ_K(γ) < (2−3γ)²/(64D(1−γ)) | PROVED (bookkeeping), conditional on the (WK₂) loss form |
+| Uniform Kovrijkine has κ_K ≳ (2/π)log(1/γ) (≈ 0.44 at γ = ½): threshold unmet by factor ≥ 8 | HEURISTIC (Remez/Turán sharpness) |
+| Structured (WK₂) beating uniform Kovrijkine by ≳ 20× in the a-exponent | GAP (Spectrum) |
+| Eighth-moment conjecture ⇒ ν = 16D/a | CONJECTURE input; not used |
+| (I1) Ingham-graded log⁺ | superseded by H.21.4 (REMARK) |
+| σ_b = 2 route is fake-blind; arithmetic of (T3) must come from (MB)/flat density/(T3a*)/(WK₂) | REMARK (R5 checkpoint) |
+| (T3); RH | **OPEN** (RH-derived inputs BARRED) |
+
+Not cited: ArithmeticTemperedPrincipalSeries, rh_iff_weil_pairedForm_nonneg, or any True-placeholder.
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
