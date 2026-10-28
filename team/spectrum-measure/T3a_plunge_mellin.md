@@ -22,7 +22,7 @@ Mφ(s) = ∫_0^Λ φ(x)x^{−½+is}dx; ∫|Mφ|² = 2π∫_0^∞|φ|². The modu
 
 **Model computation (PROVED, exact).**
 - For φ(x) = cos(cx) on [0, ∞): M(s) = Γ(½ + is)cos(π(½ + is)/2)c^{−½−is}.
-- So |M(s)|² = (π/cosh πs)·(cosh πs/2)/c = **π/(2c)**, flat in s.
+- So |M(s)|² = (π/cosh πs)·((cosh πs)/2)/c = **π/(2c)**, flat in s. *(Grok audit S103g: checked. |Γ(½ + is)|² = π/cosh πs and |cos(π/4 + iπs/2)|² = ½ + sinh²(πs/2) = (cosh πs)/2.)*
 - A unit-amplitude wave at frequency c therefore has low-Mellin mass ≈ 2S·π/(2c) = πS/c, against total mass π·(length). On [0, 1] this is a fraction ≈ S/c ≍ S/Λ².
 - Truncation to [0, 1] adds an endpoint term of relative size O(1/(c|½ + is|)) = O(Λ^{−2}). It does not change the order (HEURISTIC).
 - Plunge states have amplitude ψ_n(0)² ≍ ∫_0^1ψ_n² (WKB: amplitude ∝ ((1 − x²)k(x))^{−½} with k ≈ c, roughly flat). They behave like this model near x = 0.
@@ -53,6 +53,13 @@ Mφ(s) = ∫_0^Λ φ(x)x^{−½+is}dx; ∫|Mφ|² = 2π∫_0^∞|φ|². The modu
 | T3 | Model |M cos(c·)|² = π/(2c) on [0, ∞) | PROVED |
 | T4 | Consequence in Queen's reduction (§H.9 "Reduction of ω_Λ"): ω ≤ CΛ^B log Λ·ω^{arch}(log Λ) ≍ Λ^{B−2}log²Λ, so **(T3) ⇐ (T2) iff B < 2** (with r_K = O(K log²Λ), one needs Λ^{B−2}log²Λ = o(1/log²Λ)) | PROVED given T2 (algebra) |
 | T5 | The Λ^B loss is the worst-case m_Λ. Plunge states carry their |Mφ|² at heights up to 2πΛ², where |ζ(½ + is)|² has mean ≍ log Λ. A route weighting |ζ|² against the actual profile, not by m_Λ, would replace Λ^B by (log Λ)^{O(1)} | HEURISTIC (suggestion for (T3b), Queen) |
+
+*Grok audit (S103g) of T4.* The algebra is right: CΛ^B log Λ · (log Λ)/Λ² = o(1/log²Λ) holds iff B < 2. The "iff" applies only to this reduction route, not to (T3) itself. Three more conditions apply:
+- (i) It needs the *upper* half of T2, ω^{arch} ≤ CS/Λ², which is a GAP (see the end of this section).
+- (ii) It needs (T3b) and the S_Λ-cut, which are Queen's GAPs.
+- (iii) **B < 2 is not available.** Thm H.1/H.1′ give an absolute but non-explicit B′ = 2e_K + (2 + 2e_K)(½ + 4C₁log(e/a)) + o(1), with no reason to expect it below 2. The sharp form Λ^{o(1)} may be RH-conditional and is barred from any route to RH.
+
+So, along this route, (T3) needs an explicit B < 2, or a (T3b) that avoids the m_Λ loss (T5). The §2 table is NUMERICAL from an uncommitted box script, /workspace/sm/t3a/t3a_test.py.
 
 **Bottom line for the lead and Queen.**
 - (T3a) at the requested rate is not provable because it is (by all evidence) false. The plunge states have low-Mellin fraction ≍ (log Λ)/Λ², since they oscillate at frequency ≈ Λ uniformly in x, including near x = 0.

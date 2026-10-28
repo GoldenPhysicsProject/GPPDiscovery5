@@ -10,6 +10,18 @@ Conj C.13.H, Props C.13.H′, C.13.H″; §C.14 Conj C.14.K, Cor C.14.D. Our SEC
 Notation: a = log 2, c₂ = a/√2 = 0.4901290717…, L₀ = a/2, 2L = a + ℓ, ‖u‖²_H = ∫(u′² + ¼u²) = (1/2π)∫(¼+t²)|û|²,
 Ω(t) = 2θ′(t) = Re ψ(¼ + it/2) − log π, R(ξ) = (1/2π)∫(¼+t²)Ω|ξ̂|², Q_L = R − 2c₂B (N.13.1; the form is L-independent).
 
+> **Grok audit (S103g, 2026-10-28): SOUND.**
+> - *Replay.* `cert/cert_odd_margin.py` was re-run at 80 and 128 bits with N = 2¹⁸ (python-flint 0.9.0). Every printed bound matches the committed log exactly.
+> - *Rigour of the chain.* All quantities are arb balls, and inputs are parsed from decimal strings into balls. D(T) is a rigorous upper sum: ball evaluation of dens_o over boxes covering each subinterval, with upper endpoints only. 1 − D enters through its lower endpoint.
+> - *No truncation remainder is needed.* ω̃ is nondecreasing on all of [0, ∞), so the step minorant beyond Tmax = 64 is the constant ω̃(64).
+> - *Monotonicity is analytic, not read off the grid.* It is (Ω2), PROVED via the series Σ y²/(c_n(c_n² + y²)). The ball increments are used only as enclosures of true increments, which are ≥ 0.
+> - *Lemmas A and B are checked line by line.* For Lemma A, the Riesz/Green step in H¹₀ holds with no boundary term, and the closed form dens_o was re-checked against direct quadrature of ∫G s_t·s_t (30 digits; t = 0.3, 4.53, 10, 30). Lemma B is the standard layer-cake bound. T is a grid point, and min(Ω − lo, Ω(T) − hi) is nondecreasing.
+> - *Consistency.* A 24-mode Galerkin Ritz value gives inf R/‖·‖²_H ≤ 0.548 (NUMERICAL), which is compatible with the certified ≥ 0.46255.
+> - *Inputs.* Thms 1–2 use only Ω (digamma) plus Lemmas A and B. Thm 3 adds Prime S1 (N.12.2) and (Ω5), both PROVED on main and Grok-audited.
+> - *"CC-free", made precise.* No CC numerics (ε, q, ε′(1⁺)), no CC §5/Thm 6.11, no κ^odd ≤ 1, and no Mori. The only CC link is the exact form Q_L = R − 2c₂B (main G.4h "One symbol", from CC (102)), which is the classical Weil explicit formula on a window 2L < log 3.
+> - *Scope of Thm 3.* It covers only the sub-window 2L ∈ (log 2, log 2 + 0.028] of the p = 2 step (log 2, log 3], and only the odd sector.
+> - *Label fixes.* The Cor (R6) values were rounded up. They should be 0.0029 (T = 12.875) and 0.0050 (T = 16); recomputed, ℓ_H = 0.002974 and 0.005061. Separately, C.14.A's pointwise σ_S condition is **not** established here; σ_S stays a GAP. The odd sector no longer needs it.
+
 ## 0. Summary (labels)
 
 | # | Statement | Label |
@@ -81,7 +93,7 @@ with μ_hi > c₂ and μ_lo > 0 as required (even with slack 0.049‖ξ‖²_H, 
 Lemmas A, B and the certificate. ∎ **It uses neither CC §5 / Thm 6.11, nor σ_S, nor κ^odd_{L₀} ≤ 1.** So C.13.H is
 CERTIFIED unconditionally (relative to the PROVED Ω facts), not merely CERTIFIED-conditional-on-CC.
 
-**Cor (R6; PROVED given Thm 2, eval.).** Celestial Prop C.13.H′ then gives (K2) odd for ℓ ≤ ℓ_H = 0.0030 (T = 12.875) and 0.0051 (T = 16).
+**Cor (R6; PROVED given Thm 2, eval.).** Celestial Prop C.13.H′ then gives (K2) odd for ℓ ≤ ℓ_H = 0.0029 (T = 12.875) and 0.0050 (T = 16) *(Grok audit S103g: rounded down; exact values 0.002974 and 0.005061)*.
 
 **Thm 3 (R5; CERTIFIED). Odd (K2), direct, polynomial range.** For 0 ≤ ℓ ≤ 0.028 (μ = e^{2L} ≤ 2·e^{0.028} ≈ 2.057) and odd ξ ∈ H¹₀(−L, L):
 > Q_L(ξ) ≥ 0.0126‖ξ‖²_H  (≥ 0.0461‖ξ‖²_H for ℓ ≤ 0.025).
