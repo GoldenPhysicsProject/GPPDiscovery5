@@ -123,3 +123,26 @@ This range is well inside the CC cap 2L₀ < log 2.44 (NUMERICAL) and 5× the C.
 - R8 t₀(B) — eval. given B; GAP B.
 - R9 δ_o⁰, k_∞ not needed for odd — PROVED (logic).
 - RH: OPEN.
+
+## 8. Addendum (steering 1:20 AM): δ_o⁰ vs m₀^o, edge sign check, crossings
+
+- **δ_o⁰ = 1 − sup spec(K_{L₀}|odd) is NOT certified here (GAP, same source as GAP B):** K_L has kernel κ = q/(2ε′(1⁺)),
+  q(v) = (Qε)(e^{|v|}) (CC (102)/(104)), and certifying it needs CC's ε, not attempted. Golden Eye's numbers
+  (sinc kernel on (−L₀, L₀), band |t| ≤ 6.29: λ₀ = 0.909 even, λ₁ = 0.424 odd, λ₂ = 0.053, so 1 − λ₁ ≈ 0.58) are for the
+  plain low-band projector, a different operator from K_{L₀}; they make δ_o⁰ = O(1) plausible (CONJECTURE: δ_o⁰ = O(1)),
+  but they do not bound it. **δ_o⁰ is off the critical path:** Thms 1–3 above close the odd sector without it.
+- **m₀^o and the L² gap are different quantities.** m₀^o(L₀) = inf R/‖·‖²_H ≥ 0.46255 (CERTIFIED) is an H-norm margin of
+  the archimedean form R alone. δ_o⁰ is an L²-margin of the ε-part of the trace-side split R = 𝒮 + 2ε′(1⁺)(1 − K_L).
+  The CCM (arXiv:2310.18423) tiny eigenvalues live in the H-norm direction of the full Weil form (with prime terms) on larger
+  windows. At the p = 2 entry they do not appear in the odd sector: Q_L = R there when ℓ = 0, and the certified H-margin is
+  0.4626, resp. 0.0126 at ℓ = 0.028. The e^{−21/m₀} loss of Thm N.13.A is avoided by Thm 3 and C.13.H′ (polynomial ranges).
+- **Edge sign (main 5354fde G.4h).** The ramp contribution to Q_L is +2c₂(1/ℓ − ℓ/24)α₋α₊, i.e. the matrix
+  +c₂(1/ℓ − ℓ/24)[[0,1],[1,0]]; even is helped and odd is charged exactly 2c₂α²(1/ℓ − ℓ/24). **SECTOR_COERCIVITY_p2 (f1df9ed)
+  matches (PROVED, checked):** its (K2) odd form R + 2c₂‖P₊ξ‖² ≥ 2c₂‖P₋ξ‖² charges the P₋ (odd-ramp) component. For a ramp,
+  B = α₋α₊(ℓ/24 − 1/ℓ) = ‖P₋ξ‖²_{H(S₋)} − ‖P₊ξ‖²_{H(S₋)}, which is > 0 for the odd pair. Its sufficient condition
+  R ≥ c₂‖ξ‖²_{H(E)} (S1) does not depend on the sign, and margin 2c₂s²ℓ = 2c₂α²/ℓ at α = sℓ is the leading order of
+  2c₂α²(1/ℓ − ℓ/24). No fix needed. Thm 3 here also uses only S1, so it is sign-independent.
+- **Crossings.** Ω = c₂ at 10.2615 and Ω = 2c₂ at 16.7481 are NUMERICAL (Golden Eye; re-evaluated here with mpmath findroot:
+  10.2615356, 16.7480837). They lie in Celestial's Arb intervals (10.25, 10.30) and (16.6, 16.8).
+- **Lemma A cross-check, re-run.** The closed form agrees with the exact Dirichlet-mode series (10⁶ modes, closed-form
+  inner products) to 1e−15 relative at t = 1, 4.53, 10, 30 (eval.).
