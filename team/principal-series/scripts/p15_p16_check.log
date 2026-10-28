@@ -1,0 +1,21 @@
+1. P.15.B  B2 - hand formula = 0
+   B3(ramp) - v1^2(l3/24 - 1/l3) = 0
+2. P.15.1 per-energy eigenvalues [-0.266643515664, 0.900927616262]
+   P4 charpoly - (lam^4 - (2c2^2+c3^2) lam^2 + c2^4) = 0
+   charpoly(c0*) = 0 ; c0* = 0.900927616262 ; c2+c3 = 1.12441317233
+   P4 eigenvalues [-0.9009276163, -0.2666435157, 0.2666435157, 0.9009276163]
+   (float) eig [-0.90092762 -0.26664352  0.26664352  0.90092762] Perron [1.       1.838144 1.838144 1.      ]
+3. w<2a (<=1 a-neighbour) : True
+3. w<2b (<=1 b-neighbour) : True
+3. l3 < b-a (x+b-a has no b-neighbour) : True
+3. a+l3 < b (x+a has no b-neighbour) : True
+3. b-a+l3 = w-a (x+b-a is a lower a-end) : True
+3. a+l3 <= w (x+a inside) : True
+   (all expressions affine in l3: endpoint check is exact up to the strict/closed ends stated)
+4. Rayleigh quotient beta^T W beta / beta^T beta at Perron vector = 0.9009276163
+5. Arb: c0* = [0.900927616261847 +/- 2.17e-16]  c2+c3 = [1.12441317233184 +/- 2.43e-15]
+   Omega(15.5) = [0.902789400455 +/- 1.16e-13]  Omega - c0* = [0.0018617842 +/- 6.97e-12]  Omega - (c2+c3) = [-0.22162377 +/- 1.88e-9]
+   Omega(16) = [0.934548783922 +/- 3.39e-13]  Omega - c0* = [0.033621168 +/- 3.41e-10]  Omega - (c2+c3) = [-0.18986439 +/- 1.60e-9]
+   Omega(19.35) = [1.12470401849 +/- 4.94e-12]  Omega - c0* = [0.22377640 +/- 2.24e-9]  Omega - (c2+c3) = [0.00029084616 +/- 3.10e-12]
+   Omega(38.1) = [1.80230850850 +/- 5.37e-13]  Omega - c0* = [0.90138089 +/- 2.24e-9]  Omega - (c2+c3) = [0.67789534 +/- 3.84e-9]
+   eta_max(T=16) = Omega(16)/c0* - 1 = [0.037318389 +/- 4.61e-10]
