@@ -1,0 +1,15 @@
+C.15 Arb callbacks self-test (NUMERICAL comparison against float pipeline; prec = 128 bits)
+q_T = [1.2761977777074229145 +/- 1.13e-21]  (c15_entries_ref: 1.27619777770742)
+A[0,0] = [0.207950766678418388 +/- 4.78e-19]   ref 0.207950766678   |diff| = 4.18e-13
+A[0,1] = [-0.381518175203751656 +/- 1.75e-20]   ref -0.381518175204   |diff| = 2.48e-13
+A[1,2] = [-0.141577576110498184 +/- 4.34e-19]   ref -0.14157757611   |diff| = 4.98e-13
+A[2,3] = [0.0260117645366856849 +/- 7.97e-21]   ref 0.0260117645367   |diff| = 1.43e-14
+A[3,3] = [1.39953509123645095 +/- 2.66e-18]   ref 1.39953509124   |diff| = 3.55e-12
+max |A_arb - A_ref(mpmath 12 digits)| = 3.55e-12 (7.0s)
+M[0,0] = [3.44050489738935762 +/- 1.99e-20]   float 3.440504897389   |diff| = 8.88e-16
+M[0,5] = [0.139855692118054853 +/- 4.67e-19]   float 0.139855692118   |diff| = 7.22e-16
+M[7,7] = [0.762349314043339188 +/- 4.07e-19]   float 0.762349314043   |diff| = 1.11e-16
+eps^m_abs_64 (closed-form K_W, Arb) = [4.91423258751318e-5 +/- 3.64e-20]   float mode-sum+remainder 4.914296e-05   rel diff 1.3e-05
+eps^m_neg_64 (closed-form K_W, Arb) = [1.25632112000294e-5 +/- 2.80e-20]   float mode-sum+remainder 1.256389e-05   rel diff 5.4e-05
+(19.9s)
+sharp |a_T| callback with analytic=True returns: nan
