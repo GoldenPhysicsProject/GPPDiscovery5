@@ -24,7 +24,7 @@ The deliverable is therefore a **rigorous chain**:
 A chain whose only GAP is "Weil positivity" in disguise is a restatement. We say so wherever that happens (see §0.3).
 
 ### 0.1 Requirements (every candidate step must meet them)
-- **R1. Uniform in L.** No bounded window implies RH: by Goddess of PNT's DMV theorem (`team/prime-number-theory/finite_windows_dmv.md`), DMV/P_X systems agree with ζ on every bounded window.
+- **R1. Uniform in L.** No bounded window implies RH: by Goddess of PNT's DMV theorem (`team/prime-number-theory/finite_windows_dmv.md`), DMV/P_X systems agree with ζ on every bounded window. Sharp ladder (§N N.2): P_X agrees with ζ exactly for 2L ≤ log p⁺(X), p⁺(X) the least prime > X.
 - **R2. Euler product and functional equation together.**
   - Epstein fails: FE and modularity, no Euler product.
   - DMV fails: Euler product, no FE.
@@ -169,7 +169,7 @@ For χ unramified trivial (with ε_p = 1),
 - Then Q_L = MF_L + Fl_L exactly, and MF_L ≥ 0.
 
 **G.3c. Fakes at G.3 (PROVED unless marked).** The mean field is **fake-blind**:
-- **P_X, DMV:** same pole, same PNT mean, so the same MF.
+- **P_X, DMV:** same pole, so the same MF, but "same PNT mean" holds **only by convention** (§N N.0/N.1: keep ζ's pole and W_∞); P_X's true PNT mean is O(log x).
 - **F_θ:** kernel κ·2cosh(θr) = e^{−(½−θ)|r|} + e^{−(½+θ)|r|}. For θ < ½ this is a sum of two positive Cauchy kernels, so MF(F_θ) ≥ 0 as well. F_θ is **not** broken here.
 - **H₋ₜ:** the pole is kept, so the same MF.
 - **Epstein:** pole and PNT for the form's representation numbers, so an MF ≥ 0 of the same shape.
@@ -225,7 +225,8 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
 | **G_θ′** = Λ(s+iθ′)Λ(s−iθ′) | unitary (|·|^{±iθ′} unitary) | unitary | ≥ 0 | yes: E commutes with the unitary character |x|^{iθ′}. Q_G = 2Q_ζ(f cos) + 2Q_ζ(f sin) (**PROVED**, replayed S102) | **passes every step** (must-pass control) |
 | **F_θ** = ξ(s−θ)ξ(s+θ) | **product** γ unitary on Re s = ½ (replay (5): \|γ₊γ₋\| = 1), but each GL(1) constituent \|·\|^{±θ} has \|γ\| ≠ 1 (0.817, 1.224 at p = 7) | same | ≥ 0 (G.3c) | E does commute with \|x\|^θ, but the twisted form is a **polarization** 2 Re B_ζ(e^{θu}f, e^{−θu}f), not a norm (**PROVED**, replay (2)) | breaks at G.4 only (norm → polarization, §P.4). Not a GL(2) filter: for 0<θ<½ π(\|·\|^θ,\|·\|^{−θ}) is complementary series with positive-definite Knapp–Stein form (§P.3, Knapp–Stein 1971); local non-temperedness is a size shadow, not a sign condition |
 | **DH** | no local data (no Euler product) | ζ-like γ_∞ | **no MF** (entire) | no ⊗′ factorization, so E of a sum of two L-functions is not a norm of a sum | breaks at G.1/G.4 |
-| **DMV / P_X** | Beurling or truncated local data | — | ≥ 0 | **no lattice ℚ^* ⊂ 𝔸**, so no Poisson and no global reflection; P_X agrees with ζ on L ≤ (log X)/2 (R1) | breaks at G.4a |
+| **P_X** | truncated local data | — | ≥ 0 (by convention) | no lattice ℚ^* ⊂ 𝔸; agrees with ζ for 2L ≤ log p⁺(X) | **PROVED to fail** past the ladder: ind_− ≥ 1 for L ≥ ½ log X + O(1), odd-pole bump witness (§N, headline) |
+| **DMV (glued, full prime tail)** | Beurling local data | — | ≥ 0 | no lattice ℚ^* ⊂ 𝔸, so no Poisson and no global reflection | breaks at G.4a structurally; whether it gets negative index past the ladder is **OPEN (§N GAP N.G1)** |
 | **Epstein** (h = 2) | sum of two Euler products (genus characters) | γ_∞ for GL(2)/ℚ(√D) | ≥ 0 | Poisson over the lattice exists, but there is no ⊗′ of one Euler product; E of a sum of two pure tensors | breaks at G.1d/G.4b |
 | **H₋ₜ** (de Bruijn–Newman deformation) | no Euler product after deformation | **γ_∞ is not Tate's** (deformed Φ kernel) | ≥ 0 | no adelic E | breaks at G.2/G.4 |
 
