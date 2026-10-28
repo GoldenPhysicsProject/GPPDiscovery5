@@ -752,3 +752,98 @@ as soon as these satisfy μ_hi > c₂ and μ_lo > 0.
 *C.13.B fix (S103g, 2026-10-28): Arb certificate attached for Lemma C.13.B (relabelled PROVED (computer-assisted)); (3c) expansion written out; 1.42 window relabelled CERTIFIED (Mori-conditional) per main 992a011; framing added; 2.44 cap NUMERICAL-indicative, full-space only; Conjecture C.13.H stated. Daniel Toupin / Golden Physics Project, with AI assistance from Grok. RH is OPEN.*
 
 - R1 one rule for ℓ ≤ ℓ_H | R2 FE through Ω/σ_S | R3 B used through S1 only (|B|) | R4 odd sector, ξ̂(0) = 0 | R5 DH: no line at a, statement is ζ-structural, truth fake-blind | R6 "no MF-relative margin" PROVED; "closing step must be an exact identity" CONJECTURE. Nothing is labelled stronger than RH; RH is OPEN.
+
+## C.14 The semilocal {∞, 2} frame as an explicit D_L, tested on (K2)/(K3), and the coupling term 2R(ξ_b, ξ_s) (S103g, 2026-10-28)
+
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OPEN. Nothing in C.14 proves or implies RH, and nothing is labelled stronger than RH; over ℚ positivity statements refer to Δ^♮_Λ or are given M1.**
+
+**Framing.** Positivity on (½ log 2, ½ log 3] is already **CERTIFIED** (1.42 Arb replay, conditional on Mori Prop 3.1, Lemma 3.2, Thm N; main 992a011). C.14 is about **mechanism**: which step carries positivity across the p = 2 line. The CC §2.2 "log 2.44 cap" is NUMERICAL-indicative, full-space only.
+
+Sources: CCM arXiv:2310.18423 (semilocal X_S, S = {∞, 2}; eq. (47) F_μ𝓔_S f = L_2(½ − is)·F_μw_∞f; Thm 4.6, eq. (58)); §C.13, §C.13.B (this file); **Prime §N.13 at team/prime-number-theory 611e39a, used as stated and not re-derived** (N.13.2 Ω facts, N.13.3 Thm N.13.A, N.13.4 decomposition). Notation is N.13.0 / C.13.B.5: R(ξ) = (1/2π)∫(¼ + t²)Ω|ξ̂|², P := R − Ω(0)‖·‖²_H ≥ 0 (symbol (¼ + t²)(Ω − Ω(0)) ≥ 0 by (Ω2)), P_{<T}, P_{>T} its band pieces, Δ_T := Ω(T) − Ω(0), ν_T(ℓ) := (T/4 + T³/3)ℓ³/π³, ‖φ‖²_H := ‖φ₋‖²_H + ‖φ₊‖²_H.
+
+### C.14.1 The frame: an explicit D_L carrying −c₂S(V(2) + V(2)*)S (PROVED)
+- **Semilocal multiplier identity.** For 2L < log 4 and ξ ∈ 𝒯_L, h = ξ⋆ξ* is supported in [−2L, 2L], so h(ma) = 0 for |m| ≥ 2. Hence for every real even "completion" p_w(t) = −2c₂cos(at) + Σ_{|m|≥2} w_m e^{imat} (w_{−m} = w̄_m),
+  > Q_L(Qh) = (1/2π)∫(¼ + t²)[Ω(t) + p_w(t)]|ξ̂(t)|²dt.
+  The m = ±1 part is exactly −c₂S(V(2) + V(2)*)S in T9's language (q = 2^{±1}); the lines |m| ≥ 2 are invisible on the window.
+- **Canonical (Euler) completion** from CCM (47): w_m = −2 log 2 · 2^{−|m|/2}, i.e. Ω_2(t) = −2 log 2 Σ_{m≥1}2^{−m/2}cos(mat), the 2-adic log-Euler factor. Arb-certified range: min Ω_2 = −2 log 2·r/(1 − r) = −3.3468…, max = 0.5742… (r = 2^{−1/2}; arp_c/c13b_lemma_certify.out).
+- **Optimal (Fejér) completion.** By Fejér–Egerváry–Szász, a nonnegative cosine polynomial of degree n has |q̂₁| ≤ q̂₀cos(π/(n + 2)), with equality attained. So the best possible min_t p_w over degree-n completions is −c₂sec(π/(n + 2)) ↓ −c₂: the frame recovers exactly the S1 constant c₂, ℓ-independently.
+- **Explicit D_L.** On 𝒯_L, with R = 𝒮 + 2ε′(1⁺)(‖·‖² − ⟨·, K_L·⟩) (T5, C.13),
+  > **D_L^{(w)} := Op[(¼ + t²)(σ_S(t) + p_w(t))] + 2ε′(1⁺)(1 − K_L),  Q_L(Qh) = ⟨ξ, D_L^{(w)}ξ⟩ for all ξ ∈ 𝒯_L, every w.**
+  (I1) is an identity for every w. The choice of w is the only freedom, and it is not seen by Q_L.
+- **Krein remark.** Existence of *some* D ≥ 0 with these diagonal sums is equivalent to Q_L ≥ 0 (Krein 1940 extension for continuous positive-definite functions on an interval; the distributional version needed here is cited, not verified: CONJECTURE). So the content of the frame is explicitness, not existence.
+- **N.13.4 inside the frame (PROVED, by N.13.4).** On the ramp traces (α₋, α₊) the m = ±1 part of D_L restricts to the rank-two edge matrix −c₂(1/ℓ − ℓ/24)[[0, 1], [1, 0]], with X absorbed by AM–GM. Its eigenvectors are the even (help) and odd (cost) edge pairs.
+
+### C.14.2 Test on (K2), odd (PROVED sufficient criterion; the order in ℓ is zero)
+**Theorem C.14.A.** Let 2L ≤ log 3 and κ^{odd}_L := sup spec(K_L restricted to odd vectors). If for some completion w
+> (¼ + t²)(σ_S(t) + p_w(t)) + 2ε′(1⁺)(1 − κ^{odd}_L) ≥ 0 for all t,
+then D_L^{(w)} ≥ 0 on odd vectors, i.e. (K2) holds at L. With Fejér completions this holds for some w iff (for the limit n → ∞, sufficient with any slack)
+> **σ_S(t) + 2ε′(1⁺)(1 − κ^{odd}_L)/(¼ + t²) > c₂ for all t.**
+- *Proof.* ‖ξ‖² − ⟨ξ, K_Lξ⟩ ≥ (1 − κ^{odd}_L)‖ξ‖²₂ = (1 − κ^{odd}_L)(1/2π)∫|ξ̂|² on odd ξ; add to the multiplier part. Fejér gives min p_w → −c₂. ∎
+- **Order in ℓ (answer to the lead).** The frame supplies **no first-order margin 2c₂s²ℓ**. Its margin is zero order: the criterion is ℓ-independent except through κ^{odd}_L (nondecreasing in L by interlacing). When it holds, the margin is O(1) ≫ 2c₂s²ℓ for every 2L ≤ log 3; when it fails, the frame proves nothing at any order. The frame charges the p = 2 line at its global S1 value c₂, not at the strip-localized value.
+- **Necessary condition for the symbol route (PROVED).** Integrating p_w + σ_per ≥ 0 (σ_per(t) := inf_k σ_S(t + 2πk/a)) against 1 + cos(at) over one period gives (a/2π)∫_{−π/a}^{π/a}σ_per(t)(1 + cos at)dt ≥ c₂ for the pure-multiplier version (no ε-part). With the C.13 heuristic σ_S ≈ log(|t|/2π) (HEURISTIC, C.13 §(IF-F)), σ_S < 0 on the whole central period |t| ≤ π/a ≈ 4.53, so the **pure multiplier frame fails**, and the low band must be paid by the ε-part 2ε′(1⁺)(1 − κ^{odd}_L) ≈ 46(1 − κ^{odd}_L). That is a non-multiplier, K_I / Lemma 6.10 quantity. The frame criterion is therefore an S&M question about σ_S *and* about the strict gap 1 − κ^{odd}_L.
+- **m₀ from the trace side (N.13 is pushed; this answers N.13.5's request at the level available).** At L₀ = ½ log 2, κ^{odd}_{L₀} ≤ 1 (interlacing against CC Thm 6.11; odd ⇒ ξ̂(0) = 0). Hence, PROVED given CC §5 / Thm 6.11:
+  > **m₀^o ≥ inf_t [σ_S(t) + 2ε′(1⁺)(1 − κ^{odd}_{L₀})/(¼ + t²)],**
+  and this feeds Thm N.13.A directly (ℓ*(m₀) = 6.98×10⁻⁴·m₀e^{−21.06/m₀}), or C.13.H′ (polynomial ℓ_H) with μ_lo, μ_hi the same infimum over |t| < T, |t| ≥ T. Its value is GAP until S&M supplies σ_S and 1 − κ^{odd}_{L₀}.
+
+### C.14.3 Test on (K3), even: GAP
+On the even sector CC Thm 6.11 gives κ^{ev}_L > 1 on the ξ₀ direction, so 2ε′(1⁺)(1 − K_L) has a negative rank-one part −2ε′(1⁺)(κ^{ev}_L − 1)|⟨ξ, ξ₀⟩|². The frame must pay it from the multiplier part on the spectrum of ξ₀. No explicit inequality is available: **GAP**. The p = 2 line *helps* here (N.13.4: the even edge pair gets +2c₂α²(1/ℓ − ℓ/24)), but a multiplier frame cannot use it, since it charges p_w by its minimum. The even mechanism is spatial (sign of B on the ramp), which is why the coupling term of C.14.4 is needed for (K3) and not for (K2).
+
+### C.14.4 The coupling term 2R(ξ_b, ξ_s) (Prime's request, N.13.5; GAP N.G2-bulk)
+Decomposition ξ = ξ_b + ξ_s as in N.13.4: α₋ = ξ(−L + ℓ), α₊ = ξ(L − ℓ), ξ_b = ξ on the bulk and ramps on the strips, ξ_s = φ₋ + τ_aφ₊ with φ_± ∈ H¹₀(int S₋).
+
+**Theorem C.14.B (coupling bound; PROVED).** For all ξ ∈ H¹₀(−L, L), 0 < ℓ < a, T > 0, ε, ε₂ > 0:
+> **|2R(ξ_b, ξ_s) − 2P_{>T}(ξ_b, ξ_s)| ≤ (ε + |Ω(0)|ℓ⁴/(24π²ε₂))·‖φ‖²_H + (|Ω(0)|ε₂/2)·(α₋² + α₊²)/ℓ + (2Δ_T²ν_T(ℓ)/ε)·‖ξ_b^{<T}‖²_H,**
+> **|2P_{>T}(ξ_b, ξ_s)| ≤ 2P_{>T}(ξ_b)^{1/2}P_{>T}(ξ_s)^{1/2}.**
+- *Proof.*
+  - (Local part.) R = Ω(0)‖·‖²_H + P. On each strip ξ_b′ is constant and ∫φ′ = 0, so ⟨ξ_b, ξ_s⟩_H = ¼Y with Y := ∫_E ξ_bξ_s, and |Y| ≤ (ℓ^{3/2}/(π√3))(|α₋|‖φ₋′‖ + |α₊|‖φ₊′‖) (‖ramp‖₂ = |α|√(ℓ/3), Dirichlet Poincaré). AM–GM: (ℓ^{3/2}/(π√3))|α|‖φ′‖ ≤ ε₂α²/ℓ + ℓ⁴‖φ′‖²/(12π²ε₂). So 2Ω(0)⟨ξ_b, ξ_s⟩_H = (Ω(0)/2)Y gives the α and ℓ⁴ terms.
+  - (Low band.) |P_{<T}(u, v)| ≤ Δ_T‖u^{<T}‖_H‖v^{<T}‖_H. For φ supported in a strip, |φ̂|² ≤ ℓ‖φ‖₂² ≤ (ℓ³/π²)‖φ‖²_H, and |ξ̂_s|² ≤ 2(|φ̂₋|² + |φ̂₊|²), so ‖ξ_s^{<T}‖²_H ≤ 2ν_T(ℓ)‖φ‖²_H. AM–GM. ∎
+- **ℓ-dependence.** The local α-term has coefficient |Ω(0)|ε₂/2 ≈ 2.69ε₂ against the p = 2 budget 2c₂ ≈ 0.98 (choose ε₂ ≤ 0.1·c₂/|Ω(0)|); its φ-term is O(ℓ⁴). The low-band bulk term is O(T³ℓ³)·‖ξ_b‖²_H. Both are polynomially small. **All of the difficulty is in the high band P_{>T}(ξ_b, ξ_s).**
+
+**Theorem C.14.C (obstructions; PROVED).**
+- **(i) No α-only bound exists.** There is no inequality |2R(ξ_b, ξ_s)| ≤ εR(ξ_s) + C(ℓ)(α₋² + α₊²), for any ε, C(ℓ). *Proof.* Off the diagonal, R(u, v) = −∫∫u(y)v(x)(Qκ)(y − x)dxdy, and Qκ < 0 on [0.001, 1.1] ⊃ (0, log 3] minus a neighbourhood of 0 (Arb-certified, arp_c/c14_kernel_sign.*; e.g. Qκ(0.5) = −7.640…). Take ξ_b ≥ 0 supported in the bulk at positive distance from E (so α_± = 0) and φ₋ ≥ 0, nonzero. Then R(ξ_b, ξ_s) > 0, and replacing ξ_b by −Mξ_b (M → ∞) violates any such bound with ξ_s fixed. ∎ So the coupling depends on the bulk of ξ_b, not only on its edge values; the right form carries ‖ξ_b‖²_H-terms, which in the odd sector are paid by m₀ (R(ξ_b) ≥ m‖ξ_b‖²_H, N.13.3 Step 1) and in the even sector need m₀^e.
+- **(ii) Cauchy–Schwarz cannot close the high band.** Absorbing γP_{>T}(ξ_s) into the strip bracket needs γ(1 + |Ω(0)|/Ω(T)) < 1 (P_{>T} ≤ (1 + |Ω(0)|/Ω(T))R_{>T}, and Lemma C.13.B needs a fraction of R(ξ_s)). Absorbing γ^{−1}P_{>T}(ξ_b) into R_{>T}(ξ_b) needs γ^{−1}(1 + |Ω(0)|/Ω(T)) < 1. Both cannot hold. So with no further input the high-band coupling is paid only by an H-coercivity margin on ξ_b, i.e. by m₀ (the N.13.A route), or by an almost-orthogonality statement (C.14.K).
+- **(iii) Mechanism of (ii).** The high-band coupling lives at the inner edge x = ∓(L − ℓ): ξ_b has a kink there (slope jump α/ℓ − ξ′), and ξ_s lives on the adjacent strip at the same scale ℓ. Both are concentrated at frequency ~1/ℓ, where the kernel −Qκ(r) ~ r^{−3} couples them at O(1) strength. This is the spatial counterpart of the blind-frequency problem in C.13.B.5: B is local in x, R is local in t, and the coupling between them is an uncertainty-principle quantity.
+
+> **Conjecture C.14.K (high-band almost-orthogonality of the ramp split).** There are T ≥ 12.8, γ < Ω(T)/(Ω(T) + |Ω(0)|) and ℓ_K > 0 such that for all ξ ∈ H¹₀(−L, L), ℓ ≤ ℓ_K:
+> |2P_{>T}(ξ_b, ξ_s)| ≤ γ[P_{>T}(ξ_b) + P_{>T}(ξ_s)].
+(Cauchy–Schwarz gives γ = 1; the conjecture asks for an angle bounded away from 0 between ramp-split pieces in the P_{>T} geometry. A numerical test on piecewise-linear profiles is the natural next step: NOT done.)
+
+**Corollary C.14.D (what closes, given what).**
+- **(K2), odd.** Already closed **without any coupling bound** by Prop C.13.H′ given C.13.H (polynomial range ℓ_H), or by Thm N.13.A given m₀^o (exponential range). The coupling is not needed for (K2). The odd p = 2 cost 2c₂α²/ℓ is paid by the archimedean margin (mechanism as in N.13.4).
+- **(K3), even (PROVED given C.14.K and an even margin m₀^e > 0).** Then for ℓ ≤ min(ℓ_K, m₀^e/50, ℓ_{C.13.B}(γ)), with ε₂ = 0.1c₂/|Ω(0)| and ν_T(ℓ) ≤ εm₀^e/(8Δ_T²), (K3) holds: the strip bracket (Lemma C.13.B for the fraction 1 − γ′ of R, with γ′ = γ(1 + |Ω(0)|/Ω(T)) < 1) and the bulk bracket (1 − γ′)R(ξ_b) + 1.9c₂α²/ℓ ≥ 0 are both nonnegative. The p = 2 line supplies the edge budget; m₀^e pays the dilation loss.
+- **Ramp-dominated even vectors (PROVED given C.14.K and R ≥ 0 on even 𝒯_{L₀}).** If ‖ξ_b‖²_H ≤ Kα²/ℓ, the dilation loss 24.88ℓ‖ξ_b‖²_H ≤ 24.88Kα² is paid by the p = 2 budget 1.9c₂α²/ℓ for ℓ ≤ 0.0374/K. Only here does the even entry close "from the p = 2 budget alone".
+
+### C.14.5 Fakes
+- **DH (Davenport–Heilbronn):** no Euler factor L_2 and no X_S anchoring, so no V(2) term and no rank-two edge matrix. The {∞, 2} frame and C.14.1's identity do not exist for it: **structurally ζ-specific (PROVED by inspection)**. Its truth on this range is fake-blind: DH is positive here (onset 2L ≈ 1.7104 per §C.13 R5).
+- C.14.B and C.14.C(i)–(iii) are purely archimedean, so they hold verbatim for any γ-factor with the same Ω, and they are fake-blind.
+
+### C.14.6 What is needed
+- **From Prime:**
+  1. C.14.B as the coupling bound: local part O(ℓ⁴) plus ε₂α²/ℓ; low band (2Δ_T²ν_T(ℓ)/ε)‖ξ_b‖²_H, O(T³ℓ³); high band Cauchy–Schwarz only.
+  2. C.14.C(i): the coupling cannot be bounded by α alone; carry a ‖ξ_b‖²_H-term, paid by m₀.
+  3. Please confirm or test C.14.K numerically (piecewise-linear ξ, explicit P_{>T}). If C.14.K fails, (K3) needs an even analogue of C.13.H instead.
+  4. Note that (K2) needs no coupling bound (C.14.D).
+- **From S&M:**
+  1. σ_S(t) on |t| < T (μ_lo) and a lower bound on ε̂ for |t| ≥ T (μ_hi > c₂). This is C.13.H via C.13.H″.
+  2. The strict gap 1 − κ^{odd}_{L₀} and its growth in L. This feeds the m₀^o formula and Thm C.14.A.
+  3. An even margin m₀^e (or κ^{ev}, ξ₀ data) for (K3).
+  4. CELESTIAL_INPUTS_C13.md is not pushed (spectrum-measure 95ea14a); "σ_S ≥ 2c₂ in the high band" stays HEURISTIC.
+
+### C.14.7 Labels and R-lines
+| item | label |
+|---|---|
+| semilocal multiplier identity; D_L^{(w)} with exact (I1) carrying −c₂S(V(2) + V(2)*)S | PROVED (given CCM (47) for the Euler completion) |
+| Fejér bound min p_w → −c₂ (zero order in ℓ) | PROVED (classical) |
+| Krein: existence of D ≥ 0 ⇔ Q_L ≥ 0 (distributional) | CONJECTURE (cited) |
+| Thm C.14.A (K2) criterion | PROVED (sufficient) |
+| pure multiplier frame fails if σ_S < 0 on |t| ≤ π/a | PROVED necessary condition; σ_S ≈ log(|t|/2π) HEURISTIC |
+| m₀^o ≥ inf_t[σ_S + 2ε′(1⁺)(1 − κ^{odd}_{L₀})/(¼ + t²)] | PROVED given CC §5 / Thm 6.11; value GAP (N.G2-m₀) |
+| (K3) in the frame | GAP |
+| Thm C.14.B coupling bound | PROVED |
+| Thm C.14.C (i)–(iii) obstructions | PROVED ((i) with Arb-certified kernel sign) |
+| Conjecture C.14.K | CONJECTURE |
+| Cor C.14.D | PROVED given the stated inputs |
+| N.G2-bulk | GAP, reduced to C.14.K + m₀^e |
+| DH: frame absent | PROVED (structural); truth fake-blind |
+
+- **R1** one rule per ℓ-range. **R2** FE through Ω, σ_S and κ; Euler product only through L_2. **R3** the p = 2 term is used with its sign in N.13.4/C.14.D, and through its Fejér minimum in C.14.A. **R4** pole pair spent at T4; odd ξ̂(0) = 0; the even ξ₀ direction is the GAP. **R5** DH is structurally excluded; truth fake-blind. **R6** "no MF-relative margin" PROVED; "closing step must be an exact identity" CONJECTURE ((I1) is an exact identity; the positivity steps are not).
