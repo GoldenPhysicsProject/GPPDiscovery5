@@ -5,12 +5,20 @@ S102/S103, 2026-10-28. Branch `team/celestial-cft`, for merge into `derivation/A
 
 **Conventions.** These are §G's conventions, with half-width L: f ∈ C_c^∞([−L, L]) is real, g = f ∗ f̃, ĝ(t) = ∫ g(u) e^{itu} du = |f̂(t)|², and window L sees the n < e^{2L} (`GppWeilLadder.primeSide_eq_truncation`).
 - **Fluctuation (per the S103 addendum).** We use the ψ-fluctuation E_Λ := Σ_{n≥2} Λ(n) n^{−1/2} δ_{log n} − e^{u/2} du on u > 0, not E₁ (G.3d).
-- Fl_L(f) := −∫_{u>0} (g(u) + g(−u)) dE_Λ(u), and MF_L := Q_L − Fl_L. This is the pole term minus the PNT mean (G.3a), with W_∞ placed as in §G. No §C statement depends on where W_∞ is placed.
-- **G.4d is read as:** Fl_L(f) ≥ −MF_L(f) for all L and f. This is RH-equivalent (Weil 1952; Bombieri 2000).
-- **Wording fix for ARP.md.** §G.4d line ~210 still says "E₁-fluctuation". It should say "E_Λ-fluctuation".
+- **Split.** We use §S's split (`team/spectrum-measure/ARP_spectrum-measure.md`, merged 9184613):
+  - MF_L(f) := ĝ(i/2) + ĝ(−i/2) − ∫_0^∞ e^{u/2}[g(u) + g(−u)] du. This equals ∫ g(u) e^{−|u|/2} du (§S S(a)1 = G.3a) and is > 0.
+  - Fl_L(f) := W_∞(g) − ∫_{(0,∞)} [g(u) + g(−u)] dE_Λ(u).
+  - Q_L = MF_L + Fl_L exactly, and the pole is spent once, in MF.
+- **G.4d** (main wording at 7328e39, on E_Λ): Fl_L(f) ≥ −MF_L(f) for all L and f. This is RH-equivalent (Weil 1952; Bombieri 2000).
+- **No slack (§S S(c)4, PROVED, unconditional).** r(L) := inf_f Q_L/MF_L is nonincreasing in L with lim r(L) ≤ 0. So G.4d holds with zero MF-relative margin, and it is tightest on the dilated nodeless bumps (the soft mode, R4).
 - **Astra normalisation (¼ vs ½).** §C never uses the k = 2 bulk coefficient, so the ¼ (Astra) vs ½ (G.3d) question is not touched here and remains unchecked. The only Astra normalisations §C uses are the TFD amplitudes p^{−σk} of the Oct 26/27 notes, with β = 2σ. These are replayed in C.5–C.6.
 
-**Labels** are as in ARP §0. "PROVED-LEAN" means a GPPVerify `origin/main` (5f54359) theorem name with no `sorry` and no custom axiom. `open_*` stubs are never cited. Each step has an R line (R1–R5), plus R6 where it applies. **R6 = exactness:** is the step an exact identity or equivalence, or a one-sided or lossy bound?
+**Labels** are as in ARP §0. "PROVED-LEAN" means a GPPVerify `origin/main` (5f54359) theorem name with no `sorry` and no custom axiom. `open_*` stubs are never cited. Each step has an R line (R1–R5), plus R6 where it applies.
+
+**R6 (exactness), as on main ARP §0 (f097a52; Golden Eye's narrowing, S103):**
+- PROVED: there is **no MF-relative margin** (§S S(c)4).
+- CONJECTURE (well supported, not proved): "the closing step must be an exact identity". An inequality Q_L ≥ c·N_L(f), for some other norm N_L that degenerates on the dilated nodeless bumps, is not excluded.
+- Each R6 line below says (i) whether the §C step is itself an exact identity or equivalence, or only one-sided; and (ii) whether it could carry a zero-margin closing step.
 
 Step tests (replays only, one per named step): `team/celestial-cft/arp_c/c_step_tests.py`, with output in `c_step_tests.out` (mpmath, 40 digits).
 
@@ -75,7 +83,9 @@ Step tests (replays only, one per named step): `team/celestial-cft/arp_c/c_step_
 - **So every BC/primon OS positivity at β = 1 is equivalent to positivity of the prime weights.** This is the R3-forbidden mechanism (G.1c, R3).
 - **Effect on Weil's form (PROVED).** In Weil's form the prime term is −Σ Λ(n) n^{−1/2}(g + g̃)(log n) with g = f ∗ f̃.
   - KMS positivity of F_N, smeared, says Σ Λ(n) n^{−1/2} |φ̂(log n)|² ≥ 0. That is the prime term on test functions that are pointwise ≥ 0 in u.
-  - For f ≥ 0 (so g ≥ 0) this gives Fl_L(f) ≤ ∫_{u>0}(g(u) + g(−u)) e^{u/2} du. That is an **upper** bound on Fl_L, while G.4d needs a **lower** bound. The sign is wrong for G.4d.
+  - For f ≥ 0 (so g ≥ 0) this gives Fl_L(f) ≤ W_∞(g) + ∫_{u>0}(g(u) + g(−u)) e^{u/2} du. That is an **upper** bound on Fl_L, while G.4d needs a **lower** bound. The sign is wrong for G.4d.
+  - **Where the positivity is lost (PROVED).** μ_Λ = Σ Λ(n) n^{−1/2} δ_{log n} ≥ 0 grows like e^{u/2}, so it is not tempered. The tempered object is E_Λ = μ_Λ − e^{u/2} du, and it is signed.
+    - So KMS/primon positivity holds for μ_Λ and is destroyed exactly by subtracting the PNT mean. That subtraction is where the pole is spent on MF (G.3a, §S S(a)1).
 - **R5 test** (`c_step_tests.py` (4); Hankel Gram at t ∈ {0.35, …, 6}):
   - ζ: min eigenvalue +2.6·10⁻⁸ (PSD).
   - F_θ, θ = 0.1: +1.4·10⁻⁸ (PSD). The fake **passes**.
@@ -88,7 +98,7 @@ Step tests (replays only, one per named step): `team/celestial-cft/arp_c/c_step_
   - **R3 FAILS** (it is the weight-sign mechanism).
   - R4: v₀ = n^{−1/2} is the pole direction, but only as a rigged vector.
   - **R5 FAILS twice:** F_θ, DMV, P_X and Epstein (w_n = r_Q(n)/n ≥ 0, via `gram_nonneg`; summability is classical, not in Lean) pass, and G_θ′ fails. DH (complex weights) fails, and H₋ₜ is undefined.
-  - **R6: exact** (an iff).
+  - R6: (i) exact (an iff). (ii) It cannot carry a closing step, because its norm is the prime-weight Gram, not Q_L (see C.8a).
   - **Verdict: PROVED and RH-silent. It is neither necessary (G_θ′) nor sufficient (F_θ) for G.4d.**
 
 ## C.3 The inversion x ↦ x⁻¹ on C_ℚ, and which reflection BC sees (PROVED)
@@ -96,6 +106,12 @@ Step tests (replays only, one per named step): `team/celestial-cft/arp_c/c_step_
 - **Structure of C_ℚ.** C_ℚ = 𝔸^*/ℚ^* ≅ ℤ̂^* × ℝ₊^*. The map x ↦ x⁻¹ acts as χ ↦ χ̄ on the ℤ̂^* characters and as u ↦ −u on log|x| (Tate 1950; Connes 1999 §III).
   - In Mellin coordinates it is the antilinear map s ↦ 1 − s̄.
   - **PROVED-LEAN (algebra only):** `GppArithmeticOS.osReflection`, `GppArithmeticOS.osReflection_involutive`, `GppArithmeticOS.osReflection_eq_self_iff` (fixed set Re s = ½), `GppArithmeticOS.osReflection_centered`.
+- **Relation to §P's Θ_p (PROVED; cite §P P.2, P.5; Tate 1950; Connes 1999 App. I Lemma 2 eq. (38) = Meyer 2005 §5.4 eq. (31)).**
+  - Bare inversion inv_p: x ↦ x⁻¹ on L²(ℚ_p^*, d^*x), taken in the half-density f ↦ |x|^{1/2} f, is unitary. In Mellin coordinates it is ½ + it ↦ ½ − it with **multiplier 1**.
+  - §P's Θ_p := F_p ∘ inv_p (Tate's local FE) is the **normalized intertwiner**. It is unitary with Mellin multiplier γ_p(½ + it), |γ_p| = 1 (§P P.2), and Θ_∞ is the analogue with γ_∞ (Connes–Consani 2021 Lemma 1.3).
+  - So Θ_p = (multiplier γ_p) ∘ inv_p: it differs from bare inversion by the unimodular local γ-factor.
+  - **On C_ℚ** the bare inversion x ↦ x⁻¹ is the E-image of the *global* Fourier transform: E(F_𝔸 φ) = E(φ) ∘ inv (§P P.5; ARP G.4b). Here F_𝔸 = ⊗′F_v, and the local γ_v are absorbed by Tate's global FE, ∏_v γ_v = 1 on the ℚ^*-quotient (formally, at the level of Tate's theorem; the product is not absolutely convergent on the line, §P P.6).
+  - So "x ↦ x⁻¹ on C_ℚ" means ⊗′Θ_v pushed through E. It is **not** ⊗ inv_v: the bare local inversions without γ_v are not intertwined by E.
 - **C.3a. The BC thermal-circle reflection is s ↦ 1 − s̄, not the FE s ↦ 1 − s (PROVED, elementary).**
   - At β = 1, modular time z = u + iτ gives n^{iz} = n^{−s} with s = τ − iu (`GppBostConnesKms.modFactor`). The thermal reflection τ ↦ 1 − τ sends s to 1 − τ − iu = 1 − s̄, which is `osReflection`. This is Astra's orientation involution D(s) = 1 − s̄, which preserves t.
   - The FE reflection s ↦ 1 − s (Tate/Poisson, G.4a) reverses t, and is **not implemented in 𝒜**:
@@ -103,31 +119,44 @@ Step tests (replays only, one per named step): `team/celestial-cft/arp_c/c_step_
     - μ_n^* is only a co-isometry (e_n ≠ 1);
     - Fourier on 𝔸 is absent from 𝒜.
   - The FE becomes available only on L²(C_ℚ) through Connes' E (G.4b). In the "dual system" picture the zeros appear only in a cokernel after cooling and distillation (Connes 1999; Connes–Consani–Marcolli 2007), never as KMS data.
+  - **Relation to Θ_p.** D = osReflection is bare inversion composed with complex conjugation, i.e. the Tomita conjugation of the KMS state. It contains **no local Fourier transform and no γ_p**. So the BC reflection is not ⊗Θ_v: it never touches the Tate intertwiner.
+- **C.3c. Where KMS/BC positivity sits relative to §P's ℚ^*-sum step (PROVED; §P P.6, Meyer 2005 Lemma 5.3).**
+  - Background from §P P.6: every local Θ_v is an isometry, and the only non-isometric step is the global ℚ^*-sum. On O^×-invariants this sum is the Euler operator L_S = ∏_{v∉S}(1 − λ_{p_v}^{−1})^{−1} on L²(C_S)_α, bounded only for α > 1.
+  - Expand L_S = Σ_{n S-coprime} λ_n^{−1}. This is a **positive-coefficient** sum of the scaling operators λ_n, and the BC isometries μ_n are their semigroup avatars (σ_t(μ_n) = n^{it} μ_n).
+  - The Gibbs state at β has Tr e^{−βH} = ζ(β), which is L_S's Mellin multiplier at the real point α = β. Every BC/primon positivity in C.2 is positivity of these coefficients (C.2d), evaluated where the ℚ^*-sum converges:
+    - `critical_gram_nonneg` lives at α = 1 + t_i + t_j > 1;
+    - Gibbs states live at β > 1;
+    - the α = ½ midpoint current J_N exists only for finite N, i.e. a finite Euler operator.
+  - At β = 1 there is the phase transition, the pole. The critical line α = ½ is exactly where §P P.6 shows L_S has no operator-norm limit (Kronecker–Weyl).
+  - So **KMS positivity sits strictly on the convergent side (α ≥ 1, or finite S) of the one non-isometric step, and never on it.**
+  - Weil positivity is a **deficit**: a trace over the complement of range(E), coker E = ker E*. Main G.4d records this sign as SETTLED (S103c, 0244ce4/7328e39: §Q.7, §P.5–P.6, Connes 1999 §VIII Thm 5; also Connes–Consani 2021 Thm 1). §S S(c)5 still carries the earlier "under review" label.
+  - KMS positivity, by contrast, is additive positivity of the sum's coefficients, on the range side.
+  - **Consequence (PROVED given main's settled sign).** Main G.4d says range positivity enters Δ_Λ with a minus sign and gives only the trivial upper bound ("additive positivity transfers through E" is WRONG-SIGN and withdrawn). KMS/BC positivity is range-side and additive, so it falls under that withdrawal. This matches C.2d's upper bound on Fl_L, derived independently.
 - **C.3b. Celestial dictionary (PROVED-LEAN, algebra).**
   - `GppArithmeticOS.celestialWeight_intertwines_osReflection` gives Δ = 2s ↦ 2 − Δ̄.
   - Astra's β = 2σ = Re Δ, so the mirror β ↔ 2 − β is the conjugated celestial shadow. Its fixed line Re Δ = 1 is the SL(2,ℂ) principal series, which is β = 1.
 - R line:
-  - R2: §C's reflection is the KMS one (Euler side only). The FE half of R2 lives only at G.4.
-  - R5: G_θ′ commutes with D (unitary character). For F_θ, D maps the β = 1 + 2θ species to β = 1 − 2θ (see C.6c).
-  - R6: exact.
+  - R2: §C's reflection is the KMS one (Euler side only). The FE half of R2 lives only at G.4 (E, §P P.5).
+  - R5: G_θ′ commutes with D (unitary character). For F_θ, D maps the β = 1 + 2θ species to β = 1 − 2θ (see C.6c), and L_S for F_θ is bounded only for α > 1 + θ (§P P.6).
+  - R6: (i) exact (identities of operators). (ii) No closing content.
 
 ## C.4 Per window, the prime side of Q_L is a quasi-local β = 1 BC expectation (PROVED; PROVED-LEAN core)
 
 - **Statement.** For N ≥ e^{2L}:
 
-  Σ_{n≥2} Λ(n) n^{−1/2}(g(log n) + g(−log n)) = (1/2π)∫ |f̂(t)|² · 2 Re F_N(−t) dt,  F_N(u) = ω(J_N^* σ_{u+i/2}(J_N)),
+  Σ_{n≥2} Λ(n) n^{−1/2}(g(log n) + g(−log n)) = (1/2π)∫ |f̂(t)|² · 2 Re F_N(t) dt,  F_N(u) = ω(J_N^* σ_{u+i/2}(J_N)),
 
   where J_N ∈ 𝒜_{S_L} and S_L = {p < e^{2L}}.
 - **Proof.**
-  - Window truncation: `GppWeilLadder.primeSide_eq_truncation`. (§0.3 writes `GppWeilSupportLadder`; the Lean namespace is `GppWeilLadder`.)
+  - Window truncation: `GppWeilLadder.primeSide_eq_truncation` (namespace as corrected on main 66cbedf).
   - Inversion: g(log n) = (1/2π)∫ ĝ(t) n^{−it} dt.
   - The two-point identity `GppBostConnesKms.midpoint_two_point`, whose hypothesis holds by C.1b.
 - **Consequences.**
-  - Fl_L = (an expectation in 𝒜_{S_L} at the β = 1 midpoint) − (PNT mean, a scalar archimedean term).
+  - Fl_L = W_∞(g) − (an expectation in 𝒜_{S_L} at the β = 1 midpoint) + (PNT mean). The last two terms are scalars, i.e. archimedean data.
   - **Per window, everything in G.4d is quasi-local:** finitely many primes plus ∞.
 - **Restated GAP.** G.4d ⇔ for every N and every f with supp f ⊂ [−½ log N, ½ log N],
 
-  (1/2π)∫ |f̂|² · 2 Re F_N(−t) dt ≤ MF_L(f) + ∫_{u>0}(g(u) + g(−u)) e^{u/2} du.
+  (1/2π)∫ |f̂|² · 2 Re F_N(t) dt ≤ ĝ(i/2) + ĝ(−i/2) + W_∞(g)  (= MF_L(f) + W_∞(g) + ∫_{u>0}(g(u) + g(−u)) e^{u/2} du).
 
   This is a **restatement, not progress**. The pairing is |f̂|² against Re F_N pointwise, which is not KMS-positive (C.2d), and Re F_N changes sign (G.1c).
 - R line:
@@ -136,7 +165,7 @@ Step tests (replays only, one per named step): `team/celestial-cft/arp_c/c_step_
   - R3: neutral.
   - R4: the pole is in MF_L.
   - R5: identical for DMV and P_X with their own Λ, so it is fake-blind.
-  - R6: exact.
+  - R6: (i) exact (an equivalence). (ii) It is a restatement, so it inherits §S's zero margin (r(L) → ≤ 0).
 
 ## C.5 Audit of Astra's mirror-OS superselection (Oct 26) in OS/KMS language
 
@@ -174,7 +203,7 @@ Step tests (replays only, one per named step): `team/celestial-cft/arp_c/c_step_
     - F_θ: species at β = 1 ± 2θ are globally orthogonal (it breaks here, but that is the G.1 constituent filter, see C.6c).
     - G_θ′ passes (t-phases cancel).
     - DH, Epstein and H₋ₜ: the theorem is undefined (no product state).
-  - R6: exact (dichotomy).
+  - R6: (i) exact (a dichotomy). (ii) No closing content: its inputs are MF data (the pole and the Mertens mean), and §S S(c)4 says MF has no slack to give.
 
 **Answer to (b)(i): YES.**
 - The superselection is a statement about the BC/primon KMS states at the mirror temperatures β = 2σ and 2 − 2σ: Kakutani disjointness of their product restrictions, and type I vs III_1 on 𝒜.
@@ -195,9 +224,9 @@ Step tests (replays only, one per named step): `team/celestial-cft/arp_c/c_step_
 - R line:
   - R3: passes.
   - R5: it is local at one prime, so it is the same for every Euler-product fake.
-  - R6: exact.
+  - R6: (i) exact. (ii) No closing content (it is a no-go).
 
-**C.6b. The positive repair is the unreflected Gram (PROVED; Astra §II, replayed).** Flipping the sinh sign gives d(x)d(y) h_r(x + y) = ⟨Ψ_σ, Ψ_τ⟩, which is Hankel and PSD. The flip undoes J, so it cannot be used. **R6: exact.** This is a no-go for sign-convention repairs.
+**C.6b. The positive repair is the unreflected Gram (PROVED; Astra §II, replayed).** Flipping the sinh sign gives d(x)d(y) h_r(x + y) = ⟨Ψ_σ, Ψ_τ⟩, which is Hankel and PSD. The flip undoes J, so it cannot be used. **R6: (i) exact; (ii) no closing content.** This is a no-go for sign-convention repairs.
 
 **C.6c. β-filter (PROVED).** The θ-shifted species have squared TFD ratio p^{−1∓2θ}, i.e. β = 1 ± 2θ. So F_θ is not two KMS_1 species of the same H_p.
 - This is the KMS form of the constituent filter |γ_p^{(±θ)}(½ + it)| ≠ 1 (G.1/G.4e, §P). It breaks F_θ **only** through local data. That is R3-compatible but local, so it says nothing about DMV.
@@ -241,7 +270,7 @@ Step tests (replays only, one per named step): `team/celestial-cft/arp_c/c_step_
   - R3: passes.
   - R4: at σ = ½ it is vacuous (O2).
   - R5: DMV satisfies C.6d verbatim, so it is fake-blind.
-  - R6: one-sided (an upper bound on matrix elements).
+  - R6: (i) one-sided (an upper bound on matrix elements). (ii) It cannot supply a closing identity, and it is vacuous at β = 1 (O2).
 - **Recommendation for ARP G.5 (T2).** Change "Astra's support bound gives the necessity half (PROVED)" to "gives the necessity half **conditional on H1** (C.7c). Unconditionally it is vacuous at β = 1 (O2), and per window the compensator is quasi-local (O3)." The support bound itself is PROVED (replayed in C.6d), so G.4d(ii)'s "not yet replayed by Grok" can be updated.
 
 ## C.8 What §C contributes to G.4d (precise)
@@ -256,9 +285,40 @@ Step tests (replays only, one per named step): `team/celestial-cft/arp_c/c_step_
    - (b) mirror superselection: DMV is a witness (C.5d);
    - (c) doubled-prime reflection or its sign repairs: indefinite, or the unreflected Gram (C.6a–b).
 4. **Constraint on any operator-side compensator (CONDITIONAL on H1, C.7c).** It must engage the full prime tail or lie outside 𝒜 (as F_𝔸 and Connes' E do). Without H1 the support bound is vacuous at β = 1 (O2).
-5. **Two ARP corrections:**
-   - "E₁" → "E_Λ" at G.4d (S103);
-   - the Lean names `GppWeilLadder` (not `GppWeilSupportLadder`) and `PrimeFockPartition.lean` (not `PrimeGasPartition.lean`; the latter is in the reflection_positivity note).
+5. **Location relative to §P (C.3c, PROVED).** KMS/BC positivity is additive positivity of the coefficients of the Euler operator L_S. It holds only on the convergent side of the ℚ^*-sum (α ≥ 1, or finite S), upstream of the one non-isometric step (§P P.6, Meyer Lemma 5.3).
+   - The Weil deficit on coker E = ker E* arises at that step (sign SETTLED on main G.4d, S103c; Connes 1999 §VIII Thm 5; Connes–Consani 2021 Thm 1)5).
+   - BC never sees the deficit. BC's reflection D also contains no Tate intertwiner Θ_v (C.3).
+6. **Zero-margin exact identity: not from KMS (C.8a).**
+7. **ARP notes.**
+   - The E₁ → E_Λ wording and the `GppWeilLadder` namespace are now fixed on main (66cbedf).
+   - Still open: the bridge note `reflection_positivity` calls the file `PrimeGasPartition.lean`, but it is `PrimeFockPartition.lean` (`GppPrimeFock.partition_eq_riemannZeta`).
+   - T2 rewording as in C.7.
+
+### C.8a Could KMS/OS positivity in principle supply the zero-margin exact identity? (steering S2 question)
+
+**Answer.**
+- **No for the covariant BC route (PROVED).**
+- **Trivially yes in the abstract, but only by assuming RH**, so that is not a route.
+- **What would be needed is a deficit-type identity outside 𝒜, which is G.4d itself (GAP).**
+
+- **Why zero margin is forced (PROVED, §S S(c)4).** r(L) ↓ with lim r(L) ≤ 0, so no c > 0 gives Fl_L ≥ −(1−c)MF_L. Any closing step must therefore be sharp on the soft mode.
+  - Whether it must be an exact *identity* is **CONJECTURE** (Golden Eye's narrowing of R6): an inequality Q_L ≥ c·N_L(f), with N_L degenerating on dilated nodeless bumps, is not excluded.
+- **Covariant KMS identities are on the wrong axis (PROVED).** Smear a σ-analytic element in modular time: a_φ := ∫ φ(u) σ_u(J_N) du.
+  - Then C.2a–b give, exactly, ω(a_φ^* σ_{i/2}(a_φ)) = Σ_{n≤N} Λ(n) n^{−1/2} |φ̂(log n)|². This is a norm, so it has zero margin by construction (R6 exact).
+  - Its spectral measure in the energy variable is Σ Λ(n) n^{−1/2} δ_{log n}, with atoms at log n. That is computed exactly by `GppBostConnesKms.midpoint_two_point` and has no free parameters.
+  - Q_L as a norm would need spectral measure Σ_ρ δ_{γ_ρ}, on the dual axis (Weil: Q_L(f) = Σ_ρ ĝ(γ_ρ)). The two measures have different supports, so no covariant BC identity equals Q_L. Equivalently: BC's dynamics has energy log n and time t, while a Hilbert–Pólya dynamics for Q_L needs time u = log-scale and energy γ.
+  - The explicit formula maps one cone to the other. It does not map positive to positive, because E_Λ is signed (C.2d).
+- **Abstract realisation is circular (PROVED, trivial).** If Q_L ⪰ 0, then Q_L = ‖Δ^{1/4} a_f Ω‖² for some linear f ↦ a_f in the infinite-dimensional type III_1 GNS space (any PSD form is a Gram). So "there is some KMS-norm identity" is equivalent to RH and gives no leverage.
+- **Where a zero-margin identity could live (GAP = G.4d).** In Connes' framework the zeros are the spectrum of the scaling action on coker E = ker E*, and positivity is a **deficit** there (Connes 1999 §VIII Thm 5; Connes–Consani 2021 Thm 1; §P P.6–P.7; sign SETTLED on main G.4d, S103c)5).
+  - That state and action are not BC KMS data: they come after the ℚ^*-sum (C.3c) and involve E and F_𝔸, which are outside 𝒜 (C.3a).
+  - So KMS/OS positivity can at most be an *input* (the additive, range-side, MF-spending positivity). It cannot be the closing identity.
+- **R line:**
+  - R1: the obstruction is uniform in N.
+  - R2: the FE enters only through E.
+  - R3: the covariant identity is the weight-sign mechanism.
+  - R4: soft-mode tightness is from §S.
+  - R5: the same for DMV and P_X.
+  - R6: "no MF-relative margin" is PROVED (§S); "closing step must be an exact identity" is CONJECTURE; "not a covariant BC identity" is PROVED.
 
 **GAP left by §C:** G.4d, unchanged, together with H1 if one wants the superselection route (H1 is at least RH-strength). **RH is OPEN.**
 
@@ -290,6 +350,9 @@ Step tests (replays only, one per named step): `team/celestial-cft/arp_c/c_step_
 - Uhlmann, A., Rep. Math. Phys. 9 (1976) 273–279.
 - Diamond, H., Montgomery, H., Vorhauer, U., "Beurling primes with large oscillation", Math. Ann. 334 (2006) 1–36.
 - Davenport, H., Heilbronn, H., J. London Math. Soc. 11 (1936).
+- Connes, A., Consani, C., "Weil positivity and trace formula, the archimedean place", Selecta Math. 27 (2021), arXiv:2006.13771 (Thm 1, Lemma 1.3).
+- Meyer, R., "On a representation of the idele class group related to primes and zeros of L-functions", Duke Math. J. 127 (2005) 519–595 (Lemma 3.1, Lemma 5.3, §5.4 eq. (31)).
+- §P: `team/principal-series/ARP_principal-series.md` at 1c46f59 (P.2, P.5, P.6); §S: `team/spectrum-measure/ARP_spectrum-measure.md` (main 9184613; S(a)1, S(c)4, S(c)5).
 - Tate 1950; Weil 1952; Bombieri 2000 (as in G.7).
 - Astra, bridge `work/2026-10-26_astra_mirror_prime_vacuum_superselection.md`, `work/2026-10-26_astra_prime_os_thermal_circle.md`, `work/2026-10-27_astra_doubled_prime_os_sewing_audit.md`; GPPDiscovery3 `experiments/astra/prime_os_mirror_fidelity.py`, `prime_os_global_sewing_test.py`.
 - Codex, bridge `work/codex/2026-10-11_os_kms_critical_arithmetic_transport.md` (source of `CriticalRiggedGram`).
