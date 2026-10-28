@@ -5,9 +5,9 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. Seat: Prin
 
 **Labels.** PROVED (literature or elementary, cited) · PROVED-LEAN (GPPVerify name, main 5f54359, checked 2026-10-28) · CONJECTURE · GAP · NUMERICAL (orientation only).
 **Conventions (team-binding).** L is the HALF-width: f ∈ C_c^∞([−L, L]) in log scale u = log|x|, g = f ∗ f̃ on [−2L, 2L], window L sees n < e^{2L}. Lean's `HasSupportIn g L′` in `WeilSupportLadder.lean` is stated for the convolution g, so **L′ = 2L**.
-**Builds on.** ARP.md §G (G.1–G.4, GAP G.4d) and §0.3 (inventory); `ARP_plan.md` §1–§2 (this file supersedes its §2 outline and corrects its §5 table, see P.9). Exact step checks: `arp/p_checks.py` → `arp/p_checks.log` (sympy; no exploratory numerics).
+**Builds on.** ARP.md §G (G.1–G.4, GAP G.4d) and §0.3 (inventory); `ARP_plan.md` §1–§2 (this file supersedes its §2 outline and corrects its §5 table, see P.10). Exact step checks: `arp/p_checks.py` → `arp/p_checks.log` (sympy; no exploratory numerics).
 
-**Fakes and requirements (each step's R-line).** F_θ = Λ(s−θ)Λ(s+θ) (θ real ≠ 0); G_θ′ = Λ(s+iθ′)Λ(s−iθ′) (must pass); DH (Davenport–Heilbronn); H₋ₜ (de Bruijn–Newman deformation); DMV (Beurling); P_X (finite Euler product); Epstein x²+5y² (h = 2); G₅ (Hecke-group, non-arithmetic). R1 uniform in L; R2 Euler product + FE jointly; R3 not via weight signs; R4 soft mode / pole state; R5 locate each fake; **R6 exact identity, no slack** (every step below is an equality unless stated).
+**Fakes and requirements (each step's R-line).** F_θ = Λ(s−θ)Λ(s+θ) (θ real ≠ 0); G_θ′ = Λ(s+iθ′)Λ(s−iθ′) (must pass); DH (Davenport–Heilbronn); H₋ₜ (de Bruijn–Newman deformation); DMV (Beurling); P_X (finite Euler product); Epstein x²+5y² (h = 2); G₅ (Hecke-group, non-arithmetic). R1 uniform in L; R2 Euler product + FE jointly; R3 not via weight signs; R4 soft mode / pole state; R5 locate each fake; **R6 exact identity, no slack** (every step below is an equality unless stated). R6's scope: what is PROVED is "no MF-relative margin" (§S S(c)4). That the closing step *must* be an exact identity is a CONJECTURE (P.7, Golden Eye).
 
 ---
 
@@ -151,15 +151,152 @@ Either way, the non-unitary content sits entirely in the ℚ^*-sum, i.e. in the 
 2. The polarization lemma (P.4) explains F_θ completely at the level of mechanism: a non-unitary GL(1) constituent turns the norm into a polarization on the same window. It also shows that any L²(C_ℚ)-norm identity passes G_θ′ automatically (T3).
 3. The only non-isometric step is the global ℚ^*-sum, i.e. the Euler operator L_S on the critical-line space (P.6), glued to Poisson by (38)/(31) (P.5).
 4. **Nothing local bounds the GAP.** Fl_L ≥ −MF_L uniformly in L (G.4d) is a statement about L_S at α = ½ composed with the cutoff. It is equivalent to RH (Weil 1952; Bombieri 2000), and window L is the semi-local problem S_L = {∞} ∪ {p < e^{2L}} (PROVED-LEAN `GppWeilLadder.primeSide_eq_truncation`, WeilSupportLadder.lean:90, with Lean L′ = 2L).
-**Base case.** For 2L < log 2, no prime enters (PROVED-LEAN `primeSide_eq_zero_of_support_lt_log_two`, line 106). Positivity there is Connes–Consani's archimedean theorem (Selecta 27:77, Thm 1 / Cor. 2.3); in Lean it is only conditional, `weil_nonneg_of_arch_nonneg_rung_zero` (named hypothesis 0 ≤ arch).
-**R-line.** The GAP is R1 by construction. All fakes break before or at P.6, and G_θ′ passes every step (ARP G.4e, refined in P.9). **No new route is claimed.**
+**Base case.** For 2L < log 2, no prime enters (PROVED-LEAN `primeSide_eq_zero_of_support_lt_log_two`, line 106). There Q_L = pole + W_∞. Connes–Consani (Selecta 27:77) Thm 1 gives W_∞(g⋆g^*) ≥ Tr(ϑ(g)Sϑ(g)^*) ≥ 0 on the pole-free class ĝ(±i/2) = ĝ(0) = 0 (Cor. 2.3 gives the L − D decomposition; see P.8c). Full small-support positivity with the pole is as cited in ARP G.2. In Lean it is only conditional: `weil_nonneg_of_arch_nonneg_rung_zero` (named hypothesis 0 ≤ arch).
 
-## P.8 Not used
+**Scope caveat (Golden Eye audit, 2026-10-28).**
+- **PROVED:** (1) nothing local bounds G.4d (items 1–4 above); (2) §S S(c)4, *no MF-relative margin*: there is no c > 0 with Q_L ≥ c·MF_L for all L.
+- **CONJECTURE (well supported, not proved):** that the closing step for G.4d *must be an exact identity*. S(c)4 does not exclude Q_L ≥ c·N_L for a norm N_L that degenerates on the dilated nodeless bumps (for example one weighting only frequencies near the zeros).
+- So R6 is a working requirement at CONJECTURE level, not a theorem.
+**R-line.** The GAP is R1 by construction. All fakes break before or at P.6, and G_θ′ passes every step (ARP G.4e, refined in P.10). **No new route is claimed.**
+
+## P.8 Closing open item (b): the pole in the cutoff pair, the deficit form, and Connes–Consani 2021 Thm 1 (S103d)
+
+Sources (verbatim numbering): Connes 1999 = arXiv math/9811068v1 §VII eqs (15)–(16), (31), (33), Thm 3; §VIII eqs (16)–(28), Cor. 2, Thm 5, Lemma 3; App. I eqs (36)–(38), Lemma 2; App. II eqs (5)–(6). Meyer 2005 = arXiv math/0311468v3 eq (12), §5.4 eq (31), Lemma 5.5. CC 2021 = Connes–Consani, Selecta 27:77, arXiv:2006.13771, Thm 1 (eq (4)), eq (5) (= Thm 6.11), Thm 3 (eqs (13)–(14) = Thm 4.7), eqs (8)–(11), Cor. 2.3 (eq (51)), eqs (48)–(49), Lemma 4.1 (eqs (60), (62)–(63)), Def. 4.4 (eq (72)). The 2 log Λ cancellation and Thm 5's positivity argument are written out in Queen's `team/queen/arp/sign_check.md` and cited on main (ARP G.4d, 7328e39). They are **not** repeated here.
+
+### P.8a Queen's Q3: where the pole sits — PROVED (literature + elementary algebra)
+
+**Cutoff pair.** P_Λ is multiplication by ρ_Λ = 1_{|x|≤Λ} (Connes §VII eq (15), "infrared cutoff"). P̂_Λ := F P_Λ F^{−1} is the "ultraviolet cutoff", and R_Λ := P̂_Λ P_Λ (eq (16)). Globally B_Λ := Im P_Λ ∩ Im P̂_Λ (§VIII, before Cor. 2), and B_{Λ,0} ⊂ B_Λ is the span of f ∈ 𝒮(𝔸)₀ with f, f̂ vanishing for |x| > Λ (§VIII, after (21)). Since F² = λ_{−1} and λ_{−1} commutes with P_Λ, **F P_Λ F^{−1} = P̂_Λ and F P̂_Λ F^{−1} = P_Λ: F swaps the pair.**
+
+**The two boundary terms with their exact coefficients.** Write Ẽf(g) := |g|^{1/2} Σ_{q∈ℚ^*} f(qg) for any f ∈ 𝒮(𝔸), so Ẽ = E on 𝒮(𝔸)₀. Multiplying Connes App. I eq (37), |x| Σ_{k^*} f(xq) = Σ_{k^*} f̂(x^{−1}q) + δ with δ = −|x| f(0) + ∫ f dx, by |x|^{−1/2} gives the exact identity
+
+  **(P8.1)  Ẽf(g) = Ẽf̂(g^{−1}) + f̂(0)|g|^{−1/2} − f(0)|g|^{1/2},  f ∈ 𝒮(𝔸), g ∈ C_ℚ.**
+
+On 𝒮(𝔸)₀ this is (38) / §VIII (22). It is also Meyer's eq (31) in half density: JΣF = Σ + R with R(f)(x) = f(0) − |x|^{−1}Ff(0) (§5.4) and J from eq (12). Multiplying Σf = JΣFf − Rf by |x|^{1/2} reproduces (P8.1) term by term, including the sign.
+
+**Mellin (Tate).** With d^*g normalized as in Connes §III eq (14), the boundary part of (P8.1) on |g| < 1 has Mellin transform ∫_{|g|<1} (f̂(0)|g|^{−1/2} − f(0)|g|^{1/2}) |g|^{s−1/2} d^*g = f̂(0)/(s−1) − f(0)/s. So:
+- **Res_{s=1} = f̂(0) and Res_{s=0} = −f(0)** (Tate 1950 Main Thm; Golden Eye's lead is correct).
+- F (f ↦ f̂, f̂ ↦ f(−·)) exchanges the two coefficients, and with them the vectors |g|^{−1/2} ↔ |g|^{1/2}. **F swaps the poles** (PROVED).
+
+**Answer to Q3, in two senses, both exact.**
+1. *As functionals on 𝒮(𝔸) — Golden Eye's lead holds.*
+   - f ↦ f(0) is the P_Λ-side (position) functional: (P_Λ f)(0) = f(0) for every Λ > 0, since x = 0 lies in {|x| ≤ Λ}. It is the residue at s = 0.
+   - f ↦ f̂(0) is the P̂_Λ-side (momentum) functional: (P̂_Λ f)^(0) = f̂(0). It is the residue at s = 1.
+   - F swaps them, together with P_Λ ↔ P̂_Λ.
+   - Neither functional depends on Λ.
+2. *As vectors in L²(C_ℚ) after E (the sense relevant to S_Λ and the deficit) — both poles sit in the P̂_Λ half.* Take f ∈ B_Λ.
+   - For |g| > Λ: Ẽf(g) = 0 for **every** f ∈ 𝒮(𝔸) vanishing on |x| > Λ, because |qg| = |g| (product formula). The P_Λ half of the inclusion E(B_{Λ,0}) ⊂ S_Λ needs no boundary condition.
+   - For |g| < Λ^{−1}: Ẽf̂(g^{−1}) = 0 by the P̂_Λ condition, so (P8.1) gives **Ẽf(g) = f̂(0)|g|^{−1/2} − f(0)|g|^{1/2} exactly.** Both pole vectors appear together at the end that Connes controls with P̂_Λ through (22). This is exactly why Connes must restrict to 𝒮(𝔸)₀ (§VIII, after (21): "the equality (22) shows that E(f)(g) vanishes for |g| < Λ^{−1}").
+   - In the conjugate coordinate Ẽ∘F the same statement holds with P_Λ and P̂_Λ exchanged.
+   - So the honest answer is **P̂_Λ (in Connes' coordinate E), carrying both poles, not one each.** The "one each" picture is true only at the level of functionals (sense 1).
+   - Meyer has no cutoff projections. Both poles sit in the single rank-2 map R (eq (31)): Lemma 5.5's two extra dimensions, spectrum {1, |x|}, i.e. |x|^{±1/2} in half density.
+
+**Semi-local check (§N N.10, PROVED for pure tensors; checked against Connes §VIII).** With only the S_X-units O_S^* in place of ℚ^*, the Mellin transform of the sum is Z_S(f, s) = ∏_{v∈S} Z_v(f_v, s) (N.10(i)).
+- It is holomorphic at s = 1: **the f̂(0) direction is absent.**
+- −f(0) survives as a pole of order ≤ |S| at s = 0. It comes from each local Tate integral near x_v = 0.
+- The s = 1 residue f̂(0) reappears only with the full ℤ[1/S]-sum, as ζ^{(S)}(s)·Z_S(f, s) (N.10(ii)). So it is carried entirely by the primes outside S.
+
+This matches Connes:
+- (a) His semi-local cutoff formulas, §VII Thm 4 and §VIII Cor. 2 (Q_Λ on L²(X_S)), have right-hand side 2h(1) log′Λ + Σ_{v∈S}∫′ with **no D term**.
+- (b) D appears only globally, in the proof of Thm 5, as the B_Λ / B_{Λ,0} nuance in L²(X) with the global E of (18) and the global window S_Λ of (21).
+- (c) The trivial-character case, the only one that carries the poles, is where Connes needs "more care since 1_R ∉ 𝒮₀(𝔸)" (p. 41). Here 1_R = ⊗_{v∉S} 1_{R_v} is exactly the tail outside S.
+- It also matches P.6. The s = 1 pole of ζ is the pole of the cofinite Euler operator L_S (Meyer Lemma 5.3); finite products have none. This is why P_X is holomorphic at 1 and has no FE (N.10(i)).
+
+**How this fits Golden Eye's one-pole-per-side picture.** Sense 1 survives, refined into an *asymmetry*:
+- The **P_Λ side (position, f(0), s = 0) is local.** It is present at every finite S, degraded to order ≤ |S|.
+- The **P̂_Λ side (momentum, f̂(0), s = 1) is global.** It exists only after Poisson (the ∫ f dx term of App. I (37)) and the infinite prime tail.
+- **F swaps the two only after the full ℚ^*-sum**, through Tate's global FE. Semi-locally there is no FE (N.10(i)), so there is no swap.
+- Sense 2 (both vectors at the |g| < Λ^{−1} end in the coordinate E) is the global statement. E needs ℚ^*.
+- Golden Eye's picture "P_Λ carries s = 0, P̂_Λ carries s = 1, F swaps them" is therefore **correct globally as a statement about functionals**. It is not a statement about where the E-images sit, and it is not semi-local. R2 is visible here: the s = 1 pole needs the Euler tail and the FE together.
+
+**Is it the same projection in OS4 / G.3a and in the deficit trace? Yes: the same pair B_Λ ⊃ B_{Λ,0}.** PROVED for function fields (Connes Thm 5 proof, p. 43). For ℚ it is only *as stated by Connes* (prolate B_Λ, §VIII end) and not re-derived.
+- **The pole term.** The pole distribution is D(f) = ∫_{C_k} f(w)(|w|^{1/2} + |w|^{−1/2}) d^*w (App. II eq (6)), i.e. D(f) = f̂(i/2) + f̂(−i/2) with CC's Fourier convention, CC eq (11). This is exactly the OS4 / G.3a pole term ĝ(i/2) + ĝ(−i/2). Its two characters are the two vectors |g|^{±1/2} of (P8.1).
+- **The deficit is built on B_{Λ,0}, not B_Λ.** Δ_Λ(f) = Tr((S_Λ − Q′_{Λ,0}) V(f)) (§VIII eq (24)), with Q′_{Λ,0} = E Q_{Λ,0} E^{−1}. Hypothesis a) of Thm 5 is stated for Q_Λ on B_Λ. Transport by (19) with f(g) = |g|^{−1/2}h(g^{−1}), insert Q_Λ, and use (26):
+  Δ_Λ(f) = [Tr(S_Λ V(f)) − Tr(Q_Λ U(h))] + Tr((Q_Λ − Q_{Λ,0}) U(h)).
+  - The first bracket tends to log|d^{−1}| f(1) − Σ_v D_v(f). This uses a), Tr(S_Λ V(f)) = 2f(1) log′Λ, and (26). The 2 log Λ cancels here.
+  - Comparing with (17), Δ = log|d^{−1}|δ₁ + D − Σ_v D_v, **lim Tr((Q_Λ − Q_{Λ,0})U(h)) = D(f)**. This is Connes' "the term D … comes from the nuance between the subspaces B_Λ and B_{Λ,0}".
+- **Rank and sector.** B_{Λ,0} is cut out of B_Λ by the two functionals f(0), f̂(0). These vanish off the trivial-character sector, so Q_Λ − Q_{Λ,0} has rank ≤ 2, supported in χ = 1 (finite-dimensional B_{Λ,χ}, Lemma 1; Connes p. 41: "the proof for χ = 1 … requires more care since 1_R ∉ 𝒮₀(𝔸)").
+- **Consequence for OS4 / G.3a.** The two directions removed by 𝒮(𝔸)₀ are **exactly** the two pole directions that G.3a spends on the mean field (OS4). They enter Δ_Λ once, on the complement (deficit) side, consistent with "spent exactly once" (G.3a, §Q OS4).
+- **No sign claim for D alone.** On a convolution square, D(g⋆g^*) = 2 Re(ĝ(i/2) ĝ(−i/2)‾) has signature (1,1), the cosh/sinh pair of §Q. Positivity needs the PNT mean (G.3a: pole − PNT mean = MF_L ≥ 0).
+- **Old ARP_plan §4 CONJECTURE** ("soft mode = window image of (f(0), f̂(0))"):
+  - The window image of the two boundary directions is now **identified, PROVED**: span{|g|^{1/2}, |g|^{−1/2}} restricted to the window, i.e. span{e^{u/2}, e^{−u/2}} = span{cosh(u/2), sinh(u/2)} in log scale. The even sector is Queen's pole vector 2cosh(u/2).
+  - The alignment of ζ's window ground state with it remains **NUMERICAL** (Queen S1: 0.995–0.9997).
+  - As a *route* it stays SUPERSEDED. G.3a already spends these directions, and T1 is withdrawn.
+
+**R-line (P.8a).**
+- F_θ: the two characters become |g|^{±1/2±θ}. There are four boundary vectors, and F still swaps them pairwise (G.3c) — passes here; breaks at P.4.
+- DH: entire, so no boundary terms and no D. Q3 is vacuous; there is no E for a sum of two L-functions — breaks (P.5).
+- DMV, P_X: no lattice, so (P8.1) does not exist — break.
+- Epstein: (P8.1) holds per genus character, not for the sum — breaks.
+- H₋ₜ, G₅: no E — break.
+- **G_θ′ passes** (unitary characters |g|^{±1/2±iθ′}, a sum of two ζ pictures).
+- R4: this is R4's location (the pole pair). R6: (P8.1) is exact.
+
+### P.8b The ARP_plan §3 formula rewritten as a deficit — definition + PROVED sign; the limit is the GAP
+
+The old formula, W(k⋆k̃) = Tr(Π_Λ ϑ(k)ϑ(k)^* Π_Λ) + δ_Λ(k) with a range-type positive term, is **withdrawn** (WRONG-SIGN, Queen sign_check.md items 1–2; ARP G.4d). Replacement, consistent with Queen §Q.7 and ARP G.4d:
+
+  **(P8.2)  W(k⋆k^*) = Tr( V(k)^* (S_Λ − Q′_{Λ,0}) V(k) ) − δ_Λ(k),  δ_Λ(k) := Δ_Λ(k⋆k^*) − W(k⋆k^*).**
+
+- **Terms.**
+  - S_Λ is the window projection (§VIII eq (21)). Q′_{Λ,0} = E Q_{Λ,0} E^{−1} is the projection onto E(B_{Λ,0}) (eq (23)).
+  - S_Λ − Q′_{Λ,0} is the projection onto **S_Λ ⊖ E(B_{Λ,0}), the complement of range(E) inside the window.**
+  - V is the regular representation on L²(C_ℚ), eq (20). k is the test function on C_ℚ (log scale u = log|g|). The transport to h is Connes' f(g) = |g|^{−1/2}h(g^{−1}).
+- **Labels.**
+  - (i) Tr(V(k)^*(S_Λ − Q′_{Λ,0})V(k)) ≥ 0 for every Λ: PROVED (eqs (23)–(25); a projection inequality, "free").
+  - (ii) The 2 log Λ term appears in both Tr(S_Λ V) and Tr(Q′V) and cancels; it is **not in δ_Λ** (Connes §VIII (16), proof of Thm 5 (17)–(26); Queen sign_check.md).
+  - (iii) δ_Λ → 0 for each k ⇔ (16) ⇔ RH: PROVED for function fields (Thm 5), where RH is Weil's theorem, so δ_Λ → 0 there. **For ℚ it is the GAP** (≡ G.4d; RH-equivalent).
+  - (iv) The limit residual lim δ_Λ = −Σ_{ρ off-line} m_ρ[∫ĝ dμ_ρ − ĝ(γ_ρ)] (μ_ρ as defined in ARP G.4d) is PROVED for function fields only (Lemma 3) and is a **CONJECTURE for ℚ.** In function fields the off-line set is empty.
+  - No identification of (MF_L, Fl_L) with (Δ_Λ, δ_Λ) is claimed (Queen item 4).
+- **Sign convention.** W = (trace over the complement, ≥ 0) − δ_Λ. Weil positivity follows from δ_Λ ≤ Tr(V^*(S_Λ − Q′)V), in particular from δ_Λ → 0.
+
+### P.8c Reduction to Connes–Consani 2021 Thm 1 (Golden Eye's test 1) — sign PROVED to agree; 2 log Λ: test vacuous at Λ = 1
+
+**CC Thm 1 in our notation.**
+- g ∈ C_c^∞(ℝ_+^*), supp g ⊂ [2^{−1/2}, 2^{1/2}], i.e. f(u) := g(e^u) ∈ C_c^∞([−½ log 2, ½ log 2]). This is **team half-width L = ½ log 2**; the convolution g⋆g^* is supported in |u| ≤ log 2 = 2L.
+- So no prime enters: p = 2 sits at the closed boundary, where g⋆g^* vanishes to all orders (CC eq (149) and our P.7 base case; Lean L′ = 2L = log 2).
+- With ĝ(i/2) = 0 = ĝ(0) (Fourier convention ĝ(z) = ∫ g(ρ)ρ^{−iz} d^*ρ, CC eq (11)), CC eq (4) reads
+  W_∞(g⋆g^*) ≥ Tr(ϑ(g) S ϑ(g)^*),
+  where W_∞ := −W_ℝ (CC p. 3), ϑ(λ)ξ(v) = λ^{−1/2}ξ(λ^{−1}v) on L²(ℝ)_ev (eq (61)), and S = the projection onto **Sonin's space S(1,1) = {ξ : ξ(q) = 0 for |q| ≤ 1, (F_{e_ℝ}ξ)(p) = 0 for |p| ≤ 1}** (Def. 4.4, eq (72)). That is, **S = 1 − P₁ ∨ P̂₁ = (1 − P₁) ∧ (1 − P̂₁), the orthogonal complement of range(P₁ ∨ P̂₁)** (CC p. 6).
+- The vanishing ĝ(±i/2) = 0 is exactly D(g) = 0 (App. II (6)). **CC's class is the archimedean analogue of 𝒮(𝔸)₀ / B_{Λ,0}: the two boundary (pole) directions of P.8a are removed.** ĝ(0) = 0 is an extra condition, "irrelevant for RH" (CC after Cor. 2).
+
+**Exact correspondences (PROVED, each cited):**
+1. *Cutoff pair.* CC Lemma 4.1 works with Connes' pair at Λ = 1: P = 1 − P₁ and P̂ = 1 − P̂₁ (eq (62)), with R₁ = P̂₁P₁ (Connes §VII (16)).
+2. *Remainder = cutoff trace.* CC's trace-remainder δ(ρ) (eq (8)) satisfies δ(ρ) = Tr(ϑ(ρ^{−1}) P̂₁ P₁) for ρ ≥ 1 (eq (63)), with δ(ρ^{−1}) = δ(ρ). So D_CC(f) := ∫ f(ρ^{−1})δ(ρ) d^*ρ (eq (9)) equals **Tr(ϑ(f) R₁)** for supp f ⊂ (0, 1], and is the Λ = 1 cutoff trace of Connes §VII.
+   - Shape check: Connes §VII eq (31), Tr(R_Λ T) = ∫_{|u|≤Λ²} ĝ(u)(2 log′Λ − log|u|) du, at Λ = 1 is ∫_{|u|≤1} ĝ(u)(−log|u|) du. That is the shape of CC eq (48), δ(ρ) = 4ρ^{1/2}∫₀¹ cos(2πρt) cos(2πt)(−log t) dt.
+3. *Decomposition and sign.* CC Cor. 2.3 / eq (9) gives W_∞ = L − D_CC, with L(f) = Tr(ϑ(f) P P̂ P) = Tr(ϑ(f)(1−P₁)(1−P̂₁)(1−P₁)) ≥ 0 on f = g⋆g^* (Prop. 2.2(iii)). CC Thm 3 / eq (13) gives the refinement Tr(ϑ(f)S) = W_∞(f) + ∫ f ε d^*ρ. Hence
+   **W_∞(g⋆g^*) = Tr(ϑ(g) S ϑ(g)^*) − δ^{CC}(g),  δ^{CC}(g) := ∫ (g⋆g^*) ε d^*ρ,**
+   which is (P8.2) term for term: a trace over a *complement* (≥ 0, free) minus a remainder. **CC Thm 1 is exactly the statement δ^{CC}(g) ≤ 0 on its class.** The sign is the same as Connes Thm 5's deficit: PROVED, in two independent proved instances (function fields, Connes; archimedean small support, CC).
+4. *2 log Λ.* At Λ = 1, 2 log′1 = ∫_{|λ|∈[1,1]} d^*λ = 0 on ℝ^*. The term is **identically absent**, so CC Thm 1 **cannot test** the 2 log Λ cancellation (Golden Eye's test 1; already on main, ARP G.4d).
+   - It also cannot be reached by rescaling. ϑ(a)P_Λϑ(a)^{−1} = P_{aΛ} and ϑ(a)P̂_Λϑ(a)^{−1} = P̂_{Λ/a} (since F ϑ(a) = ϑ(a^{−1}) F), so (P_Λ, P̂_Λ) ≅ (P₁, P̂_{Λ²}). The genuine parameter is Λ², matching |u| ≤ Λ² in (31), and Λ = 1 is a single point of it.
+   - The cancellation is verified only in Connes' global argument (cited in P.8b(ii)).
+
+**What is NOT claimed (scope).**
+- The two positive projectors are **different objects.** Connes' is S_Λ − Q′_{Λ,0}: the window minus the E-range of the doubly-cut space; global; any Λ. CC's is 1 − P₁ ∨ P̂₁: Sonin, the complement of the *join*; local at ∞; Λ = 1; no window, no E.
+  - Locally at ∞, P₁ ∧ P̂₁ = 0 (no nonzero even L² function is both time- and band-limited), so the literal archimedean analogue of E(B_{Λ,0}) is {0}.
+  - The global identity (22) has no local counterpart: F = I∘u_∞ (CC Lemma 1.3) carries the phase u_∞.
+  - So "reduces exactly" holds at the level of the cutoff pair, the remainder, the sign and the (absent) 2 log Λ, **not** as an equality of projectors. A projector-level dictionary (Sonin ↔ S_Λ ⊖ E(B_{Λ,0})) is **open (GAP, minor)**.
+- CC Thm 1 is positivity for W_∞ on the pole-free class only. Full small-support Weil positivity with the pole is as cited in ARP G.2, not re-checked here.
+
+**R-line (P.8b–c).**
+- F_θ: (P8.2) becomes Tr(V(k₊)^*(S_Λ − Q′)V(k₋)), a polarization (P.4) — breaks. Its archimedean factor is shifted, so CC Thm 1 does not apply verbatim.
+- **G_θ′ passes**: two copies of (P8.2) with k cos, k sin (G.4e identity).
+- DH, H₋ₜ, G₅: no E, so (P8.2) is undefined — break. DMV, P_X: no lattice — break. Epstein: sector-wise only — breaks.
+- CC Thm 1 itself is fake-blind for every fake with ζ's γ_∞ (DH, P_X, DMV), as a PROVED local statement must be.
+- R1: CC is a single window (L = ½ log 2); P.8b(iii) is the all-Λ statement (GAP).
+- R4: CC's class removes the pole pair (P.8a), so Thm 1 is silent on R4.
+- R6: the identities (P8.1)–(P8.2) and CC (13) are exact; Thm 1 is an inequality on one window.
+
+**Verdict on "under review".**
+- The **sign can drop "under review"**: the positive object is a trace over a complement, and the remainder enters with a minus sign. This is PROVED in Connes Thm 5 (function fields) and in CC Thm 3/Thm 1 (archimedean, Λ = 1). Meyer makes no positivity claim, so there is no conflict.
+- Main already records "sign SETTLED per Golden Eye" (7328e39). Recommend that §S S(c)5 and ARP G.4d drop "under review / pending" **for the sign only.**
+- Still open: G.4d itself (δ_Λ → 0 for ℚ, ⇔ RH); the ℚ residual formula (CONJECTURE); the projector dictionary (GAP, minor).
+
+## P.9 Not used
 - HiddenZeros (GPPVerify #454, 5f54359): 4–6-point amplitude identities; no celestial amplitude enters §P. **Not cited.**
 - `temperedness_iff_critical_line` / ArithmeticTemperedPrincipalSeries.lean (custom axiom `exp_growth_not_tempered`) and ArithmeticCoPoissonOrientationTemplate.lean (co-Poisson assumed): **not cited**. P.3 replaces them with literature statements.
 - `open_*` placeholders: never cited.
 
-## P.9 Corrected fakes table (replaces ARP_plan §5; proposed refinement of ARP G.4e's F_θ and H₋ₜ rows)
+## P.10 Corrected fakes table (replaces ARP_plan §5; proposed refinement of ARP G.4e's F_θ and H₋ₜ rows)
 
 | fake | P.1 local data | P.2 local Θ_v unitary | P.3 GL(2) unitary / Knapp–Stein PD | GL(1) constituents unitary | P.4 twist | P.5 E / Poisson | P.6 Euler operator | breaks at |
 |---|---|---|---|---|---|---|---|---|
@@ -172,15 +309,18 @@ Either way, the non-unitary content sits entirely in the ℚ^*-sum, i.e. in the 
 | Epstein | two Euler products | per constituent | sum of two dihedral reps | per constituent | n/a | no single ⊗′ | sum of two | P.5 |
 | G₅ | no Hecke operators | — | no adelic rep | — | n/a | no E | none | P.1 |
 
-## P.10 Label changes relative to ARP_plan.md (2026-10-22)
+## P.11 Label changes relative to ARP_plan.md (2026-10-22)
 1. **§5 F_θ row:** "local Θ_v unitary (tempered): no (non-tempered)" → **"GL(2) local Θ_v unitary: YES (product γ, P.3 b1); Knapp–Stein form PD for 0<θ<½ (b2); tempered: no; GL(1) constituents unitary: NO; breaks at P.4 (polarization)."** The column header "unitary (tempered)" conflated two different notions; it is now split.
 2. **§1 "Which form is Hermitian"** (Knapp–Stein form "not the L² form, E does not intertwine it"): superseded by P.3. The Knapp–Stein form is positive definite on the complementary series. The relevant point is that the explicit formula and E are linear in the GL(1) constituents.
 3. **§3 item 2** ("unitarity holds only for tempered local data; that is the R3 filter"): corrected to "the R3 filter is unitarity of the GL(1) isobaric constituents on C_ℚ; local GL(2) unitarity holds for complementary series."
 4. **§2 temperedness:** "filter, not source" is kept. The filter is now located as global (P.3 b3); local non-temperedness is its shadow.
 5. **§5 H₋ₜ row:** "local Θ_v yes, ⊗′ yes" → **no Euler product after deformation; Θ_∞ not Tate's** (agrees with ARP G.4e).
 6. **§4 R4 CONJECTURE** (soft mode = window image of the two Poisson boundary directions): **SUPERSEDED**, not tested. ARP G.3a supplies R4 through the mean field, and S103/G.3d withdrew T1 (OS4 is fully used by the mean field).
-7. **Open items:** (a) E citation → **closed** (P.5). (c) polarization lemma → **closed** (P.4). (b) δ_Λ in Connes–Consani notation remains open. (d) is superseded with item 6.
+7. **Open items:** (a) E citation → **closed** (P.5). (c) polarization lemma → **closed** (P.4). (b) δ_Λ in Connes–Consani notation → **closed** (P.8). The ARP_plan §3 formula W = Tr(Π ϑϑ^* Π) + δ_Λ is withdrawn (range-type, WRONG-SIGN) and replaced by the deficit form (P8.2). CC 2021 Thm 1 matches its sign; the 2 log Λ test is vacuous at Λ = 1 (P.8c). (d) is superseded with item 6.
 8. **New PROVED-LEAN citations:** `weilForm_nonneg`, `cos_mul_positiveType`, `positiveType_add`, `const_one_positive_type`, `positiveType_weighted_gram`, `neg_logDeriv_product_of_hasDerivAt`, `F_one_sub`, `osReflection_eq_self_iff`, `primeSide_eq_truncation`, `primeSide_eq_zero_of_support_lt_log_two`, `tate_local_zeta_integral`, `euler_factor_bridge` (all checked on GPPVerify main 5f54359). Lean `HasSupportIn` uses L′ = 2L.
+9. **R6 / exact identity (S103d, Golden Eye):** ARP_plan §3's "as an exact identity (R6)" and §P's R6 wording → PROVED part = nothing local bounds G.4d + §S S(c)4 no MF-relative margin. "The closing step must be an exact identity" → **CONJECTURE**, since margins in norms degenerating on the dilated nodeless bumps are not excluded (P.7 scope caveat).
+10. **§4 boundary-direction identification (S103d):** the window image of (f(0), f̂(0)) is span{e^{±u/2}}, the G.3a/OS4 pole pair → **PROVED** (P.8a). Soft-mode alignment stays **NUMERICAL**, and the route stays SUPERSEDED (item 6).
+11. **Base case wording (P.7):** "positivity there is CC Thm 1" → CC Thm 1 is W_∞ ≥ Sonin trace on the pole-free class only.
 
 ## References (added to ARP G.7)
 - Knapp, A. W. & Stein, E. M., "Intertwining operators for semisimple groups", Ann. of Math. 93 (1971) 489–578.
@@ -190,5 +330,7 @@ Either way, the non-unitary content sits entirely in the ℚ^*-sum, i.e. in the 
 - Langlands, R. P., LNM 544 (1976).
 - Connes, A., arXiv math/9811068 (Selecta 5 (1999)): §III eqs (6)–(19); App. I Lemma 2, eqs (27)–(38); §VIII eq (22).
 - Meyer, R., arXiv math/0311468v3 (Duke 127 (2005)): eqs (1)–(4), (11)–(15), (31), (33); Lemmas 3.1, 5.3, 5.5; §§5.1, 5.4, 5.6.
-- Connes, A. & Consani, C., arXiv:2006.13771 (Selecta 27:77 (2021)): eq (17), Lemma 1.3, eqs (24)–(26).
+- Connes, A. & Consani, C., arXiv:2006.13771 (Selecta 27:77 (2021)): Thm 1 (4), (5)/Thm 6.11, Thm 3 (13)–(14)/Thm 4.7, eqs (8)–(11), (17), (24)–(26), (48)–(49), (51)/Cor. 2.3, Lemma 1.3, Lemma 4.1 (60), (62)–(63), Def. 4.4 (72).
+- Connes 1999 additionally: §VII (15)–(16), (31), (33), Thm 3; §VIII (16)–(28), Cor. 2, Thm 5, Lemma 3; App. II (5)–(6).
+- Queen, `team/queen/arp/sign_check.md` (2 log Λ cancellation, Thm 5 write-up). §N N.10 (`team/prime-number-theory/ARP_prime-number-theory.md`). §S S(c)4–S(c)5.
 - Tate, J., Thesis (1950), Cassels–Fröhlich Ch. XV.
