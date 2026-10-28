@@ -12,7 +12,7 @@ Track tags (lead's assignment):
 - **[both]** / **[neither]** where applicable.
 
 Ownership (no duplication): Celestial owns §C.13 (operator/trace side, the CC proof chain, 2 log Λ). Principal series owns the projector
-dictionary GAP (Connes S_Λ ⊖ E(B_{Λ,0}) vs CC Sonin 1 − P₁∨P̂₁, ARP §P.8 at 9d520f8). Queen owns the leak (1 − S_Λ)Q′_Λ (M1) and
+dictionary (ARP §P.8 at 9d520f8; **closed NEGATIVELY in §P.9 at 3cae479**, see §(e) below). Queen owns the leak (1 − S_Λ)Q′_Λ (M1) and
 Conj Q.8.E (ARP_queen_Q8.md, merged to main in 1999c2a). This file only fixes **which parameter is which** and what follows elementarily.
 
 **Withdrawn:** the earlier guess "L = log Λ" (spectrum-measure, previous turn) is **withdrawn**. It conflated two different cutoffs that
@@ -102,8 +102,10 @@ f̂(0)/(s − 1) − f(0)/s; f(0) belongs to the P_Λ side, f̂(0) to the P̂_Λ
 with Queen's Lemma Q.8.2 (E(f)(g) = E(f̂)(g⁻¹) + f̂(0)|g|^{−1/2} − f(0)|g|^{1/2}). How Λ ↔ L interacts with it: the two pole
 evaluations f(0), f̂(0) do not involve Λ, and the window L does not change which side each sits on; under (a2) the P̂-side is P̂_{Λ²}
 after normalizing P_Λ to P₁. (Bookkeeping only; nothing beyond P.8 (2) is claimed.)
-**GAP (Principal series' own, minor):** the projector dictionary Connes S_Λ ⊖ E(B_{Λ,0}) vs CC Sonin 1 − P₁ ∨ P̂₁. We add only (a2),
-(b2): the CC side at general Λ is 1 − P_Λ ∨ P̂_Λ ≅ 1 − P₁ ∨ P̂_{Λ²}.
+**Projector dictionary: CLOSED NEGATIVELY (Principal series §P.9.1, PROVED, theirs; supersedes the earlier "open minor GAP").** Sonin
+S(1,1) = ker P₁ ∩ ker P̂₁ is the opposite Halmos corner from Connes' B_Λ (ran ∩ ran), and the two act on different spaces (local L²(ℝ)ev vs
+L²(C_ℚ) after E). Only a trace-level dictionary holds (§(e)). Our (a2), (b2) are consistent with this: the CC side at general Λ is
+1 − P_Λ ∨ P̂_Λ ≅ 1 − P₁ ∨ P̂_{Λ²}.
 
 ## (c) The lead's question, two-parameter form
 
@@ -169,10 +171,67 @@ No effective upper bound on L₁ (GAP, R1). [L-track — Celestial]
   The quantitative "≈ X" for P_X-type systems is **CONJECTURE/heuristic** (Prime's); the exact agreement P_X = ζ for 2L ≤ log p⁺(X) is
   main R1 (Prime's DMV theorem). Not developed here.
 
-**(d3) Interaction (both parameters). CONJECTURE (not ours to settle).** For the CC-type identity at general (Λ, L) one expects
-Tr(ϑ(f) S(Λ,Λ)) = W∞(f) + (correction built from P_Λ, P̂_Λ) for supp f in the window; by (a2) the correction at Λ is CC's at Λ = 1
-with P̂_{Λ²}. Proving this belongs to Celestial §C.13 (trace side) and Principal series (projectors); the threshold Λ = e^L of (b2) is
-where ϑ(g) stops pushing S(Λ,Λ) out of S(1,1).
+**(d3) Interaction (both parameters). Now PROVED by Principal series (P9.4), theirs; see §(e).** (Earlier draft: CONJECTURE.) The
+threshold Λ = e^L of (b2) is where ϑ(g) stops pushing S(Λ,Λ) out of S(1,1).
+
+## (e) Λ > 1 track on Principal series' exact identity (§P.9, team/principal-series 3cae479)
+
+Read verbatim from ARP_principal-series.md §P.9 (their notation: P_a = 1_{|x|≤a}, P^c_a = 1 − P_a, P̂_b = F P_b F⁻¹, CC's P = P^c_1,
+P̂ = P̂^c_1, S_Λ := 1_{Λ⁻¹≤|x|≤Λ}, Ŝ_Λ := F⁻¹S_ΛF, L(f) := Tr(ϑ(f)PP̂P), L_Λ(f) := Tr(ϑ(f)P^c_ΛP̂^c_ΛP^c_Λ)). Cited as theirs (PROVED there):
+- §P.9.1 "Conclusion (1). The minor GAP is closed **negatively**. There is no projector-level identification, because of (D1)–(D3).
+  The correct dictionary is at the trace-formula level". (D1): "Sonin is the corner **ker P₁ ∩ ker P̂₁**"; "Connes' B_Λ is the corner
+  **ran P_Λ ∩ ran P̂_Λ**". (i): "CC (63), δ(ρ) = Tr(ϑ(ρ⁻¹)P̂₁P₁), is literally Connes' R_1 trace (VII (16))"; "CC (48) … is Connes VII
+  (31) at Λ = 1". (ii): "Tr(ϑ(f)Ŝ_Λ) = Tr(ϑ(f^♭)S_Λ) = 2f(1) log Λ".
+- §P.9.2 (a): "F-exchange … holds iff a = b … What is special at Λ = 1 is **I-self-duality**, I P I = 1 − P".
+- (P9.2): "L_Λ(f) = L(f) + ε_Λ(f) + χ_Λ(f)", ε_Λ(f) = −∫_{|u|>1} ĝ(u) log min(|u|, Λ²) du, χ_Λ(f) := Tr([P^c_Λ, ϑ(f)] P_ΛŜ_Λ).
+- (P9.4): "Tr(ϑ(f) S^{So}_Λ) = W_∞(f) + ∫ f(ρ⁻¹) ε^{(Λ)}(ρ) d*ρ − 2f(1) log Λ + χ_Λ(f)", S^{So}_Λ the projection onto S(Λ, Λ).
+- (e): "A Λ > 1 analog of CC Thm 1 would need a new compact-operator bound on the ε^{(Λ)} ∘ Q functional on the support class (the analog
+  of K_I, Lemma 6.10). That is a **GAP [S&M]**". P.9 already proves |ε_Λ| ≤ ∫_{|u|>1}|ĝ| log|u|, |χ_Λ| ≤ ‖[P, ϑ(f)]‖₁ (uniform in Λ).
+
+What we add [Λ-track, all RH-silent, R2 not engaged, fake-blind (R5: every fake with ζ's W∞ passes)]:
+
+**(e1) Normalization of χ_Λ. PROVED (elementary).** Conjugating by ϑ(Λ) (which commutes with ϑ(f)) and using Fϑ(λ) = ϑ(λ⁻¹)F:
+ϑ(Λ)⁻¹P^c_Λϑ(Λ) = P, ϑ(Λ)⁻¹P_Λϑ(Λ) = P₁, ϑ(Λ)⁻¹Ŝ_Λϑ(Λ) = F⁻¹1_{1≤|ξ|≤Λ²}F = P̂_{Λ²} − P̂₁. Since [P, ϑ(f)]P₁ = Pϑ(f)P₁,
+  χ_Λ(f) = Tr(P ϑ(f) P₁ (P̂_{Λ²} − P̂₁)).
+
+**(e2) Explicit trace-norm bound and the limit of χ_Λ. PROVED (elementary).** Write F(s) := f(e^s) and suppose supp F ⊂ [−a, a]. In
+L²(ℝ*₊, d*λ) ≅ L²(ℝ, ds), ϑ(f) is convolution by F and P = 1_{s>0}. The block Pϑ(f)P₁ has kernel F(u − v), u > 0 > v; with w = −v it
+is the Hankel operator k(u, w) = F(u + w) on [0, a]². Since F(a + w) = 0, k(u, w) = −∫_u^a F′(s + w) ds, i.e. Pϑ(f)P₁ = −V M with V the
+Volterra operator on [0, a] (‖V‖_HS = a/√2) and M the kernel F′(s + w) (‖M‖²_HS = ∫_0^a τ|F′(τ)|² dτ). The other block is the same with
+F(−·). Hence, uniformly in Λ ≥ 1,
+  |χ_Λ(f)| ≤ ‖Pϑ(f)P₁‖₁ ≤ (a/√2)·(∫_0^a τ |F′(τ)|² dτ)^{1/2},   and   ‖[P, ϑ(f)]‖₁ ≤ (a/√2)·[(∫_0^a τ|F′(τ)|²)^{1/2} + (∫_0^a τ|F′(−τ)|²)^{1/2}].
+For f = g ⋆ g* with g supported in |s| ≤ L, a = 2L (a ≤ log 2 on our track). Limit: P̂_{Λ²} − P̂₁ → P̂ = 1 − P̂₁ strongly, and
+Pϑ(f)P₁ is trace class, so χ_Λ(f) → χ_∞(f) := Tr(Pϑ(f)P₁P̂) (Tr(TA_n) → Tr(TA) for T trace class, A_n → A strongly, ‖A_n‖ ≤ 1).
+|χ_Λ − χ_∞| = |Tr(Pϑ(f)P₁P̂^c_{Λ²})|; an explicit rate needs the frequency decay of M, not done (GAP, minor).
+
+**(e3) ε_Λ and the combined defect. PROVED (elementary, from (P9.2)/(P9.4) + our (a3)).**
+- ε_Λ(f) − ε_∞(f) = ∫_{|u|>Λ²} ĝ(u) log(|u|/Λ²) du with ε_∞ := −∫_{|u|>1} ĝ log|u|; if |ĝ(u)| ≤ C_N|u|^{−N} (N > 1) then
+  |ε_Λ − ε_∞| ≤ 2C_N Λ^{−2(N−1)}/(N − 1)² (∫_{Λ²}^∞ u^{−N} log(u/Λ²) du = Λ^{2(1−N)}/(N−1)²). ĝ is P.9's (Connes VII (28)) transform.
+- Put Φ_Λ(f) := ∫ f(ρ⁻¹)ε^{(Λ)}(ρ)d*ρ − 2f(1) log Λ + χ_Λ(f) = T_Λ(f) − W∞(f) by (P9.4), T_Λ(f) := Tr(ϑ(f)S^{So}_Λ). For f = g ⋆ g*,
+  T_Λ = Tr(ϑ(g)S^{So}_Λϑ(g)*) is nonincreasing in Λ and → 0 (§(a3)). Hence **Φ_Λ(f) ≤ Φ_1(f)** and **Φ_Λ(f) → −W∞(f)** as Λ → ∞, i.e.
+  ∫ f(ρ⁻¹)ε^{(Λ)}(ρ)d*ρ = 2f(1) log Λ − W∞(f) − χ_∞(f) + o(1). The ε^{(Λ)}-functional absorbs exactly the window trace 2f(1) log Λ.
+- Consequence for Celestial's T8: for f = Qh, h = ξ ⋆ ξ*, f(1) = ¼‖ξ‖² + ‖ξ′‖² (H¹ size), so (P9.4) contains an H¹-size term
+  −2 log Λ (‖ξ′‖² + ¼‖ξ‖²). It does **not** give H¹ slack: Φ_Λ ≤ Φ_1 shows it is compensated inside ε^{(Λ)}. PROVED (as stated).
+
+**(e4) A Λ > 1 Theorem 1 on CC's class is a corollary. PROVED (CC Thm 1, verified, + (a3)).** For g with support [2^{−1/2}, 2^{1/2}] and
+ĝ(i/2) = ĝ(0) = 0: W∞(g ⋆ g*) ≥ T_1 ≥ T_Λ for every Λ ≥ 1. Equivalently Φ_Λ ≤ 0 on that class. No new K_I-type bound is needed for
+the inequality itself.
+
+**(e5) The K_I-type GAP, stated exactly. GAP (RH-silent) [Λ-track].** The P.9 GAP is meaningful only for a statement that monotonicity
+does not give. Exact form: for an interval I (|I| ≤ log 2, or larger) find the decomposition
+  ∫ (Qh)(ρ⁻¹) ε^{(Λ)}(ρ) d*ρ = −2 e_Λ (‖ξ‖² − ⟨ξ, K_I^{(Λ)} ξ⟩)  (+ the window and χ_Λ terms of (P9.4)),
+with e_Λ := ε^{(Λ)′}(1⁺) (CC Lemma 5.4 at bandwidth 2πΛ²) and K_I^{(Λ)} Hilbert–Schmidt (CC Prop 5.5 at Λ), and prove either
+(i) a constant c_Λ < c = 4γ/log 2 in the Thm 6.11 form W∞(g⋆g*) ≥ T_Λ − c_Λ|ĝ(0)|², or (ii) the inequality on a class not covered by
+CC (larger support). Monotonicity gives (i) only with c_Λ = c. Inputs available: PROLATE_BOUNDS.md at c = 2πΛ² (tails, plunge, counts).
+Not proved here. Even if proved, it is archimedean and RH-silent; it supplies bookkeeping for Celestial's support step, not R2.
+
+**(e6) Note on "L = log Λ".** Celestial §C.13.0 (407715d) states that the Λ↔L dictionary L = log Λ "is CONJECTURE, a convention fixed by
+Q.8.E. It is not forced by CC." This agrees with our withdrawal above and with (b2): Λ = e^L is a threshold for ϑ(g)S(Λ,Λ) ⊂ S(1,1), not
+an identification.
+
+R-line (e): R1 every Λ ≥ 1, fixed f (nothing uniform in L) | R2 not engaged (archimedean, prime-free) | R3 positivity is operator
+ordering S(Λ',Λ') ⊂ S(Λ,Λ), not a weight sign | R4 pole pair removed as in CC; ĝ(0) is CC's extra direction | R5 fake-blind (all fakes
+with ζ's W∞, incl. G_θ′, pass).
 
 ## Fakes (R5) — where each breaks in this file
 
@@ -194,12 +253,16 @@ where ϑ(g) stops pushing S(Λ,Λ) out of S(1,1).
 | (a2) rescaling (P_Λ, P̂_Λ) ≅ (P₁, P̂_{Λ²}); S(Λ,Λ) ≅ S(1,Λ²) | PROVED (elementary) | Λ |
 | (a3) T_Λ nonincreasing, → 0 | PROVED (elementary + CC Thm 1) | Λ |
 | (b2) ϑ(g)S(α,β) ⊂ S(αe^{−L}, βe^{−L}); threshold Λ = e^L | PROVED (elementary) | Λ |
-| (b3) pole/projector | PROVED (Principal series P.8(2)); projector dictionary GAP (theirs) | Λ |
+| (b3) pole/projector | PROVED (Principal series P.8(2)); projector dictionary closed NEGATIVELY (P.9.1, theirs) | Λ |
 | (c1) Q_L = pole + arch for 2L ≤ log 2 | PROVED (Lean, main G.2b) | boundary |
 | (c3) κ ≤ 2 (CC Thm 1); κ ≤ 1 (Weil via CC); κ = 0 | PROVED (verified) / via restatement / PROVED (computer-assisted) | — |
 | (d1) κ independent of Λ | PROVED | Λ |
 | (d2) onset along L at L₁ > 1.42; count p | PROVED under H_fin + computer-assisted; effectivity GAP | L |
-| (d3) general (Λ, L) trace identity | CONJECTURE | both |
+| (d3) general Λ trace identity (P9.2)–(P9.4) | PROVED (Principal series §P.9, theirs) | Λ |
+| (e2) χ_Λ explicit trace-norm bound, χ_Λ → χ_∞ | PROVED (elementary) | Λ |
+| (e3) ε_Λ tail; Φ_Λ ≤ Φ_1, Φ_Λ → −W∞ | PROVED (elementary + CC Thm 1) | Λ |
+| (e4) Λ-Theorem 1 on CC's class | PROVED (monotonicity) | Λ |
+| (e5) K_I^{(Λ)} bound beyond CC's class | GAP (RH-silent) | Λ |
 | RH | **OPEN** | — |
 
 ## References
@@ -208,4 +271,5 @@ where ϑ(g) stops pushing S(Λ,Λ) out of S(1,1).
 - A. Connes, C. Consani, Spectral triples and ζ-cycles, Enseign. Math. 69 (2023) 93–148, arXiv:2106.01715 — verified (Prop 2.1, (2.11)).
 - A. Connes, C. Consani, H. Moscovici, Zeta Spectral Triples, arXiv:2511.22755 — verified (Thm 3.6, Cor 3.7).
 - M. Suzuki, arXiv:2606.09096 v3 — verified (Thm 1.4). H. Yoshida (1992) Lemma 2 — via restatement. A. Weil (1972) — via restatement (CC).
+- Team: Principal series ARP §P.9 (team/principal-series 3cae479, read verbatim); Celestial ARP §C.13 (team/celestial-cft 407715d).
 - Team: GAP2_bombieri_window.md (G2.0–G2.6, PROVED under H_fin); AUDIT_284.md; main derivation/ARP.md G.2b, R1–R5; team/principal-series ARP §P.8 (9d520f8); team/queen/ARP_queen_Q8.md §Q.8.
