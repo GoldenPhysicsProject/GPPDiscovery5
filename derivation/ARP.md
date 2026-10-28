@@ -235,7 +235,7 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
 **Reading.** All six fakes break at the gluing G.4 (and DMV/P_X *only* there). (S103c: F_θ's earlier "local temperedness filter" break is withdrawn per §P.3; it breaks only at G.4.) G_θ′ passes everywhere. So R5 is consistent with G.4d being the true locus of RH. That is exactly Connes' "uniformity" dead end, now with every fake located. **No new route is claimed.**
 
 **G.4f (§N N.11, merged S103d; RH-silent).** Every borrowed-W_∞ system that meets the hypotheses of §N N.11.3 (prime measure with
-∫e^{−σu}d|μ| < ∞ for σ > ½, D_μ meromorphic a little past Re z = ½, a pole of D_μ in Re z > 0) has ind_− ≥ 1 for large L (PROVED,
+∫e^{−σu}d|μ| < ∞ for σ > ½, D_μ meromorphic in Re z > a for some a < ½, a pole z₀ of D_μ with Re z₀ > max(a, 0); for glued DMV with θ > ½ this is a real restriction, met by its zeros for large t (Golden Eye N.11 audit)) has ind_− ≥ 1 for large L (PROVED,
 ineffective; two-bump identity N.11.2 plus the classical Phragmén–Landau/Ingham Laplace argument). This covers glued DMV (off-line zeros)
 and, as the ε = −1 case, plain P_X (uncancelled pole, = N.3.3). It is the easy direction of Weil's criterion, uses no FE, and gives
 nothing toward RH. DH and Epstein are outside the hypotheses. F_θ is covered by a sketch only. G_θ′ is not falsely failed (its poles
