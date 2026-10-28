@@ -642,3 +642,211 @@ R-line H.13: R1 Λ-uniform, no L | R2 Poisson through the sawtooth (ii); the Eul
 | Prior art (CC 2106.01715 §3, CC 2006.13771 §1, CCM 2310.18423) contains no (T3b) | checked in local copies |
 
 Not cited: ArithmeticTemperedPrincipalSeries, rh_iff_weil_pairedForm_nonneg, or any True-placeholder.
+
+---
+
+# Part IV (2026-10-28): (PD), pointwise and integrated — the ζ-weighted Gram, Demko–Moss–Smith, and what survives a polynomial condition number
+
+Against GPPDiscovery5 main `9cdc498`, which contains 9affd52 (Part III audited SOUND). The lead's S103g corrections are kept:
+- the jump sum needs Σ‖φ_i‖², so (PD) is required in integrated form too;
+- the worst-case B < 2 route also needs kept-feedback transport;
+- the Mellin mollifier multiplier is ≤ 2, not 1.
+
+Analytic only, **no numerics.** RH is OPEN. (T3a*) and the tail-amplitude bounds belong to Spectrum and are not done here.
+
+**Part IV headline.**
+1. **DMS with a polynomial condition number is fatal, as a method (PROVED, method statement).**
+   - DMS decay length is ≍ √cond × bandwidth ≥ Λ^{B/2}. That exceeds the u-diameter of B (≍ log Λ) and amplifies s-feedback by ≍ Λ^{B/2}.
+   - At best this improves "B < 2" to "B < 4" (HEURISTIC). Jaffard, Baskakov and Gröchenig–Leinert keep the decay *exponent*, but their constants grow polynomially in cond. No gain.
+2. **The right reference is not "mean·G₀".** It is G_m, the compression of the *varying* mean multiplier m(s) = log(|s|/2π) + 2γ (Ingham).
+   - **cond(G_m) ≤ C log Λ (PROVED).** All ill-conditioning lives in G_osc := G − G_m.
+   - A global Neumann series in G_m^{−1}G_osc **diverges** (PROVED (sketch): m_Λ ≤ C/log²Λ).
+3. **s-locality comes for free; DMS is not needed in s.** |ζ|² is a multiplier in s, so G_osc couples Mellin bands only through packet tails, which are archimedean.
+   - A two-block Schur argument with a buffer (H.15.4) replaces DMS in s. It uses the *local* condition number of the low band, which is Λ^{−δ(ε)} by H.1′ at heights ≤ Λ^{2ε} (PROVED (sketch)), not the global κ.
+   - Result: **(PD) pointwise is PROVED-conditional** on (A_β) (GAP), (MB) (archimedean; Spectrum), (T3a*) (Spectrum), and the local H.1′.
+   - The u-direction, where DMS would be fatal, is never inverted.
+4. **(PD) integrated needs one more GAP, (LD_γ).** This is a polynomial-threshold, window-level small-value statement: the HS overlap of E(R) with E(kept states of weighted mean < Λ^{−γ}). Its form is (Z-avg⁻)-like but much weaker.
+   - Twisted second moments (BCHB) cannot reach it in our range: the twist length is ≈ Λ² ≈ T, beyond θ < ½ (PROVED, range check).
+5. **Exact formulas (PROVED):** Schur-complement formulas for 𝒟(s) and Σ‖φ_i‖², and a spectral-splitting lemma in which κ multiplies only the overlap with the τ-ill-conditioned subspace.
+6. **(T3) stays OPEN.** The remaining named inputs are (A_β) with β < 2 and (LD_γ) (Queen, GAP), plus (MB), (T3a*), (L) and (F) (Spectrum, archimedean). All of them are fake-blind and RH-silent.
+
+## H.15.0 Prior art (bibliographic data from memory; **not re-verified this session**; statements used only qualitatively unless marked)
+- **Demko–Moss–Smith**, "Decay rates for inverses of band matrices", Math. Comp. 43 (1984) 491–499.
+  - Statement: A Hermitian positive definite and m-banded, with σ(A) ⊂ [a, b] and r := b/a. Then |(A^{−1})_{jk}| ≤ C q^{|j−k|/m}, with q = (√r − 1)/(√r + 1) and C = max{a^{−1}, (1 + √r)²/(2b)}.
+  - So −log q ≈ 2/√r: the **decay length is ≍ m√r**.
+  - It is sharp in order, e.g. for shifted discrete Laplacians (tridiagonal Toeplitz, whose inverse decays exactly geometrically with ratio q).
+- **Jaffard** (Ann. IHP Anal. Non Linéaire 7 (1990) 461–476): the classes |A_{jk}| ≤ C(1 + |j−k|)^{−s} and C e^{−γ|j−k|} are inverse-closed. The polynomial class keeps s; the exponential class degrades γ. Constants depend on ‖A‖ and ‖A^{−1}‖.
+- **Baskakov** (Funct. Anal. Appl. 24 (1990) 222–224): Wiener-type inverse-closedness for operators with off-diagonal decay.
+- **Gröchenig–Leinert** (Trans. AMS 358 (2006) 2695–2711): symmetry and inverse-closedness for subexponential weights.
+- **Gröchenig–Klotz** (norm-controlled inversion, J. London Math. Soc. 2013): the off-diagonal constants of A^{−1} are polynomial in ‖A^{−1}‖, with an exponent growing with s.
+- **Consequence for us (PROVED, as a method statement).** With cond ≍ κ_Λ ≤ Λ^B:
+  - DMS's decay length is Λ^{B/2} bandwidths.
+  - The polynomial-class constants are Λ^{O(Bs)}, which cancels the decay (1 + d)^{−s} over the available distances d ≤ Λ² log Λ unless B ≪ 1.
+  - **No inverse-closedness theorem beats a polynomial condition number.** One must avoid inverting where the conditioning is bad.
+- **Mean values.**
+  - Ingham 1926 / Titchmarsh Thm 7.4: ∫_0^T|ζ(½+it)|²dt = T log(T/2π) + (2γ − 1)T + E(T), with E(T) = O(T^{1/2} log T). Later improvements: Balasubramanian, Huxley.
+  - Montgomery–Vaughan mean value theorem (J. London Math. Soc. (2) 8 (1974) 73–82).
+  - Balasubramanian–Conrey–Heath-Brown twisted second moment (J. reine angew. Math. 357 (1985) 161–181): asymptotics for ∫|ζ|²|A|² with A a Dirichlet polynomial of length T^{θ}, **θ < ½**. Conrey extended θ < 4/7 for special mollifiers.
+  - Balasubramanian–Ramachandra (H.4).
+
+## H.15.1 The Gram, its exact ℤ-structure, and the right reference operator (PROVED unless marked)
+
+On B := B_{Λ,0} (L²-inner product ⟨·,·⟩; dim N ≈ 2Λ²), define G(φ, χ) := ⟨Eφ, Eχ⟩ = (2/π)∫|ζ(½+is)|² Mφ \bar{Mχ} ds (H.12) and G₀(φ, χ) := (2/π)∫Mφ \bar{Mχ} = 2⟨φ, χ⟩.
+
+- **Phase-space picture (PROVED as bookkeeping; the semiclassical reading is HEURISTIC).**
+  - In u = log x, Mellin height s, B occupies R_B = {u ≤ log Λ, |s| ≤ 2πΛe^{u}}, of area ≍ 2Λ² = N (Weyl count).
+  - At height s the u-extent of B is L(s) = log(2πΛ²/|s|), so the s-resolution of B there is ≍ 2π/L(s): 1/log Λ at low s, O(1) at s ≍ Λ² (H.1b).
+- **Reference operator.**
+  - Let m(s) := log((|s| + 2)/2π) + 2γ. This is positive (m(0) = log(1/π) + 2γ ≈ 0.01 > 0), and m(s) = (d/dT)[T log(T/2π) + (2γ − 1)T] at T = |s|, up to O(1/|s|).
+  - Write |ζ(½+is)|² = m(s) + w(s), so G = G_m + G_osc.
+  - **Lemma H.15.1 (cond(G_m) ≤ C log Λ; PROVED).**
+    - Lower: m ≥ m(0) > 0 gives G_m ≥ 0.01·G₀.
+    - Upper: every φ ∈ B has |Mφ(s)| ≤ C_φ/|s| with C_φ ≤ Λ^{O(1)}‖φ‖ (H.12 Step 3). So ∫m|Mφ|² ≤ (log(CΛ³))∫_{|s|≤Λ³}|Mφ|² + ∫_{|s|>Λ³} log|s|·Λ^{O(1)}|s|^{−2} ≤ C log Λ‖φ‖².
+    - Not "mean·G₀": m varies from O(1) to 2 log Λ across B's height range, so G_m is a genuine multiplier (the compression of m(D)) and is **not** scalar. Using a constant mean would make G_osc carry the O(log Λ) variation of m.
+- **G_osc carries all the ill-conditioning, and a global Neumann series fails (PROVED (sketch)).**
+  - Test vector: φ(x) := x^{−1/2}F(log x)x^{iγ₁}, with F smooth, supported in [−log Λ + A, log Λ − A], at scale ≍ log Λ.
+  - Its local frequency is ≤ γ₁/x ≤ Λ(1 − δ) on the support, so φ lies in B up to a plateau-small error (KRD Cor 3/4 via Spectrum §5).
+  - Mφ is a bump of width ≍ 1/log Λ at γ₁ = 14.13…, where ζ has a simple zero. So ∫|ζ|²|Mφ|²/∫|Mφ|² ≍ |ζ′(ρ₁)|²/log²Λ.
+  - Hence m_Λ ≤ C/log²Λ, and ‖G_m^{−1/2}G_osc G_m^{−1/2}‖ ≥ 1 − O(1/log²Λ). The Neumann series in G_m^{−1}G_osc does not converge geometrically on B, so a perturbative expansion around G_m is unavailable globally.
+- **The exact ℤ-structure of G_osc (PROVED, formal; with regularization by the constraints).**
+  - For φ, χ ∈ B, ⟨Eφ, Eχ⟩ = Σ_{m,n≥1} c·n^{−1}∫_0^∞ φ(mx/n)\bar χ(x)dx. The diagonal m = n is regularized: it diverges termwise and converges only with φ(0) = φ̂(0) = 0, via Poisson (H.12).
+  - In u, dilation by m/n is the shift u ↦ u + log(m/n), with weight (mn)^{−1/2}.
+  - So G_osc is **exactly local in s**: a multiplier by w(s), compressed. In u it is a sum of shifts log(m/n) with weights (mn)^{−1/2}, which decay like e^{−|Δu|/2} after summing over the pairs with log(m/n) ≈ Δu. That rate is HEURISTIC (the regularization is not tracked).
+  - This is where the integers enter G. It is the same ℤ-structure as the sawtooth (H.13).
+
+## H.15.2 Exact formulas for (PD) (PROVED, linear algebra)
+
+Notation:
+- R := B ⊖_{L²} B^{(K)} (dim ≤ r_K + 2, H.13.1) and k := B^{(K)}, with blocks G_RR, G_Rk, G_kk.
+- X := G_kk^{−1}G_kR : R → k, the **kept feedback**.
+- S := G_RR − G_Rk G_kk^{−1} G_kR, the **Schur complement on R**.
+- v_s ∈ B is the L²-representer of φ ↦ Mφ(s).
+
+Then R̃ = {(I − X)ρ : ρ ∈ R}, and the E-Gram of R̃ in ρ-coordinates is exactly S. The basis φ_i = (I − X)S^{−1/2}e_i, with (e_i) an L²-ONB of R, is E-orthonormal. Hence:
+
+- **pointwise:** 𝒟(s) = Σ_i|Mφ_i(s)|² = ‖S^{−1/2}(P_R v_s − X^*P_k v_s)‖² ≤ 2‖S^{−1}‖(𝒟_rem(s) + Σ_i|M(Xe_i)(s)|²), using |P_Rv_s|² = 𝒟_rem(s);
+- **integrated:** Σ_i‖φ_i‖² = Tr(S^{−1}(I_R + X^*X)) ≤ ‖S^{−1}‖(r_K + 2 + ‖X‖²_HS), since R ⊥_{L²} k.
+
+**Lemma H.15.2 (spectral splitting; PROVED).** Let (e, λ_e) be the L²-orthonormal eigenpairs of G_kk. For τ > 0 and ρ ∈ R:
+
+  ‖Xρ‖² = Σ_e |G(ρ, e)|²/λ_e² ≤ τ^{−1}‖Q′^{(K)}Eρ‖² + κ_Λ · σ_ρ(τ), σ_ρ(τ) := Σ_{λ_e<τ} |G(ρ, e)|²/λ_e = ‖P_{E(k_{<τ})}Eρ‖².
+
+*Proof.* (Xρ)_e = G(ρ, e)/λ_e, and Σ_e|G(ρ, e)|²/λ_e = ‖Q′^{(K)}Eρ‖² (Bessel for the E-ONB (Ee/√λ_e)). Split at τ and use λ_e ≥ 1/κ. ∎
+
+So κ multiplies **only** the overlap of Eρ with the E-image of the τ-ill-conditioned kept states, k_{<τ}. Also ‖S^{−1}‖ ≤ κ (Part II), which is the worst case.
+
+**What (T3) needs from these (PROVED, bookkeeping with H.13).**
+- (L), the jump sum, and the low-band term together need:
+  - (i) Σ_i‖φ_i‖² = o(Λ²/(log Λ)^{O(1)}) (integrated);
+  - (ii) sup_{|s|≤Λ^ε} 𝒟(s)(1 + |s|)^{−A} = o(1) (pointwise).
+- There is a Λ² of room. **Polylog losses are not required; any loss Λ^{2−δ} is affordable.**
+
+## H.15.3 Named inputs
+
+- **(A_β), Schur angle (GAP, Queen).** S ≥ Λ^{−β} I_R (L²-units), for some β < 2. Equivalently, ‖Q′^{(K)}Eρ‖² ≤ (1 − Λ^{−β}/‖Eρ‖²)‖Eρ‖² for unit ρ ∈ R: no kept combination cancels a plunge profile on the set where |ζ| is not small.
+  - Worst case β = B (Part II), so the worst case gives this only if B < 2.
+  - Supports:
+    - G_RR ≍ log Λ on R, given (F) (H.13 (PD-1)/(PD-2)).
+    - L²-orthogonality R ⊥ k forces ψ = ρ − χ to have ‖ψ‖ ≥ 1, and S(ρ, ρ) = G(ψ, ψ). So S is small only if the near-null space of G has a large R-component.
+    - HEURISTIC: ill-conditioned B-states are profiles concentrated on sublevel sets of |ζ| at their resolution. At height s, R has density ≍ r_K/Λ² against B's ≍ L(s)/2π.
+  - Not proved, because at heights ≍ Λ² the resolution is O(1) ≪ log log T, where B–R gives nothing.
+  - Note: H.1′'s B′ ≥ 1 + 8C₁ log(e/a*) with C₁ untracked, so "B′ < 2" cannot be read off.
+- **(F), flatness of R at scale H (archimedean; Spectrum).** For unit ρ ∈ R, at least a θ-fraction of ∫|Mρ|² lies in s-windows of length H ≥ C log log Λ on which |Mρ|² is θ-flat.
+  - HEURISTIC: per Spectrum 65bba74 (WKB/stationary phase), plunge profiles are flat at scale ≍ s. Combinations of r_K plunge states localize at best to s-scale Λ²/r_K.
+  - Consequence (PROVED-conditional on (F)): G_RR ≥ cθ² log H · G₀/2 (B–R).
+- **(MB), Mellin-band decoupling of the kept space at precision Λ^{−B−2−δ} (archimedean; RH-silent; Spectrum).** For S₁ = Λ^{ε}, S₂ = Λ^{2ε}, there is an L²-orthogonal split k = k_l ⊕ k_h with:
+  - (a) every unit χ ∈ k_h has ∫_{|s|≤S₁}|Mχ|² ≤ Λ^{−B−2−δ};
+  - (b) every unit χ ∈ k_l has ∫_{|s|≥S₂}(1 + log|s|)|Mχ|² ≤ Λ^{−B−2−δ}.
+  - Mechanism (HEURISTIC): use spectral subspaces of P_k 1_{|s|≤S}P_k. Kept states have endpoint jumps ≤ Λ^{1−K/3}‖·‖ (Lemma H.9.1), so their Mellin tails are controlled by K. A Landau–Pollak-type count of the intermediate eigenvalues at the corner points of {|s| = S} ∩ ∂R_B absorbs those states into k_l. Precision can be bought with K and the buffer S₂/S₁.
+- **(LD_γ), polynomial-threshold small-value overlap (GAP, Queen; integrated form only).** For some γ > 0 with β + γ < 2: Σ_i σ_{e_i}(Λ^{−γ}) ≤ Λ^{2−β−B−δ}. That is, the HS overlap of E(R) with the E-image of kept states of weighted mean < Λ^{−γ} is polynomially small.
+  - HEURISTIC: Selberg-CLT large deviations make window means < Λ^{−γ} super-polynomially rare, about exp(−γ²log²Λ/log log Λ). Only the (Z-avg⁻)-*type* tail is needed, and only at a fixed polynomial threshold, not at o(log T).
+  - Unconditionally open. Radziwiłł–Soundararajan's one-sided method is the natural tool; a uniform-in-window version is not known to me.
+  - Circularity flag as in H.6: if (LD_γ) were only available under RH, it would be barred from any route to RH.
+
+## H.15.4 Theorem H.15 ((PD) pointwise; PROVED-conditional on (A_β), (MB), (T3a*), and local H.1′)
+
+**Lemma H.15.3 (local conditioning of the low band; PROVED (sketch)).** λ_min(G restricted to k_l) ≥ Λ^{−δ(ε)} with δ(ε) = O(ε log(1/ε)) + o(1).
+*Proof.* Run Theorem H.1′ with T := Λ^{2ε}·Λ^{o(1)}, and use (MB)(b) in place of H.1c for the mass beyond T.
+- The thickness level becomes T^{−O(log(e/a))} = Λ^{−O(ε log(e/a))}.
+- The Kovrijkine factor stays Λ^{O(a)}, because the u-bandwidth is still ≍ 2 log Λ.
+- Take a = ε. ∎ (Constants untracked, as in H.1′.)
+
+**Theorem H.15.** Assume (A_β), (MB), (T3a*). Then for |s| ≤ Λ^{ε}:
+
+  𝒟(s) ≤ C Λ^{β + O(δ(ε))} (𝒟_rem(s) + Λ^{−2−δ} r_K (log Λ)^{O(1)}) ≤ C r_K Λ^{β−2+O(δ(ε))}(1 + |s|)^{A},
+
+so (PD) pointwise holds with loss Λ^{β+o(1)}. If β < 2, H.13's low-band term is o(1).
+
+*Proof.* By H.15.2, it suffices to bound Σ_i|M(Xe_i)(s)|². Write y := G_kR e_i, and use blocks l, h for k_l, k_h.
+- **Block inversion:** (G_kk^{−1}y)_l = S_l^{−1}(y_l − G_lh G_hh^{−1} y_h), with S_l := G_ll − G_lh G_hh^{−1} G_hl.
+- **Coupling.** |ζ|² is a multiplier in s, so G_lh is controlled by tails: ‖G_lh‖ ≤ ‖|ζ|² 1_{|s|≥S₂}M k_l‖·‖M k_h‖ + ‖M k_l‖·‖|ζ|² 1_{|s|≤S₁}M k_h‖ + (middle band S₁ < |s| < S₂, which is empty for k_h by (a) and negligible for k_l by (b)). With |ζ(½+is)|² ≪ (1 + |s|)^{1/3} and (MB), ‖G_lh‖ ≤ Λ^{−B−2−δ+O(ε)}.
+- Hence ‖G_lh G_hh^{−1}‖ ≤ κΛ^{−B−2−δ+O(ε)} ≤ Λ^{−2−δ/2}, and S_l ≥ Λ^{−δ(ε)}/2 by Lemma H.15.3.
+- **Low-band source term.** y_l = P_l(|ζ|² Mρ) has ‖y_l‖² ≤ Λ^{O(ε)}∫_{|s|≤2S₂}|Mρ|² + tails. Summed over the ONB (e_i), this is ≤ Λ^{O(ε)}∫_{|s|≤2S₂}𝒟_rem ≤ Λ^{O(ε)} r_K Λ^{−2} by (T3a*). Also ‖y_h‖² ≤ ‖G_RR‖ ≤ C log Λ.
+- **Feedback.** So Σ_i‖(Xe_i)_l‖² ≤ Λ^{O(δ(ε))}(r_K Λ^{−2} + r_K Λ^{−4−δ} log Λ).
+- The high block's contribution to M(·)(s) at |s| ≤ S₁ is ≤ (MB)(a) × ‖(Xe_i)_h‖² ≤ Λ^{−B−2−δ}·κ C log Λ ≤ Λ^{−2−δ/2} per i.
+- Finally |M(Xe_i)(s)|² ≤ C log Λ·(low-band norm²), by the Christoffel bound sup_{φ∈B}|Mφ(s)|²/‖φ‖² ≤ C log Λ. *Proof of that bound:* φ(0) = 0 and |φ′| ≤ CΛ^{3/2}‖φ‖ give ∫_0^{Λ^{−3}}|φ|x^{−1/2} ≪ ‖φ‖, and Cauchy–Schwarz on [Λ^{−3}, Λ] gives ≤ ‖φ‖(4 log Λ)^{1/2}.
+- Combine with ‖S^{−1}‖ ≤ Λ^{β}. ∎
+
+**Where each ingredient enters (as asked).**
+- The ζ-weight enters through G = G_m + G_osc. G_m is benign (cond ≤ C log Λ). G_osc is s-local, so it couples bands only via tails (MB). Its ill-conditioning is s-local, so the low band costs only Λ^{δ(ε)}.
+- The integers enter through G_osc's shift structure (mn)^{−1/2}·(u ↦ u + log(m/n)) and through the sawtooth (H.13). **No inversion in u is ever performed**, so DMS's fatal u-direction loss is avoided.
+- κ_Λ enters only multiplied by (MB)'s Λ^{−B−2−δ} (affordable, archimedean), by (LD_γ) (integrated form), and through ‖S^{−1}‖, which is replaced by Λ^{β} via (A_β).
+
+## H.15.5 (PD) integrated (PROVED-conditional on (A_β), (LD_γ), (F))
+
+By H.15.2 and Lemma H.15.2 with τ = Λ^{−γ}:
+
+  Σ_i‖φ_i‖² ≤ Λ^{β}(r_K + 2 + Λ^{γ} Σ_i‖Q′^{(K)}Ee_i‖² + κ Σ_i σ_{e_i}(Λ^{−γ})) ≤ Λ^{β}(r_K + Λ^{γ} r_K C log Λ + Λ^{2−β−δ}).
+
+Here Σ_i‖Q′^{(K)}Ee_i‖² ≤ Σ_i‖Ee_i‖² ≤ C r_K log Λ, by (F) and (PD-2). If β + γ < 2, this is o(Λ²/(log Λ)^{O(1)}), as H.13's jump and (L) terms require. ∎
+
+**Corollary H.15 (PROVED-conditional).** The following together imply (T3), i.e. Tr(S_Λ ΔQ S_Λ V(h)) = o(1):
+- (A_β) with β < 2, and (LD_γ) with β + γ < 2 (Queen, GAP);
+- (MB), (F), (T3a*), (L) (Spectrum, archimedean, RH-silent);
+- Lemma H.15.3 (PROVED (sketch)).
+
+Then Q.8.C ⇔ Q.8.C^{(K)} holds in the lead's reading, and M2-compatibility follows. **(T3) itself remains OPEN.**
+
+## H.15.6 Why BCHB / large sieve do not close (A_β) or (LD_γ) in our range (PROVED, range check)
+- G_osc's entries between packets at u-separation Δu, height s, are twisted second moments ∫|ζ|²(h/k)^{is}W, with log(h/k) ≈ Δu.
+- B's u-extent at height s is L(s) = log(2πΛ²/|s|). BCHB needs twist length ≤ s^{½−ε}, i.e. L(s) ≤ (½ − ε)log s, i.e. |s| ≥ (2πΛ²)^{2/3+ε}.
+- So **BCHB controls all G_osc entries only on the top band |s| ≥ Λ^{4/3+ε}**. There, HEURISTIC, the off-diagonal entries decay like e^{−|Δu|/2}. Below that band the twist is longer than √T, which is the open "θ > ½" regime.
+- Even on the top band, the *diagonal* (same-cell) blocks are windows of length O(1) ≪ log log T. B–R gives nothing there, and Montgomery–Vaughan and the large sieve control only averages over many windows.
+- So (A_β) and (LD_γ) are genuinely about **window-level small values of |ζ| at heights ≍ Λ²**. That is the same terrain as (Z-avg⁻), but at a polynomial threshold and only through overlaps with the r_K-dimensional R.
+
+## H.15.7 Fake-blindness (R5)
+- **DH.**
+  - G_m: the DH second moment ∫_0^T|f_DH|² ~ c_DH T log T (Montgomery–Vaughan, |a_n| ≤ 1, a_n of period 5), so the same G_m holds with constant c_DH.
+  - Lemma H.15.2 and the Schur formulas are linear algebra.
+  - Lemma H.15.3: H.1′ for DH holds (H.8).
+  - (MB), (F), (T3a*), (L) are archimedean.
+  - (A_β) and (LD_γ) for DH are statements about DH's small values on the line. Linear combinations of L-functions have log|f| dominated by the larger constituent almost everywhere (Bombieri–Hejhal; HEURISTIC here), so small values are, if anything, rarer.
+  - DH's off-line zeros play no role.
+- **Epstein:** same, with its Rankin–Selberg-type second moment.
+- Hence Corollary H.15 is **fake-blind as a reduction**, and (T3) carries no RH content.
+- Circularity flag: (LD_γ) and (A_β) must not be supplied by RH-conditional arguments if (T3) is to be used on any route to RH.
+
+R-line H.15: R1 Λ-uniform, no L | R2 the Euler product only via mean values (Ingham, B–R, M–V); FE via Poisson in the ℤ-structure | R3 n/a | R4 the constraints φ(0) = φ̂(0) = 0 regularize the diagonal of G's ℤ-sum | R5 fake-blind | R6 the Schur and splitting identities are exact.
+
+## H.16 Part IV summary table
+
+| Claim | Label |
+|---|---|
+| DMS / Jaffard / Baskakov / G–L with cond ≍ Λ^B: decay length Λ^{B/2} or poly(cond) constants; no gain | PROVED (method statement; prior-art details from memory, not re-verified) |
+| Lemma H.15.1 cond(G_m) ≤ C log Λ, with m(s) = log((|s|+2)/2π) + 2γ (Ingham) | PROVED |
+| m_Λ ≤ C/log²Λ; global Neumann in G_m^{−1}G_osc fails | PROVED (sketch) |
+| G_osc s-local; ℤ-shift structure in u with weights (mn)^{−1/2} | PROVED (formal; e^{−|Δu|/2} decay HEURISTIC) |
+| Schur formulas for 𝒟(s) and Σ‖φ_i‖² | PROVED |
+| Lemma H.15.2 spectral splitting (κ multiplies only σ_ρ(τ)) | PROVED |
+| Lemma H.15.3 low-band local conditioning Λ^{−δ(ε)} | PROVED (sketch) (H.1′ at T = Λ^{2ε} + (MB)(b)) |
+| Christoffel bound sup_B|Mφ(s)|²/‖φ‖² ≤ C log Λ | PROVED |
+| Thm H.15 (PD) pointwise with loss Λ^{β+o(1)} | PROVED-conditional on (A_β), (MB), (T3a*), H.15.3 |
+| H.15.5 (PD) integrated | PROVED-conditional on (A_β), (LD_γ), (F) |
+| Cor H.15: (A_β, β<2) + (LD_γ, β+γ<2) + (MB) + (F) + (T3a*) + (L) ⇒ (T3) | PROVED-conditional; **(T3) OPEN** |
+| (A_β) Schur angle | **GAP (Queen)** |
+| (LD_γ) polynomial-threshold small-value overlap | **GAP (Queen)**; (Z-avg⁻)-type; circularity flag applies |
+| (MB) Mellin-band decoupling at Λ^{−B−2−δ}; (F) flatness of R | requested from Spectrum (archimedean; HEURISTIC) |
+| BCHB covers G_osc only on |s| ≥ Λ^{4/3+ε}; diagonal windows O(1) ≪ log log T | PROVED (range check) |
+| Fake-blind (DH, Epstein) ⇒ RH-silent | PROVED (sketch) as a reduction |
+
+Not cited: ArithmeticTemperedPrincipalSeries, rh_iff_weil_pairedForm_nonneg, or any True-placeholder.
