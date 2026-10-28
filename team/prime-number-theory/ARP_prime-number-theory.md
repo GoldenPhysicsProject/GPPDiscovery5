@@ -876,7 +876,7 @@ Notation: a = log 2, b = log 3, c_n = Λ(n)/√n, so c₂ = 0.490129, c₃ = 0.6
   - *Grok audit (S103g), caveat.* In this identity Q^{(≤2)} is evaluated on ξ_b ∈ H¹₀(−L, L) with 2L > log 3. On that window it is the P₂ = {2} form, which is **not** known to be ≥ 0: P_X-type failure can begin beyond log 3 (N.12.1). So the Mori-conditional certificate at log 3 does not apply to Q^{(≤2)}(ξ_b) directly. This is part of why the odd-payer statement below is a CONJECTURE. The other {2, 3} items were checked: the strip geometry including 2L < log 4.5; B₂(ξ_s) = 0; the 2-line derivative term (2β₋/ℓ₃)[ξ(L + a − b) − ξ(a − L)]; the 3-edge block +c₃(1/ℓ₃ − ℓ₃/24)σ_x; S1 combined c₂ + c₃ via E₃ ⊂ E₂; transposed (3c), where the b-pair separation ≥ log(9/4) > a, so no 2-line enters; and c₃, c₄, the ℓ₂ table and KMS. All PROVED (elementary).
   - The 2-line coupling B₂(ξ_b, ξ_s) is the strip–bulk term above.
 - **Combined S1 bound (PROVED):** |2c₂B₂ + 2c₃B₃| ≤ c₂‖ξ‖²_{H(E₂)} + c₃‖ξ‖²_{H(E₃)} ≤ (c₂ + c₃)‖ξ‖²_{H(E₂)}.
-  - log 2/log 3 is irrational, so by Kronecker inf_t[−2c₂cos(at) − 2c₃cos(bt)] = −2(c₂ + c₃). The constant c₂ + c₃ cannot be improved by phase alignment.
+  - log 2/log 3 is irrational, so by Kronecker inf_t[−2c₂cos(at) − 2c₃cos(bt)] = −2(c₂ + c₃). The constant c₂ + c₃ cannot be improved by phase alignment. [Erratum N.16.0(3): this sharpness is for the symbol on ℝ, not on the truncated space; there the sharp joint constant is 0.9009, Principal P.16.1.]
 - **Edge-pair identity (3c) transposed to p = 3 (PROVED):** Q_L(φ + στ_bφ) = (1/π)∫(¼ + t²)|φ̂|²[Ω(t)(1 + σcos tb) − σc₃].
   - The blind frequencies are t_j = (2j+1)π/b for σ = +1 and t_j = 2jπ/b for σ = −1.
 - **Per-line ramp constants, for cross-check with Principal:**
@@ -956,7 +956,7 @@ R1 (target): a Mori-free odd and even {2, 3} entry, or an exact statement of wha
 R2 (inputs): S&M CERT_p2_constants (Lemmas A and B, Thms 1–3; audited SOUND); Golden Eye's even and odd Galerkin (NUMERICAL); Principal P.15.5 (15e5b58); N.13–N.14.
 R3 (method): exact identities (PROVED) plus Ritz scripts `sN/n15_*.py` (NUMERICAL, upper bounds only).
 R4 (status): see the labels table in N.15.6.
-R5 (GAPs): N.15-G1 (a certified non-multiplier margin of the Weil form at 2L = log 3, of size ≲ 1e−3), N.15-G2 (high-band coercivity μ_hi > 0.9009 on the edge class), the even sector ((P), m₀^e), C.14.K and uniformity in L (G.4d).
+R5 (GAPs): N.15-G1 (a certified non-multiplier margin of the Weil form at 2L = log 3, of size ≲ 1.3e−3 [N.16.0(2)]), N.15-G2 (high-band coercivity μ_hi > 0.9009 on the edge class), the even sector ((P), m₀^e), C.14.K and uniformity in L (G.4d).
 
 ### N.15.0 Errata (Principal P.15.5, team/principal-series 15e5b58: 9 PASS, 2 FIX; credit Principal)
 - **(1)** The 2-line ramp-constant endpoints are **1.2005** (2L = log 3) and **0.6930** (2L = log 4). N.14.3 printed 1.2003 and 0.6929. Corrected in place.
@@ -1045,7 +1045,7 @@ On the edge class, take a 3-ramp of inner value β on each 3-strip and a kink w 
 - **Principal's correction folded in.** On the edge class the joint block (N.15.1) shows that the high-band payer must cover **0.9009 per unit energy, not just c₃**: μ_hi must dominate the 2-line kink coupling as well, because that coupling sits inside Q^{(≤2)}.
   - If Q^{(≤2)} is lower-bounded on the high band through R alone, the requirement becomes **Ω(T) > 0.9009(1 + η)**, so T ≥ 15.47 (η → 0).
   - With the crude S1 it becomes Ω(T) > c₂ + c₃, so T ≥ 19.34.
-  - These constants depend on Principal's per-line ramp constants. *Flag: if Principal's cross-check changes c₃(1/ℓ₃ − ℓ₃/24) or the kink normalization, the 0.9009 and the 15.47 move with it.*
+  - These constants depend on Principal's per-line ramp constants. *[Flag resolved, N.16.0(3): 0.9009 confirmed by sympy 9cdc498 and proved global sharp in Principal P.16.1.] Former flag: if Principal's cross-check changes c₃(1/ℓ₃ − ℓ₃/24) or the kink normalization, the 0.9009 and the 15.47 move with it.*
 
 **Step B3: what (N.15.H) needs that p = 2 did not (the precise list).**
 1. **A certified non-multiplier lower bound for the P₂ form at 2L = log 3 (GAP N.15-G1).**
@@ -1060,12 +1060,12 @@ On the edge class, take a 3-ramp of inner value β on each 3-strip and a kink w 
 4. **No δ_o⁰, k_∞ or B is needed (PROVED, logic).** The route is CC-free like S&M's: Q_L comes from the classical Weil explicit formula on 2L < log 4, and the p = 3 version needs no CC ε or q. The constants it needs are (T, μ_hi, μ_lo, η), the margin m₃ at log 3, and Lemma A's dens_o at L = ½(log 3 + ℓ₃*).
 
 **Step B4: indicative range (NUMERICAL, indicative only).** Take μ_lo ≤ m₃ ≲ 1.3e−3, T ≈ 15.5 and η = 1. Then ℓ₃* ≲ μ_lo·π/(2T·c₃·(1 + 1/η)) ≈ 1.3e−3·π/(2·15.5·0.634·2) ≈ **1e−4**, or smaller as the refinement lowers m₃.
-- **So route (B) gives at best an odd entry on ℓ₃ ≲ 1e−4, and only after certifying a ~1e−3 margin of a non-multiplier form.**
+- **So route (B) gives at best an odd entry on ℓ₃ ≲ 1e−4, and only after certifying a ~1.3e−3 margin [N.16.0(2)] of a non-multiplier form.**
 - This is a polynomial range, not e^{−1/m}, but the input margin is small. The smallness lives in the Weil form's H-margin at log 3, not in the 3-edge.
 - **Odd entry, restated (CONJECTURE).** (N.15.H) holds at 2L = log 3 with μ_hi > 0.9009 and some μ_lo > 0. Given this, the odd {2, 3} entry holds on a polynomial range ℓ₃ ≤ ℓ₃*(μ_lo, T) (PROVED given (N.15.H)).
 - **Even {2, 3} entry: no route here.** The even margin at log 3 is ≤ 2.5e−4 and decreasing, and the joint block charges even vectors 0.2666 per unit energy. *Touches the even-sector gaps ((P), m₀^e).* GAP.
 
-**Heuristic, assuming RH.** Under RH, Q_L(ξ) = Σ_γ(¼ + γ²)|ξ̂(γ)|² over the zeros, up to the normalization of N.13.1. This explains why the infimum over a window of length 2L can be small: it is attained where ξ̂ nearly vanishes on the low zeros. The statement is **heuristic, assuming RH**, and is used for nothing.
+**Heuristic, assuming RH.** Under RH, Q_L(ξ) = Σ_γ(¼ + γ²)|ξ̂(γ)|² over the zeros, up to the normalization of N.13.1. This explains why the infimum over a window of length 2L can be small: it is attained where ξ̂ nearly vanishes on the low zeros. The statement is **heuristic, assuming RH**, and is used for nothing. [Superseded by N.16.1: the sum over all ρ is unconditional; only termwise ≥ 0 needs RH.]
 
 ### N.15.4 C.14.K cross-check (NUMERICAL; cross-check of Celestial C.14.6 item 3)
 `sN/n14_c14K_gamma.py` and its `.out`, `_fine.out` and `_refine.out` are now committed. Earlier they were kept uncommitted as the dropped γ-test; Celestial asked for this test in C.14.6.
@@ -1080,9 +1080,9 @@ On the edge class, take a 3-ramp of inner value β on each 3-strip and a kink w 
 
 ### N.15.5 Interface requests
 - **S&M:**
-  - (i) Is a certified non-multiplier lower bound for the odd P₂ form at 2L = log 3 (size ≲ 1e−3) within Arb reach? This is N.15-G1. A low-band finite-matrix plus Lemma A/B high-band block certificate is the natural form.
+  - (i) Is a certified non-multiplier lower bound for the odd P₂ form at 2L = log 3 (size ≲ 1.3e−3 [N.16.0(2)]) within Arb reach? This is N.15-G1. A low-band finite-matrix plus Lemma A/B high-band block certificate is the natural form.
   - (ii) The S1-only odd form is still +0.246 at ℓ = 0.1 (NUMERICAL), in case Thm 3's range can be pushed.
-- **Principal:** please confirm the joint block M = [[2c₃, 2c₂], [2c₂, 0]] and the ½ energy normalization (0.9009 / −0.2666). The route (B) constants T ≥ 15.47 depend on it.
+- **Principal:** please confirm the joint block M = [[2c₃, 2c₂], [2c₂, 0]] and the ½ energy normalization (0.9009 / −0.2666). The route (B) constants T ≥ 15.47 depend on it. [Answered: 9cdc498, P.16.1; N.16.0(3).]
 - **Golden Eye:** please cross-check the full {2, 3} even and odd minima (N.15.2 last bullet) with your Dirichlet-mode Galerkin at 2L = log 3, log 3.5 and log 4.
 - **Celestial:** see N.15.4 for C.14.K.
 
@@ -1095,7 +1095,7 @@ On the edge class, take a 3-ramp of inner value β on each 3-strip and a kink w 
 | Joint block σ(1/ℓ₃)[[2c₃, 2c₂], [2c₂, 0]], eigenvalues 1.8019 / −0.5333 (0.9009 / −0.2666 per unit energy) | PROVED (elementary) |
 | Thresholds T = 8.208 / 11.852 / 15.471 / 19.344 | NUMERICAL |
 | Route (A): P₂ form negative on (log 3.5, log 4]; margin at log 3 ≤ 2.5e−4 even, ≤ 1.34e−3 odd | NUMERICAL (Ritz upper bounds); route (A) dead end |
-| Full {2, 3} form margins ≤ ~1e−3, ≥ 0 numerically | NUMERICAL; positivity CERTIFIED conditional on Mori |
+| Full {2, 3} form margins at log 3 ≤ 2.5e−4 even, ≤ 1.34e−3 odd (odd 0.0142 at log 2 + 0.3) [N.16.0(2)], ≥ 0 numerically | NUMERICAL; positivity CERTIFIED conditional on Mori |
 | S1-only template fails at 2L = log 3 (odd −0.194) | NUMERICAL |
 | Route (B) reduction: (N.15.H) ⇒ odd {2, 3} entry on ℓ₃ ≤ ℓ₃* | PROVED (sufficient condition) |
 | (N.15.H) itself at log 3 | CONJECTURE; inputs GAP N.15-G1, N.15-G2 |
@@ -1105,6 +1105,130 @@ On the edge class, take a 3-ramp of inner value β on each 3-strip and a kink w 
 | C.14.K γ-test | NUMERICAL (cross-check of C.14.6); not supported for ℓ ≳ 0.03 |
 | Uniformity in L | GAP (G.4d) |
 | Q_L = Σ_γ(¼ + γ²)\|ξ̂(γ)\|² | heuristic, assuming RH |
+| RH | OPEN |
+
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
+
+## §N.16 The near-degenerate direction of the full {2, 3} form: mechanism, unconditional (2026-10-28)
+
+**Scope.** This section is mechanism only. It explains why the full {2, 3} Weil form on the window has a near-null direction that sets in between ℓ₂ ≈ 0.1 and log 1.5, and why its margin shrinks super-exponentially in L. **Nothing here assumes RH.** Every step that would need RH is marked BARRED and is not used. The allowed inputs are classical theorems, zeros verified on the line, the Riemann–von Mangoldt count, and zero ordinates used as NUMERICAL input. Positivity up to L = 1.42 remains CERTIFIED conditional on Mori's Prop 3.1, Lemma 3.2 and Thm N, and nothing here changes that. Track [L].
+
+R1 (claim): The near-null direction is Beurling–Landau undersampling of the low zeros, i.e. having fewer zeros than degrees of freedom. Below t* = 2πe^{2L}, the zeros are sparser than the Nyquist density L/π of the window. That leaves D(t*) ≈ e^{2L} − 15/8 free dimensions per parity, and these let ξ̂ vanish on the low zeros. The margin is then the prolate leakage past the plunge, ≈ exp(−π²(2D − σ)/log(Lt*)). This explains no-slack-in-L (G.4d). It does **not** prove positivity.
+R2 (inputs): Weil 1952 explicit formula / Barner 1981 (general test-function conditions, theorem number unverified); Platt–Trudgian 2021 Thm 1; Riemann–von Mangoldt; Landau–Widom 1980; Slepian–Pollak / Landau–Pollak prolates; N.13 normalization; N.15 Ritz values; mpmath zetazero ordinates (NUMERICAL). Platt–Trudgian verified this session; Landau 1967 (Acta Math. 117), Barner 1981, Trudgian 2014 and Slepian–Pollak 1961 cited from memory, theorem numbers unverified.
+R3 (method): explicit formula → u-reformulation → zero-count vs Nyquist count → prolate plunge. ONE check against the existing N.15 numbers, with no new Ritz scans: `sN/n16_nearnull.py` (re-evaluates the N.15 N = 320 vectors at log 3) and `sN/n16_rate.py` (evaluates the formula).
+R4 (outcome): The explicit formula reproduces all four N.15 Ritz values at log 3 to within 1%. The even near-null vector has (¼ + γ²)|ξ̂(γ)|² ≈ 2e−9 at γ₁ and 7e−10 at γ₂, against a spectral peak of 0.5. The odd onset is predicted at ℓ₂ ≈ 0.17, inside the observed (0.1, 0.405). The predicted even margins match the N.15 values within a factor of 1 to 3.5. The odd margins are overshot by a factor of about 4 (CONJECTURE-level model).
+R5 (GAPs): A uniform lower bound for the margin is not provided: it is the actual problem and cannot be had unconditionally from the zero side (N.16.2). The odd plunge offset is open: σ = 1 overshoots by about 4×. G1, G2 and G.4d are unchanged.
+
+### N.16.0 Errata (lead steer 2026-10-28; fast-forwarded to main 0c3a06a first)
+1. **`sN/n14_c14K_gamma_refine.out` regenerated** (it had been committed empty, 0 bytes). It holds the refine mode at T = 12.8, T_max = 24000 and ns = 12/24/48 for ℓ = 0.01, 0.02, 0.025:
+   - γ_best rises under refinement in every case: 0.048 → 0.059 at ℓ = 0.01, 0.088 → 0.096 at ℓ = 0.02, and 0.111 → 0.118 at ℓ = 0.025.
+   - At ℓ = 0.025 and ns = 48 it crosses γ_crit = 0.1169 (FAILS).
+   - This **strengthens** the N.15.4 reading: C.14.K is not supported for ℓ ≳ 0.025 at T = 12.8 (NUMERICAL). The "holds" cases are not converged from below. The N.15.4 reference to `_refine.out` stands.
+2. **Odd wording.** The odd P₂ values are not all ≤ 1e−3. They are 0.0142 at 2L = log 2 + 0.3 and 1.34e−3 at log 3 (N = 320 Ritz upper bounds). Corrected in N.15 R5, the route-(B) summary after B4, N.15.5(i) and the N.15.6 table ("≲ 1e−3" becomes "≲ 1.3e−3"). The outcome paragraph ("odd ≤ 1.34e−3"), B3 ("≤ 1.34e−3") and B4 ("μ_lo ≤ m₃ ≲ 1.3e−3") were already correct.
+3. **0.9009 is global and sharp (Principal P.16.1, team/principal-series 1c19c2f; credit Principal).**
+   - P.16.1 proves that 0.9009 is the sharp joint constant on all of 𝒯_L, not only the edge-class value. It is also confirmed by sympy replay at 9cdc498.
+   - Hence T ≥ 15.47 stands: Arb gives Ω(15.5) − c₀* = 1.86e−3 > 0.
+   - The N.15 "depends on Principal" flags (B2 and the N.15.5 Principal request) are resolved and dropped.
+   - **N.14.3 Kronecker correction.** "The constant c₂ + c₃ cannot be improved by phase alignment" is true for the symbol −2c₂cos(at) − 2c₃cos(bt) on ℝ. It is **not** a sharpness statement on the truncated space; there the sharp object is P.16.1's joint constant.
+4. **Cross-reference, P.16.5 (Principal).** Moving the 4-path a-edges into K_F turns N.15.H into Principal's (H₃^σ). This removes the joint-block part of N.15-G2 and leaves G1 for Q^G. The indicative ℓ₃* ≈ 1.5e−5 (NUMERICAL) supersedes B4's ≈ 1e−4 as the indicative range. This note only cross-references P.16.5; nothing here re-derives it.
+5. **N.15.3 "heuristic, assuming RH" is superseded by N.16.1.** The sum over **all** nontrivial ρ is an unconditional identity. Only the reading "every term is ≥ 0" needs RH.
+
+### N.16.1 The unconditional explicit formula (PROVED, classical; normalization pinned)
+- **Setup.** Take real ξ ∈ H¹₀(−L, L) and set h = ξ ⋆ ξ̃, where ξ̃(x) = ξ(−x). Then supp h ⊂ [−2L, 2L] and ĥ(z) = ξ̂(z)·conj(ξ̂(conj z)), entire of exponential type 2L. Let g = Qh = −h″ + ¼h, so that ĝ(t) = (¼ + t²)ĥ(t).
+- **Formula.** Apply Weil's explicit formula to g. The prime side is the N.13 form Q_L(ξ) = R − Σ_n 2c_nB_n, with the archimedean term Ω(t) = Re ψ(¼ + it/2) − log π. The pole terms are ĝ(±i/2) = 0 exactly, because ¼ + t² vanishes there. The zero side is
+  **Q_L(ξ) = Σ_ρ ĝ(γ_ρ) = Σ_ρ (¼ + γ_ρ²) ξ̂(γ_ρ) conj(ξ̂(conj γ_ρ)),  ρ = ½ + iγ_ρ,**
+  - The sum runs over **all** nontrivial zeros, with multiplicity and in symmetric order (|Re γ_ρ| < T, T → ∞). An off-line ρ has complex γ_ρ, and its term is not sign-definite.
+  - The sum converges for ξ ∈ C_c^∞(−L, L) (Weil 1952). For piecewise-linear ξ it follows from Barner's conditions (theorem number unverified). The general H¹₀ case follows by density with symmetric partial sums.
+- **Normalization check (NUMERICAL, N.16.4).** For on-line zeros the ± pair gives 2(¼ + γ²)|ξ̂(γ)|². This is Golden Eye's weight (¼ + γ²)|ξ̂(γ)|² per ordinate, counted for ±γ. The N.16.4 check confirms the factor 2 against the N.13 normalization to within 1%.
+- **u-form (PROVED, elementary).**
+  - Set u = ½ξ − ξ′ ∈ L²(−L, L). Then û(t) = (½ − it)ξ̂(t) and |û(t)|² = (¼ + t²)|ξ̂(t)|², and ‖u‖₂² = ‖ξ‖²_H, since the cross term ∫ξξ′ = 0.
+  - The map ξ ↦ u is a bijection from H¹₀(−L, L) onto {u ∈ L²(−L, L) : ∫u(x)e^{x/2}dx = 0}, i.e. û(−i/2) = 0.
+  - For on-line zeros the Weil form is a **sampling sum**: Q_L(ξ) = Σ_ρ |û(γ_ρ)|² over a window-limited u. The margin is m(L) = inf Q_L/‖u‖² on the constrained space, with one linear condition, which is parity-split.
+  - Ω(t) ≈ log(t/2π) on the prime side is exactly the smoothed zero density 2·(1/2π)log(t/2π) (sum over ±γ). R is the "continuum" version of the sampling sum.
+- **What is unconditional and what is BARRED.**
+  - CERTIFIED by the literature: every zero with 0 < γ ≤ H = 3 000 175 332 800 is on the line and simple (Platt–Trudgian 2021, Thm 1). Gourdon 2004 reached H ≈ 2.44e12, unpublished and non-rigorous, cited only for context. So the terms with |γ| ≤ H are **≥ 0, unconditionally**.
+  - **Tail direction.** Suppose the zeros above H are not known to be on the line. For a fixed, explicit ξ, the tail Σ_{|Re γ|>H} is bounded in absolute value by unconditional means: |ĝ(z)| ≤ e^{2L|Im z|}·‖g‖_{W^{k,1}}/|z|^k with |Im γ| ≤ ½, and RvM counts. That gives a two-sided unconditional value of Q_L(ξ) up to a tiny error, and hence an **unconditional upper bound on the margin** (any explicit ξ is a witness).
+  - It gives **no uniform lower bound**. Over the class of all ξ the tail bound degrades with ‖g‖_{W^{k,1}}/‖ξ‖²_H, which is unbounded, so the zero side alone yields at best Q_L ≥ −ε‖ξ‖²_{H^k}-type statements on smooth classes. These are not coercivity in H.
+  - **BARRED:** "Q_L ≥ 0 for all ξ because every term is ≥ 0". This needs RH for γ > H, and Weil positivity for all L is equivalent to RH. Lower bounds come only from the prime side (S&M certificates, Mori, Celestial), never from here.
+
+### N.16.2 Why a near-null direction appears: zero count vs Nyquist count (PROVED / NUMERICAL as marked)
+- **Nyquist side (PROVED; Landau 1967 density theorem, Landau–Widom 1980).** A function of time-support length 2L has, per unit frequency, L/π effective degrees of freedom: the time–frequency area is 2L·2T/(2π) = 2LT/π for |t| ≤ T. Per parity that is LT/π. The ε-concentrated eigenvalue count is 2LT/π + O(log(LT)·log(1/ε)) (Landau–Widom).
+- **Zero side (PROVED, RvM; unconditional).** The positive ordinates have density (1/2π)log(t/2π), and N(T) = (T/2π)log(T/2πe) + 7/8 + S(T) + O(1/T). Unconditionally |S(T)| ≪ log T, with explicit constants by Trudgian 2014 (theorem number unverified). Nothing about the location of zeros above H is used: the count is unconditional.
+- **Crossover (PROVED, elementary).** The zero density per parity, (1/2π)log(t/2π), falls below the Nyquist density L/π exactly when t < **t* = 2πe^{2L} = 2πμ** (μ = e^{2L}). At 2L = log 2, t* = 4π = 12.57 < γ₁. At 2L = log 3, t* = 6π = 18.85, with only γ₁ below it.
+- **Surplus (NUMERICAL from RvM smoothed; the S(T) correction is O(log T)).** The free dimensions per parity are D(T) = LT/π − N(T) − 1, where the last 1 is the u-constraint. D is maximal at T = t*. With the smoothed N, **D(t*) = μ − 15/8**: 0.125 at log 2, 0.335 at log 2 + 0.1, 0.825 at log 2 + 0.3, 1.125 at log 3, and 2.125 at log 4 (`n16_rate.out`).
+- **Mechanism (PROVED as a dimension count; its sharpness is NUMERICAL).** When D(t*) > 0, the space of u that is window-limited and concentrated in |t| ≤ t* has more dimensions than there are zero samples there. So some u vanishes on every zero below t* and on the constraint point. It then pays only for the leakage of its spectrum to |t| > t*, where zeros are denser than Nyquist and sampling is stable. The near-null vector is the "zero-dodging" prolate combination. Its margin is the prolate leakage, not an O(1) quantity.
+- **Parity correlation (PROVED as counting; NUMERICAL confirmation N.16.4).**
+  - Even u is served by even prolates ψ₀, ψ₂, ψ₄ and odd u by ψ₁, ψ₃, ψ₅.
+  - Each ±γ pair imposes one condition per parity. The odd sector reaches its last nearly free prolate index one step later, so the even margin is always the smaller one.
+  - Onset of degeneracy, taken as 2D − σ > 0 with σ = 0 even and σ = 1 odd:
+    - **even:** μ > 15/8, i.e. 2L > 0.629 < log 2. The even sector is in the plunge from the p = 2 entry on. This is consistent with Golden Eye's small even values and Celestial's μ_lo^e < 0.048 (C.14.4c, d447151).
+    - **odd:** μ > 2.375, i.e. **ℓ₂ ≈ 0.17**, inside the observed (0.1, 0.405) N.15 window.
+  - Zeros avoided: at log 3 both parities kill γ₁, and the even vector also kills γ₂ (N.16.4). At log 4 (t* = 25.13), γ₁, γ₂ and γ₃ = 25.011 lie below t*.
+
+### N.16.3 Size of the margin as a function of L
+- **Unconditional upper bound (PROVED up to constants).** Take a prolate combination u in the (2D)-dimensional nearly-concentrated span, orthogonal to the N(t*) + 1 sampling functionals. For the zeros with |γ| ≤ t* use their certified on-line position, which is unconditional for t* < H, i.e. L < 13.4. Plancherel–Pólya for exponential type L, together with local zero counts ≪ log t (RvM), bounds the sampling sum over |γ| > t* by C·log(t*)·∫_{|t|>t*}|û|². So
+  **m^σ(L) ≤ C·log(t*)·(1 − λ_k(c*)),  c* = L t*,  k = 2N(t*) + 2 + σ (prolate index),**
+  where 1 − λ_k is the out-of-band energy. This is an upper bound only. It does not certify that the margin is positive.
+- **Rate (CONJECTURE; derived from the Landau–Widom plunge).**
+  - The plunge law is 1 − λ_k ≈ exp(−π²(2c/π − k)/log c). The derivation substitutes the surplus 2c/π − k ≈ 2D(t*) − σ, so
+    **m^σ(L) ≈ exp(−π²(2D(t*) − σ)/log(2πLe^{2L})),  D(t*) = e^{2L} − 15/8,**
+    and asymptotically **log m^σ(L) ≈ −2π²e^{2L}/(2L + log 2πL)**. This is super-exponentially small in L.
+  - S(T) shifts D by O(log t*), which is negligible against e^{2L}.
+  - This is the analytic content of G.4d: there is no slack in L. Every perturbative step that gives up a fixed fraction of the margin closes at an L that does not grow.
+- **What this does not do.** It explains why the margin is tiny. It does not prove that the margin is > 0, and N.16.1 shows that the zero side cannot prove it unconditionally.
+
+### N.16.4 The ONE check against the existing N.15 numbers (NUMERICAL)
+**(a) Explicit formula replay on the N.15 vectors.** `sN/n16_nearnull.py` re-forms the N.15 N = 320 Ritz eigenvectors of R − 2c₂B₂ (the full form at log 3) from the `n15_P2_margins.py` header, with no new scan. It evaluates 2Σ_{n≤400}(¼ + γ_n²)|ξ̂(γ_n)|² with mpmath ordinates (NUMERICAL), plus a density tail above γ₄₀₀ = 679.74 using (1/π)log(t/2π). That tail is a heuristic smoothing, used only as a check.
+
+| vector | Ritz value | zero sum n ≤ 400 | tail > γ₄₀₀ | total | weight at γ₁, γ₂, γ₃ | peak (t ≤ 40) |
+|---|---|---|---|---|---|---|
+| even #0 | 2.538e−4 | 1.43e−5 | 2.37e−4 | 2.511e−4 | 2.2e−9, 7.1e−10, 5.8e−8 | 0.508 at t = 5.46 |
+| even #1 | 7.784e−2 | 7.44e−2 | 3.8e−3 | 7.818e−2 | 1.2e−3, 5.0e−3, 5.9e−3 | 0.430 at t = 10.2 |
+| odd #0 | 1.344e−3 | 9.29e−4 | 4.1e−4 | 1.343e−3 | 1.4e−6, 1.0e−5, 3.2e−5 | 0.539 at t = 7.54 |
+| odd #1 | 6.661e−1 | 6.612e−1 | 4.7e−3 | 6.659e−1 | 1.3e−2, 1.9e−1, 8.8e−2 | 0.514 at t = 18.45 |
+
+- **Normalization pinned.** Prime-side Ritz value = zero-side total to 1.1% (even #0), 0.4%, 0.04% and 0.04%. The factor 2Σ_{γ>0}(¼ + γ²)|ξ̂|² is the N.13 normalization.
+- **The near-null vectors dodge the low zeros.**
+  - The even #0 weights at γ₁ and γ₂ are 10⁻⁸ to 10⁻⁹ of its spectral peak. Its spectral mass sits at t ≈ 5.5, below γ₁, i.e. in the gap t < t* where there is no zero to pay.
+  - Odd #0 is 10⁻⁵ to 10⁻⁶ down at γ₁ and γ₂, with its peak at 7.5.
+  - The non-degenerate #1 vectors have O(10⁻²) to O(10⁻¹) weight on the low zeros.
+- **The even Ritz value is mostly discretization.** 94% of even #0's value (2.37e−4 of 2.51e−4) is the high-frequency tail above γ₄₀₀. That is the P1-hat t⁻² leakage, i.e. the discretization floor. The low-zero part is only 1.4e−5, so the true even margin is likely ≲ 1e−4.
+
+**(b) The derived formula vs the N.15 minima.** `sN/n16_rate.py` / `.out` evaluate the formula; this is not a scan.
+
+| 2L | D(t*) | formula even | N.15 even ≤ | formula odd | N.15 odd ≤ |
+|---|---|---|---|---|---|
+| log 2 | 0.125 | 0.19 | 0.073 | O(1) | 0.549 |
+| log 2 + 0.1 | 0.335 | 2.1e−2 | 1.68e−2 | O(1) | 0.245 |
+| log 2 + 0.3 | 0.825 | 4.8e−4 | 4.5e−4 | 4.9e−2 | 1.42e−2 |
+| log 3 | 1.125 | 7.5e−5 | 2.5e−4 | 5.1e−3 | 1.34e−3 |
+| log 4 | 2.125 | 4.2e−7 | – | 1.3e−5 | – |
+
+- **Reading.**
+  - **Even:** the formula agrees with the N.15 numbers to within a factor of 1 to 3.5. At log 3 it lies below the Ritz upper bound, which is consistent with (a)'s finding that the Ritz value there is discretization-dominated.
+  - **Odd:** the onset is right: O(1) below ℓ₂ ≈ 0.17, then collapse. Beyond the onset the formula overshoots a Ritz upper bound by about 3.5 to 4×, so the σ = 1 offset is too pessimistic.
+  - The rate is CONJECTURE, consistent to order of magnitude. The crude N-kill model in `n16_nearnull.out` (i) overshoots by 10 to 30× and is superseded by (b).
+- **Not duplicated:** N.15-G1 (S&M) and the independent minima cross-check (Golden Eye).
+
+### N.16.5 Labels after N.16
+| item | label |
+|---|---|
+| N.16.0 errata (1)–(5); refine.out regenerated (ℓ = 0.025 FAILS at ns = 48) | PROVED (corrections); refine data NUMERICAL |
+| 0.9009 global sharp on 𝒯_L; T ≥ 15.47 | PROVED (Principal P.16.1, 1c19c2f; sympy 9cdc498; Arb 1.86e−3) |
+| P.16.5 (H₃^σ), ℓ₃* ≈ 1.5e−5 | cross-reference; NUMERICAL (Principal) |
+| Q_L(ξ) = Σ_ρ(¼ + γ_ρ²)ξ̂(γ_ρ)conj ξ̂(conj γ_ρ) over all ρ | PROVED (classical, unconditional) |
+| Terms with \|γ\| ≤ 3.0002e12 are ≥ 0 | CERTIFIED (Platt–Trudgian 2021, Thm 1) |
+| Explicit ξ ⇒ unconditional two-sided value ⇒ upper bound on the margin | PROVED |
+| Uniform lower bound from the zero side | not available; "all terms ≥ 0" is BARRED (needs RH) |
+| u-form, constraint û(−i/2) = 0 | PROVED (elementary) |
+| Crossover t* = 2πe^{2L}; D(t*) = e^{2L} − 15/8 (smoothed) | PROVED / NUMERICAL (RvM, S(T) = O(log T)) |
+| Dimension-count existence of a zero-dodging direction | PROVED (counting); sharpness NUMERICAL |
+| m^σ(L) ≤ C log t*·(1 − λ_k(Lt*)) | PROVED up to constants (Plancherel–Pólya + RvM), upper bound only |
+| m^σ(L) ≈ exp(−π²(2D − σ)/log(Lt*)), log m ≈ −2π²e^{2L}/(2L + log 2πL) | CONJECTURE (Landau–Widom plunge heuristic) |
+| Parity: even < odd; odd onset ℓ₂ ≈ 0.17 | PROVED (counting) / NUMERICAL (matches N.15) |
+| ONE check: normalization to ≤ 1.1%, near-null ξ̂(γ₁), ξ̂(γ₂) ≈ 0 | NUMERICAL |
+| Explains G.4d (no slack in L) | mechanism; does **not** prove positivity |
+| Positivity up to L = 1.42 | CERTIFIED conditional on Mori Prop 3.1, Lemma 3.2, Thm N |
 | RH | OPEN |
 
 Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
@@ -1119,6 +1243,7 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
 - Connes, A., Consani, C., "Weil positivity and trace formula, the archimedean place", Selecta Math. 27 (2021) art. 77,
   doi:10.1007/s00029-021-00689-4, arXiv:2006.13771.
 - Connes, A., Consani, C., "Spectral triples and ζ-cycles", arXiv:2106.01715, §2.2–2.4 (read this session; figure-level numerics).
+- Platt, D., Trudgian, T., "The Riemann hypothesis is true up to 3·10¹²", Bull. London Math. Soc. 53 (2021) 792–797, Thm 1 (verified 2026-10-28)
 - Landau, H. J., Widom, H., "Eigenvalue distribution of time and frequency limiting", J. Math. Anal. Appl. 77 (1980) 469–481
   (indicator-symbol case only; general-symbol theorem number unverified).
 - Tate, J., thesis (1950), in Cassels–Fröhlich (1967): local zeta integrals (§2) and the global FE (§4), per ARP G.1a/G.4a.
