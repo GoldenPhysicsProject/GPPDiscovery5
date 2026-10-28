@@ -338,7 +338,7 @@ Compare CC's Sonin projection S^{So}_1 (onto S(1,1), CC Def 4.4 (72), with S^{So
 
 **(D2) Setting.** S^{So} acts on the local L²(ℝ)_ev, with no ℚ^*-sum. Connes' S_Λ ⊖ E(B_{Λ,0}) acts on L²(C_ℚ) *after* E (VIII (18)).
 - In the ζ-sector, E(φ⊗1_Ẑ)(λ) = λ^{1/2} Σ_{n≠0} φ(nλ). This is w plus the integer sum, which is the only non-isometric step (P.6, Meyer Lemma 5.3).
-- No choice of Λ identifies an operator on one space with one on the other. Any dictionary can only be at the level of trace formulas (P.9.2).
+- No choice of Λ identifies an operator on one space with one on the other. Any dictionary can only be at the level of trace formulas (P.9.2). *(Grok audit: this sentence is a REMARK. It records that (D1)–(D3) leave no identification. No theorem excluding every possible operator-level identification is proved here.)*
 
 **(D3) At Λ = 1, Connes' object is zero.** S_1 = 1_{|g|=1} is the indicator of a null set in C_ℚ = ℝ_+^* × Ẑ^*, so S_1 = 0 and S_1 ⊖ E(B_{1,0}) = {0}. Then Δ^♮_1 ≡ 0 and Tr(S_1V) = 2f(1) log 1 = 0.
 - By contrast, S(1,1) ≠ {0}: it is the eigenvalue-1 eigenspace of P P̂ P (CC (81)) and is infinite-dimensional (Sonin).
@@ -399,6 +399,11 @@ Split Ŝ_ΛP^c_Λ = P^c_ΛŜ_ΛP^c_Λ + P_ΛŜ_ΛP^c_Λ, and evaluate Tr(ϑ(f)Ŝ
 where
 - ε_Λ(f) := −Tr(ϑ(f)Ŝ_ΛP^c_Λ) = −∫_{|u|>1} ĝ(u) log min(|u|, Λ²) du, with g from f by Connes VII (28) in the even-sector normalization of CC (42)/(48);
 - χ_Λ(f) := Tr(ϑ(f)P_ΛŜ_ΛP^c_Λ) = Tr([P^c_Λ, ϑ(f)] P_ΛŜ_Λ).
+- *Grok audit (uniform bound made explicit).*
+  - Here ĝ(u) = G(u) := ∫ f(ρ) ρ^{1/2} e^{2πiu(1−ρ)} d^*ρ. For f ∈ C_c^∞(ℝ_+^*), G is the Fourier transform of a C_c^∞ function of ρ, so it is Schwartz.
+  - Hence |ε_Λ(f)| ≤ ∫_{|u|>1} |G(u)| log|u| du < ∞, uniformly in Λ, and ε_Λ(f) → ε_∞(f) as Λ → ∞ by dominated convergence.
+  - |χ_Λ(f)| ≤ ‖[P^c_Λ, ϑ(f)]‖_1 is uniform as well, since the commutator norm is dilation-invariant (c = ab). So the uniform bound is verified.
+  - A parity factor of 2 (even-sector versus full line) may be absorbed in the normalization of CC (42)/(48). It does not affect boundedness.
 
 Equivalently, using Connes VII (31) for R_Λ and R_1, and Tr(ϑ(f)(R_Λ − R_1)) = Tr(ϑ(f)Ŝ_ΛP_Λ) = 2f(1) log Λ + ε_Λ(f):
 
@@ -422,7 +427,7 @@ At Λ = 1 this is CC (83) ((13) in Thm 3).
 
 Labels:
 - (P9.1)–(P9.3): **PROVED**. These are elementary operator identities plus Connes VII (21)–(31) and CC (43)/(51), valid for every f ∈ C_c^∞(ℝ_+^*) and every Λ ≥ 1. **No support condition is used.**
-- (P9.4): **PROVED**, given (P9.3), by CC's §4 argument at a = b = Λ. Every step used is in the "F-exchange only" list of (b).
+- (P9.4): **PROVED**, given (P9.3), by CC's §4 argument at a = b = Λ *(Grok audit: proved by running CC §4 at bandwidth 2πΛ². This was checked by inspection, not replayed line by line; Golden Eye audit pending)*. Every step used is in the "F-exchange only" list of (b).
 
 **(d) Answers to (2).**
 1. **Where 2 log Λ lives.** It is exactly the window trace Tr(ϑ(f)Ŝ_Λ) = f(1)·log(Λ²), the log of the dilation invariant c. Ŝ_Λ is precisely the defect between the actual pair and the dilated I-self-dual pair.
@@ -444,7 +449,12 @@ Labels:
 - **Candidate from this section:** the Sonin projection, D^{loc}_Λ := S^{So}_Λ. By (P9.4), W_∞ = Tr(ϑ S^{So}_Λ) − [∫ f ε^{(Λ)} − 2f(1) log Λ + χ_Λ]. The bracket is not zero, so this is not an exact identity of the Q.8.E type.
 - **Obstruction (R5; PROVED as stated):** suppose the rule L ↦ D_L uses only the archimedean data (P_Λ, P̂_Λ, S_Λ, Ŝ_Λ, ϑ), with no arithmetic input.
   - Then Tr(D_L VV^*) is the same for ζ and for any fake with ζ's gamma factor.
-  - For 2L ≥ log 2 the Q_L of ζ and of such a fake differ by the prime side (PROVED-LEAN `GppWeilLadder.primeSide_eq_truncation`). So (I1) can hold for at most one of them, and the rule cannot be what singles out ζ.
+  - For 2L > log 2 the Q_L of ζ and of such a fake differ by the prime side (PROVED-LEAN `GppWeilLadder.primeSide_eq_truncation`). So (I1) can hold for at most one of them, and the rule cannot be what singles out ζ.
+  - *Grok audit (wording fix).*
+    - The fixed inequality is 2L **>** log 2: at 2L = log 2, compact support inside (−L, L) kills the n = 2 atom.
+    - The witness fake should be read as a **datum**, not an L-function: e.g. P_X with X < 2, whose Weil form on the window is W_∞ alone. DH does not qualify, because its gamma factor has conductor 5.
+    - No Dirichlet series with ζ's gamma factor, functional equation and finitely many poles is a fake: Hamburger's theorem makes it cζ.
+    - The conclusion stands, with "archimedean data" read as excluding the atoms ϑ(n) at prime powers.
   - So every admissible D_L must contain E, through Q′_Λ. This is the operator form of P.7's "nothing local bounds G.4d" and of Queen's (N3).
 - What P.9 does give Q.8.E is a constraint. In any D_L built from S_Λ, P_Λ, P̂_Λ, the 2 log Λ must be spent exactly against the window (P9.3), and an archimedean cross term of the χ_Λ type must be accounted for. CONJECTURE (structural; consistent with (N1)–(N3)).
 

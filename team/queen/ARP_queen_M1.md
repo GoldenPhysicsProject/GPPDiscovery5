@@ -82,6 +82,7 @@ Define the **leak** ℓ_Λ := ‖(1 − S_Λ)Q′_Λ‖²_HS = Tr(Q′_Λ(1 − 
 - Tr(SQ′(1−S)VV^*) = ⟨Q′(1−S)V, Q′SV⟩_HS, so |·| ≤ ‖Q′(1−S)V‖_HS ‖Q′SV‖_HS ≤ ℓ_Λ^{1/2}‖f‖_1 · ‖Q′SV‖_HS.
 - ‖Q′SV‖²_HS = Tr(V^*SQ′SV) = Tr(SQ′S·VV^*) ≤ Tr(S VV^*) because SQ′S ≤ S and VV^* ≥ 0. And Tr(S_Λ V(h)) = h(0)·|{|u| ≤ log Λ}|
   = 2‖f‖_2² log Λ (kernel h(u − v) on the window).
+  *(Grok audit: checked. SQ′S ≤ S because Q′ is an orthogonal projection, so SQ′S = (Q′S)^*(Q′S) ≤ S·S = S. V(h) = VV^* ≥ 0. Tr(S_Λ V(h)) is finite by Mercer, since the kernel is continuous on the compact window. Constants 2(2 log Λ)^{1/2} confirmed.)*
 - The term (1−S)Q′S is the adjoint case and gives the same bound. Summing the three pieces gives the claim. ∎
 
 **Corollary M1.B (sufficient condition for M1; PROVED-conditional).** If ℓ_Λ log Λ → 0, then M1 holds, with the explicit rate
@@ -130,6 +131,10 @@ B_Λ, L²[−Λ,Λ]-orthonormal.
   the critical line, so no RH input or output; but it is arithmetic, and it is **not** something Spectrum's archimedean bounds supply.
   HEURISTIC: B's Mellin profiles resolve s to ~1/log Λ, comparable to the zero spacing at height ~Λ², so κ_Λ can be large; how
   large is the open point.
+- *Grok audit (clarification; label unchanged, GAP).*
+  - "RH-neutral" means (H-κ) involves only ζ on the line, and no implication to or from RH is known. It does not mean independent of RH.
+  - κ_Λ is a **minimum over a family** of weights |Mφ|² (the whole of B_{Λ,0}), not a mean value against one fixed weight. Fixed-weight or mollified second-moment asymptotics (Balasubramanian–Conrey–Heath-Brown type) therefore do not bound it directly. They give averages, and the minimizing profile can adapt to ζ.
+  - The minimizer can concentrate its Mellin mass near critical zeros. So a lower bound on 1/κ_Λ most likely needs zero-spacing or local-density information on the line, at resolution ~1/log Λ near height ~Λ². Zero-free-region information off the line does not help here.
 
 **Theorem M1.C (PROVED-conditional on (S2), (S3); κ_Λ always finite).**
   ℓ_Λ ≤ 2 κ_Λ ( ε_Λ / Λ + 4 ζ(1+σ)² ρ_Λ ).

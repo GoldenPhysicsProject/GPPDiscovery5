@@ -520,7 +520,7 @@ Track labels: **[L]** means the support track (ours: the archimedean cutoff Λ =
   - −c₂(g(log 2) + g(−log 2)), with c₂ := Λ(2)·2^{−1/2} = (log 2)/√2 ≈ 0.4901.
   - n = 3 enters at 2L > log 3, and n = 4 = 2² at 2L > log 4.
   - P_2 and ζ give the *same* form here (N.2), so nothing truncation-specific happens on this range. N.3.3 (L ≥ ½ log 2 + O(1), constant ≈ 2.8 for the odd-pole bump, NUMERICAL) and G.4f/N.11 are far-field context only.
-- **Positivity on this range is already CERTIFIED** (window to L = 71/50, main 2576c89). What is open is an *analytic trace-route* proof. That is the question here.
+- **Positivity on this range is already CERTIFIED** (window to L = 71/50, main 2576c89) *(Grok audit: NUMERICAL. This is a certified finite-window computation, used for consistency and as evidence only, not as a proof of (IF) or of any analytic L₀)*. What is open is an *analytic trace-route* proof. That is the question here.
 - Connes–Consani (CC) dictionary, arXiv:2006.13771:
   - CC's g is our k. CC's support [2^{−1/2}, 2^{1/2}] means L = ½ log 2, and CC's F = g∗g* is our g.
   - W_∞ = −W_ℝ, with multiplier 2θ′(t) = Re ψ(¼ + it/2) − log π, which equals §S's W_∞.
@@ -537,12 +537,16 @@ G.4d deficit convention: the deficit lives on coker E = ker E*, and the positive
 | T3 | Sonin refinement W_∞(g) = Tr(ϑ(k)Sϑ(k)*) − ℰ(g), with ℰ(g) := ∫ g ε d*ρ (CC Thm 3/7). The density σ_S(t) := 2θ′(t) + ε̂(t) of Tr(ϑ(·)S) is ≥ 0 (Bochner, since Tr(ϑ(k)Sϑ(k)*) ≥ 0). | PROVED | survives, any support **[L]**; the Sonin/prolate content of S, ε is **[Λ, §S]** |
 | T4 | Pole removal. The pole-free positive-definite cone equals Q(C_c^∞-autocorrelations), via Q = −∂_u² + ¼, so g = Q h with h = ξ⋆ξ*, ξ ∈ C_c^∞([−L, L]) (CC Lemma 3.3, Prop 3.5). This preserves support, and the pair it removes is OS4 (P.8a), spent once. | PROVED | survives **[L]** |
 | T5 | −ℰ(Qh) = 2ε′(1⁺)(‖ξ‖² − ⟨ξ, K_L ξ⟩), with K_L Hilbert–Schmidt and ε′(1⁺) ≈ 22.9965 (CC §5; this is the ε-analogue of Thm 6, D∘Q = −2Id + K). K_{L′} compresses to K_L for L < L′, so the number of eigenvalues > 1 is nondecreasing in L (Cauchy interlacing). | PROVED (interlacing elementary) | survives with a new K_L **[L]** |
-| T6 | At L = ½ log 2, K_L has exactly one eigenvalue > 1, and conditioning on k̂(0) = 0 (Thm 1) or paying c|k̂(0)|², 13 < c < 17 (Thm 11, eq. (5)), closes the argument. | PROVED (published; the computer-assisted finite-rank step is not replayed by us) | **breaks as a verbatim step**: it controls only the archimedean form, and past 2L = log 2 the archimedean form alone loses positivity (NUMERICAL, CC arXiv:2106.01715 §2.2 Fig. 6–7). The p = 2 term must be *used*, not bounded away. **[L]** |
+| T6 | At L = ½ log 2, K_L has exactly one eigenvalue > 1, and conditioning on k̂(0) = 0 (Thm 1) or paying c|k̂(0)|², 13 < c < 17 (Thm 6.11, eq. (5)/(141)), closes the argument. | PROVED (published; the computer-assisted finite-rank step is not replayed by us) | **breaks as a verbatim step**: it controls only the archimedean form, and past 2L = log 2 the archimedean form alone loses positivity (NUMERICAL, CC arXiv:2106.01715 §2.2 Fig. 6–7). The p = 2 term must be *used*, not bounded away. **[L]** |
 | T7 | (new) The p = 2 term in Q-coordinates. For real ξ ∈ C_c^∞(−L, L), h(a) = ∫ ξ(x)ξ(x+a)dx and h″(a) = −∫ ξ′(x)ξ′(x+a)dx, so W_2(Qh) = 2c₂ ∫_{−L}^{L−log 2} [ξ′(x)ξ′(x+log 2) + ¼ ξ(x)ξ(x+log 2)] dx. The integrand lives on the two edge strips [−L, L − log 2] and [log 2 − L, L], each of length 2L − log 2. | PROVED (elementary) | new term **[L]** |
 | T8 | (obstruction) ξ ↦ W_2(Qh) is **not bounded** on L²([−L, L]) for 2L > log 2. Take ξ = φ ± τ_{log 2}φ with φ = ψ(x)cos(mx) supported in the left strip; (τ_{log 2}φ = φ(· − log 2), in the right strip), then W_2(Qh) = ±2c₂(‖φ′‖² + ¼‖φ‖²) ≈ ±c₂ m² ‖ξ‖² as m → ∞, with either sign. T5's margin is O(‖ξ‖²) (bounded − compact). So the CC margin **cannot** absorb the p = 2 term, whatever the size of 1 − κ_L. | PROVED (elementary) | **this is where the verbatim chain fails** **[L]** |
 | T9 | (obstruction, arithmetic placement) Every Λ = 1 archimedean ingredient (W_ℝ, δ, ε, Tr(ϑ(·)S), Tr(ϑ(·)PP̂P)) has a distribution in a = log ρ that is smooth on a ≠ 0. This follows from CC eqs. (39), (49) and from ε(ρ) = Σ λ(n)(1−λ(n)²)^{−1/2}⟨ξ_n|ϑ(ρ^{−1})ζ_n⟩ with ξ_n on [−1, 1] and ζ_n on |x| ≥ 1. So no archimedean operator carries the point masses δ_{±log 2}. In Q.8.E's D_L they can only come from E's q = 2^{±1} summands of the ℚ^*-sum (P.6/Meyer Lemma 5.3), or from the 2-adic local trace in a semilocal S = {∞, 2} frame (Connes 1999 §VII; CCM arXiv:2310.18423). | PROVED (given CC's formulas) | consistent with CC 2106.01715 §2.3: positivity is lost for p ∉ (1.9999, 2.0005) at L = ½ log 3 (NUMERICAL) **[L]** |
 
 ### C.13.2 (b) What enters, and which equalities become inequalities
+- *Grok audit notes on T6/T8 (labels unchanged).*
+  - T8 obstructs only the *CC ε-margin* route, i.e. bounding W_2 by the O(‖ξ‖²) margin of T5. It is **not** an obstruction to (IF).
+  - On the same edge pairs, 𝒮_L is also of order m²‖ξ‖²_{L²}, since σ_S ~ log|t| multiplies (¼ + t²)|ξ̂|². So (IF) is dominated at high frequency provided σ_S ≥ 2c₂ there (item (i) of (IF-F)).
+  - In CC 2106.01715 §2.2, the "archimedean contribution" whose positivity is lost includes the rank-one pole term w_{0,2} (CC Lemma 2.7). So "the archimedean form alone loses positivity" is a NUMERICAL statement about that matrix. It has not been shown separately for W_∞ on the pole-free class.
 - **The p = 2 prime term** −c₂(g(log 2) + g(−log 2)) enters at T7. It is bounded on L² before conditioning, |·| ≤ √2·log 2·‖k‖² ≈ 0.980‖k‖², but it is non-compact and indefinite: a compressed translation coupling the two edge strips. After the pole-removing Q (T4) it is order 2 (T8).
 - **The 2 log Λ term** (Connes 1999 §VIII eq. (16), Thm 5 eqs. (17)–(26)) is absent on this track. Λ = 1 is fixed, and in T0 it cancels (P8.2(ii)). The test is vacuous at Λ = 1 (P.8c). It belongs to **[Λ, §S]**.
 - **No equality becomes an inequality** in T0–T5: these are identities valid for every L. The only inequality step is T6 (Id − K_L ≥ 0 after conditioning). Past 2L = log 2 it must be replaced by the interface inequality below, which is again an *identity-plus-sign* statement (R6).
@@ -574,7 +578,7 @@ What closing the argument requires:
   - From **Prime (§N.12)**: the edge-strip estimate for the T7 functional, i.e. a bound of its positive and negative parts by an H¹ norm on the two strips of length 2L − log 2. That is the p = 2 estimates, left to N.12.
   - From **§S / prolate data at Λ = 1, support L**: a lower bound for σ_S(t) and the spectral margin 1 − κ_L of K_L for L slightly above ½ log 2. Note T5 interlacing: κ_L is nondecreasing.
 - Even if proved, it would be RH-silent:
-  - It is a finite-L statement already CERTIFIED to 1.42.
+  - It is a finite-L statement already CERTIFIED to 1.42 *(Grok audit: NUMERICAL, certified finite-window computation, consistency/evidence only, not proof)*.
   - Under H_fin, κ_Q(L) = N_{>½} for L ≥ L*, with L* ineffective (§S GAP 2, db626ff: **PROVED under H_fin**).
 - **R5.** DH (onset L ≈ 1.7104) is positive on this whole range, so (IF)'s truth is fake-blind. DH breaks the *structure* at T7/T9: it has no Euler product, so there is no prime-power-supported line at log 2 and its "prime side" weights all n. Its γ-factor is conductor 5, so T1–T6 are not ζ's. In Queen's terms DH also fails OS3 (Q.8.5).
 
@@ -595,7 +599,7 @@ Connes' deficit projector S_Λ ⊖ E(B_{Λ,0}) (for ℚ in its compressed Δ^♮
 - **Golden Eye's G.4d point.** Over ℚ, Δ_Λ is not positive-type (Queen c2), so "lim Δ_Λ = Weil ⇒ RH" is stated here only for Δ^♮_Λ, or given M1. Nothing here is labelled "stronger than RH".
 
 ### C.13.6 Prior art (arXiv)
-- **Connes–Consani, "Weil positivity and trace formula, the archimedean place"**, Selecta Math. 27 (2021) 77, arXiv:2006.13771. Thm 1 and Thm 11 at L = ½ log 2, used in T1–T6.
+- **Connes–Consani, "Weil positivity and trace formula, the archimedean place"**, Selecta Math. 27 (2021) 77, arXiv:2006.13771. Thm 1 and Thm 6.11 (eq. (141); constant c in eq. (5)) at L = ½ log 2, used in T1–T6.
 - **Connes–Consani, "Spectral triples and ζ-cycles"**, arXiv:2106.01715 (J. Inst. Math. Jussieu). This is the closest prior art for this track; CC's "L" there is the full support length 2 log λ, i.e. 2L in our notation.
   - §2.2: archimedean-only positivity fails just past 2L = log 2.
   - With p = 2 added, positivity holds on log 2 ≤ 2L < log 3 (smallest even eigenvalue < 6·10⁻⁸ at 2L = log 3).
