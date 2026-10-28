@@ -520,7 +520,7 @@ Track labels: **[L]** means the support track (ours: the archimedean cutoff Λ =
   - −c₂(g(log 2) + g(−log 2)), with c₂ := Λ(2)·2^{−1/2} = (log 2)/√2 ≈ 0.4901.
   - n = 3 enters at 2L > log 3, and n = 4 = 2² at 2L > log 4.
   - P_2 and ζ give the *same* form here (N.2), so nothing truncation-specific happens on this range. N.3.3 (L ≥ ½ log 2 + O(1), constant ≈ 2.8 for the odd-pole bump, NUMERICAL) and G.4f/N.11 are far-field context only.
-- **Positivity on this range is already CERTIFIED** (window to L = 71/50, main 2576c89) *(Grok audit: NUMERICAL. This is a certified finite-window computation, used for consistency and as evidence only, not as a proof of (IF) or of any analytic L₀)*. What is open is an *analytic trace-route* proof. That is the question here.
+- **Positivity on this range is already CERTIFIED** (window to L = 71/50, main 2576c89) *(Grok audit, corrected per Golden Eye / main 992a011: CERTIFIED, Arb replay with rigorous remainder, conditional on Mori Prop 3.1, Lemma 3.2, Thm N; a finite-window certificate, not an analytic mechanism, and not a proof of (IF) or of any analytic L₀)*. What is open is an *analytic trace-route* proof. That is the question here.
 - Connes–Consani (CC) dictionary, arXiv:2006.13771:
   - CC's g is our k. CC's support [2^{−1/2}, 2^{1/2}] means L = ½ log 2, and CC's F = g∗g* is our g.
   - W_∞ = −W_ℝ, with multiplier 2θ′(t) = Re ψ(¼ + it/2) − log π, which equals §S's W_∞.
@@ -592,12 +592,12 @@ At L = ½ log 2 + η with 0 < η ≤ ½ log(3/2), (I1) requires the diagonal sum
 - Q.8.F (N1) says the domination has zero margin on the soft mode η = e^{−u/2}1_{u≥0} in the limit, but at fixed small η the soft mode is not an edge-strip vector, so (N1) does not obstruct this first test.
 - Labels: the requirement is PROVED (from (I1)); existence of an explicit D_L is CONJECTURE (Q.8.E).
 
-### C.13.5 Interface paragraph (P's open minor GAP, not closed)
+### C.13.5 Interface paragraph (projector dictionary closed negatively per P.9; see C.13.B.1)
 Connes' deficit projector S_Λ ⊖ E(B_{Λ,0}) (for ℚ in its compressed Δ^♮ form A_Λ = S_Λ − S_ΛQ′S_Λ) and CC's local Sonin projector S = 1 − (P₁ ∨ P̂₁):
 - They agree in sign: both are deficit/cokernel traces (P.8c: CC Thm 1 is δ^{CC} ≤ 0).
 - They are **unmatched at Λ = 1**. No map identifies Tr(A_Λ VV*) with Tr(ϑ(k)Sϑ(k)*), and the rescaling (P_Λ, P̂_Λ) ≅ (P₁, P̂_{Λ²}) does not do it.
 - Locally P₁ ∧ P̂₁ = 0. The arithmetic lines (T9) sit on the global side only.
-- This projector dictionary is **GAP (minor)**, as P states. It is not claimed closed here. (IF) is written entirely on the local side (σ_S, K_L) plus the single global line at log 2. Matching it to Δ^♮ is that dictionary.
+- This projector dictionary is **closed negatively per P.9 (P.9.1 (D1)–(D6)); trace-level dictionary only** (relabelled in C.13.B.1; was GAP (minor)). (IF) is written entirely on the local side (σ_S, K_L) plus the single global line at log 2. Matching it to Δ^♮ is that dictionary.
 - **Golden Eye's G.4d point.** Over ℚ, Δ_Λ is not positive-type (Queen c2), so "lim Δ_Λ = Weil ⇒ RH" is stated here only for Δ^♮_Λ, or given M1. Nothing here is labelled "stronger than RH".
 
 ### C.13.6 Prior art (arXiv)
@@ -616,3 +616,139 @@ Connes' deficit projector S_Λ ⊖ E(B_{Λ,0}) (for ℚ in its compressed Δ^♮
 ### C.13.7 R-lines
 - C.13.A: R1 one rule for all 2L ∈ (log 2, log 3] | R2 FE enters via W_∞ = archimedean of ζ; Euler product via the single line at log 2 | R3 the p = 2 term is used with its sign, not |weight| | R4 pole pair spent once at T4 (OS4) | R5 DH structurally excluded at T7/T9, truth fake-blind | R6 "no MF-relative margin" PROVED (§S S(c)4); "closing step must be an exact identity" CONJECTURE. (IF) is an identity plus a sign.
 - T8/T9: R1 every L in range | R2 — | R3 — | R4 — | R5 fake-blind (structural) | R6 consistent: no constant-slack closure exists in CC's norm.
+
+## C.13.B Addendum: §P.9, §N.12, and the trace side of N.G2 (S103e, 2026-10-28)
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OPEN.** Track **[L]**: Λ = 1, 2L ∈ (log 2, log 3], with a := log 2, ℓ := 2L − a, c₂ = (log 2)/√2. Sources were read at origin/team/principal-series 3cae479 (§P.9) and origin/team/prime-number-theory 03e6d8d (§N.12). The claims used below were re-checked line by line.
+
+**Framing.** Weil positivity on 2L ∈ (log 2, log 3] is already **CERTIFIED** (window to L = 1.42; conditional on Mori Prop 3.1, Lemma 3.2, Thm N). The p = 2 work here does not establish positivity. It explains the **mechanism**: which analytic step carries positivity past the p = 2 line. The CC 2106.01715 §2.2 "log 2.44 cap" is **NUMERICAL-indicative, full test space only**.
+
+### C.13.B.1 From §P.9 (verified)
+- **T0 restated (relabel: wording only).** P.9's (P9.0) is W(k⋆k*) = Δ^♮_Λ(k⋆k*) − δ^♮_Λ(k), with Δ^♮_Λ(h) = Tr((S_Λ − S_ΛQ′_ΛS_Λ)V(h)) ≥ 0 (Queen Q.8.4).
+  - This is literally our T0 with A_Λ = S_Λ − S_ΛQ′S_Λ. It equals the old (P8.2) iff E(B_{Λ,0}) ⊂ S_Λ, which is the function-field case.
+  - T0 now cites (P9.0) in place of P8.2. Label unchanged: PROVED (identity), positivity PROVED in the Δ^♮ form. At Λ = 1, S_1 = 0, so Δ^♮_1 ≡ 0 (P.9 (D3)). On this track T0 is therefore the trivial identity W = −δ^♮_1, and all the content is in T1–T7.
+- **T6 break point pinned.** P.9 records, by inspection, that CC 2006.13771 uses the support condition only in §5–6 and Cor 2. The relevant items are Prop 5.5 (I ⊂ [−log 2, log 2]), K_I (Thm 3.6, §6), Lemma 6.10 ((140), the constant vector ξ₀, i.e. ĝ(0) = 0), Thm 6.11 ((141)), and Cor 2 ((6), Weil = W_∞).
+  - The I-self-duality steps (Prop 2.2(iii), Lemma 4.1) are support-free. This agrees with our T1–T5 "survives" column.
+  - **T6 now reads: it breaks exactly at the K_I / Lemma 6.10–Thm 6.11 input (the eigenvalue count of K_I on I of length ≤ log 2, closed by ĝ(0) = 0), and at Cor 2 (no prime term).** Past 2L = log 2 both inputs fail as verbatim steps: Cor 2 because of T7, and the K_I/ε-margin route because of T8 (norm mismatch). As scoped by the audit, T8 blocks only that route, not (IF). Label PROVED (published input; the location is by inspection, P.9 and ours).
+  - Side remark (PROVED, given CC Thm 1): for odd ξ, ξ̂(0) = 0, so ĝ(0) = ¼|ξ̂(0)|² = 0. CC's extra condition is therefore vacuous on the odd sector, and at ℓ = 0 the odd half of N.12's (K2) is exactly CC Thm 1.
+- **T9 × P.9(f).** P.9 PROVES (R5, as stated) that a D_L built only from archimedean data (P_Λ, P̂_Λ, S_Λ, Ŝ_Λ, ϑ) cannot satisfy (I1) for both ζ and a fake with ζ's gamma factor once 2L ≥ log 2, because the prime sides differ (PROVED-LEAN `GppWeilLadder.primeSide_eq_truncation`). Hence D_L must contain E.
+  - T9 is the pointwise refinement of this. The arithmetic must enter through E's q = 2^{±1} summands, since archimedean distributions are smooth off a = 0 and so carry no δ_{±a}. P.9(f) says *that* E is needed, and T9 says *where*. The two are consistent, and neither uses the other.
+- **C.13.5 relabel.** P.9.1 (D1)–(D6) is verified. It shows that Sonin is the ker P₁ ∩ ker P̂₁ corner while Connes' B_Λ is the ran ∩ ran corner, that S_1 = 0 at Λ = 1, and that S(1,1) is infinite-dimensional. The trace-level dictionary (i)–(iii) is PROVED there.
+  - **The interface paragraph changes from "GAP (minor)" to "closed negatively per P.9 (PROVED there); trace-level dictionary only".** (IF) needs nothing further from that dictionary.
+
+### C.13.B.2 From §N.12 (verified)
+- **S1 (PROVED, sharp; N.12.2).** |LHS(IF)| = 2c₂|B(ξ)| ≤ c₂‖ξ‖²_{H¹_¼(S₋∪S₊)}, with S₋ = [−L, L − a], S₊ = S₋ + a, and ‖u‖²_{H¹_¼(I)} = ∫_I(u′² + ¼u²). The bound is attained by edge pairs φ ± τ_aφ. This is our T8 in its natural H¹ form.
+- **Parity/J split (PROVED; N.12.3, re-derived here).** Let J x = −a − x on S₋ and P_± = ½(1 ± J). Since d/dx swaps J-parity, B(ξ_o) = ‖P₋ξ_o‖²_H − ‖P₊ξ_o‖²_H and B(ξ_e) = ‖P₊ξ_e‖²_H − ‖P₋ξ_e‖²_H, with H = H¹_¼(S₋). Therefore **(IF) ⇔ (K2) ∧ (K3)**:
+  - (K2), odd: R_L(ξ_o) + 2c₂‖P₊ξ_o‖²_H ≥ 2c₂‖P₋ξ_o‖²_H;
+  - (K3), even: R_L(ξ_e) + 2c₂‖P₋ξ_e‖²_H ≥ 2c₂‖P₊ξ_e‖²_H;
+  - here R_L = 𝒮_L + 2ε′(1⁺)(‖·‖² − ⟨·, K_L·⟩) = W_∞∘Q is the right side of (IF).
+- **Sign convention.** Everything here is in **ξ-coordinates**. In k = (½ + ∂)ξ coordinates the harmed/helped roles of the nodeless even profile flip (N.12.3). In ξ the odd profile is harmed at first order in ℓ.
+- **Bound-first route (N.12.4).** S2, R_L ≥ c₂‖ξ‖²_{H(E)}, is what "bound |LHS| first, then compare" needs. Equivalently, m_L ≥ c₂ ≈ 0.490.
+  - S2 implies R_L ≥ 0, i.e. archimedean-only positivity **on the pole-free class** (PROVED). CC 2106.01715 §2.2 reports a loss of archimedean positivity at μ_a < 2.44 (NUMERICAL).
+  - **Full-space caveat (per the C.13.2 audit note; patched after merge f512c6f).** CC's §2.2 matrix is on the full even/odd test space, not the pole-free class. A single negative eigenvalue on the full space need not survive restriction to the codimension-one pole-free hyperplane (Cauchy interlacing). So the cap 2L₀ < log 2.44 for the bound-first route is **NUMERICAL and conditional on the §2.2 loss transferring to the pole-free class**, which is not established. Status: NUMERICAL-indicative, full-space only (CC's data); transfer to the pole-free class CONJECTURE. N.G2 is unaffected: it is a GAP either way.
+- **Relabel.** Our (IF) GAP (C.13.3 "analytic L₀ GAP") is **sharpened to N.G2**: no analytic lower bound for R_L on the harmful cones of (K2)/(K3), with constant 2c₂ against ‖P_{s}ξ‖²_{H(S₋)}. The label stays GAP.
+
+### C.13.B.3 Trace-side contribution to N.G2 (new)
+Tool (standard; CC 2106.01715 (2.7), unitary form). For F ∈ C_c^∞ vanishing near 0,
+W_∞(F) = −∫_ℝ F(u)κ(u)du, where κ(u) = e^{|u|/2}/(2 sinh|u|).
+On the pole-free class, W_∞(Qh_φ) = (1/2π)∫(¼ + t²)Ω(t)|φ̂|²dt, where Ω(t) = Re ψ(¼ + it/2) − log π (= 2θ′). Ω is even and increasing in |t|, since Re ψ(x+iy) − ψ(x) = Σ_{n≥0} y²/((n+x)((n+x)²+y²)). We have Ω(0) = −5.3722 and Ω(t) = c₂ at |t| ≈ 10.27.
+
+**(3a) Correction to the premise (PROVED).** J is *not* invisible to the archimedean form as a form. R(ξ) = (1/2π)∫(¼ + t²)Ω|ξ̂|² is translation-invariant with an even multiplier, so it is invariant on L²(ℝ) under *every* reflection x ↦ c − x, including x ↦ −a − x.
+- The parity J is broken only by the **window**: x ↦ −a − x maps [−L, L] to [−L − a, L − a]. The obstruction is the support, not a missing symmetry of W_∞.
+- Restricted to functions supported in one strip, R commutes with J exactly.
+
+**(3b) K_I / Lemma 6.10 cannot see the harmful cone (PROVED).** The ε-part of R_L satisfies |2ε′(1⁺)(‖ξ‖² − ⟨ξ, K_Lξ⟩)| ≤ 2ε′(1⁺)(1 + ‖K_L‖)‖ξ‖²_{L²}.
+- On N.12.2's sharp vectors at frequency m, ‖ξ‖²_{L²} ≤ ‖ξ‖²_{H}/(¼ + m²) → 0, while the harm is c₂‖ξ‖²_{H(E)}.
+- So any lower bound of the form R_L ≥ μ‖ξ‖²_{H(E)} on the harmful cones must come from the Sonin/Ω multiplier (𝒮_L), not from the K_I / Lemma 6.10 compact machinery. That machinery is L²-level and contributes only at low frequency.
+
+**(3c) Exact edge-pair identity: where the archimedean form is blind (PROVED).** Let φ₋, φ₊ ∈ C_c^∞(int S₋) and ξ = φ₋ + τ_aφ₊. Since S₋ ∩ S₊ = ∅ and the cross autocorrelation c = φ₋ ⋆ φ₊* (shifted by a) is supported in [a − ℓ, a + ℓ] ∌ 0,
+> Q_L(Qh) = Σ_± W_∞(Qh_{φ±}) − 2∫(Qκ)(a + v)c(v)dv − 2c₂⟨φ₋, φ₊⟩_{H¹_¼}.
+- For the symmetric pair φ₋ = φ, φ₊ = σφ, the Fourier form is (1/π)∫(¼ + t²)|φ̂|²[Ω(t)(1 + σcos ta) − σc₂]dt.
+- The archimedean energy of the pair sees the strip coupling only through the interference factor 1 + σcos(ta). That factor **vanishes at t_j = (2j+1)π/a (σ = +1) and at t_j = 2jπ/a (σ = −1)**, while the p = 2 term is flat in t.
+- So on pairs whose φ̂ concentrated near t_j, the archimedean form gives no protection at all. What forbids that concentration is only the uncertainty principle on a strip of length ℓ < a. This is the precise sense in which the archimedean data "cannot see J": they see it through cos(ta), which has zeros.
+- *Proof.* With c(v) := ∫φ₋(x)φ₊(x + v)dx (supported in [−ℓ, ℓ]), one has h(b) = h_{φ₋}(b) + h_{φ₊}(b) + c(b − a) + c(−b − a). Use W_∞ = −∫Fκ on the shifted pieces (supported away from 0), and integrate Q by parts onto κ, which is smooth on [a − ℓ, a + ℓ]. B = (Qh)(a) = ⟨φ₋, φ₊⟩_{H¹_¼}, because (Qh_φ)(±a) = 0 for ℓ < a. ∎
+
+**(3d) Lemma C.13.B (strip-localized cone; PROVED (computer-assisted): Ω(14), Ω(0), c₂ and M_ℓ certified by Arb ball arithmetic, `team/celestial-cft/arp_c/c13b_lemma_certify.py` + `.out`).** If ℓ = 2L − log 2 ≤ 0.119, then Q_L(Qh) ≥ 0 for every real ξ ∈ C_c^∞(int S₋ ∪ int S₊). Quantitatively, with T = 14 and δ = Ω(14) − c₂ = 0.3108,
+> Q_L(Qh) ≥ [δ − (δ + c₂ − Ω(0))(T/4 + T³/3)ℓ³/π³ − M_ℓℓ³/π²]·(‖φ₋‖²_{H} + ‖φ₊‖²_{H}),
+where M_ℓ = max_{|v|≤ℓ}|(Qκ)(a + v)|.
+- **Certified constants (Arb, 128-bit balls).** c₂ ∈ 0.49012907173427…, Ω(0) ∈ −5.37218341922566…, Ω(14) ∈ 0.80096748785045…, δ = Ω(14) − c₂ ∈ 0.31083841611617… > 0. Over all ℓ ≤ 0.119, M_ℓ ≤ 5.0245 (400 interval sub-boxes of [a − 0.119, a + 0.119], Taylor-series ball evaluation of κ″). (T/4 + T³/3)ℓ³/π³ < 1 at ℓ = 0.119.
+- **The bracket is decreasing in ℓ.** Its certified value at ℓ = 0.119 is 0.0019316… > 0, so the bracket is > 0 for all ℓ ≤ 0.119.
+- *Proof.*
+  - Use 2c₂|⟨φ₋, φ₊⟩_H| ≤ c₂Σ‖φ±‖²_H (this is S1).
+  - Bound the cross term by |∫(Qκ)(a + v)c| ≤ M_ℓ‖φ₋‖₁‖φ₊‖₁ ≤ M_ℓℓ‖φ₋‖₂‖φ₊‖₂.
+  - For each φ supported in an interval of length ℓ: |φ̂(t)|² ≤ ℓ‖φ‖₂², and Poincaré gives ‖φ‖₂² ≤ (ℓ/π)²‖φ′‖². Split W_∞(Qh_φ) − c₂‖φ‖²_H at |t| = T. The high band is ≥ δ·(high-band H-mass), using monotonicity of Ω. The low band is ≥ (Ω(0) − c₂)·(low-band H-mass), and the low-band H-mass is ≤ ℓ‖φ‖₂²(T/4 + T³/3)/π. ∎
+- **Scope.** This covers the strip-localized part of both harmful cones, including N.12.2's sharp vectors. They are absorbed by the high-band Ω margin, because short strips force high frequencies.
+  - It is **not** N.G2. The bulk-coupled harmful vectors, ξ smooth across the strip edge with ‖P_{s}ξ‖²_{H(S₋)} ≈ s²ℓ (N.12.3), are not strip-localized. For them, R_L is nonlocal over the whole window, and the needed margin 2c₂s²ℓ must come from a quantitative (in ℓ) lower bound on R_L near L = ½ log 2.
+  - CC's T6 is a sign at ℓ = 0 with a computer-assisted finite-rank part, and gives no such rate.
+- **Result of (3).**
+  - N.G2 is **reduced, not closed**. The trace side PROVES positivity on the strip-localized sub-cone for 2L ≤ log 2 + 0.119.
+  - It also PROVES that K_I / Lemma 6.10 contributes nothing at the H¹ level.
+  - The residual is **N.G2-bulk (GAP)**: a lower bound R_L(ξ) ≥ 2c₂‖P_{s}ξ‖²_{H(S₋)} for ξ whose strip restriction is the edge trace of a bulk profile.
+  - The archimedean form is J-symmetric as a form (3a), so the residual is a window/edge-coupling problem and not a symmetry obstruction. The precise Hardy-type statement is **Conjecture C.13.H** (C.13.B.5).
+  - Consistency: this does not contradict the (full-space, NUMERICAL; see the caveat in C.13.B.2) cap of N.12.4(iii), since Lemma C.13.B makes no claim that archimedean-only positivity holds (on strip-localized vectors Q_L ≥ 0 uses the p = 2 term's bound, not its absence).
+
+### C.13.B.4 Labels and R-lines
+| item | label |
+|---|---|
+| T0 = (P9.0), A_Λ = S − SQ′S | PROVED (identity; Queen Q.8.4 positivity) |
+| T6 break = K_I / Lemma 6.10 / Thm 6.11 input + Cor 2 | PROVED (location by inspection, P.9 and ours) |
+| D_L must contain E (P.9(f)); T9 locates it at q = 2^{±1} | PROVED (as stated); PROVED given CC's formulas |
+| projector dictionary | **closed negatively per P.9; trace-level dictionary only** (was GAP (minor)) |
+| (IF) ⇔ (K2) ∧ (K3); S1 sharp | PROVED (N.12, re-derived) |
+| analytic L₀ for (IF) | GAP, now **N.G2** |
+| bound-first cap 2L₀ < log 2.44 (N.12.4(iii)) | NUMERICAL (CC full space); transfer to the pole-free class CONJECTURE |
+| (3a) all reflections preserve R on L²(ℝ) | PROVED |
+| (3b) K_I / Lemma 6.10 are blind at the H¹ level | PROVED |
+| (3c) edge-pair identity; blind frequencies t_j | PROVED |
+| (3d) Lemma C.13.B, strip-localized cone, ℓ ≤ 0.119 | PROVED (computer-assisted; Arb-certified Ω(14), Ω(0), c₂, M_ℓ; arp_c/c13b_lemma_certify.*) |
+| N.G2-bulk | GAP |
+| Conjecture C.13.H (band-split edge coercivity, odd sector) | CONJECTURE |
+| Prop C.13.H′ (C.13.H ⇒ (K2) for ℓ ≤ ℓ_H) | PROVED (implication) |
+| reduction of C.13.H to σ_S, κ^{odd}_L data (Prop C.13.H″) | PROVED (given CC §5 / Thm 6.11) |
+
+- **R1** one rule for every 2L in range (3d: for ℓ ≤ 0.119).
+- **R2** FE enters via Ω = 2θ′ and κ; Euler product only via the line at a.
+- **R3** the p = 2 term is used with its sign (S1 and the parity split); no |weight| bounds beyond S1.
+- **R4** pole pair spent at T4; the odd sector has ĝ(0) = 0 automatically.
+- **R5** DH has no line at a, so it is structurally excluded; (3a)–(3d) are archimedean plus one line, so their truth is fake-blind.
+- **R6** "no MF-relative margin" PROVED; "closing step must be an exact identity" CONJECTURE. (3d) is an identity (3c) plus a sign.
+- Nothing here is labelled stronger than RH. Over ℚ, positivity statements refer to Δ^♮_Λ or are given M1.
+
+### C.13.B.5 Conjecture C.13.H (the Hardy-type edge statement, made precise for Spectrum & Measure)
+
+Notation as in C.13.B and N.13.0 (team/prime-number-theory 611e39a), in ξ-coordinates: a = log 2, c₂ = (log 2)/√2, L₀ = ½ log 2, ℓ = 2L − a, ‖u‖²_H = ∫(u′² + ¼u²) = (1/2π)∫(¼ + t²)|û|², R(ξ) = (1/2π)∫(¼ + t²)Ω(t)|ξ̂(t)|²dt, and ξ^{<T}, ξ^{>T} are the Fourier band pieces (|t| < T, |t| ≥ T).
+
+**What (K2) needs, exactly (PROVED reformulation, N.12.3/C.13.B.2).** For odd real ξ ∈ H¹₀(−L, L),
+> R(ξ) + 2c₂‖P₊ξ‖²_{H(S₋)} ≥ 2c₂‖P₋ξ‖²_{H(S₋)},
+and on edge-smooth odd vectors (slope s at the edge) the right side is 2c₂s²ℓ + O(ℓ²). This is the required first-order margin. A bound R(ξ) ≥ μ·s²ℓ in terms of edge slope alone is **false** (PROVED by scaling: take ξ = s·w·χ(x/w) near the edge, a layer of width w ≪ ℓ with edge slope s and fixed profile χ; then R(ξ) ≍ Ω(1/w)·s²w, so R(ξ)/(s²ℓ) ≍ (w/ℓ)log(1/w) → 0 as w ↓ 0), so the conjecture is stated in the H-norm with a band split.
+
+> **Conjecture C.13.H (band-split odd coercivity at the p = 2 entry).** There are T ≥ 12.8 and constants μ_hi > c₂, μ_lo > 0 such that for every odd real ξ ∈ H¹₀(−L₀, L₀)
+> **R(ξ) ≥ μ_hi‖ξ^{>T}‖²_H + μ_lo‖ξ^{<T}‖²_H.**
+
+**Proposition C.13.H′ (C.13.H ⇒ (K2) with polynomial range; PROVED given C.13.H).** Put λ = 1 + ℓ/a and μ′ = μ − 24.88ℓ (N.13.3 Step 1 is a pointwise symbol comparison, hence band-wise, with T ↦ λT). If μ′_hi > c₂ and μ′_lo > 0, then (K2) holds for all
+> **ℓ ≤ ℓ_H := π μ′_lo (μ′_hi − c₂) / (2λT c₂ μ′_hi).**
+- *Proof.* S1 gives |2c₂B| ≤ c₂‖ξ‖²_{H(E)}. Split ξ = ξ^{<λT} + ξ^{>λT}, use (a + b)² ≤ (1 + η)a² + (1 + 1/η)b² with η = μ′_hi/c₂ − 1, ‖ξ^{>}‖_{H(E)} ≤ ‖ξ^{>}‖_H, and (Ω5) ‖ξ^{<λT}‖²_{H(E)} ≤ (2ℓλT/π)‖ξ^{<λT}‖²_H. Both brackets are ≥ 0 exactly when ℓ ≤ ℓ_H. ∎
+- Compare Thm N.13.A: with only an unresolved margin m₀ the range is 6.98×10⁻⁴·m₀e^{−21.06/m₀}. The frequency-resolved C.13.H removes the exponential loss (this is the "frequency-resolved version" requested in N.13.5).
+
+**Proposition C.13.H″ (trace-side reduction; PROVED given CC §5 and Thm 6.11, as used in C.13).** R = 𝒮 + 2ε′(1⁺)(‖·‖² − ⟨·, K_{L₀}·⟩), where 𝒮 has symbol (¼ + t²)σ_S(t) and ε′(1⁺) > 0. Odd vectors have ξ̂(0) = 0, so by interlacing against CC Thm 6.11 (one eigenvalue > 1, on the even ξ₀ direction) κ^{odd}_{L₀} := sup spec(K_{L₀}|odd) ≤ 1, and the ε-part is ≥ 0. Hence C.13.H holds with
+> μ_hi = inf_{|t|≥T} σ_S(t),  μ_lo = inf_{|t|<T} σ_S(t),
+as soon as these satisfy μ_hi > c₂ and μ_lo > 0.
+
+**Why the blind frequencies are protected only by uncertainty (PROVED, from (3c)).** For a symmetric edge pair the Fourier density is (¼ + t²)|φ̂|²[Ω(t)(1 + cos ta) − c₂]. At t_j = (2j + 1)π/a the Ω-term vanishes identically, whatever Ω is, and the density is −c₂. So no multiplier estimate can protect t_j pointwise. Only the spreading of φ̂ helps: for φ supported on a strip of length ℓ, |φ̂|² cannot concentrate within o(1/ℓ) of t_j (Landau–Pollak–Slepian: the fraction of energy in a band of width W is ≤ λ₀(c), c = Wℓ/2, λ₀(c) ≈ 2c/π for small c). The first blind frequency t₀ = π/a ≈ 4.53 lies in the low band, where Ω < 0. That is why μ_lo must come from σ_S (trace side) and not from Ω.
+
+**Ω facts used (PROVED; decimals Arb-certified in arp_c/c13b_lemma_certify.out unless noted).** Ω is even and increasing in |t| (N.13.2 (Ω2)). Ω(0) = ψ(¼) − log π = −5.3721834… Ω(t) = c₂ at some |t| ∈ (10.25, 10.30) and Ω(t) = 2c₂ at some |t| ∈ (16.6, 16.8) (certified sign changes). Ω ≥ c₂ for |t| ≥ 12.8 (analytic, N.13.2 (Ω3)). Ω(λt) − Ω(t) ≤ 4.5 log λ (N.13.2 (Ω4)).
+
+**Classical inequalities used or relevant.** Hardy: ∫_0^∞u′² ≥ ¼∫_0^∞u²/x² for u(0) = 0. Dirichlet Poincaré/Wirtinger on an interval of length ℓ: ‖u‖₂ ≤ (ℓ/π)‖u′‖₂. Bernstein/Nikolskii: sup|f|² ≤ (T/π)‖f‖₂² for f with spectrum in |t| < T (this is (Ω5)). Landau–Pollak–Slepian concentration λ₀(c) and its asymptotics (Landau–Widom 1980). Logvinenko–Sereda / Amrein–Berthier (a function and its Fourier transform cannot both concentrate on sets of finite measure).
+
+**What S&M must supply to close the odd entry by this route.** (i) μ_lo = inf_{|t|<T}σ_S(t) > 0 with an explicit value; (ii) μ_hi = inf_{|t|≥T}σ_S(t) > c₂, i.e. a lower bound on ε̂ for |t| ≥ T (the "σ_S ≥ 2c₂ in the high band" remains HEURISTIC until S&M's CELESTIAL_INPUTS_C13.md is pushed; it is not pushed at spectrum-measure 95ea14a). Then ℓ_H is explicit.
+
+| item | label |
+|---|---|
+| Conjecture C.13.H | CONJECTURE |
+| Prop C.13.H′ | PROVED given C.13.H |
+| Prop C.13.H″ | PROVED given CC §5 / Thm 6.11 |
+| blind frequencies need uncertainty, not a multiplier bound | PROVED |
+| slope-only Hardy bound R ≥ μs²ℓ | false (PROVED by scaling) |
+
+*C.13.B fix (S103g, 2026-10-28): Arb certificate attached for Lemma C.13.B (relabelled PROVED (computer-assisted)); (3c) expansion written out; 1.42 window relabelled CERTIFIED (Mori-conditional) per main 992a011; framing added; 2.44 cap NUMERICAL-indicative, full-space only; Conjecture C.13.H stated. Daniel Toupin / Golden Physics Project, with AI assistance from Grok. RH is OPEN.*
+
+- R1 one rule for ℓ ≤ ℓ_H | R2 FE through Ω/σ_S | R3 B used through S1 only (|B|) | R4 odd sector, ξ̂(0) = 0 | R5 DH: no line at a, statement is ζ-structural, truth fake-blind | R6 "no MF-relative margin" PROVED; "closing step must be an exact identity" CONJECTURE. Nothing is labelled stronger than RH; RH is OPEN.
