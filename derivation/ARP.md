@@ -54,7 +54,7 @@ A chain whose only GAP is "Weil positivity" in disguise is a restatement. We say
   - Tate local zeta integral, `euler_factor_bridge`;
   - `RationalIdeleGroup`;
   - `completedRiemannZeta_one_sub`;
-  - `GppWeilSupportLadder.primeSide_eq_truncation` / `primeSide_eq_zero_of_support_lt_log_two`;
+  - `GppWeilLadder.primeSide_eq_truncation` / `primeSide_eq_zero_of_support_lt_log_two`;
   - `GppNoGhost.weilForm`;
   - new since Oct 22: `GppScalarSchurForm` (#412), `GppArchimedeanHankelGram` (#413), `GppSineSquarePacket` (#416), `GppGroundStateDetector` ((GS) ⇒ RH, #418, conditional).
 - **Not citable as unconditional:**
@@ -162,7 +162,7 @@ For χ unramified trivial (with ε_p = 1),
   - This is the positive Hilbert space required by R4. It contains the soft mode by construction.
 
 **G.3b. The fluctuation (definition).**
-- E₁ := μ₁ − e^{u/2} du, with μ₁ = Σ_p (log p) p^{−1/2} δ_{log p}. This is the Chebyshev discrepancy ψ(x) − x, half-density weighted.
+- E₁ := μ₁ − e^{u/2} du, with μ₁ = Σ_p (log p) p^{−1/2} δ_{log p}. This is the θ-discrepancy θ(x) − x, half-density weighted (corrected S103c; D1 from §S). Superseded in G.3b by the ψ-fluctuation E_Λ (G.3d).
 - The k ≥ 2 prime powers are added the same way.
 - Astra's k = 2 split (Oct 27 21:47Z) is an algebraic decomposition, PROVED: the odd bulk is zero; the even bulk is −¼·11ᵀ, rank one, still to be compensated.
 - Then Q_L = MF_L + Fl_L exactly, and MF_L ≥ 0.
@@ -195,7 +195,7 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
 - E is C_ℚ-equivariant and intertwines the global reflection: E(F_𝔸 φ) = E(φ) ∘ inv.
 - The Euler product (⊗′) and the FE (Poisson) therefore meet in **one** operator. This is the only place R2 is met jointly.
 
-**G.4c (PROVED; Connes 1999 Thm; Meyer 2005): the spectral side.**
+**G.4c (PROVED; Connes 1999 Thm 4, §VII; Meyer 2005): the spectral side.**
 - The cokernel of E (in Connes' cutoff Hilbert space; nuclear-Fréchet in Meyer) carries the zeros as spectrum.
 - Weil positivity ⇔ Connes' global trace formula ⇔ RH.
 - The semi-local trace formula with cutoff Λ is
@@ -229,7 +229,7 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
 **Reading.** All six fakes break at the gluing G.4 (and DMV/P_X *only* there). F_θ additionally breaks at the local temperedness filter. G_θ′ passes everywhere. So R5 is consistent with G.4d being the true locus of RH. That is exactly Connes' "uniformity" dead end, now with every fake located. **No new route is claimed.**
 
 ### G.5 What would count as progress (CONJECTURE-level targets, each R1–R5-checked)
-- **(T1) Pole/boundary compensation (WITHDRAWN S103 by G.3d).** The k = 2 rank-one needs no compensation (it cancels against θ's −√x), and the two boundary directions are already spent on the mean field (G.3a). Original statement kept for the record:
+- **(T1) Pole/boundary compensation (WITHDRAWN S103 by G.3d).** The k = 2 rank-one needs no compensation (it is absorbed once the fluctuation is taken against ψ = Σ_k θ(x^{1/k}), G.3d), and the two boundary directions are already spent on the mean field (G.3a). Original statement kept for the record:
   - The even k = 2 rank-one −¼·11ᵀ (Astra) and the k = 1 fluctuation are compensated *exactly* by the two Poisson boundary directions (φ(0), φ̂(0)) that 𝒮(𝔸)₀ removes.
   - Test against R5: DH has no boundary directions and no MF, so the conjecture must fail for DH. Good: it is not fake-blind.
 - **(T2) Tail engagement (CONJECTURE).** Any compensating operator for Fl_L is non-quasi-local: Astra's support bound gives the necessity half (Astra PROVED, Grok replay pending). The sufficiency half is the GAP.
