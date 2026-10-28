@@ -97,14 +97,15 @@ where c_k(z) := ∫_{|u|=1} u^{−k} P(u) dm(u) is the Poisson integral at the p
 *Repaired step.*
 - S_N − E_N is the orthogonal projection P_N onto W_N = span{w_z}, where w_z(n) := z̄^n restricted to [−N, N]. Then Tr(P_N V^k) = Tr(G_N^{−1} M_N^{(k)}), where (G_N)_{zz′} = ⟨ŵ_z, ŵ_{z′}⟩, (M_N^{(k)})_{zz′} = ⟨V^k ŵ_z, ŵ_{z′}⟩, and ŵ = w/‖w‖. This expression is basis-free; no orthogonality is needed.
 - Case |z|, |z′| > 1. The mass of ŵ concentrates at n ≈ +N, and
-  - G_N → G with G_{zz′} = (1−|z|^{−2})^{1/2} (1−|z′|^{−2})^{1/2} / (1 − (z̄ z′)^{−1}).
+  - G_N does **not** converge entrywise when zeros have different arguments: the off-diagonal entries carry phases conj(u_z) u_{z′}, u_z := (z/|z|)^N, which oscillate in N. What holds is convergence **up to diagonal unitary conjugation**: G_N = D_N^* G D_N + o(1), with D_N := diag(u_z) unitary and
+    G_{zz′} = (1−|z|^{−2})^{1/2} (1−|z′|^{−2})^{1/2} / (1 − (z̄ z′)^{−1}).
   - G is a Szegő-kernel Gram matrix. It is nonzero off the diagonal, so (c1), and positive definite for distinct points.
-  - For k ≥ 0, M^{(k)} → diag(z̄^{−k}) G. For k < 0, M^{(k)} → G diag(z′^{k}) (only the truncated top strip matters).
-  - In both cases Tr(G_N^{−1} M_N^{(k)}) → Σ_z c_k(z).
+  - Likewise, up to diagonal unitary conjugation, M_N^{(k)} = D_N^* M^{(k)} D_N + o(1), with M^{(k)} = diag(z̄^{−k}) G for k ≥ 0 and M^{(k)} = G diag(z′^{k}) for k < 0 (only the truncated top strip matters).
+  - Tr(G_N^{−1} M_N^{(k)}) is invariant under the simultaneous conjugation by D_N, and G is invertible, so in both cases Tr(G_N^{−1} M_N^{(k)}) = Tr(G^{−1} M^{(k)}) + o(1) → Σ_z c_k(z).
 - Case |z|, |z′| < 1 is the mirror image (mass at −N).
 - Cross terms between the two sides tend to 0, since their mass sits at opposite ends.
 - On-line |z| = 1: ⟨V^k ŵ_z, ŵ_{z′}⟩ = z̄^{−k} δ_{zz′} (2N+1−|k|)/(2N+1) + O(1/N) (Fejér). The cross terms with off-line z tend to 0.
-- So G_N → G, which is block-diagonal and invertible, and the trace converges.
+- So G_N = D_N^* G D_N + o(1) up to diagonal unitary conjugation (D_N diagonal unitary over all zeros), with G block-diagonal and invertible; the trace is conjugation-invariant, so it converges.
 - Multiple zeros: use w_{z,j}(n) = n^j z̄^n. The limiting Gram matrix is a confluent Szegő kernel, still positive definite, and V^k acts triangularly with diagonal c_k(z). This gives the multiplicity N(·). That case is PROVED in sketch.
 - Finally, sum over k with h's Fourier coefficients (finitely many k) and over χ. ∎
 
@@ -218,7 +219,7 @@ So G.3a in operator form reads Q_L(f) = Tr(|η⟩⟨η| V V^*) + Fl_L(f), and Fl
 
 Labels:
 - (I1)+(I2) for all L ⇒ Q_L ≥ 0 for all L ⇒ RH. PROVED implication; the existence is the GAP.
-- (I1)+(I3) gives δ^♮_Λ(f) = Tr((A_Λ − D_L) V V^*) ≥ 0 **at every Λ = e^L**, which is the "δ_Λ ≥ 0 at every Λ" form. Together with (I2) it gives 0 ≤ δ^♮_Λ(f) ≤ Δ^♮_Λ(f ∗ f^*). It is CONJECTURE (strong), and stronger than RH as stated: under RH, δ^♮_Λ → 0 by Conjecture Q.8.C, but its sign at finite Λ is not determined.
+- (I1)+(I3) gives δ^♮_Λ(f) = Tr((A_Λ − D_L) V V^*) ≥ 0 **at every Λ = e^L**, which is the "δ_Λ ≥ 0 at every Λ" form. Together with (I2) it gives 0 ≤ δ^♮_Λ(f) ≤ Δ^♮_Λ(f ∗ f^*). It is CONJECTURE (strong). (I3)+(I2) ⇒ RH (via (I1)). Whether RH ⇒ (I3) is **unknown**: under RH, δ^♮_Λ → 0 by Conjecture Q.8.C, but its sign at finite Λ is not determined (same direction issue as H1 in §C). No claim that (I3) is strictly stronger than RH is made.
 - **Uniformity (PROVED, trivial).** Q_{L′} restricted to 𝒯_L equals Q_L, so (I1) at L′ implies (I1) at L with the compression of D_{L′}. "Uniform in Λ" therefore means exactly "one rule for all L" (R1).
 - Under RH, some positive D with (I1) exists abstractly (GNS: PROVED-LEAN `gns_from_positive_definite`), but it is not explicit. R6 asks for the explicit rule.
 
@@ -274,7 +275,7 @@ R-line for Q.8.E/F: R1, all L, one rule | R2, E is the only ingredient carrying 
 | Thm Q.8.D quartet structure of the residual | PROVED (exact) |
 | Lemma Q.8.5 MF_L = ‖V(f^*)η‖² | PROVED |
 | Conj Q.8.E (I1)+(I2) explicit identity | GAP (⇒ RH; equivalent to G.4d with an explicit D_L) |
-| Conj Q.8.E strong form (I3), δ^♮_Λ ≥ 0 at every Λ | CONJECTURE (stronger than RH as stated) |
+| Conj Q.8.E strong form (I3), δ^♮_Λ ≥ 0 at every Λ | CONJECTURE ((I3)+(I2) ⇒ RH; RH ⇒ (I3) unknown) |
 | Prop Q.8.F (N1)–(N3) | PROVED, conditional on (I1)+(I2) |
 | F_θ fails (I1) at OS2a-adjoint; DH fails at OS3; G_θ′ passes | PROVED |
 

@@ -5,7 +5,7 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. Seat: Prin
 
 **Labels.** PROVED (literature or elementary, cited) · PROVED-LEAN (GPPVerify name, main 5f54359, checked 2026-10-28) · CONJECTURE · GAP · NUMERICAL (orientation only).
 **Conventions (team-binding).** L is the HALF-width: f ∈ C_c^∞([−L, L]) in log scale u = log|x|, g = f ∗ f̃ on [−2L, 2L], window L sees n < e^{2L}. Lean's `HasSupportIn g L′` in `WeilSupportLadder.lean` is stated for the convolution g, so **L′ = 2L**.
-**Builds on.** ARP.md §G (G.1–G.4, GAP G.4d) and §0.3 (inventory); `ARP_plan.md` §1–§2 (this file supersedes its §2 outline and corrects its §5 table, see P.10). Exact step checks: `arp/p_checks.py` → `arp/p_checks.log` (sympy; no exploratory numerics).
+**Builds on.** ARP.md §G (G.1–G.4, GAP G.4d) and §0.3 (inventory); `ARP_plan.md` §1–§2 (this file supersedes its §2 outline and corrects its §5 table, see P.11). Exact step checks: `arp/p_checks.py` → `arp/p_checks.log` (sympy; no exploratory numerics).
 
 **Fakes and requirements (each step's R-line).** F_θ = Λ(s−θ)Λ(s+θ) (θ real ≠ 0); G_θ′ = Λ(s+iθ′)Λ(s−iθ′) (must pass); DH (Davenport–Heilbronn); H₋ₜ (de Bruijn–Newman deformation); DMV (Beurling); P_X (finite Euler product); Epstein x²+5y² (h = 2); G₅ (Hecke-group, non-arithmetic). R1 uniform in L; R2 Euler product + FE jointly; R3 not via weight signs; R4 soft mode / pole state; R5 locate each fake; **R6 exact identity, no slack** (every step below is an equality unless stated). R6's scope: what is PROVED is "no MF-relative margin" (§S S(c)4). That the closing step *must* be an exact identity is a CONJECTURE (P.7, Golden Eye).
 
@@ -157,7 +157,7 @@ Either way, the non-unitary content sits entirely in the ℚ^*-sum, i.e. in the 
 - **PROVED:** (1) nothing local bounds G.4d (items 1–4 above); (2) §S S(c)4, *no MF-relative margin*: there is no c > 0 with Q_L ≥ c·MF_L for all L.
 - **CONJECTURE (well supported, not proved):** that the closing step for G.4d *must be an exact identity*. S(c)4 does not exclude Q_L ≥ c·N_L for a norm N_L that degenerates on the dilated nodeless bumps (for example one weighting only frequencies near the zeros).
 - So R6 is a working requirement at CONJECTURE level, not a theorem.
-**R-line.** The GAP is R1 by construction. All fakes break before or at P.6, and G_θ′ passes every step (ARP G.4e, refined in P.10). **No new route is claimed.**
+**R-line.** The GAP is R1 by construction. All fakes break before or at P.6, and G_θ′ passes every step (ARP G.4e, refined in P.11). **No new route is claimed.**
 
 ## P.8 Closing open item (b): the pole in the cutoff pair, the deficit form, and Connes–Consani 2021 Thm 1 (S103d)
 
@@ -237,6 +237,8 @@ The old formula, W(k⋆k̃) = Tr(Π_Λ ϑ(k)ϑ(k)^* Π_Λ) + δ_Λ(k) with a ran
 
   **(P8.2)  W(k⋆k^*) = Tr( V(k)^* (S_Λ − Q′_{Λ,0}) V(k) ) − δ_Λ(k),  δ_Λ(k) := Δ_Λ(k⋆k^*) − W(k⋆k^*).**
 
+  *Corrected in P.9.0 (Queen §Q.8 (c2)).* For ℚ, read this as (P9.0), Tr((S_Λ − S_ΛQ′S_Λ)V) − δ^♮_Λ. The two forms agree exactly when Q′_{Λ,0} ≤ S_Λ, which holds for function fields (Connes (23)).
+
 - **Terms.**
   - S_Λ is the window projection (§VIII eq (21)). Q′_{Λ,0} = E Q_{Λ,0} E^{−1} is the projection onto E(B_{Λ,0}) (eq (23)).
   - S_Λ − Q′_{Λ,0} is the projection onto **S_Λ ⊖ E(B_{Λ,0}), the complement of range(E) inside the window.**
@@ -291,12 +293,203 @@ The old formula, W(k⋆k̃) = Tr(Π_Λ ϑ(k)ϑ(k)^* Π_Λ) + δ_Λ(k) with a ran
 - Main already records "sign SETTLED per Golden Eye" (7328e39). Recommend that §S S(c)5 and ARP G.4d drop "under review / pending" **for the sign only.**
 - Still open: G.4d itself (δ_Λ → 0 for ℚ, ⇔ RH); the ℚ residual formula (CONJECTURE); the projector dictionary (GAP, minor).
 
-## P.9 Not used
+## P.9 The projector dictionary, why Λ = 1 is special, and the exact Λ ≥ 1 identity (S103e; analytic only)
+
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OPEN.** No numerics are used in this section.
+
+**Track labels (Lead's split).**
+- **[S&M]** = Spectrum & Measure: the Sonin/prolate side, and the cutoff Λ > 1 at 2L < log 2. This is RH-silent.
+- **[Cel]** = Celestial §C.13: support past p = 2 at L = ½ log 2. This is the main line, with primes (R2).
+- **[Q]** = Queen: M1, the prolate leak (1 − S_Λ)Q′_Λ. It is not duplicated here.
+
+**Notation.** All of this lives in L²(ℝ)_ev ≅ L²(ℝ_+^*, d^*λ), via CC (17) w(ξ)(λ) = λ^{1/2}ξ(λ), unless stated otherwise.
+- ϑ(λ)ξ(v) = λ^{−1/2}ξ(λ^{−1}v) (CC (61)) and ϑ(f) = ∫ f(ρ)ϑ(ρ) d^*ρ.
+- F = F_{e_ℝ} (CC (24)). F² = 1 on L²(ℝ)_ev.
+- P_a = 1_{|x|≤a}, P^c_a := 1 − P_a, and P̂_b = F P_b F^{−1} (Connes VII (15)), with P̂^c_b := 1 − P̂_b.
+- CC's pair is P = P^c_1, P̂ = P̂^c_1 (CC (62)).
+- Local windows: S_Λ := 1_{Λ^{−1} ≤ |x| ≤ Λ} (the local trace of Connes VIII (21)) and Ŝ_Λ := F^{−1}S_ΛF.
+- R_Λ := P̂_ΛP_Λ (Connes VII (16)).
+- L(f) := Tr(ϑ(f) P P̂ P) (CC (51), Prop 2.2(iii)).
+- L_Λ(f) := Tr(ϑ(f) P^c_Λ P̂^c_Λ P^c_Λ).
+
+### P.9.0 Correction to (P8.2) (Queen §Q.8 (c2); ARP G.4d 1999c2a) — PROVED [Q]
+(P8.2) wrote the positive part as Tr(V^*(S_Λ − Q′_{Λ,0})V). That form silently uses Connes VIII (23), Q′_{Λ,0} ≤ S_Λ.
+- (23) is exact for function fields.
+- For ℚ it is **not** exact with the prolate B_Λ, because at ∞ no nonzero f has f and f̂ both vanishing beyond Λ (Connes §VIII, before (31); Queen (c2)).
+
+The corrected form is:
+
+  **(P9.0)  W(k⋆k^*) = Δ^♮_Λ(k⋆k^*) − δ^♮_Λ(k),  where Δ^♮_Λ(h) := Tr((S_Λ − S_ΛQ′_ΛS_Λ)V(h)) ≥ 0 on h = k⋆k^*  (Queen Lemma Q.8.4),**
+
+with δ^♮_Λ := Δ^♮_Λ − W.
+- **(P8.2) = (P9.0) exactly when S_ΛQ′S_Λ = Q′**, i.e. when E(B_{Λ,0}) ⊂ S_Λ. That is Connes (23), so it holds for function fields.
+- For ℚ, Δ_Λ − Δ^♮_Λ = −Tr((Q′ − SQ′S)V(h)). This is controlled by the leak (1 − S_Λ)Q′_Λ only, which is Queen's M1 [Q].
+- By Queen's Prop Q.8.3 (PROVED), the P_Λ and P̂_Λ placements give the same Δ^♮ and δ^♮ on real f. So §P.8a's pole analysis does not change δ^♮.
+- The sign verdict of P.8c (a trace over a complement minus a remainder) is unchanged.
+- From here on, every "(P8.2)" in §P is to be read as (P9.0).
+
+### P.9.1 Question (1): the projector dictionary — PROVED; answer: they do NOT agree, at Λ = 1 or at any Λ [S&M]
+Compare CC's Sonin projection S^{So}_1 (onto S(1,1), CC Def 4.4 (72), with S^{So}_1 = 1 − P₁∨P̂₁ = P∧P̂, CC (81)/(90)) with Connes' S_Λ ⊖ E(B_{Λ,0}) (VIII (21)–(24)). They differ in six exact ways.
+
+**(D1) Opposite Halmos corners.** By the two-projection theorem (CC Lemma 4.2, (64)–(65)), L²(ℝ)_ev = (generic part ⊕_n E_n) ⊕ (four corners). The generic part is the same for (P₁, P̂₁) and (P, P̂), with the same angle operator (CC Prop 4.5 proof, the "Π_n" paragraph: U = 1 − 2P₁, V = 1 − 2P̂₁).
+- Sonin is the corner **ker P₁ ∩ ker P̂₁** (outside both cutoffs).
+- Connes' B_Λ is the corner **ran P_Λ ∩ ran P̂_Λ** (inside both). At ∞ this corner is **{0}** (Connes §VIII before (31)).
+- So locally, Connes' cutoff space is replaced by the prolate span (Connes VIII (31)–(33); Queen Q.8.3 (P)). That span is generic-part, not corner, data.
+
+**(D2) Setting.** S^{So} acts on the local L²(ℝ)_ev, with no ℚ^*-sum. Connes' S_Λ ⊖ E(B_{Λ,0}) acts on L²(C_ℚ) *after* E (VIII (18)).
+- In the ζ-sector, E(φ⊗1_Ẑ)(λ) = λ^{1/2} Σ_{n≠0} φ(nλ). This is w plus the integer sum, which is the only non-isometric step (P.6, Meyer Lemma 5.3).
+- No choice of Λ identifies an operator on one space with one on the other. Any dictionary can only be at the level of trace formulas (P.9.2). *(Grok audit: this sentence is a REMARK. It records that (D1)–(D3) leave no identification. No theorem excluding every possible operator-level identification is proved here.)*
+
+**(D3) At Λ = 1, Connes' object is zero.** S_1 = 1_{|g|=1} is the indicator of a null set in C_ℚ = ℝ_+^* × Ẑ^*, so S_1 = 0 and S_1 ⊖ E(B_{1,0}) = {0}. Then Δ^♮_1 ≡ 0 and Tr(S_1V) = 2f(1) log 1 = 0.
+- By contrast, S(1,1) ≠ {0}: it is the eigenvalue-1 eigenspace of P P̂ P (CC (81)) and is infinite-dimensional (Sonin).
+- So **"agree at Λ = 1" is FALSE (PROVED).** CC's Λ = 1 is not a degenerate instance of Connes' window. It sits in the opposite corner (D1).
+
+**(D4) Even/odd: consistent.** Since −1 ∈ ℚ^*, E only sees the even part at ∞ in the trivial character sector. CC work in L²(ℝ)_ev, using even prolates only (CC footnote 7: the even λ(n)² sum to 2.237…, and to 4 with the odd ones included). So CC's even sector matches the ζ-sector. The odd sector belongs to odd characters and is irrelevant here.
+
+**(D5) Half-density: consistent.** CC's w (17) has the same |λ|^{1/2} as E (18). CC's ϑ (61) is the unitary normalization of Connes' U, as in Connes VIII (19), EU(a) = |a|^{1/2}V(a)E.
+
+**(D6) The pole pair.**
+- Connes removes it by B_{Λ,0} ⊂ 𝒮(𝔸)₀ (f(0) = f̂(0) = 0; P.8a).
+- CC remove it through ĝ(±i/2) = 0, (11) and (54), implemented by Q = −(ρ∂_ρ)² + ¼ (55). Its local shadow is CC (93): the range of 𝒟 = D_u² + D_u satisfies f(0) = f̂(0) = 0, the archimedean trace of 𝒮(𝔸)₀.
+- CC Thm 1 removes one **extra** direction, ĝ(0) = 0 (s = ½, the constant vector ξ₀ of Lemma 6.10). This is not a pole condition and has no counterpart in Connes' B_{Λ,0}.
+
+**What does hold (PROVED).**
+- **(i) Cutoff traces agree at Λ = 1.** CC (63), δ(ρ) = Tr(ϑ(ρ^{−1})P̂₁P₁), is literally Connes' R_1 trace (VII (16)), restricted to the even sector. CC (48), with weight (−log t) on [0, 1], is Connes VII (31) at Λ = 1, where the weight 2log′1 − log|u| = −log|u| on |u| ≤ 1.
+- **(ii) Windows correspond.** u^*S_Λu = Ŝ_Λ, because F = I∘u (CC Lemma 1.3, (25)) and IS_ΛI = S_Λ. So the band window Ŝ_Λ is the local, ultraviolet image of Connes' window (21), and Tr(ϑ(f)Ŝ_Λ) = Tr(ϑ(f^♭)S_Λ) = 2f(1) log Λ (f^♭(ρ) = f(ρ^{−1})). This is the local analog of Connes VIII p. 43, Tr(S_ΛV(f)) = 2f(1) log′Λ.
+  - Proof: ϑ(f) has kernel f(λ/μ) for d^*μ, so its diagonal is f(1), and ∫_{Λ^{−1}}^{Λ} d^*λ = 2 log Λ. Trace class: ϑ(f)χ with smooth compact χ ≡ 1 on the window has a rapidly decreasing kernel.
+- **(iii) The Sonin family is indexed by ab only.** ϑ(λ)S(a, b) = S(λa, b/λ). So S(Λ, Λ) ≅ S(1, Λ²), and every ϑ(f)-trace depends only on c = ab.
+
+**Conclusion (1).** The minor GAP is closed **negatively**. There is no projector-level identification, because of (D1)–(D3). The correct dictionary is at the trace-formula level, (i)–(ii), and P.9.2 makes it exact at every Λ ≥ 1.
+
+### P.9.2 Question (2): why Λ = 1 is special, and the exact Λ ≥ 1 identity — PROVED [S&M]
+**(a) Dilations — the prior is confirmed, with one correction.**
+- Fϑ(λ) = ϑ(λ^{−1})F (direct computation; this is CC's ϑ(ρ) = F^{−1}ϑ(ρ^{−1})F in the proof of Prop 4.5(iv)).
+- Hence ϑ(λ)P_aϑ(λ)^* = P_{λa} and ϑ(λ)P̂_bϑ(λ)^* = P̂_{b/λ}. The pair (P_a, P̂_b) moves along the orbit ab = const, and **c = ab = Λ² is the complete dilation invariant** (PROVED).
+- **Correction to the prior:** F-exchange (F P_a F^{−1} = P̂_b and back) holds iff a = b. Each orbit contains exactly one such pair, so (P_Λ, P̂_Λ) *is* F-self-dual for every Λ.
+- What is special at Λ = 1 is **I-self-duality**, I P I = 1 − P, for the inversion λ ↦ λ^{−1}. I is the non-scaling part of F = I∘u, and u commutes with all ϑ(λ). In general I P^c_a I = P_{1/a}. So the pair (P^c, P̂^c) is I-adapted iff c = 1.
+- The obstruction is the ratio c = Λ², which no dilation changes.
+
+**(b) The exact steps of CC that use Λ = 1.**
+- **I-self-duality, c = 1:**
+  - Prop 2.2(iii), (43): P̂ = u^*(1 − P)u, from (25) and I P I = 1 − P. This turns P P̂ P into −P(½u^*du)P and gives L = ∫ f(δ − τ) = W_∞ + D (Cor 2.3 (51)).
+  - Lemma 4.1, (60): the same identity, (u^g)^*P u^g = 1 − P̂, which gives (63).
+  - Through (85), the proof of Thm 4.7 inherits this.
+- **F-exchange only (a = b), so valid at every Λ:**
+  - Prop 2.2(ii), the symmetry δ(ρ) = δ(ρ^{−1}).
+  - Prop 4.5 (69)–(80): prolates at bandwidth 2πΛ², with P̂_Λξ_n = λ_n η_n.
+  - (77), (82)–(84): the ρ ≥ 1 support argument, with ϑ(ρ^{−1})ξ_n supported in |v| ≤ Λ/ρ.
+  - (81)/(90): the eigenvalue-1 eigenspace of P^c_ΛP̂^c_ΛP^c_Λ is S(Λ, Λ).
+- **The support condition supp g ⊂ [2^{−1/2}, 2^{1/2}]** (Golden Eye: the second, separate restriction):
+  - Prop 5.5 (I ⊂ [−log 2, log 2], length ≤ log 2), K_I (Thm 3.6, §6), Lemma 6.10 (140) and Thm 6.11 (141). These use the support and the ε-kernel, not I-self-duality.
+  - Cor 2 (6): Weil = W_∞, i.e. there are no primes because supp g⋆g^* ⊂ [½, 2].
+- **So the self-duality step uses Λ only and never the support. The support step uses the support only.** These are independent.
+
+**(c) The exact identity (R6).** Fix Λ ≥ 1. Two facts:
+- Dilation by ϑ(Λ) carries the I-adapted pair to (P^c_Λ, P̂^c_{1/Λ}).
+- The actual band projection differs from it by exactly the band window: **P̂^c_Λ = P̂^c_{1/Λ} − Ŝ_Λ** (since 1_{|ξ|>Λ} = 1_{|ξ|>1/Λ} − 1_{Λ^{−1}≤|ξ|≤Λ}).
+
+Since Tr(ϑ(f)ϑ(Λ)Xϑ(Λ)^*) = Tr(ϑ(f)X) (ℝ_+^* is abelian):
+
+  **(P9.1)  L_Λ(f) = L(f) − Tr(ϑ(f) P^c_Λ Ŝ_Λ P^c_Λ).**
+
+Split Ŝ_ΛP^c_Λ = P^c_ΛŜ_ΛP^c_Λ + P_ΛŜ_ΛP^c_Λ, and evaluate Tr(ϑ(f)Ŝ_ΛP^c_Λ) with Connes' symbol calculus, VII (21)–(30). The product of a Fourier multiplier and a multiplication operator has symbol region {|x| > Λ, Λ^{−1} ≤ |ξ| ≤ Λ}, and its log-measure at u = xξ is log min(|u|, Λ²)·1_{|u|>1}. This gives
+
+  **(P9.2)  L_Λ(f) = L(f) + ε_Λ(f) + χ_Λ(f),**
+
+where
+- ε_Λ(f) := −Tr(ϑ(f)Ŝ_ΛP^c_Λ) = −∫_{|u|>1} ĝ(u) log min(|u|, Λ²) du, with g from f by Connes VII (28) in the even-sector normalization of CC (42)/(48);
+- χ_Λ(f) := Tr(ϑ(f)P_ΛŜ_ΛP^c_Λ) = Tr([P^c_Λ, ϑ(f)] P_ΛŜ_Λ).
+- *Grok audit (uniform bound made explicit).*
+  - Here ĝ(u) = G(u) := ∫ f(ρ) ρ^{1/2} e^{2πiu(1−ρ)} d^*ρ. For f ∈ C_c^∞(ℝ_+^*), G is the Fourier transform of a C_c^∞ function of ρ, so it is Schwartz.
+  - Hence |ε_Λ(f)| ≤ ∫_{|u|>1} |G(u)| log|u| du < ∞, uniformly in Λ, and ε_Λ(f) → ε_∞(f) as Λ → ∞ by dominated convergence.
+  - |χ_Λ(f)| ≤ ‖[P^c_Λ, ϑ(f)]‖_1 is uniform as well, since the commutator norm is dilation-invariant (c = ab). So the uniform bound is verified.
+  - A parity factor of 2 (even-sector versus full line) may be absorbed in the normalization of CC (42)/(48). It does not affect boundedness.
+
+Equivalently, using Connes VII (31) for R_Λ and R_1, and Tr(ϑ(f)(R_Λ − R_1)) = Tr(ϑ(f)Ŝ_ΛP_Λ) = 2f(1) log Λ + ε_Λ(f):
+
+  **(P9.3)  L_Λ(f) = W_∞(f) + Tr(ϑ(f)R_Λ) − Tr(ϑ(f)Ŝ_Λ) + χ_Λ(f),  with Tr(ϑ(f)Ŝ_Λ) = 2f(1) log Λ exactly.**
+
+At Λ = 1, Ŝ_1 = 0 and χ_1 = 0, and (P9.3) is CC (85)/(43). Running the proof of CC Thm 4.7 verbatim at bandwidth 2πΛ², with (85) replaced by (P9.3), gives the **Λ-form of CC Thm 4.7**:
+
+  **(P9.4)  Tr(ϑ(f) S^{So}_Λ) = W_∞(f) + ∫ f(ρ^{−1}) ε^{(Λ)}(ρ) d^*ρ − 2f(1) log Λ + χ_Λ(f),**
+
+where
+- ε^{(Λ)}(ρ) = Σ_n λ_n(Λ) (1 − λ_n(Λ)²)^{−1/2} ⟨ξ_n^Λ | ϑ(ρ^{−1})ζ_n^Λ⟩ for ρ ≥ 1, extended by ρ ↦ ρ^{−1} (CC (84) at bandwidth 2πΛ²);
+- S^{So}_Λ is the projection onto S(Λ, Λ).
+
+At Λ = 1 this is CC (83) ((13) in Thm 3).
+
+**Justification of the trace-class steps.**
+- [P^c_Λ, ϑ(f)] is ϑ(Λ)-conjugate to [P, ϑ(f)], which is trace class (CC proof of Prop 2.2(iii)).
+- ϑ(f)R_Λ is trace class (Connes VII Thm 3).
+- ϑ(f)Ŝ_Λ is trace class by (ii) of P.9.1.
+- For f = g⋆g^*, 0 ≤ P^cP̂^c_{Λ²}P^c ≤ P P̂ P, so 0 ≤ L_Λ(f) ≤ L(f) is finite.
+
+Labels:
+- (P9.1)–(P9.3): **PROVED**. These are elementary operator identities plus Connes VII (21)–(31) and CC (43)/(51), valid for every f ∈ C_c^∞(ℝ_+^*) and every Λ ≥ 1. **No support condition is used.**
+- (P9.4): **PROVED**, given (P9.3), by CC's §4 argument at a = b = Λ *(Grok audit: proved by running CC §4 at bandwidth 2πΛ². This was checked by inspection, not replayed line by line; Golden Eye audit pending)*. Every step used is in the "F-exchange only" list of (b).
+
+**(d) Answers to (2).**
+1. **Where 2 log Λ lives.** It is exactly the window trace Tr(ϑ(f)Ŝ_Λ) = f(1)·log(Λ²), the log of the dilation invariant c. Ŝ_Λ is precisely the defect between the actual pair and the dilated I-self-dual pair.
+   - Formally, Ŝ_Λ = ∫_{−log Λ}^{log Λ} (d/dt)P̂_{e^{−t}} dt, the dilation-generator commutator −i[𝔇, P̂] integrated over a log-interval of length log Λ². So the prior's "trace of the commutator with the dilation generator" is right per unit log-scale. This integral form is a REMARK (formal, since [𝔇, P̂] is a boundary distribution); the window form (P9.3) is the exact statement.
+2. **The positive object does not pay 2 log Λ.** In (P9.3) the 2 log Λ inside Tr(ϑR_Λ) cancels exactly against the window. This is the local, archimedean mirror of Connes VIII (16) and the Thm 5 cancellation p. 43 (Queen sign_check.md), now an exact finite-Λ identity.
+   - The true cost of moving from Λ = 1 to Λ is **ε_Λ + χ_Λ**, which is **bounded uniformly in Λ**: |ε_Λ(f)| ≤ ∫_{|u|>1} |ĝ| log|u| du, and |χ_Λ(f)| ≤ ‖[P, ϑ(f)]‖₁, a dilation-invariant bound (PROVED).
+   - So "restores self-duality at the cost of exactly 2 log Λ" is **FALSE as stated**. Dilation cannot restore it, since c is invariant. The band window restores it at a cost of exactly 2f(1) log Λ in the *cutoff* trace, while the *positive* trace changes only by the bounded ε_Λ + χ_Λ.
+   - Monotonicity: **0 ≤ L_Λ ≤ L on f = g⋆g^*** (PROVED). The inequality is the operator ordering P̂^c_{Λ²} ≤ P̂^c_1; (P9.2) is its exact form.
+3. **Link to (1).** Ŝ_Λ is the u-image of Connes' window (P.9.1 (ii)). χ_Λ is the archimedean (pre-E) cross term between the inside and outside of P_Λ across the band window.
+   - It is the local analog of a leak term. Whether it matches Queen's M1 leak (1 − S_Λ)Q′_Λ after E is **not claimed** [Q].
+4. **Λ versus support.** Λ is an archimedean phase-space cutoff. Changing Λ conjugates by ϑ(Λ), which commutes with ϑ(f), so it **never moves the support of f** and **brings in no primes** (PROVED: the trace identity above). The support of g is a separate parameter.
+
+**(e) Consequence for R2 (stated plainly).**
+- **Every identity in P.9.2 is archimedean, local and prime-free.** It is RH-silent and cannot engage R2.
+- Pushing CC from Λ = 1 to Λ > 1 at 2L < log 2 [S&M] changes only the Sonin/prolate bookkeeping (P9.4). A Λ > 1 analog of CC Thm 1 would need a new compact-operator bound on the ε^{(Λ)} ∘ Q functional on the support class (the analog of K_I, Lemma 6.10). That is a **GAP [S&M]**, and RH-silent either way.
+- **Only pushing the support past p = 2, at L = ½ log 2 [Cel], brings in primes, and with them R2 and the ℚ^*-sum (P.6).** The Λ-identity does not transfer to that step. It supplies only the archimedean Λ-bookkeeping for whatever [Cel] builds.
+
+**(f) Queen's Conj Q.8.E (an explicit D_L ≥ 0 with Q_L = Tr(D_L VV^*)).**
+- **Candidate from this section:** the Sonin projection, D^{loc}_Λ := S^{So}_Λ. By (P9.4), W_∞ = Tr(ϑ S^{So}_Λ) − [∫ f ε^{(Λ)} − 2f(1) log Λ + χ_Λ]. The bracket is not zero, so this is not an exact identity of the Q.8.E type.
+- **Obstruction (R5; PROVED as stated):** suppose the rule L ↦ D_L uses only the archimedean data (P_Λ, P̂_Λ, S_Λ, Ŝ_Λ, ϑ), with no arithmetic input.
+  - Then Tr(D_L VV^*) is the same for ζ and for any fake with ζ's gamma factor.
+  - For 2L > log 2 the Q_L of ζ and of such a fake differ by the prime side (PROVED-LEAN `GppWeilLadder.primeSide_eq_truncation`). So (I1) can hold for at most one of them, and the rule cannot be what singles out ζ.
+  - *Grok audit (wording fix).*
+    - The fixed inequality is 2L **>** log 2: at 2L = log 2, compact support inside (−L, L) kills the n = 2 atom.
+    - The witness fake should be read as a **datum**, not an L-function: e.g. P_X with X < 2, whose Weil form on the window is W_∞ alone. DH does not qualify, because its gamma factor has conductor 5.
+    - No Dirichlet series with ζ's gamma factor, functional equation and finitely many poles is a fake: Hamburger's theorem makes it cζ.
+    - The conclusion stands, with "archimedean data" read as excluding the atoms ϑ(n) at prime powers.
+  - So every admissible D_L must contain E, through Q′_Λ. This is the operator form of P.7's "nothing local bounds G.4d" and of Queen's (N3).
+- What P.9 does give Q.8.E is a constraint. In any D_L built from S_Λ, P_Λ, P̂_Λ, the 2 log Λ must be spent exactly against the window (P9.3), and an archimedean cross term of the χ_Λ type must be accounted for. CONJECTURE (structural; consistent with (N1)–(N3)).
+
+**R-line (P.9).**
+- R1: every Λ ≥ 1 and every f; nothing is uniform in L.
+- R2: **not engaged**, since everything is archimedean and prime-free (e). R2 lives on the [Cel] support step only.
+- R3: the positivity is the operator statement 0 ≤ P^cP̂^cP^c, not a weight sign.
+- R4: n/a. The pole pair is removed as in (D6), and the extra ĝ(0) direction is CC's, not OS4.
+- R5: **G_θ′ passes every step**, as do all fakes sharing W_∞, so the section is fake-blind by construction and cannot be a closing step.
+- R6: (P9.0)–(P9.4) are exact identities; the only inequality is the monotonicity 0 ≤ L_Λ ≤ L.
+
+**Status table (P.9).**
+
+| item | label | track |
+|---|---|---|
+| (P9.0) correction S − SQ′S; agrees with (P8.2) iff E(B_{Λ,0}) ⊂ S_Λ (function fields) | PROVED (Queen Q.8.4, (c2)) | [Q] |
+| (D1)–(D3) the projectors do not agree; at Λ = 1 Connes' object is 0 | PROVED | [S&M] |
+| (D4)–(D5) even sector / half-density consistent; (D6) extra ĝ(0) direction in CC | PROVED | [S&M] |
+| P.9.1 (i)–(iii) trace-level dictionary | PROVED | [S&M] |
+| c = ab is the complete dilation invariant; F-exchange holds iff a = b; I-self-duality iff c = 1 | PROVED | [S&M] |
+| CC steps using c = 1: Prop 2.2(iii)/(43), Lemma 4.1/(60); support only in §5–6 and Cor 2 | PROVED (by inspection) | [S&M]/[Cel] |
+| (P9.1)–(P9.3) exact Λ ≥ 1 identity, 2 log Λ = window trace, cancels exactly | PROVED | [S&M] |
+| (P9.4) CC Thm 4.7 at every Λ ≥ 1 | PROVED | [S&M] |
+| ε_Λ, χ_Λ bounded uniformly in Λ; 0 ≤ L_Λ ≤ L | PROVED | [S&M] |
+| Λ > 1 analog of CC Thm 1 (a K_I^{(Λ)} bound) | GAP (RH-silent) | [S&M] |
+| χ_Λ ↔ M1 leak after E | not claimed | [Q] |
+| an arithmetic-free D_L cannot single out ζ (so D_L must contain E) | PROVED (R5, as stated) | [Q] |
+| Λ-extension engages R2 | NO (PROVED: Λ never moves the support) | [Cel] |
+
+## P.10 Not used
 - HiddenZeros (GPPVerify #454, 5f54359): 4–6-point amplitude identities; no celestial amplitude enters §P. **Not cited.**
 - `temperedness_iff_critical_line` / ArithmeticTemperedPrincipalSeries.lean (custom axiom `exp_growth_not_tempered`) and ArithmeticCoPoissonOrientationTemplate.lean (co-Poisson assumed): **not cited**. P.3 replaces them with literature statements.
 - `open_*` placeholders: never cited.
 
-## P.10 Corrected fakes table (replaces ARP_plan §5; proposed refinement of ARP G.4e's F_θ and H₋ₜ rows)
+## P.11 Corrected fakes table (replaces ARP_plan §5; proposed refinement of ARP G.4e's F_θ and H₋ₜ rows)
 
 | fake | P.1 local data | P.2 local Θ_v unitary | P.3 GL(2) unitary / Knapp–Stein PD | GL(1) constituents unitary | P.4 twist | P.5 E / Poisson | P.6 Euler operator | breaks at |
 |---|---|---|---|---|---|---|---|---|
@@ -309,7 +502,7 @@ The old formula, W(k⋆k̃) = Tr(Π_Λ ϑ(k)ϑ(k)^* Π_Λ) + δ_Λ(k) with a ran
 | Epstein | two Euler products | per constituent | sum of two dihedral reps | per constituent | n/a | no single ⊗′ | sum of two | P.5 |
 | G₅ | no Hecke operators | — | no adelic rep | — | n/a | no E | none | P.1 |
 
-## P.11 Label changes relative to ARP_plan.md (2026-10-22)
+## P.12 Label changes relative to ARP_plan.md (2026-10-22)
 1. **§5 F_θ row:** "local Θ_v unitary (tempered): no (non-tempered)" → **"GL(2) local Θ_v unitary: YES (product γ, P.3 b1); Knapp–Stein form PD for 0<θ<½ (b2); tempered: no; GL(1) constituents unitary: NO; breaks at P.4 (polarization)."** The column header "unitary (tempered)" conflated two different notions; it is now split.
 2. **§1 "Which form is Hermitian"** (Knapp–Stein form "not the L² form, E does not intertwine it"): superseded by P.3. The Knapp–Stein form is positive definite on the complementary series. The relevant point is that the explicit formula and E are linear in the GL(1) constituents.
 3. **§3 item 2** ("unitarity holds only for tempered local data; that is the R3 filter"): corrected to "the R3 filter is unitarity of the GL(1) isobaric constituents on C_ℚ; local GL(2) unitarity holds for complementary series."
@@ -321,6 +514,11 @@ The old formula, W(k⋆k̃) = Tr(Π_Λ ϑ(k)ϑ(k)^* Π_Λ) + δ_Λ(k) with a ran
 9. **R6 / exact identity (S103d, Golden Eye):** ARP_plan §3's "as an exact identity (R6)" and §P's R6 wording → PROVED part = nothing local bounds G.4d + §S S(c)4 no MF-relative margin. "The closing step must be an exact identity" → **CONJECTURE**, since margins in norms degenerating on the dilated nodeless bumps are not excluded (P.7 scope caveat).
 10. **§4 boundary-direction identification (S103d):** the window image of (f(0), f̂(0)) is span{e^{±u/2}}, the G.3a/OS4 pole pair → **PROVED** (P.8a). Soft-mode alignment stays **NUMERICAL**, and the route stays SUPERSEDED (item 6).
 11. **Base case wording (P.7):** "positivity there is CC Thm 1" → CC Thm 1 is W_∞ ≥ Sonin trace on the pole-free class only.
+12. **S103e (P.9):**
+   - (P8.2) → (P9.0), the S − SQ′S form (Queen (c2)); the two agree iff Q′ ≤ S_Λ.
+   - The minor GAP "projector dictionary" is closed NEGATIVELY: the projectors do not agree (D1–D3), and the dictionary holds at the trace level.
+   - CC Thm 4.7 holds at every Λ ≥ 1 (P9.4), and the 2 log Λ is the window trace, which cancels exactly (P9.3).
+   - The Λ > 1 CC Thm 1 is a GAP [S&M], RH-silent.
 
 ## References (added to ARP G.7)
 - Knapp, A. W. & Stein, E. M., "Intertwining operators for semisimple groups", Ann. of Math. 93 (1971) 489–578.
