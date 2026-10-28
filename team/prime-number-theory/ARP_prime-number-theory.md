@@ -589,9 +589,143 @@ Write ξ = ξ_e + ξ_o for the parity parts.
 - Yoshida 1992: small-support positivity (via ARP G.2b; theorem number unverified).
 
 ### N.12.7 GAPs and labels after N.12
-- **N.G2 (GAP, new):** analytic L₀ > ½ log 2 for (IF). Reduced to (K2)/(K3) with explicit constants. The S1 + S2 route is capped at 2L₀ < log μ_a (NUMERICAL, μ_a < 2.44).
+- **N.G2 (GAP, new; a question of mechanism, since positivity here is CERTIFIED conditional on Mori, main 992a011; refined in N.13 into N.G2-m₀ and N.G2-bulk):** analytic L₀ > ½ log 2 for (IF). Reduced to (K2)/(K3) with explicit constants. The S1 + S2 route is capped at 2L₀ < log μ_a (NUMERICAL, μ_a < 2.44).
 - N.G1′ PARKED (unchanged).
 - G.4d unchanged.
+
+## N.13 Mechanism of the p = 2 step: conditional perturbative L₀ = ½ log 2 + δ(m₀), and the p = 2 help on cross-edge profiles (S103f)
+
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OPEN. Nothing in N.13 proves or implies RH.**
+Track **[L], Λ = 1** throughout. Notation is §C.13 and §C.13.B (team/celestial-cft 325fae5/1ccf45e) and N.12.0, in ξ-coordinates:
+- a = log 2, c₂ = (log 2)/√2, ℓ = 2L − a, S₋ = [−L, −L + ℓ], S₊ = [L − ℓ, L], E = S₋ ∪ S₊.
+- ‖u‖²_H = (1/2π)∫(¼ + t²)|û|², and ‖·‖_{H(I)} is its local form on an interval I.
+- R(ξ) := W_∞(Qh) = (1/2π)∫(¼ + t²)Ω(t)|ξ̂(t)|² dt, with Ω = 2θ′ = Re ψ(¼ + it/2) − log π.
+- Q_L(Qh) = R(ξ) − 2c₂B(ξ) on 𝒯_L := C_c^∞(−L, L) (N.12.1).
+
+**Framing (lead steer, main 992a011).** Positivity on (½ log 2, ½ log 3] is already CERTIFIED, conditional on Mori's Prop 3.1, Lemma 3.2 and Thm N, via the 1.42 Arb replay. So (IF) and N.G2 are **questions of mechanism**: which analytic step carries positivity across the entry of the p = 2 line. They are not open questions about the truth of positivity.
+
+**Outcome.**
+- **(A) Conditional entry theorem.** If R is coercive at L = ½ log 2 with an explicit margin m₀ > 0 in H, then (IF) holds for 2L ≤ log 2 + ℓ*(m₀), with ℓ*(m₀) = 6.98×10⁻⁴·m₀·e^{−21.07/m₀} (Thm N.13.A, PROVED given m₀).
+  - The odd-sector m₀ is new content: CC Thm 1 gives only ≥ 0 on the odd sector. It stays **GAP N.G2-m₀**.
+  - Qualitatively, m₀ > 0 ⇔ R has no radical in the energy closure (PROVED, N.13.3).
+- **(B) Prime-side p = 2 help on smooth cross-edge profiles.** Decompose ξ = ξ_b + ξ_s, with ξ_b a ramp on the strips and ξ_s in the strip interiors. Then the p = 2 term on ξ_b is the exact rank-two boundary form +2c₂α₋α₊(1/ℓ − ℓ/24) in the edge values α_± (N.13.4, PROVED).
+  - The derivative cross term with ξ_s vanishes identically.
+  - On ξ_b, S1 is sharp to within a factor 1 − ℓ²/8. So in the even sector the p = 2 line *pays back* the full strip energy of the ramp, and in the odd sector it charges it in full.
+  - **Mechanism:** the odd entry must be carried by the archimedean margin m₀; the even entry is carried by the p = 2 line itself.
+
+### N.13.1 Window growth: R_L has no L-dependence except its domain (PROVED) [L]
+- The pole-free Weil form is R restricted to 𝒯_L, where R is a translation-invariant multiplier form independent of L (§C.13.B (3a), (3c)). The split 𝒮_L + 2ε′(1⁺)(‖·‖² − ⟨·, K_L·⟩) is a rewrite of R, so **the change of K_L with L has no effect on R itself**.
+- As L grows, the only change is that the test space gains the strips. The new boundary mass is exactly the strip mass ‖ξ‖²_{H(E)}, handled in N.13.2.
+- Celestial (3b): the K_I/ε part is L²-bounded and gives no H-level margin. Consistent with this, **no margin in N.13 is taken from K_L**. Every margin comes from the Ω multiplier, or from the hypothesis m₀, which is a statement about R.
+
+### N.13.2 Explicit Ω facts (PROVED, elementary; decimals single-step NUMERICAL check `sN/n13_constants.py`) [L]
+- **(Ω1) Value at 0 (closed form).** Ω(0) = ψ(¼) − log π = −γ − π/2 − 3 log 2 − log π = −5.37218.
+- **(Ω2) Monotone in |t|.** Ω is even and increasing in |t|: Re ψ(x + iy) = ψ(x) + Σ_{n≥0} y²/(c_n(c_n² + y²)), with c_n = n + x.
+- **(Ω3) Lower bound.** With x = ¼, y = t/2, keep the n = 0, 1 terms exactly and bound the decreasing tail n ≥ 2 below by ∫_{9/4}^∞. This gives
+  > Ω(t) ≥ Ω(0) + 4t²/(¼ + t²) + 0.8t²/(6.25 + t²) + ½ log(1 + t²/20.25).
+  - Hence **Ω(t) ≥ c₂ for |t| ≥ t₀ = 12.8**. This is the high-band constant, and it is analytic.
+  - The value from §C.13.B, ≈ 10.27, is NUMERICAL.
+  - The cruder form Ω(t) ≥ Ω(0) + log(2|t|) holds for |t| ≥ ½ (from ∫_{1/4}^∞).
+  - On the σ_S form: σ_S = Ω + ε̂. A pointwise σ_S ≥ c₂ needs bounds on ε̂, which is an interface request to Spectrum & Measure (prolate side). N.13 does not need it, because it works with R = the Ω-form directly.
+- **(Ω4) Dilation slope.** h(y) := y∂_y Re ψ(¼ + iy) = Σ 2y²c_n/(c_n² + y²)² satisfies h ≤ min(1 + 0.6495/y, 2ζ(3, ¼)y²), with ζ(3, ¼) ≤ 64.84.
+  - The first bound is unimodal sum ≤ integral + max; the second is c_n ≥ ¼.
+  - Hence h* := sup h ≤ 4.5, and **Ω(λt) − Ω(t) ≤ h* log λ** for λ ≥ 1.
+- **(Ω5) Low-band strip mass.** For a band ξ^{<T} (with ξ̂ restricted to |t| < T),
+  > ‖ξ^{<T}‖²_{H(E)} ≤ (2ℓT/π)·‖ξ^{<T}‖²_H.
+  - This follows from |E| = 2ℓ and Cauchy–Schwarz on sup|u′| and sup|u| over |t| < T.
+  - **This is the explicit ℓ-rate for the bulk**: smooth (low-band) profiles carry strip mass O(ℓ).
+
+### N.13.3 Theorem N.13.A (conditional entry; PROVED given (M₀^σ)) [L]
+**Hypothesis (M₀^σ) (GAP N.G2-m₀).** For the parity σ ∈ {e, o}: R(η) ≥ m₀‖η‖²_H for all η ∈ 𝒯_{½ log 2} of parity σ, with 0 < m₀ ≤ 1.
+- **Status of (M₀^σ).**
+  - Odd: ĝ(0) = 0 automatically, so CC Thm 1 gives exactly m₀ ≥ 0 (lead and §C.13.B.1). An explicit m₀^o > 0 is new content.
+  - Even: positivity on the even pole-free class without ĝ(0) = 0 is not CC Thm 1 (it is CC Thm 6.11/eq. (5) territory, per §C.13.6).
+  - CC's λ_min ≈ 0.00133 (2106.01715 Fig 5) is NUMERICAL, on the full test space, in their basis normalization. It is **not** an m₀ in H.
+- **Qualitative m₀ (PROVED, compactness).** m₀^σ > 0 ⇔ R ≥ 0 on the energy closure V^σ with no nonzero radical vector.
+  - *Proof sketch, complete.* Take ‖ξ_n‖_H = 1 with R(ξ_n) → 0, and ξ_n ⇀ ξ.
+    - On |t| < T, the ξ̂_n converge boundedly and pointwise, since the supports are fixed. So the low band converges strongly.
+    - The Ω₊ part is weakly lower semicontinuous. Hence R(ξ) ≤ 0, so ξ is radical, so ξ = 0.
+    - Then the low band tends to 0, and R(ξ_n) ≥ Ω(T)‖ξ_n^{>T}‖² − o(1) → Ω(T) > 0. Contradiction. ∎
+  - Strict positivity of R on V^σ at λ = √2 is asserted in CC 2106.01715's introduction ("known to be strictly positive"; source not re-verified at the closure level). So m₀^σ > 0 qualitatively is **CONJECTURE-strong / GAP-minor**, and its **value** is GAP.
+- **Step 1 (dilation, PROVED).** For ξ ∈ 𝒯_L, ξ_λ := ξ(λ·) ∈ 𝒯_{½ log 2}, with λ = 2L/a = 1 + ℓ/a, and the parity is preserved. Changing variables and using (Ω1), (Ω4) and A_λ := ¼λ^{−2} + s² ≤ ¼ + s²:
+  > R(ξ) ≥ λ^{−1}R(ξ_λ) − κ(λ)‖ξ‖²_H,  κ(λ) = h* log λ + (1 − λ^{−2})|Ω(0)|.
+  - Also ‖ξ_λ‖²_H ≥ λ^{−1}‖ξ‖²_H. So R ≥ m‖ξ‖²_H on 𝒯^σ_L, with m = m₀λ^{−2} − κ(λ) ≥ m₀ − 24.88ℓ.
+  - So **m ≥ m₀/2 for ℓ ≤ m₀/50**. This is the window-growth continuity, with explicit rate.
+- **Step 2 (band split, PROVED).** Let m′ = m₀/2, θ = 2|Ω₀|/(2|Ω₀| + m′), and T = ½exp(|Ω₀| + 2c₂ + 4c₂|Ω₀|/m′). Write R = θR + (1 − θ)R.
+  - Apply Step 1 to θR, and (Ω2)/(Ω3) by band to (1 − θ)R.
+  - Apply S1 with (a + b)² ≤ 2a² + 2b² to |2c₂B| ≤ c₂‖ξ‖²_{H(E)}, and (Ω5) to the low band.
+  - Then Q_L(Qh) ≥ [θm′ + (1 − θ)Ω(T) − 2c₂]‖ξ^{>T}‖²_H + [θm′/2 − 4c₂ℓT/π]‖ξ^{<T}‖²_H.
+  - The first bracket is ≥ 0 by the choice of T. The second is ≥ 0 iff ℓ ≤ πθm′/(8c₂T), and θ ≥ ½.
+- **Result (PROVED given (M₀^σ)).** (IF) holds on parity σ for
+  > **2L ≤ log 2 + ℓ*(m₀),  ℓ*(m₀) = (π/(16c₂e^{6.3524}))·m₀·e^{−21.0645/m₀} = 6.98×10⁻⁴·m₀·e^{−21.06/m₀},**
+  - i.e. **δ(m₀) = ℓ*(m₀)/2**, and L₀ = ½ log 2 + δ(min(m₀^e, m₀^o)).
+  - The constants are exact closed forms: 21.0645 = 8c₂|Ω(0)|, and 6.3524 = |Ω(0)| + 2c₂.
+- **Remarks.**
+  - The e^{−c/m₀} rate is the cost of the crude low-band bound Ω ≥ Ω(0) in Step 2. It is not intrinsic.
+  - Celestial's Lemma C.13.B (strip interiors, 2L ≤ log 2 + 0.119, NUMERICAL until certified) shows that on strip-localized vectors no m₀ is needed at all.
+  - The exponential loss sits entirely in the cross-edge (bulk) part, which N.13.4 isolates.
+  - This theorem is **bound-first**, and uses the p = 2 term only through |B|. It does not identify the mechanism. N.13.4 does.
+- R1 a fixed range, RH-silent | R2 FE through Ω only | R3 |B| only, no weight signs | R4 odd/even treated separately | R5 fake-blind in truth. DH has no line at a, so the theorem is not about it.
+
+### N.13.4 Deliverable for Celestial: the p = 2 help on smooth cross-edge profiles (PROVED, elementary) [L]
+**Decomposition.** For ξ ∈ 𝒯_L (or its H¹_0 closure), let α₋ := ξ(−L + ℓ) and α₊ := ξ(L − ℓ), the values at the inner strip edges.
+- ξ_b := ξ on [−L + ℓ, L − ℓ]; ξ_b(x) := α₋(x + L)/ℓ on S₋; ξ_b(x) := α₊(L − x)/ℓ on S₊. These are ramps, continuous, with ξ_b(±L) = 0.
+- ξ_s := ξ − ξ_b = φ₋ + τ_aφ₊, with φ_± ∈ H¹_0(int S₋) (Dirichlet at both ends of each strip).
+- **Lemma C.13.B applies to ξ_s.** It is stated for C_c^∞(int S); it extends to H¹_0 by density in the energy norm.
+- Parity: for even ξ, α₊ = α₋ = α; for odd ξ, α₊ = −α₋ = −α.
+
+**Exact p = 2 identity.** With B(u, v) the polarization of B:
+> **2c₂B(ξ) = 2c₂B(ξ_s) − 2c₂α₋α₊(1/ℓ − ℓ/24) + (c₂/2)X,**
+> X := ∫_{S₋}[ξ_b(x)ξ_s(x + a) + ξ_s(x)ξ_b(x + a)] dx,  |X| ≤ (ℓ^{3/2}/(π√3))(|α₋|‖φ₊′‖ + |α₊|‖φ₋′‖).
+- *Proof.*
+  - On S₋, ξ_b(x) = α₋y/ℓ and ξ_b(x + a) = α₊(ℓ − y)/ℓ, with y = x + L. So B(ξ_b) = ∫_0^ℓ[−α₋α₊/ℓ² + ¼α₋α₊y(ℓ − y)/ℓ²] dy = α₋α₊(ℓ/24 − 1/ℓ).
+  - In 2B(ξ_b, ξ_s), the derivative terms are (α₋/ℓ)∫_{S₋}ξ_s′(x + a)dx − (α₊/ℓ)∫_{S₋}ξ_s′(x)dx = 0, because ξ_s vanishes at all strip endpoints.
+  - The remaining ¼-term is ¼X, bounded with ‖ξ_b‖_{L²(S)} = |α|√(ℓ/3) and the Dirichlet Poincaré inequality ‖φ‖ ≤ (ℓ/π)‖φ′‖. ∎
+
+**Sharpness on the ramp (PROVED).** ‖ξ_b‖²_{H(S₋)} = α₋²(1/ℓ + ℓ/12), and the same holds on S₊ with α₊. Hence on the ramp
+> −σB(ξ_b) / (½‖ξ_b‖²_{H(E)}) = (1 − ℓ²/24)/(1 + ℓ²/12) ≥ 1 − ℓ²/8,  σ = +1 (even), −1 (odd).
+- **The bulk edge trace of a smooth profile is an almost-extremal vector of S1.**
+  - Even sector: the p = 2 line returns c₂(1 − ℓ²/8)·‖ξ_b‖²_{H(E)} = 2c₂α²(1/ℓ − ℓ/24) as **help**.
+  - Odd sector: the same amount is **cost**. This is N.12.3's 2c₂s²ℓ, with α = sℓ + O(ℓ²).
+  - There is no smaller cost to find in the odd sector. The 2c₂α²/ℓ is exact, so it must be paid by R.
+
+**Interface form for the {∞, 2} D_L test on (K2)/(K3).**
+> Q_L(Qh) = [R(ξ_s) − 2c₂B(ξ_s)] + [R(ξ_b) + 2σc₂α²(1/ℓ − ℓ/24)] + [2R(ξ_b, ξ_s) − (c₂/2)X].
+- **First bracket:** ≥ β_ℓ(‖φ₋‖²_H + ‖φ₊‖²_H), with β_ℓ > 0 for ℓ ≤ 0.119 (Lemma C.13.B, NUMERICAL until certified).
+- **Second bracket:** the bulk, with the q = 2^{±1} line acting as a **rank-two boundary form in (α₋, α₊)**, namely −2c₂(1/ℓ − ℓ/24)·α₋α₊ subtracted.
+  - In D_L language, the 2^{±1} summands of E restricted to the edge traces are the matrix −c₂(1/ℓ − ℓ/24)·[[0, 1], [1, 0]] in (α₋, α₊).
+  - Its eigenvectors are the even (help) and odd (cost) edge pairs.
+- **Third bracket:** (c₂/2)|X| ≤ c₂[ε'α²/ℓ + ℓ⁴‖φ′‖²/(12π²ε')] for any ε' > 0 (AM–GM).
+  - This is absorbed by a fraction ε' of the second bracket's α²/ℓ and by the first bracket's β_ℓ, as soon as ℓ⁴/(12π²ε') ≪ β_ℓ.
+  - What remains is **2R(ξ_b, ξ_s)**: the nonlocal archimedean coupling between the bulk ramp and the strip interior. This is the irreducible part of **N.G2-bulk (GAP)**, now isolated as one bilinear term.
+- **Reduced conditions.**
+  - **(K3)-bulk:** R(ξ_b) + 2R(ξ_b, ξ_s) ≥ −(2 − ε')c₂α²(1/ℓ − ℓ/24) − (β_ℓ-absorbable terms). The budget is **positive**, supplied by the p = 2 line.
+  - **(K2)-bulk:** R(ξ_b) + 2R(ξ_b, ξ_s) ≥ (2 + ε')c₂α²(1/ℓ − ℓ/24) − (…). The budget is **negative**, so it must come from R, i.e. from m₀^o (Thm N.13.A Step 1 gives m ≥ m₀/2 against ‖ξ_b‖²_H ≥ ‖ξ_b‖²_{H(E)} ≈ 2α²/ℓ).
+  - Conditional (K2)-bulk (PROVED given (M₀^o)): if R ≥ m‖·‖²_H with m ≥ (2 + ε')c₂ on the span, the odd bulk closes. Since m₀ ≪ c₂ is expected, this is **not** how the odd entry closes for small m₀. The Thm N.13.A route (band split, exponential δ) is the one that works.
+- **Mechanism statement** (PROVED as a reformulation; it answers "which step carries positivity"):
+  - **Even entry:** carried by the p = 2 line, through the sign of B on the ramp. Archimedean data only need to control R(ξ_b) + 2R(ξ_b, ξ_s) from below by a *negative* budget.
+  - **Odd entry:** carried by the archimedean margin, through R's coercivity at ½ log 2 and its dilation continuity (N.13.3 Step 1). The p = 2 line is a pure cost there, at exactly 2c₂α²/ℓ.
+  - This matches §C.13.B.1's side remark: at ℓ = 0 the odd (K2) is CC Thm 1, so the odd entry is the CC-margin question.
+  - It also matches CC 2106.01715 Fig 7: p = 2 restores the even matrix (NUMERICAL, full space).
+- R1 one rule per ℓ | R2 FE via Ω in R | R3 the sign of B is used (σ-dependent), not |weights| | R4 even nodeless is helped; the odd pole partner is charged | R5 DH: no line at a.
+
+### N.13.5 Interface requests (no duplication)
+- **Spectrum & Measure (archimedean/prolate):** an explicit m₀^o > 0 with R(η) ≥ m₀‖η‖²_H on odd η ∈ 𝒯_{½ log 2} (strict CC Thm 1 in H), and the even analogue. Either gives δ by Thm N.13.A. A frequency-resolved version (a margin on |t| < T only) would remove the e^{−21/m₀} loss.
+- **Celestial (C.14):** a bound on the single coupling term 2R(ξ_b, ξ_s) in terms of α²/ℓ and β_ℓ‖φ‖²_H. With it, (K3)-bulk closes from the p = 2 budget alone (expected; CONJECTURE).
+
+### N.13.6 Labels after N.13
+| item | label |
+|---|---|
+| R_L = R restricted to 𝒯_L; K_L dependence is internal | PROVED |
+| (Ω1)–(Ω5); t₀ = 12.8 for Ω ≥ c₂ | PROVED (decimals NUMERICAL single-step) |
+| Thm N.13.A, δ(m₀) = ½·6.98×10⁻⁴·m₀e^{−21.06/m₀} | PROVED given (M₀^σ) |
+| m₀ > 0 ⇔ no radical (compactness) | PROVED; strictness on the closure GAP-minor |
+| value of m₀^σ | **GAP N.G2-m₀** |
+| N.13.4 decomposition, exact boundary form, ramp sharpness 1 − ℓ²/8 | PROVED |
+| Lemma C.13.B (cited) | NUMERICAL until certified |
+| coupling 2R(ξ_b, ξ_s) | **GAP N.G2-bulk** (irreducible term) |
+| (K3)-bulk closes from the p = 2 budget | CONJECTURE |
+| positivity on the range itself | CERTIFIED (conditional on Mori Prop 3.1, Lemma 3.2, Thm N; 1.42 Arb replay; main 992a011) |
 
 ## References (verified this session unless marked)
 - Diamond, H. G., Montgomery, H. L., Vorhauer, U. M. A., "Beurling primes with large oscillation", Math. Ann. 334 (2006) 1–36,
