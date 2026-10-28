@@ -834,7 +834,7 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
   - Celestial §C.14 (merged a4153a8, audited c7c94ee);
   - Celestial's indicative C.14.A evaluation at team/celestial-cft ff3a9dc (**not yet on main**; cited as hers, NUMERICAL/indicative);
   - Prime §N.13 (611e39a).
-- **Prime §N.14 is merged** (cf4ee37/656de12, merge 77730c4, audit b104678). It was not on main when the first version of this section (641b63c) was written. P.15.1 now cross-checks N.14.3, answering its interface request N.14.4 "Principal: cross-check the per-line ramp constants and the (L4) chain". S&M CERT_p2_constants (merged 9d72bbb) is used in P.15.3.
+- **Prime §N.14 is merged** (source for P.15.1 and P.15.5: team/prime-number-theory cf4ee37, at Prime's direct request; errata 656de12; merge 77730c4, audit b104678). It was not on main when the first version of this section (641b63c) was written. P.15.1 now cross-checks N.14.3, answering its interface request N.14.4 "Principal: cross-check the per-line ramp constants and the (L4) chain". S&M CERT_p2_constants (merged 9d72bbb) is used in P.15.3.
 - **Notation** as in P.14: ‖u‖²_H = ∫(u′² + ¼u²), B_p(ξ) := ⟨ξ, τ_{log p}ξ⟩_H, c_p := Λ(p)p^{−1/2}, so c₂ = log 2/√2 and **c₃ = log 3/√3**. a₂ = log 2, a₃ = log 3, ℓ_p := 2L − log p.
 - **Method.** The algebraic identities in P.15.1 were also checked symbolically and exactly (sympy, piecewise integration with symbolic L; `B2 − hand = 0`, `B3 − hand = 0`). This is a check of the algebra, not exploratory numerics. Decimal values below are one-line evaluations of closed forms.
 
@@ -1017,6 +1017,26 @@ The p = 2 term of Q_L is −c₂(g(a) + g(−a)), with a = log 2.
   - **DMV / P_X (X ≥ 3):** coincide with ζ on this window. Fake-blind here.
   - **G_θ′:** passes. Q_G is a sum of two ζ-forms (G.4e), and every identity above is linear in the form.
 - **R6:** Lemma P.15.A, Thm P.15.B, the trace identities and the sharp cost c₂ are exact. The closures (N.G2-m₀, N.G2-bulk, even (P)) stay GAPs.
+
+### P.15.5 PASS/FIX verdicts on Prime §N.14 (cf4ee37), as requested by Prime
+
+Each item was checked analytically against Thm P.15.B and P.14. Numbers are closed-form evaluations, not exploration.
+
+| # | N.14 claim (cf4ee37) | Verdict | Label |
+|---|---|---|---|
+| 1 | 3-edge constant c₃(1/ℓ₃ − ℓ₃/24), with ℓ₃ = 2L − log 3 | **PASS**. It equals B₃(ξ_b) = σv₁²(ℓ₃/24 − 1/ℓ₃) in Thm P.15.B; the contribution to Q_L is +2σc₃v₁²(1/ℓ₃ − ℓ₃/24) | PROVED |
+| 2 | 2-line c₂(1/ℓ₂ − ℓ₂/24), with ℓ₂ = 2L − log 2 ∈ (log 1.5, log 2] | **PASS, with a cosmetic FIX**. The formula is the single-ramp reduction of Thm P.15.B. The endpoint values are c₂(1/ℓ − ℓ/24) = **1.20053** at ℓ₂ = log 1.5 = 0.40547 and **0.69295** at ℓ₂ = log 2. N.14.3 prints 1.2003 and 0.6929; they should read 1.2005 and 0.6930 (4 d.p.). "Comparison only" is right: at these ℓ₂ the 2-ramp is not an edge object | PROVED |
+| 3a | B₂(ξ_s) = 0 for ξ_s ∈ H¹₀(3-strips), 2L < log 4 | **PASS**. τ_{log 2} carries each 3-strip into the bulk (I₁ ↦ −I₃), never onto a 3-strip | PROVED |
+| 3b | the 2-line couples the 3-ramps only to the bulk | **PASS** as an identity (the interface form is exact) | PROVED |
+| 3c | "at order 1/ℓ₃ the {2, 3} edge form is the 3-line block alone" | **FIX (wording)**. The derivative term (2β₋/ℓ₃)[ξ(L + a − b) − ξ(a − L)] = σ(2v₁/ℓ₃)(v₂ − v₃) is O(\|β\|‖ξ′‖_∞). Relative to the H-energy it is the same order 1/ℓ₃ whenever ξ has an ℓ₃-scale kink on the central piece. The joint block is then σ(1/ℓ₃)[[2c₃, 2c₂], [2c₂, 0]], with eigenvalues per unit energy σ(+0.9009, −0.2666). Suggested wording: "at order 1/ℓ₃ in ‖ξ′‖_∞ (bounded bulk slope)". Note too that ‖ξ′‖_∞ is not finite on all of H¹ | PROVED |
+| 4a | only P survives (citing P.14) | **PASS** (P.14 Prop on uniqueness of P and no common J_p) | PROVED |
+| 4b | the {2, 3} odd-entry prediction stays CONJECTURE | **PASS**. Add: the odd payer must cover the joint per-energy charge 0.9009 (not c₃ = 0.6343). It sits at frequency ~π/ℓ₃, i.e. high band | CONJECTURE (REMARK on the size) |
+| 5a | −log 2·Σ_{m≠0} r^{\|m\|}e^{imθ} = −log 2·(P_r(θ) − 1), r = 2^{−1/2} | **PASS**. Σ_{m∈ℤ} r^{\|m\|}e^{imθ} = (1 − r²)/(1 − 2r cos θ + r²), the unnormalized Poisson kernel. The coefficients log 2·r^{\|m\|} = Λ(2^m)2^{−\|m\|/2} are the m-modes of (P14.1) | PROVED |
+| 5b | KMS inverse tridiagonal, symbol ∝ \|1 − re^{iθ}\|² | **PASS**. KMS_n^{−1} = (1 − r²)^{−1}·tridiag(−r; 1, 1 + r², …, 1 + r², 1), with interior symbol 1 − 2r cos θ + r² = \|1 − re^{iθ}\|² (classical) | PROVED |
+| 5c | 2×2 section − I = rσ_x; −log 2·r = −c₂; det KMS₂ = 1 − r² = 1 − 1/p | **PASS** (p = 2: 1 − r² = ½). REMARK: with r_p = p^{−1/2} this is the local factor ζ_p(1)^{−1}. That is an identity only, and no Tate reflection follows (P.14.4). The "edge coefficient" match is at the multiplier level; the ramp factor (1/ℓ − ℓ/24) and the sign of the Q_L contribution come from the ramp form (P.14.3), not from the multiplier | PROVED |
+| 5d | at log 4 the three-site chain is the 3×3 KMS section, with c₄ = log 2·r² | **PASS**. The corner entry r² gives log 2·r² = (log 2)/2 = c₄ = Λ(4)/√4, the m = 2 mode. The edge ℓ₄ = 2L − log 4 agrees with P.15.1 (L4) | PROVED |
+
+**Summary.** 9 PASS. 2 FIX, both wording only: the rounding in item 2, and the norm qualifier in 3c. Neither changes a theorem of N.14. The interface form, S1, (3c), (S), (L4), (ζ) and the identities in item 5 are confirmed. R1–R6 as in P.15.4: every check here uses only the {2, 3} line weights and the strip geometry. F_θ, DH, H₋ₜ and DMV fail the identities that use log 2/log 3 ∉ ℚ and Λ(4) = log 2, and G_θ′ passes. RH OPEN.
 
 ## References (added to ARP G.7)
 - Knapp, A. W. & Stein, E. M., "Intertwining operators for semisimple groups", Ann. of Math. 93 (1971) 489–578.
