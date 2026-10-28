@@ -1,0 +1,4 @@
+sigma_S>=0 only: min(LHS-c2) = -0.48112 at t = 40.0; fails on [5.41, 40.0] (3460 grid pts)
+sigma_S>=max(0,2theta'-B/(1/4+t^2)), B=46: min(LHS-c2) = -0.34544 at t = 9.97; fails on [5.41, 12.53] (713 grid pts)
+sigma_S>=max(0,2theta'-B/(1/4+t^2)), B=66: min(LHS-c2) = -0.36941 at t = 10.92; fails on [5.41, 13.57] (817 grid pts)
+q-hat = 0 model (sigma_S = 2theta' - 2eps'/(1/4+t^2)): min(LHS-c2) = -132.16 at t = 0.0; fails on [0.0, 12.53] (1254 grid pts)

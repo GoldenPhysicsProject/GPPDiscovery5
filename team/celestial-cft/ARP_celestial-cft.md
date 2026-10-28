@@ -676,7 +676,8 @@ where M_ℓ = max_{|v|≤ℓ}|(Qκ)(a + v)|.
 - *Proof.*
   - Use 2c₂|⟨φ₋, φ₊⟩_H| ≤ c₂Σ‖φ±‖²_H (this is S1).
   - Bound the cross term by |∫(Qκ)(a + v)c| ≤ M_ℓ‖φ₋‖₁‖φ₊‖₁ ≤ M_ℓℓ‖φ₋‖₂‖φ₊‖₂.
-  - For each φ supported in an interval of length ℓ: |φ̂(t)|² ≤ ℓ‖φ‖₂², and Poincaré gives ‖φ‖₂² ≤ (ℓ/π)²‖φ′‖². Split W_∞(Qh_φ) − c₂‖φ‖²_H at |t| = T. The high band is ≥ δ·(high-band H-mass), using monotonicity of Ω. The low band is ≥ (Ω(0) − c₂)·(low-band H-mass), and the low-band H-mass is ≤ ℓ‖φ‖₂²(T/4 + T³/3)/π. ∎
+  - For each φ supported in an interval of length ℓ: |φ̂(t)|² ≤ ℓ‖φ‖₂², and Poincaré gives ‖φ‖₂² ≤ (ℓ/π)²‖φ′‖². Split W_∞(Qh_φ) − c₂‖φ‖²_H at |t| = T. The high band is ≥ δ·(high-band H-mass), using monotonicity of Ω: **Re ψ(x+iy) is increasing in |y|** (x > 0), since Re ψ(x+iy) − ψ(x) = Σ_{n≥0} y²/((n+x)((n+x)²+y²)) and each term y²/((n+x)((n+x)²+y²)) = (1/(n+x))·(1 − (n+x)²/((n+x)²+y²)) is increasing in |y|; take x = ¼, y = t/2. Hence Ω is even and increasing in |t|. This is what makes the band split valid (Ω ≥ Ω(T) on |t| ≥ T, Ω ≥ Ω(0) everywhere). It also turns the Arb sign changes on [10.25, 10.30] and [16.6, 16.8] into *unique* crossings Ω = c₂ and Ω = 2c₂, not mere sign changes. *(Golden Eye audit of f847b98: SOUND, python-flint at 128 bits.)* The low band is ≥ (Ω(0) − c₂)·(low-band H-mass), and the low-band H-mass is ≤ ℓ‖φ‖₂²(T/4 + T³/3)/π. ∎
+- **Ceiling (Golden Eye T-sweep, NUMERICAL).** The root ℓ of the bracket is 0.1177 at T = 13, 0.1192 at T = 14 and 0.1186 at T = 15. So the method tops out at ℓ ≈ 0.119. Going beyond needs a better ingredient (sharper than Cauchy–Schwarz on φ̂, i.e. |φ̂|² ≤ ℓ‖φ‖₂², or a better bound on M_ℓ), not a retuned T.
 - **Scope.** This covers the strip-localized part of both harmful cones, including N.12.2's sharp vectors. They are absorbed by the high-band Ω margin, because short strips force high frequencies.
   - It is **not** N.G2. The bulk-coupled harmful vectors, ξ smooth across the strip edge with ‖P_{s}ξ‖²_{H(S₋)} ≈ s²ℓ (N.12.3), are not strip-localized. For them, R_L is nonlocal over the whole window, and the needed margin 2c₂s²ℓ must come from a quantitative (in ℓ) lower bound on R_L near L = ½ log 2.
   - CC's T6 is a sign at ℓ = 0 with a computer-assisted finite-rank part, and gives no such rate.
@@ -724,6 +725,8 @@ and on edge-smooth odd vectors (slope s at the edge) the right side is 2c₂s²�
 
 > **Conjecture C.13.H (band-split odd coercivity at the p = 2 entry).** There are T ≥ 12.8 and constants μ_hi > c₂, μ_lo > 0 such that for every odd real ξ ∈ H¹₀(−L₀, L₀)
 > **R(ξ) ≥ μ_hi‖ξ^{>T}‖²_H + μ_lo‖ξ^{<T}‖²_H.**
+
+**Status of C.13.H (2026-10-28, 01:25 EDT).** **CERTIFIED for odd ξ at L₀ by S&M (team/spectrum-measure 7906287, f6c7257); audited SOUND by the lead and Golden Eye (main ad76f83).** It is CC-free and Mori-free: no σ_S and no κ^{odd} ≤ 1 hypothesis is used. Constants: T = 12.875, (μ_hi, μ_lo) = (0.6, 0.25), slack 0.049; at T = 16, (0.7, 0.3). Also m₀^{odd}(L₀) ≥ 0.46255 (CERTIFIED, S&M). With these, Prop C.13.H′ gives (K2) for ℓ ≤ 0.0050. S&M's direct certificate gives (K2) on 2L ∈ (log 2, log 2 + 0.028], with Q_L ≥ 0.0126‖ξ‖²_H (CERTIFIED; audited SOUND, main ad76f83). Golden Eye's Galerkin computation shows the margin persists to ℓ ≈ 0.3 (NUMERICAL). Prime §N.14 gives δ_o⁰ = 0.3135 for the actual K_L (NUMERICAL). **The odd entry is closed; the even sector (K3) remains open.** See C.14.4c for the even analogue C.13.H^e.
 
 **Proposition C.13.H′ (C.13.H ⇒ (K2) with polynomial range; PROVED given C.13.H).** Put λ = 1 + ℓ/a and μ′ = μ − 24.88ℓ (N.13.3 Step 1 is a pointwise symbol comparison, hence band-wise, with T ↦ λT). If μ′_hi > c₂ and μ′_lo > 0, then (K2) holds for all
 > **ℓ ≤ ℓ_H := π μ′_lo (μ′_hi − c₂) / (2λT c₂ μ′_hi).**
@@ -780,6 +783,8 @@ Sources: CCM arXiv:2310.18423 (semilocal X_S, S = {∞, 2}; eq. (47) F_μ𝓔_S 
   - The X-term of N.13.4 is absorbed by AM–GM.
 
 ### C.14.2 Test on (K2), odd (PROVED sufficient criterion; the order in ℓ is zero)
+*(Status 01:35 EDT: for the odd sector C.14.A is **no longer needed and is off the critical path**. S&M certified C.13.H and (K2) for 2L ∈ (log 2, log 2 + 0.028], audited SOUND (main ad76f83); see C.13.B.5. C.14.A is kept as an alternative, ℓ-independent route. Per S&M, it is NOT established: a pointwise σ_S, δ_o⁰ and 2ε′(1⁺) all need CC's ε prolate series, and Golden Eye's 0.58 does not bound δ_o⁰ for K_{L₀}.)*
+
 **Theorem C.14.A.** Let 2L ≤ log 3 and κ^{odd}_L := sup spec(K_L restricted to odd vectors). If for some completion w
 > (¼ + t²)(σ_S(t) + p_w(t)) + 2ε′(1⁺)(1 − κ^{odd}_L) ≥ 0 for all t,
 then D_L^{(w)} ≥ 0 on odd vectors, i.e. (K2) holds at L. With Fejér completions this holds for some w if (Grok audit S103g: sufficient only, not "iff"; take n large enough that c₂(sec(π/(n + 2)) − 1) is below the uniform slack. A necessary condition is the averaged one below)
@@ -797,6 +802,12 @@ then D_L^{(w)} ≥ 0 on odd vectors, i.e. (K2) holds at L. With Fejér completio
   - *Model q̂ ≡ 0.* It fails at low t (−83 at t = 0). It is inconsistent with σ_S ≥ 0, so q̂ must nearly cancel 2ε′(1⁺) at low t.
   - **Verdict (indicative): with the lower bounds available, the C.14.A symbol inequality does NOT hold for all t.** The gap is the band 7.4 ≲ |t| ≲ 12–13, where neither the ε-term (26.68/(¼ + t²) ≤ c₂ beyond 7.37) nor 2θ′ (< c₂ below 10.26) suffices alone.
   - It closes iff the true σ_S satisfies **σ_S(t) > c₂ − 26.68/(¼ + t²) on 7.37 ≤ |t| ≤ 13**, i.e. σ_S ≳ 0.22 at t = 10, ≈ 0.27 at t = 11 and ≈ 0.33 at t = 13 *(Grok audit S103g: the earlier "≳ 0.27 at t ≈ 10" mixed up the required value with the B = 66 deficit; the deficits 0.222/0.267, the crossing 7.36, and 2θ′ = c₂ at 10.26 are checked)*. This is the precise S&M input for the frame (ℓ-independent) route.
+  - **Rerun with the actual K_L (01:35 EDT; NUMERICAL, arp_c/c14A_indicative_v2.{py,out}).** Use G.4h's ε-term 14.42/(¼ + t²) = 2ε′(1⁺)·δ_o⁰, with δ_o⁰ = 0.3135 (Prime §N.14, NUMERICAL).
+    - σ_S ≥ 0 only: LHS > c₂ only for |t| < 5.41.
+    - B = 46: fails on |t| ∈ [5.41, 12.53], worst deficit 0.345 at t ≈ 9.97.
+    - B = 66: fails on |t| ∈ [5.41, 13.57], worst deficit 0.369 at t ≈ 10.92.
+    - **New failing window: 5.41 ≲ |t| ≲ 12.5–13.6** (this matches G.4h's σ_S band [5.41, 13.6]). The requirement becomes σ_S(t) > c₂ − 14.42/(¼ + t²): ≈ 0.346 at t = 10, ≈ 0.371 at t = 11, ≈ 0.405 at t = 13.
+    - The smaller true gap widens the window relative to the 0.58 proxy. C.14.A stays off the odd critical path.
   - The band-split route (S&M Thm 2.1 / C.13.H′) avoids this pointwise requirement, at the cost of a small ℓ-range.
 - **Necessary condition for the symbol route (PROVED).** Integrating p_w + σ_per ≥ 0 (σ_per(t) := inf_k σ_S(t + 2πk/a)) against 1 + cos(at) over one period gives (a/2π)∫_{−π/a}^{π/a}σ_per(t)(1 + cos at)dt ≥ c₂ for the pure-multiplier version (no ε-part). With the C.13 heuristic σ_S ≈ log(|t|/2π) (HEURISTIC, C.13 §(IF-F)), σ_S < 0 on the whole central period |t| ≤ π/a ≈ 4.53, so the **pure multiplier frame fails**, and the low band must be paid by the ε-part 2ε′(1⁺)(1 − κ^{odd}_L) ≈ 46(1 − κ^{odd}_L). That is a non-multiplier, K_I / Lemma 6.10 quantity. The frame criterion is therefore an S&M question about σ_S *and* about the strict gap 1 − κ^{odd}_L.
 - **m₀ from the trace side (N.13 is pushed; this answers N.13.5's request at the level available).** At L₀ = ½ log 2, κ^{odd}_{L₀} ≤ 1 (interlacing against CC Thm 6.11; odd ⇒ ξ̂(0) = 0). Hence, PROVED given CC §5 / Thm 6.11:
@@ -825,10 +836,11 @@ Decomposition ξ = ξ_b + ξ_s as in N.13.4: α₋ = ξ(−L + ℓ), α₊ = ξ(
 
 > **Conjecture C.14.K (high-band almost-orthogonality of the ramp split).** There are T ≥ 12.8, γ < Ω(T)/(Ω(T) + |Ω(0)|) and ℓ_K > 0 such that for all ξ ∈ H¹₀(−L, L), ℓ ≤ ℓ_K:
 > |2P_{>T}(ξ_b, ξ_s)| ≤ γ[P_{>T}(ξ_b) + P_{>T}(ξ_s)].
-(Cauchy–Schwarz gives γ = 1; the conjecture asks for an angle bounded away from 0 between ramp-split pieces in the P_{>T} geometry. A numerical test on piecewise-linear profiles is the natural next step: NOT done.)
+(Cauchy–Schwarz gives γ = 1; the conjecture asks for an angle bounded away from 0 between ramp-split pieces in the P_{>T} geometry. **Tested in C.14.4c: C.14.K FAILS (NUMERICAL) for ℓ ≳ 0.02–0.06, in both sectors, at every T tested; it is unresolved at ℓ = 0.01.**)
 
 **Corollary C.14.D (what closes, given what).**
 - **(K2), odd.** Already closed **without any coupling bound** by Prop C.13.H′ given C.13.H (polynomial range ℓ_H), or by Thm N.13.A given m₀^o (exponential range). The coupling is not needed for (K2). The odd p = 2 cost 2c₂α²(1/ℓ − ℓ/24) is paid by the archimedean margin (mechanism as in N.13.4).
+- *(01:35 EDT: C.14.K fails numerically on most of [0.01, 0.119] (C.14.4c). The next bullet is therefore at best a statement for ℓ ≲ 0.01, where m₀^e/50 ≈ 0.0015 already binds. The replacement route is Prop C.13.H^e′ in C.14.4c.)*
 - **(K3), even (PROVED given C.14.K and an even margin m₀^e > 0).** Then for ℓ ≤ min(ℓ_K, m₀^e/50, ℓ_{C.13.B}(γ)), with ε₂ = 0.1c₂/|Ω(0)| and ν_T(ℓ) ≤ εm₀^e/(8Δ_T²), (K3) holds: the strip bracket (Lemma C.13.B for the fraction 1 − γ′ of R, with γ′ = γ(1 + |Ω(0)|/Ω(T)) < 1) and the bulk bracket (1 − γ′)R(ξ_b) + c₂α²(1.8/ℓ − ℓ/12) ≥ 0 are both nonnegative (exact help 2c₂α²(1/ℓ − ℓ/24), minus 0.1c₂α²/ℓ for C.14.B's local term and 0.1c₂α²/ℓ for N.13.4's X-term). The p = 2 line supplies the edge budget; m₀^e pays the dilation loss.
 - **Ramp-dominated even vectors (PROVED given C.14.K and R ≥ 0 on even 𝒯_{L₀}).** If ‖ξ_b‖²_H ≤ Kα²/ℓ, the dilation loss 24.88ℓ‖ξ_b‖²_H ≤ 24.88Kα² is paid by the p = 2 budget c₂α²(1.8/ℓ − ℓ/12) for ℓ ≤ 0.035/K (ℓ ≤ 0.119). Only here does the even entry close "from the p = 2 budget alone".
 
@@ -853,6 +865,104 @@ CCM 2310.18423 shows that E-images of prolates give the Weil form extremely smal
 - **The relevant scale at L₀ = ½ log 2.** The 10⁻⁸¹ is the certificate's minimum over windows up to L = 1.42. The count of negative-band directions is ≈ 2L·6.29/π: ≈ 1.4 at 2L = log 2, and ≈ 5.7 at 2L = 2.84. Prolate eigenvalue gaps decay super-exponentially in that count. So m₀ (equivalently δ_o⁰) at the p = 2 entry is plausibly not astronomically small: CC 2106.01715 Fig 5 gives λ_min ≈ 1.33·10⁻³ at λ = √2 (NUMERICAL, full space, CC normalization; not an H-margin). **HEURISTIC; the value of δ_o⁰ is the computational GAP in G.4h.**
 - Label: survival analysis PROVED (rates as functions of m₀); "m₀ at L₀ not astronomically small" HEURISTIC.
 
+### C.14.4c The C.14.6 test of Conjecture C.14.K, and the even analogue C.13.H^e (S103g, 2026-10-28, 01:40 EDT)
+
+**Method (NUMERICAL).** Scripts: arp_c/c14K_gamma_test.py, c14K_sweep.{py,out} and c14K_refine.{py,out}.
+- *Discretisation.* Use piecewise-linear ξ on a uniform mesh of [−L, L], with M elements and strips of n_s elements, so that ℓ = a·n_s/(M − n_s) exactly.
+  - U = {ξ_b}: arbitrary on the bulk, linear (a ramp) on each strip.
+  - V = {ξ_s}: H¹₀ on each open strip.
+- *The form.* P is computed in position space, exactly, from Ω(t) − Ω(0) = ∫(1 − cos tr)κ(|r|)dr: P(u, v) = Σa_kb_mK(x_k − y_m) for u = Σa_k(x − x_k)₊. P_{<T} is computed by Gauss–Legendre, and P_{>T} = P − P_{<T}.
+  - The position formula was validated against direct frequency quadrature: hat–hat entries agree to 6 digits at k = 0 and to < 1% at k = 5.
+- *The quantity.* γ = sup|2P_{>T}(ξ_b, ξ_s)|/[P_{>T}(ξ_b) + P_{>T}(ξ_s)] is the largest canonical correlation of U and V in the P_{>T} geometry. It comes from the generalized eigenproblem [[0, G_UV], [G_VU, 0]]x = γ·diag(G_UU, G_VV)x, computed by whitening and an SVD.
+  - The computation is done separately on the even and odd sectors (ξ under x ↦ −x).
+- *Refinement.* Doubling M and n_s keeps ℓ fixed, and the U and V spaces are **nested**. So γ_M is nondecreasing under refinement, and every entry below is a **lower bound** for the continuum γ (up to floating point).
+
+**γ table** (finest level: n_s = 32, or n_s = 8 at T = 20; the sequence over n_s = 2, 4, 8, 16, 32 is in the .out files). γ* = Ω(T)/(Ω(T) + |Ω(0)|).
+
+| ℓ | even T=10 (γ*=0.0795) | odd T=10 | even **T=14** (γ*=0.1298) | odd T=14 | even T=20 (γ*=0.1773, n_s=8) | odd T=20 |
+|---|---|---|---|---|---|---|
+| 0.0100 | 0.079↑ | 0.078↑ | 0.084↑ | 0.079↑ | 0.127↑ | 0.087↑ |
+| 0.0201 | **0.087** | **0.084** | 0.123↑ | 0.087↑ | — | — |
+| 0.0301 | **0.097** | **0.087** | **0.187** | 0.095↑ | **0.474** | **0.289** |
+| 0.0603 | **0.154** | **0.094** | **0.449** | **0.137** | **0.791** | **0.640** |
+| 0.0990 | **0.269** | **0.107** | **0.756** | **0.222** | **0.903** | **0.848** |
+| 0.1155 | **0.325** | **0.118** | **0.837** | **0.263** | **0.922** | **0.879** |
+
+Bold means the lower bound already exceeds γ*, so C.14.K fails there. ↑ means the entry is below γ* but still rising under refinement (by about 0.005–0.008 per doubling, i.e. sub-geometric), so it is unresolved.
+
+**Verdict (NUMERICAL): Conjecture C.14.K FAILS.**
+- *(Grok audit S103h(3).)* Nested-refinement logic checked: the U_M, V_M spaces are nested and the sup over U×V of |2P_{>T}(u, v)|/(P_{>T}(u) + P_{>T}(v)) is the canonical correlation, so each γ_M is a lower bound for the continuum γ (modulo floating point; the margins 0.449 and 0.837 against 0.130 are far above round-off). Re-run: c14K_gamma_test at T = 14, even, n_s = 8 gives 0.4401 (ℓ = 0.0603) and 0.8124 (ℓ = 0.1155), matching c14K_refine.out. **Quantifier caveat:** C.14.K says "there is ℓ_K > 0". The table refutes every ℓ_K ≳ 0.03 at T = 14 and 20 (T = 10 lies below the conjecture's T ≥ 12.8). It does not refute C.14.K with a tiny ℓ_K: at ℓ = 0.01 the T = 14 even extrapolation is 0.104 < 0.130. Read "FAILS" as "fails on every useful range (ℓ_K ≥ 0.03)", which is all that matters, since Cor C.14.D is limited to ℓ ≤ m₀^e/50 ≈ 0.0014 anyway. **Promotable:** a single explicit pair (ξ_b, ξ_s) at, e.g., ℓ = 0.1155, T = 14 (ratio 0.837 vs 0.130), with its three P_{>T} values evaluated in Arb (position-space P minus a rigorously integrated P_{<T}), would give a rigorous counterexample at that ℓ.
+- Even sector, T = 14: it fails for ℓ ≥ 0.03, and on the whole target range ℓ ∈ [0.05, 0.1] by a factor of 3.5–6.
+- It fails for ℓ ≥ 0.02 at T = 10 (both sectors), and for ℓ ≥ 0.03 at T = 20.
+- At ℓ = 0.01 it is unresolved: no γ_M has yet exceeded γ*, but the sequence has not converged.
+- Raising T does not help: γ grows faster than γ*.
+
+**Failing profiles (T = 14, n_s = 16; c13He_even_bandsplit.out (iii)).**
+- **Even.** ξ_b is the even ground-state-like bulk bump: maximum ≈ 1 at x = 0, with edge value α ≈ 0.045, 0.106, 0.194 at ℓ = 0.03, 0.06, 0.116.
+  - ξ_s is a small bump centred in each strip, with peak 0.017, 0.026, 0.039 (relative to max ξ_b ≈ 1) at the same three ℓ.
+  - Its sign smooths the two kinks of the ramp, at x = ±(L − ℓ) and ±L.
+  - P_{>T}(ξ_b + ξ_s)/[P_{>T}(ξ_b) + P_{>T}(ξ_s)] = 1 − γ = 0.81, 0.55, 0.17.
+- **Odd.** The same mechanism applies, with ξ_b the odd bulk mode (extremum ≈ ∓0.2 at x ≈ ∓0.17).
+- This is exactly C.14.C(iii): the kink of the ramp and the strip bump live at the same scale ℓ, and a strip bump can cancel the kink's high-frequency content. The near-null direction is **bulk-dominated with an edge correction**; it is not edge-supported.
+
+**Cross-check with Golden Eye's even Galerkin (24 even Dirichlet modes; NUMERICAL upper bounds; discretisation error ~10⁻³; credit Golden Eye).** Our hat Galerkin (arp_c/c13He_window_R.{py,out}, M ≤ 320, also upper bounds) agrees:
+
+| ℓ | min R/‖·‖²_H, even (ours) | Golden Eye | odd (ours) |
+|---|---|---|---|
+| 0 (L₀) | 0.0725 | 0.071 | 0.548 (S&M certified ≥ 0.46255) |
+| 0.028 | 0.0315 | 0.030 | 0.509 |
+| 0.050 | 0.0003 | — | 0.479 |
+| 0.060 | −0.0136 | — | 0.465 |
+| 0.100 | −0.0676 | −0.069 | 0.413 |
+
+- So the archimedean R alone loses even positivity at **ℓ ≈ 0.050** (ours; Golden Eye ≈ 0.06 on a coarser ℓ-grid).
+- Past that, the p = 2 term must pay in the *bulk* too, not only at the edge.
+- Golden Eye's full even Q_L minima are 0.046 (ℓ = 0.028), 0.015 (0.1) and 0.001 (0.2), reaching noise at 0.3. Mechanism: Q_L = Σ_γ(¼ + γ²)|ξ̂(γ)|², and a wider window lets ξ̂ nearly vanish at the low zeros (R6 context).
+
+**Does C.14.K + m₀^e ≈ 0.07 + the p = 2 budget close (K3) on ℓ ∈ [0.05, 0.1]? No (NUMERICAL verdict; the logic is PROVED).** There are three independent reasons.
+1. C.14.K fails there (γ_even ≥ 0.45 against γ* = 0.13 at T = 14).
+2. Even granting C.14.K, Cor C.14.D needs ℓ ≤ m₀^e/50 ≈ 0.0014: the dilation loss 24.88ℓ‖ξ_b‖²_H must be paid by m₀^e‖ξ_b‖²_H.
+3. Any route that keeps R ≥ 0 on the bulk and spends the p = 2 term only on the edge ramp cannot work past ℓ ≈ 0.05. There, R itself has even directions with R < 0 (table above), so the p = 2 term's *signed* bulk contribution is needed.
+   - The ramp-dominated bullet of C.14.D is the only part of the frame argument that survives on [0.05, 0.1].
+
+> **Conjecture C.13.H^e (band-split even coercivity at the p = 2 entry).** There are T ≥ 12.8 and constants μ^e_hi > c₂, μ^e_lo > 0 such that for every even real ξ ∈ H¹₀(−L₀, L₀)
+> **R(ξ) ≥ μ^e_hi‖ξ^{>T}‖²_H + μ^e_lo‖ξ^{<T}‖²_H.**
+
+**Proposition C.13.H^e′ (C.13.H^e ⇒ (K3), polynomial range; PROVED given C.13.H^e).** The proof of Prop C.13.H′ is parity-blind. S1 bounds |2c₂B| by c₂‖ξ‖²_{H(E)} with no use of the sign of B, and the dilation of N.13.3 Step 1 preserves parity. Hence (K3) holds for ℓ ≤ ℓ_H(μ^e) with the same formula.
+
+**Proposition C.13.H^e″ (interface with (P); PROVED given the CC §5 decomposition R = 𝒮 + 2ε′(1⁺)(‖·‖² − ⟨·, K_{L₀}·⟩) and Thm 6.11).** Let ζ₁ be the top even eigenvector of K_{L₀}, with eigenvalue μ₁ = κ^{ev}_{L₀} > 1 (G.4h: μ₁ ≈ 1.0518), and let 1 − δ_e ≥ sup spec(K_{L₀}|even ⊥ ζ₁). Assume
+- **(P)** ½𝒮(ξ) + ε′(1⁺)δ_e‖ξ‖₂² ≥ 2ε′(1⁺)(μ₁ − 1 + δ_e)|⟨ζ₁, ξ⟩|² for even ξ (S&M SECTOR_COERCIVITY_p2 (4.2)), and
+- **(HB½)** σ_S ≥ 2μ_hi on |t| ≥ T, with σ_S ≥ 0 everywhere.
+
+Then C.13.H^e holds with μ^e_hi = μ_hi and μ^e_lo = ε′(1⁺)δ_e/(¼ + T²).
+- *Proof.*
+  - On even ξ, ⟨ξ, Kξ⟩ ≤ μ₁|⟨ζ₁, ξ⟩|² + (1 − δ_e)(‖ξ‖² − |⟨ζ₁, ξ⟩|²). So 2ε′(‖ξ‖² − ⟨ξ, Kξ⟩) ≥ 2ε′δ_e‖ξ‖² − 2ε′(μ₁ − 1 + δ_e)|⟨ζ₁, ξ⟩|².
+  - With (P), R ≥ ½𝒮 + ε′δ_e‖ξ‖₂².
+  - Then ½𝒮 ≥ μ_hi‖ξ^{>T}‖²_H by (HB½), and ‖ξ‖₂² ≥ ‖ξ^{<T}‖₂² ≥ ‖ξ^{<T}‖²_H/(¼ + T²). ∎
+- The ĝ(0)/ξ₀ direction is paid by 𝒮_L inside (P), at cost 2ε′(μ₁ − 1) ≈ 2.38 (G.4h). The even prolate λ₀ = 0.909 being close to 1 is why μ₁ > 1 and why the even minimiser is ≈ 95% low-band.
+
+**Numerics for C.13.H^e (NUMERICAL, Galerkin upper bounds; arp_c/c13He_even_bandsplit.out, c13He_mulo.out).** Let μ^e_hi*(μ_lo) := inf[R − μ_lo‖·^{<T}‖²_H]/‖·^{>T}‖²_H over even ξ.
+- This exceeds c₂ only for **μ_lo < 0.0451 (T = 12.875), 0.0475 (T = 14), 0.0483 (T = 16)**. The odd thresholds are 0.572, 0.562, 0.554.
+- Example even constants: (T, μ_hi, μ_lo) = (14, 0.633, 0.0345).
+- **Obstruction (the even ground state, not the edge).** μ^e_lo ≤ 0.048 ≈ ⅔m₀^e, and Prop C.13.H^e′ loses 24.88ℓ from μ_lo. So the best band-split range is **ℓ_H^e ≈ 7.4×10⁻⁴** (T = 14). The odd Galerkin optimum is 1.1×10⁻², and S&M's certified odd value is 0.0050.
+- C.13.H^e is numerically true but useless on [0.05, 0.1]. This is consistent with R alone failing at ℓ ≈ 0.05.
+
+**Conclusion for (K3) on ℓ ∈ [0.05, 0.1].**
+- Neither C.14.K (false) nor band-split + S1 (range ≲ 10⁻³) reaches this range. The route that can is a **direct certified even certificate of the full Q_L, with the p = 2 term kept signed**, as in S&M's odd direct method.
+- **What certified Galerkin lower bound suffices (PROVED as a reduction; the values to certify are NUMERICAL targets).**
+  - At each ℓ on a grid in [0.05, 0.1], certify λ_min(Q_L|even) ≥ m_cert > 0 in the H-norm. Use a finite even basis V_N (interval arithmetic for the finite matrix), plus a certified complement bound: for ξ ⊥ V_N, Q_L(ξ) ≥ (Ω(t_N) − 2c₂ − (tail of the cross terms))‖ξ‖²_H, with Schur on V_N ⊕ V_N^⊥. *(Grok audit S103h(3): the reduction (finite interval matrix + Schur + ℓ-Lipschitz) is sound as a plan, but the complement bound "Q_L(ξ) ≥ (Ω(t_N) − 2c₂ − tail)‖ξ‖²_H for ξ ⊥ V_N" is not proved here: H-orthogonality to a Dirichlet basis does not make ξ high-frequency for the Ω multiplier, and the tail and C_B are unspecified. That bound is a GAP to be supplied and certified with the matrix; read the item as a REMARK/plan until then.)*
+  - Then pass between grid points with a Lipschitz bound in ℓ (N.13.3 Step 1 dilation, loss ≤ 24.88Δℓ on R, plus the variation of the p = 2 term). Golden Eye's minima (0.046 at ℓ = 0.028, 0.015 at ℓ = 0.1) leave room for **m_cert ≈ 0.005 at ℓ = 0.1** (three times the 10⁻³ discretisation error), with grid spacing Δℓ ≲ m_cert/(24.88 + C_B) (about 2×10⁻⁴, i.e. ~250 grid points on [0.05, 0.1], or fewer with a sharper ℓ-Lipschitz bound).
+  - No m₀^e, C.14.K or (P) is then needed on that range. (P) and m₀^e remain the inputs for the *small-ℓ* even entry via C.13.H^e″/C.13.H^e′.
+- At ℓ = 0.2–0.3 the even margin (0.001 → noise) is too thin for a certificate at this resolution: CONJECTURE / GAP.
+
+**S&M interface: precise input list for Cor C.14.D and the even entry.**
+1. **m₀^e(L₀)** := inf_{even ξ ∈ H¹₀(−L₀,L₀)} R(ξ)/‖ξ‖²_H, as a *certified lower bound*. The Galerkin targets are 0.0725 (ours) and 0.071 (Golden Eye). It enters Cor C.14.D only through ℓ ≤ m₀^e/50 ≈ 0.0014, and C.14.K, which Cor C.14.D also needs, is false for ℓ ≳ 0.02. **So m₀^e alone closes no part of [0.05, 0.1].**
+2. **Condition (P)** at L₀ in the form of C.13.H^e″, with explicit ε′(1⁺) (CC normalisation, ‖·‖ = L²(−L₀, L₀)), μ₁ = κ^{ev}_{L₀}, ζ₁, and δ_e (the gap of K_{L₀} on even ⊥ ζ₁). It is also needed: (HB½), σ_S ≥ 2μ_hi > 2c₂ on |t| ≥ T. Output: C.13.H^e with μ^e_lo = ε′δ_e/(¼ + T²), hence (K3) for ℓ ≤ ℓ_H^e ≲ 7×10⁻⁴.
+3. Alternatively, **certify C.13.H^e directly** (as S&M did for odd C.13.H) with μ^e_lo ≤ 0.048 and μ^e_hi > c₂, e.g. targets (14, 0.6, 0.03). This is CC-free if done as in 7906287/f6c7257.
+4. **For ℓ ∈ [0.05, 0.1] (the target):** a certified even Galerkin lower bound λ_min(Q_L|even) ≥ ~0.005 (H-norm) on an ℓ-grid with a certified ℓ-Lipschitz step, with the p = 2 term signed. This is the decisive input; (P) and m₀^e are not.
+
+R-lines for C.14.4c. **R1** γ-table and minima per ℓ; one rule per ℓ-range. **R2** FE through Ω only (archimedean P, R); σ_S, K_L through (P). **R3** the p = 2 term is signed in the target certificate; it is used through S1 in C.13.H^e′. **R4** the even ξ₀/ĝ(0) direction is paid by 𝒮_L in (P). **R5** archimedean computations are fake-blind; the decisive even certificate is ζ-specific through the p = 2 line. **R6** "no MF-relative margin" PROVED; "closing step must be an exact identity" CONJECTURE.
+
 ### C.14.5 Fakes
 - **DH (Davenport–Heilbronn):** no Euler factor L_2 and no X_S anchoring, so no V(2) term and no rank-two edge matrix. The {∞, 2} frame and C.14.1's identity do not exist for it: **structurally ζ-specific (PROVED by inspection)**. Its truth on this range is fake-blind: DH is positive here (onset 2L ≈ 1.7104 per §C.13 R5).
 - C.14.B and C.14.C(i)–(iii) are purely archimedean, so they hold verbatim for any γ-factor with the same Ω, and they are fake-blind.
@@ -861,12 +971,12 @@ CCM 2310.18423 shows that E-images of prolates give the Weil form extremely smal
 - **From Prime:**
   1. C.14.B as the coupling bound: local part O(ℓ⁴) plus ε₂α²/ℓ; low band (2Δ_T²ν_T(ℓ)/ε)‖ξ_b‖²_H, O(T³ℓ³); high band Cauchy–Schwarz only.
   2. C.14.C(i): the coupling cannot be bounded by α alone; carry a ‖ξ_b‖²_H-term, paid by m₀.
-  3. Please confirm or test C.14.K numerically (piecewise-linear ξ, explicit P_{>T}). If C.14.K fails, (K3) needs an even analogue of C.13.H instead.
+  3. ~~Please confirm or test C.14.K numerically.~~ Done in C.14.4c: it FAILS (NUMERICAL). (K3) goes through C.13.H^e or a direct even certificate.
   4. Note that (K2) needs no coupling bound (C.14.D).
 - **From S&M:**
   1. σ_S(t) on |t| < T (μ_lo) and a lower bound on ε̂ for |t| ≥ T (μ_hi > c₂). This is C.13.H via C.13.H″.
-  2. The strict gap 1 − κ^{odd}_{L₀} (Golden Eye NUMERICAL plausibility 0.58, sinc-kernel proxy) and its growth in L; this feeds the m₀^o formula and Thm C.14.A. For the frame route specifically: σ_S(t) > c₂ − 2ε′(1⁺)(1 − κ^{odd}_{L₀})/(¼ + t²) on 7.37 ≤ |t| ≤ 13 (≈ 0.22 needed at t = 10, ≈ 0.27 at t = 11, at gap 0.58; Grok audit S103g).
-  3. An even margin m₀^e (or κ^{ev}, ξ₀ data) for (K3).
+  2. The strict gap 1 − κ^{odd}_{L₀} (Golden Eye NUMERICAL plausibility 0.58, sinc-kernel proxy) and its growth in L; this feeds the m₀^o formula and Thm C.14.A. For the frame route specifically: σ_S(t) > c₂ − 2ε′(1⁺)(1 − κ^{odd}_{L₀})/(¼ + t²) on 7.37 ≤ |t| ≤ 13 (≈ 0.22 needed at t = 10, ≈ 0.27 at t = 11, ≈ 0.33 at t = 13, at gap 0.58; these are requirements, not the B = 66 deficit 0.267; Grok audit S103g). With the actual K_L (δ_o⁰ = 0.3135, ε-term 14.42/(¼ + t²)), the requirement is ≈ 0.346 / 0.371 / 0.405 at t = 10 / 11 / 13 on the window [5.41, 13.6] (C.14.2 rerun). Off the critical path: the odd entry is closed by S&M (ad76f83).
+  3. An even margin m₀^e (or κ^{ev}, ξ₀ data) for (K3). The precise list is in C.14.4c, "S&M interface".
   4. CELESTIAL_INPUTS_C13.md is not pushed (spectrum-measure 95ea14a); "σ_S ≥ 2c₂ in the high band" stays HEURISTIC.
 
 ### C.14.7 Labels and R-lines
@@ -882,7 +992,14 @@ CCM 2310.18423 shows that E-images of prolates give the Weil form extremely smal
 | (K3) in the frame | GAP |
 | Thm C.14.B coupling bound | PROVED |
 | Thm C.14.C (i)–(iii) obstructions | PROVED ((i) with Arb-certified kernel sign) |
-| Conjecture C.14.K | CONJECTURE |
+| Conjecture C.14.K | CONJECTURE; **fails NUMERICALLY** for ℓ ≳ 0.02–0.06 (C.14.4c); unresolved at ℓ = 0.01 |
+| C.14.4c γ table (nested-Galerkin lower bounds, monotone under refinement) | NUMERICAL |
+| Conjecture C.13.H^e (band-split even coercivity at L₀) | CONJECTURE (Galerkin evidence: holds with μ^e_lo < 0.048) |
+| Prop C.13.H^e′ (C.13.H^e ⇒ (K3), ℓ ≤ ℓ_H) | PROVED given C.13.H^e |
+| Prop C.13.H^e″ ((P) + high-band σ_S ⇒ C.13.H^e) | PROVED given CC §5 / Thm 6.11 decomposition |
+| m₀^e(L₀) ≈ 0.0725, m₀^o(L₀) ≈ 0.548 (Galerkin) | NUMERICAL |
+| even ℓ_H ≲ 7.4×10⁻⁴ via band split + S1 (obstruction: the even ground state) | NUMERICAL |
+| C.14.A rerun with ε-term 14.42/(¼+t²): fails on 5.41 ≲ |t| ≲ 12.5–13.6 | NUMERICAL (indicative) |
 | Cor C.14.D | PROVED given the stated inputs |
 | edge-matrix sign: contribution to Q_L is +2c₂(1/ℓ − ℓ/24)α₋α₊ (even helped, odd charged); parity = ξ under x ↦ −x | PROVED (resolved convention) |
 | C.14.4b near-null directions are low-band bulk; strip/ramp low-band fractions ≤ 2.73ℓ³ / 8.97ℓ³ | PROVED |
