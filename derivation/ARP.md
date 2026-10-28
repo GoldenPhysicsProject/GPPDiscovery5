@@ -206,7 +206,8 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
 
 **G.4d (GAP, the shared one).**
 - **The defect.** The gluing introduces the cutoff/principal-value term:
-  - Write Q_L(f) = ‖P_Λ^⊥ E(φ)‖²-type positive part − δ_Λ(f), where δ_Λ collects the 2 log Λ cutoff term and the Σ_v ∫′ remainders.
+  - Sign (settled S103c, Queen §Q.7 + Principal §P.5–P.6, per Connes 1999 §VIII Thm 5/Lemma 3 and Meyer 2005 §5.4): the positive object is a trace over the **complement of range(E)** (cokernel deficit, S_Λ − Q′, which is free), not ‖P^⊥Eφ‖². Range positivity enters Δ_Λ with a minus sign and gives only the trivial upper bound, so "additive positivity transfers through E" is WRONG-SIGN and withdrawn. The 2 log Λ term cancels exactly and is not part of δ_Λ.
+  - GAP in this language: lim_Λ Δ_Λ = Weil, i.e. δ_Λ → 0 (RH-equivalent); off-line residual Σ_ρ m_ρ[∫ĝ dμ_ρ − ĝ(γ_ρ)]. Pending Golden Eye's three-test sign audit.
   - Equivalently, in §G.3's language, Q_L = MF_L + Fl_L, with Fl_L the E_Λ-fluctuation (ψ-fluctuation, G.3d; corrected S103b from E₁).
   - Nothing local (G.1–G.2) bounds δ_Λ or Fl_L.
 - **The GAP statement.** Show Fl_L(f) ≥ −MF_L(f) for all f ∈ C_c^∞([−L, L]), **uniformly in L** (R1).
@@ -220,13 +221,13 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
 | fake | G.1 local Θ_p | G.2 Θ_∞ | G.3 MF ≥ 0 | G.4 gluing (E intertwines F_𝔸 and inv) | verdict |
 |---|---|---|---|---|---|
 | **G_θ′** = Λ(s+iθ′)Λ(s−iθ′) | unitary (|·|^{±iθ′} unitary) | unitary | ≥ 0 | yes: E commutes with the unitary character |x|^{iθ′}. Q_G = 2Q_ζ(f cos) + 2Q_ζ(f sin) (**PROVED**, replayed S102) | **passes every step** (must-pass control) |
-| **F_θ** = ξ(s−θ)ξ(s+θ) | **product** γ unitary on Re s = ½ (replay (5): \|γ₊γ₋\| = 1), but each GL(1) constituent \|·\|^{±θ} has \|γ\| ≠ 1 (0.817, 1.224 at p = 7) | same | ≥ 0 (G.3c) | E does commute with \|x\|^θ, but the twisted form is a **polarization** 2 Re B_ζ(e^{θu}f, e^{−θu}f), not a norm (**PROVED**, replay (2)) | breaks at G.1 **only if** local data must be unitary GL(1) constituents (temperedness filter, Principal series), and at G.4 (norm → polarization) |
+| **F_θ** = ξ(s−θ)ξ(s+θ) | **product** γ unitary on Re s = ½ (replay (5): \|γ₊γ₋\| = 1), but each GL(1) constituent \|·\|^{±θ} has \|γ\| ≠ 1 (0.817, 1.224 at p = 7) | same | ≥ 0 (G.3c) | E does commute with \|x\|^θ, but the twisted form is a **polarization** 2 Re B_ζ(e^{θu}f, e^{−θu}f), not a norm (**PROVED**, replay (2)) | breaks at G.4 only (norm → polarization, §P.4). Not a GL(2) filter: for 0<θ<½ π(\|·\|^θ,\|·\|^{−θ}) is complementary series with positive-definite Knapp–Stein form (§P.3, Knapp–Stein 1971); local non-temperedness is a size shadow, not a sign condition |
 | **DH** | no local data (no Euler product) | ζ-like γ_∞ | **no MF** (entire) | no ⊗′ factorization, so E of a sum of two L-functions is not a norm of a sum | breaks at G.1/G.4 |
 | **DMV / P_X** | Beurling or truncated local data | — | ≥ 0 | **no lattice ℚ^* ⊂ 𝔸**, so no Poisson and no global reflection; P_X agrees with ζ on L ≤ (log X)/2 (R1) | breaks at G.4a |
 | **Epstein** (h = 2) | sum of two Euler products (genus characters) | γ_∞ for GL(2)/ℚ(√D) | ≥ 0 | Poisson over the lattice exists, but there is no ⊗′ of one Euler product; E of a sum of two pure tensors | breaks at G.1d/G.4b |
 | **H₋ₜ** (de Bruijn–Newman deformation) | no Euler product after deformation | **γ_∞ is not Tate's** (deformed Φ kernel) | ≥ 0 | no adelic E | breaks at G.2/G.4 |
 
-**Reading.** All six fakes break at the gluing G.4 (and DMV/P_X *only* there). F_θ additionally breaks at the local temperedness filter. G_θ′ passes everywhere. So R5 is consistent with G.4d being the true locus of RH. That is exactly Connes' "uniformity" dead end, now with every fake located. **No new route is claimed.**
+**Reading.** All six fakes break at the gluing G.4 (and DMV/P_X *only* there). (S103c: F_θ's earlier "local temperedness filter" break is withdrawn per §P.3; it breaks only at G.4.) G_θ′ passes everywhere. So R5 is consistent with G.4d being the true locus of RH. That is exactly Connes' "uniformity" dead end, now with every fake located. **No new route is claimed.**
 
 ### G.5 What would count as progress (CONJECTURE-level targets, each R1–R5-checked)
 - **(T1) Pole/boundary compensation (WITHDRAWN S103 by G.3d).** The k = 2 rank-one needs no compensation (it is absorbed once the fluctuation is taken against ψ = Σ_k θ(x^{1/k}), G.3d), and the two boundary directions are already spent on the mean field (G.3a). Original statement kept for the record:
