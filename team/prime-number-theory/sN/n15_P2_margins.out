@@ -1,0 +1,25 @@
+check: Bgram unit test, c2 = 0.49012907173427356  c3 = 0.634284100597564
+[a] strip-supported margin r(ell) = inf R/||.||_H^2 on H^1_0 of an interval of length ell (min over parity)
+  ell=0.0300  even  3.2346  odd  3.7025   (compare c2=0.4901, c2+c3=1.1244)
+  ell=0.0600  even  2.5414  odd  3.0093   (compare c2=0.4901, c2+c3=1.1244)
+  ell=0.1190  even  1.8563  odd  2.3245   (compare c2=0.4901, c2+c3=1.1244)
+  ell=0.2000  even  1.3364  odd  1.8053   (compare c2=0.4901, c2+c3=1.1244)
+  ell=0.3000  even  0.9294  odd  1.3996   (compare c2=0.4901, c2+c3=1.1244)
+  ell=0.4055  even  0.6257  odd  1.0982   (compare c2=0.4901, c2+c3=1.1244)
+  ell=0.5500  even  0.3162  odd  0.7928   (compare c2=0.4901, c2+c3=1.1244)
+  ell=0.6931  even  0.0786  odd  0.5610   (compare c2=0.4901, c2+c3=1.1244)
+[b] P2 form Q^(<=2) = R - 2c2 B2 (Ritz N=80 / N=160): parity margins in H^1_1/4
+  2L=log2        even  0.07436 /  0.07298   odd  0.55209 /  0.54929
+  2L=log2+0.028  even  0.04947 /  0.04796   odd  0.47978 /  0.47688
+  2L=log2+0.1    even  0.01834 /  0.01682   odd  0.24855 /  0.24517
+  2L=log2+0.3    even  0.00285 /  0.00099   odd  0.01834 /  0.01518
+  2L=log3        even  0.00299 /  0.00085   odd  0.00613 /  0.00231
+  2L=log3.5      even -0.24511 / -0.24931   odd -0.00076 / -0.00580
+  2L=log4        even -0.46164 / -0.46479   odd -0.05832 / -0.06457
+[c] P3 form R - 2c2 B2 - 2c3 B3 (+ 2c4 B4 at 2L > log 4) (N=80 / N=160)
+  2L=log3        even  0.00299 /  0.00085   odd  0.00613 /  0.00231
+  2L=log3+0.028  even  0.00299 /  0.00089   odd  0.00563 /  0.00201
+  2L=log3+0.1    even  0.00291 /  0.00092   odd  0.00552 /  0.00167
+  2L=log3.5      even  0.00259 /  0.00085   odd  0.00571 /  0.00170
+  2L=log4        even  0.00278 /  0.00079   odd  0.00507 /  0.00156
+  2L=log4+0.1    even  0.00227 /  0.00070   odd  0.00510 /  0.00154
