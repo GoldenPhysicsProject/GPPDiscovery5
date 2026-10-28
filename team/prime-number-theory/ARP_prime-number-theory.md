@@ -763,6 +763,180 @@ Track **[L], Λ = 1** throughout. Notation is §C.13 and §C.13.B (team/celestia
 | (K3)-bulk closes from the p = 2 budget | CONJECTURE |
 | positivity on the range itself | CERTIFIED (conditional on Mori Prop 3.1, Lemma 3.2, Thm N; 1.42 Arb replay; main 992a011) |
 
+## N.14 Odd entry as an O(1) L² margin, the H-norm m₀ scale, and the {2, 3} rank-two forms (S103h) [L]
+
+*Scope.* There are three parts:
+- (1) δ_o⁰ = 1 − κ^odd for the actual K_L at L₀ = ½ log 2. This is a light NUMERICAL **cross-check of S&M's pending (Arb) certification**, not a certificate.
+- (2) The H-norm scale of m₀^σ.
+- (3) The {2, 3} rank-two boundary forms for 2L ∈ (log 3, log 4]. This is the main original deliverable.
+
+The γ-test of Conj C.14.K was dropped by the lead, and none of it is used here. Positivity on the whole range up to L = 1.42 stays **CERTIFIED, conditional on Mori's Prop 3.1, Lemma 3.2 and Thm N** (main 992a011). §N.14 is mechanism only. **RH is OPEN.**
+
+R1 (target): the odd entry at L₀ restated with an L² margin, and the {2, 3} forms.
+R2 (inputs): CC 2006.13771 eqs (99), (104), Lemma F.1; S&M SECTOR_COERCIVITY_p2 Thm 2.1, (3.3); Celestial C.14.A (a7f943a); Principal P.14 (9cd3187); Golden Eye G.4h audit.
+R3 (method): exact identities (PROVED) plus NUMERICAL Galerkin and Ritz scripts in `sN/`.
+R4 (status): see the labels table in N.14.6.
+R5 (open): δ_o⁰, k_∞ and B to be certified by S&M; σ_S on 5.41 ≤ |t| ≤ 13.6 for the frame route; the coupling 2R(ξ_b, ξ_s) (GAP N.G2-bulk); Conj C.14.K.
+
+### N.14.0 Errata and clarification for N.13.4 (applied in the separate commit 656de12)
+- **(a) Sign of the D_L edge block.** The Q-side ramp term is **+2c₂(1/ℓ − ℓ/24)α₋α₊**, since −2c₂B₂ with B₂(ξ_b) = −α₋α₊(1/ℓ − ℓ/24). The D_L edge block in (α₋, α₊) is therefore **+c₂(1/ℓ − ℓ/24)[[0, 1], [1, 0]]**. It helps the even sector (α₊ = α₋) and charges the odd sector (α₊ = −α₋).
+  - The sentence "−2c₂(…)α₋α₊ subtracted" (the 2c₂B side) stays as written.
+  - Parity is that of ξ under x ↦ −x, with α₊ = σα₋.
+  - The odd charge is **exactly 2c₂α²(1/ℓ − ℓ/24)**. The value 2c₂α²/ℓ is only an upper bound, and G.4h has carried this since 5354fde. Both N.13.4 occurrences are corrected.
+  - **Convention check.** Celestial's convention (C.14.1: +2c₂(1/ℓ − ℓ/24)α₋α₊ in Q_L, α₊ = σα₋) agrees with the corrected N.13.4.
+- **(b) Lemma C.13.B.** It is PROVED (computer-assisted) since c7c94ee and was re-audited SOUND by Golden Eye. It closes the strip cone for ℓ ≤ 0.119. The phrase "NUMERICAL until certified" is removed in N.13.3, N.13.4 and N.13.6.
+- **(c) Q.8.E normalization (N.12.5).** The block now reads −(c₂/ℓ)S_Λ(V(2) + V(2)*)S_Λ. The 1/ℓ was missing, which put the diagonal sums off by a factor of ℓ (Principal P.14.3, merged 9cd3187). No result used the old form.
+- **Exact crossings** (NUMERICAL; Golden Eye, mpmath, reproduced by my psi implementation in `sN/n14_KL_odd_gap.py`):
+  - 2θ′ = c₂ at t = 10.2615;
+  - 2θ′ = 2c₂ at t = 16.7481;
+  - θ′ = 0 at t = 6.289836.
+  - The Stirling values 10.63 and 17.11 in N.13.2 are valid bounds but not sharp.
+
+### N.14.1 The odd L² gap of the actual K_L (NUMERICAL; cross-check of S&M's pending certification) [L]
+**Norm.** Everything in this subsection is in L²(−L₀, L₀). Here κ^odd = sup{⟨ξ, K_Lξ⟩/‖ξ‖²_{L²} : ξ odd}.
+
+**Kernel.** K_L has kernel κ(x − y) with κ(v) = Qε(e^{|v|})/(2ε′(1⁺)) (CC 2006.13771 eq. (104)). Here Qε(ρ) = Σ_n λ(n)²/(1 − λ(n)²)·C_n(ρ) (eq. (99)), summed over the even prolates at c = 2π.
+- I keep 11 terms. The remainder is ≤ 2.4e−12 (Lemma F.1).
+- The t(n) ratios reproduce CC's to about 1e−6. The absolute t(n) are CC/2, a normalization that cancels in κ.
+
+**Results** (`sN/n14_KL_odd_gap.{py,out}`; Nyström discretization with N = 200, 400 and 600; the top odd value moves by less than 1e−4):
+
+| operator on L²(−L₀, L₀) | even top eigenvalues | odd top eigenvalues | odd gap 1 − top |
+|---|---|---|---|
+| band projector \|t\| ≤ 6.289836 (Golden Eye) | 0.90865, 0.05328, 4.1e−5 | 0.42369, 2.09e−3 | 0.576 |
+| **K_L (CC kernel)** | 1.05153 (CC: 1.05177), 0.02875 | **0.68649**, then ≈ 0 | **δ_o⁰ = 0.3135** |
+
+- I reproduce Golden Eye's projector values: 0.909, 0.424, 0.053, with the 0.053 being the second even value.
+- **K_L is more concentrated than the projector on the odd sector.** Its top odd value is 0.686 vs 0.424, so its odd gap is 0.31 vs 0.58, about half.
+  - The projector's 0.58 is therefore an over-estimate of 1 − κ^odd, by a factor of about 1.85.
+  - Numerically K_L has only three nonzero positive eigenvalues on this window: two even and one odd.
+- **No near-degenerate prolate direction in the odd L² gap.** The concentration parameter is c ≈ 2.18 (2c/π ≈ 1.4), so only O(1) eigenvalues are in play. This agrees with Golden Eye.
+
+**Odd entry, restated as an O(1) L² margin.** On odd ξ, R_L ≥ 𝒮_L + 2ε′(1⁺)·δ_o⁰·‖ξ‖²_{L²}, with 2ε′(1⁺)δ_o⁰ ≈ 14.42 (NUMERICAL).
+- **Polynomial route (S&M Thm 2.1, (3.3), PROVED-conditional).** ℓ₀^odd ≈ min{0.006·δ_o⁰, (δ_o⁰)²/(8.32k_∞²)}.
+  - With δ_o⁰ = 0.3135 and the indicative k_∞ ≈ 3 (CC Fig. 10, not a bound), this gives ℓ₀^odd ≈ min{1.9e−3, 1.3e−3} ≈ **1.3e−3**.
+  - The value is indicative. It is conditional on S&M certifying δ_o⁰, k_∞ and B; k_∞ and B are GAPs.
+  - This replaces the e^{−21/m₀} loss of Thm N.13.A Step 2 as the preferred route.
+- **Frame route (Celestial Thm C.14.A, PROVED).** (K2) needs no coupling bound if the symbol inequality σ_S(t) + 2ε′(1⁺)(1 − κ^odd)/(¼ + t²) > c₂ holds.
+  - **Indicative margin line (NUMERICAL).** With δ_o⁰ = 0.3135, the ε-term is 14.42/(¼ + t²). It is ≥ c₂ only on **|t| ≤ 5.40**, so on that range C.14.A holds from the L² gap alone, with σ_S ≥ 0.
+  - On 5.41 ≤ |t| ≲ 12.5 (B = 46) or ≲ 13.6 (B = 66), the inequality needs a certified **σ_S(t) > c₂ − 14.42/(¼ + t²)**: about 0.35 at t = 10 and 0.40 at t = 13.
+  - The worst deficits under the σ_S lower bounds we have are 0.345 at t = 9.97 (B = 46) and 0.369 at t = 10.92 (B = 66).
+  - **Flag for G.4h item 3.** Its 26.68/(¼ + t²) uses the projector proxy 0.58. With the actual K_L the ε-term is about 46% smaller, and the σ_S band that must be certified widens from [7.37, 13] to about [5.41, 13.6].
+- **CC Thm 1 gives only ≥ 0 on the odd sector.** It provides no margin, so the O(1) L² margin above is what carries the odd entry. That still holds.
+
+### N.14.2 The H-norm m₀ scale (NUMERICAL, Rayleigh–Ritz upper bounds) [L]
+**Norm.** ‖ξ‖²_H = ∫_{−L₀}^{L₀}(|ξ′|² + ¼|ξ|²) (H¹_¼ on ξ ∈ H¹₀(−L₀, L₀)). Here m₀^σ = inf R(ξ)/‖ξ‖²_H over parity σ, and R = (1/2π)∫(¼ + t²)Ω|ξ̂|².
+
+**Method** (`sN/n14_m0_scale.{py,out}`). The Ritz space is uniform P1 hats on nested grids N = 20, 40, 80, 160 (each grid refines the previous one).
+- The Ω-weighted Gram is computed by quadrature to T_max = 400/h.
+- The tail uses the exact means of sin⁴(th/2)cos(kth) (3/8, −1/4, 1/16 for k = 0, 1, 2) with Ω ≈ log(t/2π). This tail keeps the row sums consistent; a diagonal-only tail broke the H¹-scale cancellation and made the Ritz values non-monotone. That bug is fixed in this version.
+- The Ritz values now decrease monotonically, as nesting requires.
+
+| N | m₀^even ≤ | m₀^odd ≤ |
+|---|---|---|
+| 20 | 0.0914 | 0.5878 |
+| 40 | 0.0786 | 0.5610 |
+| 80 | 0.0744 | 0.5521 |
+| 160 | 0.0730 | 0.5493 |
+| Richardson (h¹) | ≈ 0.072 | ≈ 0.548 |
+
+**Verdict on scale.** m₀^odd ≈ 0.55 in the H¹_¼ norm. That is O(1), and there is **no near-degenerate direction in the H-norm route at L₀ either**.
+- The smallness of the N.13.A entry, ℓ* ∝ e^{−21.06/m₀} ≈ e^{−38}, comes from the crude band split in its Step 2, not from a small m₀.
+- The values are Ritz *upper* bounds: NUMERICAL, not certified lower bounds.
+- This is consistent with Celestial's C.14.4b scale result. Ramps carry ≤ 8.97ℓ³ of their energy in the negative band and ξ_s carries ≤ 2.73ℓ³ (PROVED, Celestial).
+- CC's λ_min ≈ 1.33e−3 is a full-space eigenvalue in a different normalization. Calling it "not tiny" is HEURISTIC.
+- The super-exponentially small eigenvalues of the CCM certificates belong to the full Weil form at larger windows, not to the p = 2 entry.
+- m₀^even is ≈ 0.072. It is smaller, but the even sector is not where the entry is decided: its cost is paid by 𝒮_L (§S (P)), and the p = 2 line helps it.
+
+### N.14.3 {2, 3} rank-two boundary forms for 2L ∈ (log 3, log 4] (main deliverable) [L]
+Notation: a = log 2, b = log 3, c_n = Λ(n)/√n, so c₂ = 0.490129, c₃ = 0.634284 and c₄ = 0.346574.
+
+**(G) Strip geometry (PROVED, elementary).**
+- ℓ₃ := 2L − b ∈ (0, log(4/3)], and ℓ₂ := 2L − a = ℓ₃ + log(3/2) ∈ (log 1.5, log 2].
+- So the 2-line is **O(1), not perturbative**, on this whole range. Only the 3-line enters as an edge.
+- S₋^{(3)} = [−L, −L + ℓ₃] ⊂ S₋^{(2)} = [−L, L − a], and S₊^{(3)} = [b − L, L] ⊂ S₊^{(2)} = [a − L, L].
+- Hence E₃ ⊂ E₂.
+- The two 2-strips are disjoint for 2L < log 4 and touch at 2L = log 4.
+- Of the a-translates, S₋^{(3)} + a = [a − L, a − L + ℓ₃] lies in S₊^{(2)} \ S₊^{(3)}, because a − L + ℓ₃ < b − L ⇔ 2L < 2b − a = log 4.5. The same inequality puts S₊^{(3)} − a in S₋^{(2)} \ S₋^{(3)}.
+
+**(R) Ramp decomposition on the 3-edges.** Write ξ = ξ_b + ξ_s, where ξ_b is linear on each 3-strip with inner values β_± (β₊ = σβ₋) and ξ_s ∈ H¹₀ of the strips.
+- **3-line, exact (PROVED, the same computation as N.12.3):** B₃(ξ_b) = −β₋β₊(1/ℓ₃ − ℓ₃/24).
+  - The Q-side term is +2c₃(1/ℓ₃ − ℓ₃/24)β₋β₊.
+  - The edge block in (β₋, β₊) is **+c₃(1/ℓ₃ − ℓ₃/24)·[[0, 1], [1, 0]]**. It helps the even sector and charges the odd sector exactly 2c₃β²(1/ℓ₃ − ℓ₃/24) (≤ 2c₃β²/ℓ₃).
+  - The cross term B₃(ξ_b, ξ_s) gives the analogue X₃ of N.13.4's X.
+- **2-line on the 3-ramps (PROVED):** there is no 1/ℓ₃ term.
+  - B₂(ξ_s) = 0 on the whole range, since the 3-strips' a-translates miss both 3-strips (G).
+  - The 2-line pairs the 3-ramps with the bulk only. Its derivative part is ∫_{S₋^{(3)}}ξ_b′ξ′(· + a) + ∫_{S₊^{(3)}−a}ξ′ξ_b′(· + a) = (2β₋/ℓ₃)[ξ(L + a − b) − ξ(a − L)], using parity. That is 2β₋ times the mean slope of ξ over [a − L, a − L + ℓ₃], so it is O(|β|·‖ξ′‖_{L∞}), not O(β²/ℓ₃).
+  - The ¼-part is O(ℓ₃|β|‖ξ‖_∞).
+  - **So at order 1/ℓ₃ the {2, 3} edge form is the 3-line block alone.** The 2-line enters only through the bulk (≤ 2) form.
+- **Interface form (PROVED identity):** Q_L = [R(ξ_s) − 2c₃B₃(ξ_s)] + [Q^{(≤2)}(ξ_b) + 2σc₃β²(1/ℓ₃ − ℓ₃/24)] + [2R(ξ_b, ξ_s) − 4c₂B₂(ξ_b, ξ_s) − (c₃/2)X₃].
+  - Here Q^{(≤2)} = R − 2c₂B₂ is the form at the previous entry 2L = log 3. It is CERTIFIED ≥ 0 there, conditional on Mori.
+  - The 2-line coupling B₂(ξ_b, ξ_s) is the strip–bulk term above.
+- **Combined S1 bound (PROVED):** |2c₂B₂ + 2c₃B₃| ≤ c₂‖ξ‖²_{H(E₂)} + c₃‖ξ‖²_{H(E₃)} ≤ (c₂ + c₃)‖ξ‖²_{H(E₂)}.
+  - log 2/log 3 is irrational, so by Kronecker inf_t[−2c₂cos(at) − 2c₃cos(bt)] = −2(c₂ + c₃). The constant c₂ + c₃ cannot be improved by phase alignment.
+- **Edge-pair identity (3c) transposed to p = 3 (PROVED):** Q_L(φ + στ_bφ) = (1/π)∫(¼ + t²)|φ̂|²[Ω(t)(1 + σcos tb) − σc₃].
+  - The blind frequencies are t_j = (2j+1)π/b for σ = +1 and t_j = 2jπ/b for σ = −1.
+- **Per-line ramp constants, for cross-check with Principal:**
+  - 3-edge: c₃(1/ℓ₃ − ℓ₃/24). This is (c₃/ℓ₃)(1 − ℓ₃²/24), with ℓ₃²/24 ≤ 3.4e−3 on the range.
+  - 2-line (O(1) strips, valid while the 2-strips are disjoint): c₂(1/ℓ₂ − ℓ₂/24) runs from 1.2003 (2L = log 3, ℓ₂ = 0.4055) to 0.6929 (2L = log 4, ℓ₂ = a). It is shown for comparison only; at these ℓ₂ the 2-ramp is not an edge object.
+
+**(S) Symmetry (PROVED; agrees with Principal P.14).**
+- h = ξ⋆ξ* is even, so x ↦ −x preserves R and every B_p. The parity split is exact for all lines together.
+- Each line has its own strip reflection J_p: x ↦ −log p − x on S₋^{(p)}, with B_p(ξ_σ) = σ(‖P₊^{(p)}ξ‖² − ‖P₋^{(p)}ξ‖²).
+- J₂ and J₃ do not commute and do not preserve each other's strips.
+- **The surviving symmetry is P (x ↦ −x) only.** Principal's P.14 PROVES that P is the unique window-preserving reflection and that there is no common J_p.
+
+**(L4) What changes at 2L = log 4 (PROVED, elementary).**
+- The 2-strips meet: L − a = a − L.
+- The p² = 4 line enters with shift 2a, weight c₄ = (log 2)/2, and new edge ℓ₄ = 2L − 2a, with block +c₄(1/ℓ₄ − ℓ₄/24)σ_x.
+- The bipartite two-site 2-structure becomes a three-site chain. 2-line translates now land in the 2-strips again, so B₂(ξ_s) ≠ 0 becomes possible, and the "no 1/ℓ term from the 2-line" statement above ends.
+
+**(ζ) Where ζ = P_X (PROVED, elementary).** The visible prime powers on the window are n with log n < 2L.
+- For 2L ≤ log 4: n ∈ {2, 3}.
+- For 2L ≤ log 5: n ∈ {2, 3, 4}.
+- So on this window the arithmetic side is exactly that of P_3 = {2, 3}, i.e. ζ = P_3, for 2L ≤ log 5.
+
+**Prediction (CONJECTURE).** At the 3-entry, the 3-line helps the even 3-edge traces. The odd charge 2c₃β²(1/ℓ₃ − ℓ₃/24) is paid by the margin of Q^{(≤2)} at 2L = log 3, in an odd entry of the same shape as N.14.1: an O(1) L²-type margin that needs certified k_∞, B and δ at L = ½ log 3, all GAPs.
+- This is consistent with P.14. It makes no claim of a Tate local reflection, since P.14 finds that the ramp form is not Tate's.
+
+**Structural notes for Principal (identities only, no claims).**
+- The full 2-adic multiplier −log 2·Σ_{m≠0} r^{|m|}e^{imat}, with r = 2^{−1/2}, equals −log 2·(P_r(at) − 1), where P_r is the Poisson kernel (classical).
+- Its Toeplitz sections are the KMS matrices [r^{|i−j|}], whose inverses are tridiagonal with symbol ∝ |1 − re^{iθ}|². The 2×2 section minus I is r·σ_x, and −log 2·r = −c₂ is exactly the edge coefficient. det KMS₂ = 1 − r² = 1 − 1/p.
+- At log 4 the three-site chain is the 3×3 KMS section, with c₄ = log 2·r².
+- These are statements about the multiplier, not about the ramp form. No Tate structure is claimed (cf. P.14).
+
+### N.14.4 Interface requests
+- **S&M:** certified δ_o⁰ (cross-check: 0.3135 here), k_∞ and B.
+  - Note for the frame route: the required σ_S band is [5.41, 13.6] with the actual K_L, not [7.37, 13].
+  - Please also consider the analogous triple at L = ½ log 3 for the {2, 3} entry.
+- **Principal:** cross-check the per-line ramp constants (N.14.3 (R)) and the (L4) chain against the P.14 normalization (−(c₂/ℓ)S(V(2) + V(2)*)S).
+- **Celestial:** the C.14.A indicative line with 1 − κ^odd = 0.3135 replacing 0.58, and the coupling 2R(ξ_b, ξ_s) (N.G2-bulk) together with its {2, 3} analogue.
+
+### N.14.5 Prior art
+- CC 2006.13771: eqs (99) and (104) and Lemma F.1, verified from the arXiv text this session.
+- S&M SECTOR_COERCIVITY_p2 (f1df9ed): Thm 2.1 and (3.3).
+- Celestial §C.14 (a7f943a): Thm C.14.A, C.14.B, C.14.C, Conj C.14.K and C.14.4b.
+- Principal P.14 (9cd3187).
+- Classical: the Kac–Murdock–Szegő matrices and the Poisson kernel. Theorem number unverified for the KMS inverse formula.
+
+### N.14.6 Labels after N.14
+| item | label |
+|---|---|
+| Errata (a)–(c) | PROVED (corrections) |
+| δ_o⁰ = 0.3135 (L²) and the projector comparison | NUMERICAL (cross-check of S&M's pending certification) |
+| ℓ₀^odd ≈ 1.3e−3 via S&M (3.3) | NUMERICAL-indicative; PROVED-conditional on certified δ_o⁰, k_∞ (GAP) and B (GAP) |
+| C.14.A margin line: \|t\| ≤ 5.40 from the L² gap; σ_S band [5.41, 13.6] | NUMERICAL (indicative); σ_S GAP |
+| m₀^odd ≈ 0.55, m₀^even ≈ 0.072 (H¹_¼) | NUMERICAL (Ritz upper bounds) |
+| "CC's 1.33e−3 is not tiny" | HEURISTIC |
+| {2, 3} geometry, ramp matrices, no 1/ℓ₃ term from the 2-line, interface form, S1, transposed (3c), log 4 changes, ζ = P_3 for 2L ≤ log 5 | PROVED (elementary) |
+| Surviving symmetry P only; no common J_p | PROVED (Principal P.14; consistent here) |
+| {2, 3} odd entry paid by the (≤ 2) margin | CONJECTURE |
+| Coupling 2R(ξ_b, ξ_s) and its {2, 3} analogue | GAP (N.G2-bulk) |
+| Positivity on the range up to L = 1.42 | CERTIFIED, conditional on Mori Prop 3.1, Lemma 3.2, Thm N |
+| RH | OPEN |
+
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
+
 ## References (verified this session unless marked)
 - Diamond, H. G., Montgomery, H. L., Vorhauer, U. M. A., "Beurling primes with large oscillation", Math. Ann. 334 (2006) 1–36,
   doi:10.1007/s00208-005-0638-2, Theorem 1 (bibliographic data and Theorem 1 statement checked on the web this session).
