@@ -383,7 +383,7 @@ At general γ the condition is
 
   min_a [(γ + 8D/a)/(1 − γ) + 2κ_K(γ)a] < 2.
 
-This requires γ < 2/3, and 16D·κ_K(γ)/(1 − γ) < (2 − 3γ)²/(1 − γ)²·…; explicitly:
+The minimum over a is γ/(1−γ) + 8√(Dκ_K(γ)/(1−γ)), so this requires γ < 2/3 and, explicitly:
 
   **κ_K(γ) < (2 − 3γ)²/(64D(1 − γ)).**
 
