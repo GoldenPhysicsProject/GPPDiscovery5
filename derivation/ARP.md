@@ -177,6 +177,13 @@ For χ unramified trivial (with ε_p = 1),
 
 So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead end.
 
+**G.3d. The k = 2 rank-one is a ψ/θ splitting artefact (PROVED, elementary; Grok S103).**
+- Statement. Put the k-th prime-power layer μ_k = Σ_p (log p) p^{−k/2} δ_{k log p}. Its PNT mean is ½·du for k = 2 (Mertens: Σ_{p≤y} (log p)/p = log y + O(1), so at u = 2 log p the mean density is ½ du), and a bounded, non-growing density for k ≥ 3. For an even g these give the rank-one term −½∫g = −½ ĝ(0) = −½|f̂(0)|² (vector 1), the shape of Astra's even bulk −¼·11ᵀ (normalisation match to Astra's ¼ not checked).
+- Proof of cancellation. Chebyshev's exact identity θ(x) = Σ_{k≥1} μ(k) ψ(x^{1/k}) gives θ(x) = x − x^{1/2} − x^{1/3} + … + (zero terms). At half density, the −x^{1/2} term of the k = 1 layer contributes −∫h(u) e^{−u/2} d(e^{u/2}) = −½∫h du, which cancels the k = 2 mean exactly; likewise −x^{1/k} cancels the k-th mean. So the sum over k of the layer means is the single PNT mean e^{u/2} du of Λ.
+- Consequence. Use the **ψ-fluctuation** E_Λ := Σ_n Λ(n) n^{−1/2} δ_{log n} − e^{u/2} du (half-density ψ(x) − x) in G.3b, not the θ-fluctuation E₁. Then Q_L = MF_L + Fl_L with no rank-one remainder, and the pole is spent exactly once, on the Ward identity G.3a.
+- Test (numerics only to test this step, per the Oct 22 pivot): `s103/k2_rank_one_cancellation.py`, primes ≤ e^16, smooth bump h on (2, 16). The k = 1 fluctuation is −3.1716 = −(k = 2 layer 2.4638) − (k ≥ 3 layers 0.7078) to 4 decimals, and the Λ-total minus the PNT mean is −1.4·10⁻⁶ (the zero sum of a smooth bump). So nothing is left over for a boundary term to compensate.
+- R-checks. Fake-blind (P_X, DMV and Epstein have the same internal cancellation; DH has no Λ); no RH content. Withdraws T1 below.
+
 ### G.4 Global gluing by Poisson summation on 𝔸/ℚ: where positivity is NOT implied
 
 **G.4a (PROVED; Tate 1950 §4.2).** For φ ∈ 𝒮(𝔸): Σ_{q∈ℚ} φ(qx) = |x|⁻¹ Σ_{q∈ℚ} φ̂(q/x). This gives Tate's global FE ξ(s) = ξ(1−s).
@@ -222,7 +229,7 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
 **Reading.** All six fakes break at the gluing G.4 (and DMV/P_X *only* there). F_θ additionally breaks at the local temperedness filter. G_θ′ passes everywhere. So R5 is consistent with G.4d being the true locus of RH. That is exactly Connes' "uniformity" dead end, now with every fake located. **No new route is claimed.**
 
 ### G.5 What would count as progress (CONJECTURE-level targets, each R1–R5-checked)
-- **(T1) Pole/boundary compensation (CONJECTURE).**
+- **(T1) Pole/boundary compensation (WITHDRAWN S103 by G.3d).** The k = 2 rank-one needs no compensation (it cancels against θ's −√x), and the two boundary directions are already spent on the mean field (G.3a). Original statement kept for the record:
   - The even k = 2 rank-one −¼·11ᵀ (Astra) and the k = 1 fluctuation are compensated *exactly* by the two Poisson boundary directions (φ(0), φ̂(0)) that 𝒮(𝔸)₀ removes.
   - Test against R5: DH has no boundary directions and no MF, so the conjecture must fail for DH. Good: it is not fake-blind.
 - **(T2) Tail engagement (CONJECTURE).** Any compensating operator for Fl_L is non-quasi-local: Astra's support bound gives the necessity half (Astra PROVED, Grok replay pending). The sufficiency half is the GAP.
