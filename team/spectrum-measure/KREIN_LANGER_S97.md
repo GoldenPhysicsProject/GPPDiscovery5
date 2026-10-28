@@ -11,8 +11,14 @@ S97 (GPPDiscovery5/s97/README.md) built the discrete Levinson/Verblunsky chain o
 ## A. Facts S97 should cite (PROVED, literature)
 1. **Kreĭn–Langer counting (the κ-version of S97 item 1).** Kreĭn–Langer, Math. Nachr. 77 (1977), Satz 5.9: a bijection between screw functions with κ negative squares (class G_κ) and generalized Nevanlinna functions N_κ.
    - Suzuki (arXiv 2206.03682, JLMS 2023, Thm 1.2) applies the κ = 0 case: RH ⇔ g = −Ψ is a screw function. Ψ(t) = 4(e^{t/2}+e^{−t/2}−2) − Σ_{n≤e^t}Λ(n)n^{−1/2}(t − log n) + archimedean terms.
-   - The κ-version gives: **the number of negative squares of G_g(t,u) = g(t−u) − g(t) − g(−u) + g(0) on ℝ equals the number of zeros of ξ(½ − iz) in ℂ₊ (with multiplicity)**. Equivalently, it is the number of negative squares of the Weil distribution W = −g″.
-   - Window version: κ(a) = number of negative squares on (−a, a). It is nondecreasing in a, with κ(∞) = #{ρ : Re ρ > ½} (multiplicity), since Im γ > 0 ⇔ Re ρ > ½ for γ = (ρ−½)/i.
+   - The κ-version gives: **the number of negative squares of G_g(t,u) = g(t−u) − g(t) − g(−u) + g(0) on ℝ equals the number of **distinct** zeros of ξ(½ − iz) in ℂ₊** (corrected 2026-10-28: earlier "with multiplicity"; see below). Equivalently, it is the number of negative squares of the Weil distribution W = −g″.
+   - Window version: κ(a) = number of negative squares on (−a, a). It is nondecreasing in a, with κ(∞) = #{**distinct** ρ : Re ρ > ½} = number of
+     off-line pairs {ρ, 1−ρ̄}, **not** counted with multiplicity: PROVED under H_fin (finitely many off-line zeros) in GAP2_bombieri_window.md G2.4
+     (each pair term m·2Re(A·conj B) has at most one negative square whatever m is, G2.1; equality via G2.2–G2.3). With infinitely many off-line
+     zeros, κ(∞) = ∞ is CONJECTURE (G2.6). Consistent with Kreĭn–Langer: the poles of the associated Nevanlinna-type function (built from ξ′/ξ)
+     are simple whatever the zero multiplicity, so the pole count is per distinct zero.
+     Sign note (corrected): for γ = (ρ−½)/i one has Re ρ = ½ − Im γ, so Im γ > 0 ⇔ Re ρ < ½; the count in ℂ₊ equals #{distinct ρ : Re ρ > ½}
+     because the zero set is invariant under γ ↦ γ̄ (functional equation).
    - Kreĭn–Langer's extension theorem: every f ∈ P_κ(a) has an extension in P_κ(ℝ) with the same κ.
 2. **Iohvidov / Frobenius inertia for Hermitian Toeplitz forms.** When the leading minors D_k are nonzero, the number of negative eigenvalues of T_n equals the number of sign changes in 1, D_1, …, D_n, i.e. the number of negative Levinson pivots P_k = P_{k−1}(1 − |κ_k|²).
    - The indefinite chain *continues* past |κ_k| > 1. This is Kreĭn–Langer, "Continuous analogues of orthogonal polynomials … with respect to an indefinite weight", J. Operator Theory 13 (1985).
