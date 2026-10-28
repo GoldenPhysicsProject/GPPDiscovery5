@@ -626,7 +626,7 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
   - T0 now cites (P9.0) in place of P8.2. Label unchanged: PROVED (identity), positivity PROVED in the Δ^♮ form. At Λ = 1, S_1 = 0, so Δ^♮_1 ≡ 0 (P.9 (D3)). On this track T0 is therefore the trivial identity W = −δ^♮_1, and all the content is in T1–T7.
 - **T6 break point pinned.** P.9 records, by inspection, that CC 2006.13771 uses the support condition only in §5–6 and Cor 2. The relevant items are Prop 5.5 (I ⊂ [−log 2, log 2]), K_I (Thm 3.6, §6), Lemma 6.10 ((140), the constant vector ξ₀, i.e. ĝ(0) = 0), Thm 6.11 ((141)), and Cor 2 ((6), Weil = W_∞).
   - The I-self-duality steps (Prop 2.2(iii), Lemma 4.1) are support-free. This agrees with our T1–T5 "survives" column.
-  - **T6 now reads: it breaks exactly at the K_I / Lemma 6.10–Thm 6.11 input (the eigenvalue count of K_I on I of length ≤ log 2, closed by ĝ(0) = 0), and at Cor 2 (no prime term).** Past 2L = log 2 both inputs fail: Cor 2 because of T7, and K_I because of T8 (norm mismatch). Label PROVED (published input; the location is by inspection, P.9 and ours).
+  - **T6 now reads: it breaks exactly at the K_I / Lemma 6.10–Thm 6.11 input (the eigenvalue count of K_I on I of length ≤ log 2, closed by ĝ(0) = 0), and at Cor 2 (no prime term).** Past 2L = log 2 both inputs fail as verbatim steps: Cor 2 because of T7, and the K_I/ε-margin route because of T8 (norm mismatch). As scoped by the audit, T8 blocks only that route, not (IF). Label PROVED (published input; the location is by inspection, P.9 and ours).
   - Side remark (PROVED, given CC Thm 1): for odd ξ, ξ̂(0) = 0, so ĝ(0) = ¼|ξ̂(0)|² = 0. CC's extra condition is therefore vacuous on the odd sector, and at ℓ = 0 the odd half of N.12's (K2) is exactly CC Thm 1.
 - **T9 × P.9(f).** P.9 PROVES (R5, as stated) that a D_L built only from archimedean data (P_Λ, P̂_Λ, S_Λ, Ŝ_Λ, ϑ) cannot satisfy (I1) for both ζ and a fake with ζ's gamma factor once 2L ≥ log 2, because the prime sides differ (PROVED-LEAN `GppWeilLadder.primeSide_eq_truncation`). Hence D_L must contain E.
   - T9 is the pointwise refinement of this. The arithmetic must enter through E's q = 2^{±1} summands, since archimedean distributions are smooth off a = 0 and so carry no δ_{±a}. P.9(f) says *that* E is needed, and T9 says *where*. The two are consistent, and neither uses the other.
@@ -641,8 +641,8 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
   - here R_L = 𝒮_L + 2ε′(1⁺)(‖·‖² − ⟨·, K_L·⟩) = W_∞∘Q is the right side of (IF).
 - **Sign convention.** Everything here is in **ξ-coordinates**. In k = (½ + ∂)ξ coordinates the harmed/helped roles of the nodeless even profile flip (N.12.3). In ξ the odd profile is harmed at first order in ℓ.
 - **Bound-first route (N.12.4).** S2, R_L ≥ c₂‖ξ‖²_{H(E)}, is what "bound |LHS| first, then compare" needs. Equivalently, m_L ≥ c₂ ≈ 0.490.
-  - S2 implies R_L ≥ 0, i.e. archimedean-only positivity (PROVED). That fails at μ_a < 2.44 (CC 2106.01715 §2.2, NUMERICAL).
-  - So that route is capped at 2L₀ < log 2.44.
+  - S2 implies R_L ≥ 0, i.e. archimedean-only positivity **on the pole-free class** (PROVED). CC 2106.01715 §2.2 reports a loss of archimedean positivity at μ_a < 2.44 (NUMERICAL).
+  - **Full-space caveat (per the C.13.2 audit note; patched after merge f512c6f).** CC's §2.2 matrix is on the full even/odd test space, not the pole-free class. A single negative eigenvalue on the full space need not survive restriction to the codimension-one pole-free hyperplane (Cauchy interlacing). So the cap 2L₀ < log 2.44 for the bound-first route is **NUMERICAL and conditional on the §2.2 loss transferring to the pole-free class**, which is not established. Status: CONJECTURE (cap), NUMERICAL (CC's full-space data). N.G2 is unaffected: it is a GAP either way.
 - **Relabel.** Our (IF) GAP (C.13.3 "analytic L₀ GAP") is **sharpened to N.G2**: no analytic lower bound for R_L on the harmful cones of (K2)/(K3), with constant 2c₂ against ‖P_{s}ξ‖²_{H(S₋)}. The label stays GAP.
 
 ### C.13.B.3 Trace-side contribution to N.G2 (new)
@@ -680,7 +680,7 @@ where M_ℓ = max_{|v|≤ℓ}|(Qκ)(a + v)| ≤ 4.5 for ℓ ≤ 0.1, and ≤ 5.9
   - It also PROVES that K_I / Lemma 6.10 contributes nothing at the H¹ level.
   - The residual is **N.G2-bulk (GAP)**: a lower bound R_L(ξ) ≥ 2c₂‖P_{s}ξ‖²_{H(S₋)} for ξ whose strip restriction is the edge trace of a bulk profile.
   - The archimedean form is J-symmetric as a form (3a), so the residual is a window/edge-coupling problem and not a symmetry obstruction. CONJECTURE: the residual is controlled by a Hardy-type edge inequality for R at L = ½ log 2 of the form R_{½log2}(ξ) ≥ μ·(edge energy), μ > 0. Not attempted here.
-  - Consistency: this does not contradict the cap of N.12.4(iii), since Lemma C.13.B makes no claim that archimedean-only positivity holds (on strip-localized vectors Q_L ≥ 0 uses the p = 2 term's bound, not its absence).
+  - Consistency: this does not contradict the (full-space, NUMERICAL; see the caveat in C.13.B.2) cap of N.12.4(iii), since Lemma C.13.B makes no claim that archimedean-only positivity holds (on strip-localized vectors Q_L ≥ 0 uses the p = 2 term's bound, not its absence).
 
 ### C.13.B.4 Labels and R-lines
 | item | label |
@@ -691,6 +691,7 @@ where M_ℓ = max_{|v|≤ℓ}|(Qκ)(a + v)| ≤ 4.5 for ℓ ≤ 0.1, and ≤ 5.9
 | projector dictionary | **closed negatively per P.9; trace-level dictionary only** (was GAP (minor)) |
 | (IF) ⇔ (K2) ∧ (K3); S1 sharp | PROVED (N.12, re-derived) |
 | analytic L₀ for (IF) | GAP, now **N.G2** |
+| bound-first cap 2L₀ < log 2.44 (N.12.4(iii)) | NUMERICAL (CC full space); transfer to the pole-free class CONJECTURE |
 | (3a) all reflections preserve R on L²(ℝ) | PROVED |
 | (3b) K_I / Lemma 6.10 are blind at the H¹ level | PROVED |
 | (3c) edge-pair identity; blind frequencies t_j | PROVED |
