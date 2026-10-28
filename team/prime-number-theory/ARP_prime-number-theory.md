@@ -2,7 +2,7 @@
 
 Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
 Seat: Goddess of Prime Number Theory, 2026-10-28 (S103), branch `team/prime-number-theory`, built on GPPDiscovery5 main 8079b30
-(ARP §G incl. 36aa6be/66cbedf/9184613; §S, §P, §Q, §C merged). Read-only consistency with §P at `team/principal-series` 1c46f59.
+(ARP §G incl. 36aa6be/66cbedf/9184613, 0244ce4/f097a52/7328e39; §S 9a10243, §P, §Q, §C merged; aligned in N.9). Read-only consistency with §P at `team/principal-series` 1c46f59.
 
 **RH is OPEN. Nothing in this section proves or implies RH.** The results are structural. On the support ladder P_X *is* ζ, and past
 the ladder every finite Euler product fails Weil positivity within O(1) of the ladder edge. So no finite set of primes closes G.4d.
@@ -284,19 +284,85 @@ What it **does not** contribute:
 - ARP §0.1 R1 says DMV/P_X "agree with ζ on every bounded window". The precise statement is per X: 2L ≤ log p⁺(X) (N.2), with
   every bounded window covered by some X. That is consistent, and only a wording sharpening.
 
+## N.9 Alignment with main 8079b30 (S103c steering)
+
+- **(1) Settled sign of the shared GAP (ARP G.4d).** The positive object is a trace over coker E = ker E* (the deficit), and the GAP
+  is lim_Λ Δ_Λ = Weil, i.e. δ_Λ → 0 (RH-equivalent). "Additive positivity transfers through E" is WRONG-SIGN and withdrawn. The
+  2 log Λ cancellation is Connes 1999 §VIII eq. (16) and the proof of Thm 5, eqs. (17)–(26) (cited from ARP G.4d / Queen
+  `arp/sign_check.md`, not re-read). §N works entirely on the Weil-form side (Q_L = MF_L + Fl_L) and uses no positivity "through E".
+  For P_X there is no E (no lattice ℚ^*, Queen §Q OS1 fails), so the deficit picture does not apply, and N.3.3 is not a statement about
+  δ_Λ. Nothing in §N conflicts with the settled sign.
+- **(2) μ_ρ.** §N does **not** use the residual formula lim Δ_Λ = Σ_ρ m_ρ ∫ĝ dμ_ρ. That formula is PROVED for function fields
+  (Connes 1999 §VIII Lemma 3) and is CONJECTURE for ℚ (ARP G.4d). P_X has no zeros attached to the borrowed W_∞ (no explicit formula),
+  so μ_ρ is not defined for it. N.3.3 is zero-free.
+- **(3) Queen's OS axioms (§Q).** OS0–OS4 are PROVED except OS2b = G.4d, THE GAP. §Q's table row for P_X reads "OS2b ✗, first
+  failure OS1". **N.3.3 supplies an explicit, unconditional proof of the OS2b failure for plain P_X** (L ≤ ½ log X + O(1); CERTIFIED
+  at X = 23, L = 1.7105). It is consistent with §Q and sharpens it. On OS4: §Q says OS4 (pole/boundary) is fully used up by MF. For P_X
+  that holds *by Convention N.0*, which keeps ζ's PNT mean in MF. N.4b shows the bookkeeping cost: Fl^{P_X} carries the unspent Ward
+  term ∫_{log X}^∞ e^{u/2} g_s. Equivalently, with P_X's own (truncated) mean, OS4 would not be used up, and N.3.3's witness is exactly
+  the unconsumed hyperbolic pole direction. §Q's "P_X satisfies OS2′ (MF ≥ 0)" (§Q line 206) is N.1. Wording: §Q R1 cites the simple
+  ladder L ≤ (log X)/2. The sharp ladder is 2L ≤ log p⁺(X) (N.2). This is consistent, not a conflict.
+- **(4) §C C.2d (KMS/primon positivity) passes P_X. Consistent, and §N makes it quantitative (PROVED).** §C C.2d proves that BC/primon OS
+  positivity at β = 1 is equivalent to w_n ≥ 0 (Widder; Berg–Christensen–Ressel), and lists P_X among the fakes that pass (§C, R line
+  for C.2: "F_θ, DMV, P_X and Epstein … pass"). P_X's weights (log p) p^{−k/2}, p ≤ X, are ≥ 0, so it passes, while N.3.3 shows Q^{P_X}
+  fails Weil positivity for L ≥ L₁(X). So P_X is an unconditional, explicit instance of §C's "R5 FAILS": a positivity that P_X passes
+  cannot imply OS2b. It also matches §C's sign statement: C.2d's bound for f ≥ 0 is an *upper* bound on Fl_L. For P_X the lower
+  bound fails, and the failing witness f_c of N.3.3 is not ≥ 0 (it is odd). §C's superselection row "P_X: finite product, F > 0,
+  no superselection; it breaks by finiteness, not by zeros" is N.3.3's mechanism: a bounded Euler operator (N.5).
+
+## N.10 The two Tate boundary directions in the semi-local S_X picture (Golden Eye's pole lead)
+
+Setting. S = S_X = {∞} ∪ {p ≤ X}, 𝔸_S = ℝ × ∏_{p∈S} ℚ_p, O_S^* = {±∏_{p∈S} p^{n_p}} (the S_X-units, replacing ℚ^*), ℤ[1/S] ⊂ 𝔸_S
+diagonally, Tate measures (dx_p with vol ℤ_p = 1, d^*x_p with vol ℤ_p^* = 1, d^*x_∞ = dx/|x|). For f ∈ 𝒮(𝔸_S), put
+Z_S(f, s) := ∫_{𝔸_S^*} f(x)|x|^s d^*x (Re s > 0). In Tate's global case the Mellin transform of Σ_{q∈ℚ^*} f(qx) has residues −f(0)
+at s = 0 and f̂(0) at s = 1, and 𝒮(𝔸)₀ removes both (ARP G.4a; Golden Eye).
+
+**N.10 Proposition (PROVED, elementary; pure tensors f = ⊗_{v∈S} f_v, Re s > 1 for the unfoldings, then meromorphic continuation).**
+(i) *S_X-units only.* ∫_{𝔸_S^*/O_S^*} Σ_{u∈O_S^*} f(ux)|x|^s d^*x = Z_S(f, s) = ∏_{v∈S} Z_v(f_v, s). This is **holomorphic at s = 1**
+  (it converges for Re s > 0). So **the f̂(0) boundary direction is absent.** At s = 0 it has a pole of order ≤ |S| = π(X) + 1, with
+  equality when all f_v(0) ≠ 0, and the coefficient of s^{−|S|} is 2f_∞(0) ∏_{p∈S} f_p(0)/log p. It also has poles at
+  s = 2πik/log p (k ≠ 0, p ∈ S, f_p(0) ≠ 0) on Re s = 0. In (ii) these are cancelled by the zeros of ∏_{p∈S}(1 − p^{−s}).
+  For unramified f (f_p = 1_{ℤ_p}, f_∞ = e^{−πx²}), Z_S = π^{−s/2}Γ(s/2) P_X(s), the "completed P_X": no pole at 1 and no FE.
+(ii) *Full S-integer sum.* Every ξ ∈ ℤ[1/S] ∖ {0} is uniquely u·n with u ∈ O_S^* and n ≥ 1 coprime to S, and |n|_S := ∏_{v∈S}|n|_v = n.
+  Hence ∫_{𝔸_S^*/O_S^*} Σ_{ξ∈ℤ[1/S]∖0} f(ξx)|x|^s d^*x = ζ^{(S)}(s)·Z_S(f, s), with ζ^{(S)}(s) = Σ_{(n,S)=1} n^{−s} = ζ(s)∏_{p∈S}(1 − p^{−s}).
+  This has **residue f̂(0) at s = 1 and −f(0) at s = 0**, exactly Tate's two boundary directions.
+*Proof.* (i) is unfolding plus the local Tate integrals. Z_p(f_p, s) = f_p(0)(1 − p^{−s})^{−1} + h_p(s), with h_p entire (f_p is
+locally constant with compact support). Z_∞(f_∞, s) has a simple pole at 0 with residue 2f_∞(0), and is holomorphic on Re s > 0.
+(ii) The factorization ξ = u·n is unique: n = |ξ|_∞·∏_{p∈S}|ξ|_p, up to the sign absorbed in ±1 ∈ O_S^*. Substituting x ↦ x/n
+gives the factor n^{−s}. At s = 1, ζ^{(S)} has residue ∏_{p∈S}(1 − p^{−1}) and Z_S(f, 1) = ∏_{p∈S}(1 − p^{−1})^{−1} ∫_{𝔸_S} f dx,
+so the residue is ∫ f dx = f̂(0). At s = 0, (1 − p^{−s})Z_p(f_p, s) → f_p(0), and ζ(s)Z_∞(f_∞, s) has residue 2ζ(0)f_∞(0) = −f_∞(0),
+so the residue is −∏_v f_v(0) = −f(0). ∎
+**Reading (PROVED as stated; interpretation is a remark).**
+- Replacing ℚ^* by the S_X-units deletes the s = 1 direction outright. It does not delete the s = 0 direction but degrades it: a
+  simple pole becomes an order-|S| pole plus the imaginary companions 2πik/log p. The codimension-2 condition f(0) = f̂(0) = 0 that
+  defines 𝒮(𝔸)₀ no longer removes the semi-local boundary. f(0) = 0 kills only the leading Laurent coefficient at s = 0, and f̂(0) = 0
+  imposes a zero Z_S(f, 1)·Res ζ^{(S)} = 0 rather than removing a pole.
+- The f̂(0) residue at s = 1 is carried **entirely by ζ^{(S)}, i.e. by the integers coprime to S, i.e. by the primes outside S_X**.
+  This is the adelic form of N.4b's "unspent Ward identity". Convention N.0 re-inserts both of ζ's boundary terms (ĝ(±i/2)) by hand
+  without the coprime-to-S tail that produces them, and N.3.3 shows they are then uncompensated. Equivalently (§P P.6): the bounded
+  finite Euler operator L_{S_X} is the S_X-unit sum, and the missing unbounded factor ζ^{(S)} is the ℚ^*-sum over the complement.
+- ℤ[1/S] is a cocompact lattice in 𝔸_S (standard; e.g. Weil, *Basic Number Theory*, theorem number unverified), so Poisson
+  summation and an FE hold for the full sum in (ii). They do not hold for the S_X-unit sum in (i). This is the adelic version of
+  "P_X has the Euler product but no FE" (R2).
+R1 per S | R2 (ii) has both halves, (i) only the Euler half | R3 not used | R4 the s = 1 boundary (pole state) lives in the outside-S tail |
+R5 DMV: no ℤ[1/S] lattice (Beurling primes), so (ii) has no analogue. F_θ, G_θ′: products of shifted copies of (ii). DH, Epstein:
+not of this form. H₋ₜ: not adelic.
+
 ## References (verified this session unless marked)
 - Diamond, H. G., Montgomery, H. L., Vorhauer, U. M. A., "Beurling primes with large oscillation", Math. Ann. 334 (2006) 1–36,
   doi:10.1007/s00208-005-0638-2, Theorem 1 (bibliographic data and Theorem 1 statement checked on the web this session).
 - Weil, A., Comm. Sém. Math. Lund (1952); Bombieri, E., Rend. Mat. Acc. Lincei 11 (2000) 183–233 (via §S; not re-read).
 - Yoshida, H., "On Hermitian forms attached to zeta functions", Adv. Stud. Pure Math. 21 (1992) 281–325, doi:10.2969/aspm/02110281.
-- Connes, A., Selecta Math. 5 (1999) 29–106 (Thm 4 per ARP G.4c, not re-read); Meyer, R., Duke Math. J. 127 (2005) (Lemma 5.3
+- Connes, A., Selecta Math. 5 (1999) 29–106 (Thm 4 per ARP G.4c; §VIII eq. (16), Thm 5 eqs. (17)–(26), Lemma 3 per ARP G.4d; not re-read); Meyer, R., Duke Math. J. 127 (2005) (Lemma 5.3
   per §P, not re-read).
 - Connes, A., Consani, C., "Weil positivity and trace formula, the archimedean place", Selecta Math. 27 (2021) art. 77,
   doi:10.1007/s00029-021-00689-4, arXiv:2006.13771.
 - Landau, H. J., Widom, H., "Eigenvalue distribution of time and frequency limiting", J. Math. Anal. Appl. 77 (1980) 469–481
   (indicator-symbol case only; general-symbol theorem number unverified).
+- Tate, J., thesis (1950), in Cassels–Fröhlich (1967): local zeta integrals (§2) and the global FE (§4), per ARP G.1a/G.4a.
+- Widder (1941) Ch. VI; Berg–Christensen–Ressel (1984), via §C C.2d (not re-read).
 - Suzuki, M., arXiv:2206.03682 (explicit-formula normalization, via §S).
-- Team: ARP.md §0, §G (main 8079b30); §S `team/spectrum-measure/ARP_spectrum-measure.md`; §P `team/principal-series/ARP_principal-series.md`
+- Team: ARP.md §0, §G (main 8079b30); §Q `team/queen/ARP_queen.md` (OS table, DMV/P_X); §C `team/celestial-cft/ARP_celestial-cft.md` (C.2d); §S `team/spectrum-measure/ARP_spectrum-measure.md`; §P `team/principal-series/ARP_principal-series.md`
   @1c46f59; bridge `work/2026-10-27_astra_prime_pnt_os_ward_identity.md`, `work/2026-10-27_astra_k2_dom_bulk_sewing.md`,
   `work/2026-10-27_astra_offline_zero_counterterm_control.md` (Astra's F_θ control: counterterm closure does not fix real parts; §N
   uses no residue/counterterm argument, and N.3.3's hypothesis excludes F_θ explicitly); `finite_windows_dmv.md`, `px_positivity.md`.
