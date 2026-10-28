@@ -228,11 +228,24 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
 | **F_θ** = ξ(s−θ)ξ(s+θ) | **product** γ unitary on Re s = ½ (replay (5): \|γ₊γ₋\| = 1), but each GL(1) constituent \|·\|^{±θ} has \|γ\| ≠ 1 (0.817, 1.224 at p = 7) | same | ≥ 0 (G.3c) | E does commute with \|x\|^θ, but the twisted form is a **polarization** 2 Re B_ζ(e^{θu}f, e^{−θu}f), not a norm (**PROVED**, replay (2)) | breaks at G.4 only (norm → polarization, §P.4). Not a GL(2) filter: for 0<θ<½ π(\|·\|^θ,\|·\|^{−θ}) is complementary series with positive-definite Knapp–Stein form (§P.3, Knapp–Stein 1971); local non-temperedness is a size shadow, not a sign condition |
 | **DH** | no local data (no Euler product) | ζ-like γ_∞ | **no MF** (entire) | no ⊗′ factorization, so E of a sum of two L-functions is not a norm of a sum | breaks at G.1/G.4 |
 | **P_X** | truncated local data | — | ≥ 0 (by convention) | no lattice ℚ^* ⊂ 𝔸; agrees with ζ for 2L ≤ log p⁺(X) | **PROVED to fail** past the ladder: ind_− ≥ 1 for L ≥ ½ log X + O(1), odd-pole bump witness (§N, headline) |
-| **DMV (glued, full prime tail)** | Beurling local data | — | ≥ 0 | no lattice ℚ^* ⊂ 𝔸, so no Poisson and no global reflection | breaks at G.4a structurally; whether it gets negative index past the ladder is **OPEN (§N GAP N.G1)** |
+| **DMV (glued, full prime tail)** | Beurling local data | — | ≥ 0 | no lattice ℚ^* ⊂ 𝔸, so no Poisson and no global reflection | breaks at G.4a structurally; **PROVED to fail for large L** (§N N.11.3, ineffective; explicit onset GAP N.G1′): ind_− ≥ 1 for some L > ½ log p⁺(X) (onset past the ladder given RH), r → −∞ along a sequence |
 | **Epstein** (h = 2) | sum of two Euler products (genus characters) | γ_∞ for GL(2)/ℚ(√D) | ≥ 0 | Poisson over the lattice exists, but there is no ⊗′ of one Euler product; E of a sum of two pure tensors | breaks at G.1d/G.4b |
 | **H₋ₜ** (de Bruijn–Newman deformation) | no Euler product after deformation | **γ_∞ is not Tate's** (deformed Φ kernel) | ≥ 0 | no adelic E | breaks at G.2/G.4 |
 
 **Reading.** All six fakes break at the gluing G.4 (and DMV/P_X *only* there). (S103c: F_θ's earlier "local temperedness filter" break is withdrawn per §P.3; it breaks only at G.4.) G_θ′ passes everywhere. So R5 is consistent with G.4d being the true locus of RH. That is exactly Connes' "uniformity" dead end, now with every fake located. **No new route is claimed.**
+
+**G.4f (§N N.11, merged S103d; RH-silent).** Every borrowed-W_∞ system that meets the hypotheses of §N N.11.3 (prime measure with
+∫e^{−σu}d|μ| < ∞ for σ > ½, D_μ meromorphic a little past Re z = ½, a pole of D_μ in Re z > 0) has ind_− ≥ 1 for large L (PROVED,
+ineffective; two-bump identity N.11.2 plus the classical Phragmén–Landau/Ingham Laplace argument). This covers glued DMV (off-line zeros)
+and, as the ε = −1 case, plain P_X (uncancelled pole, = N.3.3). It is the easy direction of Weil's criterion, uses no FE, and gives
+nothing toward RH. DH and Epstein are outside the hypotheses. F_θ is covered by a sketch only. G_θ′ is not falsely failed (its poles
+lie on Re z = 0 under RH). §N N.11.4: the FE adds nothing to the failure direction. The positivity direction needs it, because
+"no poles in Re z > 0" does not imply positivity (P_X counterexample, PROVED).
+- **Open items from §N after N.11:**
+  - GAP N.G1′: explicit onset L₁(DMV), via effective oscillation (Turán/Pintz-type) and explicit DMV zero heights.
+  - GAP N.G1″: polynomial bounds for ζ_P′/ζ_P on a line σ = θ₁ ∈ (θ, 1) (Landau lemma; needed only for the zero-side/quartet route).
+  - CONJECTURE N.C3: ind_−(Q^{P_DMV}_L) → ∞.
+  - (N.G1 itself is CLOSED.)
 
 ### G.5 What would count as progress (CONJECTURE-level targets, each R1–R5-checked)
 - **(T1) Pole/boundary compensation (WITHDRAWN S103 by G.3d).** The k = 2 rank-one needs no compensation (it is absorbed once the fluctuation is taken against ψ = Σ_k θ(x^{1/k}), G.3d), and the two boundary directions are already spent on the mean field (G.3a). Original statement kept for the record:

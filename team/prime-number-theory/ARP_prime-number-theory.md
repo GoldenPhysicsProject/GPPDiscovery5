@@ -396,7 +396,7 @@ singularity at z₀. But Φ(z₀)² ≠ 0 and D_μ has a pole there. Contradicti
 - **(a) Glued DMV, N.G1 (PROVED).** By `finite_windows_dmv.md` §3, ζ_{P_X} = ζ_P·E_X with E_X holomorphic and zero-free on σ > 0, and
   ζ_P analytic on σ ≥ θ except a simple pole at 1 (DMV, Math. Ann. 334 (2006), Thm 1). So D = −ζ_{P_X}′/ζ_{P_X}(½ + z) − 1/(z − ½) is
   meromorphic on Re z > θ − ½ (θ < 1, θ − ½ < ½). The s = 1 pole cancels: residue +1 of −ζ′/ζ against 1/(z − ½). The poles are at
-  z_j = ρ_j − ½ for DMV's zeros ρ_j on σ = 1 − a/log t, so Re z_j = ½ − a/log t_j > 0 for t_j > e^{2a}. Hence **for every X, the glued
+  z_j = ρ_j − ½ for DMV's zeros ρ_j on σ = 1 − a/log t (this a is DMV's constant, not the continuation abscissa a of N.11.3), so Re z_j = ½ − a/log t_j > 0 for t_j > e^{2a}. Hence **for every X, the glued
   DMV form has ind_− ≥ 1 for some L**. That L is necessarily > ½ log p⁺(X), by N.2 and Weil for ζ, *given RH*; unconditionally it is
   just "some L". Since Re z_j → ½, **T(U) ≠ O(e^{(½−δ)U}) for every δ > 0**. So along a sequence L_k → ∞,
   Q^{P_DMV}_{L_k}(f) ≤ K_φ − 2e^{(1−2δ)(L_k−η)}, i.e. r^{P_DMV} → −∞ at the same exponential rate as plain P_X (N.3.4c), up to e^{−2δL}.
@@ -407,7 +407,7 @@ singularity at z₀. But Φ(z₀)² ≠ 0 and D_μ has a pole there. Contradicti
 - **(c) ζ (PROVED; classical direction of Weil's criterion, here without explicit formula and without FE).** Q^ζ ≥ 0 for all L ⇒ ζ has
   no zeros in Re s > ½. RH ⇒ positivity is *not* obtained (N.11.4).
 - **(d) Fakes (R5).** F_θ: the same proof works with its own pole terms at s = 1 ± θ and two subtracted means e^{(½±θ)u}
-  (PROVED, same proof; its MF is a bounded multiplier, as in G.3c). D then has poles at z = θ + iγ (zeros ρ + θ of ζ(s − θ)), so it
+  (proof sketch, Grok audit S103d: N.11.1 must be widened to two pole terms and to convergence only for σ > ½ + θ, then N.11.2–N.11.3 run unchanged on Re z > θ; routine but not written out, so label GAP-minor until written; its MF is a bounded multiplier, as in G.3c). D then has poles at z = θ + iγ (zeros ρ + θ of ζ(s − θ)), so it
   fails ✓, even under RH. DH and Epstein: their log-derivative Dirichlet series have poles in σ > 1 (Davenport–Heilbronn-type zeros in
   σ > 1; theorem numbers unverified), so they violate the hypothesis ∫e^{−σu}d|μ| < ∞ for σ > ½. **N.11.3 is silent on them**, and
   they fail elsewhere (§Q OS3, ARP G.4e). G_θ′: poles of D at ρ ± iθ′ lie on Re z = 0 under RH, so the theorem is silent and G_θ′ is **not falsely
@@ -429,25 +429,38 @@ failed) | R4 witness family contains the soft-mode shape | R5 as in (d).
   FE, the remainder
     R_θ(f) := W_∞(g) + (1/2πi)∫_{(θ)} [ĝ(−i(s − ½)) + ĝ(i(s − ½))] (ζ_P′/ζ_P)(s) ds
   stays (given polynomial bounds for ζ_P′/ζ_P on σ = θ, which is GAP N.G1″ below). So Q^P = Σ_{Re ρ>θ} m_ρ[ĝ(−i(ρ−½)) + ĝ(i(ρ−½))]
-  + R_θ, with no reason for R_θ ≥ 0. In words (PROVED for ζ by Weil; it has no analogue for DMV): **the FE is exactly
-  the statement that W_∞ is the archimedean term of μ's own explicit formula**, i.e. R_θ collapses to the zeros with Re ρ ≤ θ. It is
+  + R_θ, with no reason for R_θ ≥ 0. In words (PROVED direction, for ζ by Weil: FE ⇒ W_∞ is the archimedean term of μ's own explicit formula; it has no analogue for DMV.
+  The converse, explicit formula with W_∞ ⇒ FE, is a Hamburger-type statement, not proved or cited here; Grok audit S103d narrowed the
+  original "exactly"): **the FE makes W_∞ the archimedean term of μ's own explicit formula**, i.e. R_θ collapses to the zeros with Re ρ ≤ θ. It is
   needed only for the direction "zeros on the line ⇒ positivity", which is the RH-relevant one.
 
 ### N.11.5 Why the single-zero quartet witness φ_L = e^{−iγ₀x} sinh(β₀x) is blocked (isolated, labelled)
 For ζ under ¬RH, Weil's explicit formula plus the FE quartet {ρ₀, ρ̄₀, 1 − ρ₀, 1 − ρ̄₀} lets a (1,1) vector like φ_L make the quartet
 term 4Re ĝ(γ₀ − iβ₀) dominate and go negative. For DMV this needs Q^P's zero-side expansion, and three terms block it:
-1. **No quartet (PROVED).** Without FE the zeros come only in conjugate pairs ρ, ρ̄. The (1,1) quartet structure is an FE artefact, so
+1. **No quartet is forced (PROVED).** Without FE the zeros are only guaranteed to come in conjugate pairs ρ, ρ̄. The (1,1) quartet structure is an FE artefact, so
    φ_L is not adapted to a symmetric zero set.
 2. **R_θ (GAP N.G1″).** Q^P = Σ_{Re ρ>θ}(…) + R_θ needs bounds on ζ_P′/ζ_P along a line σ = θ₁ ∈ (θ, ½ + β₀). These are available via
    Landau's lemma from |ζ_P(s)| ≪ |t|/(σ − θ) (partial summation from N(x) = κx + O(x^θ)) together with σ = 2 lower bounds: standard,
    but not written out here, so GAP. Even then, R_θ(φ_L) = O(e^{(2θ₁−1)L}·poly(L)) and is not sign-controlled.
-3. **Larger off-line zeros dominate (PROVED).** For f with f̂ of fixed shape, the pair term of ρ_j is ≍ e^{2β_j L}|Φ-type(z_j)|², and DMV
+3. **Larger off-line zeros dominate (heuristic obstruction, not a theorem: it presupposes the zero-side expansion of N.G1″; relabelled by Grok audit S103d).** For f with f̂ of fixed shape, the pair term of ρ_j is ≍ e^{2β_j L}|Φ-type(z_j)|², and DMV
    has β_j = ½ − a/log t_j → ½ > β₀. So no single zero dominates. The zero sum has oscillating phases e^{2iγ_j c} and the size
    e^{L(1−o(1))} of the pole term. A sign for a single ρ₀ cannot be read off.
 N.11.3 bypasses all three. It never expands Q into zeros: the zero enters only as a singularity of a Laplace transform. The cost is
 ineffectiveness.
 - **Principal series `dh_signed/` vectors** (DH cos-basis Ritz/witness vectors at L = 1.069…, 1.711, K ≤ 360): not used. They are
   DH-specific (no pole, complex weights) and are NUMERICAL witnesses at fixed L, whereas N.11.3 is analytic in U → ∞.
+
+### N.11.5a Prior art (Grok audit S103d)
+- N.11.3(c) is the easy direction of Weil's criterion (Weil 1952; Bombieri 2000, cited in References). No novelty is claimed for it.
+- The N.11.3 mechanism (if the fluctuation is O(e^{σU}), its Laplace transform is holomorphic on Re z > σ, so a singularity at z₀ forces
+  an Ω-result of size e^{(Re z₀−δ)U}) is the classical Phragmén–Landau/Ingham oscillation argument (Ingham, *The Distribution of Prime
+  Numbers*, Cambridge 1932, Ch. V; chapter-level citation, theorem numbers unverified). Beurling-prime oscillation of this kind is also
+  classical, and DMV 2006 Thm 1 already gives ψ_P − x = Ω_±. Only the Ω (not Ω_±) form is needed here: the choice of ε in N.11.2
+  absorbs the sign, so Landau's theorem on Dirichlet integrals with non-negative coefficients is not used.
+- What N.11 adds is local to the ARP: the two-bump identity that turns the smoothed Ω-result into ind_− ≥ 1 of the borrowed-W_∞ form,
+  and the R5 classification in N.11.3(d). Scope: "every prime-side fake with an off-line zero fails" holds only for borrowed-W_∞ systems
+  that meet N.11.3's hypotheses (∫e^{−σu}d|μ| < ∞ for σ > ½, meromorphic continuation, a pole of D_μ in Re z > 0). DH and Epstein are
+  outside them, P_X fails through its uncancelled pole rather than a zero, and F_θ is covered only by the sketch in N.11.3(d).
 
 ### N.11.6 GAPs and labels after N.11
 - **N.G1: CLOSED (PROVED, ineffective).** Glued DMV past its ladder: ind_− ≥ 1 for some L, and r → −∞ along a sequence.
