@@ -167,9 +167,16 @@ function-field setting) does not reproduce ĝ(γ_ρ): Poisson reproduction needs
 **S(c)4 No slack (PROVED, unconditional; written out here).** Let r(L) := inf_{f ≠ 0} Q_L(f)/MF_L(f) (well-defined: MF_L > 0).
 r is nonincreasing in L, and **lim_{L→∞} r(L) ≤ 0**; RH ⇔ r(L) ≥ 0 for all L ⇔ lim r(L) = 0.
 *Proof.* Monotone by inclusion. RH case: r(L) ≤ Q_L(f_L)/MF_L(f_L) → 0/4 (S(b)4). Non-RH case: r(L) < 0 for L ≥ L₁. ∎
-Consequence: G.4d ("Fl_L ≥ −MF_L uniformly") cannot be proved with any margin — there is no c > 0 with Fl_L ≥ −(1−c)MF_L for all L.
-Any argument of the form "MF dominates the fluctuation by a fixed factor" is ruled out, unconditionally. The saturating directions are
-the dilated nodeless bumps (R4 soft mode; consistent with S98's fake-blind positive cone and the project's tiny window λ_min,
+Consequence (PROVED; scope narrowed after Golden Eye's audit, which found S(c)4 itself sound): **no MF-relative margin** — there is
+no c > 0 with Fl_L ≥ −(1−c)MF_L for all L (equivalently no c > 0 with Q_L ≥ c·MF_L for all L). So any argument of the form "MF
+dominates the fluctuation by a fixed factor" is ruled out, unconditionally.
+*What is NOT proved.* This says nothing about Q_L ≥ c·N_L(f) for a different norm N_L that degenerates on the dilated nodeless bumps
+(e.g. one weighting only frequencies near the zeros, such as N_L(f) = Σ_γ w(γ)|f̂(γ)|²-type expressions); S(c)4 does not exclude such
+a margin.
+**CONJECTURE (well supported; not proved):** the closing step for G.4d must be an exact identity (zero margin in every natural norm),
+rather than an inequality with slack. Support: S(c)4 (MF-relative), S98 (fake-blind positive cone), §0.2 restatement dead ends.
+Credit: Golden Eye audit of S(c)4 (2026-10-28).
+The MF-relative saturating directions are the dilated nodeless bumps (R4 soft mode; consistent with S98's fake-blind positive cone and the project's tiny window λ_min,
 which is NUMERICAL orientation only).
 R1 this is precisely the R1 obstruction made quantitative | R2 not used — fake-blind | R3 — | R4 saturation on the soft mode | R5 S.4.
 
@@ -192,7 +199,7 @@ version is G.4d itself (CONJECTURE ⇔ RH).
 | decisive break | G.1 temperedness / G.4 polarization | G.1/G.4 | G.2/G.4 | G.4a | never | G.1d/G.4b |
 
 Reading: every §S statement is fake-blind. §S locates no RH content; it sharpens *how* the open step G.4d must look
-(exact, zero-margin, saturated on the soft mode). Consistent with ARP G.4e.
+(no MF-relative margin, saturated on the soft mode — PROVED; "must be an exact identity" — CONJECTURE, see S(c)4). Consistent with ARP G.4e.
 
 ---
 
@@ -212,7 +219,7 @@ Reading: every §S statement is fake-blind. §S locates no RH content; it sharpe
 ## S.6 Dead-ends log (this file; cite §0.2, not re-derived)
 
 1. "Bochner for Fl" — false (S(c)1). 2. "Bochner for MF + Fl" — Weil restatement (§0.2 row 2). 3. "MF dominates Fl with margin" —
-   ruled out unconditionally (S(c)4). 4. Analytic continuation of the MF character to off-line exponents — indefinite (S(c)3,
+   ruled out unconditionally for the MF-relative margin only (S(c)4; other norms not excluded). 4. Analytic continuation of the MF character to off-line exponents — indefinite (S(c)3,
    `GppAbelContinuedKernel`). 5. Window-index certificates → global — Kreĭn–Langer extension freedom (S97 §B) and R1 (DMV).
 6. PNT error bounds for Fl — exponentially too weak at half density (ARP G.4d(i)). 7. Positive harmonic-measure smearing of off-line
    atoms — no bound on Q (S(c)3 remark). Also §0.2: log-time OS false; positive cone fake-blind (S98); Selberg; Connes uniformity;
@@ -233,8 +240,9 @@ Reading: every §S statement is fake-blind. §S locates no RH content; it sharpe
 ## S.8 Final GAP (identical to ARP G.4d; RH-equivalent; no progress claimed)
 
 **GAP (G.4d).** Fl_L(f) ≥ −MF_L(f) for all f ∈ C_c^∞([−L, L]), uniformly in L, with Fl_L the **E_Λ**-fluctuation.
-Equivalent to RH (Weil 1952; Bombieri 2000). §S adds only: (i) MF_L = ∫ĝ dt/(2π(t²+¼)) exactly; (ii) the inequality must hold with
-zero margin and is saturated on dilated nodeless bumps (S(c)4); (iii) the window negative index is monotone, finite, eventually
+Equivalent to RH (Weil 1952; Bombieri 2000). §S adds only: (i) MF_L = ∫ĝ dt/(2π(t²+¼)) exactly; (ii) the inequality has no MF-relative
+margin and is saturated on dilated nodeless bumps (S(c)4, PROVED; margins in norms degenerating on those bumps are not excluded;
+"exact identity needed" is CONJECTURE); (iii) the window negative index is monotone, finite, eventually
 global and ≤ N_{>½}.
 Secondary open items: GAP (verification/transfer) κ_Q(L) = N_{>½} on support windows (S(b)3.7); GAP (citation) Kreĭn–Langer
 𝒢_κ count for ζ (S(b)3.8); GAP (normalization, minor) Astra's Hankel −⅛ (S(a)3); cokernel sign — under review (S(c)5).
