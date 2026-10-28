@@ -492,6 +492,7 @@ So the right side is finite, and Lemma M1.1 holds as stated on B_{Λ,0}.
   - φ_k is even and C_c^∞; the jump is smoothed. Since φ is smooth near 0, φ_k is smooth at 0.
   - φ_k(0) = φ(0) = 0 and ∫φ_k = φ̂(0)·∫yρ_k(y)d^*y = 0. So φ_k ∈ S_0^ev.
   - Mφ_k = Mφ · Mρ_k with |Mρ_k| ≤ 1 and Mρ_k → 1 pointwise. By dominated convergence, ‖φ_k − φ‖_ζ → 0.
+  - *Grok audit (S103g), small fix.* With x = yz one gets M(φ_k)(s) = Mφ(s)·∫ρ_k(y)y^{½+is}d^*y. So the multiplier is bounded by ∫ρ_k y^{½}d^*y ≤ sup_{supp ρ_k} y^{½}, which is → 1 and ≤ 2 for large k; it is not ≤ 1 as stated. Either normalize ∫ρ_k y^{½}d^*y = 1, or use the bound 2. Dominated convergence is unaffected, and so is ∫φ_k = φ̂(0)∫yρ_k d^*y = 0.
 - **Identification of the limit.** On S_0^ev, ‖E(·)‖² = 2‖·‖²_ζ-type (M1.4; Connes 1999 §III), so E(φ_k) is Cauchy in L²(du).
   - Its limit equals the pointwise E(φ) a.e.: E(φ_k)(u) → E(φ)(u) at every u with Λe^{−u} ∉ ℤ, since these are finite sums and φ_k → φ at continuity points. Pass to an a.e.-convergent subsequence.
   - Hence the closure of E coincides with the pointwise E on B_{Λ,0}. Mellin–Plancherel, ‖E(φ)‖² = (2/π)∫|ζ(½+is)|²|Mφ(s)|² ds (M1.4 normalization, using ∫|Mφ|² = π‖φ‖²), holds on B_{Λ,0}. So does the definition of κ_Λ.
@@ -568,6 +569,18 @@ Split S Eφ_i = Eφ_i − (1 − S)Eφ_i. Then (H.13.a) ≤ 2Σ_i‖V^* Eφ_i‖
 
 In words, the E-orthogonal complement R̃, normalized in the E-norm, has low-s Mellin density no larger than the removed prolates themselves, up to a polylog.
 
+*Grok audit (S103g) of H.12: SOUND, PROVED.*
+- Step 1: g is 1-periodic BV with coefficients x^{−1}Fφ(k/x). Dirichlet–Jordan gives the symmetric sums at every point. The Zygmund theorem-number caveat stays.
+- Step 2: the substitution y = e^{−u} is right. The leak lives only on u < −log Λ, since E(φ)(u) = 0 for u > log Λ.
+- Step 3: |Mφ| ≤ TV(F_φ)/|s|, which is finite because F_φ → 0 at −∞. The approximate identity lands in S_0^ev: φ_k is even and C_c^∞, φ_k(0) = 0 and ∫φ_k = 0. The Cauchy-limit identification uses finite sums at continuity points. One multiplier-bound wording fix is noted above.
+
+*Grok audit (S103g) of H.13.1–H.13.2.*
+- Checked: dim R₀ ≤ r_K + 2; R₀ ⊂ removed ⊕ span{k₀, k₁}, since the kept-span complement of B^{(K)}_0 is spanned by the projections of δ₀ and 1; ran ΔQ = E(R̃); (H.13.a), with V(h) = V(f)V(f)^*; and (i) via Mellin–Plancherel (H.12).
+- Jump formula checked: the sawtooth gives 2φ(Λ)e^{u/2}(½ − {Λe^{−u}}). The transform is Λ^{½−is}∫_{Λ²}^∞ w^{−3/2+is}(½ − {w})dw. One integration by parts with the primitive bounded by 1/8 gives (1 + |s|)Λ^{−5/2}, hence C_f|φ(Λ)|²Λ^{−5}.
+- **Gap in the proof of Thm H.13 (label correction).** The jump sum over the E-ONB needs Σ_i|φ_i(Λ)|², or Σ_i‖φ_i‖²_{L²}. (PD) as stated controls 𝒟 only on |s| ≤ Λ^ε, so it does not give ∫𝒟 = πΣ_i‖φ_i‖². The fix is to state (PD) in integrated form as well: **Σ_i‖φ_i‖²_{L²} ≤ (log Λ)^A(r_K + 2)**. Then |φ_i(Λ)|² ≤ 4Λ‖φ_i‖² (Bernstein, λ ≥ ½, as in H.9.1) makes the jump sum ≤ C_f(log Λ)^A r_K Λ^{−4}. Thm H.13 is therefore PROVED-conditional on (T3a*) + (PD, including this integrated form) + (L), at the stated rate.
+- **Worst case (iii) (label correction).** R̃ is not contained in the removed span plus span{k₀, k₁}: the φ_i carry kept feedback χ_i. So "(T3) ⇐ (T3a*) if B < 2" is **not** PROVED given (T3a*) alone. It also needs the worst-case transport of the kept feedback (Part II's (T3b)). This matches S&M T4 as audited (65bba74 note: T4 also needs (T3b) and the T2 upper bound). B < 2 is a necessary condition on this route, not a sufficient one, and B′ is not explicit.
+- **Status: (T3) is NOT proved.** It is reduced to (T3a*) (CONJECTURE, Spectrum) + (PD) (GAP, Queen) + (L) (HEURISTIC).
+
 **Theorem H.13 (PROVED-conditional on (T3a*), (PD), (L)).** For fixed f ∈ C_c^∞:
 
   Tr(S_Λ ΔQ S_Λ V(h)) ≤ C_f (log Λ)^{A} r_K Λ^{−2} ∫|f̂|²|ζ(½+is)|²(1 + |s|)^{A} ds + O(r_K Λ^{−2}(log Λ)^{O(1)}) + o(1) = O(K(log Λ)^{A+2}Λ^{−2}) → 0.
@@ -619,11 +632,12 @@ R-line H.13: R1 Λ-uniform, no L | R2 Poisson through the sawtooth (ii); the Eul
 | H.13.2(ii) jump/sawtooth leak low-pass ≤ C_f|φ(Λ)|²Λ^{−5} (mean-zero sawtooth) | PROVED (elementary) |
 | (L) remainder leak low-pass O(r_KΛ^{−2}polylog) | HEURISTIC (needs tail-amplitude derivative bounds; archimedean) |
 | ‖[S_Λ, V(f)]‖₁ ≤ C_f (CC 2006.13771 technique) | PROVED (O(1) bookkeeping only) |
-| Worst-case transport: (T3) ⇐ (T3a*) if B < 2 | PROVED-conditional (agrees with Spectrum T4) |
+| Worst-case transport: (T3) ⇐ (T3a*) if B < 2 | PROVED-conditional on (T3a*) **and** worst-case kept-feedback transport (Grok audit S103g); agrees with Spectrum T4 as audited |
 | (PD) profile domination of the E-orthonormal complement | **GAP (Queen)**: needs a Mellin-local inverse bound for the ζ-weighted Gram |
 | (PD-1) flat profiles: ‖Eρ‖² ≥ cθ log H‖ρ‖² | PROVED (citation: B–R via Prop H.4) |
 | (PD-2) flat profiles: ‖Eρ‖² ≤ C log Λ‖ρ‖² | PROVED (citation: Hardy–Littlewood, Titchmarsh §7.3) |
-| Thm H.13: (T3a*) + (PD) + (L) ⇒ (T3), rate O(K(log Λ)^{A+2}Λ^{−2}), no B < 2 | PROVED-conditional |
+| Thm H.13: (T3a*) + (PD) + (L) ⇒ (T3), rate O(K(log Λ)^{A+2}Λ^{−2}), no B < 2 | PROVED-conditional; (PD) also needed in integrated form Σ‖φ_i‖² ≤ (log Λ)^A(r_K + 2) for the jump sum (Grok audit S103g) |
+| **(T3) itself** | **NOT proved** (reduced to (T3a*) CONJECTURE + (PD) GAP + (L) HEURISTIC) |
 | H.13 fake-blind (DH, Epstein) ⇒ RH-silent | PROVED (sketch) as a reduction |
 | Prior art (CC 2106.01715 §3, CC 2006.13771 §1, CCM 2310.18423) contains no (T3b) | checked in local copies |
 

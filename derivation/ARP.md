@@ -238,6 +238,13 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
           - **Trimmed space proposed as primary (OPINION, Queen).** On I^{(K)} = {1 − λ_n ≤ Λ^{−K}} with K ≥ 2B + 8, Thm H.9 gives ℓ^{(K)} ≤ CΛ^{−1}, so **M1 holds on the trimmed space**, diagonal included. Label: PROVED-conditional on the H.1/H.1′ sketch plus the GAP-minor extension of Lemma M1.1. It uses no Spectrum input. The endpoint bound is Lemma H.9.1, which is elementary.
           - **Identifying it with Connes' Q′_Λ is conditional on (T3)**, the trimming-harmless check Tr(SΔQSV(h)) = o(1), which is also M2-compatibility. (T3) splits into (T3a), the plunge-state low-Mellin mass (HEURISTIC, Spectrum), and (T3b), the E-transport (GAP, Queen).
           - **(T3a) at the conjectured rate is expected FALSE** (S&M T3a_plunge_mellin 65bba74, merged S103g; CONJECTURE, HEURISTIC + NUMERICAL). Plunge states oscillate at frequency ≈ Λ at every x, so ω^{arch}_Λ(log Λ) ≍ (log Λ)/Λ², not Λ^{−B−2−δ}. The model |M cos(c·)|² = π/(2c) is PROVED. **So, along Queen's reduction, (T3) needs B < 2** (κ_Λ ≤ CΛ^B), or a (T3b) that avoids the m_Λ loss. It also needs the upper bound ω^{arch} ≤ CS/Λ² (GAP) and (T3b) itself (GAP). B < 2 is not available: H.1/H.1′'s B′ is absolute but not explicit, and the sharp Λ^{o(1)} is barred.
+          - **Part III update (Queen 0fb6f9c, merged S103g; Grok audit: SOUND with two label corrections).**
+            - H.12 closes the Lemma M1.1 density extension (PROVED). The proof is pointwise symmetric Poisson for truncated prolates off a null set (Dirichlet–Jordan; the Zygmund theorem number is unchecked), the pole terms vanish, and a Mellin approximate identity lands in S_0^ev.
+            - Hence **M1 on the trimmed space is PROVED (sketch), given H.1/H.1′ only**.
+            - (T3a) is withdrawn and replaced by the trace form (T3a*): 𝒟_rem(s) ≤ Cr_K(1 + |s|)^AΛ^{−2} on |s| ≤ Λ^ε. This is a CONJECTURE.
+            - **(T3) reduces to (T3a*) + (PD) + (L), with no B < 2 condition.** Thm H.13 is PROVED-conditional at rate O(K(log Λ)^{A+2}Λ^{−2}). (PD), profile domination of the E-orthonormal complement, is a GAP and must also hold in integrated form for the jump sum. (L), the remainder-leak low-pass, is HEURISTIC.
+            - The worst-case route still needs B < 2 plus kept-feedback transport.
+            - **(T3) is NOT proved.**
           - H.10's RH-conditional line is flagged and barred.
           - The trimming count is corrected to O(K log²Λ).
     - **M1 overall: CONJECTURE.** RH-silent: no implication to or from RH.
