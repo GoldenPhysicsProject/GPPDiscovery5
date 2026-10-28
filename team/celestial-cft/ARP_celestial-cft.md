@@ -208,7 +208,7 @@ Step tests (replays only, one per named step): `team/celestial-cft/arp_c/c_step_
 **Answer to (b)(i): YES.**
 - The superselection is a statement about the BC/primon KMS states at the mirror temperatures β = 2σ and 2 − 2σ: Kakutani disjointness of their product restrictions, and type I vs III_1 on 𝒜.
 - It is therefore **zero-blind**: F_P = ζ_P(1)/√(ζ_P(2σ)ζ_P(2−2σ)), and DMV is a counterexample to any zero content.
-- The step linking σ to the real part of a zero is Astra's own unproved "zero ↔ coherent mode" identification (call it **H1**). H1 is **GAP**, and is at least as strong as RH.
+- The step linking σ to the real part of a zero is Astra's own unproved "zero ↔ coherent mode" identification (call it **H1**). H1 is **GAP, implied by RH** (Golden Eye audit, 8079b30; analysed in C.9).
 
 ## C.6 Audit of Astra's doubled-prime OS test (Oct 27) in OS language
 
@@ -320,16 +320,164 @@ Step tests (replays only, one per named step): `team/celestial-cft/arp_c/c_step_
   - R5: the same for DMV and P_X.
   - R6: "no MF-relative margin" is PROVED (§S); "closing step must be an exact identity" is CONJECTURE; "not a covariant BC identity" is PROVED.
 
-**GAP left by §C:** G.4d, unchanged, together with H1 if one wants the superselection route (H1 is at least RH-strength). **RH is OPEN.**
+**GAP left by §C:** G.4d, unchanged, together with H1 if one wants the superselection route (H1: GAP, implied by RH; see C.9). **RH is OPEN.**
 
-## C.9 Parked numerics
+## C.9 H1, the hinge between Astra's route and G.4d (S103, 2026-10-28)
+
+**RH is OPEN.** Every implication below is either a restatement of RH, an RH-silent theorem, or reduces to G.4d. No new route is claimed.
+
+### C.9.1 What Astra actually says (verbatim, GPP-bridge `work/`)
+
+- (Q1) Oct 26 superselection, status line: "No RH proof: the arithmetic zero-to-physical-mode identification is not supplied here."
+- (Q2) Same note, "essential missing implication": "The full Weil arithmetic positivity theorem would follow if its zeros were forced to be nontrivial physical coherent modes of the *completed* mirror system, with a constructive Poisson/Arch scattering map preserving these quasi-locality/OS constraints. … Analytic zeros of a continuation are not automatically states of its original positive Hilbert theory. Nor does equality of the vacua at sigma=1/2 select discrete spectral heights t."
+- (Q3) Same note, next test: the scattering operator's "on-shell scattering residue … defines a nonzero bounded matrix element between physical mirror states. Off-line it must vanish by the theorem; establishing that arithmetic zeros genuinely require such a residue is the exact remaining selection step."
+- (Q4) Same note, 2026-10-27 re-audit: "frequency t cancels, so this criterion by itself neither identifies zeros nor selects their heights. The bounded quasi-local matrix-element conclusion must not be applied to an arbitrary nonlocal/unbounded completed scattering operator … The zero-to-coherent-mode implication remains unproved."
+- (Q5) Oct 27 doubled-prime audit §II: "This distinguishes the physical *unshifted* prime vacuum from the shifted control **without** asserting that all analytic zeta zeros have become physical KMS states. That latter implication remains the arithmetic step."
+- (Q6) Oct 26 three mechanisms §C: "This becomes relevant to RH only if a separately constructed global prime--Arch scattering domain identifies arithmetic zeros with genuine threshold resonances."
+- (Q7) Oct 27 §III: "Nontrivial sewing must engage essentially the full high-prime tail or be genuinely outside the bounded quasi-local algebra (as the global Tate/Poisson transform can be)."
+
+### C.9.2 The named objects (PROVED: definitions plus C.1, C.5)
+
+- **Zeros.** Z := the nontrivial zeros ρ = σ + iγ of ζ, with multiplicity m_ρ. They satisfy 0 < σ < 1 (PROVED, classical: Hadamard–de la Vallée Poussin).
+  - For a fake X, Z_X := the zeros of X in 0 < Re s < 1 (see C.9.5 for zeros outside the strip).
+- **Mirror modes** (Astra Oct 26 definition, = C.5a).
+  - For 0 < σ < 1, t ∈ ℝ and finite P, set Ω_{(σ,t),P} := ⊗_{p≤P} √(1 − p^{−2σ}) Σ_k p^{−σk} e^{−itk log p} |k,k⟩ in the doubled primon Fock space ⊗_p ℓ²(ℕ₀)^{⊗2}.
+  - This is the TFD purification of the Gibbs/KMS state at **β = 2σ** of H = Σ_p (log p) N_p, i.e. of the BC KMS_{2σ} state restricted to the diagonal 𝔇 = C*(e_n) (C.1a).
+  - The phase e^{−itk log p} is modular time evolution σ_{−t}, so t is a modular phase, not a separate state label.
+  - The **coherent structure** is the product (quasi-free, Gaussian-in-occupation) TFD structure. There are no other coherent states in Astra's notes.
+  - The mirror of the mode is Ω_{(1−σ,t),P} (KMS at β = 2 − 2σ). D(s) = 1 − s̄ maps the pair to itself (C.3a).
+- **Parameter map.** Φ: Z → (0,1) × ℝ, ρ ↦ (σ, γ) ↦ the mirror pair (Ω_{(σ,γ)}, Ω_{(1−σ,γ)}), i.e. the KMS pair (β, 2 − β) = (2 Re ρ, 2 − 2 Re ρ).
+  - Φ preserves σ = Re ρ ↦ β/2 and γ ↦ t (the modular phase).
+  - Φ is injective on distinct ρ but forgets multiplicity. It is far from surjective: every (σ, t) is a mode, and only countably many are zeros.
+  - **Φ is pure parameter matching: it uses no property of ζ** (the TFD vectors involve only the primes). All of H1's content is therefore in the *coupling* predicate below, not in Φ.
+- **Coupling predicate.** For a class 𝒪 of operator families 𝒞 = (𝒞_P), set Coup_𝒪(σ, t) :⟺ ∃ 𝒞 ∈ 𝒪 with lim sup_P |⟨Ω_{(σ,t),P}, 𝒞_P Ω_{(1−σ,t),P}⟩| > 0.
+- **H1 (implication form, as in O1 and Golden Eye's audit).** H1_𝒪 :⟺ for every ρ ∈ Z with σ ≠ ½, Coup_𝒪(σ, γ).
+  - **RH ⇒ H1_𝒪 for every 𝒪, vacuously (PROVED).** So for each reading the only question is whether H1_𝒪 ⇒ RH, or whether H1_𝒪 adds anything.
+  - (At σ = ½, Coup holds with 𝒞 = 1 because the two vectors coincide, so including on-line zeros changes nothing.)
+
+### C.9.3 The readings, from strongest to weakest, and their implications
+
+| reading | class 𝒪 / meaning | H1 ⇒ RH | RH ⇒ H1 | H1 ⇔ RH | adds anything? |
+|---|---|---|---|---|---|
+| **H1-strong** (literal Q3 + superselection) | uniformly bounded families in the quasi-local BC algebra 𝒜 (norm limits of 𝒜_loc) | **PROVED** (C.6d) | PROVED (vacuous) | **PROVED: it is RH restated** | no |
+| **H1-unitary** (Q2 "physical modes of the *completed* system"; Q2's "positive Hilbert theory") | each zero is a spectral mode of a *unitary* completion: Connes' scaling action on coker E ⊂ L²_δ(C_ℚ) | PROVED, given Connes 1999 Thm 1 (cited) | PROVED (vacuous) | PROVED; establishing it is **G.4d** | no (= G.4d) |
+| **H1-residue** (Q3 with the completed operator 𝒮 = Tate–Poisson F_𝔸 through E; Q7's "outside" branch) | 𝒪 = {𝒮}, a non-quasi-local, possibly unbounded operator | **GAP** (= G.4d), not via C.5/C.7 | PROVED (vacuous) | not known | only C.7c's tail constraint |
+| **H1-tail** (Q7, bounded but tail-engaging) | uniformly bounded families with arbitrary prime support | **REFUTED as a route** (true unconditionally; DMV) | PROVED (trivial) | no | no |
+| **H1-spec** (Q6 weakest reading: "zeros are modes") | zeros are eigen-distributions of the scaling action on Meyer's cokernel; no positivity | **REFUTED as a route** (unconditional theorem) | PROVED | no | no |
+
+**C.9.3a, H1-strong ⇔ RH (PROVED; restatement).**
+- (⇒) Let ρ be off-line, θ = σ − ½ ≠ 0. By C.6d, for every uniformly bounded family in 𝒜, lim_P ⟨Ω_σ, A_P Ω_{1−σ}⟩ = 0 (the t-phase factors out, Q4). So Coup_𝒜(σ, γ) is false, and H1-strong forces Z to have no off-line ρ, which is RH.
+- (⇐) Vacuous.
+- **Content check.** The proof uses only Σ1/p = ∞ (C.5d), which is MF data, and t plays no role (Q4). So H1-strong is "RH" with the word "zero" replaced by "a parameter that the superselection kills". It is a σ-only restatement, and proving it is exactly as hard as RH.
+- R line:
+  - R1: the statement is a P → ∞ limit (uniform).
+  - R2: no FE.
+  - R3: passes (no weights).
+  - R4: vacuous at σ = ½ (O2).
+  - R5: for any function X, H1-strong_X ⇔ "X has no off-line zeros in the strip" (the modes do not depend on X). F_θ correctly fails, Epstein fails (C.9.5), DMV fails, and G_θ′ passes iff RH.
+  - R6: (i) an exact equivalence; (ii) no closing content (restatement).
+  - Label: the equivalence is PROVED; H1-strong itself is GAP, implied by RH.
+
+**C.9.3b, H1-unitary ⇔ RH (PROVED from a cited theorem; the work is G.4d).**
+- Connes 1999 Thm 1 (cited, not replayed): on L²_δ(X_ℚ), δ > 1, the spectrum of the idele-class action on coker E consists of the **critical** zeros only. Non-critical zeros never occur as unitary spectrum; they enter only through the trace formula and Weil positivity (Connes 1999 Thm 4 = G.4c; §VIII).
+- So "every zero is a mode of the unitary completion" ⇔ RH. In implication form: an off-line zero is never such a mode, so H1-unitary ⇔ RH.
+- Making H1-unitary a theorem means proving the completed positivity: the cokernel deficit (sign SETTLED on main G.4d, S103c), i.e. δ_Λ → 0. That is G.4d.
+- In main's language (7328e39), the off-line residual is Σ_ρ m_ρ[∫ĝ dμ_ρ − ĝ(γ_ρ)], with μ_ρ the harmonic (Poisson-kernel) measure of ρ with respect to the critical line (μ_ρ = δ_γ on the line).
+  - H1-unitary is the statement that every term vanishes.
+  - lim Δ_Λ(f) = Σ_ρ m_ρ ∫ĝ dμ_ρ is PROVED for function fields (Connes 1999 §VIII Lemma 3). **For ℚ it is CONJECTURE** (Connes' stated analogue), so §C uses the residual formula only as a reading aid, not as a step.
+- R line:
+  - R1: uniform by construction.
+  - R2: the FE enters through E (G.4b, §P P.5).
+  - R3: passes.
+  - R4: the soft mode is tight (§S S(c)4).
+  - R5: DMV and P_X undefined (no lattice, G.4a), Epstein undefined (no single ⊗′, §P P.9), F_θ breaks (its constituents are non-unitary, §P P.4), G_θ′ passes iff RH.
+  - R6: "no MF-relative margin" is PROVED; "the closing step must be an exact identity" is CONJECTURE.
+  - Label: the equivalence is PROVED (given the cited theorem); H1-unitary is GAP = G.4d.
+
+**C.9.3c, H1-residue: no implication via superselection (PROVED); otherwise GAP = G.4d.**
+- 𝒮 is built from F_𝔸 and E, neither of which lies in 𝒜 (C.3a). So C.6d does not apply, and C.7c says exactly that an off-line coupling by 𝒮 forces 𝒮 ∉ 𝒜, or to engage the full tail. That is true of 𝒮 by construction (Q7 says so).
+- **So H1-residue + C.5 + C.7 is consistent with off-line zeros: no contradiction is available (PROVED).**
+- Any proof of H1-residue ⇒ RH needs an extra property of 𝒮 at off-line ρ, namely boundedness or unitarity of its residue. By C.9.3b that is H1-unitary, i.e. G.4d.
+- R line:
+  - R1: needs the whole tail (C.7c).
+  - R2: FE used.
+  - R3: passes.
+  - R4: O2.
+  - R5: DMV and Epstein have no 𝒮 (undefined).
+  - R6: (i) no identity; (ii) none.
+  - Label: GAP (= G.4d); the conditional constraint C.7c is unchanged.
+
+**C.9.3d, H1-tail is true unconditionally, so it adds nothing (PROVED).**
+- Witness: 𝒞_P := |Ω_{(σ,t),P}⟩⟨Ω_{(1−σ,t),P}|. It has norm 1 for every P, and its matrix element is 1. So Coup holds for every (σ, t), and H1-tail is a theorem.
+- Hence "H1-tail ⇒ RH" is equivalent to RH itself. The C.5/C.7 package plus H1-tail holds verbatim for DMV, which has off-line zeros (C.9.5), so **no argument from these ingredients alone can give RH (PROVED, countermodel).**
+- R line:
+  - R1: n/a.
+  - R2: no FE.
+  - R3: passes.
+  - R4: no pole.
+  - R5: every fake satisfies it.
+  - R6: (i) exact (a tautology); (ii) none.
+
+**C.9.3e, H1-spec is an unconditional theorem, so it adds nothing toward RH (PROVED, cited).**
+- Meyer 2005 (main theorem, cited, not replayed): the zeros of ζ (all of them, with multiplicity, on or off the line) are exactly the spectrum of the idele-class action on a nuclear-Fréchet cokernel. A zero ρ appears as an eigen-distribution with |·|-exponent fixed by Re ρ. So "zero ↔ mode, bijective with multiplicity, preserving σ" holds unconditionally.
+- It does not live in any BC KMS GNS space. Meyer's modes sit after the ℚ^*-sum (§P P.6), and BC sits upstream of it (C.3c). So Φ is not an intertwiner from Meyer's modes to Astra's mirror vectors (category gap O1).
+- R line:
+  - R1: n/a.
+  - R2: FE used.
+  - R3: passes.
+  - R4: none.
+  - R5: DMV and Epstein have no realization.
+  - R6: no closing content.
+  - Label: PROVED (cited); RH-silent.
+
+### C.9.4 Combining with C.5 and C.7 (PROVED)
+
+- C.5 (superselection) + H1-strong ⇒ RH is a valid deduction, but H1-strong ⇔ RH, so the deduction is circular.
+- C.7c (conditional constraint) is the correct use of H1 for every weaker reading: if an off-line zero couples the mirror sectors at all, the coupling operator is outside 𝒜 or engages the full prime tail. This stays as stated.
+- C.7 O2: at σ = ½ every reading is vacuous. The G.4d form lives at β = 1 (C.2b, C.4), so H1 constrains only counterfactual sectors.
+- **Strength ladder (PROVED):**
+  - H1-spec and H1-tail are unconditional theorems.
+  - H1-strong ⇔ H1-unitary ⇔ RH.
+  - H1-residue is GAP: whether it implies RH is the content of G.4d.
+
+### C.9.5 Fake tests (existing certified data and theory only; no new numerics)
+
+- **DMV Beurling (Diamond–Montgomery–Vorhauer 2006).**
+  - The Beurling primes q satisfy the PNT, so Σ1/q = ∞, and the whole of C.5 and C.6d holds verbatim with q in place of p (PROVED: the proofs use only Σ1/q = ∞ and q → ∞).
+  - DMV's oscillation ψ_𝒫(x) − x = Ω(x exp(−c√log x)) excludes any zero-free half-plane Re s > θ with θ < 1. So ζ_𝒫 has off-line zeros (PROVED, standard Landau-type argument from DMV's theorem).
+  - Results: H1-strong_DMV is false (correct: it detects off-line zeros only by being RH_DMV); H1-tail_DMV holds; H1-spec, H1-unitary and H1-residue are undefined (no lattice, no E; G.4a, §P P.9).
+  - **Verdict:** DMV satisfies the strongest weakened H1 that is defined for it (H1-tail) together with C.5–C.7, and violates RH. So C.5 + C.7 + any H1 weaker than H1-unitary cannot imply RH.
+- **Epstein Z_{x²+5y²} (D = −20, class number 2).**
+  - CERTIFIED (repo `team/celestial-cft/README.md`, `epstein/certified_zero_boxes.json`): a zero in the 1e−8 box at 0.9079933666439 + 89.5598279786i.
+  - Take σ = 0.90799…, θ = 0.40799… ≠ 0. C.6d gives |⟨Ω_σ, A_P Ω_{1−σ}⟩| ≤ ‖A‖ exp(−⅛ Σ_{p∉E} p^{−1+2|θ|}) → 0 for any bounded A ∈ 𝒜 (Σ p^{−0.184} = ∞). So H1-strong_Epstein is false (PROVED from the certificate plus C.6d).
+  - H1-tail holds (rank-one witness). H1-spec and H1-unitary fail or are undefined: Z_Q ∝ ζ(s)L(s, χ_{−20}) + L(s, χ_{−4})L(s, χ_5) (up to the standard normalization) is a sum of two Euler products, and its zeros are not zeros of either constituent, so they are not spectral modes of any single C_K representation (§P P.9: no single ⊗′; Bombieri–Mueller 2008 for the decomposition).
+  - Davenport–Heilbronn 1936 also gives zeros with Re s > 1, and the certified 2.0794141048 + 7.6288675878i of the same discriminant, D = −20 (form 2x²+2xy+3y²), is one. These lie **outside Φ's domain**: Ω_{1−σ} with 1 − σ < 0 is not normalizable (p^{−(1−σ)} > 1). So H1 in every reading is silent on them (PROVED). Φ is defined only on the strip.
+  - **Verdict:** Epstein has an FE and certified off-line zeros. It satisfies H1-tail and fails H1-strong, as any function with off-line zeros must. It cannot satisfy H1-spec, since there is no Euler product.
+- **Controls.**
+  - F_θ (Astra's own control, Q2/Q5): zeros at σ = ½ ± θ; H1-strong fails (correct); H1-tail holds.
+  - G_θ′: zeros are ζ's zeros shifted vertically (same σ), so G_θ′ passes every reading iff RH holds.
+- **R line:** R5 is complete for C.9. Each fake breaks at H1-strong only through being a fake with off-line zeros, i.e. H1-strong is fake-blind beyond RH_X itself.
+
+### C.9.6 Verdict
+
+- **Astra's route adds nothing beyond G.4d. It is RH (H1-strong) or G.4d (H1-unitary) restated, or RH-silent (H1-tail, H1-spec).** PROVED for the classification. The underlying GAP is G.4d, and RH is OPEN.
+- **What survives as genuine content** (all already in §C):
+  - the exact overlap F_P = ζ_P(1)/√(ζ_P(2σ)ζ_P(2−2σ)) (C.5b);
+  - the quantitative support bound (C.6d);
+  - the conditional operator constraint C.7c: off-line coupling forces operators outside 𝒜 or engaging the full tail. This is consistent with, and already satisfied by, F_𝔸 and E.
+- **Why it cannot do more.**
+  - The mode map Φ uses no property of ζ.
+  - The superselection is t-blind (Q4) and uses only Σ1/p = ∞, which is MF data, spent once (§S; no MF-relative margin, PROVED).
+  - The only reading strong enough to reach RH puts the zero inside a unitary completion, which is G.4d's cokernel deficit, after the ℚ^*-sum (C.3c, §P P.6).
+
+## C.10 Parked numerics
 
 - The Epstein certificates stay parked.
 - The x²+5y² Re > 1 certificate (ρ = 1.0110493340 + 1193.9464045i, and the 1 < Re ≤ 1.01 gap) was **not resumed**. No §C step needs it:
   - Epstein's role in C.2 (it passes primon OS with w = r_Q(n)/n ≥ 0 while having off-line zeros) is already rigorous by Davenport–Heilbronn 1936 (zeros in Re s > 1 for class number h(−20) = 2), and by our earlier CERTIFIED zeros (e.g. 0.90799 + 89.5598i).
   - C.5–C.7 do not apply to Epstein (no product state).
 
-## C.10 Lean asks (finite, proved statements)
+## C.11 Lean asks (finite, proved statements)
 
 1. `mirror_overlap_zetaP`: ∏_{p≤P} R_p(σ) = ζ_P(1)/√(ζ_P(2σ)ζ_P(2−2σ)) (finite products, elementary); and ∏_p R_p(σ) → 0 for σ ≠ ½. This refines G.6 #6.
    - The divergence of Σ 1/p is in Mathlib as `Nat.Primes.not_summable_one_div` (Mathlib.NumberTheory.SumPrimeReciprocals). The name is from memory; check it.
@@ -337,7 +485,7 @@ Step tests (replays only, one per named step): `team/celestial-cft/arp_c/c_step_
 3. `hankel_psd_iff_nonneg_weights` (finite-support version): for finitely many n with distinct log n, the Hankel form Σ_n w_n (Σ_i c_i n^{−t_i})² is ⪰ 0 for all (c, t) iff all w_n ≥ 0. This is the finite core of C.2d (Vandermonde in n^{−t}).
 4. `toeplitz_not_pd_of_gt_zero`: if h(v) > h(0) for some v, then [h(x_i − x_j)] is not PSD (2×2 witness). This is C.6a.
 
-## C.11 References
+## C.12 References
 
 - Bost, J.-B., Connes, A., "Hecke algebras, type III factors and phase transitions with spontaneous symmetry breaking in number theory", Selecta Math. (N.S.) 1 (1995) 411–457.
 - Connes, A., "Trace formula in noncommutative geometry and the zeros of the Riemann zeta function", Selecta Math. 5 (1999) 29–106.
@@ -348,6 +496,7 @@ Step tests (replays only, one per named step): `team/celestial-cft/arp_c/c_step_
 - Berg, C., Christensen, J. P. R., Ressel, P., *Harmonic Analysis on Semigroups* (1984).
 - Kakutani, S., Ann. Math. 49 (1948) 214–224.
 - Uhlmann, A., Rep. Math. Phys. 9 (1976) 273–279.
+- Bombieri, E., Mueller, J., "On the zeros of certain Epstein zeta functions", Forum Math. 20 (2008) 359–385.
 - Diamond, H., Montgomery, H., Vorhauer, U., "Beurling primes with large oscillation", Math. Ann. 334 (2006) 1–36.
 - Davenport, H., Heilbronn, H., J. London Math. Soc. 11 (1936).
 - Connes, A., Consani, C., "Weil positivity and trace formula, the archimedean place", Selecta Math. 27 (2021), arXiv:2006.13771 (Thm 1, Lemma 1.3).
