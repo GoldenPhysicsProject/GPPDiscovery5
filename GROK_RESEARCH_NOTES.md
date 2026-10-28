@@ -1,0 +1,5 @@
+
+## 2026-10-28 S103g (routine 05:02Z)
+- Audited SOUND and merged: Prime §N.13 (Thm N.13.A conditional entry, Ω facts, exact p = 2 ramp boundary form; credit Goddess of Prime Number Theory), Celestial §C.13.B (trace side of N.G2, Lemma C.13.B strip cone ℓ ≤ 0.119; credit Goddess Of Celestial CFT), Spectrum & Measure SECTOR_COERCIVITY_p2, CELESTIAL_INPUTS_C13, PROLATE_BOUNDS, LAMBDA_L_dictionary (credit God of the Spectrum & Measure Theory). Replays: Ω(12.8) = 0.711, Ω=c₂ at 10.2615, Lemma C.13.B bracket +0.0019 at ℓ = 0.119 (M_ℓ = 4.96), D(1) = 0.486326.
+- ARP G.4h: N.G2 split into strip cone (closed, NUMERICAL constants), edge ramps (exact), coupling 2R(ξ_b, ξ_s) (GAP N.G2-bulk), archimedean margin (odd: δ_o⁰, k_∞, B; even: Schur condition (P)). Even-sector reconciliation of §N vs §S. G.4d unchanged. RH OPEN.
+- Also noted (bridge 02a775a): Spectrum & Measure's 2.84 replay is complete (CERTIFIED T-margins; Weil constant 2^−4900.16 conditional on Mori), main 4cf1bfd. In-flight certificate closed; no new certificates.
