@@ -49,12 +49,12 @@ Mori's printed formula for e is garbled in the text layer ("u₀E₀ + u₁E₁"
 1. **[Medium, rigour] The J quadrature in the team code has no error bound.** The band integrals (1/π)∫₀^Ω (a−γ)b_ib_j dt are computed by Gauss on panels (png 96, width 16) in s67/mori_cert.py, and the ball radii cover only node rounding. No Bernstein-ellipse remainder (Mori VII Lemma 5.1 analogue) is added. The S66 README already says so, and nothing in S67–S74 adds it.
    - *Assessment:* my rigorous panel bounds (below) show the true quadrature error is astronomically small (my eps_J ~1e−148 at log 12 with 96–192 nodes per panel). The gap is very likely harmless, but as written **the team certificate is incomplete**.
    - *Fix:* add the term, or adopt my replay's bound. Note that ψ(¼ ± iz/2) has poles at z = ±i(2k+½), so the ellipses near t = 0 must be restricted. Note also that Arb's acb digamma returns NaN on wide balls with Re w < 0 at high precision, so shift with ψ(w) = ψ(w+K) − Σ1/(w+k).
-2. **[Medium, bookkeeping] The final λ bound ignores the T-ball radius and the inverse error.**
+2. **[Medium, bookkeeping] The final λ bound ignores the T-ball radius and the inverse error.** (Closed in my replay, S103: ε is folded into the certified shift, §6. Still open for the team's s37 path.)
    - s37_ldlt_exact.py certifies λ_min of the *midpoint* matrix Atil (sermid strings), plus the string-rounding error.
    - The assembly's radT_rowsum (3.83e−145) and ‖W⁻¹ − Y‖ ≤ 2.05e−136 are logged but never subtracted from the stated bound. Nor is the (missing) J quadrature term.
    - Numerically this is negligible against 1e−81, but the stated bound must read λ_min(T) ≥ 1.0711e−81 − 2.05e−136 − 3.83e−145 − ε_J.
 3. **[Medium, wording] The quantity labelled λ_min is the margin of T, not the Weil-form constant** (§1). The window theorem is Q ≥ 2^−4200.4‖f‖² (even and odd use the same δ only if both parities run with δ = 2^−4200; odd at Ω 1150 used δ = 2^−4900, so the combined window constant is min = C_odd·2^−4900).
-4. **[Low–medium] The control is not a certificate.** The "1.005× fails" control is a *non-rigorous* fixed-point LDLᵀ hitting a nonpositive pivot. That is fine as a sanity check, but it does not prove λ_min(T) < 1.005·ℓ. My replay makes the control rigorous: a negative diagonal entry of Z(T − ℓ_c)Zᵀ in balls gives an explicit vector with vᵀ(T − ℓ_c)v < 0.
+4. **[Low–medium] The control is not a certificate.** (Closed in my replay: all three controls are certified failures, §6.) The "1.005× fails" control is a *non-rigorous* fixed-point LDLᵀ hitting a nonpositive pivot. That is fine as a sanity check, but it does not prove λ_min(T) < 1.005·ℓ. My replay makes the control rigorous: a negative diagonal entry of Z(T − ℓ_c)Zᵀ in balls gives an explicit vector with vᵀ(T − ℓ_c)v < 0.
 5. **[Low] Prop. 3.1 and Lemma 3.2 are inherited from Mori,** and Mori VII itself cites [14] (log 10 paper) for e₀ ≤ E₀, e₁ ≤ E₁ and a(t) ≥ log(t/2π) − 1/t.
    - The last bound can be avoided: a is increasing on t ≥ 0, since each term of ψ's series is monotone. So C' = a(Ω) − γ, computed in Arb, already works; I checked C' ≥ C.
    - Theorem N (prolate defect) is Mori's own unrefereed result. Its proof (Slepian's identity, the Bessel comparison) reads correctly to me, but it is not independently refereed.
@@ -74,14 +74,37 @@ Method differences: node-vectorised Legendre and spherical-Bessel recurrences in
 | case | Ω | modes | NUMERICAL λ_min(T) (inverse iteration) | certified | control | extra budget (ε_J + ε_inv) | runtime |
 |---|---|---|---|---|---|---|---|
 | Mori VII log 12, even (published 1.2092639998e−54) | 416 | 416 | 1.20926402186e−54 | **T − 1.2092639998e−54·I ≻ 0 CERTIFIED** | at 1.2153e−54 (1.005×): **certified negative** (pivot 414) | 8.3e−149 + 1.3e−112 | 6 min (3 workers) |
-| L = 71/50 even | 1000 | 1188 | RUNNING (see §6) | | | | |
-| L = 71/50 odd | 1000 | 1188 | queued (control, should fail) | | | | |
-| L = 71/50 odd | 1150 | 1366 | queued | | | | |
+| L = 71/50 even | 1000 | 1188 | 1.0721462202e−81 | **λ_min(T_true) > 1.0711e−81 CERTIFIED** (min pivot 1.708e−9, worst off-diag/diag 7.4e−31) | 1.005× = 1.07645555e−81: **certified failure**, λ_min(T_true) < 1.07645555e−81 (neg pivot 1184, −0.1587) | 1.7e−147 + 5.80e−111 | see §6 |
+| L = 71/50 odd (control) | 1000 | 1188 | −4.1215618620e−78 | **λ_min(T_true) < −4.0e−78 CERTIFIED (sector fails, as required)**; λ_min(T_true) > −4.2e−78 CERTIFIED | at ℓ = 0 and −4.0e−78: certified negative (pivots 1174, 1186) | 1.6e−147 + 5.56e−111 | see §6 |
+| L = 71/50 odd | 1150 | 1366 | 2.4158532716e−77 | **λ_min(T_true) > 2.4134e−77 CERTIFIED** (min pivot 6.04e−9, worst ratio 8.5e−38) | at 2.4254670e−77 (≈1.005× est.): **certified failure** (neg pivot 1362, −0.1037) | 1.9e−147 + 8.22e−111 | see §6 |
 
 So my code path reproduces Mori's published log-12 even certificate (the same digits as Mori's Table 2 lower bound, and the same estimate as the team's S66 to 12 digits) from a code base written only from the paper.
 
-## 6. Replay status of the 2.84 sectors
-Run dir /workspace/sm/runs/, chain `chain_284.sh` (even Ω1000 → odd Ω1000 → odd Ω1150), logs `L7150_O*_p*.log`. See the latest commit for results; this table is updated as sectors finish.
+## 6. Results of the 2.84 sectors (S103 update, 2026-10-28, America/Toronto)
+**Label: CERTIFIED (Arb) for the finite comparison matrix T of each sector, conditional on Mori's Prop. 3.1 / Lemma 3.2 / Theorem N (§4 item 5) and on ‖C_p‖ ≤ 763/200 (§3). This is a finite-window statement; RH is OPEN.**
+
+T_true := W(X)⁻¹ + J_exact − αI − β(B − A²) (exact integrals). The stored ball matrix T (balls at 448 bits, mid rounded to 2⁻⁴⁰⁰ with the rounding added to the radius) satisfies ‖T_true − T‖ ≤ ε := ε_J + ε_inv, where ε_J is the **rigorous Gauss–Legendre remainder** of the J band and of h (Bernstein ellipses, Trefethen ATAP Thm 19.3; |g| bounded by Arb on ball covers; |b_ib_j| ≤ 2Le^{2L|Im z|}) in operator norm (Np·max entry), and ε_inv = ‖R‖‖Y‖/(1−‖R‖) bounds ‖W⁻¹ − Y‖. **New in S103 (closes gap 2 of §4 for the replay):** the certificate no longer tests T − ℓI with a float ℓ. It takes ℓ as an exact decimal, and
+- PD claim: tests T − s₊I with s₊ = upper(ℓ + 2ε). Diagonal dominance of the ball product S = Z(T − s₊I)Zᵀ (Z exact unit lower triangular) ⇒ T ≻ s₊ ⇒ **λ_min(T_true) > ℓ**.
+- Failure claim: tests T − s₋I with s₋ = lower(ℓ − 2ε). A certified negative S_ii gives v = Zᵀe_i with vᵀ(T − s₋)v < 0 for every matrix in the ball ⇒ **λ_min(T_true) < ℓ**.
+(The factor 2 covers double rounding of the float budget.) Certificate precision 576 bits (rule of thumb log₂(1/λ) + 5–13 ≈ 270–280 bits; 576 has ample headroom); assembly 448 bits; J top Bessel values with adaptive precision (≥ 448 + Lt + 128 bits, doubled until relative radius ≤ 2^−(prec+32)).
+
+| sector | ℓ tested | claim | result | ε = ε_J + ε_inv |
+|---|---|---|---|---|
+| even, Ω = 1000, N = 2376 | 1.0711e−81 | λ_min(T_true) > ℓ | **CERTIFIED** | 5.80e−111 |
+| even, Ω = 1000 | 1.07645555e−81 (1.005×) | λ_min(T_true) < ℓ (control must fail) | **CERTIFIED failure** | 5.80e−111 |
+| odd, Ω = 1000, N = 2376 | 0 and −4.0e−78 | λ_min(T_true) < ℓ (control must fail) | **CERTIFIED failure** (sector is indefinite at Ω = 1000) | 5.56e−111 |
+| odd, Ω = 1000 | −4.2e−78 | λ_min(T_true) > ℓ | CERTIFIED (bracket (−4.2, −4.0)·10⁻⁷⁸; NUMERICAL est. −4.12156e−78) | 5.56e−111 |
+| odd, Ω = 1150, N = 2732 | 2.4134e−77 | λ_min(T_true) > ℓ | **CERTIFIED** | 8.22e−111 |
+| odd, Ω = 1150 | 2.4254670e−77 | λ_min(T_true) < ℓ | **CERTIFIED failure** | 8.22e−111 |
+| Mori VII log 12 even (validation) | 1.2092639998e−54 / 1.2153e−54 | > / < | CERTIFIED / CERTIFIED failure | 1.28e−112 |
+
+Brackets: even λ_min(T_true) ∈ (1.0711e−81, 1.07645555e−81); odd Ω = 1150 λ_min(T_true) ∈ (2.4134e−77, 2.4254670e−77). These agree with the team's S72/S74 numbers, from independent code. The odd sector needs Ω = 1150 (δ = 2^−4900): at Ω = 1000 it is certified to fail, so the combined window constant is min(C_even·2^−4200, C_odd·2^−4900) = C_odd·2^−4900 with C_odd = 0.89377 (consts_L7150_O1150_p1.json). **Q(f) ≥ 2^−4900.16‖f‖² on L²[−1.42, 1.42]** (both parities), conditional as stated. The quantities 1.07e−81 and 2.41e−77 are T-margins, not Weil-form constants (§1).
+
+**Root cause of the run-1 crash (ZeroDivisionError "singular matrix in solve()" in lam_estimate).** Not precision of the LDLᵀ/solve. Arb's bessel_j(ν, x) at the turning point (x = Lt up to 1420, ν up to 2376.5) at the then-fixed precision returned non-finite / [0 ± inf] balls. The downward recurrence carried them into every J band entry, so every entry of T became [0 ± inf] (checked on the saved bad T: all 1188² midpoints are exactly 0, rad = inf; eps_J = maxradT = inf in the run-1 log). mid(T) was the zero matrix, hence "singular". Fix (b9a215c): adaptive precision in sph_j_rows/top1, which keeps a rigorous ball throughout. S103 hardening: assemble now refuses to save a T with non-finite radii or budget, and certify refuses to load one, so this failure mode can no longer reach the solve. lam_estimate is only a NUMERICAL helper; no shift or Rayleigh-quotient change was needed once T was finite (its inverse iteration then converged to the values above).
+
+**Wall times (8-core box, America/Toronto).** Chain 2 (2026-10-22): even cells ≈ 45 min (re-used from run 1, 4 workers), panels 8 min (2 workers), assemble 4 min, certify 4 min; odd Ω = 1000: panels 1.7 min, assemble 4 min, certify 6 min; odd Ω = 1150 `all`: 12.7 h (first 4 cells took 12.1 h, cause not determined (likely box suspension or contention; the same cells take ≈ 11 min otherwise), the rest ≈ 11 min each), panels 2.3 min, assemble 5.5 min, certify 6 min. Chain 3 (2026-10-28 re-certification with the rigorous budget and both directions): log 12 25 s, even 433 s, odd Ω = 1000 628 s, odd Ω = 1150 745 s (three in parallel).
+Logs: logs/chain2_284.log, logs/*_run2_chain2.log, logs/chain3_284.log, logs/*_certify3.log, logs/certify3_*.json; T.pkl SHA-256 in logs/T_pkl_sha256.txt (the 2–3 GB run directories stay on the box at /workspace/sm/runs).
+Remaining open (unchanged): §4 items 1, 3 and 5 for the *team* code path; prior-art 2.99 (zenodo 23174403) wording; the Mori-theorem inputs are inherited.
 
 ## 7. Fakes battery: what the 2.84 certificate says and does not say
 A window certificate is a statement about ζ's own Weil form on L²[−1.42, 1.42]. It separates ζ from a fake only if that fake's window form is *not* PSD at the same L.

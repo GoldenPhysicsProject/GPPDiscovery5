@@ -1,0 +1,9 @@
+log12_p0 certify3 start 00:07:28
+log12_p0 certify3 exit 0 00:07:53 wall 25s
+L7150_O1000_p0 certify3 start 00:07:53
+L7150_O1000_p1 certify3 start 00:07:53
+L7150_O1150_p1 certify3 start 00:07:53
+L7150_O1000_p0 certify3 exit 0 00:15:06 wall 433s
+L7150_O1000_p1 certify3 exit 0 00:18:21 wall 628s
+L7150_O1150_p1 certify3 exit 0 00:20:18 wall 745s
+CHAIN3_DONE 00:20:18

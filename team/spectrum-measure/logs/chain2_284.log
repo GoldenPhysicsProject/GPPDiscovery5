@@ -1,0 +1,16 @@
+L7150_O1000_p0 panels start 07:25:29
+L7150_O1000_p0 panels exit 0 07:33:42
+old chain stopped 07:59:38
+L7150_O1000_p0 assemble start 07:59:38
+L7150_O1000_p0 assemble exit 0 08:03:32
+L7150_O1000_p0 certify start 08:03:32
+L7150_O1000_p0 certify exit 0 08:07:28
+L7150_O1000_p1 panels start 08:07:28
+L7150_O1000_p1 panels exit 0 08:09:08
+L7150_O1000_p1 assemble start 08:09:08
+L7150_O1000_p1 assemble exit 0 08:13:13
+L7150_O1000_p1 certify start 08:13:13
+L7150_O1000_p1 certify exit 0 08:19:00
+L7150_O1150_p1 all start 08:19:00
+L7150_O1150_p1 all exit 0 21:01:10
+CHAIN2_DONE 21:01:10
