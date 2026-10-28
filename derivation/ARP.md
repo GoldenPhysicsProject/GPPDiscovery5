@@ -179,7 +179,7 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
 
 **G.3d. The k = 2 rank-one is a ψ/θ splitting artefact (PROVED, elementary; Grok S103).**
 - Statement. Put the k-th prime-power layer μ_k = Σ_p (log p) p^{−k/2} δ_{k log p}. Its PNT mean is ½·du for k = 2 (Mertens: Σ_{p≤y} (log p)/p = log y + O(1), so at u = 2 log p the mean density is ½ du), and a bounded, non-growing density for k ≥ 3. For an even g these give the rank-one term −½∫g = −½ ĝ(0) = −½|f̂(0)|² (vector 1), the shape of Astra's even bulk −¼·11ᵀ (normalisation match to Astra's ¼ not checked).
-- Proof of cancellation. Chebyshev's exact identity θ(x) = Σ_{k≥1} μ(k) ψ(x^{1/k}) gives θ(x) = x − x^{1/2} − x^{1/3} + … + (zero terms). At half density, the −x^{1/2} term of the k = 1 layer contributes −∫h(u) e^{−u/2} d(e^{u/2}) = −½∫h du, which cancels the k = 2 mean exactly; likewise −x^{1/k} cancels the k-th mean. So the sum over k of the layer means is the single PNT mean e^{u/2} du of Λ.
+- Proof of cancellation (repaired S103b after Golden Eye's audit). Use ψ(x) = Σ_{k≥1} θ(x^{1/k}) directly: the layers μ_k sum to μ_Λ = Σ_n Λ(n) n^{−1/2} δ_{log n}, the half-density of ψ, whose PNT mean is the single density e^{u/2} du. So once the fluctuation is taken against ψ rather than θ, no separate k-th layer mean (in particular the k = 2 rank-one) remains. The earlier wording "likewise −x^{1/k} cancels the k-th mean" via θ = Σ μ(k)ψ(x^{1/k}) was WRONG term by term: the k-th layer mean is (1/k)e^{(1/k−½)u}du and θ's μ(k)x^{1/k} term gives μ(k)(1/k)e^{(1/k−½)u}du, which cancel only when μ(k) = −1 (fails at k = 4, μ = 0, and at k = 6, μ = +1). Credit: Golden Eye audit. Statement unchanged; PROVED, no novelty (classical ψ/θ bookkeeping).
 - Consequence. Use the **ψ-fluctuation** E_Λ := Σ_n Λ(n) n^{−1/2} δ_{log n} − e^{u/2} du (half-density ψ(x) − x) in G.3b, not the θ-fluctuation E₁. Then Q_L = MF_L + Fl_L with no rank-one remainder, and the pole is spent exactly once, on the Ward identity G.3a.
 - Test (numerics only to test this step, per the Oct 22 pivot): `s103/k2_rank_one_cancellation.py`, primes ≤ e^16, smooth bump h on (2, 16). The k = 1 fluctuation is −3.1716 = −(k = 2 layer 2.4638) − (k ≥ 3 layers 0.7078) to 4 decimals, and the Λ-total minus the PNT mean is −1.4·10⁻⁶ (the zero sum of a smooth bump). So nothing is left over for a boundary term to compensate.
 - R-checks. Fake-blind (P_X, DMV and Epstein have the same internal cancellation; DH has no Λ); no RH content. Withdraws T1 below.
@@ -207,7 +207,7 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
 **G.4d (GAP, the shared one).**
 - **The defect.** The gluing introduces the cutoff/principal-value term:
   - Write Q_L(f) = ‖P_Λ^⊥ E(φ)‖²-type positive part − δ_Λ(f), where δ_Λ collects the 2 log Λ cutoff term and the Σ_v ∫′ remainders.
-  - Equivalently, in §G.3's language, Q_L = MF_L + Fl_L, with Fl_L the E₁-fluctuation.
+  - Equivalently, in §G.3's language, Q_L = MF_L + Fl_L, with Fl_L the E_Λ-fluctuation (ψ-fluctuation, G.3d; corrected S103b from E₁).
   - Nothing local (G.1–G.2) bounds δ_Λ or Fl_L.
 - **The GAP statement.** Show Fl_L(f) ≥ −MF_L(f) for all f ∈ C_c^∞([−L, L]), **uniformly in L** (R1).
 - **Equivalent to RH** (Weil 1952; Bombieri 2000). Window L is the semi-local problem with S_L = {∞} ∪ {p < e^{2L}}, by `primeSide_eq_truncation`.
