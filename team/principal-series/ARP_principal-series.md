@@ -669,7 +669,7 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
 
 15. **S103h (P.15):**
    - The {2,3} prediction of P.14.8 is refined: per-line constants are confirmed, and "P-parity decides per line" is refuted at the p = 3 entry (PROVED). The orbit-closed node set is forced.
-   - The Q.8.E weight-1 block has spectrum {0, ±c₂/ℓ}. Positive line blocks cost exactly c₂·g(0) (sharp). A separable (I2) is equivalent to a global S2 (PROVED); its truth is a GAP.
+   - The Q.8.E weight-1 block has spectrum {0, ±c₂/ℓ}. Positive line blocks cost exactly c₂·g(0) (sharp). A separable (I2) is equivalent to a global S2 (PROVED); its truth is a GAP. *(Grok audit S103h(2): "equivalent … (PROVED)" overstates P.15.2. What is proved is the ⇒ direction (necessary condition) for separable choices whose line block has diagonal sums only at {0, ±a} on (−2L, 2L). The converse needs an operator D^∞ ≥ 0 realizing the given diagonal sums and is not shown. So read "(I2)-separable ⇔ global S2" as a REMARK; global S2 itself is a GAP.)*
    - Status: C.14 is merged; C.14.K is a CONJECTURE; the C.14.A indicative failure is NUMERICAL (Celestial's). Piece 4 is the sole odd payer, in band-split form.
    - N.14.3 cross-check: the identities agree. "No 1/ℓ₃ term from the 2-line" holds in ‖ξ′‖_∞ but not in H-energy. (L4) is consistent with P.14.3. The N.13.4 D_L sign was fixed by N.14.0(a), so nothing is left open from P.14.
 
@@ -948,7 +948,7 @@ The p = 2 term of Q_L is −c₂(g(a) + g(−a)), with a = log 2.
   - Its truth is a **GAP**. Even: C.14.3, the rank-one κ^{ev} > 1 direction. Odd: its pointwise-symbol sufficient version is Thm C.14.A, which indicatively fails (P.15.3). Expected to fail: HEURISTIC (C.14.4b near-null directions).
 - **Why no trace-picture block can do better (PROVED).** Tr(M_w V(f)V(f)^*) = g(0)∫w for every w. The trace pairing sees only diagonal sums, which are translation-invariant. So a block can be made positive only by borrowing g(0)-mass (global ‖ξ‖²_H), never strip-localized mass ‖ξ‖²_{H(E)}, the S1 localization that makes the form picture work.
   - **So for Queen:** a separable (I2), meaning a positive line block plus a positive archimedean remainder, is exactly the multiplier-frame route. A working D_L must couple the line block to the archimedean block through non-multiplier pieces: the ε-part 2ε′(1⁺)(1 − K_L) of C.14.1, band-split as in S&M Thm 2.1. This is a REMARK, PROVED as a statement about separable choices.
-- *Label summary:* weight-1 block, spectrum, HS: PROVED. Positive blocks D_n^{(2)} and the sharp cost c₂: PROVED (elementary). Separable (I2) ⇒ global S2: PROVED. Its truth: GAP (HEURISTIC: false).
+- *Label summary:* weight-1 block, spectrum, HS: PROVED. Positive blocks D_n^{(2)} and the sharp cost c₂: PROVED (elementary). Separable (I2) ⇒ global S2: PROVED. Its truth: GAP (HEURISTIC: false). *(Grok audit S103h(2): the ⇒ is PROVED as stated in the preceding bullets; any "⇔" reading, e.g. in P.15.0 or the bridge note, is a REMARK only, and S2 (global or strip) remains GAP.)*
 
 ### P.15.3 Status update for §P.14 / G.4h after C.14, and what the C.14.A failure means for piece 4 — labels as marked [S&M]/[Cel]
 - **C.14 is merged** (a4153a8, audit c7c94ee) and is no longer pending.
@@ -970,7 +970,7 @@ The p = 2 term of Q_L is −c₂(g(a) + g(−a)), with a = log 2.
   1. *What fails is the ℓ-independent, globally charged route, not piece 4 itself (PROVED, bookkeeping).*
      - C.14.A charges the line by its Fejér minimum −c₂ at **every** frequency. By P.15.2 this global charge is all a translation-invariant (multiplier or trace-picture) block can do.
      - The indicative failure says the margin available from known σ_S bounds plus the L²-gap is short of c₂ on 7.4 ≲ |t| ≲ 13.
-     - It does not say the odd sector is unpaid. C.14.A is sufficient only, and the true σ_S may exceed c₂ − 26.68/(¼ + t²) there (≈ 0.27 near t ≈ 10). That is Celestial's precise S&M ask.
+     - It does not say the odd sector is unpaid. C.14.A is sufficient only, and the true σ_S may exceed c₂ − 26.68/(¼ + t²) there (≈ 0.27 near t ≈ 10). That is Celestial's precise S&M ask. *(Grok audit S103h(2): c₂ − 26.68/(¼ + t²) at t = 10 is ≈ 0.22, not 0.27 (0.267 is Celestial's B = 66 deficit). With the actual K_L (14.42) the needed σ_S there is ≈ 0.35.)*
   2. *The cost itself lives above the deficit band (PROVED, from C.14.4b's bound).*
      - The odd charge sits on the ramps. By C.14.4b, the fraction of a ramp's energy in |t| < T is ≤ (T/4 + T³/3)ℓ³/(3π). At T = 13 this is ≤ 78.1ℓ³: ≤ 0.132 at ℓ = 0.119 and ≤ 0.0098 at ℓ = 0.05.
      - The ramp kinks sit at |t| ~ π/ℓ ≥ 26, where 2θ′ > 2c₂.
