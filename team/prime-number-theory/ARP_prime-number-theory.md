@@ -396,7 +396,8 @@ singularity at z₀. But Φ(z₀)² ≠ 0 and D_μ has a pole there. Contradicti
 - **(a) Glued DMV, N.G1 (PROVED).** By `finite_windows_dmv.md` §3, ζ_{P_X} = ζ_P·E_X with E_X holomorphic and zero-free on σ > 0, and
   ζ_P analytic on σ ≥ θ except a simple pole at 1 (DMV, Math. Ann. 334 (2006), Thm 1). So D = −ζ_{P_X}′/ζ_{P_X}(½ + z) − 1/(z − ½) is
   meromorphic on Re z > θ − ½ (θ < 1, θ − ½ < ½). The s = 1 pole cancels: residue +1 of −ζ′/ζ against 1/(z − ½). The poles are at
-  z_j = ρ_j − ½ for DMV's zeros ρ_j on σ = 1 − a/log t (this a is DMV's constant, not the continuation abscissa a of N.11.3), so Re z_j = ½ − a/log t_j > 0 for t_j > e^{2a}. Hence **for every X, the glued
+  z_j = ρ_j − ½ for DMV's zeros ρ_j on σ = 1 − a/log t (this a is DMV's constant, not the continuation abscissa a of N.11.3), so Re z_j = ½ − a/log t_j > 0 for t_j > e^{2a}. The hypothesis of N.11.3 is Re z_j > max(θ − ½, 0) (continuation abscissa θ − ½);
+  for θ > ½ this still holds for large t_j, since ½ − a/log t_j → ½ > θ − ½ (θ < 1), i.e. for t_j > e^{a/(1−θ)} (wording fix, Golden Eye S103e). Hence **for every X, the glued
   DMV form has ind_− ≥ 1 for some L**. That L is necessarily > ½ log p⁺(X), by N.2 and Weil for ζ, *given RH*; unconditionally it is
   just "some L". Since Re z_j → ½, **T(U) ≠ O(e^{(½−δ)U}) for every δ > 0**. So along a sequence L_k → ∞,
   Q^{P_DMV}_{L_k}(f) ≤ K_φ − 2e^{(1−2δ)(L_k−η)}, i.e. r^{P_DMV} → −∞ at the same exponential rate as plain P_X (N.3.4c), up to e^{−2δL}.
@@ -459,11 +460,11 @@ ineffectiveness.
   absorbs the sign, so Landau's theorem on Dirichlet integrals with non-negative coefficients is not used.
 - What N.11 adds is local to the ARP: the two-bump identity that turns the smoothed Ω-result into ind_− ≥ 1 of the borrowed-W_∞ form,
   and the R5 classification in N.11.3(d). Scope: "every prime-side fake with an off-line zero fails" holds only for borrowed-W_∞ systems
-  that meet N.11.3's hypotheses (∫e^{−σu}d|μ| < ∞ for σ > ½, meromorphic continuation, a pole of D_μ in Re z > 0). DH and Epstein are
+  that meet N.11.3's hypotheses (∫e^{−σu}d|μ| < ∞ for σ > ½, meromorphic continuation to Re z > a, a pole z₀ of D_μ with Re z₀ > max(a, 0), a the continuation abscissa of the Laplace identity ∫T e^{−zU} = Φ²D_μ). DH and Epstein are
   outside them, P_X fails through its uncancelled pole rather than a zero, and F_θ is covered only by the sketch in N.11.3(d).
 
 ### N.11.6 GAPs and labels after N.11
-- **N.G1: CLOSED (PROVED, ineffective).** Glued DMV past its ladder: ind_− ≥ 1 for some L, and r → −∞ along a sequence.
+- **N.G1: CLOSED (PROVED, ineffective).** Glued DMV past its ladder: ind_− ≥ 1 for some L, and r → −∞ along a sequence. (Via poles z_j with Re z_j > max(θ − ½, 0), which holds for large t_j for every θ < 1.)
 - **GAP N.G1′ (effective onset).** Give explicit L₁(DMV; X, θ, a), i.e. an effective Ω-result for the smoothed fluctuation T(U) of
   DMV's ψ_P. Route: an effective oscillation theorem (Turán power sums / Pintz-type), fed with explicit heights of DMV zeros. DMV
   Thm 1 as transcribed gives zeros on σ = 1 − a/log t with no explicit heights (theorem-internal constants unverified).
@@ -472,6 +473,125 @@ ineffectiveness.
 - **CONJECTURE N.C3.** ind_−(Q^{P_DMV}_L) → ∞ (expected by combining k separated pairs at U's where |T| is large. The cross terms
   T(c_i ± c_j) are not controlled).
 - Main G.4d is unchanged: N.11.3 is the RH-silent direction, valid without FE.
+
+## N.12 Prime side of the p = 2 step for Celestial's §C.13 (IF): edge-strip estimates, and where the H¹ comparison fails (S103e)
+
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OPEN. Nothing in N.12 proves or implies RH.**
+Track tag **[L]** throughout: support extension at fixed archimedean cutoff Λ = 1, half-width L past ½ log 2 (Celestial §C.13,
+origin/team/celestial-cft 407715d). Nothing here is on the [Λ, §S] track.
+
+**Outcome.** No analytic L₀ > ½ log 2 is proved. The route "Cauchy–Schwarz on the strips, then an H¹ comparison with 𝒮_L" fails at
+one named step (N.12.4, step S2): S1 is sharp, and S2 implies archimedean-only positivity, which Connes–Consani report fails inside
+the range (NUMERICAL). N.12.3 gives an exact parity/reflection splitting of the (IF) left side. With it, (IF) is equivalent to the two
+parity conditions (K2) and (K3), with explicit constant 2c₂ (PROVED as a reformulation). (K1) is the high-band input. Their truth on
+(log 2, log 3] is CERTIFIED (consistency only) and analytically GAP (N.G2).
+
+### N.12.0 Notation (matches §C.13.0; Celestial confirmed)
+- a := log 2, c₂ := Λ(2)·2^{−1/2} = (log 2)/√2 = 0.49013 (so 2c₂ = √2·log 2 = 0.98026), Q := −∂² + ¼.
+- ξ ∈ C_c^∞(−L, L) real, h = ξ⋆ξ*, h(b) = ∫ ξ(x)ξ(x + b) dx, g = Qh. ξ̂(t) = ∫ ξ e^{itx} dx as in N.0.
+- Penetration ℓ := 2L − a ∈ (0, log(3/2)]. The two strips are S₋ := [−L, L − a] and S₊ := S₋ + a = [a − L, L], each of length ℓ.
+  They are disjoint, since ℓ < a ⇔ 2L < 2 log 2.
+- J: x ↦ −a − x reflects S₋ about its midpoint −a/2. P_± := ½(1 ± J) on L²(S₋).
+- ‖u‖²_{H(I)} := ∫_I (u′² + ¼u²). E := S₋ ∪ S₊.
+- R_L(ξ) := 𝒮_L(ξ) + 2ε′(1⁺)(‖ξ‖² − ⟨ξ, K_Lξ⟩) = W_∞(Qh) is the archimedean form on the pole-free class (§C.13 T3–T5).
+- B(ξ) := ∫_{S₋} [ξ′(x)ξ′(x + a) + ¼ξ(x)ξ(x + a)] dx = g(a) = Qh(a). The (IF) left side is 2c₂B(ξ).
+
+### N.12.1 The exact prime side on (log 2, log 3] (PROVED; tail vanishing PROVED-LEAN) [L]
+- **Pole-free class.** For 2L ∈ (log 2, log 3], Q_L(Qh) = R_L(ξ) − 2c₂B(ξ).
+  - Only n = 2, k = 1 is present: n = 3 contributes g(log 3) = 0 at 2L = log 3, and n = 4 enters at 2L > log 4.
+  - Lean names: `GppWeilLadder.primeSide_eq_truncation`, `primeSide_term_eq_zero`, `primeSide_eq_zero_of_support_lt_log_two`.
+  - B = g(a) is h″/h algebra: h″(b) = −∫ ξ′(x)ξ′(x + b) dx (§C.13 T7).
+- **ζ-type versus P_X-type.** On this range ζ ≡ P_X for every X ≥ 2 (N.2, p⁺(2) = 3).
+  - Any failure here would be ζ-type, i.e. a zero off the line: impossible under RH, and excluded by the CERTIFIED window.
+  - P_X-type failure (missing primes) starts only at 2L > log 3, where P_2 lacks the n = 3 atom.
+  - N.3.3's odd-pole bump for P_2 needs L ≳ ½ log 2 + 2.8 (NUMERICAL constant), so it is far-field here.
+- **Semi-local reading (PROVED, from N.10 and N.2).** The window prime side is exactly S = {∞, 2}.
+  - By N.10(i), the S-unit sum ±2^ℤ supplies the f(0) side (s = 0, the local pole).
+  - The f̂(0) direction at s = 1 is carried only by ζ^{(S)}, i.e. by the primes ≥ 3, none of which is visible in the window.
+  - On the pole-free class both directions are removed once, at §C.13 T4. So the p = 2 line has to be absorbed by archimedean data,
+    with no pole direction left over. This is §C.13 C.13.2's "pole fact", seen from the prime side.
+  - In Q.8.E language (§C.13.4), the q = 2^{±1} summands of E are the only source of δ_{±a}.
+- R1 per window | R2 FE invisible (ζ = P_2 here, N.2′) | R3 the sign of B is the content, not weight signs | R4 see N.12.3 |
+  R5 ζ, P_X (X ≥ 2) and glued DMV coincide here. F_θ has weight (2^θ + 2^{−θ})/2 times c₂ at n = 2, and G_θ′ has a cos(θ′a)
+  modulation: both differ from ζ here. DH has no Euler line at a (§C.13 R5).
+
+### N.12.2 Step S1: edge-strip H¹ bound (PROVED, elementary, sharp) [L]
+- **Bound.** |B(ξ)| ≤ ‖ξ‖_{H(S₋)}‖ξ‖_{H(S₊)} ≤ ½‖ξ‖²_{H(E)}. Hence **|LHS(IF)| ≤ c₂‖ξ‖²_{H(E)}**.
+  - *Proof.* Cauchy–Schwarz in H(S₋) for the pair (ξ|_{S₋}, ξ(· + a)|_{S₋}), then AM–GM. ∎
+- **Comparison with the Fourier form.** ‖ξ‖²_{H(E)} ≤ ‖ξ‖²_{H(ℝ)} = (1/2π)∫(¼ + t²)|ξ̂|².
+  - Localization therefore halves the multiplier constant: c₂ in place of the 2c₂|cos(ta)| of (IF-F).
+- **Sharpness (PROVED).** Take φ ∈ C_c^∞(int S₋) and ξ = φ ± φ(· − a). Then B = ±‖φ‖²_{H(S₋)} and ‖ξ‖²_{H(E)} = 2‖φ‖²_H.
+  - So the constant c₂ is attained, with either sign, for every frequency content of φ.
+  - This is §C.13 T8 (no L² bound) in its natural H¹ form. Hence **no loss occurs in S1**.
+
+### N.12.3 Exact splitting of the (IF) left side by parity and the strip reflection J (PROVED, elementary) [L]
+Write ξ = ξ_e + ξ_o for the parity parts.
+- **Parity-diagonal.** Both R_L (even multiplier) and B are parity-diagonal.
+  - For B, the cross terms ∫ξ_e(x)ξ_o(x + a) + ∫ξ_o(x)ξ_e(x + a) cancel under x ↦ −x − a, and likewise for the derivative term.
+- **Even ξ.** ξ(x + a) = (Jξ)(x) and ξ′(x + a) = −(Jξ′)(x) on S₋. Since d/dx swaps the J-parity, this gives
+  **B(ξ_e) = ‖P₊ξ_e‖²_{H(S₋)} − ‖P₋ξ_e‖²_{H(S₋)}**.
+- **Odd ξ.** **B(ξ_o) = ‖P₋ξ_o‖²_{H(S₋)} − ‖P₊ξ_o‖²_{H(S₋)}**.
+- **Exact (IF).** (IF) ⇔ for σ ∈ {e, o}:
+  > R_L(ξ_σ) + 2c₂‖P_{−s(σ)}ξ_σ‖²_{H(S₋)} ≥ 2c₂‖P_{s(σ)}ξ_σ‖²_{H(S₋)},  with s(e) = +, s(o) = −.
+- **Harmful cones** (where the p = 2 term is negative for Q): (even, J-symmetric on the strip) and (odd, J-antisymmetric on the strip).
+- **Edge expansion** (PROVED; ξ in the energy closure, edge slope s = ξ′(−L⁺)).
+  - Even nodeless profile: B(ξ_e) = −s²ℓ + O(ℓ²), so the p = 2 term **helps**.
+  - Odd profile: B(ξ_o) = +s²ℓ + O(ℓ²), so it **hurts at first order in ℓ**.
+  - Uniform version: ‖P₊ξ_e‖²_{H(S₋)} ≤ ¼ℓ³(‖ξ′‖²_∞ + ‖ξ″‖²_∞). The harmful even mass is cubic in ℓ for C² edges; the harmful odd mass is not small.
+  - Sign flip relative to f-coordinates: in k = (½ + ∂)ξ coordinates the nodeless even k is harmed. The (IF) statements are all in ξ.
+- R4: the soft-mode-shaped (even nodeless) direction lies in the *helped* part at leading order. The odd pole partner is in the harmed part.
+
+### N.12.4 The suggested H¹ route and its failing step (PROVED as stated; the onset is NUMERICAL prior art) [L]
+**S2 (the comparison).** R_L(ξ) ≥ c₂‖ξ‖²_{H(E)} for all ξ. Together with S1 this would give (IF).
+- **(i) S2 ⇒ R_L ≥ 0.** S2 implies archimedean-only positivity on the pole-free class at L (PROVED: the right side is ≥ 0).
+- **(ii) S2 overpays by exactly 4c₂‖P_{−s}ξ‖²_{H(S₋)} per parity** (PROVED, from N.12.3). It charges the helped component at the wrong sign.
+- **(iii) Prior art: S2 fails inside the range.** Connes–Consani arXiv:2106.01715 §2.2 (Figs 5–7; their L is our 2L, μ = e^{2L}).
+  The following are NUMERICAL, text- and figure-level:
+  - The archimedean even matrix has smallest eigenvalue ≈ 0.00133 at 2L = log 2.
+  - It ceases to be positive "in the upper part of" 2L ∈ [log 2 − 0.2, log 2 + 0.2], so μ_a < e^{0.893} ≈ 2.44. The plotted range of Fig 7 is 2.05–2.30; the crossing value is not stated in the text.
+  - The p = 2 term first lowers λ_min on μ ∈ (2, 2.27), then restores positivity.
+  - λ_min < 6×10^{−8} at μ = 3.
+  - Hence S2, and with it any route that bounds |LHS| before comparing, gives at best **2L₀ < log μ_a < log 2.44**. It never reaches log 3.
+  - *Grok audit (scope of (iii); labels tightened).*
+    - CC's §2.2 matrices are −W_ℝ (possibly with the rank-one w_{0,2} of CC Lemma 2.7) on the **full** even/odd test space, not on the pole-free class.
+    - Loss of positivity there does not by itself give R_L < 0 on the pole-free class: with a single negative eigenvalue, the codimension-one restriction can still be ≥ 0, by Cauchy interlacing.
+    - So "S2 fails inside the range" and the cap 2L₀ < log 2.44 are **NUMERICAL-indicative**, not established. (i) and (ii) are PROVED. The cap would become a statement once R_L < 0 on the pole-free class is shown at some 2L < log 2.44.
+    - S2 is much stronger than R_L ≥ 0 anyway, by (ii). So the route is wasteful in any case.
+- **(iv) What S2 would need on (log 2, log μ_a)** (PROVED as a reformulation): the archimedean edge coercivity
+  m_L := inf_ξ R_L(ξ)/‖ξ‖²_{H(E)} ≥ c₂ = 0.4901.
+  - Low band. For fixed smooth ξ, ‖ξ‖²_{H(E)} = 2s²ℓ + O(ℓ²) for even/odd edge slope s. So m_L ≥ c₂ needs an L²-type margin of R_L of size ≳ 2c₂s²ℓ.
+  - No analytic lower bound on R_L for L > ½ log 2 exists in CC 2021: their T6 step is a sign at L = ½ log 2, with a computer-assisted finite-rank part. **GAP.**
+  - High band. On edge pairs at frequency m, R_L ≈ σ_S(m)‖ξ‖²_{H(ℝ)} (heuristic), so S2 needs σ_S(m) ≥ c₂.
+  - If σ_S(t) ∼ log(|t|/2π) (§C.13 heuristic, not checked here), the threshold is |t| ≳ 2πe^{c₂} ≈ 10.26. The non-localized (IF-F) needs 2πe^{2c₂} ≈ 16.7.
+- **Replacement (exact, no loss).** (K2) ∧ (K3) ⇔ (IF) (PROVED, by N.12.3). (K1) locates the high band of any proof (heuristic).
+  - (K1) high band, localized: **σ_S(t) ≥ c₂ for |t| ≥ T**. This is the per-mode constant on the sharp edge pairs of N.12.2, where R_L ≈ σ_S(m)‖ξ‖²_{H(ℝ)} (heuristic). It is not a proof step.
+  - (K2) odd: **R_L(ξ_o) + 2c₂‖P₊ξ_o‖²_{H(S₋)} ≥ 2c₂‖P₋ξ_o‖²_{H(S₋)}**. First-order cost 2c₂s²ℓ on odd profiles.
+  - (K3) even: **R_L(ξ_e) + 2c₂‖P₋ξ_e‖²_{H(S₋)} ≥ 2c₂‖P₊ξ_e‖²_{H(S₋)}**. The harmful mass is O(ℓ³) for C² edges, and the helped term is ≈ 2c₂s²ℓ. This is the mechanism behind CC's restoration of the even matrix.
+  - **Named obstruction N.G2 (GAP): no analytic lower bound for R_L on the odd harmful cone (K2) or the even harmful cone (K3) for 2L > log 2.** The constant needed is 2c₂ = 0.98026 against the H(S₋)-mass of P_{s}ξ, equivalently c₂ = 0.49013 per strip against H(E).
+- **Truth status of (K1)–(K3) on (log 2, log 3].**
+  - CERTIFIED: positivity up to L = 1.42 (main 2576c89, `team/spectrum-measure/AUDIT_284.md`). Used as consistency only, not as an analytic L₀; conditionality as labelled on main.
+  - NUMERICAL: CC 2106.01715.
+- R1 a fixed-window statement, RH-silent | R2 the FE enters only through W_∞ in R_L | R3 the J-sign of B, not weight signs |
+  R4 soft-mode shape helped, odd partner harmed | R5 fake-blind in truth (DH positive here); breaks structurally for DH (no a-line).
+
+### N.12.5 First test of Conj Q.8.E (consistent with §C.13.4)
+- Under (I1), D_L must carry −c₂S_Λ(V(2) + V(2)*)S_Λ. Here V(2) is translation by a in u = log|x|.
+- (I2) on this window ⇔ (IF) ⇔ (K2) ∧ (K3).
+  - *Grok audit (precision).* For a **given** D_L satisfying (I1), "(I2) ⇒ (IF)" is PROVED.
+  - The converse holds only existentially: (IF) ⇒ some D_L ≥ 0 with (I1) exists abstractly (GNS, as in Q.8). That is not a statement about a specified D_L.
+  - "(IF) ⇔ (K2) ∧ (K3)" is PROVED (N.12.3).
+- The test Celestial can run directly: an explicit D_L must dominate the harmful cones of N.12.3 with constant 2c₂ on H(S₋). In particular, on the odd sector it needs first-order-in-ℓ margin 2c₂s²ℓ.
+- Requirement: PROVED (from (I1)). Existence of D_L: CONJECTURE (Q.8.E).
+
+### N.12.6 Prior art
+- Connes–Consani 2021 (Selecta 27, art. 77, arXiv:2006.13771) Thm 1: support [2^{−1/2}, 2^{1/2}], i.e. our L = ½ log 2, pole-free class. N.12 begins exactly where the p = 2 atom enters.
+- Connes–Consani arXiv:2106.01715 §2.2–2.4: this range NUMERICALLY (figures; theorem numbers not applicable).
+- Yoshida 1992: small-support positivity (via ARP G.2b; theorem number unverified).
+
+### N.12.7 GAPs and labels after N.12
+- **N.G2 (GAP, new):** analytic L₀ > ½ log 2 for (IF). Reduced to (K2)/(K3) with explicit constants. The S1 + S2 route is capped at 2L₀ < log μ_a (NUMERICAL, μ_a < 2.44).
+- N.G1′ PARKED (unchanged).
+- G.4d unchanged.
 
 ## References (verified this session unless marked)
 - Diamond, H. G., Montgomery, H. L., Vorhauer, U. M. A., "Beurling primes with large oscillation", Math. Ann. 334 (2006) 1–36,
@@ -482,6 +602,7 @@ ineffectiveness.
   per §P, not re-read).
 - Connes, A., Consani, C., "Weil positivity and trace formula, the archimedean place", Selecta Math. 27 (2021) art. 77,
   doi:10.1007/s00029-021-00689-4, arXiv:2006.13771.
+- Connes, A., Consani, C., "Spectral triples and ζ-cycles", arXiv:2106.01715, §2.2–2.4 (read this session; figure-level numerics).
 - Landau, H. J., Widom, H., "Eigenvalue distribution of time and frequency limiting", J. Math. Anal. Appl. 77 (1980) 469–481
   (indicator-symbol case only; general-symbol theorem number unverified).
 - Tate, J., thesis (1950), in Cassels–Fröhlich (1967): local zeta integrals (§2) and the global FE (§4), per ARP G.1a/G.4a.
