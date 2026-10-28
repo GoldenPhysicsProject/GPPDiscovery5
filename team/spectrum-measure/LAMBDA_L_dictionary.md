@@ -187,6 +187,13 @@ P̂ = P̂^c_1, S_Λ := 1_{Λ⁻¹≤|x|≤Λ}, Ŝ_Λ := F⁻¹S_ΛF, L(f) := Tr(
 - (P9.4): "Tr(ϑ(f) S^{So}_Λ) = W_∞(f) + ∫ f(ρ⁻¹) ε^{(Λ)}(ρ) d*ρ − 2f(1) log Λ + χ_Λ(f)", S^{So}_Λ the projection onto S(Λ, Λ).
 - (e): "A Λ > 1 analog of CC Thm 1 would need a new compact-operator bound on the ε^{(Λ)} ∘ Q functional on the support class (the analog
   of K_I, Lemma 6.10). That is a **GAP [S&M]**". P.9 already proves |ε_Λ| ≤ ∫_{|u|>1}|ĝ| log|u|, |χ_Λ| ≤ ‖[P, ϑ(f)]‖₁ (uniform in Λ).
+- **Citation fix (2026-10-28).** That GAP was closed by **Principal series §P.10.3 (team/principal-series 5f8e88d; theirs, PROVED given
+  CC Lemma 6.10, which is computer-certified in CC)**: "Lemma 6.10_Λ … ⟨ξ|N^{(Λ)}_Iξ⟩ ≤ ⟨ξ|N_Iξ⟩ ≤ γ|⟨ξ₀|ξ⟩|², γ ≈ 2.94355 (CC (140))" (P10.2)
+  and "Thm 6.11_Λ … W_∞(g⋆g^*) ≥ Tr(ϑ(g)S^{So}_Λϑ(g)^*) − c_Λ|ĝ(0)|², c_Λ ≤ c = 4γ/log 2" (P10.3), for every Λ ≥ 1, by Sonin monotonicity
+  S(1, Λ²) ⊂ S(1, 1). Our (e4) is the ĝ(0) = 0 special case of their P.10.3; the Λ > 1 analogue is **theirs**, not ours.
+- **Which γ.** In c = 4γ/log 2 (CC Thm 6.11, (141)), γ ≈ 2.94355 is the constant of **CC Lemma 6.10, (140)**: ⟨ξ|N_I(ξ)⟩ ≤ γ|⟨ξ₀|ξ⟩|²
+  on L²(I), I = [−½ log 2, ½ log 2], N_I = −½(1 + ε)(Id − K_I) (verified in arXiv:2006.13771, text of Lemma 6.10). It is **not** Euler's
+  constant γ = 0.5772…
 
 What we add [Λ-track, all RH-silent, R2 not engaged, fake-blind (R5: every fake with ζ's W∞ passes)]:
 
@@ -221,8 +228,9 @@ the inequality itself.
 does not give. Exact form: for an interval I (|I| ≤ log 2, or larger) find the decomposition
   ∫ (Qh)(ρ⁻¹) ε^{(Λ)}(ρ) d*ρ = −2 e_Λ (‖ξ‖² − ⟨ξ, K_I^{(Λ)} ξ⟩)  (+ the window and χ_Λ terms of (P9.4)),
 with e_Λ := ε^{(Λ)′}(1⁺) (CC Lemma 5.4 at bandwidth 2πΛ²) and K_I^{(Λ)} Hilbert–Schmidt (CC Prop 5.5 at Λ), and prove either
-(i) a constant c_Λ < c = 4γ/log 2 in the Thm 6.11 form W∞(g⋆g*) ≥ T_Λ − c_Λ|ĝ(0)|², or (ii) the inequality on a class not covered by
-CC (larger support). Monotonicity gives (i) only with c_Λ = c. Inputs available: PROLATE_BOUNDS.md at c = 2πΛ² (tails, plunge, counts).
+(i) a constant c_Λ < c = 4γ/log 2 (γ ≈ 2.94355 from CC Lemma 6.10, (140)) in the Thm 6.11 form W∞(g⋆g*) ≥ T_Λ − c_Λ|ĝ(0)|², or
+(ii) the inequality on a class not covered by CC (larger support). Monotonicity gives (i) only with c_Λ ≤ c: that is Principal series'
+Thm 6.11_Λ (§P.10.3, 5f8e88d, theirs; c_Λ nonincreasing in Λ). Strict c_Λ < c is not claimed by them or us. Inputs available: PROLATE_BOUNDS.md at c = 2πΛ² (tails, plunge, counts).
 Not proved here. Even if proved, it is archimedean and RH-silent; it supplies bookkeeping for Celestial's support step, not R2.
 
 **(e6) Note on "L = log Λ".** Celestial §C.13.0 (407715d) states that the Λ↔L dictionary L = log Λ "is CONJECTURE, a convention fixed by
