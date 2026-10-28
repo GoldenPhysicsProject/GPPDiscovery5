@@ -212,7 +212,12 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
   - Pole side (§P P8.1, PROVED from Connes App. I (37) = Meyer (31); ℚ as Connes states it): as functionals f(0) ∈ P_Λ (s = 0) and f̂(0) ∈ P̂_Λ (s = 1), swapped by F; Connes' D term uses the same pair B_Λ ⊃ B_{Λ,0} as the deficit trace, and the removed directions are exactly G.3a's OS4 span{e^{±u/2}}, spent once. The s = 0 side is local (survives with S-units, §N N.10); the s = 1 side is global (primes outside S). Projector dictionary S_Λ ⊖ E(B_{Λ,0}) vs CC's Sonin 1 − P₁∨P̂₁ (formerly a minor GAP): **closed negatively at the projector level** (§P P.9.1, REMARK-level beyond (D1)–(D3)). The two act on different spaces (local L²(ℝ)_ev vs L²(C_ℚ) after E), and no choice of Λ identifies them. **The trace-level dictionary is PROVED** (§P P.9.2–P.9.3, Grok audit S103e: SOUND).
   - R6 identity recorded (§P (P9.3), exact for every Λ ≥ 1): L_Λ(f) = W_∞(f) + Tr(ϑ(f)R_Λ) − Tr(ϑ(f)Ŝ_Λ) + χ_Λ(f), with Tr(ϑ(f)Ŝ_Λ) = 2f(1) log Λ exactly.
     - Equivalently L_Λ = L + ε_Λ + χ_Λ, with ε_Λ = −Tr(ϑ(f)Ŝ_ΛP^c_Λ) and χ_Λ = Tr([P^c_Λ, ϑ(f)]P_ΛŜ_Λ), both trace class and uniformly bounded in Λ.
-    - Λ = 1 recovers CC 2021. (P9.4), CC §4 at bandwidth 2πΛ², is PROVED by inspection, with Golden Eye audit pending.
+    - Λ = 1 recovers CC 2021. (P9.4), CC §4 at bandwidth 2πΛ², is PROVED given (P9.3) and CC §4 at a = b = Λ; Golden Eye checked (P9.1)–(P9.3) line by line, and CC's (69)–(84) were checked by inspection (§P P.10.0).
+  - **Λ-track CLOSED NEGATIVELY (§P P.10, merged S103f, Grok audit: SOUND; RH-silent).** This replaces the former "Λ > 1 analogue of CC Lemma 6.10 / Thm 1 is the [S&M] GAP".
+    - Lemma 6.10_Λ, ⟨ξ|N^{(Λ)}_Iξ⟩ ≤ ⟨ξ|N_Iξ⟩ ≤ γ|⟨ξ₀|ξ⟩|², and Thm 6.11_Λ with c_Λ ≤ 4γ/log 2 hold uniformly in Λ. Both are PROVED given CC Lemma 6.10, which is CERTIFIED (computer-assisted).
+    - The source is a monotonicity lemma: Tr(ϑ(h)S^{So}_Λϑ(h)^*) ≥ 0 is nonincreasing in Λ and tends to 0. So **Sonin Λ = 1 is optimal**, and the Λ-track adds nothing beyond CC.
+    - Exact limits (P10.4) are PROVED. The naive ε^{(Λ)}∘Q bound fails (PROVED given (P9.4)). Fixed-Λ compactness is a GAP, not needed.
+    - **The remaining route past CC is the support extension (G.4g), which is where primes enter (R2).**
     - Consequence for Q.8.E (PROVED as stated): a rule L ↦ D_L using only archimedean data cannot satisfy (I1) for both ζ and a datum such as P_X (X < 2) once 2L > log 2. So D_L must contain E through Q′_Λ.
   - Definition of μ_ρ: for a zero ρ = ½ + β + iγ, μ_ρ is the harmonic (Poisson-kernel) measure of ρ with respect to the critical line, a positive probability measure on ℝ, with μ_ρ = δ_γ when β = 0. The identity lim Δ_Λ(f) = Σ_ρ m_ρ ∫ĝ dμ_ρ is PROVED for function fields (Connes 1999 §VIII Lemma 3); for ℚ it is Connes' stated analogue (§VIII, last part), labelled CONJECTURE here until a proof for ℚ is cited.
   - GAP in this language: lim_Λ Δ^♮_Λ = Weil, i.e. δ_Λ → 0 (RH-equivalent). Over ℚ the unsharpened Δ_Λ is not of positive type (§Q c2), so the form "lim Δ_Λ = Weil ⇒ RH" holds only given M1 (Golden Eye §Q.8 audit, fix 3); off-line residual Σ_ρ m_ρ[∫ĝ dμ_ρ − ĝ(γ_ρ)]. Sign audit (Golden Eye, S103c): SOUND on all three tests; shared GAP sign SETTLED, with the ℚ-case of the μ_ρ residual formula still CONJECTURE.
@@ -222,6 +227,11 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
     - **Thm M1.C / Cor M1.D (PROVED-conditional)** on Spectrum's prolate inputs (S2), (S3): ℓ_Λ ≤ 2κ_Λ(ε_Λ/Λ + 4ζ(1+σ)²ρ_Λ).
     - **GAP H-κ (Queen):** conditioning κ_Λ of E on B_{Λ,0}. It is a minimum over B_{Λ,0}'s Mellin profiles of the |Mφ|²-average of |ζ(½+is)|².
       - It is arithmetic but uses the critical line only. Fixed-weight mean values do not bound it directly, and it probably needs local zero-spacing input.
+      - **H-κ status (§Q ARP_queen_Hkappa.md, merged S103f, Grok audit: SOUND after a low-height fix).**
+        - Polynomial bound **Thm H.1, κ_Λ ≤ Λ^B, B absolute: PROVED (sketch)**. It uses the two-constants lemma plus Kovrijkine 2001. It is fake-blind (DH, Epstein), hence RH-silent. The local input is thickness of a superlevel set of |ζ|, not zero spacing.
+        - The sharp form Λ^{o(1)} reduces to **(Z-avg), a GAP**. (Z-avg⁺) holds under Lindelöf, hence under RH. (Z-avg⁻) is a CONJECTURE.
+        - **Circularity flag:** the sharp form may be RH-conditional, so it cannot be used on any route to RH.
+        - **Open: is B < 2?** That is what the untrimmed Connes space needs (ε_Λ/Λ ≍ log Λ/Λ², HEURISTIC). Otherwise M1 needs a trimmed prolate space (CONJECTURE, Spectrum).
     - **M1 overall: CONJECTURE.** RH-silent: no implication to or from RH.
   - Equivalently, in §G.3's language, Q_L = MF_L + Fl_L, with Fl_L the E_Λ-fluctuation (ψ-fluctuation, G.3d; corrected S103b from E₁).
   - Nothing local (G.1–G.2) bounds δ_Λ or Fl_L.
