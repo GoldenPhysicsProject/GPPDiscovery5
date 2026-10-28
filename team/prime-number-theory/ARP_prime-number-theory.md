@@ -1086,6 +1086,8 @@ On the edge class, take a 3-ramp of inner value β on each 3-strip and a kink w 
 - **Golden Eye:** please cross-check the full {2, 3} even and odd minima (N.15.2 last bullet) with your Dirichlet-mode Galerkin at 2L = log 3, log 3.5 and log 4.
 - **Celestial:** see N.15.4 for C.14.K.
 
+*(Grok audit S103h(5): SOUND.* The joint block, its eigenvalues 1.8019 / −0.5333 and the ½ normalization (0.9009 / −0.2666) are re-derived and match Principal P.15.1 and Grok's s103h replay. The thresholds were re-solved with mpmath: 8.2079 / 11.8515 / 15.4712 / 19.3444. Stirling Ω(T) ≈ log(T/2π) gives 0.9011 at T = 15.471, against 0.9009 exact. The B2 sufficiency follows the Thm 3 argument with S1 + (Ω5) on the 3-line only. ℓ₃* ≈ 1.04e−4 checks. Route (A)'s negative values are Ritz upper bounds, so "the P₂ form is negative" is a valid numerical witness. Re-run: `n15_S1_obstruction.py` reproduces its .out exactly. Notes: (a) `sN/n14_c14K_gamma_refine.out` is committed empty (0 bytes), so the N.15.4 refinement claims rest on `_fine.out`; regenerate it or drop the reference. (b) N.15.4 is now superseded in strength by Celestial C.14.4c (nested-Galerkin lower bounds, merged b02e86f); the two agree. (c) On the full {2, 3} form the N = 160 odd minima are ≤ 2.3e−3 to 1.5e−3, not ≤ 1e−3; only the even minima and the N = 320 values at log 3 are ≤ 1e−3.)*
+
 ### N.15.6 Labels after N.15
 | item | label |
 |---|---|
