@@ -209,9 +209,20 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
 **G.4d (GAP, the shared one).**
 - **The defect.** The gluing introduces the cutoff/principal-value term:
   - Sign (settled S103c, Queen §Q.7 + Principal §P.5–P.6, per Connes 1999 §VIII Thm 5/Lemma 3 and Meyer 2005 §5.4): the positive object is a trace over the **complement of range(E)** (cokernel deficit, S_Λ − Q′; exactly free only for function fields. For ℚ, Q′ ≤ S_Λ is not exact with the prolate cutoff, and the exact positive object is Δ^♮_Λ = Tr((S − SQ′S)VV*) (§Q Q.8 correction c2)), not ‖P^⊥Eφ‖². Range positivity enters Δ_Λ with a minus sign and gives only the trivial upper bound, so "additive positivity transfers through E" is WRONG-SIGN and withdrawn. The 2 log Λ term cancels exactly against Tr(S_Λ V(h)) and is not part of δ_Λ; source: Connes 1999 §VIII, eq. (16) and the proof of Thm 5, eqs. (17)–(26) (Queen sign_check.md). Connes–Consani 2021 Thm 1 confirms the deficit sign only: it is the Λ = 1 (Sonin) case, where 2 log Λ = 0, so it cannot test this cancellation (Golden Eye audit).
-  - Pole side (§P P8.1, PROVED from Connes App. I (37) = Meyer (31); ℚ as Connes states it): as functionals f(0) ∈ P_Λ (s = 0) and f̂(0) ∈ P̂_Λ (s = 1), swapped by F; Connes' D term uses the same pair B_Λ ⊃ B_{Λ,0} as the deficit trace, and the removed directions are exactly G.3a's OS4 span{e^{±u/2}}, spent once. The s = 0 side is local (survives with S-units, §N N.10); the s = 1 side is global (primes outside S). Minor GAP: projector dictionary S_Λ ⊖ E(B_{Λ,0}) vs CC's Sonin 1 − P₁∨P̂₁.
+  - Pole side (§P P8.1, PROVED from Connes App. I (37) = Meyer (31); ℚ as Connes states it): as functionals f(0) ∈ P_Λ (s = 0) and f̂(0) ∈ P̂_Λ (s = 1), swapped by F; Connes' D term uses the same pair B_Λ ⊃ B_{Λ,0} as the deficit trace, and the removed directions are exactly G.3a's OS4 span{e^{±u/2}}, spent once. The s = 0 side is local (survives with S-units, §N N.10); the s = 1 side is global (primes outside S). Projector dictionary S_Λ ⊖ E(B_{Λ,0}) vs CC's Sonin 1 − P₁∨P̂₁ (formerly a minor GAP): **closed negatively at the projector level** (§P P.9.1, REMARK-level beyond (D1)–(D3)). The two act on different spaces (local L²(ℝ)_ev vs L²(C_ℚ) after E), and no choice of Λ identifies them. **The trace-level dictionary is PROVED** (§P P.9.2–P.9.3, Grok audit S103e: SOUND).
+  - R6 identity recorded (§P (P9.3), exact for every Λ ≥ 1): L_Λ(f) = W_∞(f) + Tr(ϑ(f)R_Λ) − Tr(ϑ(f)Ŝ_Λ) + χ_Λ(f), with Tr(ϑ(f)Ŝ_Λ) = 2f(1) log Λ exactly.
+    - Equivalently L_Λ = L + ε_Λ + χ_Λ, with ε_Λ = −Tr(ϑ(f)Ŝ_ΛP^c_Λ) and χ_Λ = Tr([P^c_Λ, ϑ(f)]P_ΛŜ_Λ), both trace class and uniformly bounded in Λ.
+    - Λ = 1 recovers CC 2021. (P9.4), CC §4 at bandwidth 2πΛ², is PROVED by inspection, with Golden Eye audit pending.
+    - Consequence for Q.8.E (PROVED as stated): a rule L ↦ D_L using only archimedean data cannot satisfy (I1) for both ζ and a datum such as P_X (X < 2) once 2L > log 2. So D_L must contain E through Q′_Λ.
   - Definition of μ_ρ: for a zero ρ = ½ + β + iγ, μ_ρ is the harmonic (Poisson-kernel) measure of ρ with respect to the critical line, a positive probability measure on ℝ, with μ_ρ = δ_γ when β = 0. The identity lim Δ_Λ(f) = Σ_ρ m_ρ ∫ĝ dμ_ρ is PROVED for function fields (Connes 1999 §VIII Lemma 3); for ℚ it is Connes' stated analogue (§VIII, last part), labelled CONJECTURE here until a proof for ℚ is cited.
   - GAP in this language: lim_Λ Δ^♮_Λ = Weil, i.e. δ_Λ → 0 (RH-equivalent). Over ℚ the unsharpened Δ_Λ is not of positive type (§Q c2), so the form "lim Δ_Λ = Weil ⇒ RH" holds only given M1 (Golden Eye §Q.8 audit, fix 3); off-line residual Σ_ρ m_ρ[∫ĝ dμ_ρ − ĝ(γ_ρ)]. Sign audit (Golden Eye, S103c): SOUND on all three tests; shared GAP sign SETTLED, with the ℚ-case of the μ_ρ residual formula still CONJECTURE.
+  - **M1 (Queen §Q M1, merged S103e, Grok audit: SOUND).** M1 says Lk_Λ = Δ_Λ − Δ^♮_Λ → 0. Here ℓ_Λ := ‖(1−S_Λ)Q′_Λ‖²_HS.
+    - **Thm M1.A (PROVED):** |Lk_Λ(f∗f^*)| ≤ ‖f‖_1²ℓ_Λ + 2‖f‖_1‖f‖_2(2 log Λ)^{1/2}ℓ_Λ^{1/2}.
+    - **Cor M1.B (PROVED-conditional):** ℓ_Λ log Λ → 0 ⇒ M1. On Q.8.E's diagonal Λ = e^L, uniformity needs ℓ_Λ = o(1/log²Λ).
+    - **Thm M1.C / Cor M1.D (PROVED-conditional)** on Spectrum's prolate inputs (S2), (S3): ℓ_Λ ≤ 2κ_Λ(ε_Λ/Λ + 4ζ(1+σ)²ρ_Λ).
+    - **GAP H-κ (Queen):** conditioning κ_Λ of E on B_{Λ,0}. It is a minimum over B_{Λ,0}'s Mellin profiles of the |Mφ|²-average of |ζ(½+is)|².
+      - It is arithmetic but uses the critical line only. Fixed-weight mean values do not bound it directly, and it probably needs local zero-spacing input.
+    - **M1 overall: CONJECTURE.** RH-silent: no implication to or from RH.
   - Equivalently, in §G.3's language, Q_L = MF_L + Fl_L, with Fl_L the E_Λ-fluctuation (ψ-fluctuation, G.3d; corrected S103b from E₁).
   - Nothing local (G.1–G.2) bounds δ_Λ or Fl_L.
 - **The GAP statement.** Show Fl_L(f) ≥ −MF_L(f) for all f ∈ C_c^∞([−L, L]), **uniformly in L** (R1).
@@ -246,6 +257,28 @@ lie on Re z = 0 under RH). §N N.11.4: the FE adds nothing to the failure direct
   - GAP N.G1″: polynomial bounds for ζ_P′/ζ_P on a line σ = θ₁ ∈ (θ, 1) (Landau lemma; needed only for the zero-side/quartet route).
   - CONJECTURE N.C3: ind_−(Q^{P_DMV}_L) → ∞.
   - (N.G1 itself is CLOSED.)
+
+**G.4g (p = 2 step past CC, Celestial §C.13 + Prime §N N.12, merged S103e; RH-silent on this range).**
+- **(IF), the reduced GAP for the p = 2 step.** On the pole-free class, for ½ log 2 < L ≤ ½ log 3, Weil positivity at Λ = 1 is equivalent to **(IF)**: 2c₂B(ξ) ≤ R_L(ξ). Here:
+  - c₂ = (log 2)/√2;
+  - B(ξ) = ∫[ξ′ξ′(·+log 2) + ¼ξξ(·+log 2)] = Qh(log 2);
+  - R_L = 𝒮_L + 2ε′(1⁺)(‖ξ‖² − ⟨ξ, K_Lξ⟩) = W_∞(Qh) is the archimedean form.
+  - The reformulation is PROVED (§C C.13.A). Only n = 2 enters, with tail vanishing PROVED-LEAN `GppWeilLadder.primeSide_eq_truncation` / `primeSide_eq_zero_of_support_lt_log_two`.
+  - Status: **GAP**, RH-silent on this range (ζ ≡ P_X for X ≥ 2 here).
+  - Positivity up to L = 1.42 is CERTIFIED (main 2576c89). That is NUMERICAL, used for consistency only, and is not an analytic L₀.
+- **CC's verbatim chain fails at T8 (PROVED).** The p = 2 term is unbounded on L² after Q, of order c₂m². So CC's ε-margin cannot absorb it.
+  - This obstructs only the margin route, not (IF). 𝒮_L is also of order m², and (IF) is dominated at high frequency where σ_S ≥ 2c₂.
+- **Prime-side reduction (§N N.12, PROVED).**
+  - S1: |2c₂B| ≤ c₂‖ξ‖²_{H(E)} on the disjoint edge strips. This is sharp.
+  - Exact parity/J splitting: (IF) ⇔ (K2) ∧ (K3), the odd and even harmful-cone inequalities with constant 2c₂.
+  - At edge order ℓ = 2L − log 2, the p = 2 term **helps** the even nodeless sector and **hurts** the odd sector.
+  - The comparison step S2, R_L ≥ c₂‖ξ‖²_{H(E)}, implies archimedean-only positivity on the pole-free class, and overpays.
+  - CC 2106.01715 §2.2 (NUMERICAL, full test space) indicates the bound-first route caps at 2L₀ < log 2.44. That is indicative only, per the Grok audit: the pole-free restriction is not covered by CC's matrices.
+- **Named obstruction N.G2 (GAP):** no analytic lower bound for R_L on the odd harmful cone (K2) or the even harmful cone (K3) for 2L > log 2. The required constant is 2c₂ = 0.98026 against the H(S₋)-mass of the harmful J-component.
+- **Q.8.E first test now reduces to (IF).** Under (I1), D_L must carry −c₂S_Λ(V(2) + V(2)^*)S_Λ.
+  - For a given D_L, (I2) on this window ⇒ (IF) (PROVED). Existentially, (IF) ⇔ some D_L ≥ 0 (abstract GNS).
+  - An explicit D_L must dominate the harmful cones of N.12.3 with constant 2c₂. Existence of D_L remains CONJECTURE (Q.8.E).
+- Labels: R1 fixed window | R2 FE only through W_∞ | R3 the sign of B, not weight signs | R4 soft mode helped, odd partner harmed | R5 DH positive here numerically but structurally without an a-line; fake-blind in truth. G.4d is unchanged.
 
 ### G.5 What would count as progress (CONJECTURE-level targets, each R1–R5-checked)
 - **(T1) Pole/boundary compensation (WITHDRAWN S103 by G.3d).** The k = 2 rank-one needs no compensation (it is absorbed once the fluctuation is taken against ψ = Σ_k θ(x^{1/k}), G.3d), and the two boundary directions are already spent on the mean field (G.3a). Original statement kept for the record:
