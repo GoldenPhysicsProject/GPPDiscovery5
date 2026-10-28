@@ -669,9 +669,14 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
 
 15. **S103h (P.15):**
    - The {2,3} prediction of P.14.8 is refined: per-line constants are confirmed, and "P-parity decides per line" is refuted at the p = 3 entry (PROVED). The orbit-closed node set is forced.
-   - The Q.8.E weight-1 block has spectrum {0, ±c₂/ℓ}. Positive line blocks cost exactly c₂·g(0) (sharp). A separable (I2) is equivalent to a global S2 (PROVED); its truth is a GAP. *(Grok audit S103h(2): "equivalent … (PROVED)" overstates P.15.2. What is proved is the ⇒ direction (necessary condition) for separable choices whose line block has diagonal sums only at {0, ±a} on (−2L, 2L). The converse needs an operator D^∞ ≥ 0 realizing the given diagonal sums and is not shown. So read "(I2)-separable ⇔ global S2" as a REMARK; global S2 itself is a GAP.)*
+   - The Q.8.E weight-1 block has spectrum {0, ±c₂/ℓ}. Positive line blocks cost exactly c₂·g(0) (sharp). A separable (I2) implies a global S2 (⇒ only; REMARK); S2 stays a GAP. *(Grok audit S103h(2): "equivalent … (PROVED)" overstates P.15.2. What is proved is the ⇒ direction (necessary condition) for separable choices whose line block has diagonal sums only at {0, ±a} on (−2L, 2L). The converse needs an operator D^∞ ≥ 0 realizing the given diagonal sums and is not shown. So read "(I2)-separable ⇔ global S2" as a REMARK; global S2 itself is a GAP.)*
    - Status: C.14 is merged; C.14.K is a CONJECTURE; the C.14.A indicative failure is NUMERICAL (Celestial's). Piece 4 is the sole odd payer, in band-split form.
    - N.14.3 cross-check: the identities agree. "No 1/ℓ₃ term from the 2-line" holds in ‖ξ′‖_∞ but not in H-energy. (L4) is consistent with P.14.3. The N.13.4 D_L sign was fixed by N.14.0(a), so nothing is left open from P.14.
+
+16. **S103i (P.16):**
+   - The sharp joint S1 constant on (log 3, log 4) is c₀\* = ½(c₃ + √(c₃² + 4c₂²)) = 0.90093 (fibre decomposition into 4-paths; PROVED). The N.14.3 c₂ + c₃ sharpness claim gets a FIX.
+   - The high band pays the joint charge for T ≥ 16 (CERTIFIED Ω). The 3-entry follows for ℓ₃ ≤ πμ/(4c₀\*(1 + 1/η)T), given the low-band GAP (H₃^σ). No unconditional range in either sector.
+   - Q.8.E (I2): D_L = A_LM_ρA_L^\* with an invisible correction n_L. (I2) ⇔ s_L ≥ 0 ⇔ Q_L ≥ 0 (Krein, cited). The explicit n_L is the GAP.
 
 ## P.14 The p = 2 line as local Tate data: is Prime's edge form the 2-adic Tate reflection? (S103g; analytic only; [Cel]/[Q], support track L, Λ = 1)
 Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OPEN. Nothing in P.14 proves or implies RH.** On the range treated here (2L ∈ (log 2, log 4)), ζ ≡ P_X for X ≥ 2, so everything is **RH-silent**. Positivity on the range is already CERTIFIED (Mori-conditional, main 992a011); P.14 is about **mechanism**.
@@ -947,7 +952,7 @@ The p = 2 term of Q_L is −c₂(g(a) + g(−a)), with a = log 2.
   - This is an S2-type bound in the **global** H-norm, strictly stronger than S2, whose norm is ‖·‖_{H(E)}. If it held, the p = 2 step would be trivial: S1 gives |2c₂B| ≤ c₂‖ξ‖²_{H(E)}.
   - Its truth is a **GAP**. Even: C.14.3, the rank-one κ^{ev} > 1 direction. Odd: its pointwise-symbol sufficient version is Thm C.14.A, which indicatively fails (P.15.3). Expected to fail: HEURISTIC (C.14.4b near-null directions).
 - **Why no trace-picture block can do better (PROVED).** Tr(M_w V(f)V(f)^*) = g(0)∫w for every w. The trace pairing sees only diagonal sums, which are translation-invariant. So a block can be made positive only by borrowing g(0)-mass (global ‖ξ‖²_H), never strip-localized mass ‖ξ‖²_{H(E)}, the S1 localization that makes the form picture work.
-  - **So for Queen:** a separable (I2), meaning a positive line block plus a positive archimedean remainder, is exactly the multiplier-frame route. A working D_L must couple the line block to the archimedean block through non-multiplier pieces: the ε-part 2ε′(1⁺)(1 − K_L) of C.14.1, band-split as in S&M Thm 2.1. This is a REMARK, PROVED as a statement about separable choices.
+  - **So for Queen:** a separable (I2), meaning a positive line block plus a positive archimedean remainder, implies the multiplier-frame bound (global S2). Only ⇒ is proved, and only for line blocks whose diagonal sums sit at {0, ±a} (REMARK; S2 stays GAP; adopted S103h(2)). A working D_L must couple the line block to the archimedean block through non-multiplier pieces: the ε-part 2ε′(1⁺)(1 − K_L) of C.14.1, band-split as in S&M Thm 2.1. This is a REMARK, PROVED as a statement about separable choices.
 - *Label summary:* weight-1 block, spectrum, HS: PROVED. Positive blocks D_n^{(2)} and the sharp cost c₂: PROVED (elementary). Separable (I2) ⇒ global S2: PROVED. Its truth: GAP (HEURISTIC: false). *(Grok audit S103h(2): the ⇒ is PROVED as stated in the preceding bullets; any "⇔" reading, e.g. in P.15.0 or the bridge note, is a REMARK only, and S2 (global or strip) remains GAP.)*
 
 ### P.15.3 Status update for §P.14 / G.4h after C.14, and what the C.14.A failure means for piece 4 — labels as marked [S&M]/[Cel]
@@ -970,7 +975,7 @@ The p = 2 term of Q_L is −c₂(g(a) + g(−a)), with a = log 2.
   1. *What fails is the ℓ-independent, globally charged route, not piece 4 itself (PROVED, bookkeeping).*
      - C.14.A charges the line by its Fejér minimum −c₂ at **every** frequency. By P.15.2 this global charge is all a translation-invariant (multiplier or trace-picture) block can do.
      - The indicative failure says the margin available from known σ_S bounds plus the L²-gap is short of c₂ on 7.4 ≲ |t| ≲ 13.
-     - It does not say the odd sector is unpaid. C.14.A is sufficient only, and the true σ_S may exceed c₂ − 26.68/(¼ + t²) there (≈ 0.27 near t ≈ 10). That is Celestial's precise S&M ask. *(Grok audit S103h(2): c₂ − 26.68/(¼ + t²) at t = 10 is ≈ 0.22, not 0.27 (0.267 is Celestial's B = 66 deficit). With the actual K_L (14.42) the needed σ_S there is ≈ 0.35.)*
+     - It does not say the odd sector is unpaid. C.14.A is sufficient only, and the true σ_S may exceed c₂ − 26.68/(¼ + t²) there (≈ 0.22 near t ≈ 10; ≈ 0.35 with the actual K_L, 14.42). That is Celestial's precise S&M ask. *(Grok audit S103h(2): c₂ − 26.68/(¼ + t²) at t = 10 is ≈ 0.22, not 0.27 (0.267 is Celestial's B = 66 deficit). With the actual K_L (14.42) the needed σ_S there is ≈ 0.35.)*
   2. *The cost itself lives above the deficit band (PROVED, from C.14.4b's bound).*
      - The odd charge sits on the ramps. By C.14.4b, the fraction of a ramp's energy in |t| < T is ≤ (T/4 + T³/3)ℓ³/(3π). At T = 13 this is ≤ 78.1ℓ³: ≤ 0.132 at ℓ = 0.119 and ≤ 0.0098 at ℓ = 0.05.
      - The ramp kinks sit at |t| ~ π/ℓ ≥ 26, where 2θ′ > 2c₂.
@@ -991,11 +996,11 @@ The p = 2 term of Q_L is −c₂(g(a) + g(−a)), with a = log 2.
 | Thm P.15.B: exact B₂, B₃ on joint ramps; per-line constants recovered | PROVED (sympy-checked algebra) | [Cel] |
 | p = 3 entry: both parities indefinite; per-energy eigenvalues σ·½(c₃ ± √(c₃² + 4c₂²)) | PROVED | [Cel] |
 | P.14.8 prediction: (a)–(c) confirmed; (d) "parity decides per line" refuted | PROVED | [Cel] |
-| 0.9009 as the sharp S1-type constant at the p = 3 entry | CONJECTURE | [Cel] |
+| 0.9009 as the sharp S1-type constant at the p = 3 entry | CONJECTURE → **PROVED** in P.16.1 (c₀\*, both parities) | [Cel] |
 | Q.8.E weight-1 block −(c₂/ℓ)S_Λ(V(2) + V(2)^*)S_Λ: diagonal sums, spectrum {0, ±c₂/ℓ}, HS | PROVED | [Q] |
 | fixed-ρ variant uniformly bounded (R1) | REMARK (PROVED) | [Q] |
 | D_n^{(2)} = A_nM_ρA_n^* ≥ 0, cost c₂sec(π/(n + 2))g(0); infimum c₂ sharp (not attained by A_nM_ρA_n^*) | PROVED | [Q] |
-| separable (I2) ⇒ R ≥ c₂‖·‖²_H on 𝒯_L (global S2) | PROVED; truth GAP (HEURISTIC false) | [Q]/[S&M] |
+| separable (I2) ⇒ R ≥ c₂‖·‖²_H on 𝒯_L (global S2); ⇒ only, line blocks with diagonal sums at {0, ±a} | REMARK; S2 GAP (HEURISTIC false) | [Q]/[S&M] |
 | trace picture cannot localize to H(E) | PROVED | [Q] |
 | C.14 merged; C.14.K | CONJECTURE (hers) | [Cel] |
 | C.14.A symbol inequality fails on ≈ 7.4 ≤ \|t\| ≤ 13 (proxy 0.58); ≈ [5.41, 13.6] with actual K_L | NUMERICAL (indicative; Celestial ff3a9dc / Prime N.14.1) | [S&M] |
@@ -1036,7 +1041,177 @@ Each item was checked analytically against Thm P.15.B and P.14. Numbers are clos
 | 5c | 2×2 section − I = rσ_x; −log 2·r = −c₂; det KMS₂ = 1 − r² = 1 − 1/p | **PASS** (p = 2: 1 − r² = ½). REMARK: with r_p = p^{−1/2} this is the local factor ζ_p(1)^{−1}. That is an identity only, and no Tate reflection follows (P.14.4). The "edge coefficient" match is at the multiplier level; the ramp factor (1/ℓ − ℓ/24) and the sign of the Q_L contribution come from the ramp form (P.14.3), not from the multiplier | PROVED |
 | 5d | at log 4 the three-site chain is the 3×3 KMS section, with c₄ = log 2·r² | **PASS**. The corner entry r² gives log 2·r² = (log 2)/2 = c₄ = Λ(4)/√4, the m = 2 mode. The edge ℓ₄ = 2L − log 4 agrees with P.15.1 (L4) | PROVED |
 
-**Summary.** 9 PASS. 2 FIX, both wording only: the rounding in item 2, and the norm qualifier in 3c. Neither changes a theorem of N.14. The interface form, S1, (3c), (S), (L4), (ζ) and the identities in item 5 are confirmed. R1–R6 as in P.15.4: every check here uses only the {2, 3} line weights and the strip geometry. F_θ, DH, H₋ₜ and DMV fail the identities that use log 2/log 3 ∉ ℚ and Λ(4) = log 2, and G_θ′ passes. RH OPEN.
+**Summary.** 9 PASS. 2 FIX, both wording only: the rounding in item 2, and the norm qualifier in 3c. Neither changes a theorem of N.14. The interface form, S1 (as an inequality), (3c), (S), (L4), (ζ) and the identities in item 5 are confirmed. *(S103i: S1's sharpness claim "c₂ + c₃ cannot be improved" is a further FIX. On 𝒯_L the sharp constant is c₀\* = 0.90093, by P.16.1.)* R1–R6 as in P.15.4: every check here uses only the {2, 3} line weights and the strip geometry. F_θ, DH, H₋ₜ and DMV fail the identities that use log 2/log 3 ∉ ℚ and Λ(4) = log 2, and G_θ′ passes. RH OPEN.
+
+## P.16 The band-split payer at the p = 3 entry, sector ranges, and the coupled (I2) operator for Q.8.E (S103i; analytic first; [Cel]/[S&M]/[Q])
+
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OPEN. Nothing in P.16 proves or implies RH.**
+
+**Notation.** As in P.15:
+- a = log 2, b = log 3, c₂ = a/√2, c₃ = b/√3.
+- 2L = b + ℓ₃ with 0 < ℓ₃ < log(4/3), so ℓ₂ = 2L − a = (b − a) + ℓ₃.
+- Q_L = R − 2c₂B₂ − 2c₃B₃ on 𝒯_L, with B_p(ξ) = ⟨ξ, τ_{log p}ξ⟩_H and band parts ξ^{<T}, ξ^{≥T}.
+- **c₀\* := ½(c₃ + √(c₃² + 4c₂²)) = 0.900927616…** (the P.15.1 joint value).
+
+**Sources** (main 9cdc498):
+- S&M SECTOR_COERCIVITY_p2 Thm 2.1, and CERT_p2_constants Thms 1–3 with their certified Ω(12.875) and Ω(16).
+- Prime §N.12–N.14: S1, (Ω1)–(Ω5), N.13.A.
+- Queen ARP_queen_Q8 Q.8.E/F.
+
+**Verification.** `team/principal-series/scripts/p15_p16_check.py` (log `p15_p16_check.log`) covers:
+- the P.15 joint block (Thm P.15.B, exact, sympy);
+- the P4 path identity and the fibre combinatorics of P.16.1;
+- Arb enclosures (python-flint 0.9.0, 128 bits) of Ω at the thresholds used below.
+
+**Lead corrections adopted (S103h(2)).**
+- "Separable (I2) ⇒ global S2" is proved only in the ⇒ direction, for line blocks whose diagonal sums sit at {0, ±a}. It is a REMARK, and S2 stays a GAP. P.15.2, P.13 item 15 and the P.15.4 row are reworded accordingly.
+- In P.15.3, c₂ − 26.68/(¼ + t²) at t = 10 is ≈ 0.22, not 0.27. With the actual K_L (14.42) it is ≈ 0.35.
+
+### P.16.1 The sharp joint S1 constant on (log 3, log 4) is c₀\*, not c₂ + c₃ — PROVED (elementary; algebra sympy-checked) [Cel]
+**Prop P.16.1 (fibre decomposition).** Shift the window to [0, w), with w = 2L.
+- **Graph.** Join x ~ x + a when x ∈ [0, w − a), and x ~ x + b when x ∈ [0, w − b) = [0, ℓ₃). For b < w < 2a, every point has at most one a-neighbour and at most one b-neighbour (w < 2a < 2b). The components are therefore paths. Explicitly (sympy check, part 3):
+  - (i) For x ∈ [0, ℓ₃), the component is the 4-path **(x + a) —a— x —b— (x + b) —a— (x + b − a)**, with weights (c₂, c₃, c₂). The constraints used are ℓ₃ < b − a, a + ℓ₃ < b and b − a + ℓ₃ = w − a.
+  - (ii) The remaining a-pairs, x ∈ G := [ℓ₃, b − a), with x ~ x + a, are 2-paths of weight c₂. (The points [b − a, ℓ₂) are 4-path ends.)
+  - (iii) All other points are isolated.
+- **Node sets in window coordinates.** The 4-path nodes form F₃ = (3-strips) ∪ (the two central pieces [a − L, a − L + ℓ₃] and its mirror), with |F₃| = 4ℓ₃. These are exactly the orbit-closed pieces of P.15.1. The 2-path nodes form G₂ = E₂ ∖ F₃.
+- **Consequence.** Let K := c₂(τ_a + τ_{−a}) + c₃(τ_b + τ_{−b}), so that 2c₂B₂ + 2c₃B₃ = ⟨ξ, Kξ⟩_H = ⟨ξ′, Kξ′⟩_{L²} + ¼⟨ξ, Kξ⟩_{L²}. Its compression to L²[0, w) is the direct integral of the weighted adjacency matrices of the components. The 4-path spectrum is {±0.90093, ±0.26664} (part 2), and the 2-path spectrum is {±c₂}. Hence, for every ξ ∈ 𝒯_L:
+  > **|2c₂B₂(ξ) + 2c₃B₃(ξ)| ≤ c₀\*‖ξ‖²_{H(F₃)} + c₂‖ξ‖²_{H(G₂)} ≤ c₀\*‖ξ‖²_{H(E₂)}.**  (P16.1)
+- **Sharpness, in both parities.** Put one bump φ ∈ H¹₀ of width < ℓ₃ at each node of one 4-path, with Perron weights (1, 1.838, 1.838, 1). The Rayleigh quotient is then exactly c₀\* (part 4). P maps the 4-path of x to the 4-path of ℓ₃ − x, a disjoint component. So ξ ± Pξ attains c₀\* in each parity, for both signs (charge or help).
+
+**Remarks.**
+- **FIX to N.14.3 and to my P.15.5.** N.14.3 says that c₂ + c₃ = 1.1244 "cannot be improved by phase alignment". The Kronecker argument concerns the symbol on ℝ. On 𝒯_L, the sharp constant against ‖ξ‖²_{H(E₂)} (and against ‖ξ‖²_H) is c₀\* = 0.90093. The inequality S1 ≤ (c₂ + c₃) is still true (PASS); only the sharpness claim needs fixing. P.15.5's "S1 … confirmed" is amended accordingly.
+- **P.15.1 is a special case.** The ramp-space eigenvalues σ(0.9009, −0.2666) are the 4-path spectrum. The ramp ansatz ties the 4-path of x to its mirror, which is why P.15.1 saw only 0.2666 as the even charge there. The global per-energy charge is **c₀\* in both parities** (PROVED). The P.15.4 row "0.9009 sharp S1-type constant" is upgraded from CONJECTURE to PROVED.
+- **Range.** The constant is constant on all of (log 3, log 4). At 2L = log 4 the a-gap [w − a, a) closes, paths grow, and (L4) begins.
+
+### P.16.2 The band-split payer — PROVED (conditional where stated); thresholds CERTIFIED [S&M]
+Write K = K_F + K_G (exact): K_F is the 4-path part and K_G the 2-path part. Define the **3-entry reduced form**
+> Q^G_L(ξ) := R(ξ) − ⟨ξ, K_Gξ⟩_H, so that Q_L = Q^G_L − ⟨ξ, K_Fξ⟩_H exactly, and |⟨ξ, K_Fξ⟩_H| ≤ c₀\*‖ξ‖²_{H(F₃)}.
+
+As ℓ₃ ↓ 0, F₃ shrinks to measure 0 and Q^G_L tends to the full {2}-form at 2L = log 3.
+
+**(Ω5′) (PROVED, as in N.13.2).** For measurable F and the band u = ξ^{<T}: ‖u‖²_{H(F)} ≤ |F|(T/π)‖u‖²_H. The pointwise Cauchy–Schwarz bound for |u′|² + ¼|u|² is (T/π)‖u‖²_H. With |F₃| = 4ℓ₃ this gives (4ℓ₃T/π).
+
+**Thm P.16.A (high-band payer for the joint charge; PROVED; constants CERTIFIED).**
+- Suppose Ω(T) ≥ c₀\*(1 + η). Then the high-band part of the joint 4-path charge is covered by R alone:
+  > R(ξ^{≥T}) − c₀\*(1 + η)‖ξ^{≥T}‖²_H ≥ [Ω(T) − c₀\*(1 + η)]‖ξ^{≥T}‖²_H ≥ 0.
+- Arb (part 5):
+  - Ω(15.5) − c₀\* ∈ [0.0018618 ± 7e−12] > 0;
+  - Ω(16) = 0.934548783922(±4e−13), the same value as S&M's certified Ω(16) = 0.93455, so **η ≤ 0.0373183 at T = 16**;
+  - Ω(19.35) = 1.124704 (η ≤ 0.2484);
+  - Ω(38.1) = 1.802309 (η ≤ 1.0005).
+- By (Ω2), PROVED, each inequality holds for all |t| ≥ T. **CERTIFIED.**
+- By contrast, the old constant c₂ + c₃ needs T ≥ 19.35 even at η = 0, since Ω(19.35) − (c₂ + c₃) = 2.9e−4 and Ω(16) < c₂ + c₃. The sharp c₀\* lowers the high-band threshold to S&M's certified T = 16.
+- Ramp-scale content, at frequency ~π/ℓ₃, lies above T = 16 when ℓ₃ ≲ π/16 = 0.196 (REMARK).
+
+**Thm P.16.B (3-entry, polynomial range; PROVED given (H₃^σ)).**
+- **Hypothesis (H₃^σ)(T, η, μ)** [GAP]: for all ξ ∈ 𝒯_L of parity σ,
+  > Q^G_L(ξ) ≥ c₀\*(1 + η)‖ξ^{≥T}‖²_H + μ‖ξ^{<T}‖²_H.
+- **Conclusion.** Then Q_L(ξ) ≥ [μ − c₀\*(1 + 1/η)(4ℓ₃T/π)]‖ξ^{<T}‖²_H ≥ 0, provided
+  > **ℓ₃ ≤ ℓ₃\*(σ) := πμ/(4c₀\*(1 + 1/η)T).**
+- *Proof.* Apply (P16.1) to K_F, then ‖x + y‖² ≤ (1 + η)‖y‖² + (1 + 1/η)‖x‖² on H(F₃), then ‖ξ^{≥T}‖_{H(F₃)} ≤ ‖ξ^{≥T}‖_H and (Ω5′). ∎ This is S&M Thm 3's chain, with R replaced by Q^G_L, 2ℓ by 4ℓ₃ and c₂ by c₀\*.
+- **Evaluations** (the Ω values are CERTIFIED; the rest is eval.):
+
+  | T | η (max with Ω(T) ≥ c₀\*(1 + η)) | ℓ₃\* / μ |
+  |---|---|---|
+  | 16 | 0.0373 | 1/510 |
+  | 19.35 | 0.248 | 1/112 |
+  | 38.1 | 1.0 | 1/87 |
+
+  The high-band part of (H₃^σ) is consistent with R exactly when Ω(T) ≥ c₀\*(1 + η) (Thm P.16.A). The content of (H₃^σ) is that the low band of Q^G_L has a margin μ after the 2-path line is subtracted.
+
+**Thm P.16.C (3-entry from a plain margin; PROVED given (M₃^σ)).**
+- **Hypothesis (M₃^σ)** [GAP]: Q^G_L(ξ) ≥ m‖ξ‖²_H on 𝒯_L^σ, with 0 < m ≤ 1.
+- **Setup.** Let 1 − θ := m/(2(|Ω₀| + c₂) + m), where |Ω₀| = 5.37218 (Ω1). Choose T with Ω(T) ≥ c₂ + c₀\*(1 + η)/(1 − θ). The crude (Ω1) bound Ω ≥ Ω₀ + log 2T allows T = ½exp(|Ω₀| + c₂ + c₀\*(1 + η)(2(|Ω₀| + c₂) + m)/m).
+- **Conclusion.** Q_L ≥ 0 on parity σ for
+  > **ℓ₃ ≤ πθm/(8c₀\*(1 + 1/η)T).**
+- *Proof.* Write Q^G = θQ^G + (1 − θ)Q^G.
+  - (1 − θ)Q^G ≥ (1 − θ)[(Ω(T) − c₂)‖ξ^{≥}‖² − (|Ω₀| + c₂)‖ξ^{<}‖²], using |⟨ξ, K_Gξ⟩_H| ≤ c₂‖ξ‖²_H (2-path fibres) and the fact that R is diagonal in t.
+  - θQ^G ≥ θm‖ξ‖².
+  - Bound K_F as in Thm P.16.B. With this θ the low bracket is θm/2 − c₀\*(1 + 1/η)(4ℓ₃T/π), and the high bracket is ≥ 0 by the choice of T. ∎
+- The range is exponentially small in 1/m, as in N.13.A: the e^{−c/m} loss comes from the crude low-band Ω₀. Thm P.16.B is the useful form.
+
+**Why S1 + (Ω5) alone cannot pay the 3-entry (REMARK; the logic is PROVED).**
+- The 2-path part lives on G₂, with |G₂| = 2(ℓ₂ − 2ℓ₃) ≥ 2(b − a) − 2ℓ₃ > 0.23, which is O(1). (Ω5′) gives no smallness there.
+- So the low band of the 2-line must be paid by its signed structure, which is the p = 2 mechanism carried to log 3. That is exactly what (H₃^σ) and (M₃^σ) assume. This agrees with N.12.4 (S2 cannot reach log 3).
+- The band-split payer therefore pays **only the new 3-line increment**, which is the joint 4-path charge c₀\*. It covers that charge fully on the high band (Thm P.16.A, CERTIFIED). The low band costs O(ℓ₃) (Thm P.16.B).
+
+### P.16.3 Which ℓ₃-range each sector is paid on — labels as marked [S&M]
+| sector | unconditional range | conditional range | what is missing |
+|---|---|---|---|
+| odd | **none** (the S&M odd certificate stops at 2L = log 2 + 0.028, far below log 3; indicative ℓ₃\* ≲ 1.5e−5, NUMERICAL, P.16.5) | ℓ₃ ≤ πμ_o/(4c₀\*(1 + 1/η)T), given (H₃^o)(T, η, μ_o): Thm P.16.B, PROVED given input. High band CERTIFIED for T ≥ 16 (η ≤ 0.0373). Also ℓ₃ ≤ πθm_o/(8c₀\*(1 + 1/η)T) given (M₃^o): Thm P.16.C | μ_o or m_o for Q^G_L near 2L = log 3: **GAP**. Q at 2L = log 3 is ≥ 0, CERTIFIED conditional on Mori (main G.4); no H-margin is known |
+| even | **none** | the same formulas with (H₃^e)/(M₃^e) | μ_e/m_e: **GAP**, plus the even ĝ(0)/pole direction (C.14.3, rank-one κ^{ev} > 1) and S&M GAP m₀^e inherited from the p = 2 step |
+
+- **Parity does not change the line side at the 3-entry.** The sup of the joint charge is c₀\* in both sectors (P.16.1, sharp). Every sector difference sits in the low-band hypothesis on Q^G_L. **REMARK (PROVED).**
+- **Nothing here is NUMERICAL.** The Ω enclosures are Arb (CERTIFIED), the constant c₀\* is exact, and the ℓ₃\*/μ ratios are evaluations of closed forms. No margin for Q^G_L has been computed. A future replay of μ_σ would be NUMERICAL unless it carries an Arb remainder. It would need Lemma A/B for a form that is **not** a multiplier (Q^G_L contains K_G), so S&M's bathtub does not apply verbatim. **This is the S&M ask.**
+
+### P.16.4 The coupled (I2) operator for Q.8.E, in Queen's notation — PROVED where stated [Q]
+Notation as in P.15.2: Λ = e^L, S_Λ = 1_{[−L, L]}, V the translation group, V(f) = ∫f(u)V(u)du, g = f ∗ f^*, and d_D(b) = ∫D(x, x + b)dx. We work on the pole-free class (f = Qξ, |f̂|² = (¼ + t²)|ξ̂|², g(0) = ‖ξ‖²_H), where (N3) forces Res ≡ 0.
+
+- **(a) The (I1) family (PROVED).** Let n_L be any real even distribution with supp n_L ∩ (−2L, 2L) = ∅ ("invisible"). Define the symbol
+  > **s_L(t) := σ_S(t) + 2ε′(1⁺)(1 − κ̂_L(t))/(¼ + t²) − 2c₂cos(at) − 2c₃cos(bt) + n̂_L(t),**
+  - Here σ_S(t) + 2ε′(1⁺)(1 − κ̂_L)/(¼ + t²) = Ω(t) is the S&M (5.2) split of the archimedean symbol into its 𝒮-part and its ε-part. K_L is the compression of the convolution by κ_L = q/(2ε′(1⁺)).
+  - Let A_L be the Fourier multiplier with |â_L|² = s_L (taken where s_L ≥ 0), ρ ≥ 0 a fixed L-independent bounded density with compact support and ∫ρ = 1, and
+  > **D_L := A_L M_ρ A_L^\*.**
+  - Then d_{D_L} = (∫ρ)·š_L, and **Tr(D_L V(f)V(f)^\*) = (1/2π)∫s_L|f̂|² = Q_L(f)** for real f ∈ 𝒯_L, since n_L is invisible on supp g ⊂ [−2L, 2L]. So (I1) holds. If s_L is bounded, D_L is bounded and D_LS_ΛV(f) is HS (‖S_ΛV(f)‖²_HS = 2L‖f‖²₂).
+- **(b) The (I2) criterion (PROVED).**
+  - The construction is available, and then D_L ≥ 0, exactly when s_L ≥ 0 a.e. (|â_L|² = s_L).
+  - Conversely, every D ≥ 0 has positive-definite diagonal sums: d_D is a sum of autocorrelations Σλ_k e_k ⋆ ẽ_k. So any (I1) + (I2) solution has d̂_D = s_L for some invisible n_L.
+  - Existence of an invisible n_L with s_L ≥ 0 is **equivalent to Q_L ≥ 0 on the pole-free 𝒯_L**. The ⇐ direction is Krein's extension theorem for positive-definite distributions on an interval (Krein 1940; Sasvári 1994, theorem number unverified), which makes it **PROVED by citation**. The extension is not explicit, so R6 explicitness remains the GAP of Q.8.E.
+- **(c) The line part and its minimal cost (PROVED).**
+  - Put the line atoms with an invisible line correction n^F: λ(t) := −2c₂cos(at) − 2c₃cos(bt) + n̂^F(t). Any such choice has
+  > **sup_t(−λ(t)) ≥ c₀\* = 0.90093** on (log 3, log 4).
+  - *Proof.* Test f = Perron bumps on one 4-path (P16.1): (1/2π)∫λ|f̂|² = −c₀\*g(0). ∎
+  - The separable Fejér choice D_n^{(2)} + D_n^{(3)} (P.15.2, both with fixed ρ) costs (c₂ + c₃)sec(π/(n + 2)) → 1.1244.
+  - Whether some coupled invisible n^F reaches c₀\* is open. Atoms at ma + nb are invisible iff |ma + nb| ≥ 2L, and the visible set {(m, n) : |ma + nb| < 2L} is an infinite strip in ℤ², so this is a 2-D Fejér–Riesz problem with a strip constraint: **GAP / CONJECTURE (yes)**.
+- **(d) The coupling Queen needs (PROVED as a necessary-structure statement; REMARK otherwise).**
+  - Split n_L = n^F + n^{lo} and ask each part to fix its own term: line part ≥ −c₀ and archimedean + ε part ≥ c₀. That is a separable choice, and (since n^{lo} is invisible) it forces R(ξ) ≥ c₀‖ξ‖²_H with c₀ ≥ c₀\*, i.e. a global S2 at the 3-entry. Per the lead's correction this is the ⇒ direction only, and S2 stays a GAP. Since R has Ω(0) < 0 directions, it is HEURISTIC-false.
+  - A working D_L must therefore take **n^{lo} depending on the line coefficients and frequency-adapted**. The ε-symbol 2ε′(1⁺)(1 − κ̂_L)/(¼ + t²) is not ≥ 0 either, since sup κ̂_L ≥ sup spec K_L > 1 (CC's even eigenvalue).
+  - The band-split form of the requirement is the trace-side image of Thm P.16.B: s_L(t) ≥ 0 must hold
+    - on |t| ≥ T from σ_S − B/(¼ + t²) ≥ c₀\*(1 + η) (σ_S route; B is S&M GAP B), or directly from Ω(T) ≥ c₀\*(1 + η) (CERTIFIED, T ≥ 16);
+    - on |t| < T only after adding an invisible n^{lo} whose existence is equivalent, by (b), to the low-band hypothesis (H₃^σ).
+  - So, for Q.8.E: **D_L = A_LM_ρA_L^\* with s_L as in (a) is the coupled (I2) operator.** (I1) is exact for every invisible n_L, and (I2) ⇔ s_L ≥ 0. On every window where Q_L ≥ 0 on the pole-free class, some n_L exists (PROVED by citation), non-explicitly. The explicit rule is the GAP.
+
+### P.16.5 Relation to Prime §N.15 (cd94c27, merged 7953486; read after the first draft of P.16) — REMARK, with labels as marked [S&M]/[Cel]
+- **N.15.1** reproduces P.15.1's (0.9009, −0.2666) in the same normalization (PASS). P.16.1 shows this is the **global** sharp joint constant on 𝒯_L in both parities, not only the edge-class value. This answers N.15's flag: the per-line constants and the kink normalization are unchanged, so the 0.9009 and the 15.47 threshold stand. The Arb value is Ω(15.5) − c₀\* = 1.86e−3 > 0 (CERTIFIED). N.15's 15.471 is the mpmath root.
+- **N.15.3 B1** (the S1-only template fails at log 3; NUMERICAL, Ritz) agrees with the REMARK in P.16.2. The sharper (P16.1) does not rescue it, because at ℓ₃ → 0 the F₃ part vanishes and the form is R − c₂‖ξ‖²_{H(E₂)}, which N.15 finds ≤ −0.194 (odd) at log 3.
+- **N.15.H vs (H₃^σ).**
+  - Both are PROVED sufficient conditions.
+  - N.15.H keeps Q^{(≤2)} = R − 2c₂B₂ and needs μ_hi > c₃(1 + η). The 0.9009 enters there only heuristically ("folded in"): the 2-line's kink coupling stays inside Q^{(≤2)}, which is N.15-G2's "B₂ high-band cross terms".
+  - (H₃^σ) moves exactly those 4-path a-edges into K_F, which is bounded fibrewise by c₀\* on F₃ (|F₃| = 4ℓ₃). This makes the 0.9009 requirement **exact**, and the cross terms of the joint block are handled by (P16.1) with no t-diagonality needed. The remaining 2-path part K_G is O(1)-supported and stays inside the hypothesis.
+  - So **(H₃^σ) is N.15.H with N.15-G2's joint-block part discharged** (PROVED). The non-multiplier certificate N.15-G1 is still needed, now for Q^G_L in place of Q^{(≤2)}; the two agree as ℓ₃ ↓ 0.
+- **Size (NUMERICAL, Prime's Ritz upper bounds).** At 2L = log 3 the margins are m ≲ 1.34e−3 (odd) and ≲ 2.5e−4 (even), not converged. With μ ≤ m, Thm P.16.B gives at best ℓ₃\* ≲ 1.34e−3/87 ≈ **1.5e−5** (odd; T = 38.1, η = 1), against N.15 B4's ≈ 1e−4. The difference comes from the 4ℓ₃ (four node pieces) and the c₀\* in place of c₃. Both are indicative only.
+- **N.15.2:** the P₂ form becomes negative by log 3.5 (NUMERICAL). So (H₃^σ) and (M₃^σ) can hold only near ℓ₃ = 0, and P.16.B/C are perturbative entries, like S&M Thm 3. A non-perturbative certificate is needed beyond that.
+- **Status, for the record (main).** C.14.K is refuted numerically on the useful range (Celestial C.14.4c, audited S103h(3)). This does not affect P.16, which does not use C.14.K.
+
+### P.16.6 Labels and R-line
+| item | label | track |
+|---|---|---|
+| Prop P.16.1: 4-path/2-path fibres; ‖compressed K‖ = c₀\* on (log 3, log 4); (P16.1); sharp in both parities | PROVED (sympy-checked) | [Cel] |
+| N.14.3 "c₂ + c₃ cannot be improved": FIX (sharp is c₀\* on 𝒯_L); P.15.5 S1 row amended; P.15.4 "0.9009 sharp" CONJECTURE → PROVED | PROVED | [Cel] |
+| Thm P.16.A: high band pays the joint charge for T ≥ 16 (η ≤ 0.0373), T ≥ 15.5 (η = 0) | CERTIFIED (Arb Ω; (Ω2) PROVED) | [S&M] |
+| Thm P.16.B: ℓ₃\* = πμ/(4c₀\*(1 + 1/η)T) | PROVED given (H₃^σ) | [S&M] |
+| Thm P.16.C: exponential range from a plain margin m | PROVED given (M₃^σ) | [S&M] |
+| (H₃^σ), (M₃^σ): low-band margins of Q^G_L near log 3, both sectors | GAP (= N.15-G1 for Q^G; sizes ≲ 1.3e−3 odd, 2.5e−4 even, NUMERICAL Prime) | [S&M] |
+| (H₃^σ) = N.15.H with N.15-G2's joint-block part discharged | PROVED | [S&M]/[Cel] |
+| unconditional 3-entry range, odd and even | none | — |
+| P.16.4(a)–(b): (I1) family D_L = A_LM_ρA_L^\*; D_L ≥ 0 ⇔ s_L ≥ 0 | PROVED | [Q] |
+| (I2) solvable ⇔ Q_L ≥ 0 on pole-free 𝒯_L | PROVED by citation (Krein extension; number unverified) | [Q] |
+| line cost ≥ c₀\*; separable Fejér cost c₂ + c₃; coupled reach of c₀\* | PROVED / PROVED / GAP (CONJECTURE yes) | [Q] |
+| separable split ⇒ global S2 (c₀ ≥ c₀\*) | REMARK (⇒ only); S2 GAP | [Q] |
+| RH | OPEN | — |
+
+**R-line:**
+- **R1:** one rule on (log 3, log 4). The fibre combinatorics are constant there, ρ is fixed, and the thresholds T are L-independent.
+- **R2:** the Euler product enters through the two lines and the fibres of {log 2, log 3}; the FE enters through Ω (and σ_S/ε).
+- **R3:** the signs come from the bipartite 4-path spectrum (±c₀\*) and P-mirroring, not from weight signs.
+- **R4:** the pole pair is spent once (pole-free class, g(0) = ‖ξ‖²_H; Res ≡ 0 by (N3)).
+- **R5, where each fake breaks:**
+  - **F_θ:** c_p → c_p cosh(θ log p) changes c₀\* but nothing structural. It breaks where P.14 R5 says (polarization, P.4).
+  - **DH:** no Euler product, so the weights on log 2 and log 3 are not Λ(n)/√n and there is no fibre-line identification with γ_p. Breaks at P.14.2.
+  - **H₋ₜ:** Ω is deformed, so the Arb thresholds of P.16.A do not transfer. Breaks at P.14.2/P.14.3.
+  - **DMV / P_X (X ≥ 3):** agree with ζ on this window. Fake-blind here.
+  - **G_θ′:** passes. Q_G is a sum of two ζ-forms, and every statement above is linear in the form or a bound on it.
+- **R6:** P.16.1 and the (I1) family are exact. The closures (H₃^σ)/(M₃^σ) and the explicit n_L are GAPs. RH OPEN.
 
 ## References (added to ARP G.7)
 - Knapp, A. W. & Stein, E. M., "Intertwining operators for semisimple groups", Ann. of Math. 93 (1971) 489–578.
