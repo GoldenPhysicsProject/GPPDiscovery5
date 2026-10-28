@@ -354,6 +354,11 @@ These carry over to the fakes as follows.
 - Bernstein and Cauchy–Schwarz: ‖g‖_∞ ≤ ‖ĝ‖_1 ≤ (2Λ)^{1/2}‖g‖_2 ≤ (2Λ)^{1/2}λ_n^{−1/2} ≤ 2Λ^{1/2}, and ‖g′‖_∞ ≤ 2πΛ‖g‖_∞ ≤ 4πΛ^{3/2} =: D.
 - So |g| ≥ v/2 on [Λ, Λ + v/(2D)], and ∫_{x>Λ}|g|² ≥ v³/(8D).
 - But ∫_{|x|>Λ}|g|² = 1/λ_n − 1 ≤ 2(1 − λ_n). Hence v³ ≤ 16D(1 − λ_n) = 64πΛ^{3/2}(1 − λ_n). ∎
+- *Grok audit (S103g), checked line by line.*
+  - Under ĝ(ξ) = ∫g e^{−2πixξ} with band |ξ| ≤ Λ (so c = 2πΛ²), ‖g‖_∞ ≤ ‖ĝ‖₁ ≤ (2Λ)^{1/2}‖g‖₂, and ‖g‖²₂ = 1/λ_n ≤ 2.
+  - Bernstein gives ‖g′‖_∞ ≤ 2πΛ‖g‖_∞. Since |g| is D-Lipschitz, the bound |g| ≥ v/2 on a length v/(2D) holds.
+  - ∫_{|x|>Λ}|g|² = (1 − λ_n)/λ_n.
+  - The exponent: (16D)^{2/3} = (64π)^{2/3}Λ. PROVED (elementary) stands.
 - With |I^{(K)}| ≤ |I_Λ| ≤ 4Λ² + O(log Λ) (Spectrum §4, index location; the even states are about half of these), this gives ε^{(K)} ≤ CΛ^{3−2K/3}.
 
 **(T2c) proof.** ‖g′‖²_∞ ≤ 16π²Λ³ (above), and ‖g″‖²_{L²(ℝ)} ≤ (2πΛ)⁴‖g‖²_2 ≤ 32π⁴Λ⁴. So q₂(ψ_n) ≤ CΛ⁵ for each n, and summing over ≤ 5Λ² indices gives CΛ⁷. ∎
@@ -376,7 +381,7 @@ With X = mΛ, split at m = Λ^p, p := 2(B + 5)/3:
 
 The jump part is 2κ^{(K)}ε^{(K)}/Λ ≤ CΛ^{B+2−2K/3}. Multiplying by κ^{(K)} ≤ CΛ^B, the four exponents are:
 - 2B + 7 − K;
-- (4B + 8 − 2K)/3;
+- (4B + 11 − 2K)/3 *(Grok audit S103g: was (4B + 8 − 2K)/3. Since p/2 = (B + 5)/3, the exponent is B + 2 − 2K/3 + p/2 = (4B + 11 − 2K)/3. This is still ≤ −5/3 at K = 2B + 8, so the conclusion is unchanged.)*;
 - −1;
 - B + 2 − 2K/3.
 
@@ -388,7 +393,7 @@ All are ≤ −1 once K ≥ 2B + 8. ∎
 **(T3): trimming-harmless check, and M2-compatibility.**
 - *Exact reduction (PROVED, algebra).* Since Q′ = Q′^{(K)} + ΔQ, we have Tr(S Q′ S V(h)) − Tr(S Q′^{(K)} S V(h)) = Tr(S ΔQ S V(h)) = ‖V(f)^* S ΔQ‖²_HS ≥ 0. Define
   **Conj Q.8.C^{(K)}** (CONJECTURE): Tr(S_Λ Q′^{(K)}_Λ S_Λ V(h)) = 2‖f‖² log Λ − 𝒮(f) + o(1). Then
-  **Q.8.C ⇔ Q.8.C^{(K)} ⇔ (T3): Tr(S_Λ ΔQ S_Λ V(h)) = o(1) for each fixed f ∈ C_c^∞.** (Each equivalence assumes the other side's statement; precisely, Q.8.C and Q.8.C^{(K)} differ by exactly this term.)
+  **Q.8.C ⇔ Q.8.C^{(K)} ⇔ (T3): Tr(S_Λ ΔQ S_Λ V(h)) = o(1) for each fixed f ∈ C_c^∞.** (Each equivalence assumes the other side's statement; precisely, Q.8.C and Q.8.C^{(K)} differ by exactly this term.) *Grok audit (S103g): read the chain as "given Q.8.C, Q.8.C^{(K)} ⇔ (T3); given Q.8.C^{(K)}, Q.8.C ⇔ (T3)". The three statements are not mutually equivalent: (T3) alone implies neither conjecture. The algebra is exact, Tr(SΔQSV(h)) = ‖ΔQ S V(f)‖²_HS ≥ 0, because Q′^{(K)} ≤ Q′ are nested projections.*
 - *M2-compatibility (PROVED, same algebra).* S ⊖ S E(B^{(K)}) is S ⊖ S E(B) plus a piece of rank ≤ r_K, and its V(h)-trace exceeds M2's by exactly Tr(S ΔQ S V(h)). So M2 for the trimmed space has the **same** counting term 2‖f‖² log Λ − PV and the same zero-vector Gram/Poisson sum **iff (T3)**. M3 is unaffected, since the zero vectors live at fixed heights.
 - *Sufficient condition (PROVED, elementary).* For x ∈ L²(du), ‖V(f)^*x‖² = (1/2π)∫|f̂(s)|²|x̂(s)|² ds, and |f̂(s)| ≤ C_N(1+|s|)^{−N}. So, for S = log Λ,
   Tr(S ΔQ S V(h)) ≤ r_K (‖f‖₁² ω_Λ(S) + C_N S^{−2N}), where ω_Λ(S) := sup over unit x ∈ ran(S_Λ ΔQ) of (1/2π)∫_{|s|≤S}|x̂|².

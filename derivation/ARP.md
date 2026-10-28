@@ -232,6 +232,13 @@ So G.3 supplies R4 but carries no RH content, consistent with the S98 cone dead 
         - The sharp form Λ^{o(1)} reduces to **(Z-avg), a GAP**. (Z-avg⁺) holds under Lindelöf, hence under RH. (Z-avg⁻) is a CONJECTURE.
         - **Circularity flag:** the sharp form may be RH-conditional, so it cannot be used on any route to RH.
         - **Open: is B < 2?** That is what the untrimmed Connes space needs (ε_Λ/Λ ≍ log Λ/Λ², HEURISTIC). Otherwise M1 needs a trimmed prolate space (CONJECTURE, Spectrum).
+        - **Part II update (ARP_queen_Hkappa.md H.8–H.11, merged S103g; Grok audit: SOUND after two wording/arithmetic fixes).**
+          - The window exponent improves to O(log(e/a)), down from O(1/a). This is Lemma H.2′, PROVED (citation: Titchmarsh 9.6(B) and 9.2; the page and the "<1" strictness are not re-verified). It gives **Thm H.1′, κ_Λ ≤ Λ^{B′}, PROVED (sketch)**.
+          - **Λ^{o(1)} is unreachable by this method.** The O(log t) error and the zero count each cost T^{−c}. The sharp form still needs (Z-avg⁻), which is a GAP.
+          - **Trimmed space proposed as primary (OPINION, Queen).** On I^{(K)} = {1 − λ_n ≤ Λ^{−K}} with K ≥ 2B + 8, Thm H.9 gives ℓ^{(K)} ≤ CΛ^{−1}, so **M1 holds on the trimmed space**, diagonal included. Label: PROVED-conditional on the H.1/H.1′ sketch plus the GAP-minor extension of Lemma M1.1. It uses no Spectrum input. The endpoint bound is Lemma H.9.1, which is elementary.
+          - **Identifying it with Connes' Q′_Λ is conditional on (T3)**, the trimming-harmless check Tr(SΔQSV(h)) = o(1), which is also M2-compatibility. (T3) splits into (T3a), the plunge-state low-Mellin mass (HEURISTIC, Spectrum), and (T3b), the E-transport (GAP, Queen).
+          - H.10's RH-conditional line is flagged and barred.
+          - The trimming count is corrected to O(K log²Λ).
     - **M1 overall: CONJECTURE.** RH-silent: no implication to or from RH.
   - Equivalently, in §G.3's language, Q_L = MF_L + Fl_L, with Fl_L the E_Λ-fluctuation (ψ-fluctuation, G.3d; corrected S103b from E₁).
   - Nothing local (G.1–G.2) bounds δ_Λ or Fl_L.
