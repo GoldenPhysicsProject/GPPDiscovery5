@@ -16,6 +16,14 @@ PROVED-LEAN (GPPVerify name), CONJECTURE, or GAP, as in ARP §0.
 - Fourier: f̂(z) := ∫ f(u) e^{izu} du (ARP §G, Suzuki 2206.03682 §3, Bombieri 2000 via Suzuki (5.15)).
   Then ĝ(z) = f̂(z)·conj f̂(z̄); on ℝ, ĝ = |f̂|² ≥ 0. Plancherel: ∫|f|² du = (1/2π)∫|f̂|² dt.
 - Zeros: ρ = ½ + iγ_ρ over nontrivial zeros, with multiplicity. Q_L(f) := Σ_ρ ĝ(γ_ρ) (symmetric limit).
+- **Alignment with main's μ_ρ (G.4d, 7328e39).** Main writes ρ = ½ + β + iγ (γ real) and μ_ρ := harmonic (Poisson-kernel) measure
+  of ρ relative to the critical line, dμ_ρ(t) = (|β|/π) dt/((t − γ)² + β²), a probability measure, μ_ρ = δ_γ if β = 0. In §S
+  notation γ_ρ = γ − iβ (complex), and the off-line term in Q_L is the exact point value m_ρ ĝ(γ_ρ) (explicit formula, PROVED),
+  not ∫ĝ dμ_ρ. Exact split: Q_L(f) = Σ_ρ m_ρ ∫ĝ dμ_ρ + Σ_{β≠0} m_ρ [ĝ(γ_ρ) − ∫ĝ dμ_ρ]. The first sum is ≥ 0 (ĝ = |f̂|² on ℝ, μ_ρ ≥ 0);
+  the second is minus main's "off-line residual". μ_ρ = μ_{1−ρ̄} (same Poisson kernel), so the residual pairs as {ρ, 1−ρ̄} like
+  the signature-(1,1) pair form of S(b)3.6, and κ_Q(L) ≤ (negative index of the residual) since the first sum is PSD. We use only this algebraic split. The
+  limit identity lim_Λ Δ_Λ = Σ_ρ m_ρ ∫ĝ dμ_ρ is PROVED for function fields only (Connes 1999 §VIII Lemma 3) and is CONJECTURE for ℚ
+  (G.4d); §S does not use it.
 - Explicit formula (Weil 1952; in this normalization Suzuki eq. (5.15), derived there from Bombieri 2000 p. 186):
   Q_L(f) = ĝ(i/2) + ĝ(−i/2) − Σ_{n≥2} Λ(n) n^{−1/2} [g(log n) + g(−log n)] + W_∞(g),
   W_∞(g) = −(log π) g(0) + (1/2π) ∫ Re ψ(¼ + it/2) ĝ(t) dt.
@@ -119,7 +127,8 @@ R1 identity for each L | R2 this is just the explicit formula | R3 — | R4 — 
    Unconditionally: N_{>½} ≥ 1 ⇒ κ_Q(∞) ≥ 1 (Weil). Transition points: if RH fails, the first L where κ_Q jumps is a
    degeneracy point (Yoshida 1992 Thm 2 / Suzuki 2206.03682 Thm 1.4 and Thm 6.1 for the screw-function form).
    **GAP (verification/transfer):** identify Bombieri's "truncation" with the support window [−L, L] and conclude
-   κ_Q(L) = N_{>½} for L ≥ L*. Not claimed here.
+   κ_Q(L) = N_{>½} for L ≥ L*. Opened in GAP2_bombieri_window.md (this directory): the window statement is proved there under
+   "finitely many off-line zeros", with N_{>½} counting distinct zeros; only the identification of Bombieri's own truncation stays GAP.
 8. *Kreĭn–Langer side* (PROVED, literature): Kreĭn–Langer 1977 (Math. Nachr. 77, 187–236), Satz 5.9 — bijection between screw
    functions g ∈ 𝒢_∞, g(0)=0, and Nevanlinna Q with Q(iy)/y → 0 (as cited by Suzuki, Thm 1.2 there: RH ⇔ −Ψ is a screw function).
    The indefinite (𝒢_κ / generalized Nevanlinna N_κ) count "κ = #poles of i ξ′/ξ(½−iz) in ℂ₊" for ζ is the S97 claim
@@ -180,12 +189,16 @@ The MF-relative saturating directions are the dilated nodeless bumps (R4 soft mo
 which is NUMERICAL orientation only).
 R1 this is precisely the R1 obstruction made quantitative | R2 not used — fake-blind | R3 — | R4 saturation on the soft mode | R5 S.4.
 
-**S(c)5 Cokernel sign (under review; nothing asserted).** In the two proved instances we checked, the positive object is a
-trace on an orthogonal complement ("deficit"): Connes 1999 Thm 5 (positive characteristic; proof uses
-Δ_Λ = Tr((S_Λ − Q′_{Λ,0}) V(f)) of positive type) and Connes–Consani 2021 Thm 1 (archimedean, W_∞(g∗g*) ≥ Tr(ϑ(g) S ϑ(g)*) for
-supp g ⊂ [2^{−1/2}, 2^{1/2}] with the vanishing conditions of their Thm 1; Sonin-space trace). This is consistent with Queen's reading (Weil
-positivity as a deficit bound on coker E), but **we do not assert "additive positivity survives E"**; the number-field, all-cutoff
-version is G.4d itself (CONJECTURE ⇔ RH).
+**S(c)5 Cokernel sign (SETTLED on main: derivation/ARP.md G.4d, commit 7328e39, after Golden Eye's three-test sign audit, SOUND on
+all three).** The positive object is the **deficit on coker E = ker E\***, i.e. a trace over the complement of range(E)
+(S_Λ − Q′, which is free), not ‖P^⊥Eφ‖². Range positivity enters Δ_Λ with a minus sign and gives only the trivial upper bound, so
+"additive positivity transfers through E" is WRONG-SIGN and withdrawn (G.4d). The two proved instances agree with this sign:
+Connes 1999 Thm 5 (positive characteristic; proof uses Δ_Λ = Tr((S_Λ − Q′_{Λ,0}) V(f)) of positive type; the 2 log Λ term cancels
+exactly against Tr(S_Λ V(h)), Connes 1999 §VIII eq. (16) and eqs. (17)–(26), as cited in G.4d) and Connes–Consani 2021 Thm 1
+(archimedean, W_∞(g∗g*) ≥ Tr(ϑ(g) S ϑ(g)*) for supp g ⊂ [2^{−1/2}, 2^{1/2}] with the vanishing conditions of their Thm 1; Sonin-space
+trace). Per G.4d, Connes–Consani 2021 confirms the deficit sign only: it is the Λ = 1 case, where 2 log Λ = 0, so it cannot test the
+cancellation. What stays open is unchanged: the number-field, all-cutoff statement lim_Λ Δ_Λ = Weil (δ_Λ → 0) is G.4d itself
+(GAP, RH-equivalent), and the ℚ-case of the μ_ρ residual formula is CONJECTURE (G.4d).
 
 ---
 
@@ -245,7 +258,7 @@ margin and is saturated on dilated nodeless bumps (S(c)4, PROVED; margins in nor
 "exact identity needed" is CONJECTURE); (iii) the window negative index is monotone, finite, eventually
 global and ≤ N_{>½}.
 Secondary open items: GAP (verification/transfer) κ_Q(L) = N_{>½} on support windows (S(b)3.7); GAP (citation) Kreĭn–Langer
-𝒢_κ count for ζ (S(b)3.8); GAP (normalization, minor) Astra's Hankel −⅛ (S(a)3); cokernel sign — under review (S(c)5).
+𝒢_κ count for ζ (S(b)3.8); GAP (normalization, minor) Astra's Hankel −⅛ (S(a)3); cokernel sign SETTLED (deficit on coker E = ker E*; G.4d on main, 7328e39; S(c)5).
 
 ## S.9 References (verified this session unless marked)
 
