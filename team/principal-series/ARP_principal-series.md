@@ -665,11 +665,17 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
 14. **S103g (P.14):**
    - The p = 2 edge form is **not** the 2-adic Tate reflection restricted. It is the edge compression of the m = 1 time delay γ₂^*[U, γ₂] in the Q-norm (PROVED).
    - The even-help / odd-charge split comes from J = V(2)P (archimedean-global).
-   - Sign fix for the N.13.4 D_L edge block (+c₂(1/ℓ − ℓ/24)σ_x) and the G.4h item-2 display. The exact constant is (1/ℓ − ℓ/24).
+   - Sign fix for the N.13.4 D_L edge block (+c₂(1/ℓ − ℓ/24)σ_x). It was applied on main by Prime's erratum N.14.0(a) (656de12, merged 77730c4), so P.14 no longer asks for it. The exact constant is (1/ℓ − ℓ/24). *(Reworded S103h: the G.4h item-2 display was already correct in 5354fde, and the complaint about it was written against 3470f1f and is withdrawn.)*
+
+15. **S103h (P.15):**
+   - The {2,3} prediction of P.14.8 is refined: per-line constants are confirmed, and "P-parity decides per line" is refuted at the p = 3 entry (PROVED). The orbit-closed node set is forced.
+   - The Q.8.E weight-1 block has spectrum {0, ±c₂/ℓ}. Positive line blocks cost exactly c₂·g(0) (sharp). A separable (I2) is equivalent to a global S2 (PROVED); its truth is a GAP.
+   - Status: C.14 is merged; C.14.K is a CONJECTURE; the C.14.A indicative failure is NUMERICAL (Celestial's). Piece 4 is the sole odd payer, in band-split form.
+   - N.14.3 cross-check: the identities agree. "No 1/ℓ₃ term from the 2-line" holds in ‖ξ′‖_∞ but not in H-energy. (L4) is consistent with P.14.3. The N.13.4 D_L sign was fixed by N.14.0(a), so nothing is left open from P.14.
 
 ## P.14 The p = 2 line as local Tate data: is Prime's edge form the 2-adic Tate reflection? (S103g; analytic only; [Cel]/[Q], support track L, Λ = 1)
 Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OPEN. Nothing in P.14 proves or implies RH.** On the range treated here (2L ∈ (log 2, log 4)), ζ ≡ P_X for X ≥ 2, so everything is **RH-silent**. Positivity on the range is already CERTIFIED (Mori-conditional, main 992a011); P.14 is about **mechanism**.
-- **Sources** (read this session): main 3470f1f (ARP G.4g, G.4h; §N N.12–N.13 merged), team/celestial-cft 9f0473b (§C.13, C.13.B, Lemma C.13.B, Conj C.13.H), team/queen ARP_queen_M1.md, ARP_queen_Q8.md (Q.8.E (I1)–(I2)). Celestial C.14 is **not yet pushed**; its coupling bound on 2R(ξ_b, ξ_s) is cited as pending.
+- **Sources** (read this session): main 3470f1f (ARP G.4g, G.4h; §N N.12–N.13 merged), team/celestial-cft 9f0473b (§C.13, C.13.B, Lemma C.13.B, Conj C.13.H), team/queen ARP_queen_M1.md, ARP_queen_Q8.md (Q.8.E (I1)–(I2)). *Status update (S103h, main 9cd3187):* Celestial §C.14 has been merged since c7c94ee (merge a4153a8) and is no longer pending. Its coupling bound Thm C.14.B is PROVED, Conjecture C.14.K is a CONJECTURE, and Celestial's indicative C.14.A check (ff3a9dc, merged 220f19c) is NUMERICAL/indicative. Prime §N.14 is merged (77730c4), and S&M's CERT_p2_constants is merged (9d72bbb). Main is now b104678. See P.15.3.
 - **Notation** (ξ-coordinates, as N.12.0/N.13): a = log 2, c₂ = Λ(2)·2^{−1/2} = a/√2, 2c₂ = 0.98026, ℓ = 2L − a, S₋ = [−L, −L + ℓ], S₊ = S₋ + a, J x = −a − x on S₋, P x = −x (global inversion; the I of F = I∘u, CC (25)), τ_a f(x) = f(x + a) =: V(2) (dilation by 2 in u = log|x|), ‖u‖²_H = ∫(u′² + ¼u²).
   - Q_L(Qh) = R(ξ) − 2c₂B(ξ), B(ξ) = ⟨ξ, τ_aξ⟩_H = (1/2π)∫(¼ + t²)cos(ta)|ξ̂|² (N.12.1, C.13.A).
 - **Credits.** Prime (N.12.3 parity/J split, N.13.4 ramp form), Celestial (C.13 T7–T9, C.13.B (3a)–(3d)), Golden Eye (J-commutation; the G.4h sign and −ℓ/24 points), Queen (Q.8.E).
@@ -685,9 +691,9 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
     - (iii) rank/normalization (Θ₂ has a diagonal ½ and asymmetric hops);
     - (iv) the −ℓ/24 term is the ¼ of Q, from the global pole pair, not 2-adic.
 - **Sign (Golden Eye (1)), PROVED from first principles (P.14.5):** even edge pairs are **helped** and odd pairs are **charged** exactly 2c₂α²(1/ℓ − ℓ/24).
-  - The G.4h item-2 display −2c₂(1/ℓ − ℓ/24)α₋α₊ is correct **only as the (IF) left side 2c₂B(ξ_b)**, i.e. the subtracted quantity.
-  - As a contribution to Q_L, or as a block of D_L, the sign is **+**. N.13.4's D_L bullet "−c₂(1/ℓ − ℓ/24)·[[0,1],[1,0]]" has the **wrong sign**: it must be +c₂(1/ℓ − ℓ/24)σ_x, with eigenvalue + on the even pair.
-  - The text "even helped, odd charged" (N.13.4, G.4g, G.4h) is **right**. The displays are what need fixing: the G.4h item-2 display and the N.13.4 D_L-matrix bullet.
+  - As a contribution to Q_L, or as a block of D_L, the sign is **+**: Q_L gains +2c₂(1/ℓ − ℓ/24)α₋α₊. G.4h item 2 on main has read exactly this since 5354fde, and it is correct. *(Reworded S103h. The first version of this bullet called the G.4h display wrong; it was written against 3470f1f, was out of date, and is withdrawn.)*
+  - N.13.4's D_L bullet "−c₂(1/ℓ − ℓ/24)·[[0,1],[1,0]]" had the wrong sign. It must be +c₂(1/ℓ − ℓ/24)σ_x, with eigenvalue + on the even pair, as Celestial C.14.1 also records. *(S103h: fixed on main by Prime's erratum N.14.0(a), 656de12. Nothing is left to fix.)*
+  - The text "even helped, odd charged" (N.13.4, G.4g, G.4h) is **right**.
 
 ### P.14.2 Local Tate data at p = 2 in the ζ-sector — PROVED (Tate thesis §2; elementary) [Q]
 - **Schwartz–Bruhat side.** On S(ℚ₂), with ψ₂ standard and vol(ℤ₂) = 1, F₂1_{ℤ₂} = 1_{ℤ₂} and F₂1_{2^kℤ₂} = 2^{−k}1_{2^{−k}ℤ₂}.
@@ -751,8 +757,8 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
   - N.13.4's identity 2c₂B(ξ) = 2c₂B(ξ_s) − 2c₂α₋α₊(1/ℓ − ℓ/24) + (c₂/2)X is **correct**. So is its interface form [R(ξ_b) + 2σc₂α²(1/ℓ − ℓ/24)].
   - **Wrong sign:** N.13.4's "D_L … is the matrix −c₂(1/ℓ − ℓ/24)·[[0,1],[1,0]] in (α₋, α₊)" should be **+c₂(1/ℓ − ℓ/24)σ_x**, since D_L carries −c₂(V + V^*) and ⟨ramp₋, τ_a ramp₊⟩_H < 0.
   - *Grok audit (S103g): main 5354fde had already fixed the G.4h item-2 display. It now reads "contribution to Q_L … +2c₂(1/ℓ − ℓ/24)α₋α₊". This section was written against 3470f1f. The N.13.4 D_L-bullet finding is confirmed: team/prime-number-theory/ARP_prime-number-theory.md, §N.13.4 "Interface form", second-bracket sub-bullet.*
-  - G.4h item 2's display is the (IF) left side, not the Q_L form. It should read "the (IF) left side on ramps is 2c₂B(ξ_b) = −2c₂(1/ℓ − ℓ/24)α₋α₊, i.e. Q_L gains +2c₂(1/ℓ − ℓ/24)α₋α₊".
-  - "Charged exactly 2c₂α²/ℓ" (G.4g, G.4h) should be **2c₂α²(1/ℓ − ℓ/24)** (Golden Eye (2)). The parity verdict is unchanged.
+  - *Withdrawn (S103h):* the earlier claim that G.4h item 2's display had the (IF)-side sign. On main 5354fde and later it reads "contribution to Q_L … +2c₂(1/ℓ − ℓ/24)α₋α₊", which is correct. The complaint referred to 3470f1f.
+  - "Charged exactly 2c₂α²(1/ℓ − ℓ/24)" (Golden Eye (2)) is now on main in G.4h item 2 and the P.14 record. N.13.4's two "exactly 2c₂α²/ℓ" occurrences were corrected by erratum N.14.0(a). The parity verdict is unchanged.
   - **Consistency check on the identification:** a genuine Θ₂-restriction would give the same sign on both parities, contradicting the PROVED help/charge split. This independently confirms P.14.4 item 3.
 
 ### P.14.6 Support: isotypic decomposition of −c₂S(V(2) + V(2)^*)S — PROVED (elementary) [Cel]
@@ -779,11 +785,12 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
 | G.4h piece | what P.14 adds | label |
 |---|---|---|
 | 1 strip-localized cone (Lemma C.13.B, ℓ ≤ 0.119) | the harm there is the V(2) = +1 piece; absorbed by Ω's high band. No 2-adic input beyond (a, c₂) | PROVED (bookkeeping) |
-| 2 edge traces (ramps) | the form is the edge compression of the m = 1 time delay of γ₂ (P14.1) in the Q-norm. The help/charge split comes from J∘P (archimedean-global), not Θ₂. **Sign fix**: Q_L gains +2c₂(1/ℓ − ℓ/24)α₋α₊, D_L edge block is +c₂(1/ℓ − ℓ/24)σ_x. Exact constant (1/ℓ − ℓ/24), with −ℓ/24 = ¼-mass term of Q | PROVED |
-| 3 coupling 2R(ξ_b, ξ_s) | unchanged; Celestial C.14 pending | GAP N.G2-bulk |
-| 4 archimedean margin at ½ log 2 | the odd cost cannot be paid 2-adically (no sign split in Θ₂), so it must be R's margin | PROVED (as stated); value GAP N.G2-m₀ |
+| 2 edge traces (ramps) | the form is the edge compression of the m = 1 time delay of γ₂ (P14.1) in the Q-norm. The help/charge split comes from J∘P (archimedean-global), not Θ₂. Sign: Q_L gains +2c₂(1/ℓ − ℓ/24)α₋α₊ (as in G.4h item 2 since 5354fde); the N.13.4 D_L edge block is +c₂(1/ℓ − ℓ/24)σ_x (fixed by N.14.0(a), 656de12). Exact constant (1/ℓ − ℓ/24), with −ℓ/24 = ¼-mass term of Q | PROVED |
+| 3 coupling 2R(ξ_b, ξ_s) | Celestial C.14 merged (c7c94ee): Thm C.14.B PROVED, C.14.C obstructions PROVED, closure reduced to Conj C.14.K (CONJECTURE) + m₀^e. P.14 adds nothing 2-adic here | GAP N.G2-bulk |
+| 4 archimedean margin at ½ log 2 | the odd cost cannot be paid 2-adically (no sign split in Θ₂), so it must be R's margin. The ℓ-independent frame version (Thm C.14.A) indicatively fails on 7.4 ≲ \|t\| ≲ 13 (Celestial ff3a9dc, NUMERICAL/indicative); the band-split routes remain (P.15.3) | PROVED (as stated); value GAP N.G2-m₀ |
 
 ### P.14.8 Remark for Prime's §N.14 ({2, 3} lines, 2L ∈ (log 3, log 4]) — REMARK / CONJECTURE [Cel]
+*(Tested in P.15.1, S103h: (a)–(c) confirmed; "P-parity decides help/charge per line" refuted at the p = 3 entry, PROVED.)*
 - **Every reflection.** Every reflection x ↦ c − x conjugates V(p) to V(p)^*, so each V(p) + V(p)^* commutes with every reflection on L²(ℝ). The window [−L, L] is preserved only by c = 0. So **P is the unique window-preserving reflection commuting with every B_p** (PROVED).
 - **Strip reflections.** The strip reflections J_p: x ↦ −log p − x are p-dependent. J₂ and J₃ generate a D_∞ whose translation is log(3/2), so there is **no common J** (PROVED). The local Tate data γ₂(V(2)) and γ₃(V(3)) commute with each other and with nothing reflection-like except through P.
 - **CONJECTURE (prediction for N.14).**
@@ -803,7 +810,7 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
 | (I1) pairing normalization of −c₂(V + V^*) | REMARK | [Q] |
 | Sonin/prolate: V(2) intertwines S(1,1) → S(2,½) | REMARK (PROVED as stated) | [Cel] |
 | {2, 3}: P unique common reflection, no common J (PROVED); N.14 prediction | REMARK / CONJECTURE | [Cel] |
-| N.G2-bulk, N.G2-m₀, (P) | GAP (unchanged) | [Cel] |
+| N.G2-bulk, N.G2-m₀, (P) | GAP (unchanged; C.14 merged, C.14.K CONJECTURE; see P.15.3) | [Cel] |
 | RH | OPEN | — |
 
 **R-line:**
@@ -818,6 +825,218 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
   - **DMV (glued) / P_X:** coincide with ζ on this window (N.12.1), so they pass every step here. They are fake-blind on this range, and break only past the ladder (G.4e/G.4f).
   - **G_θ′:** passes. Its local factors are unitary twists, the time delay is shifted t → t ± θ′, and Q_G is a sum of two ζ-forms (G.4e).
 - **R6:** (P14.1) and the ramp identities are exact. The closures stay GAPs.
+
+## P.15 The {2, 3} window, the Q.8.E weight-1 block and its (I2) choice, and the status of piece 4 after C.14 (S103h; analytic only; [Cel]/[Q]/[S&M])
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OPEN. Nothing in P.15 proves or implies RH.** On 2L ≤ log 4 we have ζ ≡ P_X for X ≥ 3, so everything here is **RH-silent**. Positivity on the range is already CERTIFIED (Mori-conditional, main 992a011); P.15 is about **mechanism**.
+- **Sources** (read this session; written on main 9cd3187 and revised on main b104678):
+  - ARP G.4g/G.4h (with the lead's Q.8.E factor-ℓ fix);
+  - team/queen/ARP_queen_Q8.md, Conjecture Q.8.E (I1)–(I3) and Lemma Q.8.5, whose notation is used in P.15.2;
+  - Celestial §C.14 (merged a4153a8, audited c7c94ee);
+  - Celestial's indicative C.14.A evaluation at team/celestial-cft ff3a9dc (**not yet on main**; cited as hers, NUMERICAL/indicative);
+  - Prime §N.13 (611e39a).
+- **Prime §N.14 is merged** (source for P.15.1 and P.15.5: team/prime-number-theory cf4ee37, at Prime's direct request; errata 656de12; merge 77730c4, audit b104678). It was not on main when the first version of this section (641b63c) was written. P.15.1 now cross-checks N.14.3, answering its interface request N.14.4 "Principal: cross-check the per-line ramp constants and the (L4) chain". S&M CERT_p2_constants (merged 9d72bbb) is used in P.15.3.
+- **Notation** as in P.14: ‖u‖²_H = ∫(u′² + ¼u²), B_p(ξ) := ⟨ξ, τ_{log p}ξ⟩_H, c_p := Λ(p)p^{−1/2}, so c₂ = log 2/√2 and **c₃ = log 3/√3**. a₂ = log 2, a₃ = log 3, ℓ_p := 2L − log p.
+- **Method.** The algebraic identities in P.15.1 were also checked symbolically and exactly (sympy, piecewise integration with symbolic L; `B2 − hand = 0`, `B3 − hand = 0`). This is a check of the algebra, not exploratory numerics. Decimal values below are one-line evaluations of closed forms.
+
+### P.15.1 The two lines on 2L ∈ (log 3, log 4]: per-line constants and the strip-overlap interaction (with Prime's §N.14.3, merged 77730c4) — PROVED [Cel]
+On this range, Q_L(Qh) = R(ξ) − 2c₂B₂(ξ) − 2c₃B₃(ξ). At 2L = log 4 the p = 4 term sits at the boundary of supp h and vanishes.
+
+**Lemma P.15.A (orbit-closed node set).** Put x₁ := L − log 3, w := −L + log(3/2) and x₂ := L − log 2. Then
+- −L < x₁ < w < x₂ ≤ 0, and N_L := {±L, ±x₁, ±w, ±x₂} is the smallest set containing ±L that is closed under x ↦ x ± log 2 and x ↦ x ± log 3 inside [−L, L].
+- The left p = 2 strip S₋^{(2)} = [−L, x₂] splits into the pieces I₁ = [−L, x₁], I₂ = [x₁, w] and I₃ = [w, x₂], of lengths **ℓ₃, q, ℓ₃**, where **q := log(9/2) − 2L** ∈ [log(9/8), log(3/2)). So ℓ₂ = 2ℓ₃ + q, and the p = 3 strip is S₋^{(3)} = I₁.
+- τ_{log 3} maps I₁ onto −I₁. τ_{log 2} maps I₁, I₂, I₃ onto −I₃, −I₂, −I₁.
+
+*Proof.*
+- Ordering: x₁ < w ⟺ 2L < log(9/2), and w < x₂ ⟺ 2L > log 3.
+- Closure: −L + log 2 = −x₂, −L + log 3 = −x₁, x₁ + log 2 = −w, w + log 2 = −x₁, x₁ + log 3 = x₂ + log 2 = L. Every other shift leaves the window, e.g. w + log 3 > L ⟺ 2L < log(9/2). ∎
+
+So the strip-overlap interaction is concrete. **The p = 2 line couples the p = 3 edge strip I₁ to the central piece −I₃** (a strip of length ℓ₃ at distance |x₂| ≤ ½ log(4/3) from the centre), and I₃ to the p = 3 strip −I₁. It does not couple I₁ to −I₁; that is the p = 3 line's job. The p = 3 strips are nested in the p = 2 strips (ℓ₃ < ℓ₂).
+
+**Joint ramp decomposition (PROVED).** Let ξ_b agree with ξ on the bulk [x₂, −x₂] and be piecewise linear between consecutive nodes of N_L on [−L, x₂] ∪ [−x₂, L]. Put ξ_s := ξ − ξ_b, which vanishes at every node.
+- For p = 2, 3, **the derivative cross terms of B_p between ξ_b and ξ_s vanish identically.** τ_{log p} maps each piece of S₋^{(p)} onto a piece (Lemma P.15.A), ξ_b′ is constant on pieces, and ∫ over a piece of ξ_s′ (shifted or not) is a difference of ξ_s at two nodes, which is 0.
+- Hence B_p(ξ) = B_p(ξ_b) + B_p(ξ_s) + ¼X_p, where X_p is the ¼-mass cross term, exactly as in N.13.4.
+- With N.13.4's two nodes {−L, x₂} only, the p = 2 derivative cross term would **not** vanish. ξ_s would need to vanish at x₁ + log 2 = −w, which is not a p = 2 node. So the orbit-closed node set is forced, and the ramp space has **three edge values per side**: v₁ = ξ(x₁), v₂ = ξ(w), v₃ = ξ(x₂).
+
+**Theorem P.15.B (exact joint ramp forms; PROVED, sympy-checked).** For ξ of P-parity σ (ξ(−x) = σξ(x)):
+> **B₃(ξ_b) = σ·v₁²(ℓ₃/24 − 1/ℓ₃),**
+> **B₂(ξ_b) = σ·[ 2v₁(v₂ − v₃)/ℓ₃ − (v₁ − v₂)²/q + ℓ₃(v₁v₃ + 2v₁v₂)/12 + q(v₁² + v₂² + 4v₁v₂)/24 ].**
+- *Proof.* τ_{log p}ξ = σ·J_p ξ on S₋^{(p)}, with J_p x = −log p − x.
+  - J₃ reverses I₁, which reproduces N.13.4 at ℓ = ℓ₃.
+  - J₂ reverses [−L, x₂] and maps the pieces (ℓ₃, q, ℓ₃) to themselves in reverse order, so J₂ preserves N_L ∩ S₋^{(2)}. Then B₂(ξ_b) = σ⟨u, J₂u⟩_H, with u piecewise linear with values (0, v₁, v₂, v₃) and J₂u with values (v₃, v₂, v₁, 0).
+  - The slopes give 2v₁(v₂ − v₃)/ℓ₃ − (v₁ − v₂)²/q. The ¼-mass part comes from ∫_0^h (linear)(linear) = h(2ac + ad + bc + 2bd)/6. ∎
+- **Checks.**
+  - On the linear profile v₁ = (ℓ₃/ℓ₂)v₃, v₂ = ((ℓ₃ + q)/ℓ₂)v₃ (a single p = 2 ramp), B₂(ξ_b) = σv₃²(ℓ₂/24 − 1/ℓ₂): **N.13.4's per-line constant c₂(1/ℓ₂ − ℓ₂/24) is recovered on its own ramp.**
+  - As 2L ↓ log 3 (ℓ₃ → 0, q → ℓ₂), smooth ξ has v₁ → 0 and v₂ − v₃ → 0, which gives N.13.4 at p = 2.
+
+**The p = 3 entry: both parities become indefinite (PROVED).** Let ℓ₃ ↓ 0 (q → log(3/2), bounded). Write u₁ := v₁ (the jump across the p = 3 strip I₁) and u₃ := v₃ − v₂ (the jump across the central piece I₃). The line part of Q_L, −2c₂B₂ − 2c₃B₃, is at order 1/ℓ₃
+> **σ·(1/ℓ₃)·(2c₃u₁² + 4c₂u₁u₃) + O(1)·|v|²,  matrix σ(1/ℓ₃)[[2c₃, 2c₂], [2c₂, 0]], determinant −4c₂²/ℓ₃² < 0.**
+- The H-energy of ξ_b on I₁ ∪ I₃ and their mirrors is 2(u₁² + u₃²)/ℓ₃ + O(ℓ₃). So per unit energy, the two lines' contribution has the eigenvalues
+  > **σ·½(c₃ ± √(c₃² + 4c₂²)) = σ·(+0.9009, −0.2666).**
+- **Even sector (σ = +):**
+  - The p = 3 line alone only helps (+c₃ = 0.6343 per unit energy).
+  - With the p = 2 coupling to the central strip, there is a **charged even direction**: per unit energy −0.2666, with u₃/u₁ = −(c₃ + √(c₃² + 4c₂²))/(2c₂) = −1.838. The outer p = 3 jump and the central jump have opposite signs.
+- **Odd sector (σ = −):**
+  - The worst charge is **0.9009 per unit energy**, versus c₃ = 0.6343 for the p = 3 line alone (factor 1.420).
+  - There is also a helped odd direction (+0.2666).
+- The indefiniteness holds for every c₂ ≠ 0. The (I₃, I₃) entry is zero: the p = 2 line maps I₃ to −I₁, off-diagonal, and the p = 3 line does not see I₃.
+
+**Verdict on the P.14.8 prediction.**
+- (a) **P is the unique window-preserving reflection commuting with every B_p, and there is no common J_p.** Confirmed and used (PROVED).
+- (b) **Per-line J_p exist and act on the nested strips.** Confirmed: B_p(ξ_b) = σ⟨u, J_pu⟩_H on S₋^{(p)}, and J₂ preserves the refined nodes (PROVED).
+- (c) **Per-line ramp constants c_p(1/ℓ_p − ℓ_p/24).** Exact for p = 3, and exact for p = 2 on its own single ramp (PROVED). The joint decomposition that both lines need is rank three per parity, not rank two per line.
+- (d) **"P-parity decides help/charge for each line" is REFUTED at the p = 3 entry (PROVED).** In each P-parity the order-1/ℓ₃ block is indefinite.
+  - Mechanism: this is the quantitative form of "no common J". The J₃-odd p = 3 ramp on I₁ has no definite J₂-parity, because J₂ sends I₁ to I₃, where J₃ does not act. The J₂-even and J₂-odd combinations of the two short pieces (u₁ ± u₃) enter B₂ with opposite signs (the hyperbolic term −2u₁u₃/ℓ₃).
+- **Consequences for N.14 (REMARK).**
+  - At the p = 3 entry, the even sector is no longer paid by the new line alone, so it also needs an archimedean payer.
+  - The odd p = 3 entry cost is larger than c₃ per unit energy.
+  - Both costs sit at frequency ~π/ℓ₃, where Ω is large. So an analogue of Lemma C.13.B (strip-localized absorption by the high band of Ω) is the natural tool. **The constant to beat per unit energy is ½(c₃ + √(c₃² + 4c₂²)) = 0.9009, not c₃** (CONJECTURE that this is the sharp S1-type constant at the p = 3 entry; the upper bound is PROVED on the ramp space only).
+  - No 2-adic or 3-adic local reflection appears as the commuting symmetry. This is consistent with P.14.4 and confirms that part of the prediction.
+
+**Cross-check with Prime §N.14.3 (merged 77730c4) — PROVED [Cel].**
+- **Agreement.** The following agree with N.14.3, as identities:
+  - the strip geometry (G), including 2L < log 4.5;
+  - the 3-edge block +c₃(1/ℓ₃ − ℓ₃/24)σ_x and the odd charge 2c₃β²(1/ℓ₃ − ℓ₃/24) (= B₃ in Thm P.15.B, with β₋ = v₁);
+  - B₂(ξ_s) = 0 for Prime's ξ_s ∈ H¹₀(3-strips) (τ_{log 2} maps I₁ onto −I₃, not onto a 3-strip);
+  - the symmetry statement (S).
+- **Prime's 2-line derivative term is the hyperbolic term of Thm P.15.B.**
+  - In our nodes, a − L = −x₂ and L + a − b = −w, so Prime's (2β₋/ℓ₃)[ξ(L + a − b) − ξ(a − L)] = σ(2v₁/ℓ₃)(v₂ − v₃).
+  - "No 1/ℓ₃ term from the 2-line" is right relative to ‖ξ′‖_{L∞}: the term is 2β₋ times a mean slope.
+  - It is **not** lower order relative to the H-energy. A profile with a kink at scale ℓ₃ on the central piece I₃ (|v₃ − v₂| ~ |v₁|) has mean slope ~|v₁|/ℓ₃ there. The term is then of the same order 1/ℓ₃ as the 3-edge block, and the combined order-1/ℓ₃ block is the indefinite σ(1/ℓ₃)[[2c₃, 2c₂], [2c₂, 0]] above.
+  - Prime's interface form is exact and puts this term inside Q^{(≤2)}(ξ_b), since his ξ_b contains the central pieces. So both statements are correct: they measure the 2-line term in different norms.
+- **Consequence for Prime's {2, 3} odd-entry CONJECTURE.**
+  - The odd 3-charge must be paid together with the 2-line's 1/ℓ₃-coupling to the central pieces. The worst per-energy odd charge of the two lines on the joint ramp space is **0.9009, not c₃ = 0.6343**.
+  - The even sector at the 3-entry has a charged direction (−0.2666 per unit energy).
+  - Both live at frequency ~π/ℓ₃, so they are high-band objects: a C.13.B-type absorption, not the low-band (≤ 2) margin, is the natural payer.
+  - This sharpens the Grok caveat that Q^{(≤2)} on the larger window is the P₂ form, not known to be ≥ 0. It does not refute the conjecture. REMARK.
+- **(L4) chain against the P.14 normalization (PROVED).**
+  - The p² = 4 line is the m = 2 mode of (P14.1): Λ(4)·4^{−1/2}(V(2)² + V(2)^{−2}) = c₄(V(2)² + V(2)^{*2}), with c₄ = (log 2)/2.
+  - Its weight-1 trace block is −(c₄/ℓ₄)S_Λ(V(2)² + V(2)^{*2})S_Λ, with ℓ₄ = |S ∩ (S − 2a)| = 2L − log 4. In the form picture its edge block is +c₄(1/ℓ₄ − ℓ₄/24)σ_x. Both agree with N.14.3 (L4).
+  - Prime's KMS note: Σ_{m≠0} r^{|m|}e^{imat}·log 2 = φ₂′(t) exactly (P14.1), with r = 2^{−1/2}. So the "full 2-adic multiplier −log 2(P_r(at) − 1)" is −φ₂′, the 2-adic time delay, and its Toeplitz sections are the KMS matrices. This is consistent with P.14.3, and no Tate reflection is involved (P.14.4).
+
+### P.15.2 Q.8.E: the weight-1 (I1) block and the (I2) choice, in Queen's notation — PROVED [Q]
+Queen's notation (Q.8.E): Λ = e^L, S_Λ = 1_{[−L, L]}, V(u) is the translation group on L²(ℝ_u), and V(f) = ∫f(u)V(u)du. (I1) reads Q_L(f) = Tr(D_L V(f)V(f)^*) for real f ∈ 𝒯_L, with D_L S_Λ V(f) Hilbert–Schmidt. (I2) reads D_L ≥ 0. Let g := f ∗ f^*. For real f, g is even and supported in [−2L, 2L]. For bounded D with kernel D(x, y),
+> Tr(D V(f)V(f)^*) = ∫ d_D(b)g(b)db,  d_D(b) := ∫D(x, x + b)dx (the diagonal sums; g even, so the orientation of b drops out).
+The p = 2 term of Q_L is −c₂(g(a) + g(−a)), with a = log 2.
+
+**(I1): the weight-1 block (PROVED).** For ℓ = 2L − log 2 > 0:
+> **D_L^{(2),1} := −(c₂/ℓ)·S_Λ(V(2) + V(2)^*)S_Λ,  d = −c₂(δ_a + δ_{−a}),  Tr(D_L^{(2),1}V(f)V(f)^*) = −c₂(g(a) + g(−a)).**
+- *Diagonal sums.* S_ΛV(2)S_Λ has d = |S ∩ (S − a)|δ_a = ℓδ_a (P.14.3). The trace identity holds for every real f, since the trace pairing is translation-invariant. Support enters only through g.
+- *Spectrum.* On L²(S₋) ⊕ L²(S₊), with S₋ = [−L, L − a] and S₊ = [a − L, L] (disjoint, since 2L < 2a), S_Λ(V(2) + V(2)^*)S_Λ = [[0, U], [U^*, 0]] with U unitary, and it is 0 on the bulk and off the window. So
+  > **spec D_L^{(2),1} = {−c₂/ℓ, 0, +c₂/ℓ},  ‖D_L^{(2),1}‖ = c₂/ℓ.**
+  - The eigenvalue −c₂/ℓ sits on the pairs (φ, U^*φ). These are the V(2) = +1 two-site pieces, the harmful label of P.14.6.
+- *HS condition.* ‖S_ΛV(f)‖²_HS = 2L‖f‖²₂, so D_L^{(2),1}S_ΛV(f) is HS.
+- *R1 caveat (REMARK).* ‖D_L^{(2),1}‖ = c₂/ℓ blows up as the line enters (ℓ ↓ 0), although its trace does not. The equivalent block −c₂(V(2)M_ρ + M_ρV(2)^*) with ∫ρ = 1 has the same trace for **every** probability density ρ, since localization in S ∩ (S − a) is optional for the trace pairing. With a fixed L-independent ρ it is uniformly bounded, by 2c₂‖ρ‖_∞. **Recommendation: use a fixed ρ for "one rule for all L".**
+
+**(I2): positive line blocks and their exact cost (PROVED).** Fix n ≥ 1 and b_j := sin(π(j + 1)/(n + 2)), j = 0..n. Scale β_j := κ_n b_j so that Σ_j β_jβ_{j+1} = c₂. Let ρ ≥ 0 be bounded with compact support and ∫ρ = 1. Define
+> **A_n := Σ_{j=0}^{n} (−1)^jβ_j V(2)^j,  D_n^{(2)} := A_n M_ρ A_n^* ≥ 0.**
+- *Diagonal sums.* V(2)^jM_ρV(2)^{−k} has d = (∫ρ)δ_{(j−k)a}, so
+  > d_{D_n^{(2)}} = c₂ sec(π/(n + 2))·δ_0 − c₂(δ_a + δ_{−a}) + Σ_{2≤|m|≤n}(·)δ_{ma}.
+  - Σ_jb_j² / Σ_jb_jb_{j+1} = sec(π/(n + 2)): b is the Perron vector of the path graph on n + 1 vertices, with eigenvalue 2cos(π/(n + 2)).
+  - The atoms at |m| ≥ 2 sit at |m|a ≥ 2a > 2L, so they are invisible on 𝒯_L.
+- *Trace.* For real f ∈ 𝒯_L,
+  > Tr(D_n^{(2)}V(f)V(f)^*) = ‖M_ρ^{1/2}A_n^*V(f)‖²_HS = c₂sec(π/(n + 2))·g(0) − c₂(g(a) + g(−a)) ≥ 0.
+  - n = 1 is the two-site block, at cost 2c₂·g(0).
+- *Sharpness: the infimum cost is exactly c₂·g(0), and it is not attained by these blocks.*
+  - Any D ≥ 0 whose diagonal sums agree on (−2L, 2L) with c₀δ_0 − c₂(δ_a + δ_{−a}) has c₀ ≥ c₂. Test f = 1_{[−L, −L+ε]} + 1_{[−L+a, −L+a+ε]} with ε ≤ ℓ: then g(0) = 2ε and g(±a) = ε.
+  - c₀ = c₂ is the limit n → ∞.
+  - This is the trace-picture form of Celestial's Fejér completions (C.14.1: min p_w = −c₂sec(π/(n + 2)) ↓ −c₂). Same constant, same mechanism.
+- **The (I2) choice.** Take **D_L = D_L^{∞,(n)} + D_n^{(2)}**, where D_L^{∞,(n)} carries the archimedean and pole diagonal sums **minus c₂sec(π/(n + 2))δ_0**. Then (I1) holds exactly, and (I2) follows from D_L^{∞,(n)} ≥ 0.
+- **What this choice costs (PROVED necessary condition).**
+  - On the pole-free subclass (f = (½ + ∂)ξ-type, g = Qh), g(0) = ‖ξ‖²_H. So D_L^{∞,(n)} ≥ 0 forces
+    > **R(ξ) ≥ c₂sec(π/(n + 2))·‖ξ‖²_H for all ξ ∈ 𝒯_L.**
+  - This is an S2-type bound in the **global** H-norm, strictly stronger than S2, whose norm is ‖·‖_{H(E)}. If it held, the p = 2 step would be trivial: S1 gives |2c₂B| ≤ c₂‖ξ‖²_{H(E)}.
+  - Its truth is a **GAP**. Even: C.14.3, the rank-one κ^{ev} > 1 direction. Odd: its pointwise-symbol sufficient version is Thm C.14.A, which indicatively fails (P.15.3). Expected to fail: HEURISTIC (C.14.4b near-null directions).
+- **Why no trace-picture block can do better (PROVED).** Tr(M_w V(f)V(f)^*) = g(0)∫w for every w. The trace pairing sees only diagonal sums, which are translation-invariant. So a block can be made positive only by borrowing g(0)-mass (global ‖ξ‖²_H), never strip-localized mass ‖ξ‖²_{H(E)}, the S1 localization that makes the form picture work.
+  - **So for Queen:** a separable (I2), meaning a positive line block plus a positive archimedean remainder, is exactly the multiplier-frame route. A working D_L must couple the line block to the archimedean block through non-multiplier pieces: the ε-part 2ε′(1⁺)(1 − K_L) of C.14.1, band-split as in S&M Thm 2.1. This is a REMARK, PROVED as a statement about separable choices.
+- *Label summary:* weight-1 block, spectrum, HS: PROVED. Positive blocks D_n^{(2)} and the sharp cost c₂: PROVED (elementary). Separable (I2) ⇒ global S2: PROVED. Its truth: GAP (HEURISTIC: false).
+
+### P.15.3 Status update for §P.14 / G.4h after C.14, and what the C.14.A failure means for piece 4 — labels as marked [S&M]/[Cel]
+- **C.14 is merged** (a4153a8, audit c7c94ee) and is no longer pending.
+  - Thm C.14.A is PROVED as a sufficient criterion ("iff" corrected to sufficient in the audit).
+  - Thm C.14.B (coupling bound) and Thm C.14.C (obstructions) are PROVED.
+  - **Conjecture C.14.K (high-band almost-orthogonality) is a CONJECTURE.**
+  - Cor C.14.D is PROVED given its inputs.
+  - So piece 3 (N.G2-bulk) is a GAP reduced to C.14.K + m₀^e. P.14.7 and P.14.9 are updated accordingly.
+- **Celestial's indicative check (team/celestial-cft ff3a9dc; NUMERICAL/indicative, hers).**
+  - Inputs: 1 − κ^{odd}_{L₀} = 0.58 (Golden Eye sinc-kernel proxy, not proved), so 2ε′(1⁺)·0.58 = 26.68.
+  - With σ_S ≥ max(0, 2θ′ − B/(¼ + t²)), the C.14.A symbol inequality fails on |t| ∈ [7.37, 11.78] (B = 46, worst deficit 0.222) and on [7.37, 12.96] (B = 66, deficit 0.267).
+  - That is, it **fails around 7.4 ≲ |t| ≲ 13**: the ε-term 26.68/(¼ + t²) drops below c₂ beyond 7.37, and 2θ′ < c₂ below 10.26.
+  - *Superseded (main b104678; NUMERICAL).* With the actual K_L, δ_o⁰ = 0.3135 (Prime N.14.1), so the ε-term is 14.42/(¼ + t²). The failing band widens to **≈ [5.41, 13.6]**, with worst deficits 0.345 (B = 46) and 0.369 (B = 66). The 0.58 proxy overestimated the gap about 1.85×.
+  - *New certified input (S&M CERT_p2_constants, merged 9d72bbb; CERTIFIED, Arb):*
+    - odd (K2) holds on 2L ∈ (log 2, log 2 + 0.028], CC-free, with Q_L ≥ 0.0126‖ξ‖²_H;
+    - m₀^odd(L₀) ≥ 0.46255 (H-margin, O(1)).
+    - The frame route is off the odd critical path on that sub-window.
+- **What it means for piece 4 as the only payer of the odd cost 2c₂α²(1/ℓ − ℓ/24).**
+  1. *What fails is the ℓ-independent, globally charged route, not piece 4 itself (PROVED, bookkeeping).*
+     - C.14.A charges the line by its Fejér minimum −c₂ at **every** frequency. By P.15.2 this global charge is all a translation-invariant (multiplier or trace-picture) block can do.
+     - The indicative failure says the margin available from known σ_S bounds plus the L²-gap is short of c₂ on 7.4 ≲ |t| ≲ 13.
+     - It does not say the odd sector is unpaid. C.14.A is sufficient only, and the true σ_S may exceed c₂ − 26.68/(¼ + t²) there (≈ 0.27 near t ≈ 10). That is Celestial's precise S&M ask.
+  2. *The cost itself lives above the deficit band (PROVED, from C.14.4b's bound).*
+     - The odd charge sits on the ramps. By C.14.4b, the fraction of a ramp's energy in |t| < T is ≤ (T/4 + T³/3)ℓ³/(3π). At T = 13 this is ≤ 78.1ℓ³: ≤ 0.132 at ℓ = 0.119 and ≤ 0.0098 at ℓ = 0.05.
+     - The ramp kinks sit at |t| ~ π/ℓ ≥ 26, where 2θ′ > 2c₂.
+     - So for small ℓ the odd cost can be charged in the high band, and only the bulk low band needs the L²-gap δ_o⁰.
+  3. *Consequence (PROVED as bookkeeping; values GAP).*
+     - Piece 4 remains the **only** payer of the odd cost. P.14 shows there is no 2-adic payer; P.15.1 shows none appears from p = 3 either, since the {2,3} odd entry is worse; and Cor C.14.D shows the odd sector needs no coupling bound, so piece 3 is not on the odd critical path.
+     - On 2L ∈ (log 2, log 2 + 0.028] piece 4 **is paid**, CERTIFIED (S&M CERT_p2_constants: S1 + (Ω5) + Lemmas A/B, a band-type argument, CC-free). That is a band-split payment, consistent with this item.
+     - Beyond log 2 + 0.028 the odd entry is open analytically (CERTIFIED only conditional on Mori). Piece 4 must there be paid in **band-split, ℓ-dependent form**: S&M Thm 2.1/(3.3) with δ_o⁰ (polynomial range), C.13.H′, or Thm N.13.A with m₀^o (exponential range). It cannot be paid in the ℓ-independent frame form, unless a certified σ_S clears c₂ − 2ε′(1⁺)(1 − κ^{odd}_{L₀})/(¼ + t²) on the band (≈ [5.41, 13.6] with δ_o⁰ = 0.3135, NUMERICAL).
+     - For the band-split route, the threshold must be T ≳ 13 (where σ_S ≥ c₂(1 + η) is plausible). This shrinks the range through ν_T(ℓ) ∝ T³ℓ³. The range is a GAP until δ_o⁰ and σ_S are supplied.
+  4. *For Queen (Q.8.E):* by P.15.2, a separable (I2) is the global-charging route, so the same indicative failure applies to its pointwise version. Q.8.E's D_L near the p = 2 entry should be built band-split, coupling the line block to the ε-part. REMARK.
+- **Display fixes: none open.** Prime's erratum N.14.0(a) (656de12) fixed N.13.4's D_L bullet. The G.4h item-2 complaint is withdrawn (P.14.1, P.14.5).
+
+### P.15.4 Labels and R-line
+| item | label | track |
+|---|---|---|
+| Lemma P.15.A: orbit-closed nodes N_L; pieces (ℓ₃, q, ℓ₃); τ_{log 2}: I₁ → −I₃ | PROVED | [Cel] |
+| joint ramp split: derivative cross terms vanish only with N_L | PROVED | [Cel] |
+| Thm P.15.B: exact B₂, B₃ on joint ramps; per-line constants recovered | PROVED (sympy-checked algebra) | [Cel] |
+| p = 3 entry: both parities indefinite; per-energy eigenvalues σ·½(c₃ ± √(c₃² + 4c₂²)) | PROVED | [Cel] |
+| P.14.8 prediction: (a)–(c) confirmed; (d) "parity decides per line" refuted | PROVED | [Cel] |
+| 0.9009 as the sharp S1-type constant at the p = 3 entry | CONJECTURE | [Cel] |
+| Q.8.E weight-1 block −(c₂/ℓ)S_Λ(V(2) + V(2)^*)S_Λ: diagonal sums, spectrum {0, ±c₂/ℓ}, HS | PROVED | [Q] |
+| fixed-ρ variant uniformly bounded (R1) | REMARK (PROVED) | [Q] |
+| D_n^{(2)} = A_nM_ρA_n^* ≥ 0, cost c₂sec(π/(n + 2))g(0); infimum c₂ sharp (not attained by A_nM_ρA_n^*) | PROVED | [Q] |
+| separable (I2) ⇒ R ≥ c₂‖·‖²_H on 𝒯_L (global S2) | PROVED; truth GAP (HEURISTIC false) | [Q]/[S&M] |
+| trace picture cannot localize to H(E) | PROVED | [Q] |
+| C.14 merged; C.14.K | CONJECTURE (hers) | [Cel] |
+| C.14.A symbol inequality fails on ≈ 7.4 ≤ \|t\| ≤ 13 (proxy 0.58); ≈ [5.41, 13.6] with actual K_L | NUMERICAL (indicative; Celestial ff3a9dc / Prime N.14.1) | [S&M] |
+| cross-check of N.14.3: identities agree; "no 1/ℓ₃ term" holds in ‖ξ′‖_∞, not in H-energy | PROVED | [Cel] |
+| (L4): c₄ line = m = 2 time-delay mode, trace block −(c₄/ℓ₄)S(V(2)² + V(2)^{*2})S | PROVED | [Q] |
+| odd (K2) on (log 2, log 2 + 0.028]; m₀^odd ≥ 0.46255 | CERTIFIED (S&M, cited) | [S&M] |
+| piece 4 sole odd payer, band-split form needed | PROVED as bookkeeping; values GAP N.G2-m₀ | [S&M] |
+| RH | OPEN | — |
+
+**R-line:**
+- **R1:** one rule on (log 3, log 4]. The combinatorics of N_L are constant on the range. The (I2) blocks are L-uniform with fixed ρ, and D_L^{(2),1} is not uniform as ℓ ↓ 0.
+- **R2:** the Euler product enters through the two lines (c₂, c₃), the m = 1 time-delay modes of γ₂ and γ₃ (P.14.3); the FE enters through Ω.
+- **R3:** the signs come from P-parity and the indefinite 2×2 block at the p = 3 entry, not from weight signs.
+- **R4:** the pole pair is spent once. Its ¼ appears as the mass terms (ℓ₃/24, q/24, …), as in P.14.4, and g(0) = ‖ξ‖²_H is the pole-free norm in P.15.2.
+- **R5, where each fake breaks:**
+  - **F_θ:** P.15.1–P.15.2 are linear in the line weights, so they go through with c_p → c_p cosh(θ log p). It breaks where P.14 R5 says: the line is not the self-adjoint time delay of a unitary γ_p (polarization, P.4).
+  - **DH:** no Euler product and no γ_p. −D′/D has sign-indefinite weights, not supported only on prime powers. Breaks at P.14.2.
+  - **H₋ₜ:** no Euler product after deformation, and Ω is deformed. Breaks at P.14.2/P.14.3.
+  - **DMV / P_X (X ≥ 3):** coincide with ζ on this window. Fake-blind here.
+  - **G_θ′:** passes. Q_G is a sum of two ζ-forms (G.4e), and every identity above is linear in the form.
+- **R6:** Lemma P.15.A, Thm P.15.B, the trace identities and the sharp cost c₂ are exact. The closures (N.G2-m₀, N.G2-bulk, even (P)) stay GAPs.
+
+### P.15.5 PASS/FIX verdicts on Prime §N.14 (cf4ee37), as requested by Prime
+
+Each item was checked analytically against Thm P.15.B and P.14. Numbers are closed-form evaluations, not exploration.
+
+| # | N.14 claim (cf4ee37) | Verdict | Label |
+|---|---|---|---|
+| 1 | 3-edge constant c₃(1/ℓ₃ − ℓ₃/24), with ℓ₃ = 2L − log 3 | **PASS**. It equals B₃(ξ_b) = σv₁²(ℓ₃/24 − 1/ℓ₃) in Thm P.15.B; the contribution to Q_L is +2σc₃v₁²(1/ℓ₃ − ℓ₃/24) | PROVED |
+| 2 | 2-line c₂(1/ℓ₂ − ℓ₂/24), with ℓ₂ = 2L − log 2 ∈ (log 1.5, log 2] | **PASS, with a cosmetic FIX**. The formula is the single-ramp reduction of Thm P.15.B. The endpoint values are c₂(1/ℓ − ℓ/24) = **1.20053** at ℓ₂ = log 1.5 = 0.40547 and **0.69295** at ℓ₂ = log 2. N.14.3 prints 1.2003 and 0.6929; they should read 1.2005 and 0.6930 (4 d.p.). "Comparison only" is right: at these ℓ₂ the 2-ramp is not an edge object | PROVED |
+| 3a | B₂(ξ_s) = 0 for ξ_s ∈ H¹₀(3-strips), 2L < log 4 | **PASS**. τ_{log 2} carries each 3-strip into the bulk (I₁ ↦ −I₃), never onto a 3-strip | PROVED |
+| 3b | the 2-line couples the 3-ramps only to the bulk | **PASS** as an identity (the interface form is exact) | PROVED |
+| 3c | "at order 1/ℓ₃ the {2, 3} edge form is the 3-line block alone" | **FIX (wording)**. The derivative term (2β₋/ℓ₃)[ξ(L + a − b) − ξ(a − L)] = σ(2v₁/ℓ₃)(v₂ − v₃) is O(\|β\|‖ξ′‖_∞). Relative to the H-energy it is the same order 1/ℓ₃ whenever ξ has an ℓ₃-scale kink on the central piece. The joint block is then σ(1/ℓ₃)[[2c₃, 2c₂], [2c₂, 0]], with eigenvalues per unit energy σ(+0.9009, −0.2666). Suggested wording: "at order 1/ℓ₃ in ‖ξ′‖_∞ (bounded bulk slope)". Note too that ‖ξ′‖_∞ is not finite on all of H¹ | PROVED |
+| 4a | only P survives (citing P.14) | **PASS** (P.14 Prop on uniqueness of P and no common J_p) | PROVED |
+| 4b | the {2, 3} odd-entry prediction stays CONJECTURE | **PASS**. Add: the odd payer must cover the joint per-energy charge 0.9009 (not c₃ = 0.6343). It sits at frequency ~π/ℓ₃, i.e. high band | CONJECTURE (REMARK on the size) |
+| 5a | −log 2·Σ_{m≠0} r^{\|m\|}e^{imθ} = −log 2·(P_r(θ) − 1), r = 2^{−1/2} | **PASS**. Σ_{m∈ℤ} r^{\|m\|}e^{imθ} = (1 − r²)/(1 − 2r cos θ + r²), the unnormalized Poisson kernel. The coefficients log 2·r^{\|m\|} = Λ(2^m)2^{−\|m\|/2} are the m-modes of (P14.1) | PROVED |
+| 5b | KMS inverse tridiagonal, symbol ∝ \|1 − re^{iθ}\|² | **PASS**. KMS_n^{−1} = (1 − r²)^{−1}·tridiag(−r; 1, 1 + r², …, 1 + r², 1), with interior symbol 1 − 2r cos θ + r² = \|1 − re^{iθ}\|² (classical) | PROVED |
+| 5c | 2×2 section − I = rσ_x; −log 2·r = −c₂; det KMS₂ = 1 − r² = 1 − 1/p | **PASS** (p = 2: 1 − r² = ½). REMARK: with r_p = p^{−1/2} this is the local factor ζ_p(1)^{−1}. That is an identity only, and no Tate reflection follows (P.14.4). The "edge coefficient" match is at the multiplier level; the ramp factor (1/ℓ − ℓ/24) and the sign of the Q_L contribution come from the ramp form (P.14.3), not from the multiplier | PROVED |
+| 5d | at log 4 the three-site chain is the 3×3 KMS section, with c₄ = log 2·r² | **PASS**. The corner entry r² gives log 2·r² = (log 2)/2 = c₄ = Λ(4)/√4, the m = 2 mode. The edge ℓ₄ = 2L − log 4 agrees with P.15.1 (L4) | PROVED |
+
+**Summary.** 9 PASS. 2 FIX, both wording only: the rounding in item 2, and the norm qualifier in 3c. Neither changes a theorem of N.14. The interface form, S1, (3c), (S), (L4), (ζ) and the identities in item 5 are confirmed. R1–R6 as in P.15.4: every check here uses only the {2, 3} line weights and the strip geometry. F_θ, DH, H₋ₜ and DMV fail the identities that use log 2/log 3 ∉ ℚ and Λ(4) = log 2, and G_θ′ passes. RH OPEN.
 
 ## References (added to ARP G.7)
 - Knapp, A. W. & Stein, E. M., "Intertwining operators for semisimple groups", Ann. of Math. 93 (1971) 489–578.
