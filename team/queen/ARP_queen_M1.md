@@ -135,6 +135,7 @@ B_Λ, L²[−Λ,Λ]-orthonormal.
   - "RH-neutral" means (H-κ) involves only ζ on the line, and no implication to or from RH is known. It does not mean independent of RH.
   - κ_Λ is a **minimum over a family** of weights |Mφ|² (the whole of B_{Λ,0}), not a mean value against one fixed weight. Fixed-weight or mollified second-moment asymptotics (Balasubramanian–Conrey–Heath-Brown type) therefore do not bound it directly. They give averages, and the minimizing profile can adapt to ζ.
   - The minimizer can concentrate its Mellin mass near critical zeros. So a lower bound on 1/κ_Λ most likely needs zero-spacing or local-density information on the line, at resolution ~1/log Λ near height ~Λ². Zero-free-region information off the line does not help here.
+  - *Follow-up (Queen, ARP_queen_Hkappa.md):* unconditionally κ_Λ ≤ Λ^B (two-constants + Kovrijkine), with no zero-spacing input; the local information needed is thickness of a superlevel set of |ζ| on the line. Λ^{o(1)} reduces to (Z-avg) there.
 
 **Theorem M1.C (PROVED-conditional on (S2), (S3); κ_Λ always finite).**
   ℓ_Λ ≤ 2 κ_Λ ( ε_Λ / Λ + 4 ζ(1+σ)² ρ_Λ ).
