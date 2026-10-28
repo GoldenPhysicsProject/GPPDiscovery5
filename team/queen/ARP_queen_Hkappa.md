@@ -655,13 +655,13 @@ Against GPPDiscovery5 main `9cdc498`, which contains 9affd52 (Part III audited S
 Analytic only, **no numerics.** RH is OPEN. (T3a*) and the tail-amplitude bounds belong to Spectrum and are not done here.
 
 **Part IV headline.**
-1. **DMS with a polynomial condition number is fatal, as a method (PROVED, method statement).**
+1. **The DMS bound gives nothing here (PROVED: the bound, with r ≥ Λ^B, has decay length ≫ diam B). That *no* inverse-closedness theorem can beat a polynomial condition number is a REMARK/OPINION.** (Folded in, Part V, per audit S103h(4).)
    - *(Grok audit S103h(4): what is PROVED is that the DMS **bound**, with r ≥ Λ^B, gives a decay length ≫ diam B, so the DMS route yields nothing; attainment for Toeplitz models shows the bound cannot be improved in general. It does not show that G^{−1} lacks decay. "No inverse-closedness theorem beats a polynomial condition number" is a REMARK/OPINION, not a theorem.)*
    - DMS decay length is ≍ √cond × bandwidth ≥ Λ^{B/2}. That exceeds the u-diameter of B (≍ log Λ) and amplifies s-feedback by ≍ Λ^{B/2}.
-   - At best this improves "B < 2" to "B < 4" (HEURISTIC). Jaffard, Baskakov and Gröchenig–Leinert keep the decay *exponent*, but their constants grow polynomially in cond. No gain.
+   - At best this improves "B < 2" to "B < 4" (HEURISTIC). Jaffard, Baskakov and Gröchenig–Leinert keep the decay *exponent*. Jaffard is qualitative in ‖A^{−1}‖. Gröchenig–Klotz I gives quasi-polynomial control exp(γ ln²κ), and Gröchenig–Klotz II (Math. Nachr. 2014) gives polynomial control. No gain.
 2. **The right reference is not "mean·G₀".** It is G_m, the compression of the *varying* mean multiplier m(s) = log(|s|/2π) + 2γ (Ingham).
    - **cond(G_m) ≤ C log Λ (PROVED).** All ill-conditioning lives in G_osc := G − G_m.
-   - A global Neumann series in G_m^{−1}G_osc **diverges** (PROVED (sketch): m_Λ ≤ C/log²Λ).
+   - A global Neumann series in G_m^{−1}G_osc has **no Λ-uniform geometric rate** (PROVED (sketch): m_Λ ≤ C/log²Λ gives norm ≥ 1 − O(1/log²Λ). Strict divergence is not shown.)
 3. **s-locality comes for free; DMS is not needed in s.** |ζ|² is a multiplier in s, so G_osc couples Mellin bands only through packet tails, which are archimedean.
    - A two-block Schur argument with a buffer (H.15.4) replaces DMS in s. It uses the *local* condition number of the low band, which is Λ^{−δ(ε)} by H.1′ at heights ≤ Λ^{2ε} (PROVED (sketch)), not the global κ.
    - Result: **(PD) pointwise is PROVED-conditional** on (A_β) (GAP), (MB) (archimedean; Spectrum), (T3a*) (Spectrum), and the local H.1′.
@@ -674,17 +674,17 @@ Analytic only, **no numerics.** RH is OPEN. (T3a*) and the tail-amplitude bounds
 ## H.15.0 Prior art (bibliographic data from memory; **not re-verified this session**; statements used only qualitatively unless marked)
 - *(Grok audit S103h(4): citations checked by web lookup.)* Bibliographic data are correct for Demko–Moss–Smith (Math. Comp. 43 (1984), no. 168, 491–499; the abstract confirms decay bounded via the spectrum of A for positive-definite A, and that the bound can be attained), Jaffard (Ann. IHP C 7 (1990), no. 5, 461–476; both the exponential and the polynomial classes are inverse-closed), Baskakov (Funkts. Anal. Prilozh. 24 (1990), no. 3, 64–65; Funct. Anal. Appl. 24 (1990) 222–224) and Gröchenig–Leinert (Trans. AMS 358 (2006), no. 6, 2695–2711). Corrections: (a) the DMS rate convention is λ = q^{2/m} for full bandwidth m (conventions differ); "decay length ≍ m√r" holds up to the constant. (b) Gröchenig–Klotz I (J. London Math. Soc. 88 (2013) 49–64) gives ‖a^{−1}‖_𝒜 ≲ exp(γ ln²κ(a)), which is *quasi*-polynomial in the condition number, not polynomial. The explicit polynomial-decay norm control (a quantitative Jaffard, based on Baskakov) is Gröchenig–Klotz II, Math. Nachr. (2014). Both corrections make the cond-dependence at least as bad as Queen assumes, so the "no gain" conclusion stands. (c) Jaffard's paper is qualitative about constants; the quantitative dependence on ‖A^{−1}‖ is Gröchenig–Klotz.
 - **Demko–Moss–Smith**, "Decay rates for inverses of band matrices", Math. Comp. 43 (1984) 491–499.
-  - Statement: A Hermitian positive definite and m-banded, with σ(A) ⊂ [a, b] and r := b/a. Then |(A^{−1})_{jk}| ≤ C q^{|j−k|/m}, with q = (√r − 1)/(√r + 1) and C = max{a^{−1}, (1 + √r)²/(2b)}.
+  - Statement: A Hermitian positive definite and m-banded, with σ(A) ⊂ [a, b] and r := b/a. Then |(A^{−1})_{jk}| ≤ C q^{|j−k|/m}, with q = (√r − 1)/(√r + 1) and C = max{a^{−1}, (1 + √r)²/(2b)}. Conventions differ: for full bandwidth m the rate is λ = q^{2/m}. The decay length ≍ m√r holds up to a constant.
   - So −log q ≈ 2/√r: the **decay length is ≍ m√r**.
   - It is sharp in order, e.g. for shifted discrete Laplacians (tridiagonal Toeplitz, whose inverse decays exactly geometrically with ratio q).
 - **Jaffard** (Ann. IHP Anal. Non Linéaire 7 (1990) 461–476): the classes |A_{jk}| ≤ C(1 + |j−k|)^{−s} and C e^{−γ|j−k|} are inverse-closed. The polynomial class keeps s; the exponential class degrades γ. Constants depend on ‖A‖ and ‖A^{−1}‖.
 - **Baskakov** (Funct. Anal. Appl. 24 (1990) 222–224): Wiener-type inverse-closedness for operators with off-diagonal decay.
 - **Gröchenig–Leinert** (Trans. AMS 358 (2006) 2695–2711): symmetry and inverse-closedness for subexponential weights.
-- **Gröchenig–Klotz** (norm-controlled inversion, J. London Math. Soc. 2013): the off-diagonal constants of A^{−1} are polynomial in ‖A^{−1}‖, with an exponent growing with s.
+- **Gröchenig–Klotz I** (J. London Math. Soc. 88 (2013) 49–64): ‖a^{−1}‖ ≲ exp(γ ln²κ), which is quasi-polynomial. **Gröchenig–Klotz II** (Math. Nachr. 2014): polynomial control for polynomial-decay classes (a quantitative Jaffard). Jaffard (1990) itself is not quantitative in ‖A^{−1}‖.
 - **Consequence for us (PROVED, as a method statement).** With cond ≍ κ_Λ ≤ Λ^B:
   - DMS's decay length is Λ^{B/2} bandwidths.
   - The polynomial-class constants are Λ^{O(Bs)}, which cancels the decay (1 + d)^{−s} over the available distances d ≤ Λ² log Λ unless B ≪ 1.
-  - **No inverse-closedness theorem beats a polynomial condition number.** One must avoid inverting where the conditioning is bad.
+  - REMARK/OPINION: no known inverse-closedness theorem beats a polynomial condition number. What is PROVED is only that the DMS bound gives nothing here. One should avoid inverting where the conditioning is bad.
 - **Mean values.**
   - Ingham 1926 / Titchmarsh Thm 7.4: ∫_0^T|ζ(½+it)|²dt = T log(T/2π) + (2γ − 1)T + E(T), with E(T) = O(T^{1/2} log T). Later improvements: Balasubramanian, Huxley.
   - Montgomery–Vaughan mean value theorem (J. London Math. Soc. (2) 8 (1974) 73–82).
@@ -709,7 +709,7 @@ On B := B_{Λ,0} (L²-inner product ⟨·,·⟩; dim N ≈ 2Λ²), define G(φ, 
   - Test vector: φ(x) := x^{−1/2}F(log x)x^{iγ₁}, with F smooth, supported in [−log Λ + A, log Λ − A], at scale ≍ log Λ.
   - Its local frequency is ≤ γ₁/x ≤ Λ(1 − δ) on the support, so φ lies in B up to a plateau-small error (KRD Cor 3/4 via Spectrum §5).
   - Mφ is a bump of width ≍ 1/log Λ at γ₁ = 14.13…, where ζ has a simple zero. So ∫|ζ|²|Mφ|²/∫|Mφ|² ≍ |ζ′(ρ₁)|²/log²Λ.
-  - Hence m_Λ ≤ C/log²Λ, and ‖G_m^{−1/2}G_osc G_m^{−1/2}‖ ≥ 1 − O(1/log²Λ). The Neumann series in G_m^{−1}G_osc does not converge geometrically on B, so a perturbative expansion around G_m is unavailable globally.
+  - Hence m_Λ ≤ C/log²Λ, and ‖G_m^{−1/2}G_osc G_m^{−1/2}‖ ≥ 1 − O(1/log²Λ). The Neumann series in G_m^{−1}G_osc therefore has no Λ-uniform geometric rate on B, so a perturbative expansion around G_m is unavailable globally. Strict divergence would need the upper side and is not claimed.
 - **The exact ℤ-structure of G_osc (PROVED, formal; with regularization by the constraints).**
   - For φ, χ ∈ B, ⟨Eφ, Eχ⟩ = Σ_{m,n≥1} c·n^{−1}∫_0^∞ φ(mx/n)\bar χ(x)dx. The diagonal m = n is regularized: it diverges termwise and converges only with φ(0) = φ̂(0) = 0, via Poisson (H.12).
   - In u, dilation by m/n is the shift u ↦ u + log(m/n), with weight (mn)^{−1/2}.
@@ -787,6 +787,12 @@ so (PD) pointwise holds with loss Λ^{β+o(1)}. If β < 2, H.13's low-band term 
 - **Low-band source term.** y_l = P_l(|ζ|² Mρ) has ‖y_l‖² ≤ Λ^{O(ε)}∫_{|s|≤2S₂}|Mρ|² + tails. Summed over the ONB (e_i), this is ≤ Λ^{O(ε)}∫_{|s|≤2S₂}𝒟_rem ≤ Λ^{O(ε)} r_K Λ^{−2} by (T3a*). Also ‖y_h‖² ≤ ‖G_RR‖ ≤ C log Λ.
 - **Feedback.** So Σ_i‖(Xe_i)_l‖² ≤ Λ^{O(δ(ε))}(r_K Λ^{−2} + r_K Λ^{−4−δ} log Λ).
 - The high block's contribution to M(·)(s) at |s| ≤ S₁ is ≤ (MB)(a) × ‖(Xe_i)_h‖² ≤ Λ^{−B−2−δ}·κ C log Λ ≤ Λ^{−2−δ/2} per i.
+- **Pointwise from integral (local Plancherel–Pólya step; folded in per S103h(4)).** (MB)(a) bounds only ∫_{|s′|≤S₁}|Mχ|² for χ ∈ k_h. To get the value at |s| ≤ S₁/2, write Mχ(s) = ⟨χ, v_s⟩ = (1/π)∫ Mχ(s′)\overline{K_B(s, s′)} ds′, with K_B(s,·) = Mv_s the Mellin reproducing kernel of B. Split at |s′| = S₁:
+  |Mχ(s)|² ≤ (2/π²)·π K_B(s,s)·∫_{|s′|≤S₁}|Mχ|² + (2/π²)‖Mχ‖²∫_{|s′|>S₁}|K_B(s,s′)|²ds′.
+  - K_B(s,s) = sup_B|Mφ(s)|²/‖φ‖² ≤ C log Λ (Christoffel bound below).
+  - Kernel tail **(MB)(c)** (archimedean; Spectrum): sup_{|s|≤S₁/2}∫_{|s′|>S₁}|K_B(s,s′)|² ≤ Λ^{−B−4−δ}.
+  - So |Mχ(s)|² ≤ C log Λ·Λ^{−B−2−δ}‖χ‖² + Λ^{−B−4−δ}‖χ‖², which is what the next line uses. Plancherel–Pólya proper (∫|f(x+iy)|² ≤ e^{2σ|y|}∫|f|²) is global, so the local step needs the kernel tail (MB)(c); subharmonicity alone does not localize.
+  - The low-band theorem is therefore stated for |s| ≤ S₁/2.
 - Finally |M(Xe_i)(s)|² ≤ C log Λ·(low-band norm²), by the Christoffel bound sup_{φ∈B}|Mφ(s)|²/‖φ‖² ≤ C log Λ. *Proof of that bound:* φ(0) = 0 and |φ′| ≤ CΛ^{3/2}‖φ‖ give ∫_0^{Λ^{−3}}|φ|x^{−1/2} ≪ ‖φ‖, and Cauchy–Schwarz on [Λ^{−3}, Λ] gives ≤ ‖φ‖(4 log Λ)^{1/2}.
 - Combine with ‖S^{−1}‖ ≤ Λ^{β}. ∎
 
@@ -835,9 +841,9 @@ R-line H.15: R1 Λ-uniform, no L | R2 the Euler product only via mean values (In
 
 | Claim | Label |
 |---|---|
-| DMS / Jaffard / Baskakov / G–L with cond ≍ Λ^B: decay length Λ^{B/2} or poly(cond) constants; no gain | PROVED (method statement; prior-art details from memory, not re-verified) |
+| The DMS bound with cond ≍ Λ^B: decay length Λ^{B/2} ≫ diam B, so it gives nothing | PROVED (about the bound). "No inverse-closedness theorem beats poly cond": REMARK/OPINION. Citations: G–K I is quasi-polynomial, G–K II polynomial; DMS λ = q^{2/m} |
 | Lemma H.15.1 cond(G_m) ≤ C log Λ, with m(s) = log((|s|+2)/2π) + 2γ (Ingham) | PROVED |
-| m_Λ ≤ C/log²Λ; global Neumann in G_m^{−1}G_osc fails | PROVED (sketch) | *(Grok audit S103h(4): the test vector shows ‖G_m^{−1/2}G_oscG_m^{−1/2}‖ ≥ 1 − O(1/log²Λ), i.e. no Λ-uniform geometric rate. Strict divergence (norm ≥ 1) would need the upper side, |ζ|² ≫ m on some window, which is plausible but is not shown. "Diverges" in the headline should read "has no uniform rate".)*
+| m_Λ ≤ C/log²Λ; global Neumann in G_m^{−1}G_osc has no uniform geometric rate | PROVED (sketch) | *(Grok audit S103h(4): the test vector shows ‖G_m^{−1/2}G_oscG_m^{−1/2}‖ ≥ 1 − O(1/log²Λ), i.e. no Λ-uniform geometric rate. Strict divergence (norm ≥ 1) would need the upper side, |ζ|² ≫ m on some window, which is plausible but is not shown. "Diverges" in the headline should read "has no uniform rate".)*
 | G_osc s-local; ℤ-shift structure in u with weights (mn)^{−1/2} | PROVED (formal; e^{−|Δu|/2} decay HEURISTIC) |
 | Schur formulas for 𝒟(s) and Σ‖φ_i‖² | PROVED |
 | Lemma H.15.2 spectral splitting (κ multiplies only σ_ρ(τ)) | PROVED |
@@ -853,3 +859,154 @@ R-line H.15: R1 Λ-uniform, no L | R2 the Euler product only via mean values (In
 | Fake-blind (DH, Epstein) ⇒ RH-silent | PROVED (sketch) as a reduction |
 
 Not cited: ArithmeticTemperedPrincipalSeries, rh_iff_weil_pairedForm_nonneg, or any True-placeholder.
+
+---
+
+# Part V (2026-10-28): (A_β) — the direction, an exact dual, and the window route; (LD_γ) — no unconditional source
+
+Against main `0c3a06a`, which contains fbabd66/ecedcce (Part IV audited SOUND). Audit S103h(4) items (1)–(4) are folded into the Part IV text above:
+- (1) the DMS claim is now a REMARK;
+- (2) "no uniform geometric rate" replaces "diverges";
+- (3) the pointwise-from-integral step in Thm H.15 now goes through the B-reproducing kernel, with a kernel-tail input (MB)(c), since Plancherel–Pólya proper is global;
+- (4) citations: G–K I quasi-polynomial, G–K II polynomial, Jaffard qualitative, DMS λ = q^{2/m}.
+
+Analytic only, **no numerics.** RH is OPEN; (T3) is OPEN.
+
+**Part V headline.**
+1. **Direction settled (PROVED).** S^{−1} = (G^{−1})_{RR} exactly, so (A_β) ⇔ sup_{ρ∈R, ‖ρ‖=1} ∫λ^{−1}dμ_ρ(λ) ≤ Λ^{β}, where μ_ρ is ρ's spectral measure for G.
+   - S bounded below needs an **UPPER** bound on R's (1/λ-weighted) overlap with G's near-null spectral subspaces.
+   - A lower bound on overlap with the well-conditioned part is **not** sufficient.
+   - The phrasing "a lower bound on R's overlap with the near-null space" has the inequality reversed. *Polite flag:* I read it as shorthand for "R stays away from the near-null space". The precise form is H.17.1.
+2. **Exact dual (PROVED).** ⟨S^{−1}ρ, ρ⟩ = sup_{ψ∈B} |⟨ψ, ρ⟩|²/G(ψ, ψ). Any lower bound G ≥ c·(weighted L²) on all of B therefore turns into an **inverse-weight** mean over ρ's flat profile.
+   - Balasubramanian–Ramachandra *positive* window means cannot do this by themselves: they bound G only on flat profiles, while ψ = ρ − χ is arbitrary (PROVED, structural).
+   - The needed arithmetic input is a **negative moment of window floors**, (NM).
+3. **Pointwise small-value sets are the wrong object (PROVED (sketch)).** The pointwise lower tail is ≫ η·T^{5/6−ε} (zeros), never super-polynomial. This **corrects** Part IV's heuristic for (LD_γ).
+   - Even under the conjectural linear law, the sublevel route caps at β = 2B/3.
+4. **(LD_γ) has no unconditional source (PROVED for the listed tools).**
+   - Radziwiłł–Soundararajan's one-sided method controls the **upper** tail.
+   - Selberg's CLT error terms swamp any polynomial threshold.
+   - H.2′ + Chebyshev gives only an O(1/γ) fraction.
+   - Pointwise far-tail upper bounds would need simple zeros plus Gonek–Hejhal negative moments (CONJECTURE; as far as I know, beyond RH).
+   - (LD_γ) as an E-overlap is not even controlled by small-value measures (H.17.4). Recommendation: **retire (LD_γ)** in favour of the window-level (NM₂) below.
+5. **The new chain (PROVED-conditional).** (T3) ⇐ (WK), (WK₂) [harmonic analysis, archimedean] + (NM₂) [arithmetic; **one** input] + (MB)(a–c), (T3a*), (L), flat density [Spectrum].
+   - Under RH, (NM₂) holds with polylog loss (sketch). That makes it **BARRED** as a source; unconditionally it is OPEN.
+   - The unconditional worst case from H.2′ gives the exponent 16(1/6 + C₁log(e/a)) > 2, which is insufficient.
+
+## H.17.1 The Schur–inverse identity and the direction (PROVED)
+
+Block inversion of G on B = R ⊕ k (L²-orthogonal) gives (G^{−1})_{RR} = S^{−1}, with S = G_RR − G_Rk G_kk^{−1} G_kR. Hence, for ρ ∈ R:
+
+  ⟨S^{−1}ρ, ρ⟩ = ⟨G^{−1}ρ, ρ⟩ = ∫ λ^{−1} dμ_ρ(λ) = sup_{0≠ψ∈B} |⟨ψ, ρ⟩|² / G(ψ, ψ).   (V.1)
+
+The last equality is Cauchy–Schwarz in the G-inner product, with equality at ψ = G^{−1}ρ. It agrees with S(ρ, ρ) = min_χ G(ρ − χ): the minimizer ψ = ρ − χ has ⟨ψ, ρ⟩ = 1 because χ ⊥ ρ.
+
+**Direction.**
+- (A_β) ⇔ ∫λ^{−1}dμ_ρ ≤ Λ^{β} for all unit ρ ∈ R.
+- By the layer-cake formula, ∫λ^{−1}dμ_ρ = ∫_0^∞ μ_ρ([0, τ]) τ^{−2} dτ. So (A_β) follows from **upper** bounds μ_ρ([0, τ]) ≤ τΛ^{β}/(C log Λ) for τ ∈ [κ^{−1}, 1]: R must have *small* overlap with every near-null spectral subspace, in proportion to τ.
+- A *lower* bound on R's near-null overlap would push S *down*.
+- A lower bound on the well-conditioned overlap is not enough. Jensen gives only ∫λ^{−1}dμ ≥ (∫λ dμ)^{−1}. Example: μ = 0.99δ_1 + 0.01δ_{Λ^{−B}} has ∫λ^{−1}dμ ≈ Λ^{B}/100, although 99% of the mass is well-conditioned.
+
+**Two more exact forms (PROVED).**
+- **R̃ = G^{−1}R.** Indeed φ ∈ R̃ ⇔ G(φ, k) = 0 for all kept k ⇔ P_k Gφ = 0 ⇔ Gφ ∈ R. With E-ONB φ_i = G^{−1}S^{1/2}e_i:
+  - 𝒟(s) = ‖S^{1/2} P_R G^{−1} v_s‖²;
+  - Σ_i‖φ_i‖² = Tr(S·(G^{−2})_{RR}) = Tr G^{−1} − Tr G_kk^{−1} ≤ Σ_{j≤dim R} λ_j(G)^{−1} (Cauchy interlacing).
+- **Upper side is free.** ‖S‖ ≤ ‖G_RR‖ ≤ Tr G_RR = (2/π)∫|ζ|²𝒟_rem ≤ C r_K log Λ, using Spectrum's flat density 𝒟_rem ≤ C r_K/Λ² on |s| ≤ 2πΛ² plus Hardy–Littlewood/Ingham. This is PROVED-conditional on the flat density, which is archimedean.
+- **Integrated (PD) from one spectral statement.** Σ_i‖φ_i‖² ≤ C r_K log Λ·‖G^{−1}P_R‖²_HS. So integrated (PD) ⇐
+  **(IM₂)**: Σ_i ∫λ^{−2}dμ_{e_i} = ‖G^{−1}P_R‖²_HS ≤ Λ^{2−δ}/(r_K(log Λ)^{O(1)}).
+  - (IM₂) ⇒ (A_β) with β = 1 − δ/2 + o(1), since (∫λ^{−1}dμ_ρ)² ≤ ∫λ^{−2}dμ_ρ ≤ ‖G^{−1}P_R‖²_HS.
+  - So **(IM₂) alone replaces (A_β) + (LD_γ)** in Cor H.15 (both pointwise and integrated). PROVED.
+
+## H.17.2 The pointwise-sublevel route and its cap (PROVED; consequence PROVED-conditional)
+
+**Lemma H.17.2.** For unit ρ ∈ B, τ > 0 and η > 0:
+
+  μ_ρ([0, τ]) = ‖P^G_{<τ}ρ‖² ≤ τ/η² + (2/π)∫_{|ζ(½+is)|<η} |Mρ(s)|² ds.
+
+*Proof.* ‖P_{<τ}ρ‖ = sup|⟨ν, ρ⟩| over unit ν ∈ ran P_{<τ}, and each such ν has G(ν, ν) < τ, so ∫_{|ζ|≥η}|Mν|² < πτ/(2η²). Split ⟨ν, ρ⟩ = (1/π)∫Mν\bar{Mρ} at the level η, apply Cauchy–Schwarz on each piece (∫|Mν|² = π), and square. ∎
+
+**Cap.** Suppose the pointwise *linear law* holds: W_ρ(η) := (2/π)∫_{|ζ|<η}|Mρ|² ≤ Cη(log Λ)^{A} for flat ρ. Optimizing η = τ^{1/3} in the layer-cake integral from τ = κ^{−1} gives ∫λ^{−1}dμ_ρ ≤ Λ^{2B/3+o(1)}. So this route gives β < 2 only if B < 3.
+- **The cap is intrinsic.** The pointwise lower tail is at least linear in η: near a simple zero, |ζ(½+it)| < η on a t-interval of length ≥ 2η/sup|ζ′|. With a positive proportion of simple zeros (Conrey) and ζ′ ≪ t^{1/6+ε}, meas{t ≤ T : |ζ(½+it)| < η} ≫ η T^{5/6−ε}. This is PROVED (sketch).
+- So **pointwise far-tail statements are never super-polynomially small**. *This corrects Part IV's H.15.3 heuristic* ("super-polynomially rare"), which is valid only for **window-averaged** quantities (H.17.3).
+
+## H.17.3 The window route: (WK) + (NM) ⇒ (A_β); (WK₂) + (NM₂) ⇒ (IM₂)
+
+**Scale.** At heights s ≍ θΛ², B's u-extent is L(s) = log(2π/θ) = O(1), so B-profiles have s-resolution ≍ 1 (H.1b). A unit window there holds ≍ (log Λ)/π zeros (spacing 2π/log T, T ≍ Λ²). **B cannot resolve individual zeros at heights ≍ Λ²; it sees only unit-window structure.** This is where the lead's "spread over ~log Λ spacings" enters.
+
+**Window floors.** For a window W of length a ≍ 1, let η_W be the largest η with |{t ∈ W : |ζ(½+it)| ≥ η}| ≥ |W|/2. Set ω(s) := η_{W(s)}².
+
+**(WK), weighted Kovrijkine (GAP; harmonic analysis; archimedean, fake-blind).**
+- Statement: G(ψ, ψ) ≥ c_W ∫ω|Mψ|² for all ψ ∈ B, with c_W ≥ Λ^{−o(1)}, or with an explicit small power.
+- For constant ω this is Kovrijkine with factor Λ^{O(a)} (H.1). The difficulty is that ω varies between windows, so ψ's Kovrijkine "bad intervals" need weighted control.
+- **(WK₂)**, the L²-version needed for second moments: ‖Gh‖ ≥ c_W‖P_B M_ω h‖.
+
+**Lemma H.17.3 (dual window bound; PROVED-conditional on (WK)).** By (V.1),
+
+  ⟨S^{−1}ρ, ρ⟩ ≤ sup_ψ |(1/π)∫Mψ\bar{Mρ}|²/(c_W∫ω|Mψ|²) ≤ (π²c_W)^{−1} ∫ ω^{−1}|Mρ|²,
+
+so sup_{unit ρ∈R}⟨S^{−1}ρ, ρ⟩ ≤ (π²c_W)^{−1}∫ω^{−1}𝒟_rem ≤ C r_K (π²c_W)^{−1} Λ^{−2}∫_{|s|≤2πΛ²}ω^{−1} ds + tails.
+
+**(A_β) ⇐ (WK) + (NM₁,β):** (1/Λ²)∫_{|s|≤2πΛ²} η_{W(s)}^{−2} ds ≤ c_W Λ^{β}/(C r_K). PROVED-conditional.
+- Similarly, (IM₂) ⇐ (WK₂) + (NM₂): (1/Λ²)∫ η_{W(s)}^{−4} ds ≤ Λ^{2−δ}/(r_K(log Λ)^{O(1)}). This is PROVED-conditional, plus the HEURISTIC replacement of P_B M_ω P_B by M_ω on flat profiles.
+- (NM₂) ⇒ (NM₁) with β = 1 − δ/2 by Cauchy–Schwarz. **One arithmetic input, (NM₂).**
+- The (T3) room is the full Λ². That is why a polynomial (not polylog) negative-moment bound suffices.
+
+**Why B–R positive windows cannot replace (NM) (PROVED, structural).**
+- S(ρ, ρ) = G(ψ, ψ) with ψ = ρ − χ ranging over all of B, including profiles concentrated where |ζ| is small.
+- B–R (Prop H.4) gives ∫|ζ|²w ≥ cθ log H∫w only for θ-flat w.
+- Under duality the flat object is ρ, and it appears with the **inverse** weight ω^{−1}. So B–R controls ‖S‖ ≤ G_RR (H.17.1) but not S^{−1}.
+
+**Status of (NM₂).**
+- **Unconditional worst case (PROVED).** On every window of length a: ∫_W log⁻|ζ| = ∫_W log⁺|ζ| − ∫_W log|ζ| ≤ a log T(1/6 + ε + C₁ log(e/a)), by ζ ≪ t^{1/6+ε} and H.2′. Chebyshev then gives η_W ≥ T^{−2(1/6+ε+C₁log(e/a))}, so η_W^{−4} ≤ Λ^{16(1/6+C₁log(e/a))+o(1)}. The exponent is ≥ 8/3 > 2, so this is **insufficient** whatever C₁ is. Subconvexity (Bourgain 13/84 in place of 1/6) does not change the conclusion.
+- **Under RH (sketch; BARRED as a source).**
+  - Smooth the window log-average with a band-limited kernel at unit scale. Selberg/Guinand–Weil give: window average of log|ζ| = short prime sum (primes ≤ e^{O(1)}) + O(1) + the effect of moving zeros into the window. On RH the last term is bounded by O(1)·(off-line displacement) = O(1).
+  - Hence window log-averages have bounded-variance Gaussian-type lower tails, η_W^{−4} has polylog mean, and (NM₂) holds with exponent o(1).
+  - **RH ⇒ (NM₂) (sketch)**, so (NM₂) must not be supplied this way on any route to RH (circularity flag).
+- **Unconditional distributional (HEURISTIC sketch; constants untracked).**
+  - Selberg's density N(σ, T) ≪ T^{1−(σ−½)/4} log T (Euler product, R2) makes windows within O(1) of a zero with β − ½ ≥ d₀ a fraction ≪ Λ^{−d₀/2}log Λ.
+  - Off those windows, the zeros with β − ½ < d₀ move the smoothed window average by O(d₀ log Λ), so η_W ≥ Λ^{−C′d₀}.
+  - This gives (NM₂) with exponent min_{d₀} max(4C′d₀, β_worst − d₀/2) — a strict improvement over the worst case, but β < 2 depends on explicit constants (C′, the density exponent ¼ or improvements), which are untracked. **OPEN.**
+  - **Note on fake-blindness:** this *proof* is not DH-transferable, since DH has ≫ T zeros with β > ½ + d₀ for fixed small d₀ (Davenport–Heilbronn; Voronin). That is the right place for arithmetic to enter, and it is not circular because it is unconditional.
+
+## H.17.4 (LD_γ): is there an unconditional source? (answers; labels as marked)
+
+1. **Radziwiłł–Soundararajan (citations checked by web lookup).**
+   - The simple proof of Selberg's CLT is in *L'Enseignement Math.* 63 (2017) 1–19, online 2018. It is two-sided Gaussian (mean 0, variance ½ log log T) at the scale of the standard deviation.
+   - The one-sided method is in *Invent. Math.* 202 (2015) 1029–1068, on quadratic twists of elliptic curves: "a little more than the k-th moment ⇒ sharp upper bounds for smaller moments, and a one-sided CLT". It controls the **upper tail** (frequency of *large* log L). *Polite flag:* the Invent. Math. paper is the twists one; the ζ CLT is in L'Enseignement.
+   - **Neither controls the lower tail at a far threshold.** The lower tail needs non-vanishing or mollifier information. PROVED (as a reading of the stated theorems).
+2. **Selberg/Tsang unconditional CLT.** The error terms in the measure statements are ≍ (log log log T)²/√(log log T), which is ≫ Λ^{−γ}. Statements at log|ζ| ≤ −γ log Λ (≍ log T, not ≍ √(log log T)) are invisible to them. PROVED (error term dominates).
+3. **H.2′ + Chebyshev (unconditional, fake-blind).** These give |{t ∈ W : log|ζ| ≤ −γ log Λ}| ≤ (|W|/γ)·2(1/6 + ε + C₁ log(e/a)). That is a constant fraction, not polynomially small. **PROVED that this does not give (LD_γ).**
+4. **Pointwise truth.** By H.17.2, meas{|ζ| < Λ^{−γ}} ≫ Λ^{−γ}T^{5/6−ε} (sketch), and conjecturally ≍ Λ^{−γ}T·(6/π³) (simple zeros + Gonek's J_{−1}). A matching upper bound needs simple zeros plus Gonek–Hejhal negative moments of ζ′(ρ): CONJECTURE. As far as I know, not implied by RH alone (OPINION). A route through it is **not viable**.
+5. **Structural (PROVED).** (LD_γ) is an *E-overlap*, σ_ρ(τ) = sup_{ν∈k_{<τ}}|G(ρ, ν)|²/G(ν, ν). Splitting G(ρ, ν) at a ζ-level gives no gain, because the normalization by G(ν, ν) cancels it. So **no small-value measure statement alone yields (LD_γ).**
+6. **Verdict.** No unconditional source for (LD_γ). Retire it: H.17.1 replaces (A_β) + (LD_γ) by (IM₂), and H.17.3 reduces (IM₂) to the window-level (NM₂) plus the harmonic-analysis inputs (WK), (WK₂).
+
+## H.17.5 Fake-blindness and circularity (R5)
+- H.17.1 and H.17.2 are linear algebra plus Cauchy–Schwarz. They are fake-blind.
+- (WK), (WK₂), (MB) and the flat density are archimedean (fake-blind).
+- (NM₂) is a statement about window-level small values on the line. For DH it is plausible (HEURISTIC; small values are, if anything, rarer for linear combinations, per Bombieri–Hejhal), so the *statement* need not separate ζ from DH. The only unconditional *proof* idea (H.17.3, density) uses the Euler product.
+- Circularity: RH ⇒ (NM₂) (sketch) ⇒ BARRED as a source. The pointwise linear law is a CONJECTURE beyond RH.
+- **(T3) OPEN. RH OPEN.**
+
+R-line H.17: R1 Λ-uniform | R2 the Euler product enters only via the zero-density step (unconditional sketch) | R3 n/a | R4 n/a | R5 as above | R6 the identities (V.1), R̃ = G^{−1}R and the interlacing are exact.
+
+## H.18 Part V summary table
+
+| Claim | Label |
+|---|---|
+| Part IV fold-ins (1)–(4) (DMS REMARK; "no uniform rate"; kernel-tail Plancherel–Pólya step with (MB)(c); citations) | done |
+| S^{−1} = (G^{−1})_{RR}; (V.1) dual; (A_β) ⇔ sup∫λ^{−1}dμ_ρ ≤ Λ^β; direction = UPPER bound on near-null overlap | PROVED; polite flag on the lead's phrasing |
+| R̃ = G^{−1}R; 𝒟(s) = ‖S^{1/2}P_RG^{−1}v_s‖²; Σ‖φ_i‖² = Tr G^{−1} − Tr G_kk^{−1} ≤ Σ_{j≤dim R}λ_j^{−1} | PROVED |
+| ‖S‖ ≤ C r_K log Λ | PROVED-conditional (flat density, Spectrum) |
+| (IM₂) ⇒ integrated (PD) and (A_{1−δ/2}); replaces (A_β) + (LD_γ) | PROVED |
+| Lemma H.17.2 spectral sublevel bound | PROVED |
+| Pointwise sublevel route caps at β = 2B/3 even under the linear law | PROVED-conditional (linear law CONJECTURE) |
+| Pointwise lower tail ≫ ηT^{5/6−ε}; corrects Part IV's "super-polynomial" heuristic | PROVED (sketch) |
+| B–R positive windows cannot bound S^{−1} | PROVED (structural) |
+| Lemma H.17.3: (WK) + (NM₁) ⇒ (A_β); (WK₂) + (NM₂) ⇒ (IM₂) | PROVED-conditional (+ HEURISTIC M_ω step for (IM₂)) |
+| (WK), (WK₂) weighted Kovrijkine | GAP (harmonic analysis; archimedean) |
+| (NM₂) window-floor negative 4th moment ≤ Λ^{2−δ}/r_K | **GAP (Queen, arithmetic)**; worst case unconditional exponent ≥ 8/3 (PROVED, insufficient); RH ⇒ (NM₂) (sketch; BARRED); density route HEURISTIC/OPEN |
+| R–S: one-sided method controls the upper tail; CLT range ≍ √(log log T) | PROVED (reading; citations web-checked) |
+| (LD_γ): no unconditional source; H.2′ + Chebyshev gives only an O(1/γ) fraction; E-overlap not controlled by small-value measures | PROVED (for the listed tools); retire (LD_γ) |
+| New chain: (T3) ⇐ (WK), (WK₂) + (NM₂) + (MB)(a–c) + flat density + (T3a*) + (L) | PROVED-conditional; **(T3) OPEN** |
+
+Not cited: ArithmeticTemperedPrincipalSeries, rh_iff_weil_pairedForm_nonneg, or any True-placeholder.
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
