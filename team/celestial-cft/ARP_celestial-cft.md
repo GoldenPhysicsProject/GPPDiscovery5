@@ -735,7 +735,7 @@ as soon as these satisfy μ_hi > c₂ and μ_lo > 0.
 
 **Why the blind frequencies are protected only by uncertainty (PROVED, from (3c)).** For a symmetric edge pair the Fourier density is (¼ + t²)|φ̂|²[Ω(t)(1 + cos ta) − c₂]. At t_j = (2j + 1)π/a the Ω-term vanishes identically, whatever Ω is, and the density is −c₂. So no multiplier estimate can protect t_j pointwise. Only the spreading of φ̂ helps: for φ supported on a strip of length ℓ, |φ̂|² cannot concentrate within o(1/ℓ) of t_j (Landau–Pollak–Slepian: the fraction of energy in a band of width W is ≤ λ₀(c), c = Wℓ/2, λ₀(c) ≈ 2c/π for small c). The first blind frequency t₀ = π/a ≈ 4.53 lies in the low band, where Ω < 0. That is why μ_lo must come from σ_S (trace side) and not from Ω.
 
-**Ω facts used (PROVED; decimals Arb-certified in arp_c/c13b_lemma_certify.out unless noted).** Ω is even and increasing in |t| (N.13.2 (Ω2)). Ω(0) = ψ(¼) − log π = −5.3721834… Ω(t) = c₂ at some |t| ∈ (10.25, 10.30) and Ω(t) = 2c₂ at some |t| ∈ (16.6, 16.8) (certified sign changes). Ω ≥ c₂ for |t| ≥ 12.8 (analytic, N.13.2 (Ω3)). Ω(λt) − Ω(t) ≤ 4.5 log λ (N.13.2 (Ω4)).
+**Ω facts used (PROVED; decimals Arb-certified in arp_c/c13b_lemma_certify.out unless noted).** Ω is even and increasing in |t| (N.13.2 (Ω2)). Ω(0) = ψ(¼) − log π = −5.3721834… Ω(t) = c₂ at some |t| ∈ (10.25, 10.30) and Ω(t) = 2c₂ at some |t| ∈ (16.6, 16.8) (certified sign changes); exact crossings 10.2615 and 16.7481 (NUMERICAL, Golden Eye mpmath); Stirling thresholds 10.63 and 17.11 (PROVED, not sharp); zero of θ′ at |t| = 6.289836 (NUMERICAL). Ω ≥ c₂ for |t| ≥ 12.8 (analytic, N.13.2 (Ω3)). Ω(λt) − Ω(t) ≤ 4.5 log λ (N.13.2 (Ω4)).
 
 **Classical inequalities used or relevant.** Hardy: ∫_0^∞u′² ≥ ¼∫_0^∞u²/x² for u(0) = 0. Dirichlet Poincaré/Wirtinger on an interval of length ℓ: ‖u‖₂ ≤ (ℓ/π)‖u′‖₂. Bernstein/Nikolskii: sup|f|² ≤ (T/π)‖f‖₂² for f with spectrum in |t| < T (this is (Ω5)). Landau–Pollak–Slepian concentration λ₀(c) and its asymptotics (Landau–Widom 1980). Logvinenko–Sereda / Amrein–Berthier (a function and its Fourier transform cannot both concentrate on sets of finite measure).
 
@@ -759,7 +759,7 @@ Daniel Toupin / Golden Physics Project, with AI assistance from Grok. **RH is OP
 
 **Framing.** Positivity on (½ log 2, ½ log 3] is already **CERTIFIED** (1.42 Arb replay, conditional on Mori Prop 3.1, Lemma 3.2, Thm N; main 992a011). C.14 is about **mechanism**: which step carries positivity across the p = 2 line. The CC §2.2 "log 2.44 cap" is NUMERICAL-indicative, full-space only.
 
-Sources: CCM arXiv:2310.18423 (semilocal X_S, S = {∞, 2}; eq. (47) F_μ𝓔_S f = L_2(½ − is)·F_μw_∞f; Thm 4.6, eq. (58)); §C.13, §C.13.B (this file); **Prime §N.13 at team/prime-number-theory 611e39a, used as stated and not re-derived** (N.13.2 Ω facts, N.13.3 Thm N.13.A, N.13.4 decomposition). Notation is N.13.0 / C.13.B.5: R(ξ) = (1/2π)∫(¼ + t²)Ω|ξ̂|², P := R − Ω(0)‖·‖²_H ≥ 0 (symbol (¼ + t²)(Ω − Ω(0)) ≥ 0 by (Ω2)), P_{<T}, P_{>T} its band pieces, Δ_T := Ω(T) − Ω(0), ν_T(ℓ) := (T/4 + T³/3)ℓ³/π³, ‖φ‖²_H := ‖φ₋‖²_H + ‖φ₊‖²_H.
+Sources: CCM arXiv:2310.18423 (semilocal X_S, S = {∞, 2}; eq. (47) F_μ𝓔_S f = L_2(½ − is)·F_μw_∞f; Thm 4.6, eq. (58)); §C.13, §C.13.B (this file); **Prime §N.13 at team/prime-number-theory 611e39a, used as stated and not re-derived** (N.13.2 Ω facts, N.13.3 Thm N.13.A, N.13.4 decomposition). Decomposition and names follow **ARP G.4h (main 8ecee4f/5354fde)**: (1) strip cone, (2) edge traces (ramps), (3) coupling 2R(ξ_b, ξ_s) = GAP N.G2-bulk (ours), (4) archimedean margin (odd: δ_o⁰, k_∞, B; even: (P), Spectrum's). Principal §P.10: Sonin Λ = 1 is optimal (Λ-track closed), so the frame is built at Λ = 1. Notation is N.13.0 / C.13.B.5: R(ξ) = (1/2π)∫(¼ + t²)Ω|ξ̂|², P := R − Ω(0)‖·‖²_H ≥ 0 (symbol (¼ + t²)(Ω − Ω(0)) ≥ 0 by (Ω2)), P_{<T}, P_{>T} its band pieces, Δ_T := Ω(T) − Ω(0), ν_T(ℓ) := (T/4 + T³/3)ℓ³/π³, ‖φ‖²_H := ‖φ₋‖²_H + ‖φ₊‖²_H.
 
 ### C.14.1 The frame: an explicit D_L carrying −c₂S(V(2) + V(2)*)S (PROVED)
 - **Semilocal multiplier identity.** For 2L < log 4 and ξ ∈ 𝒯_L, h = ξ⋆ξ* is supported in [−2L, 2L], so h(ma) = 0 for |m| ≥ 2. Hence for every real even "completion" p_w(t) = −2c₂cos(at) + Σ_{|m|≥2} w_m e^{imat} (w_{−m} = w̄_m),
@@ -771,7 +771,12 @@ Sources: CCM arXiv:2310.18423 (semilocal X_S, S = {∞, 2}; eq. (47) F_μ𝓔_S 
   > **D_L^{(w)} := Op[(¼ + t²)(σ_S(t) + p_w(t))] + 2ε′(1⁺)(1 − K_L),  Q_L(Qh) = ⟨ξ, D_L^{(w)}ξ⟩ for all ξ ∈ 𝒯_L, every w.**
   (I1) is an identity for every w. The choice of w is the only freedom, and it is not seen by Q_L.
 - **Krein remark.** Existence of *some* D ≥ 0 with these diagonal sums is equivalent to Q_L ≥ 0 (Krein 1940 extension for continuous positive-definite functions on an interval; the distributional version needed here is cited, not verified: CONJECTURE). So the content of the frame is explicitness, not existence.
-- **N.13.4 inside the frame (PROVED, by N.13.4).** On the ramp traces (α₋, α₊) the m = ±1 part of D_L restricts to the rank-two edge matrix −c₂(1/ℓ − ℓ/24)[[0, 1], [1, 0]], with X absorbed by AM–GM. Its eigenvectors are the even (help) and odd (cost) edge pairs.
+- **N.13.4 inside the frame; sign convention resolved (PROVED; Golden Eye G.4h audit point (1)).**
+  - *Computation.* On S₋ put y = x + L ∈ [0, ℓ]; the ramps are ξ_b(x) = α₋y/ℓ and ξ_b(x + a) = α₊(ℓ − y)/ℓ (since x + a = L − ℓ + y ∈ S₊). Then B(ξ_b) = ∫_0^ℓ[−α₋α₊/ℓ² + ¼α₋α₊y(ℓ − y)/ℓ²]dy = **−α₋α₊(1/ℓ − ℓ/24)** (N.13.4, re-checked).
+  - *Contribution to Q_L* (the ramp part of −2c₂B, which is what D_L carries): **+2c₂(1/ℓ − ℓ/24)α₋α₊**, i.e. the edge matrix **+c₂(1/ℓ − ℓ/24)[[0, 1], [1, 0]]** in (α₋, α₊). The text "−c₂(1/ℓ − ℓ/24)[[0,1],[1,0]]" quoted in the steering and in the first C.14 draft is the matrix of **+2c₂B**, not of its contribution to Q_L. It is corrected here, matching main G.4h (5354fde).
+  - *Parity labels refer to ξ under x ↦ −x*, not to J. For ξ of parity σ (ξ(−x) = σξ(x)): α₊ = ξ(L − ℓ) = σξ(−L + ℓ) = σα₋. For x ∈ S₋: ξ(x + a) = σξ(−a − x) = σ(ξ∘J)(x). So the S₊-partner of ξ|S₋ is σ·J(ξ|S₋). J (x ↦ −a − x) maps S₋ onto itself and swaps its two ends −L ↔ −L + ℓ; it does not map S₋ to S₊.
+  - *Result.* **Even ξ (α₋ = α₊ = α): helped by +2c₂α²(1/ℓ − ℓ/24). Odd ξ (α₊ = −α₋): charged exactly 2c₂α²(1/ℓ − ℓ/24)** (≤ 2c₂α²/ℓ; wherever "2c₂α²/ℓ" appears below it is that upper bound). This agrees with (IF) (Q_L = R − 2c₂B), and with N.12.3 (odd harmed, even nodeless helped).
+  - The X-term of N.13.4 is absorbed by AM–GM.
 
 ### C.14.2 Test on (K2), odd (PROVED sufficient criterion; the order in ℓ is zero)
 **Theorem C.14.A.** Let 2L ≤ log 3 and κ^{odd}_L := sup spec(K_L restricted to odd vectors). If for some completion w
@@ -783,10 +788,10 @@ then D_L^{(w)} ≥ 0 on odd vectors, i.e. (K2) holds at L. With Fejér completio
 - **Necessary condition for the symbol route (PROVED).** Integrating p_w + σ_per ≥ 0 (σ_per(t) := inf_k σ_S(t + 2πk/a)) against 1 + cos(at) over one period gives (a/2π)∫_{−π/a}^{π/a}σ_per(t)(1 + cos at)dt ≥ c₂ for the pure-multiplier version (no ε-part). With the C.13 heuristic σ_S ≈ log(|t|/2π) (HEURISTIC, C.13 §(IF-F)), σ_S < 0 on the whole central period |t| ≤ π/a ≈ 4.53, so the **pure multiplier frame fails**, and the low band must be paid by the ε-part 2ε′(1⁺)(1 − κ^{odd}_L) ≈ 46(1 − κ^{odd}_L). That is a non-multiplier, K_I / Lemma 6.10 quantity. The frame criterion is therefore an S&M question about σ_S *and* about the strict gap 1 − κ^{odd}_L.
 - **m₀ from the trace side (N.13 is pushed; this answers N.13.5's request at the level available).** At L₀ = ½ log 2, κ^{odd}_{L₀} ≤ 1 (interlacing against CC Thm 6.11; odd ⇒ ξ̂(0) = 0). Hence, PROVED given CC §5 / Thm 6.11:
   > **m₀^o ≥ inf_t [σ_S(t) + 2ε′(1⁺)(1 − κ^{odd}_{L₀})/(¼ + t²)],**
-  and this feeds Thm N.13.A directly (ℓ*(m₀) = 6.98×10⁻⁴·m₀e^{−21.06/m₀}), or C.13.H′ (polynomial ℓ_H) with μ_lo, μ_hi the same infimum over |t| < T, |t| ≥ T. Its value is GAP until S&M supplies σ_S and 1 − κ^{odd}_{L₀}.
+  and this feeds Thm N.13.A directly (ℓ*(m₀) = 6.98×10⁻⁴·m₀e^{−21.06/m₀}), or C.13.H′ (polynomial ℓ_H) with μ_lo, μ_hi the same infimum over |t| < T, |t| ≥ T. **Preferred route (Golden Eye, G.4h):** S&M SECTOR_COERCIVITY_p2 Thm 2.1/(3.3) (spectrum-measure f1df9ed), which uses the L²-margin δ_o⁰ = 1 − κ^{odd}_{L₀} directly: ℓ₀^odd ≈ min{0.006δ_o⁰, (δ_o⁰)²/(8.32k_∞²)}, polynomial. Thm C.14.A is the θ = 1 case of Thm 2.1 written as one pointwise symbol inequality (frame form); the two agree on inputs (δ_o⁰, k_∞, B). Its value is GAP until S&M supplies σ_S and 1 − κ^{odd}_{L₀}.
 
 ### C.14.3 Test on (K3), even: GAP
-On the even sector CC Thm 6.11 gives κ^{ev}_L > 1 on the ξ₀ direction, so 2ε′(1⁺)(1 − K_L) has a negative rank-one part −2ε′(1⁺)(κ^{ev}_L − 1)|⟨ξ, ξ₀⟩|². The frame must pay it from the multiplier part on the spectrum of ξ₀. No explicit inequality is available: **GAP**. The p = 2 line *helps* here (N.13.4: the even edge pair gets +2c₂α²(1/ℓ − ℓ/24)), but a multiplier frame cannot use it, since it charges p_w by its minimum. The even mechanism is spatial (sign of B on the ramp), which is why the coupling term of C.14.4 is needed for (K3) and not for (K2).
+On the even sector CC Thm 6.11 gives κ^{ev}_L > 1 on the ξ₀ direction, so 2ε′(1⁺)(1 − K_L) has a negative rank-one part −2ε′(1⁺)(κ^{ev}_L − 1)|⟨ξ, ξ₀⟩|². The frame must pay it from the multiplier part on the spectrum of ξ₀. No explicit inequality is available: **GAP**. This is exactly G.4h's even cost (i), the rank-one Schur payment condition (P) owned by Spectrum & Measure (SECTOR_COERCIVITY_p2 §4.2–4.3), paid from 𝒮_L; the edge traces are G.4h's cost (ii), paid by the p = 2 line. The p = 2 line *helps* here (N.13.4: the even edge pair gets +2c₂α²(1/ℓ − ℓ/24)), but a multiplier frame cannot use it, since it charges p_w by its minimum. The even mechanism is spatial (sign of B on the ramp), which is why the coupling term of C.14.4 is needed for (K3) and not for (K2).
 
 ### C.14.4 The coupling term 2R(ξ_b, ξ_s) (Prime's request, N.13.5; GAP N.G2-bulk)
 Decomposition ξ = ξ_b + ξ_s as in N.13.4: α₋ = ξ(−L + ℓ), α₊ = ξ(L − ℓ), ξ_b = ξ on the bulk and ramps on the strips, ξ_s = φ₋ + τ_aφ₊ with φ_± ∈ H¹₀(int S₋).
@@ -809,9 +814,29 @@ Decomposition ξ = ξ_b + ξ_s as in N.13.4: α₋ = ξ(−L + ℓ), α₊ = ξ(
 (Cauchy–Schwarz gives γ = 1; the conjecture asks for an angle bounded away from 0 between ramp-split pieces in the P_{>T} geometry. A numerical test on piecewise-linear profiles is the natural next step: NOT done.)
 
 **Corollary C.14.D (what closes, given what).**
-- **(K2), odd.** Already closed **without any coupling bound** by Prop C.13.H′ given C.13.H (polynomial range ℓ_H), or by Thm N.13.A given m₀^o (exponential range). The coupling is not needed for (K2). The odd p = 2 cost 2c₂α²/ℓ is paid by the archimedean margin (mechanism as in N.13.4).
-- **(K3), even (PROVED given C.14.K and an even margin m₀^e > 0).** Then for ℓ ≤ min(ℓ_K, m₀^e/50, ℓ_{C.13.B}(γ)), with ε₂ = 0.1c₂/|Ω(0)| and ν_T(ℓ) ≤ εm₀^e/(8Δ_T²), (K3) holds: the strip bracket (Lemma C.13.B for the fraction 1 − γ′ of R, with γ′ = γ(1 + |Ω(0)|/Ω(T)) < 1) and the bulk bracket (1 − γ′)R(ξ_b) + 1.9c₂α²/ℓ ≥ 0 are both nonnegative. The p = 2 line supplies the edge budget; m₀^e pays the dilation loss.
-- **Ramp-dominated even vectors (PROVED given C.14.K and R ≥ 0 on even 𝒯_{L₀}).** If ‖ξ_b‖²_H ≤ Kα²/ℓ, the dilation loss 24.88ℓ‖ξ_b‖²_H ≤ 24.88Kα² is paid by the p = 2 budget 1.9c₂α²/ℓ for ℓ ≤ 0.0374/K. Only here does the even entry close "from the p = 2 budget alone".
+- **(K2), odd.** Already closed **without any coupling bound** by Prop C.13.H′ given C.13.H (polynomial range ℓ_H), or by Thm N.13.A given m₀^o (exponential range). The coupling is not needed for (K2). The odd p = 2 cost 2c₂α²(1/ℓ − ℓ/24) is paid by the archimedean margin (mechanism as in N.13.4).
+- **(K3), even (PROVED given C.14.K and an even margin m₀^e > 0).** Then for ℓ ≤ min(ℓ_K, m₀^e/50, ℓ_{C.13.B}(γ)), with ε₂ = 0.1c₂/|Ω(0)| and ν_T(ℓ) ≤ εm₀^e/(8Δ_T²), (K3) holds: the strip bracket (Lemma C.13.B for the fraction 1 − γ′ of R, with γ′ = γ(1 + |Ω(0)|/Ω(T)) < 1) and the bulk bracket (1 − γ′)R(ξ_b) + c₂α²(1.8/ℓ − ℓ/12) ≥ 0 are both nonnegative (exact help 2c₂α²(1/ℓ − ℓ/24), minus 0.1c₂α²/ℓ for C.14.B's local term and 0.1c₂α²/ℓ for N.13.4's X-term). The p = 2 line supplies the edge budget; m₀^e pays the dilation loss.
+- **Ramp-dominated even vectors (PROVED given C.14.K and R ≥ 0 on even 𝒯_{L₀}).** If ‖ξ_b‖²_H ≤ Kα²/ℓ, the dilation loss 24.88ℓ‖ξ_b‖²_H ≤ 24.88Kα² is paid by the p = 2 budget c₂α²(1.8/ℓ − ℓ/12) for ℓ ≤ 0.035/K (ℓ ≤ 0.119). Only here does the even entry close "from the p = 2 budget alone".
+
+### C.14.4b Scale check against near-null (prolate-type) directions (Golden Eye caution)
+CCM 2310.18423 shows that E-images of prolates give the Weil form extremely small eigenvalues, and the 1.42 certificate has λ_min > 10⁻⁸¹.
+- **Where the near-null directions live (PROVED, uncertainty).**
+  - The archimedean symbol 2θ′ is negative exactly on |t| < 6.289836. Positivity there is carried by 1 − K_L (L²-level; Celestial (3b), S&M Thm 2.1). So near-null directions are **low-band, bulk** vectors: prolate-like, spread over the window, and edge-smooth (α = sℓ + O(ℓ²)).
+  - They are **not edge-supported.** For any strip-supported φ ∈ H¹₀(S), the fraction of ‖φ‖²_H in |t| < T is ≤ ν_T(ℓ) = (T/4 + T³/3)ℓ³/π³. For T = 6.29 this is ≤ 2.73ℓ³ (≤ 0.0046 at ℓ = 0.119).
+  - For a ramp, the fraction of its energy α²(1/ℓ + ℓ/12) in |t| < T is ≤ (T/4 + T³/3)ℓ³/(3π) ≤ 8.97ℓ³ (≤ 0.0151 at ℓ = 0.119; ≤ 0.0090 at ℓ = 0.1).
+  - So ramps and ξ_s are ≥ 98% outside the negative band, where 2θ′ > 0. Ramp kinks sit at |t| ~ π/ℓ ≥ 26, where 2θ′ > 2c₂.
+- **Does C.14.B survive when R(ξ_b) is only m₀‖ξ_b‖²_H, m₀ ~ 10⁻⁸¹?**
+  - As an inequality, yes: it is unconditional.
+  - As a closing tool, only with a vanishing range. Its low-band bulk term (2Δ_T²ν_T(ℓ)/ε)‖ξ_b‖²_H must be ≤ m₀‖ξ_b‖²_H. That gives ℓ ≲ π(εm₀/(2Δ_T²(T/4 + T³/3)))^{1/3}, a cube-root rate: ~10⁻²⁸ for m₀ = 10⁻⁸¹, and ~10⁻² for m₀ ~ 10⁻³.
+  - The local α-term is harmless: it is charged against the p = 2 edge budget, not m₀.
+  - Any bound of the form εR(ξ_s) + C_ε|α|² fails outright, by C.14.C(i).
+- **The defeating directions, explicitly (PROVED as a necessity statement).** Take u near-null at L₀ (R(u) = m₀‖u‖²_H, u ∈ 𝒯_{L₀} ⊂ 𝒯_L) and any strip vector ξ_s.
+  - By Schur on span{u, ξ_s}, Q_L ≥ 0 there iff Q_L(u, ξ_s)² ≤ Q_L(u)·Q_L(ξ_s). Since u is supported in [−L₀, L₀], B(u) = 0 (the shift by a = 2L₀ leaves no overlap), so Q_L(u) = m₀‖u‖²_H.
+  - The cross term's low band is generically of size ~ |∫φ|·‖u‖ ~ ℓ^{3/2}‖φ′‖‖u‖ (ξ̂_s(t) ≈ ∫φ₋ + e^{iat}∫φ₊ for |t| ≪ 1/ℓ). So any argument that does not use the internal structure of u needs ℓ³ ≲ m₀/β_ℓ.
+  - The certified positivity implies that the true cross terms are correspondingly small on near-null u (or that m₀ at L₀ is not small). A perturbative coupling bound with structure-blind constants cannot see this.
+  - **The defeating directions are therefore the low-band prolate-type bulk vectors u, paired with strip vectors of nonzero mean.** They are not the ramps.
+- **The relevant scale at L₀ = ½ log 2.** The 10⁻⁸¹ is the certificate's minimum over windows up to L = 1.42. The count of negative-band directions is ≈ 2L·6.29/π: ≈ 1.4 at 2L = log 2, and ≈ 5.7 at 2L = 2.84. Prolate eigenvalue gaps decay super-exponentially in that count. So m₀ (equivalently δ_o⁰) at the p = 2 entry is plausibly not astronomically small: CC 2106.01715 Fig 5 gives λ_min ≈ 1.33·10⁻³ at λ = √2 (NUMERICAL, full space, CC normalization; not an H-margin). **HEURISTIC; the value of δ_o⁰ is the computational GAP in G.4h.**
+- Label: survival analysis PROVED (rates as functions of m₀); "m₀ at L₀ not astronomically small" HEURISTIC.
 
 ### C.14.5 Fakes
 - **DH (Davenport–Heilbronn):** no Euler factor L_2 and no X_S anchoring, so no V(2) term and no rank-two edge matrix. The {∞, 2} frame and C.14.1's identity do not exist for it: **structurally ζ-specific (PROVED by inspection)**. Its truth on this range is fake-blind: DH is positive here (onset 2L ≈ 1.7104 per §C.13 R5).
@@ -843,7 +868,10 @@ Decomposition ξ = ξ_b + ξ_s as in N.13.4: α₋ = ξ(−L + ℓ), α₊ = ξ(
 | Thm C.14.C (i)–(iii) obstructions | PROVED ((i) with Arb-certified kernel sign) |
 | Conjecture C.14.K | CONJECTURE |
 | Cor C.14.D | PROVED given the stated inputs |
-| N.G2-bulk | GAP, reduced to C.14.K + m₀^e |
+| edge-matrix sign: contribution to Q_L is +2c₂(1/ℓ − ℓ/24)α₋α₊ (even helped, odd charged); parity = ξ under x ↦ −x | PROVED (resolved convention) |
+| C.14.4b near-null directions are low-band bulk; strip/ramp low-band fractions ≤ 2.73ℓ³ / 8.97ℓ³ | PROVED |
+| C.14.B closing range vs m₀: cube-root ℓ ≲ m₀^{1/3} | PROVED (rate); m₀ not tiny at L₀ HEURISTIC |
+| N.G2-bulk (G.4h piece 3) | GAP, reduced to C.14.K + m₀^e; even ĝ(0) direction = G.4h (P), Spectrum's |
 | DH: frame absent | PROVED (structural); truth fake-blind |
 
 - **R1** one rule per ℓ-range. **R2** FE through Ω, σ_S and κ; Euler product only through L_2. **R3** the p = 2 term is used with its sign in N.13.4/C.14.D, and through its Fejér minimum in C.14.A. **R4** pole pair spent at T4; odd ξ̂(0) = 0; the even ξ₀ direction is the GAP. **R5** DH is structurally excluded; truth fake-blind. **R6** "no MF-relative margin" PROVED; "closing step must be an exact identity" CONJECTURE ((I1) is an exact identity; the positivity steps are not).
