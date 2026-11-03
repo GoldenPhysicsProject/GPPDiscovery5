@@ -1,0 +1,33 @@
+== C.16 odd p=2 Schur certificate (Thm C.16.A, float, NUMERICAL); also general-code regression vs C.15 even ==
+kernel check even L=0.4 t=0.0: closed 4.199487640153610e-02 mode-sum(20000) 4.199487640153589e-02
+kernel check even L=0.4 t=3.0: closed 3.142771107224363e-02 mode-sum(20000) 3.142771107224363e-02
+kernel check even L=0.4 t=10.0: closed 3.490649649465990e-03 mode-sum(20000) 3.490649649465943e-03
+kernel check even L=0.4 t=40.0: closed 2.455842545387993e-04 mode-sum(20000) 2.455842545386992e-04
+kernel check odd L=0.4 t=0.0: closed 0.000000000000000e+00 mode-sum(20000) 0.000000000000000e+00
+kernel check odd L=0.4 t=3.0: closed 3.316954366101625e-03 mode-sum(20000) 3.316954366101537e-03
+kernel check odd L=0.4 t=10.0: closed 4.192271667159151e-03 mode-sum(20000) 4.192271667159089e-03
+kernel check odd L=0.4 t=40.0: closed 2.541029528772620e-04 mode-sum(20000) 2.541029528772529e-04
+regression even ell=0.1: 2L=0.793147 even T=60 N=64: q_T=1.27620 mu_A=+0.013981 s_V=3.4704 (Frob 5.549) eps^abs=4.914e-05 eps^neg=1.256e-05 ||B||<=0.01306 c_tail>=1.27619 lam_cert=+0.013846 (Frob: +0.013765) chol=True
+ell=0.1 analytic 2L=0.793147 odd  T=60 N=64: q_T=1.27620 mu_A=+0.217254 s_V=2.7336 (Frob 4.704) eps^abs=5.241e-05 eps^neg=1.219e-05 ||B||<=0.01197 c_tail>=1.27619 lam_cert=+0.217119 (Frob: +0.217022) chol=True
+ell=0.1 sharp    2L=0.793147 odd  T=60 N=64: q_T=1.27620 mu_A=+0.217254 s_V=1.1503 (Frob 2.150) eps^abs=3.627e-05 eps^neg=4.123e-06 ||B||<=0.00646 c_tail>=1.27619 lam_cert=+0.217215 (Frob: +0.217181) chol=True
+ell=0.1 full-Q odd Galerkin N=64 (upper bound): +0.243680
+ell=0.2 analytic 2L=0.893147 odd  T=60 N=64: q_T=1.27620 mu_A=+0.063857 s_V=2.7596 (Frob 5.191) eps^abs=7.062e-05 eps^neg=1.745e-05 ||B||<=0.01396 c_tail>=1.27618 lam_cert=+0.063696 (Frob: +0.063554) chol=True
+ell=0.2 sharp    2L=0.893147 odd  T=60 N=64: q_T=1.27620 mu_A=+0.063857 s_V=1.2473 (Frob 2.327) eps^abs=4.465e-05 eps^neg=4.460e-06 ||B||<=0.00746 c_tail>=1.27619 lam_cert=+0.063811 (Frob: +0.063771) chol=True
+ell=0.2 full-Q odd Galerkin N=64 (upper bound): +0.073045
+ell=0.3 analytic 2L=0.993147 odd  T=60 N=64: q_T=1.27620 mu_A=+0.011240 s_V=3.0077 (Frob 5.650) eps^abs=9.543e-05 eps^neg=2.404e-05 ||B||<=0.01694 c_tail>=1.27617 lam_cert=+0.011013 (Frob: +0.010814) chol=True
+ell=0.3 sharp    2L=0.993147 odd  T=60 N=64: q_T=1.27620 mu_A=+0.011240 s_V=1.2795 (Frob 2.484) eps^abs=5.923e-05 eps^neg=5.940e-06 ||B||<=0.00871 c_tail>=1.27619 lam_cert=+0.011180 (Frob: +0.011124) chol=True
+ell=0.3 full-Q odd Galerkin N=64 (upper bound): +0.013842
+ell=0.35 analytic 2L=1.043147 odd  T=60 N=64: q_T=1.27620 mu_A=+0.003131 s_V=3.1649 (Frob 5.868) eps^abs=1.200e-04 eps^neg=2.802e-05 ||B||<=0.01948 c_tail>=1.27617 lam_cert=+0.002833 (Frob: +0.002579) chol=True
+ell=0.35 sharp    2L=1.043147 odd  T=60 N=64: q_T=1.27620 mu_A=+0.003131 s_V=1.2817 (Frob 2.557) eps^abs=7.770e-05 eps^neg=6.892e-06 ||B||<=0.00998 c_tail>=1.27619 lam_cert=+0.003053 (Frob: +0.002975) chol=True
+ell=0.35 full-Q odd Galerkin N=64 (upper bound): +0.004118
+ell=0.4 analytic 2L=1.093147 odd  T=60 N=64: q_T=1.27620 mu_A=+0.000858 s_V=3.3008 (Frob 6.077) eps^abs=1.262e-04 eps^neg=3.214e-05 ||B||<=0.02041 c_tail>=1.27617 lam_cert=+0.000532 (Frob: +0.000257) chol=True
+ell=0.4 sharp    2L=1.093147 odd  T=60 N=64: q_T=1.27620 mu_A=+0.000858 s_V=1.2821 (Frob 2.633) eps^abs=7.767e-05 eps^neg=7.851e-06 ||B||<=0.00998 c_tail>=1.27619 lam_cert=+0.000780 (Frob: +0.000698) chol=True
+ell=0.4 full-Q odd Galerkin N=64 (upper bound): +0.001054
+ell=0.1 vary T,N: 2L=0.793147 odd  T=60 N=40: q_T=1.27620 mu_A=+0.217254 s_V=2.7336 (Frob 4.704) eps^abs=2.151e-04 eps^neg=4.970e-05 ||B||<=0.02425 c_tail>=1.27615 lam_cert=+0.216699 (Frob: +0.216300) chol=True
+ell=0.2 vary T,N: 2L=0.893147 odd  T=60 N=40: q_T=1.27620 mu_A=+0.063857 s_V=2.7596 (Frob 5.191) eps^abs=2.906e-04 eps^neg=7.129e-05 ||B||<=0.02832 c_tail>=1.27613 lam_cert=+0.063196 (Frob: +0.062614) chol=True
+ell=0.1 vary T,N: 2L=0.793147 odd  T=60 N=96: q_T=1.27620 mu_A=+0.217254 s_V=2.7336 (Frob 4.704) eps^abs=1.556e-05 eps^neg=3.630e-06 ||B||<=0.00652 c_tail>=1.27619 lam_cert=+0.217214 (Frob: +0.217185) chol=True
+ell=0.2 vary T,N: 2L=0.893147 odd  T=60 N=96: q_T=1.27620 mu_A=+0.063857 s_V=2.7596 (Frob 5.191) eps^abs=2.095e-05 eps^neg=5.188e-06 ||B||<=0.00760 c_tail>=1.27619 lam_cert=+0.063809 (Frob: +0.063767) chol=True
+ell=0.1 vary T,N: 2L=0.793147 odd  T=100 N=64: q_T=1.78703 mu_A=+0.230758 s_V=3.2447 (Frob 6.601) eps^abs=2.105e-04 eps^neg=5.717e-05 ||B||<=0.02613 c_tail>=1.78697 lam_cert=+0.230319 (Frob: +0.229866) chol=True
+ell=0.2 vary T,N: 2L=0.893147 odd  T=100 N=64: q_T=1.78703 mu_A=+0.068498 s_V=3.2709 (Frob 7.204) eps^abs=3.364e-04 eps^neg=8.210e-05 ||B||<=0.03317 c_tail>=1.78695 lam_cert=+0.067857 (Frob: +0.067088) chol=True
+ell=0.1 vary T,N: 2L=0.793147 odd  T=100 N=96: q_T=1.78703 mu_A=+0.230758 s_V=3.2447 (Frob 6.601) eps^abs=6.207e-05 eps^neg=1.692e-05 ||B||<=0.01419 c_tail>=1.78701 lam_cert=+0.230629 (Frob: +0.230495) chol=True
+ell=0.2 vary T,N: 2L=0.893147 odd  T=100 N=96: q_T=1.78703 mu_A=+0.068497 s_V=3.2710 (Frob 7.204) eps^abs=9.865e-05 eps^neg=2.423e-05 ||B||<=0.01796 c_tail>=1.78701 lam_cert=+0.068310 (Frob: +0.068084) chol=True

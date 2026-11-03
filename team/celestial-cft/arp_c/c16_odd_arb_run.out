@@ -1,0 +1,8 @@
+2L = log 3, odd, T = 40, N = 96, prec 128; entries: 257807s
+max entry radius A: 7.151193887480845e-36  M: 6.021859698161494e-36
+q_T = [0.87071819972013050108 +/- 2.44e-21]
+eps^abs = [1.05266286571355e-5 +/- 3.68e-20]  eps^neg = [2.88241882033534e-6 +/- 1.30e-21]
+float mid: mu_A = 6.429523e-04, s_V = 2.908257
+interval Cholesky A - [0.000639700 +/- 3e-14] I > 0: True (min pivot [0.0914802 +/- 2.82e-9])
+interval Cholesky [2.91400 +/- 1e-10] I - M > 0: True (min pivot [0.0990304 +/- 1.50e-8])
+lambda_cert (ball) = [0.000604446336437703 +/- 1.42e-19]  lower endpoint > 0: True

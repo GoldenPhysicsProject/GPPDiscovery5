@@ -1,0 +1,7 @@
+engine: T=40 N=96 panels h=1, ng=40, b=0.4, prec 128; time 1s
+all 2x96^2 entries overlap the c16 JSON balls: True ; max |mid diff| = 4.98e-30 ; max new radius = 2.62e-22
+eps^abs new [1.05266286571355e-5 +/- 3.72e-20]  json [1.05266286571355e-5 +/- 3.68e-20]  overlap True
+eps^neg new [2.88241882033534e-6 +/- 1.56e-21]  json [2.88241882033534e-6 +/- 1.30e-21]  overlap True
+q_T = [0.87071819972013050108 +/- 2.44e-21]
+interval Cholesky A - 0.0006397 I > 0: True ; 2.914 I - M > 0: True
+lambda_cert (new entries) = [0.000604446336437703 +/- 1.44e-19]  certified > 0: True

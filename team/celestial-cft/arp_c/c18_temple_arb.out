@@ -1,0 +1,42 @@
+== odd_log3: 2L = log 3, odd, primes [2], T = 150, n = N = 64, Mr = 800 (entries 18s)
+q_T = [2.1924982323521075932 +/- 1.73e-21] ; Omega(T) = [3.1727563758206547849 +/- 1.22e-20]
+eps^abs_64 = [0.00216223273196 +/- 2.27e-15]   eps^neg_64 = [0.000544302535756 +/- 3.54e-16]
+eps^abs_128 = [0.000251145842460 +/- 2.20e-16]   eps^neg_128 = [6.49987630615e-5 +/- 1.91e-17]
+eps^abs_256 = [3.09490832786e-5 +/- 1.67e-17]   eps^neg_256 = [8.06130593605e-6 +/- 3.10e-18]
+eps^abs_800 = [1.01214978207e-6 +/- 1.99e-18]   eps^neg_800 = [2.64131162677e-7 +/- 1.38e-19]
+max entry radius (A, rows < 800): 7.99e-21
+float spectrum A_n: lambda_1 = 9.132641e-04  lambda_2 = 0.658485 ; float lambda_max(M_n) = 4.2324
+rho = [0.000913264090706398 +/- 4.33e-19] ; s_v = c^TMc/|c|^2 = [3.8523912 +/- 4.00e-8]
+sum_{k<Mr} r_k^2 = [1.2883475e-6 +/- 4.67e-14] ; tau^2 <= s_v eps^abs_Mr = [3.8991969e-6 +/- 2.69e-14] ; Rbar = [0.0022776181 +/- 4.62e-11]
+s_V = [4.2327867 +/- 8.23e-9]: interval Cholesky s I - M_N > 0: True
+c_tail = q_T - eps^neg_N = [2.191953930 +/- 1.84e-10] ; beta^2 = s eps^abs_N = [0.0091522699 +/- 3.24e-11]
+nu2 = [0.652000 +/- 3e-11], delta = [0.00600000 +/- 3e-13]: LDL^T(A_N - (nu2+delta) I) pivots sign-determined: True, #negative = 1 ; c_tail - beta^2/delta - nu2 = [0.014575608 +/- 2.44e-10] >= 0: True
+rho < nu2: True ; Temple: lambda_1^odd >= mu = [0.000905296574040 +/- 2.73e-16] ; lower endpoint 9.052966e-04 ; CERTIFIED: True  (18s)
+== odd_log3p03: 2L = log 3 + 0.03, odd, primes [2, 3], T = 150, n = N = 64, Mr = 800 (entries 21s)
+q_T = [0.92393003115697963883 +/- 4.51e-21] ; Omega(T) = [3.1727563758206547849 +/- 1.22e-20]
+eps^abs_64 = [0.00408172591220 +/- 5.81e-17]   eps^neg_64 = [0.000592939339226 +/- 1.66e-16]
+eps^abs_128 = [0.000468154292852 +/- 3.53e-16]   eps^neg_128 = [7.05612578741e-5 +/- 4.38e-17]
+eps^abs_256 = [5.75312213483e-5 +/- 1.45e-17]   eps^neg_256 = [8.74434988211e-6 +/- 1.51e-18]
+eps^abs_800 = [1.87996361396e-6 +/- 3.29e-18]   eps^neg_800 = [2.86445925899e-7 +/- 1.97e-19]
+max entry radius (A, rows < 800): 1.89e-20
+float spectrum A_n: lambda_1 = 4.048683e-04  lambda_2 = 0.482403 ; float lambda_max(M_n) = 5.5403
+rho = [0.000404868311674382 +/- 3.46e-19] ; s_v = c^TMc/|c|^2 = [5.1407427 +/- 2.58e-8]
+sum_{k<Mr} r_k^2 = [2.1842877e-9 +/- 3.13e-17] ; tau^2 <= s_v eps^abs_Mr = [9.6644093e-6 +/- 2.69e-14] ; Rbar = [0.0031091146 +/- 5.63e-12]
+s_V = [5.5408827 +/- 4.79e-8]: interval Cholesky s I - M_N > 0: True
+c_tail = q_T - eps^neg_N = [0.9233370918 +/- 1.78e-11] ; beta^2 = s eps^abs_N = [0.022616365 +/- 3.12e-10]
+nu2 = [0.435000 +/- 1e-11], delta = [0.0464000 +/- 1e-12]: LDL^T(A_N - (nu2+delta) I) pivots sign-determined: True, #negative = 1 ; c_tail - beta^2/delta - nu2 = [0.00091543905 +/- 2.05e-13] >= 0: True
+rho < nu2: True ; Temple: lambda_1^odd >= mu = [0.000382625555472 +/- 1.20e-16] ; lower endpoint 3.826256e-04 ; CERTIFIED: True  (21s)
+== odd_log3p06: 2L = log 3 + 0.06 (extension, no JSON), odd, primes [2, 3], T = 150, n = N = 64, Mr = 800 (entries 21s)
+q_T = [0.92393003115697963883 +/- 4.51e-21] ; Omega(T) = [3.1727563758206547849 +/- 1.22e-20]
+eps^abs_64 = [0.00540064532609 +/- 1.74e-15]   eps^neg_64 = [0.000644121685561 +/- 2.73e-16]
+eps^abs_128 = [0.000616451464673 +/- 3.56e-16]   eps^neg_128 = [7.63837544625e-5 +/- 4.30e-17]
+eps^abs_256 = [7.56681976782e-5 +/- 4.29e-17]   eps^neg_256 = [9.45848981602e-6 +/- 2.17e-18]
+eps^abs_800 = [2.47178504755e-6 +/- 4.47e-18]   eps^neg_800 = [3.09768710967e-7 +/- 2.75e-19]
+max entry radius (A, rows < 800): 2.07e-20
+float spectrum A_n: lambda_1 = 1.844642e-04  lambda_2 = 0.321073 ; float lambda_max(M_n) = 5.5666
+rho = [0.000184464215119270 +/- 4.38e-19] ; s_v = c^TMc/|c|^2 = [5.1575494 +/- 1.56e-8]
+sum_{k<Mr} r_k^2 = [3.6976643e-9 +/- 4.88e-17] ; tau^2 <= s_v eps^abs_Mr = [1.2748354e-5 +/- 4.73e-13] ; Rbar = [0.0035710014 +/- 2.71e-11]
+s_V = [5.5671312 +/- 5.35e-9]: interval Cholesky s I - M_N > 0: True
+c_tail = q_T - eps^neg_N = [0.9232859095 +/- 2.86e-11] ; beta^2 = s eps^abs_N = [0.030066101 +/- 1.24e-10]
+nu2 = [0.274000 +/- 1e-11], delta = [0.0464000 +/- 1e-12]: LDL^T(A_N - (nu2+delta) I) pivots sign-determined: True, #negative = 1 ; c_tail - beta^2/delta - nu2 = [0.0013095921 +/- 4.73e-11] >= 0: True
+rho < nu2: True ; Temple: lambda_1^odd >= mu = [0.000137892528983 +/- 1.32e-16] ; lower endpoint 1.378925e-04 ; CERTIFIED: True  (21s)
