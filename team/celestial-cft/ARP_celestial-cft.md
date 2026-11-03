@@ -1202,3 +1202,208 @@ This section answers the lead's 1:41 task and the 1:48 steering. The even certif
 - **R4** No pole entry in Q-coordinates. The even ξ̂(0)/ĝ(0) direction is inside V_N (f_0 carries it) and is certified in the matrix, not assumed.
 - **R5** The certificate is ζ-specific through the n = 2 line with coefficient c₂. DH has no such line, so it is fake-blind as an archimedean bound but structurally absent as a certificate.
 - **R6** "No MF-relative margin": PROVED. "The closing step must be an exact identity": CONJECTURE. Here the closing step is an inequality (Schur), not an identity.
+
+---
+
+## C.16 Odd sector, p = 2 and beyond: the Schur certificate on (log 2, log 3] (S104, 2026-11-03)
+
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok. RH is OPEN.
+
+Scripts (all in `arp_c/`):
+- `c16_schur_general.{py,out}`: float, general prime set;
+- `c16_odd_log3.{py,out}`: float;
+- `c16_odd_spec.md`: matrix spec;
+- `c16_arb_callbacks.{py,out}`;
+- `c16_odd_arb_run.{py,out}` with `c16_odd_arb_entries.json`;
+- independent replay `c18_replay_c16.{py,out}`.
+
+The float outputs were re-run on S104 and are byte-identical.
+
+**Set-up (PROVED; general prime set).**
+- Let S = {n ≥ 2 : log n < 2L} and c_n = Λ(n)/√n.
+- For real ξ ∈ H¹₀(−L, L): Q_L(ξ) = (1/π)∫_0^∞(¼ + t²) q(t)|ξ̂|² dt, with q(t) = Ω(t) − Σ_{n∈S} 2c_n cos(t log n).
+- An atom at log n = 2L contributes 0, because the autocorrelation vanishes at ±2L. So at 2L = log 3 exactly, S = {2}.
+- This is P.17.1 (Principal) and C.15 in one formula. On 2L < log 4, S ⊂ {2, 3}.
+- Odd basis:
+  - f_k = sin(w_k x)/(√L n_k), with w_k = (k+1)π/L and n_k = √(w_k² + ¼). The f_k are H-orthonormal.
+  - f̂_k(t) = √L[sinc((w_k − t)L) − sinc((w_k + t)L)]/n_k, up to a phase.
+  - Prime's e_n = sin(w_k(x+L))/√L equals (−1)^{k+1} n_k f_k.
+
+**Lemma C.16.K (odd tail kernel; PROVED).**
+- Claim: K_o(t) := Σ_{k≥0} f̂_k(t)² = [L − L sinc(2tL) − 2 sin(tL)(½coth(L/2) sin(tL) − t cos(tL))/(t² + ¼)]/(¼ + t²).
+- *Proof.*
+  1. For odd ξ, |ξ̂(t)| = |∫ξ(x) sin(tx)dx| = |⟨ξ, g_t⟩_H|. Here g_t ∈ H¹₀,odd solves −g″ + ¼g = sin(tx), with g(±L) = 0. The boundary terms vanish on H¹₀.
+  2. So K_o(t) = ‖g_t‖²_H = ∫_{−L}^{L} g_t(x) sin(tx) dx.
+  3. Solve: g_t = [sin(tx) − sin(tL) sinh(x/2)/sinh(L/2)]/(t² + ¼).
+  4. Use ∫_{−L}^{L} sin²(tx) dx = L − L sinc(2tL), and ∫_{−L}^{L} sinh(x/2) sin(tx) dx = 2(½cosh(L/2) sin(tL) − t sinh(L/2) cos(tL))/(t² + ¼). The latter follows by differentiating ½cosh(x/2) sin(tx) − t sinh(x/2) cos(tx). ∎
+- The closed form agrees with the 20000-mode sum to 1e-14 at L = 0.4, t = 0, 3, 10, 40 (`c16_schur_general.out`).
+- K_{W_N} = K_o − Σ_{k<N} f̂_k² is the kernel of the complement W_N (this is Prime's Lemma A_N in our normalisation).
+
+**Theorem C.16.A (odd Schur certificate; PROVED).**
+- Thm C.15.A holds verbatim on the odd sector for any 2L, with these substitutions:
+  - q replaced by the S-symbol above;
+  - q_T := Ω(T) − 2Σ_S c_n;
+  - m_abs := Ω(T) − Ω + Σ_S 2c_n(1 − cos(t log n));
+  - m_neg := Ω(T) − Ω;
+  - K_e replaced by K_o.
+- *Proof.* Identical to C.15.A. Step 1 uses q − q_T = [Ω(t) − Ω(T)] + Σ 2c_n(1 − cos) ≥ 0 on t ≥ T. Step 4 uses |a_T| ≤ m_abs, and Step 5 uses (a_T)₋ ≤ m_neg. ∎
+
+**Certificate at 2L = log 3 (CERTIFIED).** Parameters: T = 40, N = 96, prec 128.
+- First enclosure (S104 run, 257807 CPU-s): every entry of A_N and M, plus ε^abs and ε^neg, enclosed by `acb.integral`, stored in `c16_odd_arb_entries.json`.
+- Second enclosure: **independently re-enclosed** by the panel-Gauss engine (`c18_entries.py`, C.18.E) in 1 s. All 2·96² entries and both ε overlap the first enclosure, with max |mid diff| 5e−30.
+- Checks, run on the new entries:
+  - interval Cholesky gives A_N − 0.0006397·I ≻ 0 and 2.914·I − M ≻ 0;
+  - q_T = 0.87071819972013050108 ± 2.4e−21;
+  - ε^abs = 1.05266286571355e−5, ε^neg = 2.88241882033534e−6.
+- Result: **λ_cert^odd(log 3) = 6.04446336437703e−4 ± 1.4e−19 > 0** (`c18_replay_c16.out`; the original run's `.out` gives the same ball).
+- **Corollary C.16.B (CERTIFIED + PROVED).** By Prop C.15.B (generalisation), λ₁^odd(L) ≥ 6.04e−4 for every 2L ≤ log 3. In ℓ = 2L − log 2, the odd p = 2 window is ℓ ∈ (0, log 1.5] = (0, 0.405465].
+  - This **closes S&M's GAP ℓ ∈ (0.21, log 1.5]**. S&M's certificate is CERTIFIED ≥ 0.008 on ℓ ≤ 0.21 (Thm S).
+  - The largest ℓ with float λ_cert^odd > 0 in the p = 2 regime is the endpoint itself, ℓ = log 1.5. So no "slightly smaller right endpoint" is needed.
+  - Float profile, T = 60, N = 64: λ_cert = +0.2171 (ℓ = 0.1), +0.0637 (0.2), +0.0110 (0.3), +0.00283 (0.35), +0.000532 (0.4).
+- **What binds past ℓ = log 1.5.** p = 3 enters, and q_T drops by 2c₃ = 1.2686. At T = 60, q_T = 0.0076 (P.17.4), so the comparison form is useless there. With T = 150 (q_T = 0.924) the Schur route at 2L* = log 3 + 0.03 gives only float λ_cert = +6.0e−5 (N = 256) and +1.76e−4 (T = 100, N = 256). The Temple route (C.18) does better.
+
+**C.16 labels.**
+
+| item | label |
+|---|---|
+| Lemma C.16.K (odd kernel closed form) | PROVED (mode-sum check NUMERICAL) |
+| Thm C.16.A (odd Schur, general S) | PROVED |
+| λ_cert^odd(log 3; T = 40, N = 96) = 6.0445e−4 ± 1.4e−19 | CERTIFIED (two independent enclosures) |
+| Cor C.16.B: odd λ₁ ≥ 6.04e−4 on all 2L ≤ log 3 (odd p = 2 window closed) | CERTIFIED (input) + PROVED (monotonicity) |
+| float λ_cert profile in ℓ; Galerkin upper bounds 9.548e−4 / 9.516e−4 / 9.5077e−4 (N = 64/128/256) at log 3 | NUMERICAL |
+
+- **R1** One certificate at the right endpoint, plus monotonicity.
+- **R2** FE enters through Ω only; the Euler product enters through the n = 2 line.
+- **R3** The p = 2 line is signed on [0, T] and dropped only where it helps.
+- **R4** No pole entry (Q-coordinates).
+- **R5** ζ-specific through c₂ (and, in C.18, c₃).
+- **R6** This is an inequality (Schur). It is not an exact identity and carries no zero-margin step.
+
+## C.17 Loss decomposition at 2L = log 3, both parities (NUMERICAL; S104)
+
+Script: `arp_c/c17_log3_schur.{py,out}` (float; re-run on S104, identical). Galerkin = μ_A + comparison loss; λ_cert = μ_A − Schur loss.
+
+- **Odd.**
+  - Galerkin 9.5077e−4 (N = 256).
+  - The comparison loss falls with T: 3.09e−4 (T = 40), 1.45e−4 (60), 6.6e−5 (100), 2.6e−5 (200).
+  - The Schur loss grows with T at fixed N: 5.3e−6 (T = 60, N = 256, analytic) up to 1.37e−4 (T = 200).
+  - Best analytic λ_cert: 8.65e−4 (T = 100, N = 256).
+- **Even.**
+  - Galerkin 1.4675e−5 (N = 256): a margin 65× smaller than odd.
+  - With analytic majorants the Schur λ_cert is mostly negative. The best is +2.66e−6 (T = 60, N = 256).
+  - With sharp, non-analytic majorants it is +8.2e−6.
+  - So the even sector at log 3 is **not** certified by any run here. It needs the sharp majorant (zeros of a_T isolated) or a Temple variant. Even past log 3 stays a **GAP**.
+- **Discrepancy with P.17 floats (REMARK, NUMERICAL).** Principal's `p17_temple_probe.log` (odd, log 3) gives ρ(n = 40) = 9.5408e−4 and λ₁(M = 160) = 9.4560e−4. Both lie *below* our full-Q Galerkin upper bounds 9.548e−4 (N = 64) and 9.5077e−4 (N = 256). A Galerkin value at M = 160 cannot be below the N = 256 value.
+  - Likely cause: his quadrature stops at Tmax = 3000 (`qmat`, followed by Löwdin re-orthonormalisation), which drops the positive tail of (¼ + t²)q|ξ̂|². This biases his Rayleigh quotients down by about 0.5%.
+  - It does not affect C.18, which uses none of his numbers.
+  - Separately, his even rows "Temple(ν = 0.44)" are **not valid bounds**: his own λ₂^even = 0.0763 < 0.44, which violates the hypothesis ν ≤ λ₂ of Lemma P.17.A. Only his ν = λ₂ column is admissible there.
+
+## C.18 Temple–Lehmann on the comparison form: odd sector certified to 2L = log 3 + 0.06 (S104, 2026-11-03)
+
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok. Credits:
+- **Golden Eye**: the Temple idea.
+- **Principal (P.17)**: Lemma P.17.A (Temple), Lemma P.17.B (ν₂), and the certification list §P.17.4.
+- **Prime (N.17)**: the A_N / tail-kernel formalism.
+- **S&M**: N_N, n_⊥ and Thm S.
+
+RH is OPEN. Scripts: `arp_c/c18_entries.py` (engine), `c18_temple_arb.{py,out}`, `c18_replay_c16.{py,out}`; shared entries `c18_shared_entries_odd_log3.json` and `c18_shared_entries_odd_log3p03.json`, with spec `c18_shared_entries_spec.md`.
+
+**C.18.0 Why not the literal §P.17.4 recipe (NUMERICAL (unreplayed); prototype scripts not committed).**
+- §P.17.4 applies Temple to the full Q_L. That needs the residual tail ‖P_W(Q_L − ρ)v‖ over all t.
+- In float prototypes at L* (n = 40), the tail bound was too large:
+  - a Cauchy–Schwarz tail with the full symbol gave τ ≈ 1.35e−2 at M = 160, growing with the integration cutoff (≈ 9.9e−2 at M = 320, T₂ = 4000);
+  - total R̄ ≈ 2.1–2.4e−2, against the 1.2e−2 budget of P.17.4.
+- The reason is the unbounded log symbol: the C.15 "naive Schur" obstruction again. So the literal recipe is a **GAP as stated**.
+- The fix below removes it: everything past T goes into the comparison inequality.
+
+**Theorem C.18.A (Temple on Q′_T; PROVED).**
+- Let Q′_T be the odd comparison form of Thm C.16.A, and A′ its bounded self-adjoint operator on H = H¹₀,odd(−L, L). Here A′ = q_T + (band-limited part), with ‖A′ − q_T‖ ≤ sup_{[0,T]}|a_T|·(1/π)∫_0^T(¼ + t²)K_o dt < ∞.
+- Let v = Σ_{j<n} c_j f_j, with ‖v‖ = 1.
+- Define:
+  - ρ := Q′_T(v);
+  - r_k := Q′_T(f_k, v) − ρc_k for k < M_r;
+  - s_v := (1/π)∫_0^T(¼ + t²)m_abs|v̂|² = cᵀMc.
+- If ρ < ν ≤ λ₂(A′), then **λ₁^odd(Q_L) ≥ λ₁(A′) ≥ ρ − R̄²/(ν − ρ)**, with R̄² := Σ_{k<M_r} r_k² + s_v·ε^abs_{M_r}.
+- *Proof.*
+  1. Q_L ≥ Q′_T as forms (C.16.A step 1). The min-max values are monotone under form order, so λ_k(Q_L) ≥ λ_k(A′) for every k. Here λ_k(Q_L) means the k-th min-max value of Q_L on the odd sector.
+  2. Temple (P.17.A) for A′ gives λ₁(A′) ≥ ρ − ‖(A′ − ρ)v‖²/(ν − ρ). Its hypotheses: λ₁(A′) ≤ ρ < ν ≤ λ₂(A′).
+  3. Split ‖(A′ − ρ)v‖² = Σ_{k<M_r} r_k² + ‖P_{W}A′v‖², with W = W_{M_r} (P_W v = 0).
+  4. For w ∈ W with ‖w‖ = 1: ⟨A′v, w⟩ = (1/π)∫_0^T(¼ + t²)a_T v̂ŵ, because the q_T-part is H-orthogonal.
+  5. Cauchy–Schwarz in (¼ + t²)|a_T| dt, with |a_T| ≤ m_abs and |ŵ|² ≤ K_W (Lemma C.16.K), gives ≤ (s_v·ε^abs_{M_r})^{1/2}. ∎
+- Nothing is integrated past T. The price is the comparison loss λ₁(Q_L) − λ₁(A′): about 3.8e−5 at log 3, T = 150 (Galerkin 9.508e−4 against ρ = 9.133e−4).
+
+**Lemma C.18.B (second eigenvalue; PROVED, no gap).**
+- Suppose:
+  - a ball LDLᵀ of A_N − σI (σ = ν₂ + δ, δ > 0) has every pivot sign-determined and at most one negative pivot;
+  - sI − M_N ≻ 0 (interval Cholesky);
+  - c_tail − sε^abs_N/δ ≥ ν₂, with c_tail = q_T − ε^neg_N.
+- Then λ₂(A′) ≥ ν₂.
+- *Proof.*
+  1. Ball arithmetic encloses each pivot d_i(X) for every symmetric X in the entry box, in particular for the true A_N. No pivot is 0, so A_N − σI is nonsingular, and by Sylvester's law of inertia it has at most one negative eigenvalue. So λ₂(A_N) > σ.
+  2. Let φ₁ be the lowest eigenvector of the exact A_N, as an element of V_N ⊂ H. Take ξ = u + w ⊥_H φ₁, with u ∈ V_N and w ∈ W_N. Then u ⊥ φ₁, so Q′_T(u) ≥ σ‖u‖².
+  3. As in C.15.A steps 4–5: |2Q′_T(u, w)| ≤ 2β‖u‖‖w‖ with β² = sε^abs_N, and Q′_T(w) ≥ c_tail‖w‖².
+  4. Since 2β xy ≤ δx² + (β²/δ)y², we get Q′_T(ξ) ≥ (σ − δ)‖u‖² + (c_tail − β²/δ)‖w‖² ≥ ν₂‖ξ‖².
+  5. By min-max, λ₂(A′) = sup_φ inf_{ξ⊥φ} Q′_T(ξ)/‖ξ‖² ≥ ν₂. ∎
+- This is exactly "inertia + Schur lower-bounds the second eigenvalue". The inertia gives codimension 1 in V_N, and the Schur complement handles the coupling to W_N.
+
+**C.18.C Certificates (CERTIFIED; `c18_temple_arb.out`).**
+- Common parameters: odd sector, T = 150, n = N = 64, M_r = 800, prec 128.
+- v is the float Ritz vector of A_64, rounded to dyadic coefficients c_j ∈ 2^{−48}ℤ (exact, stored in the JSON).
+- Every input is an Arb ball: entries, ε, q_T, ρ, r_k, s_v, the pivots and the Cholesky factors.
+
+| 2L | primes | q_T | ρ | Σr_k² | τ² ≤ s_vε^abs_800 | R̄ | ν₂ (δ) | c_tail − β²/δ − ν₂ | **μ = lower bound for λ₁^odd** |
+|---|---|---|---|---|---|---|---|---|---|
+| log 3 | {2} | 2.19250 | 9.13264e−4 | 1.29e−6 | 3.90e−6 | 2.278e−3 | 0.652 (0.006) | +0.0146 | **9.05296574040e−4 ± 2.7e−16** |
+| log 3 + 0.03 (= 2L*) | {2, 3} | 0.923930 | 4.04868e−4 | 2.18e−9 | 9.66e−6 | 3.109e−3 | 0.435 (0.0464) | +0.00092 | **3.82625555472e−4 ± 1.2e−16** |
+| log 3 + 0.06 (extension) | {2, 3} | 0.923930 | 1.84464e−4 | 3.70e−9 | 1.27e−5 | 3.571e−3 | 0.274 (0.0464) | +0.00131 | **1.37892528983e−4 ± 1.3e−16** |
+
+- The ν₂ details: LDLᵀ gives exactly 1 negative pivot in all three rows. s_V = 4.2328 / 5.5409 / 5.5671, each with sI − M ≻ 0. ρ < ν₂ is checked in Arb.
+- Against the §P.17.4 targets:
+  - at L*, ν₂ = 0.435 ≥ 0.40 and R̄ = 3.1e−3 ≤ 1.2e−2;
+  - at log 3, ν₂ = 0.652 ≥ 0.44 and R̄ = 2.3e−3 ≤ 1.2e−2.
+  - The final μ values (9.05e−4 and 3.83e−4) compare with P.17's floats 9.0e−4 and 4.35e−4.
+- **Deviations from §P.17.4, all justified above:**
+  1. ρ and the residual are taken for Q′_T, not Q_L (Thm C.18.A).
+  2. n = 64 instead of 40.
+  3. T = 150, because at T = 60, q_T = 0.0076 kills both ν₂ and c_tail.
+- **Corollary C.18.D (CERTIFIED + PROVED).**
+  - By the generalised Prop C.15.B: Q_L(ξ) ≥ 1.378e−4‖ξ‖²_H for every odd ξ ∈ H¹₀(−L, L) and every 2L ≤ log 3 + 0.06.
+  - Also λ₁^odd ≥ 3.826e−4 on 2L ≤ log 3 + 0.03, and λ₁^odd ≥ 9.05e−4 on 2L ≤ log 3.
+  - So the odd sector carries a certified positive margin across the p = 3 entry at log 3, up to ℓ₃ := 2L − log 3 = 0.06.
+- **What binds next (NUMERICAL).** At 2L = log 3 + 0.10 the same run gives μ = −5.29e−5: not certified. ρ falls to 5.75e−5 while R̄ stays ≈ 3.8e−3, dominated by the tail τ from ε^abs_800, and ν₂ falls to 0.129. Pushing further needs larger M_r, n and T together, or a sharper residual (larger M_r). This was not attempted.
+- **Not claimed.** Nothing here concerns the even sector. Even past log 3 is a GAP (C.17), so (K3) on {2, 3} is **not** established by C.18.
+
+**C.18.E Shared entries engine and files (CERTIFIED as enclosures).**
+- `c18_entries.py` uses panel Gauss–Legendre: unit panels, 40 nodes, with nodes and weights enclosed by `arb.legendre_p_root`.
+- The quadrature error is rigorous. Each integrand is holomorphic on the rectangle [c ± a] × [−0.4, 0.4] ⊃ Bernstein ellipse, since the poles of Ω and K_o are at ±i/2. |f| is bounded by acb ball evaluation on the boundary (maximum modulus), using |ê_k(z)| ≤ 2√L e^{L|Im z|}. The panel error is ≤ (h/2)·8M ρ^{−80}/(ρ − 1).
+- The components N^Ω (= S&M's N_N), B^p (prime lines), A, M and ε_K (with ε^neg_K = S&M's n_⊥) are written to the JSON with [mid, rad] strings. The spec md tells S&M how to rebuild the Temple, C.16.A and Thm S inputs from them.
+- **Validations:**
+  - all c16 `acb.integral` entries reproduced (C.16);
+  - c15 even reference A_jk (ℓ = 0.1, T = 60) agrees in all 12 printed digits;
+  - q_T(150) = 0.923930031157 agrees with `p15_p16_check.log` part 7;
+  - sup bounds checked against dense grids;
+  - ng = 12 vs 40 agree within the claimed radius.
+- **REMARK/GAP for Prime's G1 (N.17).** The files contain only band-limited ([0, T]) quantities. The full-Q ingredients of G1 (the [T, ∞) Ω-tail of A_N, W, E with κ_o = coth(L/2), and μ_⊥) are **not** provided. That route needs its own tail enclosure: GAP for that route only.
+
+**C.16–C.18 labels (S104 update).**
+
+| item | label |
+|---|---|
+| Thm C.18.A (Temple on the comparison form; λ₁(Q_L) ≥ λ₁(A′)) | PROVED |
+| Lemma C.18.B (inertia + Schur ⇒ λ₂(A′) ≥ ν₂) | PROVED |
+| odd λ₁ ≥ 9.0530e−4 (2L = log 3), ≥ 3.8263e−4 (log 3 + 0.03), ≥ 1.3789e−4 (log 3 + 0.06) | CERTIFIED (Arb, every input enclosed) |
+| Cor C.18.D: odd margin on all 2L ≤ log 3 + 0.06 | CERTIFIED + PROVED |
+| Cor C.16.B: odd p = 2 window (0, log 1.5] closed (S&M GAP (0.21, log 1.5] closed) | CERTIFIED + PROVED |
+| c18 engine error bound; shared-entry balls | PROVED (method) / CERTIFIED (values) |
+| literal §P.17.4 tail recipe on full Q (R̄ ≈ 2.1–2.4e−2 > 1.2e−2) | NUMERICAL (unreplayed); GAP as stated, superseded by C.18.A |
+| 2L = log 3 + 0.10: μ < 0 | NUMERICAL |
+| P.17 float ρ below converged Galerkin; even Temple(ν = 0.44) inadmissible | REMARK (NUMERICAL) |
+| even sector at and past log 3 | GAP |
+| full-Q G1 inputs (N.17) from the shared files | GAP (not provided) |
+
+- **R1** One certificate per right endpoint, plus monotonicity (generalised C.15.B). Odd: (0, log 1.5] via C.16, and up to log 3 + 0.06 via C.18. Even past log 3: GAP.
+- **R2** FE enters through Ω only. The Euler product enters through the n = 2 and n = 3 lines, signed on [0, T].
+- **R3** The prime lines are dropped only on t ≥ T, where 1 − cos ≥ 0 helps.
+- **R4** No pole entry (Q-coordinates). The lowest odd direction is inside V_64 and is certified through v, not assumed.
+- **R5** ζ-specific through c₂ and c₃. A DH-type fake has no such lines, so it is structurally absent as a certificate.
+- **R6** Temple and Schur are inequalities, not exact identities. The margins are small but positive, and no zero-margin closing step is claimed. Nothing here proves or implies RH: these are finite-window positivity statements in one parity sector.
