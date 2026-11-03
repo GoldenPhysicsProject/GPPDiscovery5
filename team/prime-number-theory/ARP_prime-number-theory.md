@@ -1266,6 +1266,208 @@ R5 (GAPs): A uniform lower bound for the margin is not provided: it is the actua
 
 Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
 
+## N.16.R Errata after Golden Eye's Galerkin cross-check (2026-10-28; lead redirect, main 4c05967; adopts the N.16.6 labels)
+1. **N.15.2 full-form margins are replaced (credit Golden Eye).** Golden Eye ran a Dirichlet-sine Galerkin at N = 36/72/128. The Ritz upper bounds are monotone in N, Plancherel holds to 5e−8, and the quadrature runs to T ≥ 4000 with an analytic tail. All values are NUMERICAL. Our P₂-alone numbers are **CONFIRMED**. Our full {2, 3} margins were mesh-limited (P1 hats). The N = 128 λ_min values below supersede the full-form entries of N.15.2 and N.15.6, and the 2.5e−4 / 1.34e−3 at log 3:
+
+   | 2L | even | odd |
+   |---|---|---|
+   | log 3 | 1.47e−5 | 9.52e−4 |
+   | log 3.5 (full) | 9.1e−8 | 1.20e−5 |
+   | log 4 (full) | 4.7e−10 | 1.0e−7 |
+   | log 4 + 0.1 | 6.3e−12 | 1.3e−9 |
+
+   **Monotonicity check: PASSES.** The full Weil form is one L-independent form (Golden Eye's extension, adopted by the lead), so λ(L) is nonincreasing in L, and both columns decrease.
+2. **Onset statement restricted to odd.** The near-degenerate onset between ℓ₂ ≈ 0.1 and log 1.5 (N.15.2, N.16) holds for the **odd** sector only. Golden Eye's even data have one isolated small eigenvalue from ℓ₂ = 0: λ₁ ≈ 7.2e−2, 1.6e−2, 2.3e−4, 1.5e−5 at ℓ₂ = 0, 0.1, 0.3, log 1.5. Even λ₂ collapses past log 3: 0.90 → 0.077 (log 3) → 2.9e−5 (log 4). Odd λ₂ ≥ 0.66 up to log 3, and a second small odd eigenvalue appears by log 4 (2.1e−3). Odd λ₂/λ₁ passes 10 at ℓ₂ ≈ 0.2.
+3. **Count vs D(t*) (HEURISTIC, no refit).** Per parity, D(t*) = e^{2L} − 15/8 is 1.125 (log 3), 1.625 (log 3.5), 2.125 (log 4) and 2.54 (log 4 + 0.1).
+   - Even: the number of eigenvalues well separated below the rest is 1 at log 3 and 2 by log 4. This matches ⌊D⌋.
+   - Odd: 1 at log 3 and 2 by log 4, with the second odd eigenvalue larger (2.1e−3 against even 2.9e−5).
+   - The odd lag is the one-condition-per-parity offset of N.16.2: the u-constraint and the odd index shift k = 2N + 2 + σ. This is read only qualitatively.
+4. **Rate (one paragraph, HEURISTIC; no runs, no refit).**
+   - The N.16 upper envelope exp(−π²(2D − σ)/log(Lt*)) **holds** on all of Golden Eye's points: even 7.5e−5 / 4.9e−6 / 4.2e−7 against 1.47e−5 / 9.1e−8 / 4.7e−10, and odd 5.1e−3 / 2.1e−4 / 1.3e−5 against 9.52e−4 / 1.20e−5 / 1.0e−7 (NUMERICAL comparison).
+   - The observed fall from log 3 to log 4 is Δln m = 10.35 (even) and 9.16 (odd), about 2× the envelope's 5.2.
+   - In the Landau–Widom count 1 − λ_k ≈ exp(−π²(2c/π − k)/log c), the surplus 2c/π − k counts concentration over the full band |t| ≤ t*. Counting both ±t sides per parity gives s ≈ 2(2D − σ), which would account for the factor 2. Whether c is Lt* or 2Lt* changes only the log c denominator, by log 2.
+   - This is HEURISTIC. The rate law stays a CONJECTURE stated as an upper envelope (N.16.6(7)), and no constant is fitted.
+5. **Superseded:** the N.16 "crude model" and the N.16.4(b) odd-offset discussion. The N.16.6 labels (u-constraint e^{−x/2}; only Σ_ρ û(γ_ρ)conj û(conj γ_ρ) is PROVED; the onsets, D(t*) and "even < odd" are HEURISTIC) are adopted throughout.
+
+## §N.17 G1: a non-multiplier Lemma A/B for the odd margin of Q^G at 2L = log 3, and an explicit zero-side ceiling (2026-10-28)
+
+**Scope.** This is the input that S&M's Arb run needs for the first unconditional odd 3-entry: Principal's Thm P.16.B, given (H₃^o). Everything is on the prime side. **No zero, and no RH, enters the lower bound.** RH is OPEN. Positivity up to L = 1.42 remains CERTIFIED conditional on Mori. **Nothing in §N.17 is itself a certificate.** It states PROVED lemmas whose constants S&M can certify in Arb. Track [L].
+
+R1 (claim):
+- The lower bound is a three-part certificate, a **projected Lemma A/B plus an exact Schur complement**:
+  - an exact N × N block on V_N (the first N Dirichlet modes of the parity);
+  - a bathtub bound μ_⊥ for the complement, through a projected Lemma A for the single symbol σ₂ = Ω − 2c₂cos(at);
+  - an exact closed-form identity for the coupling (residual) Gram matrix.
+- Its constants also feed Golden Eye's Temple–Lehmann route: ν₂ and the residual.
+- **New obstruction (NUMERICAL):** Principal's (H₃^σ) at the certified point T = 16, η = 0.0373 is **false** on the N.16 near-null vectors, in both parities. For odd at log 3, P.16.B needs T ≳ 38.
+R2 (inputs):
+- S&M CERT_p2_constants Lemmas A and B (PROVED, audited) and its constants c₂ and Ω(16).
+- Principal P.16.1 (c₀* = 0.90093, PROVED) and P.16.A/B (Ω(16), η ≤ 0.0373183 and Ω(38.1) = 1.802309, CERTIFIED).
+- main G.4h "one symbol" (Q_L as a multiplier on window functions).
+- Golden Eye's N = 128 values (NUMERICAL).
+- N.16 near-null vectors (NUMERICAL).
+- Trudgian 2014 Thm 1, verified on the web in N.16.6(9).
+R3 (method): analytic lemmas, plus two float evaluations, which are not certificates and not Ritz scans: `sN/n17_eval.{py,out}` (σ₂ and μ_⊥(N)) and `sN/n17_hiband.{py,out}` (high-band fraction of the existing N.16 vectors).
+R4 (outcome):
+- Thm N.17.G1 is PROVED, with every constant either closed-form or a 1D/2D integral of Ω against explicit rational–trigonometric functions. That is S&M's Arb list (N.17.4).
+- The residual budget at log 3 odd is ε² ≲ (ρ − m)(μ_⊥ − m) ≈ 3.6e−3 at N = 128 (Schur), against ≈ 6.3e−4 for Temple with ν₂ ≈ 0.66.
+- The zero-side ceiling of (b) is explicit (N.17.6).
+R5 (GAPs):
+- the Arb run (S&M);
+- an extension of G1 to ℓ₃ > 0 for Q^G (N.17.5);
+- (H₃^σ) at T = 16 is numerically false, so P.16.B must be used at larger T;
+- even at log 3 (1.47e−5) is a stretch target.
+
+### N.17.1 Setting (PROVED, exact)
+- **The form.**
+  - At 2L = log 3, with ℓ₃ = 0, K_F = 0, so Q^G_L = Q_L = R − 2c₂B₂ (P.16.2). With σ = parity, 𝒯_L^σ = odd or even H¹₀(−L, L).
+  - **One symbol (main G.4h, PROVED).** For ξ supported in the window, B₂(ξ) = ⟨ξ, τ_aξ⟩_{H(ℝ)}, since both factors vanish off the window. So
+    **Q_L(ξ) = (1/2π)∫(¼ + t²)σ₂(t)|ξ̂(t)|²dt,  σ₂(t) = Ω(t) − 2c₂cos(at).**
+  - The same identity holds for Q^{(≤2)}_L = R − 2c₂B₂ for every 2L ≤ log 4.
+  - σ₂ is **not** ≥ 0: σ₂(0) = Ω(0) − 2c₂ = −6.3524, and σ₂ < 0 up to the crossing near Ω = 2c₂ (t ≈ 16.75; Celestial Arb bracket (16.6, 16.8)). So positivity is purely a window (uncertainty) effect, and S&M's bathtub cannot be applied to σ₂ on the whole space: it gives a negative bound. This is why G1 needs a **non-multiplier** step: a finite block where the window constraint is used exactly.
+- **Basis.**
+  - e_n(x) = sin(k_n(x + L))/√L, with k_n = nπ/(2L): n odd for even ξ, n even for odd ξ.
+  - The e_n are L²-orthonormal, ⟨e_m, e_n⟩_H = (k_n² + ¼)δ_mn, and ê_n(t) = 2k_n·trig(tL)/((k_n² − t²)√L) up to phase, with trig = cos for even ξ and sin for odd ξ.
+  - V_N = span of the first N modes of the parity, and ψ ∈ V_N^⊥ means H-orthogonal.
+  - A_N[m, n] = Q(e_m, e_n) and G_N = diag(k_n² + ¼).
+- **Closed-form action (for residual computability).**
+  - **B₂ (and any prime shift τ_{log n})**: closed form on sines and on any piecewise polynomial (trigonometric integrals over the overlap strip).
+  - **The ¼-Green operator G_D** (Lemma A): closed form.
+  - **R (the Ω multiplier)**: **not** closed form. It needs quadrature of Ω = Re ψ(¼ + it/2) − log π against rational–trigonometric products, with a tail bound for t > T_max via (Ω2) and Ω(t) = log(t/2π) + O(1/t²). That is Arb work, as in S&M's runs and Golden Eye's T ≥ 4000 plus analytic tail.
+  - The extra a-edge block of Q^G for ℓ₃ > 0 is again closed form (N.17.5).
+
+### N.17.2 The lemmas
+**Lemma A_N (projected pointwise uncertainty) — PROVED.** For ψ ∈ 𝒯_L^σ with ψ ⊥_H V_N, |ψ̂(t)|² ≤ K_N^σ(t)‖ψ‖²_H, where
+> K_N^σ(t) = K^σ(t) − Σ_{n∈V_N} |ê_n(t)|²/(k_n² + ¼),  dens_N^σ(t) := (1/π)(¼ + t²)K_N^σ(t),
+
+and K^σ = S&M's closed-form K_o or K_e (CERT_p2 §1).
+- *Proof.* As in S&M Lemma A, ∫ψ s_t = ⟨ψ, G s_t⟩_H = ⟨ψ, P_⊥G s_t⟩_H, so |ψ̂|² ≤ ‖ψ‖²(‖G s_t‖² − ‖P_N G s_t‖²).
+- With ẽ_n = e_n/√(k_n² + ¼) H-orthonormal, ⟨G s_t, ẽ_n⟩_H = ⟨s_t, e_n⟩_{L²}/√(k_n² + ¼) = ê_n(t)/√(k_n² + ¼) up to phase. ∎
+- Then ν_ψ[0, s] ≤ D_N(s)‖ψ‖²_H with D_N = ∫₀^s dens_N. D_N is a CDF majorant, not a probability: D_N(∞) = ∞.
+
+**Lemma B_N (bathtub for the single symbol on the complement) — PROVED.** Let σ_* be σ₂ or σ₂^{T,η} := σ₂ − c₀*(1 + η)1_{|t|≥T} (for (H₃), N.17.3), and let ω̃(t) := inf_{s≥t}σ_*(s), which is nondecreasing and ≤ σ_*. Then, for ψ ⊥_H V_N and any grid 0 = e₀ < e₁ < …,
+> Q_*(ψ) ≥ μ_⊥‖ψ‖²_H,  μ_⊥ := ω̃(e₀) + Σ_i (ω̃(e_{i+1}) − ω̃(e_i))·max(0, 1 − D_N(e_{i+1})).
+
+- *Proof.* S&M Lemma B with ν = the H-energy measure of ψ, via the one-symbol identity and Lemma A_N. ∎
+- Beyond a T_max, ω̃(t) ≥ Ω(t) − 2c₂ − c₀*(1 + η)[t ≥ T]. That is increasing by (Ω2), so no truncation remainder is needed (as in S&M).
+- **Float eval** (`n17_eval.out`, σ_* = σ₂, odd, log 3): μ_⊥(N) ≈ 1.16, 1.77, 2.42, 3.09, 3.77 for N = 8, 16, 32, 64, 128 (k_N = 45.8 … 732), close to Ω(k_N) − 2c₂.
+
+**Lemma C (exact coupling Gram matrix) — PROVED.**
+- For v ∈ V_N let ℓ_v(φ) := Q(v, φ) on φ ∈ V_N^⊥ ⊂ H¹₀(−L, L), and C: V_N → V_N^⊥ its H-Riesz map. Then, as matrices on the coefficient vectors of v,
+> C*C = W − E − A_N G_N^{−1} A_N,
+
+  where:
+  - W[i, j] = ⟨r_i, r_j⟩_{H(−L,L)}, with r_i := 𝓕^{−1}[σ₂ ê_i] (the H(ℝ)-Riesz representer of Q(e_i, ·) on ℝ). Explicitly,
+    W[i, j] = (1/4π²)∬σ₂(t)σ₂(s)ê_i(t)conj ê_j(s)(ts + ¼)·2 sin((t − s)L)/(t − s) dt ds;
+  - E[i, j] = r_i(L)r_j(L)·κ_σ, with κ_e = tanh(L/2) and κ_o = coth(L/2), and r_i(L) = (1/2π)∫σ₂ ê_i e^{itL}dt. This is the H-energy of the ¼-harmonic interpolant e^{±x/2} of the boundary values.
+- *Proof.*
+  - For φ ∈ H¹₀(−L, L), Q(v, φ) = ⟨r_v, φ⟩_{H(ℝ)}.
+  - The orthogonal complement of H¹₀(−L, L) in H¹(ℝ) consists of the functions that are ¼-harmonic on (−L, L). Hence ‖P_win r‖² = ‖r‖²_{H(−L,L)} − (energy of the interpolant), and ‖P_⊥P_win r‖² = ‖P_win r‖² − Σ_{n≤N}|Q(v, e_n)|²/(k_n² + ¼). ∎
+- Equivalently, C*C[i, j] = Σ_{n∉V_N} Q(e_i, e_n)Q(e_j, e_n)/(k_n² + ¼). Lemma C gives this infinite tail in closed form, with **no truncation constant**. This is why the residual is computable.
+- **Caution, from the N.17 analysis:** bounding the dual norm over all of H¹(ℝ) instead, i.e. using W − AG^{−1}A without the window reduction, keeps the O(1) mass of r_v outside the window (Ω is nonlocal) and **cannot** resolve 1e−3.
+
+**Thm N.17.G1 (Schur certificate) — PROVED.** Let 0 ≤ m < μ_⊥. If
+> S(m) := A_N − m G_N − (W − E − A_N G_N^{−1}A_N)/(μ_⊥ − m) ⪰ 0,
+
+then Q_*(ξ) ≥ m‖ξ‖²_H for all ξ ∈ 𝒯_L^σ.
+- *Proof.* Write ξ = v + ψ (H-orthogonal), so Q_*(ξ) = Q_*(v) + 2Re Q_*(v, ψ) + Q_*(ψ) ≥ ⟨A v, v⟩ − 2‖C v‖‖ψ‖ + μ_⊥‖ψ‖² (Lemmas B_N and C).
+- Then ≥ ⟨A v, v⟩ − ‖C v‖²/(μ_⊥ − m) + m‖ψ‖² by AM–GM, and ≥ m(‖v‖² + ‖ψ‖²) by S(m) ⪰ 0. ∎
+- If σ_* = σ₂^{T,η}, the coupling uses σ_* in place of σ₂ in W, E and A_N.
+
+**Cor N.17.T (Temple–Lehmann input, Golden Eye's route) — PROVED.**
+- (i) **Coarse ν₂.** By min-max applied to Q_* ≥ S(m′) ⊕ m′ (on V_N ⊕ V_N^⊥), λ₂(Q_*) ≥ min(λ₂(S(m′) + m′G_N, G_N), m′). For odd at log 3 take m′ = 0.5, with Golden Eye's λ₂ ≈ 0.66 (NUMERICAL).
+- (ii) **Residual.** For a Ritz vector v of A_N with Rayleigh quotient ρ, Galerkin orthogonality gives ε² := ‖(Q − ρ)v‖²_{H^{−1}(win)} = v*(W − E − A_NG_N^{−1}A_N)v, the same matrix as Lemma C.
+- Then λ₁ ≥ ρ − ε²/(ν₂ − ρ) (Temple–Lehmann; classical, theorem number unverified).
+- **Budgets at log 3 odd** (ρ ≈ 9.52e−4, NUMERICAL):
+  - Temple needs ε² < ρ(ν₂ − ρ) ≈ 6.3e−4, i.e. ε ≲ 0.025, matching Golden Eye's ≈ 2.5e−2.
+  - Schur needs v₁*C*Cv₁ < ρ(μ_⊥ − ρ) ≈ 3.6e−3 at N = 128 (μ_⊥ ≈ 3.77, float). Schur divides by μ_⊥ instead of ν₂, about 5.7× more room.
+  - Even (stretch): ρ ≈ 1.47e−5, so ε² ≲ 1.1e−6 (Temple, ν₂ ≈ 0.077) or ≈ 5.5e−5 (Schur).
+- **Constant buffers.** A loss that does not scale with the residual must be ≪ 9.5e−4 (odd), so Celestial's ≈ 1e−4 C.15-type buffers are acceptable for odd but not for even (1.47e−5).
+
+### N.17.3 Why the certificate must resolve below 9.52e−4, read off the N.16 near-null vectors (NUMERICAL)
+- **Where the near-null vector lives.**
+  - The odd near-null vector peaks at t ≈ 7.54, where σ₂ = −0.300, and the even one at t ≈ 5.46, where σ₂ = +0.643 (`n17_eval.out`).
+  - The odd vector is negative-symbol mass held in place only by the window. That is the exact-block part of G1, and no multiplier bathtub can see it.
+  - Both vectors dodge γ₁ and γ₂ (N.16.4, 10⁻⁶ to 10⁻⁹ relative). This is the zero-side picture of the same smallness and is not used in the bound.
+- **Ritz vectors are not converged at the 1e−3 level.**
+  - The N = 320 P1 vectors give 1.34e−3 (odd) and 2.5e−4 (even), against Golden Eye's 9.52e−4 and 1.47e−5.
+  - In N.16.4, 31% (odd) and 94% (even) of their value sits in high-frequency content.
+  - The Schur/Temple loss is exactly that high-frequency residual, so it must be driven below the margin itself. Hence the endpoint value 9.52e−4 is the resolution target, and a basis with good endpoint behaviour matters more than raw N. (Endpoint behaviour of the true minimizer: HEURISTIC, nonlocal Ω.)
+- **New: (H₃^σ) at T = 16 fails on these vectors (`n17_hiband.out`).**
+  - P.16.B needs, for **every** ξ, Q^G(ξ) ≥ c₀*(1 + η)‖ξ^{≥T}‖²_H + μ‖ξ^{<T}‖²_H. For an explicit v this requires ρ ≥ c₀*(1 + η)f(T), where f is the H-energy fraction above T.
+
+    | vector | ρ | f(16) | c₀*(1.0373)f(16) | f(19.35) | f(38.1) | c₀*·2·f(38.1) |
+    |---|---|---|---|---|---|---|
+    | odd #0 | 1.344e−3 | 1.34e−2 | 1.26e−2 > ρ, **fails** | 1.90e−3 (2.13e−3 > ρ, fails) | 3.05e−4 | 5.50e−4 ≤ ρ |
+    | even #0 | 2.54e−4 | 1.26e−3 | 1.18e−3 > ρ, **fails** | 1.05e−4 (ok) | 4.2e−5 | 7.6e−5 ≤ ρ |
+
+  - So (H₃^σ)(16, 0.0373, μ) is false for every μ ≥ 0, in both parities: NUMERICAL, an explicit witness up to quadrature.
+  - The certified point T = 16 of P.16.A covers the high band, but the hypothesis it feeds cannot hold there.
+  - For odd at log 3, T ≈ 38.1 with η = 1 is indicatively viable, with μ ≲ ρ − 2c₀*f(38.1) ≈ 9.52e−4 − 5.5e−4 ≈ 4e−4 (the P1 vector's f used as a proxy for Golden Eye's vector). That gives ℓ₃* ≲ μ/87 ≈ **5e−6** (NUMERICAL, indicative), below P.16.5's 1.5e−5.
+  - *Touches Principal P.16.3's T = 16 row.*
+- **Consequence for G1.** S&M should certify the (H₃)-form directly: G1 with σ_* = σ₂^{T,η} at T ≈ 38.1, η = 1 (odd). Then P.16.B gives the 3-entry with that μ. On the complement this is harmless: μ_⊥ ≈ Ω(k_N) − 2c₂ − 1.80, which is ≈ 2.0 at N = 128 (eval.).
+
+### N.17.4 Constants and the Arb plan (S&M's job)
+| constant | value / source | status |
+|---|---|---|
+| c₂ = (log 2)/√2 | 0.4901290717… | CERTIFIED (S&M) |
+| c₀* | 0.90093 (P.16.1) | PROVED (exact algebraic) |
+| Ω(16), η_max(16) | 0.934548783922 ± 4e−13, 0.0373183 | CERTIFIED (Principal/S&M) |
+| Ω(38.1), η_max | 1.802309, 1.0005 | CERTIFIED (Principal P.16.A) |
+| σ₂(0) = Ω(0) − 2c₂ | −6.3524 | eval. (Ω(0) = −γ − π/2 − 3log 2 − log π, N.13) |
+| K^σ, dens_N^σ | closed form (S&M §1) minus a finite closed-form sum | Arb: ball evaluation over boxes, as in S&M |
+| μ_⊥(N) | ≈ 3.77 (σ₂, N = 128), ≈ 2.0 (σ₂^{38.1,1}) | eval. → **Arb (Lemma B_N run; S&M's script with dens_N and ω̃ = running inf)** |
+| A_N (R part) | ∫ Ω·rational·trig | **Arb quadrature + (Ω2)/Stirling tail** |
+| A_N (B₂ part, a-edges) | closed-form trig | Arb (exact) |
+| r_i(L), E | 1D integrals of σ₂ ê_i | **Arb quadrature** |
+| W | 2D integral with sinc kernel (Lemma C) | **Arb, heaviest item**; alternatively truncate Σ_n Q(e_i, e_n)²/(k_n² + ¼) at N′ and bound the remainder by W − E − (partial sum) |
+| S(m) ⪰ 0 | Cholesky / LDLᵀ in ball arithmetic | Arb |
+
+Sequencing: (1) μ_⊥(N), cheap and the same as S&M's existing script. (2) A_N and E. (3) W. (4) Check S(m) ⪰ 0 at the target m (odd: m ≈ 5e−4 for σ₂; for σ₂^{38.1,1}, μ as large as it certifies).
+
+### N.17.5 Extension to ℓ₃ > 0 (needed by P.16.B) — PROVED (logic) where stated, GAP otherwise
+- For 2L ∈ (log 3, log 3 + ℓ̄], Q^G_L = Q^{(≤2)}_L + (a-edge block of K_F) (P.16.2/P.16.5). Q^{(≤2)}_L is the σ₂ multiplier on the larger window. Its margin is nonincreasing in L (one L-independent form, PROVED), so certify it at L̄.
+- The a-edge block is supported on F₃ (|F₃| = 4ℓ₃), has closed-form action, and is bounded by c₂‖ξ‖²_{H(F₃)} (S1, PROVED).
+  - **Option 1:** include it exactly in A_N and W, and bound it on V_N^⊥ by c₂ (crude: μ_⊥ ↦ μ_⊥ − c₂). This must be redone per ℓ₃ grid point, so uniformity in ℓ₃ is a **GAP**.
+  - **Option 2:** absorb it as in P.16.B: low-band cost c₂(1 + 1/η′)(4ℓ₃T/π), high band covered if Ω(T) ≥ c₀*(1 + η) + c₂(1 + η′). This is uniform in ℓ₃ but raises T (≈ 100 at η = η′ = 1, eval.).
+
+### N.17.6 (b) An explicit zero-side ceiling (PROVED for explicit ξ, unconditional; it never gives a lower bound)
+- **Input (Trudgian 2014, Thm 1; statement verified on the web in N.16.6(9)).** |S(T)| ≤ 0.112 log T + 0.278 log log T + 2.510 for T ≥ e. With N(T) = θ(T)/π + 1 + S(T) and θ′ = Ω/2 (N.16.6(2)), the count of ordinates in [n, n + 1] satisfies, for n ≥ 3,
+  > Z(n) ≤ Ω(n + 1)/(2π) + 2(0.112 log(n + 1) + 0.278 log log(n + 1) + 2.510)  (PROVED; Ω increasing by (Ω2)).
+- **Sobolev on unit intervals (PROVED).** sup_I|F|² ≤ 2∫_I(|F|² + |F′|²).
+- **Ceiling.**
+  - For real ξ ∈ H¹₀(−L, L), u = ½ξ − ξ′, and the PROVED identity Q_L(ξ) = Σ_ρ û(γ_ρ)conj û(conj γ_ρ), the terms with 0 < γ ≤ H = 3 000 175 332 800 are 2|û(γ)|² ≥ 0 (Platt–Trudgian Thm 1, CERTIFIED). γ₁ > 14. So
+    > m^σ(L) ≤ Q_L(ξ)/‖ξ‖²_H ≤ [4Σ_{n=14}^{⌊H⌋} Z(n)∫_n^{n+1}(|û|² + |û′|²)dt + E_H]/‖u‖²₂,  E_H := Σ_{|Re γ_ρ|>H}|û(γ_ρ)conj û(conj γ_ρ)|.
+  - E_H is unconditional. Since |Im γ_ρ| < ½, it is ≤ Σ_{γ>H} sup_{|s|≤½}|û(γ + is)|², which is ≤ 2e^{L}·sup_{|s|≤½}∫_{t>H−1}Z(t)(|û(t + is)|² + |û′(t + is)|²)dt by the same Sobolev step. For piecewise-linear ξ, |û(t + is)| ≪ e^{L/2}/t, so E_H ≪ log H/H ≈ 1e−11 (eval.).
+  - Exact terms: replacing Z(n)·sup by the exact sum over the known low zeros (mpmath ordinates, NUMERICAL; all below H) sharpens this without changing its status.
+- **Status and use.**
+  - This is a rigorous **ceiling on any certificate's margin**, for any explicit witness ξ: no G1 certificate can exceed it.
+  - It is weaker than the Arb Rayleigh quotient of the same ξ on the prime side. Its value is that it shows the dependence on t* (mechanism), and it uses zeros only up to the verified height.
+  - It is never a lower bound (N.16.6(5)). Collapsing it to C log t*·(1 − λ_k) remains HEURISTIC.
+
+### N.17.7 Labels after N.17
+| item | label |
+|---|---|
+| N.16.R(1) Golden Eye N = 128 margins replace N.15.2 full-form values | NUMERICAL (credit Golden Eye) |
+| Monotonicity λ(L) nonincreasing | PASSES (one L-independent form, PROVED; data NUMERICAL) |
+| Onset (0.1, log 1.5) odd only; even isolated from ℓ₂ = 0 | NUMERICAL (Golden Eye) |
+| Count vs D(t*) | HEURISTIC |
+| Rate ≈ 2× envelope slope; envelope holds on all points | HEURISTIC / NUMERICAL comparison; law stays CONJECTURE (upper envelope) |
+| One-symbol identity Q^{(≤2)}_L = ∫(¼ + t²)σ₂\|ξ̂\|² on window functions | PROVED |
+| Lemma A_N, Lemma B_N, Lemma C, Thm N.17.G1, Cor N.17.T | PROVED |
+| μ_⊥(N) ≈ 1.16 … 3.77 | eval. (float), Arb pending (S&M) |
+| (H₃^σ)(16, 0.0373) fails on the near-null vectors | NUMERICAL (explicit witness, up to quadrature) |
+| Odd log 3: T ≈ 38.1, ℓ₃* ≲ 5e−6 | NUMERICAL (indicative) |
+| Extension to ℓ₃ > 0 | PROVED (logic) for the options; uniformity GAP |
+| Zero-count Z(n) via Trudgian 2014 Thm 1 | PROVED (statement verified N.16.6(9)) |
+| Zero-side ceiling for explicit ξ | PROVED (unconditional; ceiling only) |
+| **None of §N.16/§N.17's mechanism, rate or count statements enters any certificate** | REMARK |
+| G1 itself (the certified odd margin of Q^G at log 3) | GAP (Arb run, S&M) |
+| Positivity up to L = 1.42 | CERTIFIED conditional on Mori |
+| RH | OPEN |
+
+Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
+
 ## References (verified this session unless marked)
 - Diamond, H. G., Montgomery, H. L., Vorhauer, U. M. A., "Beurling primes with large oscillation", Math. Ann. 334 (2006) 1–36,
   doi:10.1007/s00208-005-0638-2, Theorem 1 (bibliographic data and Theorem 1 statement checked on the web this session).

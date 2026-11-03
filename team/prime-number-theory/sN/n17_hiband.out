@@ -1,0 +1,2 @@
+even #0  rho=2.5379e-04  T=16.00: f=1.257e-03, c0*(1+eta)f=1.175e-03 > rho: (H3) FAILS on this vector | T=19.35: f=1.054e-04, c0*(1+eta)f=1.185e-04 <= rho ok | T=38.10: f=4.203e-05, c0*(1+eta)f=7.573e-05 <= rho ok
+odd #0  rho=1.3436e-03  T=16.00: f=1.344e-02, c0*(1+eta)f=1.256e-02 > rho: (H3) FAILS on this vector | T=19.35: f=1.895e-03, c0*(1+eta)f=2.130e-03 > rho: (H3) FAILS on this vector | T=38.10: f=3.051e-04, c0*(1+eta)f=5.498e-04 <= rho ok

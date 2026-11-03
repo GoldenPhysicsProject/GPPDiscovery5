@@ -1,0 +1,6 @@
+sigma_2 at near-null peaks: odd t=7.54 -> -0.3003 ; even t=5.46 -> 0.6427 ; min over t in [0,20]: -6.3524 ; sigma_2(0) = -6.3524
+N=   8 k_N=   45.75  D_N(TM)=1040.3 (~ L*TM/pi - N modes, sanity)  mu_perp(N) ~ 1.1609  (Omega(k_N)-2c2 = 1.0051)
+N=  16 k_N=   91.51  D_N(TM)=1032.4 (~ L*TM/pi - N modes, sanity)  mu_perp(N) ~ 1.7665  (Omega(k_N)-2c2 = 1.6983)
+N=  32 k_N=  183.01  D_N(TM)=1016.4 (~ L*TM/pi - N modes, sanity)  mu_perp(N) ~ 2.4165  (Omega(k_N)-2c2 = 2.3914)
+N=  64 k_N=  366.03  D_N(TM)=984.4 (~ L*TM/pi - N modes, sanity)  mu_perp(N) ~ 3.0909  (Omega(k_N)-2c2 = 3.0846)
+N= 128 k_N=  732.06  D_N(TM)=920.4 (~ L*TM/pi - N modes, sanity)  mu_perp(N) ~ 3.7733  (Omega(k_N)-2c2 = 3.7777)
