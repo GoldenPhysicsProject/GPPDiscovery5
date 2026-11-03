@@ -79,3 +79,39 @@ try:
     print('   eta_max(T=16) = Omega(16)/c0* - 1 =', (Om('16')/C0 - 1).str(8))
 except ImportError:
     print('5. python-flint not available')
+
+# --- 6. (S103j, P.17) exact sympy identities for the {2,3} comparison form (extension of C.15.A)
+import sympy as _sp
+_t, _T, _a, _b, _c2, _c3 = _sp.symbols('t T a b c2 c3', real=True)
+_Om = _sp.Function('Omega')
+_lines = 2*_c2*(1 - _sp.cos(_a*_t)) + 2*_c3*(1 - _sp.cos(_b*_t))
+_s23 = _Om(_t) - 2*_c2*_sp.cos(_a*_t) - 2*_c3*_sp.cos(_b*_t)
+_qT = _Om(_T) - 2*_c2 - 2*_c3
+_aT = _Om(_t) - _Om(_T) + _lines
+_mabs = _Om(_T) - _Om(_t) + _lines
+_mneg = _Om(_T) - _Om(_t)
+print('6. s23 - (qT + aT) =', _sp.simplify(_s23 - (_qT + _aT)))
+print('   s23 - qT - [Om(t)-Om(T)] - lines =', _sp.simplify(_s23 - _qT - (_Om(_t) - _Om(_T)) - _lines))
+print('   mabs - aT =', _sp.simplify(_mabs - _aT), ' ; mabs + aT =', _sp.simplify(_mabs + _aT - 2*_lines), '(+2*lines)')
+print('   aT + mneg - lines =', _sp.simplify(_aT + _mneg - _lines))
+_mu, _mA, _ct, _be = _sp.symbols('mu mu_A c_tail beta', real=True)
+_M = _sp.Matrix([[_mA, _be], [_be, _ct]])
+_ev = sorted(_M.eigenvals().keys(), key=lambda e: str(e))
+_lam = (_mA + _ct - _sp.sqrt((_mA - _ct)**2 + 4*_be**2))/2
+print('   2x2 Schur: lambda_cert is an eigenvalue:', any(_sp.simplify(e - _lam) == 0 for e in _ev))
+print('   det(M - mu I) - [(mu_A-mu)(c_tail-mu) - beta^2] =', _sp.expand((_M - _mu*_sp.eye(2)).det() - ((_mA - _mu)*(_ct - _mu) - _be**2)))
+print('   det(M) = mu_A c_tail - beta^2  (so lambda_cert > 0 iff s_V eps_abs < mu_A c_tail, given mu_A, c_tail > 0):', _sp.expand(_M.det()))
+
+# --- 7. (S103j, P.17) Arb: comparison constants q_T = Omega(T) - 2(c2+c3) and the threshold Omega(T) = 2(c2+c3)
+try:
+    import flint
+    flint.ctx.prec = 128
+    def Om7(tv):
+        z = flint.acb(flint.arb(1)/4, flint.arb(tv)/2)
+        return z.digamma().real - flint.arb.pi().log()
+    C2 = flint.arb(2).log()/flint.arb(2).sqrt(); C3 = flint.arb(3).log()/flint.arb(3).sqrt()
+    print('7. Arb: 2(c2+c3) =', (2*(C2+C3)).str(15))
+    for tv in ['59', '60', '100', '150']:
+        print('   q_T(T=%s) = Omega - 2(c2+c3) =' % tv, (Om7(tv) - 2*C2 - 2*C3).str(12))
+except ImportError:
+    print('7. python-flint not available')

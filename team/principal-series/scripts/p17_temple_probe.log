@@ -1,0 +1,10 @@
+# p17_temple_probe.py -- NUMERICAL. RH OPEN.
+odd l3=0.00 n=10 rho=1.2094e-03 lam1(M=160)=9.4560e-04 lam2=0.6635 ||r||_H*(modes<M)=2.770e-02 Temple(nu=lam2)=5.0422e-05 Temple(nu=0.44)=-5.3981e-04
+odd l3=0.00 n=20 rho=9.9241e-04 lam1(M=160)=9.4560e-04 lam2=0.6635 ||r||_H*(modes<M)=1.276e-02 Temple(nu=lam2)=7.4653e-04 Temple(nu=0.44)=6.2137e-04
+odd l3=0.00 n=40 rho=9.5408e-04 lam1(M=160)=9.4560e-04 lam2=0.6635 ||r||_H*(modes<M)=5.957e-03 Temple(nu=lam2)=9.0051e-04 Temple(nu=0.44)=8.7324e-04
+odd l3=0.03 n=10 rho=5.5641e-04 lam1(M=160)=4.6949e-04 lam2=0.5335 ||r||_H*(modes<M)=1.753e-02 Temple(nu=lam2)=-2.0542e-05 Temple(nu=0.44)=-1.4324e-04
+odd l3=0.03 n=20 rho=4.9925e-04 lam1(M=160)=4.6949e-04 lam2=0.5335 ||r||_H*(modes<M)=1.008e-02 Temple(nu=lam2)=3.0876e-04 Temple(nu=0.44)=2.6825e-04
+odd l3=0.03 n=40 rho=4.7418e-04 lam1(M=160)=4.6949e-04 lam2=0.5335 ||r||_H*(modes<M)=4.547e-03 Temple(nu=lam2)=4.3539e-04 Temple(nu=0.44)=4.2714e-04
+even l3=0.00 n=10 rho=1.2751e-04 lam1(M=160)=1.2453e-04 lam2=0.0763 ||r||_H*(modes<M)=2.943e-03 Temple(nu=lam2)=1.3845e-05 Temple(nu=0.44)=1.0781e-04
+even l3=0.00 n=20 rho=1.2530e-04 lam1(M=160)=1.2453e-04 lam2=0.0763 ||r||_H*(modes<M)=1.653e-03 Temple(nu=lam2)=8.9436e-05 Temple(nu=0.44)=1.1909e-04
+even l3=0.00 n=40 rho=1.2470e-04 lam1(M=160)=1.2453e-04 lam2=0.0763 ||r||_H*(modes<M)=8.262e-04 Temple(nu=lam2)=1.1574e-04 Temple(nu=0.44)=1.2314e-04

@@ -1,0 +1,6 @@
+odd 20 P2 margin<=0.00099  lambda_min(Q2-Om16*Nhi)<=-0.17259  mu_max(H3,T=16,eta=.0373)<=-1.00000
+odd 40 P2 margin<=0.00095  lambda_min(Q2-Om16*Nhi)<=-0.17327  mu_max(H3,T=16,eta=.0373)<=-1.00000
+odd 60 P2 margin<=0.00095  lambda_min(Q2-Om16*Nhi)<=-0.17339  mu_max(H3,T=16,eta=.0373)<=-1.00000
+even 20 P2 margin<=0.00013  lambda_min(Q2-Om16*Nhi)<=-0.21528  mu_max(H3,T=16,eta=.0373)<=-1.00000
+even 40 P2 margin<=0.00012  lambda_min(Q2-Om16*Nhi)<=-0.21554  mu_max(H3,T=16,eta=.0373)<=-1.00000
+even 60 P2 margin<=0.00012  lambda_min(Q2-Om16*Nhi)<=-0.21558  mu_max(H3,T=16,eta=.0373)<=-1.00000
