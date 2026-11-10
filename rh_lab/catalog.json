@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "experiments": [
+    {
+      "id": "fake_quartet_control",
+      "path": "rh_lab/controls.py",
+      "method": "exact_rational",
+      "evidence": "paper_proved",
+      "claim": "Reflection, conjugation and strict positivity on the critical line do not imply RH for general entire functions.",
+      "assumptions": [
+        "The explicitly defined degree-four polynomial is not the completed zeta function."
+      ],
+      "falsifiers": [
+        "Evaluate the four purported roots with exact Gaussian rational arithmetic.",
+        "Check the global sum-of-squares lower bound on the critical line."
+      ],
+      "limitations": [
+        "This blocks an invalid inference; it does not establish any statement about zeros of zeta."
+      ],
+      "timeout_s": 10,
+      "default_run": true
+    },
+    {
+      "id": "s9_symbolic_identities",
+      "path": "experiments/s9_lean_ready/s9_symbolic.py",
+      "method": "exact_rational",
+      "evidence": "paper_proved",
+      "claim": "The S9/S10 Lean-ready algebraic identities (cos/cosh at Fourier nodes, Re(t+i\u03b8)^{-2}, sign-lemma factorization, 2x2 Gram energy, and the untempered |a(p)| rewrite) hold exactly.",
+      "assumptions": [
+        "Sympy's exact simplification is a faithful check of the named elementary identities."
+      ],
+      "falsifiers": [
+        "Any identity whose simplified residual is nonzero fails the script's asserts."
+      ],
+      "limitations": [
+        "These are algebraic identities used in later numerical work; they do not imply RH.",
+        "Requires sympy (see requirements.txt). Not part of the stdlib smoke set."
+      ],
+      "timeout_s": 120,
+      "default_run": false
+    },
+    {
+      "id": "dh_phi_identities",
+      "path": "experiments/dh_phi/dh_phi.py",
+      "method": "ball_crosscheck",
+      "evidence": "interval_certified",
+      "claim": "The Davenport\u2013Heilbronn coefficient \u03ba equals \u221a(\u03c6+2)\u2212\u03c6 = 5^{1/4}\u221a\u03c6\u2212\u03c6, and \u03b5(\u03c7)=(\u03c6+i)/\u221a(\u03c6+2), with 400-bit Arb balls containing the residuals.",
+      "assumptions": [
+        "The conductor-5 odd character and the classical DH functional equation are as in the script docstring.",
+        "python-flint Arb at 400 bits is a correct interval implementation."
+      ],
+      "falsifiers": [
+        "Any named residual ball that does not contain 0."
+      ],
+      "limitations": [
+        "\u03c6 is forced by the choice q=5, not by RH.",
+        "Requires python-flint. Not part of the stdlib smoke set."
+      ],
+      "timeout_s": 30,
+      "default_run": false
+    },
+    {
+      "id": "modular_thermality_moments",
+      "path": "experiments/blocks_moments/moments_check.py",
+      "method": "floating",
+      "evidence": "numerical",
+      "claim": "High-precision floating-point checks of P(\u03bb)=\u03c0\u03bb/sinh(\u03c0\u03bb): Fourier pair against sech\u00b2(x/2)/4, Planck representation at \u03b2=2\u03c0, logarithmic derivative, and Matsubara residues.",
+      "assumptions": [
+        "mpmath quadrature and differentiation at 60 decimal places bound the residuals below the script's stated tolerances."
+      ],
+      "falsifiers": [
+        "Any relative residual exceeding the script's asserts (1e-40 / 1e-45 / 1e-15)."
+      ],
+      "limitations": [
+        "NUMERICAL (float, mpmath). Not an interval certificate and not a statement about RH.",
+        "Requires mpmath. Not part of the stdlib smoke set."
+      ],
+      "timeout_s": 180,
+      "default_run": false
+    },
+    {
+      "id": "levy_archimedean_kernel",
+      "path": "experiments/paper_checks/levy_arch_check.py",
+      "method": "floating",
+      "evidence": "numerical",
+      "claim": "Float checks that the Kubo\u2013Mori kernel at \u03b2=2\u03c0 matches P(\u03bb), and that the archimedean Weil term matches a L\u00e9vy\u2013Khintchine representation with jump density \u03bd(u)=2e^{-u/2}/(1-e^{-2u}).",
+      "assumptions": [
+        "mpmath at 30 decimal places, with the script's quadrature splits, is accurate enough to read residuals."
+      ],
+      "falsifiers": [
+        "A large residual between the digamma difference and the L\u00e9vy integral, or between the Kubo\u2013Mori kernel and P(\u03bb)."
+      ],
+      "limitations": [
+        "NUMERICAL (float, mpmath 30 dps). Not certified.",
+        "Requires mpmath. Not part of the stdlib smoke set."
+      ],
+      "timeout_s": 180,
+      "default_run": false
+    },
+    {
+      "id": "pole_renorm_prime_measure",
+      "path": "experiments/paper_checks/pole_renormalized_prime_measure.py",
+      "method": "floating",
+      "evidence": "numerical",
+      "claim": "The pole-renormalized prime jump measure M_prime((0,R]) = 2 \u03a3_{n\u2264e^R} \u039b(n)/\u221an tracks 4(e^{R/2}\u22121) at the sampled R, and the DH logarithmic-derivative coefficients b(n) are neither nonnegative nor supported only on prime powers.",
+      "assumptions": [
+        "Ordinary floating-point sums of von Mangoldt weights up to e^{14} suffice to see the sign of the difference."
+      ],
+      "falsifiers": [
+        "Nonnegative, prime-power-supported b(n) for the conductor-5 DH combination up to n=60 would refute part (B)."
+      ],
+      "limitations": [
+        "NUMERICAL (float). Not certified and not a statement about RH.",
+        "Requires mpmath. Not part of the stdlib smoke set."
+      ],
+      "timeout_s": 60,
+      "default_run": false
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 title: "GPPDiscovery5: numeric workbench of the Golden Physics Project (Discovery 5)"
-abstract: "Grok (guest seat) discovery lab for the Golden Physics Project: runnable numerics and finished math. Private strategy lives in GPP-bridge."
+abstract: "Heart of the Cosmos (Grok Bot by xAI) discovery lab for the Golden Physics Project: runnable numerics and finished math. Private strategy lives in GPP-bridge."
 authors:
   - family-names: "Toupin"
     given-names: "Daniel"

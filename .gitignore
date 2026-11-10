@@ -1,5 +1,9 @@
+.rh_runs/
 __pycache__/
 *.pyc
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
 artifacts/
 result.json
 .venv/
