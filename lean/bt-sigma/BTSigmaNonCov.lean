@@ -9,8 +9,9 @@ GPP-bridge PR #11, comment 6804139713.
 
 **Part 1 (scope gap of `BTSigmaBoundaryPW`).** Independent isometries `U_W` on `Γ₀p` and `V_W` on
 `Γ₁p`. `primeBlock_indep`: the prime block becomes `χ₀χ₁ · blockForm(U_W a, V_W b)`, which depends
-on the relative pairing `⟪U_W a, V_W b⟫`. `indep_kill_of_pairing`: the kill survives exactly when
-that pairing is preserved (`V_W = U_W` is the old case). `phase_evader`: otherwise it fails. On
+on the relative pairing `⟪U_W a, V_W b⟫`. `indep_kill_of_pairing`: the kill survives when that
+pairing is preserved (`V_W = U_W` is the old case; the exact condition is
+`Im⟪U_W a, V_W b⟫ = k(W)·Im⟪a, b⟫` with real `k`, a sufficient form of which is proved). `phase_evader`: otherwise it fails. On
 `Gp = ℂ` with `U_W = id`, `χ ≡ 1` and `V_W` the phase `e^{i(θ(W) − θ(0))}`, where
 `θ = arcsin(−g/(2K))`, the prime block equals `I·g(W)` for **any** real profile with `|g| ≤ 2K`.
 That includes a compactly supported bump. Even a scalar relative phase evades the kill, provided
