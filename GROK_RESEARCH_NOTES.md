@@ -19,3 +19,10 @@
 - Part (2) infinite-dim: BTSigmaTranslationEvader.lean (7 results PROVED, Mathlib-only, std axioms): translation isometry group on L²(ℝ;ℂ) (group law), ⟪1_[0,1], V_W 1_[0,1]⟫ = max(0,1−|W|), Im⟪i·1_[0,1], V_W 1_[0,1]⟫ vanishes for W ≥ 1, = −1 at 0, so not real-analytic: the kill does NOT extend (evader_not_analytic).
 - b̄a condition (paper level): in the frequency picture U_W = e^{iWξ}, ⟪U_W b, a⟫ = ∫ e^{-iWξ} conj(b) a dξ; it equals the C_c^∞ profile G iff conj(b)·a = (2π)^{-1}·Ĝ-inverse, which by Paley–Wiener is the restriction of an entire function of exponential type ≤ R + log N, in Schwartz class, never compactly supported (else G entire ⇒ G ≡ 0) and never exponentially decaying. Any L² factorisation (e.g. |a| = |b| = |F⁻¹G|^{1/2}) works. Plancherel realisation not yet in Lean.
 - Remaining OPEN: non-circular datum with non-covariant prime block AND T* (P_W ≠ 0), h-independent intertwiners; S_b, BT-Σ, ARP, RH.
+
+## 2026-11-11 ~15:05 EST — Turbo 6805665010: theory-level statement (kernel theories)
+- lean/kernel-theory/KernelTheory.lean (316 lines, sha256 69efce004816dbdb…; `lake env lean` exit 0 against GPPVerify main 22f8f7d, 17 decls, std axioms only, no sorry/axiom).
+- (1) Datum `KernelTheory`: Test, Θ (Θ²=id), Ψ with Ψ(Θf)(s)=Ψf(1−s), weights W with multiplicity closed under ι and conj, corr with spectral identity, interpolation (density). No primes/zeros. Character norm = in-tree Cesàro selector (`characterNorm`, `cesaroFinite_iff`).
+- (2) `principalSeries_of_reflectionPositive` (PROVED): RP ⇒ every weight Re=1/2; `cesaroFinite_of_reflectionPositive` (PROVED). Lift of online_of_pairing_nonneg.
+- (3) `zetaTheory` (PROVED, every field filled from tree: GW-EF-3, zero symmetry, multiplicities; Θf=f(−·)). `zeta_obligation_iff_arp` (PROVED): RP of zetaTheory ⇔ ARP. `rh_of_arp'` = ζ corollary (PROVED). Open obligation: `ZetaReflectionPositivityObligation` — OPEN; its local-data/factor-map form (prime sector opposite sign) not yet typed (GAP). RH OPEN.
+- Remaining: port to GPPVerify (PR, merge gate), re-derive rh_of_arp in GwefAssembly itself, type the factor-map form.
