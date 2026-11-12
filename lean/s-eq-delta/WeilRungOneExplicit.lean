@@ -31,8 +31,8 @@ reproduced in GPPDiscovery5/s27).
 
 ## Status of rung 1 (labels)
 * CERTIFIED (Arb ball arithmetic, single implementation, Lean-open; `s27_onestroke_arb.py` at
-  `h = 11/20`, `T = 100`, `K = 60`): `Q(f) ≥ 3.48·10⁻⁸ ‖f‖²` for every `f` on `[−0.55, 0.55]`
-  (even sector binding; odd `≥ 9.96·10⁻⁶`). Since `log 3 < 1.1` (`log_three_lt`, PROVED), this covers
+  `h = 11/20`, `T = 100`, `K = 60`): `Q(f) ≥ 3.479999999974342·10⁻⁸ ‖f‖²` (the recorded even `certified_lower`) for every `f` on `[−0.55, 0.55]`
+  (even sector binding; odd `≥ 9.95999999999974·10⁻⁶`, recorded). Since `log 3 < 1.1` (`log_three_lt`, PROVED), this covers
   the whole closed rung 1. The earlier S27 certificate on `[−0.8, 0.8]` already covered it.
   `RungOneArbCertificate` is that statement as a named Prop. `rung_one_of_certificate` (PROVED) gives
   `ReflectionPositiveOnRung (log 3)`.
@@ -50,13 +50,16 @@ reproduced in GPPDiscovery5/s27).
 ## Margin across rungs (lower bounds CERTIFIED by Arb; the rest NUMERICAL)
 | rung edge | window `L` | certified `λ_min ≥` | NUMERICAL `λ_min ≈` |
 |---|---|---|---|
-| 0 | `log 2` | 1.30e−3 | 1.331e−3 |
-| 1 | `log 3` | 4.81e−8 (h = 0.5493) | 5.58e−8 |
-| 2 | `log 4` | 5.80e−13 | 8.5e−13 (float floor) |
+| 0 | `log 2` | 1.2999999999999997e−3 | 1.331e−3 |
+| 1 | `log 3` | 4.8099999999746e−8 (h = 0.5493) | 5.58e−8 |
+| 2 | `log 4` | 5.79545426360329e−13 | 8.5e−13 (float floor) |
 | 3 (S27) | 1.6 < `log 5` | 1.02e−17 | — |
 | (S27/28) | 2.0 | 4.12e−30 | — |
-The fit `λ_min ≈ 10^{−4.9·e^L}`, i.e. `exp(−c·e^L)` with `c ≈ 11`, is NUMERICAL: the margin is
-doubly exponential in the window.
+The fit is `ln λ_min ≈ −c·e^L + d` (NUMERICAL, from the three NUMERICAL margins above): successive
+slopes `−10.08` (rung 0→1) and `−11.09` (rung 1→2), least-squares `c ≈ 10.6`, `d ≈ +14.7`. So `c ≈ 11`
+is the slope, not a pure `exp(−11·e^L)` (that would give `≈ 5·10⁻¹⁵` at rung 1, not `5.58·10⁻⁸`).
+The margin is doubly exponential in the window. Certified bounds are stated at the recorded
+`certified_lower` digits (Turbo 6815936710, correction 1).
 
 ## Induction k → k+1 and where it breaks
 * The form does not change between rungs; only the test class grows. So rung `k+1` ⇒ rung `k`
@@ -64,7 +67,7 @@ doubly exponential in the window.
 * Splitting tests as (old window) ⊕ (new directions), the step is a Schur complement. In the 2×2
   model (`two_by_two_nonneg_iff`, PROVED), with `a = λ_k` the rung-`k` margin, `d` the diagonal of a
   new direction and `b` its coupling to the soft mode, positivity holds iff `b² ≤ λ_k·d`. With
-  `λ_k ≈ exp(−c e^{L_k})` the coupling of every new direction to the rung-`k` ground state must be
+  `ln λ_k ≈ −c e^{L_k} + d` the coupling of every new direction to the rung-`k` ground state must be
   doubly-exponentially small. Nothing in rung `k` supplies that; it is a fresh arithmetic
   cancellation at every rung. **This is where the induction breaks**: rung `k` gives no quantitative
   input for rung `k+1`. `RungStepCoupling` names the needed bound.
@@ -128,10 +131,12 @@ theorem log_three_lt : Real.log 3 < 11 / 10 := by
 
 /-- **The rung-1 Arb certificate, as a named Prop** (CERTIFIED externally by ball arithmetic,
 `s27_onestroke_arb.py --L 11/20 --T 100 --K 60`; single implementation; not a Lean proof):
-`weilForm (autocorr f) ≥ 3.48·10⁻⁸ ∫ f²` for every smooth `f` supported in `[−11/20, 11/20]`. -/
+`weilForm (autocorr f) ≥ 3.47·10⁻⁸ ∫ f²` for every smooth `f` supported in `[−11/20, 11/20]`.
+The recorded `certified_lower` is `3.479999999974342·10⁻⁸`, just below `3.48·10⁻⁸`, so the Prop uses
+`347/10¹⁰`, which the artifact certifies exactly (Turbo 6815936710, correction 1). -/
 def RungOneArbCertificate : Prop :=
   ∀ f : ℝ → ℝ, ContDiff ℝ ∞ f → HasCompactSupport f → (∀ y : ℝ, 11 / 20 < |y| → f y = 0) →
-    (348 / 10 ^ 10 : ℝ) * ∫ y, f y ^ 2 ≤ weilForm (autocorr f)
+    (347 / 10 ^ 10 : ℝ) * ∫ y, f y ^ 2 ≤ weilForm (autocorr f)
 
 /-- **Certificate ⇒ positivity on the whole closed rung 1** (`L = log 3`). PROVED (conditional on
 the external certificate). -/
