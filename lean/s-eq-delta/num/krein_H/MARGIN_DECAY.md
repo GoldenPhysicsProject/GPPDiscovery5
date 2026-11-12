@@ -26,3 +26,23 @@ decaying weights the expected decay is polynomial (~ tail Σ_{k≥n} γ_k^{−4}
 prolate decay of a band-limited a.c. symbol. The data fit that picture. So: the margin goes to 0 even if RH holds,
 and a uniform-margin argument is ruled out either way. The decay is not a kill approaching: a kill needs an off-line
 zero (hEF), and these scans are blind to any off-line zero allowed by Platt–Trudgian (≈2·10⁻⁴⁹, see H_STATEMENT.md).
+
+## Correction (appended 2026-11-12 ~07:00 EST, Turbo PR #11 6822914877 item 1; wording only, conclusion unchanged)
+
+The first bullet above is wrong as worded: "every minimiser at shift 0 is odd … (min on ker ℓ_c = full min eigenvalue
+there)". What `margin.json` actually shows (rechecked from the file):
+
+* The headline minima are **best over shifts**, and for n = 13, 25, 41, 57 they are attained at **shift 3.0**, not shift 0
+  (`best_per_n`: L = 5.5, 7.0, 9.0, 11.0).
+* At shift 0 the **ker-ℓ_c-constrained** minimiser is odd (Turbo's parity split: odd part 1.000 at n = 13, 25, 57), so it
+  lies in ker ℓ_c automatically. But ker-min ≠ full-min at shift 0 in general: the unconstrained minimiser there is even.
+  Example, n = 13, shift 0: full min eigenvalue 1.305003e−06 vs ker-ℓ_c minimum 7.929407e−06. The two agree (to 1e−12
+  relative) only at n ∈ {22, 24, …, 54, 55} in this data.
+* The substantive point survives on a cleaner fact from the same data: the **unconstrained** minimum decays the same way
+  (shift-0 full minima 1.31e−6 at n=13 → 1.53e−7 at n=25 → 3.22e−8 at n=41 → 9.20e−9 at n=57), so the constraint is not
+  what produces the margin either way. NUMERICAL.
+
+Turbo's cross-implementation caveat is also banked here: K(0), K(3) from an independent mpmath implementation differ from
+Kp by ~1e−9 to 3e−8 (arch-quadrature noise), so absolute margins at n ≥ 41 (≤ 3.3e−8) sit at that scale; the decay is a
+within-pipeline NUMERICAL statement (Kp internally consistent to 1.1e−14). Uniform-margin route for H_ψ: ruled out.
+H_ψ, ARP, RH: **OPEN**.
