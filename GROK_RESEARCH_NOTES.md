@@ -26,3 +26,12 @@
 - (2) `principalSeries_of_reflectionPositive` (PROVED): RP ⇒ every weight Re=1/2; `cesaroFinite_of_reflectionPositive` (PROVED). Lift of online_of_pairing_nonneg.
 - (3) `zetaTheory` (PROVED, every field filled from tree: GW-EF-3, zero symmetry, multiplicities; Θf=f(−·)). `zeta_obligation_iff_arp` (PROVED): RP of zetaTheory ⇔ ARP. `rh_of_arp'` = ζ corollary (PROVED). Open obligation: `ZetaReflectionPositivityObligation` — OPEN; its local-data/factor-map form (prime sector opposite sign) not yet typed (GAP). RH OPEN.
 - Remaining: port to GPPVerify (PR, merge gate), re-derive rh_of_arp in GwefAssembly itself, type the factor-map form.
+
+## 2026-11-12 ~00:50 EST — s = Δ₁ direct attack (Daniel t278u "go straight at it"): reduction rh_of_s_eq_delta + the gap isolated
+- lean/s-eq-delta/SEqDelta1d.lean (528 lines, sha256 0eb3ee887e340b97…; `lake env lean` exit 0 against GPPVerify main 6719ec5; 31 theorems PROVED, std three axioms; 0 sorry/axiom; native stub audit 0 refl / 0 true in GppSEqDelta). Builds on in-tree KernelTheory (#577) and GravitonDeltaIdentification (#559), no duplication.
+- §1 labels (PROVED, every s): Δ₂=2s intertwines s↦1−s with Δ↦2−Δ; d=2 Casimir = −4 s(1−s); Re Δ₂=1 ⇔ Re s=½; shadow = adjoint (d−Δ = Δ̄) ⇔ Re Δ = d/2.
+- §2 Tate/Mellin (PROVED): conj Ψf(s)=Ψf(s̄); Θ = adjoint on the line; Mellin character eigenfunction of ¼−∂² with eigenvalue s(1−s); on tests Ψ_{g′}=−(s−½)Ψ_g and Ψ_{g/4−g″}=s(1−s)Ψ_g; character unitary ⇔ Re s=½.
+- §3 converse theorem about theories (PROVED): conj-equivariant kernel theory, RP ⇔ principal spectrum; hence ARP ⇔ RH(strip) at test-function level (RH ⇒ ARP half new in tree).
+- §4 (PROVED, conditional): ArithmeticPrincipalSeriesCFT (principal side = field), SEqDelta1d (spectrum = zeros with mult); rh_of_s_eq_delta (Mathlib RH), arp_of_s_eq_delta, ζ Gram = CFT two-point function; UnitaryRealization ⇔ ARP.
+- §5 GAP: ShadowIsAdjointOnSpectrum (∀ρ∈zeros, 1−ρ = ρ̄). gap_equivalences: GAP ⇔ ∃C SEqDelta1d ⇔ correlator identification ⇔ ARP ⇔ UnitaryRealization ⇔ RH(strip). PrincipalCasimirRealization (symmetric A ≥ ¼ with casimir ρ eigenvalues) ⇒ GAP ⇒ RH (PROVED).
+- Assessment: at the two-point level s = Δ₁ is exactly RH-strength; labels/Casimir/Mellin matching hold at every s (F_θ-blind). Closing needs the CFT (Hilbert space + O_f) built from arithmetic without zero input. ARP OPEN, RH OPEN.
