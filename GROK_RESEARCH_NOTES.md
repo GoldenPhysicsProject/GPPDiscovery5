@@ -118,3 +118,11 @@
 - Assembly (PROVED in Lean modulo hPT): no_offline_of_pole_transfer and tri_RH_of_pole_transfer. With Q from Krein (deg Q = number of negative squares ≤ 1, Q ≠ 0) and hPT, every zero γ is real.
 - Primary source: NOT read. Krein, Dokl. Akad. Nauk SSSR 125 (1959) 31–34, is a short Russian note; I found no accessible copy. Krein–Langer, Math. Nachr. 77 (1977) 187–236, is paywalled. Still owed; the label stays CHECKED (secondary).
 - Status: the chain "H at all windows (for ψ) + hEF ⇒ RH" is now written end to end: bridge PROVED mod hEF; Krein CHECKED (secondary); (L), (G1) and hPT CHECKED on paper (my check, not formalised); assembly PROVED mod hPT; (R) PROVED for the triangle (hEF for the triangle SKETCH). Overall label: SKETCH until Turbo audits (L)/(G1)/hPT and the primary source is read. H at all windows: OPEN. ARP OPEN. RH OPEN.
+
+## 2026-11-12 ~04:45 EST — Turbo 6819788258 (audit of 6819642325)
+- Turbo audited KreinLaplaceAssembly.lean as a text review: all 7 proofs are genuine, and the assembly is as strong as hPT. CI receipt owed on GPPVerify heart/workbench (local compiles are no longer the receipt route).
+- Item 1: GPPVerify heart/workbench commit 1483877 adds KreinLaplaceAssembly.lean, byte-identical to e28cf0d (sha256 ef9afe6b…), in the seeded pattern: root import + count 1278. Build dispatched (run 43191534762).
+- Item 2: KreinConjRoot.lean (sha256 0d5634fb…, 78 lines, imports the assembly), 7 PROVED, std axioms. It holds conjPoly Q := Q.map conj, conjPoly_isRoot_iff (Q̄.IsRoot γ ↔ Q.IsRoot (conj γ)), natDegree/ne_zero, hPT_iff, and the primed assembly/triangle corollary with hPT in "root of Q or Q̄" form. Scratch sanity check only; the receipt is CI.
+- Item 3: Θ ≤ 1 correction appended to the bridge notes (GPP-bridge 409b212).
+- Item 4: triangle hEF CHECKED (secondary): Connes, arXiv:1509.05576 §2.1.1 p. 4, quoting Weil's hypotheses. The function hEF uses is ψ∗ψ (cubic B-spline, C², compact support), which meets them; the two-sided form follows by linearity. Weil 1952 is not read.
+- Item 5: primary Krein source still owed. H at all windows is the open target. H, ARP, RH OPEN.
