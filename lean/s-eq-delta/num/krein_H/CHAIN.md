@@ -20,3 +20,22 @@ pass locally. The receipt is the branch Build run.
 H_ψ, ARP, RH: OPEN. Krein–Langer primary still owed (non-blocking).
 Remaining: split `PoleTransfer` into `hEF` and a Krein-representation premise as exact Props
 (needs a zero-sum with multiplicities); discharge `NoRealZeroStrip` (η(σ) > 0) if wanted.
+
+## PoleTransfer split (Turbo PR #11 6824324169)
+
+Source: `lean/s-eq-delta/KreinPoleSplit.lean`, byte-identical to GPPVerify `heart/hpsi` 3c8fd2a
+(`GppVerify/RiemannHypothesis/KreinPoleSplit.lean`, 144 lines, sha256 aa06ad46…a98b551). Compiled
+locally: standard three axioms, no warnings. The receipt is the branch Build run.
+
+| Item | Statement | Label |
+|---|---|---|
+| mult | `mult γ = zeroMult (rho γ) = analyticOrderNatAt riemannZeta (1/2 + iγ)` | definition |
+| one_le_mult | every γ ∈ Zgamma has `1 ≤ mult γ` (no zero has weight 0) | PROVED (from `one_le_zeroMult`) |
+| zero sum | `ZeroSummable w := Summable (γ : Zgamma ↦ m_γ w γ)`, `zeroSum w := ∑' γ : Zgamma, m_γ w γ` | definition |
+| HEF | ∀ d, ZeroSummable and `Kψ(d) = zeroSum (γ ↦ Ψ(γ)Ψ(−γ)e^{iγd})` | named premise (CHECKED secondary, NUMERICAL 1.02e−8) |
+| KreinRep | ∀ a, Kψ has expansion `Σ m_γ a(γ) e^{iγd}` → `AtMostOneNegSq Kpsi` → ∃ Q ≠ 0, deg ≤ 1, every γ ∈ Zgamma, Im γ < 0, a γ ≠ 0 is a root of Q or Q̄ | named premise (Krein P≤1 via Stewart 1972 + (L) + (G1) + identity thm) |
+| assembly | `poleTransfer_of_split : HEF → KreinRep → PoleTransfer` (uses `triPsi_neg`) | PROVED |
+| chain | `hPsiSplitChain : HPsi → HEF → KreinRep → NoRealZeroStrip → RiemannHypothesis` | PROVED (conditional) |
+| honesty | `kreinRep_of_RH : RiemannHypothesis → KreinRep` | PROVED |
+
+H_ψ, ARP, RH: OPEN. Next (Turbo item 2): discharge `NoRealZeroStrip`.
