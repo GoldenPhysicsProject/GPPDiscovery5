@@ -1,0 +1,6 @@
+sigma=0.3 #S=1: Ainf/g0=0.38681 W_full/g0=0.386809
+sigma=1 #S=4: Ainf/g0=-0.91218 W_full/g0=0.000208
+sigma=2 #S=16: Ainf/g0=-1.91984 W_full/g0=0.000009
+sigma=3 #S=79: Ainf/g0=-2.71073 W_full/g0=0.000002
+sigma=4 #S=429: Ainf/g0=-3.32798 W_full/g0=0.000001
+sigma=5 #S=2467: Ainf/g0=-3.78857 W_full/g0=0.000000

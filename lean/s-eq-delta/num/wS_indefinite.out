@@ -1,0 +1,25 @@
+C_inf = -5.3721834192256654
+S=[] sigma=0.3: pole/g0=-8.9e-18 Ainf/g0=0.3868 W_S/g0=0.3868 limit=-5.3722
+S=[] sigma=2: pole/g0=-5.6e-16 Ainf/g0=-1.9198 W_S/g0=-1.9198 limit=-5.3722
+S=[] sigma=5: pole/g0=9.3e-15 Ainf/g0=-3.7886 W_S/g0=-3.7886 limit=-5.3722
+S=[] sigma=10: pole/g0=-2.0e-14 Ainf/g0=-4.8077 W_S/g0=-4.8077 limit=-5.3722
+S=[] sigma=20: pole/g0=2.3e-10 Ainf/g0=-5.2098 W_S/g0=-5.2098 limit=-5.3722
+S=[] sigma=40: pole/g0=-8.2e-04 Ainf/g0=-5.3297 W_S/g0=-5.3305 limit=-5.3722
+S=[2] sigma=0.3: pole/g0=-8.9e-18 Ainf/g0=0.3868 W_S/g0=0.3868 limit=-8.7190
+S=[2] sigma=2: pole/g0=-5.6e-16 Ainf/g0=-1.9198 W_S/g0=-2.0948 limit=-8.7190
+S=[2] sigma=5: pole/g0=9.3e-15 Ainf/g0=-3.7886 W_S/g0=-5.5962 limit=-8.7190
+S=[2] sigma=10: pole/g0=-2.0e-14 Ainf/g0=-4.8077 W_S/g0=-7.5991 limit=-8.7190
+S=[2] sigma=20: pole/g0=2.3e-10 Ainf/g0=-5.2098 W_S/g0=-8.3961 limit=-8.7190
+S=[2] sigma=40: pole/g0=-8.2e-04 Ainf/g0=-5.3297 W_S/g0=-8.6353 limit=-8.7190
+S=[2, 3] sigma=0.3: pole/g0=-8.9e-18 Ainf/g0=0.3868 W_S/g0=0.3868 limit=-11.7205
+S=[2, 3] sigma=2: pole/g0=-5.6e-16 Ainf/g0=-1.9198 W_S/g0=-1.9519 limit=-11.7205
+S=[2, 3] sigma=5: pole/g0=9.3e-15 Ainf/g0=-3.7886 W_S/g0=-7.0603 limit=-11.7205
+S=[2, 3] sigma=10: pole/g0=-2.0e-14 Ainf/g0=-4.8077 W_S/g0=-10.0455 limit=-11.7205
+S=[2, 3] sigma=20: pole/g0=2.3e-10 Ainf/g0=-5.2098 W_S/g0=-11.2372 limit=-11.7205
+S=[2, 3] sigma=40: pole/g0=-8.2e-04 Ainf/g0=-5.3297 W_S/g0=-11.5948 limit=-11.7205
+S=[2, 3, 5, 7] sigma=0.3: pole/g0=-8.9e-18 Ainf/g0=0.3868 W_S/g0=0.3868 limit=-16.6894
+S=[2, 3, 5, 7] sigma=2: pole/g0=-5.6e-16 Ainf/g0=-1.9198 W_S/g0=-0.9962 limit=-16.6894
+S=[2, 3, 5, 7] sigma=5: pole/g0=9.3e-15 Ainf/g0=-3.7886 W_S/g0=-8.9827 limit=-16.6894
+S=[2, 3, 5, 7] sigma=10: pole/g0=-2.0e-14 Ainf/g0=-4.8077 W_S/g0=-13.9084 limit=-16.6894
+S=[2, 3, 5, 7] sigma=20: pole/g0=2.3e-10 Ainf/g0=-5.2098 W_S/g0=-15.8862 limit=-16.6894
+S=[2, 3, 5, 7] sigma=40: pole/g0=-8.2e-04 Ainf/g0=-5.3297 W_S/g0=-16.4799 limit=-16.6894
