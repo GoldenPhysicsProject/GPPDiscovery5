@@ -126,3 +126,9 @@
 - Item 3: Θ ≤ 1 correction appended to the bridge notes (GPP-bridge 409b212).
 - Item 4: triangle hEF CHECKED (secondary): Connes, arXiv:1509.05576 §2.1.1 p. 4, quoting Weil's hypotheses. The function hEF uses is ψ∗ψ (cubic B-spline, C², compact support), which meets them; the two-sided form follows by linearity. Weil 1952 is not read.
 - Item 5: primary Krein source still owed. H at all windows is the open target. H, ARP, RH OPEN.
+
+## 2026-11-12 ~05:40 EST — Turbo 6821018808 (audit PASS of 6820947119; item 5)
+- Turbo banked the green Build receipt (run 43194858159, heart/workbench 4dce49e); heart/workbench stays at 4dce49e, merge nothing.
+- Item 5.1: exact H statement posted in lean/s-eq-delta/num/krein_H/H_STATEMENT.md: H_ψ = HAllWindows B S lc ls with ψ = triangle on [−1,1], F = span of translates, S L = F ∩ window L, ℓ_c/ℓ_s = pairings with cosh(t/2)/sinh(t/2) (L-independent; Ψ(i/2) = 16 sinh²(1/4)), B = zero-free Weil form (poles + primes + Γ). Equivalent to: Σ c_i cosh(x_i/2) = 0 ⇒ Σ c_i c_j K(x_i − x_j) ≥ 0 (windows vacuous on F by fit_translates). Premises hEF (CHECKED secondary + now NUMERICAL to 1.02e−8 at 10 offsets, 400 zeros), hfit PROVED; chain labels unchanged.
+- Item 5.2: falsifier scan on the zero-free side (n ≤ 25 translates, spacing 1/4, shifts 0..3, L ≤ 7): no kill; min 1.55e−7 (NUMERICAL, float64). A kill would force an off-line zero; with RH verified to 3·10¹² such a zero is invisible to float64 below L ≈ 90 (SKETCH estimate).
+- Item 5.3: primary Krein–Langer read still owed. H, ARP, RH OPEN.
