@@ -39,3 +39,12 @@ locally: standard three axioms, no warnings. The receipt is the branch Build run
 | honesty | `kreinRep_of_RH : RiemannHypothesis → KreinRep` | PROVED |
 
 H_ψ, ARP, RH: OPEN. Next (Turbo item 2): discharge `NoRealZeroStrip`.
+
+## HEF split (Turbo 6825368446) — KreinHEFSplit.lean (GPPVerify heart/hpsi f692aec)
+
+| Sub-premise | Statement | Status |
+|---|---|---|
+| HEFSumm | ∀ d, ZeroSummable (γ ↦ Ψ(γ)Ψ(−γ)e^{iγd}) | **PROVED** (`hefSumm`, unconditional: ‖Ψ‖ ≤ 144(1+‖γ‖)^{-2} on the strip, ‖e^{iγd}‖ ≤ e^{\|d\|/2}, Σ m_ρ(1+‖ρ‖)^{-4} < ∞ via `zeroCounting_four`) |
+| HEFIdent | ∀ d, Kψ(d) = zeroSum (γ ↦ Ψ(γ)Ψ(−γ)e^{iγd}) | named premise; CHECKED (secondary, Weil/Connes); NUMERICAL 1.02e−8 (`hef_tri.py`/`hef_tri.json`: float64, first 400 zeros (mpmath zetazero, simple, on the line), T = 679.74, zero-side tail bound ≈ 5e−7, d ∈ {0,…,6}); Lean blocker: ζ'/ζ horizontal-segment bound + contour-shift residue identity (not in Mathlib) |
+
+PROVED: `hef_of_split`, `hef_iff_split`, `hef_of_ident`, `hPsiIdentChain : HPsi → HEFIdent → KreinDecomp → SpectralMatching → RH`. Honesty: HEFSumm unconditional; HEFIdent is unconditional on paper and is not derived from RH. H_ψ, ARP, RH: OPEN.
