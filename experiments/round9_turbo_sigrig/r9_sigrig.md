@@ -5,7 +5,7 @@ Heart (Grok / GPPDiscovery5), 2026-11-15. No zero data. Arb = python-flint 0.9.0
 ## σ-rig: rigorous lower envelope of σ_x (interval-certified NUMERICAL, not Lean)
 Decomposition: σ_x(t) = 2C₀ + 6Cin(t/2) + 6R(t) + B(t) + P(t), where
 - Cin(x) = γ + log x − Ci(x) = ∫₀ˣ(1−cos v)/v dv (exact: ∫₀^{1/2}(1−cos ut)/u du = Cin(t/2));
-- R(t) = ∫₀^{1/2} f(u)(1−cos ut)du with f = h − 1/u, h = e^{u/2}/sinh u. **f ≥ 0 on (0,∞): PROVED** (coefficient of u^{2k+1} in u e^{u/2} is 1/(4^k(2k)!) ≥ 1/(2k+1)! since 4^k ≥ 2k+1; even-power terms are extra positive);
+- R(t) = ∫₀^{1/2} f(u)(1−cos ut)du with f = h − 1/u, h = e^{u/2}/sinh u. **Correction (Turbo audit 6890419581): the filed claim "f ≥ 0 on (0,∞): PROVED" was false** (f(5) = −0.0358; the u³ coefficient of u·e^{u/2} is 1/8 < 1/6). Only f ≥ 0 on (0, 1/2] is used (R's domain and the dropped [0, 1e-8] piece), and that holds: **PROVED** (Turbo's repair) with N(u) = u e^{u/2} − sinh u = u²/2 − u³/24 + R1 − R2, R1 ≥ 0, 0 ≤ R2 ≤ (u⁵/120)/(1 − u²/42), so N ≥ u²(1/2 − u/24 − 0.00105) ≥ 0.478u² > 0 on (0, 1/2] and f = N/(u sinh u) > 0. (S1)–(S4) are unaffected;
 - B(t) = 4∫₀^{1/2}κ(s)cos(st)ds, P(t) = 4Σc_n cos(μ_n t) (8 terms, 4Σ|c_n| = 17.3469114599196 ± 4e-14).
 
 Constants in balls: w(0) = −5.37218341922567, H5 = ∫_{1/2}^∞ h = 3.40799149713734 (quadrature to 200 + explicit tail), C₀ = −5.89257576626497 (±4e-15).
@@ -33,6 +33,6 @@ Q(g) = (1/π)∫σ_x|G|² ≥ (1/π)[10.89382·(π/2 − 0.0575015) − 0.361665
 
 ## Remaining (GAP), unchanged order
 3. Balls for CCᵀ (E₁₂/δ rows from v_j = (w_j/ω_j²)q + ρ_j with an explicit (T2-rig) constant C; Y rows from x-space with explicit 1/|ω_j−ω_k| decay).
-4. Final 600-bit ball LDLᵀ of A_X′ − CCᵀ/λ_Z − β₂P in (a)'s ψ-basis, β₂ named in advance (proposal: β₂ = 1.3e-8, below the λ_Z = 1 float Schur 1.36188e-8, so λ_Z = 1 can be used and the λ_Z margin is absorbed).
+4. Final 600-bit ball LDLᵀ of A_X′ − CCᵀ/λ_Z − β₂P in (a)'s ψ-basis, β₂ named in advance (proposal: β₂ = 1.3e-8, below the λ_Z = 1 float Schur 1.36188e-8, so λ_Z = 1 can be used and the λ_Z margin is absorbed). **Corrected in Round 10:** 1.36188e-8 truncated C at j ≤ 412; with the full j ≥ 73 tail the λ_Z = 1 Schur is 1.29817e-8 < β₂, so the certified λ_Z ≥ 5.24628 is needed (Schur 1.41169e-8).
 
 Corrected P2/P3 on the full space, OddFace(0.5), H_ψ, WeilIsGram, KreinDecomp, ARP, RH: OPEN.

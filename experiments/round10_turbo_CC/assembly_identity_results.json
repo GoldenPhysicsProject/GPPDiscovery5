@@ -1,0 +1,18 @@
+{
+ "lam=11.694": {
+  "schur_identity": 1.4149163087915709e-08,
+  "YdPD_identity": 0.7203881301929976,
+  "schur_spectral412": 1.415386170772276e-08
+ },
+ "lam=5.24628": {
+  "schur_identity": 1.4116859583389672e-08,
+  "YdPD_identity": 0.7035945193060958,
+  "schur_spectral412": 1.4129229642376045e-08
+ },
+ "lam=1.0": {
+  "schur_identity": 1.2981694163431048e-08,
+  "YdPD_identity": 0.5439309727172598,
+  "schur_spectral412": 1.3618782167916653e-08
+ },
+ "schur_A_alone": 1.4171410965717511e-08
+}
