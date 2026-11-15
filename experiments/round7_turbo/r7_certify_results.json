@@ -1,0 +1,43 @@
+{
+ "label": "NUMERICAL (interval-certified; not Lean)",
+ "NT": 72,
+ "N": 12,
+ "order": "Y(phi_13..phi_72), delta_l, E_12",
+ "prec_bits": 160,
+ "max_entry_radius": 3.0700000071129992e-12,
+ "check_vs_round5_M11_maxabs": 4.9823349355877324e-14,
+ "check_vs_round6_g": 2.500000000012258e-09,
+ "check_vs_round6_u_maxabs": 3.50000002328414e-14,
+ "lam_min_schur_float": "1.41714501988e-8",
+ "lam_min_Gram_Y_delta_float": "2.18847749219e-11",
+ "tried": [
+  {
+   "factor": "0.99",
+   "beta": "[1.4029700e-8 +/- 1e-20]",
+   "certified": false,
+   "fail_at": 25,
+   "fail_val": "[+/- 1.13e-7]"
+  },
+  {
+   "factor": "0.98",
+   "beta": "[1.3888000e-8 +/- 1e-20]",
+   "certified": false,
+   "fail_at": 25,
+   "fail_val": "[+/- 1.13e-7]"
+  },
+  {
+   "factor": "0.95",
+   "beta": "[1.3462900e-8 +/- 1e-20]",
+   "certified": false,
+   "fail_at": 25,
+   "fail_val": "[+/- 1.13e-7]"
+  },
+  {
+   "factor": "0.9",
+   "beta": "[1.2754300e-8 +/- 3e-20]",
+   "certified": false,
+   "fail_at": 25,
+   "fail_val": "[+/- 1.13e-7]"
+  }
+ ]
+}

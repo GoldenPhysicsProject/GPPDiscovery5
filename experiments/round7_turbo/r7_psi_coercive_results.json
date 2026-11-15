@@ -1,0 +1,7 @@
+{
+ "label": "NUMERICAL (interval-certified; not Lean)",
+ "range": "psi_13..psi_72",
+ "lam_min_Dnorm_float": "0.6928888703",
+ "c1_certified": "[0.65824000 +/- 1e-13]",
+ "min_pivot_lower": "[4.4241e-12 +/- 3.26e-17]"
+}
