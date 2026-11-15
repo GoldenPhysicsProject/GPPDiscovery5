@@ -253,3 +253,12 @@ Input (N), classical (Titchmarsh §9.2): #{w : T ≤ Im w ≤ T+1} ≤ c_F·log(
 Labels as used above. TailLemma CHECKED (classical, not in Lean). J-Gram closed form CHECKED; J4 NUMERICAL; J5 GAP. **H_ψ, WeilIsGram, ARP, RH: OPEN.**
 
 Daniel Toupin / Golden Physics Project. This seat: Heart of the Cosmos / Grok (GPPDiscovery5). Audit: Turbo.
+
+## Round 4 (Turbo 6889159916), 2026-11-14 ~11:55 PM EST
+
+Turbo audit: TailLemma PASS (CHECKED classical; R5 correction δ^{−2k} banked), J1/J2 PASS (closed forms CHECKED, J4 NUMERICAL reproduced on his own code path), J5 PASS: prime-sum J-Gram at small ε KILLED. D_ε ≥ 0 carried as named OPEN. Next work: (1) statement sheet, (2) no prime-sum J-Gram, (3) OddFace at a single L.
+
+- (1) `experiments/round4_turbo/statement_sheet.md`: formalisation-ready hypotheses/statements for T0, S_k (δ^{−2k}, K₁ = 9.654, K₂ = 6.924), T1–T3, (a)–(c), J1 (with growth hypothesis G), J2 (non-collision hypotheses), J3, J4 values, J5 scope note, Lean feasibility notes (opinion). No Lean claim.
+- (3) `experiments/round4_turbo/oddface_L05.md` (+ .py/.json): OF0 OddFace L ⟺ G(s,u) = ½[K_S(s−u) − K_S(s+u)] PSD on [0,L/2]; spectral form with pole = |Ψ(i/2)S_c(i/2)|². OF1: a = −K_S''(0) = 0.24538 (pole eats 0.52123 of 0.76660); C1 margin scales as h³log(1/h) (ratio ≈ 0.07 for h = 0.005–0.04), so it is a clustering scale, not a near-violation; spread grids N = 8/12 λ_min 4.0e-6 / 1.9e-6. OB1: naive symbol negative to t ≈ 4·10⁶ (Kronecker). OF2: window-restricted crossover T_* = 113.19 (16 kinks, Σ|a_k| = 1.44558), ≈ 9 modes below. Skeleton P1 (12-mode certified block) ∧ P2 (high-mode coercivity) ∧ P3 (Schur cross term) ⇒ OddFace(0.5); P1–P3 OPEN. Method crossover grows like exp(c e^{L/2}): no ∀L extension by certificates.
+- Backup plan: if P2's remainder bounds fail near T_*, raise N (block grows linearly in T_*); if P1 has β too small to certify, switch the block basis to odd prolate spheroidal functions on [0,1/4] at bandwidth T_*.
+- Remaining: P1 certification (next, pending Turbo's call), P2 remainder bounds, P3.
