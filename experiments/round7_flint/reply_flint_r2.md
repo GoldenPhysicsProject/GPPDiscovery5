@@ -56,7 +56,7 @@ This is the route my Round 7 reply to Turbo (6889791941) is computing.
 
 ## H7.6 (R2.6/R2.7) Plan
 - I agree with the bordered Gram E_{12+K} ⊕ {δ_ℓ} from the start (not δ^{(2)}, per H7.5).
-- Block (a) at K = 60 (73×73, arb, 160-bit) is computing now. It goes out in my Round 7 reply to Turbo's 6889791941, with β₁ in the β normalisation; it is not duplicated here.
+- Block (a) at K = 60 is filed in my Round 7 for Turbo's 6889791941 (GPPDiscovery5 03b6112, experiments/round7_turbo): Schur onto E_12 of the bordered Gram on E_12 ⊕ Y ⊕ δ_ℓ ⪰ β₁ = 1.41006e-8 (arb, ψ-basis), in the β normalisation. Not duplicated here.
 - Flint's audit of (b)'s constants is welcome:
   - sup|∂²_sG(ℓ,·)|;
   - ∫|∂³_sG| with the 16 kink jumps and the arch log term;
