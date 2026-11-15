@@ -148,3 +148,16 @@ Next from me: the Lean statement and proof of H5 (parity split ⟺ SemilocalArch
 Labels as before. **H_ψ, ARP, RH: OPEN.** Notes: GPPDiscovery5 HEART_RH_TECHNICAL_NOTES.md (Round 1 section).
 
 Daniel Toupin / Golden Physics Project … This seat: Heart of the Cosmos / Grok (GPPDiscovery5). Audit: Turbo.
+
+## Round 2 (Nov 14, 2026 ~11 PM EST): Turbo 6888439939 items 1–2
+
+Turbo audited Round 1: H1–H5 CHECKED; H3/H4 bank as kills of W|odd and B as selectors. Instructions: (1) H5 in Lean; (2) my C1 run; (3) no more work on W|odd or B.
+
+**Item 1, H5 in Lean.** GPPVerify `heart/paritysplit` 0c73c6d (off heart/archpd 5fb6c8d), `GppVerify/RiemannHypothesis/WeilGramParitySplit.lean`. PROVED (local compile, std axioms only; native stubs 0/0 in module): `triG_neg`, `archTerm_neg`, `primeTermS_neg`, `primeTerm_neg`, `kform_refl`, `kform_even_add_odd` (kform K x c = kform K e + kform K o, e = ((x,−x),(c/2,c/2)), o = ((x,−x),(c/2,−c/2)), K even), cosh/sinh functionals split by parity, `reflX_window`, `evenFace_of_archDom`, `oddFace_of_archDom`, `archDom_of_faces_at` (faces at W ≥ L with |xᵢ| ≤ W/2 ⇒ ArchDom at L; S_W = S_L on |d| ≤ L via primeTermS_eq), `semilocalArchDomAll_iff_faces`, `hPsi_iff_faces`. Named OPEN: `EvenFace L`, `OddFace L`. The ← direction uses W = 2Σ|xᵢ| + L, so ∀L ranges over all widths (Turbo's note honoured). Copy of the file in experiments/c1_facesplit/.
+
+**Item 2, C1 (NUMERICAL).** Config clustered0.1L, L=0.5, n=6: x = ±0.005, ±0.015, ±0.025 (P-symmetric, so J commutes with D and ker ℓ_c = even(2-dim) ⊕ odd(3-dim) exactly; checks ℓ_c on odd = 0, s on even = 0).
+- Accurate archTerm (period-wise Gauss–Legendre, 96 nodes/2π, t ≤ 3200π, tail < 1e-11; cross-checked by mp.quadosc at d = 0, 0.01, 0.05 to ≤ 4e-12): archTerm(0) = −1.54293308589872.
+- Full ker ℓ_c λ_min(D) = 6.527e-7. Even face λ_min(arch − prime) = 1.418e-6 (eigs 1.418e-6, 2.413e-5). Odd face λ_min(arch − prime − 2Ψ²ssᵀ) = 6.527e-7 (eigs 6.527e-7, 4.307e-6, 2.310e-4). Odd face without pole: 6.607e-7.
+- C1 prediction (odd face carries the small margin) HOLDS here, NUMERICAL. But the stated reason does not: the pole term moves the odd minimum by only 8.0e-9 (1.2%). The odd block is already smaller in arch − prime alone.
+- Discrepancy with the banked +8.88e-7: plain mp.quad on [0, ∞] (Flint's scout arch_mp) reproduces 8.88261e-7 exactly and gives archTerm(0) = −1.54293305945378, the value filed as Arb-certified. Two independent routes give −1.5429330858947 instead (diff 2.64e-8), and lag 0.01 differs by 9.5e-8. The irregular per-lag quadrature error shifts the near-null eigenvalue. Corrected value 6.53e-7 (still positive). Verification request to Flint: recheck the arch(0) ball.
+Remaining: Build receipt on 0c73c6d; Flint's V1/V2/C2 answers.
