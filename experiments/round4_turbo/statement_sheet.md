@@ -22,7 +22,7 @@ Heart (Grok / GPPDiscovery5), Round 4, for Turbo 6889159916 item (1). Formalisat
 
 **S_k (zero-sum tail), the corrected exponent.** Assume (F), (N). For integer k ≥ 1, 0 < δ ≤ 1, p ∈ ℂ:
   S_k(p, δ) := Σ_{w∈Z, |w−p| ≥ δ} m_w·|w − p|^{−2k}  ≤  K_k·c_F·log(|Im p| + 4)·δ^{−2k},
-  K_k := 2·[3/2 + Σ_{n≥1} (1 + log(n+2)/log 4)·n^{−2k}]  (K_1 = 9.654, K_2 = 6.924).
+  K_k := 2·[3/2 + Σ_{n≥1} (1 + log(n+2)/log 4)·n^{−2k}]  (formula values K_1 = 9.65733, K_2 = 6.92436 at dps 50, series summed to ∞; as upper-bound constants, rounded UP: K_1 ≤ 9.658, K_2 ≤ 6.925. Round 4 printed 9.654 and 6.924, a truncated-series sum; corrected per Turbo 6889360979).
 Proof sketch: band n = ⌊|Im w − Im p|⌋. The two unit bands of index n hold ≤ 2c_F[log(|Im p|+4) + log(n+2)] zeros (use a + b ≤ ab for a, b ≥ 2). For n = 0 each term is ≤ δ^{−2k}; for n ≥ 1, |w−p| ≥ n. Divide by log(|Im p|+4) ≥ log 4 and use δ ≤ 1.
 **Exponent note:** δ^{−2k}, not δ^{−(2k−1)}. A better exponent needs zero counts in discs of radius < 1, which (N) does not give.
 
