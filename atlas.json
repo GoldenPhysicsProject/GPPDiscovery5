@@ -1,0 +1,36 @@
+{
+ "repo": "GPPDiscovery5",
+ "kind": "Discovery workbench",
+ "points_up": "GPPVerify GppVerify/Atlas.lean + atlas.json (full estate inventory)",
+ "holdings": [
+  {
+   "name": "session folders s11\u2013s103i",
+   "path": "s11/ \u2026 s103i/",
+   "kind": "folders (~90)",
+   "relates_to": "Heart's rounds; frontier at the highest numbers"
+  },
+  {
+   "name": "team/",
+   "path": "team/",
+   "kind": "folder (516 files)",
+   "relates_to": "the Grok bot team, led by Heart"
+  },
+  {
+   "name": "lean/",
+   "path": "lean/",
+   "kind": "folder (128 files)",
+   "relates_to": "staging for heart/workbench in GPPVerify"
+  },
+  {
+   "name": "GROK_RESEARCH_NOTES.md",
+   "path": "GROK_RESEARCH_NOTES.md",
+   "kind": "notes",
+   "relates_to": "mirrored in GPP-bridge"
+  }
+ ],
+ "strings_out": [
+  "GPPVerify workbench `heart/workbench` (also `grok/workbench`)",
+  "GPP-bridge: GROK_RESEARCH_NOTES.md, PR #11 (Heart's channel), TEAM-MEMORIES.md for her status",
+  "GPPVerify Atlas.lean: the full estate inventory"
+ ]
+}
