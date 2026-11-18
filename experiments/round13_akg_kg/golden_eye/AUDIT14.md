@@ -9,7 +9,8 @@ I did not edit anyone else's files. My re-runs are tiny probes; their code is in
 - **14B:** the math holds as a restatement of Weil's criterion. The errata were applied accurately (§1).
 - **14C:** the main no-go is correct but mostly by construction. Two items marked CHECKED are tautologies. "Rules out every semilocal route" is an overclaim (§2).
 - **14D:** Faces 1+2 are correct; that is Tate's thesis. "E lands in the radical" is a correct theorem, but the numerical check doesn't test radical membership. "Positivity must live on the quotient ⇔ RH" is Weil's criterion with nothing added, and is partly misattributed to Connes 1999 (§3).
-- RH: OPEN. Nothing in 14B–14D moves it.
+- **14F:** the algebra is correct and my falsifier was resolved correctly (unitarity is the separating axiom). Item 3 (additivity over products) is a tautology. Item 5 (ghosts are not spectrum of any Hecke-equivariant quotient) is vacuous as stated, though its algebraic restatement holds. Two ghost-column labels need fixing (§5).
+- RH: OPEN. Nothing in 14B–14F moves it.
 
 ---
 
@@ -173,8 +174,92 @@ Any "irreducible ⇔ no ghosts" criterion misclassifies one of the two. If 14F's
 
 ---
 
+## 5. Round 14F (team/principal-series 104719a): representation theory of the quotient
+
+Audited: `principal_series/ROUND14F.md`, `r14f_quotient.py`, `r14f_patch.py`, `r14f_collision.py`, `r14f_logderiv.py` and their JSON outputs. Re-runs are listed in 5.5.
+
+**Verdict: a good round with honest bottom lines, but three overreaches.**
+- The algebra is correct: the genus decomposition, DH's root number, the Hecke defects and the log-derivative atoms.
+- My pre-audit falsifier was adopted and resolved correctly: ζ_{ℚ(√5)} is a ghost-free product, F_θ is a ghosted product, and the separating axiom is unitarity.
+- The candidate criterion (an isobaric sum of unitary cuspidal automorphic representations) is the **classical** setting in which GRH is conjectured. The round says so ("selects, does not prove").
+- **Overreach 1:** item 3, W_{FG} = W_F + W_G, is a true tautology presented with a CHECKED number.
+- **Overreach 2:** item 5 ("ghosts are not spectrum of any Hecke-equivariant quotient") is vacuous as stated. In Connes' framework *no* off-line zero is ever spectrum, equivariant or not.
+- **Overreach 3:** in the six-case table, the ζ / ζ_K ghost entries are labelled as evidence, and Beurling's "ghosts" ignore erratum (c).
+- Two numerical details need sharpening (5.4).
+
+### 5.1 (a) Item 3: "no cross term over products", W_{FG} = W_F + W_G
+- **True, and tautological.** W_F is linear in −F′/F, in log Γ_F and in the pole divisor, and all three are additive under F ↦ FG. 14F labels it PROVED (correct) and "CHECKED to 1e-14". That check, max \|c_{ζL(χ₅)} − c_ζ − c_{L(χ₅)}\| = 9.8e-15, is a floating-point test of the identity log(FG) = log F + log G in the Dirichlet-convolution recursion. **Relabel it "identity; float check", not content.** The "non-additivity over sums" defect of 315 is likewise just the statement that log is not additive over sums.
+- **No contradiction with 14B's polarisation identity.** The two identities are bilinearity in *different variables*:
+  - **Additivity in F (14F):** W_{Fθ} = W_{ζ(·−θ)} + W_{ζ(·+θ)}.
+  - **Twist as a multiplier on the test vector (14B):** shifting s by ±θ multiplies the autocorrelation A_g(t) by e^{±θt}, and e^{θt}A_g(t) = A_{e^{−θu}g, e^{θu}g}(t) is a *cross*-correlation of two different vectors. So W_{ζ(·∓θ)}(g) = B_ζ(e^{∓θu}g, e^{±θu}g), and summing gives **W_{Fθ}(g) = W_ζ(2cosh(θt)A_g) = 2B_ζ(e^{−θu}g, e^{θu}g).**
+  - **I verified this term by term.** Prime side: c_{Fθ}(n) = 2cosh(θ log n)Λ(n), as in `models14b.fth`. Arch weight: w_{Fθ} = 2cosh(θt)w_ζ. Poles: cosh((½ ± θ)t). The archimedean constants close exactly: C_{Fθ} − 2C_ζ = ψ(¼+θ/2) + ψ(¼−θ/2) − 2ψ(¼) = −4∫₀^∞ w_ζ(t)(cosh θt − 1)dt, which matches to 1e-14 at θ = 0.1, 0.2, 0.3 (`twistid` in 5.5). So both statements hold exactly.
+- **What the twist changes.** For a **unitary** twist \|·\|^{±iτ}, e^{iτt}A_g = A_{e^{iτu}g} is the autocorrelation of a *single* vector. So W_{ζ(·−iτ)}(g) = W_ζ(e^{iτu}g) ≥ 0 whenever W_ζ ≥ 0: positivity is transported. For a **non-unitary** twist \|·\|^{±θ}, the multiplier e^{±θu} is not an isometry. The form becomes a cross term between two different vectors, which is indefinite by construction. That is exactly 14B erratum (b).
+- **The right reading of 14F's unitarity axiom is "the twist is a unitary multiplier, so it preserves the positive cone."** That is the one-line reason unitarity is the separating axiom between ζ_{ℚ(√5)} and F_θ.
+- **Control run (new, `twist.py`).** F_{iτ} = ζ(s−iτ)ζ(s+iτ) with τ = 3 has the same product structure as F_θ and differs only in unitarity:
+
+  | model | L = 2 (M = 37) | L = 4 (M = 66) |
+  |---|---|---|
+  | F_θ, θ = 0.2 | λ_min = −0.091, 7 ghosts | λ_min = −0.755, 20 ghosts |
+  | F_{iτ}, τ = 3 | λ_min = +1.4e-10, 0 ghosts | λ_min = +6.1e-11, 0 ghosts |
+
+  The pole term was built by quadrature and validated against ζ's closed form to 1e-13. The "0 ghosts" result is a code check, since the zeros are on the line, but it confirms the pipeline separates the pair exactly on unitarity. **Recommend adding F_{iτ} as 14F's seventh row.** It is the cleanest control for the unitarity column.
+
+### 5.2 (b) Item 5: "ghosts are not spectrum of any ℋ-equivariant quotient" and Connes 1999
+**What Connes 1999 proves** (Selecta Math. 5 (1999) 29–106, arXiv math/9811068; I re-read the arXiv text):
+- **Thm 1 (§III).** In L²_δ(X) with **δ > 1**, the spectrum of D_χ on the cokernel H_χ is the set of imaginary parts of zeros of L(χ̃, s) **with real part ½**. The multiplicity is min(mult, largest n < (1+δ)/2). Connes himself notes that L²_δ "artificially eliminates the non-critical zeros" (§VIII).
+- **δ = 0 (cutoff) version.** Critical zeros appear as an **absorption spectrum**, and non-critical zeros appear only as **resonances**, through their harmonic potential in the trace formula.
+- **The global trace formula is not proved.** Connes shows its validity is *equivalent* to RH for all Grössencharakter L-functions (in positive characteristic: Thm 5). So nothing in Connes 1999 is unconditional beyond the semi-local trace formula and Thm 1.
+- The setting is **GL₁ / Grössencharakters over a global field k**. There is no GL_n (n ≥ 2) cokernel in that paper.
+
+**Audit of item 5:**
+1. **Vacuous as stated.** Under Thm 1 (and in any setting with a unitary scaling action), an off-line zero is *never* spectrum of *any* cokernel: not EPS's, not DH's own non-equivariant cokernel, and not ζ's if ζ had one. So "the ghost is not spectrum of any ℋ-equivariant subquotient" holds equally for non-equivariant ones. Equivariance does no work in that sentence. **Overreach: relabel it from PROVED (sketch) to "true but vacuous".**
+2. **The correct and non-vacuous content is algebraic, from Tate / Hecke theory, not from Connes.**
+   - For an ℋ-isotypic (eigen) vector, the zeta integral is L(π_i, s) times local polynomial factors. So the zero set of any equivariant construction is contained in ∪ zeros(L(π_i)) ∪ (local-factor zeros).
+   - EPS's and DH's off-line zeros are not in that union: the pieces are non-zero there (\|ζ_K\| = \|L_ψ\| = 0.933 at the EPS zero, \|L(χ)\| = \|L(χ̄)\| = 0.702 at the DH zero). 14F §2c's "same mechanism for ζ" (the 14A vector with the factor (1 − 2^{1−s})) is exactly this Tate gcd statement.
+   - **Restate item 5 as:** "any off-line zero of an ℋ-equivariant zeta integral is an off-line zero of some L(π_i). The EPS / DH off-line zeros are not, so they come from non-equivariance (interference)." That is PROVED, given standard Tate / Jacquet–Langlands local theory.
+3. **The isotypic split V = V_χ ⊕ V_χ̄ under ℤ₅^×** is correct (a compact group acting by distinct characters). The cokernel spectrum "Z_crit(L(χ)) ∪ Z_crit(L(χ̄))" follows from Thm 1 per character, and so contains critical zeros only, as Thm 1 says.
+4. **"Equivalently: positivity of W_π on Connes' π-isotypic quotient is GRH for π"** is fine for GL₁ π. For GL_n with n ≥ 2 there is no "Connes quotient" in Connes 1999. For general π, cite Weil's criterion for L(π) (and its standard extensions), not Connes. **This is a label fix.**
+5. **"Equal moduli at the zeros" is a tautology.** At any zero of αF₁ + βF₂, F₁/F₂ = −β/α, and here \|β/α\| = 1 (DH: β/α = ε(χ); EPS: α = β = 1). So \|F₁\| = \|F₂\| is forced, whether the zero is on or off the line. It should not be labelled NUMERICAL evidence. The non-trivial number is the *size* (0.70, 0.93), i.e. that the pieces are not near their own zeros.
+
+### 5.3 (c) The six-case classification
+
+| case | 14F verdict | criterion label PROVED? | ghost-column label | audit |
+|---|---|---|---|---|
+| ζ | passes | yes (GL₁ trivial) | "none found, NUMERICAL" | **relabel CHECKED (code check).** 14B erratum (a): zeros in band are known on the line |
+| ζ_{ℚ(√5)} = ζ·L(χ₅) | passes, a product | yes. 1 ⊞ χ₅, χ₅ even quadratic | "none (13j), NUMERICAL" | same, CHECKED. Correct as my falsifier's positive control |
+| Epstein x²+5y² | fails: not ℋ-equivariant | **yes**, and there is a simpler proof than the Hecke defect: a(6) = 2 ≠ a(2)a(3) = 0 (a = r_{Q₁}/2), so there is no Euler product, so it is not any L(Π) | quartet 0.933+15.67i, a verified zero | correct. Z_{Q₁} = ζ_K + L_ψ with constants exactly 1 (I re-checked the coefficient identity r_{Q₁} = b₁+b₂, r_{Q₂} = b₁−b₂ to n ≤ 300 with my own lattice count, 0 failures) |
+| DH | fails: not equivariant under ℤ₅^× | yes. No Euler product (906 non-prime-power atoms ≤ 3000) | 0.8085+85.70i, verified | correct. β/α = ε(χ) correct, consistent with 14C's χ (odd quartic mod 5) |
+| F_θ | fails: unitarity | **yes**. By Jacquet–Shalika the isobaric decomposition is unique, so L = L(\|·\|^θ ⊞ \|·\|^{−θ}) has no unitary-constituent representation | every zero off by θ | correct, with one label point: the column "unitary (Ramanujan at p)" conflates two axioms. For GL₁ they coincide (\|χ(p)\| = 1). For GL_n, unitary cuspidal π are not known to be tempered (Ramanujan is open for Maass forms). So c(p)/log p > degree detects non-temperedness, not non-unitarity in general. Fine for these six; rename the column |
+| spliced Beurling | fails: not automorphic | yes. A generalised Dirichlet series over non-integers is not any L(Π) | "yes, proliferation (14B)" | **mislabel.** Erratum (c): there is no own explicit formula, so its form is a defect, not ghosts. The entry should be "N.A. / defect" |
+
+- **My falsifier.** It predicted that any "irreducible ⇔ no ghosts" criterion misclassifies ζ_K or F_θ, and that a criterion separating them must be detecting unitarity. 14F confirms both and adopts unitarity explicitly. **The falsifier is resolved correctly.**
+- **Consequence.** The criterion as a whole (automorphic + isobaric + unitary) is the classical domain of GRH (Langlands; Selberg-class conjectures; Kaczorowski–Perelli 1999 for degree ≤ 1, as 14F cites). 14F says so. The new content is expository and numerical: the interference picture, and the collision homotopy.
+- **"PROVED for the classification" is earned for the predicate.** "Classifies correctly" against ghost-freeness is conditional on RH/GRH for ζ and ζ_K, and is NUMERICAL only for the three ghosted fakes. Beurling is not a ghost case at all.
+
+### 5.4 Numerical details
+- **Collision λ*.** 14F gives "≈ 0.14, bracket (0.06, 0.16), √-extrapolation 0.138". I counted on-line zeros of the real Λ_λ on t ∈ [14.5, 16.2] (step 0.005): the pair is at 15.22 / 15.255 at λ = 0.140, and there are no on-line zeros at λ = 0.145, 0.15 or 0.16. So **λ* ∈ (0.140, 0.145)**, collision height ≈ 15.24. The 0.138 extrapolation is slightly low. Tighten the bracket; the conclusion is unchanged. The mechanism (a real-coefficient, FE-symmetric family losing on-line zeros in colliding pairs) is classical.
+- **Reproducibility trap.** `r14f_quotient.py` as committed tests `rQ == 2*(b1+b2)`. That is wrong, since r_{Q₁}(1) = 2 = b₁(1) + b₂(1), and it would report failures at almost every n. Only `r14f_patch.py` writes the correct key `r_Q1 = b1+b2` into the JSON, and `r14f_collision.py` then pops the bisection result. Running the scripts in a different order gives a different JSON. Fix the first script.
+- **Verified as stated:** the Hecke defects of r_{Q₁}/2 (−4, −4, −4, −2, −4) and of b₁ (0); the DH translation ratios (0.284, −3.52); the FE check (9e-31); the s = 3 lattice sums.
+
+### 5.5 Biggest hole and falsifier
+- **Biggest hole (stated by 14F itself).** The criterion selects but does not prove: inside one unitary cuspidal L(π), W_π ≥ 0 is GRH. Item 5's restated content (5.2.2) excludes only *interference* ghosts.
+- **Cheapest non-tautological test of the "selects" claim.** Add a pair inside the class that differs only in *unitarity*: F_{iτ} vs F_θ (done above: 0 vs 7–20 ghosts). Then add the hardest classical near-miss: a degree-2 Euler product with FE whose local parameters are unitary but which is **not** automorphic. The Selberg-class conjecture says none exists, so the criterion makes a falsifiable prediction only there. No cheap instance is known to me.
+- **Probes (run from `round14c_prolate/`, ~50 s total):**
+  - `twistid`: the digamma identity above, via scipy quad;
+  - `twist.py`: F_{iτ} vs F_θ Galerkin with the quadrature pole term;
+  - `f14.py`: the integer identities and the λ* scan.
+  - The code is in my session scratch (`/tmp/ge/twist.py`, `/tmp/ge/f14.py`); key lines are reproduced below.
+
+```python
+# twist.py core: F_{i tau} model for the 14B Galerkin (pole term by quadrature, validated on zeta to 1e-13)
+C  = 2*digamma(complex(0.25, tau/2)).real - 2*math.log(math.pi)
+mo = dict(n=Z['n'], c=Z['c']*2*np.cos(tau*np.log(Z['n'])), C=C, w=lambda t: 2*np.cos(tau*t)*md.wz(t), poles=[])
+kern = lambda t: 2*math.cosh(t/2)*math.cos(tau*t)       # poles at 1/2 +- i tau
+# pole matrix P = 2 * int_0^L (A(t)+A(t)^T) kern(t) dt  (Gauss-Legendre, 400 nodes, wg.Aclosed)
+# twist identity: digamma(1/4+th/2)+digamma(1/4-th/2)-2*digamma(1/4) == -4*int_0^inf wz(t)*(cosh(th t)-1) dt
+```
+
 ## 14E: pending
-## 14F: pending
 
 ---
 
