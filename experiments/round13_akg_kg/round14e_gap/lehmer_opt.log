@@ -1,0 +1,12 @@
+Lehmer #6709,6710 L=3 gap=0.0377 W_data=1.004 W_zero=1 q=0.000 Rq<=9.838 ideal=0.0016
+median-gap #6695,6696 L=3 gap=0.8836 W_data=1.002 W_zero=1 q=0.123 Rq<=14.31 ideal=0.878
+first two zeros #1,2 L=3 gap=6.8873 W_data=1 W_zero=1 q=1.000 Rq<=106.7 ideal=53.4
+Lehmer #6709,6710 L=5 gap=0.0377 W_data=1.007 W_zero=1 q=0.003 Rq<=5.882 ideal=0.0074
+median-gap #6695,6696 L=5 gap=0.8836 W_data=1.003 W_zero=1 q=0.418 Rq<=19.45 ideal=4.07
+first two zeros #1,2 L=5 gap=6.8873 W_data=1 W_zero=1 q=1.000 Rq<=494.1 ideal=247
+Lehmer #6709,6710 L=7 gap=0.0377 W_data=1.07 W_zero=1 q=0.338 Rq<=0.1203 ideal=0.0203
+median-gap #6695,6696 L=7 gap=0.8836 W_data=1.001 W_zero=1 q=0.980 Rq<=22.78 ideal=11.2
+first two zeros #1,2 L=7 gap=6.8873 W_data=1 W_zero=1 q=1.000 Rq<=1356 ideal=678
+Lehmer #6709,6710 L=8 gap=0.0377 W_data=1.038 W_zero=1 q=0.964 Rq<=0.06293 ideal=0.0303
+median-gap #6695,6696 L=8 gap=0.8836 W_data=1 W_zero=1 q=1.000 Rq<=33.31 ideal=16.7
+first two zeros #1,2 L=8 gap=6.8873 W_data=1 W_zero=1 q=1.000 Rq<=2024 ideal=1.01e+03

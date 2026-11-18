@@ -1,0 +1,1 @@
+{"model": "FTH", "L": 2.0, "F": 45, "M": 37, "tau": 1e-13, "eps": 0.0001, "dimS": 2, "bilinear_resid_rel": "0.002435", "lam_min_restr": "-0.090767277", "lam_min_quot": "-0.7142916", "interlace_upper": "-0.048226559", "sin_max_angle_S_vs_bottom_k_eigvecs": "1.0", "n_neg_W": 7, "n_neg_restr": 7, "sec": 19}

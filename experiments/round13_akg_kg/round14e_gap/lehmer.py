@@ -1,6 +1,8 @@
 """Round 14E (iii): Lehmer-pair probe of a uniform gap on the quotient (Golden Eye falsifier 3).
-g(u) = psi(u)[cos(g1 u) - cos(g2 u)], psi = cos^2(pi u/L) on [-L/2, L/2]; (g1, g2) = a pair of zeta ordinates (CHECK inputs only:
-they choose the probe; W(g) itself is computed from integer data: Lambda(n), Gamma_R, pole).
+g(u) = psi(u)[cos(g1 u) - cos(g2 u)], psi = cos^2(pi u/L) on [-L/2, L/2]; (g1, g2) = a pair of zeta ordinates.
+14E2 erratum: the zeros are PROOF INPUTS to this falsifier (numerically verified by mp.zetazero): they build the probe and they make
+the bound valid (e^(g_i) = 0 for e in the radical BECAUSE g_i are zeros). W(g) itself comes from integer data (Lambda(n), Gamma_R, pole).
+Hypothesis: V (resp. the radical vectors e) supported in the window [-L/2, L/2]; E's half-infinite tail is not covered.
 Bound (elementary): for e in the radical (e^(g1) = e^(g2) = 0 under RH), |(g-e)^(g1) - (g-e)^(g2)| <= |g1-g2| * int|u||g-e|
   <= |g1-g2| sqrt(L^3/12) ||g-e||, so dist(g, rad) >= |g^(g1) - g^(g2)| / (|g1-g2| sqrt(L^3/12)), and the quotient Rayleigh
   quotient R_q(g) = W(g)/dist(g,rad)^2 <= W(g) (g1-g2)^2 L^3 / (12 |g^(g1)-g^(g2)|^2).   Same bound for any V inside the radical."""
@@ -59,6 +61,7 @@ def optimal(L, zs, i, half=20.0):
         k = (ks*math.pi/L)[:, None]; j = ks[:, None]; t = np.atleast_1d(t)[None, :]
         return np.exp(-1j*t*L/2)*math.sqrt(2/L)*k*(1-(-1.0)**j*np.exp(1j*t*L))/(k**2-t**2)
     Z_ = np.array(zs); P = ph(Z_)                     # (nk, nz)
+    d = ph(np.array([g1]))[:, 0] - ph(np.array([g2]))[:, 0]   # 14E2 erratum (Golden Eye AUDIT14 6.4): d was undefined (NameError)
     WZ = 2*(P.conj() @ P.T).real                       # real coefficient vectors: |g^(gamma)|^2 = |sum a_k ph_k|^2, +-gamma
     D = np.outer(d.real, d.real) + np.outer(d.imag, d.imag)   # |d.a|^2 for real a
     ev, U = np.linalg.eigh(WZ); keep = ev > 1e-12*ev.max(); Zm = U[:, keep]/np.sqrt(ev[keep])
