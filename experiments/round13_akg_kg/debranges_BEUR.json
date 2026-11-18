@@ -1,0 +1,475 @@
+{
+ "model": "BEUR",
+ "D": {
+  "h0.05_s0.51": {
+   "min": -0.424455083615463,
+   "t_at_min": 28.0,
+   "n_nonpositive": 236,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.05_s0.55": {
+   "min": -34.50538611255295,
+   "t_at_min": 28.0,
+   "n_nonpositive": 236,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.05_s0.58": {
+   "min": -1.5041273626330707,
+   "t_at_min": 28.0,
+   "n_nonpositive": 237,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.05_s0.6": {
+   "min": -1.162095267162103,
+   "t_at_min": 27.8,
+   "n_nonpositive": 237,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.05_s0.62": {
+   "min": -1.404190368944409,
+   "t_at_min": 27.8,
+   "n_nonpositive": 238,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.05_s0.65": {
+   "min": -1.7827552868602758,
+   "t_at_min": 27.8,
+   "n_nonpositive": 237,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.05_s0.7": {
+   "min": -2.469392683850012,
+   "t_at_min": 27.8,
+   "n_nonpositive": 239,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.05_s0.8": {
+   "min": -4.2661203961971115,
+   "t_at_min": 27.9,
+   "n_nonpositive": 245,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.08_s0.51": {
+   "min": -1.1307442094042486,
+   "t_at_min": 28.0,
+   "n_nonpositive": 223,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.08_s0.55": {
+   "min": -0.9950964245644318,
+   "t_at_min": 28.0,
+   "n_nonpositive": 223,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.08_s0.58": {
+   "min": -0.7440585401299806,
+   "t_at_min": 27.8,
+   "n_nonpositive": 223,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.08_s0.6": {
+   "min": -0.9386272865421414,
+   "t_at_min": 27.8,
+   "n_nonpositive": 223,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.08_s0.62": {
+   "min": -1.140455035955208,
+   "t_at_min": 27.8,
+   "n_nonpositive": 224,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.08_s0.65": {
+   "min": -1.4618507053498941,
+   "t_at_min": 27.8,
+   "n_nonpositive": 225,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.08_s0.7": {
+   "min": -2.063362771807732,
+   "t_at_min": 27.8,
+   "n_nonpositive": 231,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.08_s0.8": {
+   "min": -3.573607200479362,
+   "t_at_min": 27.9,
+   "n_nonpositive": 238,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.1_s0.51": {
+   "min": -0.08053740103193441,
+   "t_at_min": 27.7,
+   "n_nonpositive": 213,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.1_s0.55": {
+   "min": -0.4053287928944602,
+   "t_at_min": 27.7,
+   "n_nonpositive": 213,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.1_s0.58": {
+   "min": -0.6553701605522573,
+   "t_at_min": 27.7,
+   "n_nonpositive": 215,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.1_s0.6": {
+   "min": -0.8270689018864203,
+   "t_at_min": 27.7,
+   "n_nonpositive": 216,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.1_s0.62": {
+   "min": -1.0039292015490258,
+   "t_at_min": 27.7,
+   "n_nonpositive": 219,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.1_s0.65": {
+   "min": -1.2809287553310345,
+   "t_at_min": 27.7,
+   "n_nonpositive": 220,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.1_s0.7": {
+   "min": -1.811674155644413,
+   "t_at_min": 27.8,
+   "n_nonpositive": 220,
+   "t_range_nonpos": [
+    0.5,
+    58.1
+   ]
+  },
+  "h0.1_s0.8": {
+   "min": -3.21005343716471,
+   "t_at_min": 27.8,
+   "n_nonpositive": 232,
+   "t_range_nonpos": [
+    0.5,
+    58.0
+   ]
+  },
+  "h0.2_s0.51": {
+   "min": -0.04251589942509071,
+   "t_at_min": 27.6,
+   "n_nonpositive": 155,
+   "t_range_nonpos": [
+    0.5,
+    57.9
+   ]
+  },
+  "h0.2_s0.55": {
+   "min": -0.21439918066057473,
+   "t_at_min": 27.6,
+   "n_nonpositive": 155,
+   "t_range_nonpos": [
+    0.5,
+    57.9
+   ]
+  },
+  "h0.2_s0.58": {
+   "min": -0.3477146408952816,
+   "t_at_min": 27.6,
+   "n_nonpositive": 157,
+   "t_range_nonpos": [
+    0.5,
+    57.9
+   ]
+  },
+  "h0.2_s0.6": {
+   "min": -0.4399653497590954,
+   "t_at_min": 27.6,
+   "n_nonpositive": 157,
+   "t_range_nonpos": [
+    0.5,
+    57.9
+   ]
+  },
+  "h0.2_s0.62": {
+   "min": -0.5356540016857245,
+   "t_at_min": 27.6,
+   "n_nonpositive": 158,
+   "t_range_nonpos": [
+    0.5,
+    57.9
+   ]
+  },
+  "h0.2_s0.65": {
+   "min": -0.6928719266273102,
+   "t_at_min": 27.7,
+   "n_nonpositive": 161,
+   "t_range_nonpos": [
+    0.5,
+    57.9
+   ]
+  },
+  "h0.2_s0.7": {
+   "min": -1.0102361438735503,
+   "t_at_min": 27.7,
+   "n_nonpositive": 171,
+   "t_range_nonpos": [
+    0.5,
+    58.0
+   ]
+  },
+  "h0.2_s0.8": {
+   "min": -1.8386935270091325,
+   "t_at_min": 27.7,
+   "n_nonpositive": 184,
+   "t_range_nonpos": [
+    0.5,
+    58.0
+   ]
+  },
+  "h0.3_s0.51": {
+   "min": -0.02270516212708884,
+   "t_at_min": 27.6,
+   "n_nonpositive": 71,
+   "t_range_nonpos": [
+    0.6,
+    42.2
+   ]
+  },
+  "h0.3_s0.55": {
+   "min": -0.11507460133823955,
+   "t_at_min": 27.6,
+   "n_nonpositive": 71,
+   "t_range_nonpos": [
+    0.6,
+    42.2
+   ]
+  },
+  "h0.3_s0.58": {
+   "min": -0.1881254468572262,
+   "t_at_min": 27.6,
+   "n_nonpositive": 73,
+   "t_range_nonpos": [
+    0.6,
+    42.2
+   ]
+  },
+  "h0.3_s0.6": {
+   "min": -0.23975029523700542,
+   "t_at_min": 27.6,
+   "n_nonpositive": 75,
+   "t_range_nonpos": [
+    0.6,
+    42.2
+   ]
+  },
+  "h0.3_s0.62": {
+   "min": -0.29439164565138576,
+   "t_at_min": 27.6,
+   "n_nonpositive": 76,
+   "t_range_nonpos": [
+    0.6,
+    42.2
+   ]
+  },
+  "h0.3_s0.65": {
+   "min": -0.3832204431609547,
+   "t_at_min": 27.6,
+   "n_nonpositive": 79,
+   "t_range_nonpos": [
+    0.6,
+    42.2
+   ]
+  },
+  "h0.3_s0.7": {
+   "min": -0.5538443539274152,
+   "t_at_min": 27.6,
+   "n_nonpositive": 84,
+   "t_range_nonpos": [
+    0.6,
+    42.3
+   ]
+  },
+  "h0.3_s0.8": {
+   "min": -1.0096903251260905,
+   "t_at_min": 27.7,
+   "n_nonpositive": 109,
+   "t_range_nonpos": [
+    0.6,
+    57.8
+   ]
+  }
+ },
+ "curv": {
+  "h0.05_s0.52": {
+   "max_SP_ratio": 922.6628269327315,
+   "t_at_max": 4.25,
+   "n_K_nonpositive": 98,
+   "t_K_nonpositive": [
+    0.5,
+    58.0
+   ]
+  },
+  "h0.05_s0.55": {
+   "max_SP_ratio": 25614.40664633585,
+   "t_at_max": 47.25,
+   "n_K_nonpositive": 98,
+   "t_K_nonpositive": [
+    0.5,
+    58.0
+   ]
+  },
+  "h0.05_s0.58": {
+   "max_SP_ratio": 4849.990109807389,
+   "t_at_max": 4.25,
+   "n_K_nonpositive": 99,
+   "t_K_nonpositive": [
+    0.5,
+    58.0
+   ]
+  },
+  "h0.05_s0.6": {
+   "max_SP_ratio": 1503.0026320723507,
+   "t_at_max": 24.25,
+   "n_K_nonpositive": 100,
+   "t_K_nonpositive": [
+    0.5,
+    58.0
+   ]
+  },
+  "h0.05_s0.65": {
+   "max_SP_ratio": 695.6945543904046,
+   "t_at_max": 3.5,
+   "n_K_nonpositive": 98,
+   "t_K_nonpositive": [
+    0.5,
+    58.0
+   ]
+  },
+  "h0.05_s0.7": {
+   "max_SP_ratio": 249.14137803612275,
+   "t_at_max": 27.25,
+   "n_K_nonpositive": 99,
+   "t_K_nonpositive": [
+    0.5,
+    58.0
+   ]
+  },
+  "h0.3_s0.52": {
+   "max_SP_ratio": 1897.7059280194628,
+   "t_at_max": 6.75,
+   "n_K_nonpositive": 29,
+   "t_K_nonpositive": [
+    0.75,
+    42.25
+   ]
+  },
+  "h0.3_s0.55": {
+   "max_SP_ratio": 4684.673528547168,
+   "t_at_max": 6.75,
+   "n_K_nonpositive": 29,
+   "t_K_nonpositive": [
+    0.75,
+    42.25
+   ]
+  },
+  "h0.3_s0.58": {
+   "max_SP_ratio": 141.34103804419132,
+   "t_at_max": 8.25,
+   "n_K_nonpositive": 31,
+   "t_K_nonpositive": [
+    0.75,
+    42.25
+   ]
+  },
+  "h0.3_s0.6": {
+   "max_SP_ratio": 180.91274106419945,
+   "t_at_max": 1.0,
+   "n_K_nonpositive": 31,
+   "t_K_nonpositive": [
+    0.75,
+    42.25
+   ]
+  },
+  "h0.3_s0.65": {
+   "max_SP_ratio": 190.43339898443753,
+   "t_at_max": 8.25,
+   "n_K_nonpositive": 33,
+   "t_K_nonpositive": [
+    0.75,
+    42.25
+   ]
+  },
+  "h0.3_s0.7": {
+   "max_SP_ratio": 813.5959074405905,
+   "t_at_max": 13.0,
+   "n_K_nonpositive": 35,
+   "t_K_nonpositive": [
+    0.75,
+    42.25
+   ]
+  }
+ }
+}

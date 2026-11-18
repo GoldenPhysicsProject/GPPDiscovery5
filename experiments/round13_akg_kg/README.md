@@ -56,3 +56,6 @@ For real g, h supported in [−L/2, L/2], Φ_{g⋆h̃}(u) = W(g, h(· − u)), t
 
 ## Round 13e
 Falsifier harness (Epstein x²+5y², DMV-type Beurling proxy): see `ROUND13E.md`.
+
+## Round 13f
+de Branges / Lagarias curvature test: see `ROUND13F.md`.
