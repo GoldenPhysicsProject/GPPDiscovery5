@@ -2,167 +2,199 @@
 
 Lane: `experiments/round13_akg_kg/principal_series/`, branch `team/principal-series`.
 
-Inputs read:
+Inputs:
 - `../round14d_global/ROUND14D.md` (main 7e89769);
 - `../round14b_euler/ROUND14B.md`;
-- Golden Eye pre-audit `../golden_eye/AUDIT14.md` (team/golden-eye 062e4e2), §4 "14F".
+- Golden Eye `../golden_eye/AUDIT14.md`: pre-audit at team/golden-eye 062e4e2, audit §5 at 74740e6.
 
-14E is not present on main at 7e89769.
+14E is not on main at 7e89769.
 
-Code:
-- `r14f_quotient.py` / `r14f_patch.py` / `r14f_collision.py` → `r14f_quotient.json`;
-- `r14f_logderiv.py` → `r14f_logderiv.json`.
+Code (each script is self-contained, so the outputs do not depend on run order):
+- `r14f_quotient.py` → `r14f_quotient.json`: integer identities, DH, interference, homotopy, collision.
+- `r14f_logderiv.py` → `r14f_logderiv.json`: atoms of −F′/F.
+- `r14f_twist.py` → `r14f_twist.json`: 14B Galerkin for F_θ vs F_{iτ}.
 
 Zeros are test data only. Labels: PROVED / CHECKED / NUMERICAL / CONJECTURE / GAP / OPEN.
 
-**Bottom line.** "One irreducible vs a sum of two" is the wrong dichotomy, and the pre-audit's falsifier confirms it. The right one has two parts:
-- **Products** (isobaric sums): there the Weil form is additive and the zeros are the union.
-- **Linear combinations** of Dirichlet series: there the Weil form is non-additive and the zeros come from interference. Equivalently, the quotient is taken by a subspace that is **not Hecke-equivariant**.
-- **Plus unitarity of the constituents.**
+> **Revision (Golden Eye audit §5, 74740e6).** Fix commit on top of 104719a.
+> 1. §2a: W_{FG} = W_F + W_G is relabelled as an *identity* (log(FG) = log F + log G). Its float check is not content.
+> 2. Item 5 is restated as the Tate/Hecke containment fact. The Connes-quotient wording is dropped as vacuous. "Equal moduli" at the off-line zeros is marked as forced by |β/α| = 1. GL_n with n ≥ 2 now cites Weil's criterion.
+> 3. Added the elementary Epstein non-Euler proof a(6) = 2 ≠ a(2)a(3) = 0. The ζ / ζ_K ghost entries are now code checks, and Beurling is N.A. / defect. Temperedness is separated from unitarity.
+> 4. Added a seventh row, F_{iτ} (τ = 3), the unitary-twist control.
+> 5. The collision bracket is tightened to λ* ∈ (0.1400, 0.1425) at height ≈ 15.24. The script bug that tested r = 2(b₁ + b₂) is fixed, `r14f_patch.py` and `r14f_collision.py` are folded into `r14f_quotient.py` and removed, and all JSONs are regenerated.
 
-So the candidate criterion is that F = L(s, Π) for an isobaric sum Π = π₁ ⊞ … ⊞ π_r of unitary cuspidal automorphic representations of GL_{n_i}(𝔸_ℚ). It correctly sorts ζ, ζ_{ℚ(√5)}, Epstein, DH, F_θ and spliced Beurling.
-
-It **selects** objects. It does not prove positivity: W ≥ 0 for every such Π is GRH, a CONJECTURE/OPEN.
+**Bottom line.**
+- "One irreducible vs a sum of two" is the wrong dichotomy.
+- The working dividing line has two parts:
+  - **products** (isobaric sums) vs **linear combinations** of Dirichlet series, which is the same as Hecke-equivariant vs non-equivariant test vectors;
+  - **unitarity** of the constituents.
+- The candidate criterion: F = L(s, Π) with Π = π₁ ⊞ … ⊞ π_r an isobaric sum of unitary cuspidal automorphic representations of GL_{n_i}(𝔸_ℚ). This is the classical domain in which GRH is conjectured (Langlands; Selberg class), not a new criterion.
+- It sorts all seven test cases. It **selects** objects. It does not prove positivity: W ≥ 0 on that class is GRH, which is CONJECTURE / OPEN.
+- The new content here is expository and numerical: the interference picture, the collision homotopy, and the unitary/non-unitary twist pair.
 
 ---
 
-## 0. Which group, which "irreducible" (answering pre-audit point 1)
+## 0. Which group, which "irreducible"
 
-- **Why the scaling group cannot be the right one.** ℝ_{>0} and C_ℚ are abelian. Their irreducibles are characters, so ζ's quotient is already a direct integral/sum of characters |·|^{iγ}, one per critical zero. "Single irreducible" has no content there. (PROVED, trivial.)
-- **The non-abelian setting meant here:** automorphic representations π of GL_n(𝔸_ℚ), acted on by the restricted tensor product of local Hecke algebras ℋ = ⊗′_p ℋ(GL_n(ℚ_p) // GL_n(ℤ_p)) at unramified p, together with GL_n(ℤ_p)/units at ramified p.
-  - n = 1 gives Hecke (Dirichlet) characters, with ℋ_p = ℂ[D_p^{±1}].
-  - **Epstein** x²+5y² lives on GL₂: its theta lift is the automorphic induction from GL₁(𝔸_K), K = ℚ(√−5).
+- **The scaling group cannot carry the distinction.** ℝ_{>0} and C_ℚ are abelian, so their irreducibles are characters, and ζ's quotient is already a sum of characters |·|^{iγ}. "Single irreducible" is vacuous there. (PROVED, trivial.)
+- **The non-abelian setting.** Automorphic representations π of GL_n(𝔸_ℚ), with the Hecke algebra ℋ = ⊗′_p ℋ_p acting (spherical at unramified p, and GL_n(ℤ_p) or units at ramified p).
+  - n = 1 gives Dirichlet / Hecke characters.
+  - **Epstein** lives on GL₂: θ_{Q₁} via the theta lift / automorphic induction from GL₁(𝔸_K), K = ℚ(√−5).
   - **DH** lives on GL₁(𝔸_ℚ), mixed in the ramified component at 5.
-- **"Irreducible" is defined algebraically, not as a Hilbert-space notion.** For the fakes W_F is indefinite, so the quotient is at best a Krein space and "unitary irreducible" is undefined. The definition used instead:
-  - E_F is **Hecke-equivariant** if its range is stable under ℋ (equivalently under GL_n(𝔸_f), or under C_ℚ for n = 1).
-  - "The quotient is irreducible / eigen" means ℋ acts on the cyclic module generated by the test vector through a single character λ_π (strong multiplicity one makes λ_π determine π).
-  - This is purely algebraic and does not presuppose positivity. (Definition.)
+- **"Irreducible / eigen" is defined algebraically**, since for the fakes W_F is indefinite and the quotient is at best a Krein space.
+  - The test vector is ℋ-eigen, and its cyclic ℋ-module is a finite sum of eigen-modules λ_{π_i}.
+  - E_F is ℋ-equivariant when its range is ℋ-stable.
+  - Strong multiplicity one makes λ_π determine π. (Definition.)
 
-## 1. Exact decompositions (b)
+## 1. Exact decompositions
 
-### Epstein Q₁ = x² + 5y² (CHECKED, `r14f_quotient.json`)
-- **Setting.** K = ℚ(√−5), d = −20, h = 2, w = 2. The two forms are Q₁ = x²+5y² and Q₂ = 2x²+2xy+3y². ψ is the genus (class-group) character, ψ(C₁) = 1 and ψ(C₂) = −1.
+### Epstein Q₁ = x² + 5y²
+- **Setting.** K = ℚ(√−5), d = −20, h = 2, w = 2, Q₂ = 2x² + 2xy + 3y², and ψ is the genus character.
 - **Decomposition.**
-  - Z_{Q₁}(s) = ζ_K(s) + L_K(s, ψ) = ζ(s)L(s, χ₋₂₀) + L(s, χ₋₄)L(s, χ₅).
-  - Z_{Q₂}(s) = ζ(s)L(s, χ₋₂₀) − L(s, χ₋₄)L(s, χ₅).
-  - Both constants are exactly ±1, since Z_{Q_i} = w·ζ_K(s, C_i) = (w/h)(ζ_K ± L_ψ) = ζ_K ± L_ψ. (PROVED, genus theory.)
+  - Z_{Q₁} = ζ_K + L_K(ψ) = ζ(s)L(s, χ₋₂₀) + L(s, χ₋₄)L(s, χ₅).
+  - Z_{Q₂} = ζ(s)L(s, χ₋₂₀) − L(s, χ₋₄)L(s, χ₅).
+  - The constants are exactly ±1: Z_{Q_i} = w·ζ_K(s, C_i) = (w/h)(ζ_K ± L_ψ). (PROVED, genus theory.)
 - **Checks.**
-  - At s = 3, lattice sum (R = 400) vs formula: 2.0783968688555 vs 2.0783968688659, and 0.4218385421188 vs 0.4218385421236. This is truncation-level agreement. (NUMERICAL)
-  - Coefficient identity r_{Q₁}(n) = b₁(n) + b₂(n) and r_{Q₂}(n) = b₁(n) − b₂(n), with b₁ = 1 ∗ χ₋₂₀ and b₂ = χ₋₄ ∗ χ₅: **0 failures for n ≤ 200**. (CHECKED)
-- **Automorphic pieces (GL₂, weight 1, level 20, nebentypus χ₋₂₀).** These are the two Eisenstein / isobaric representations Π₁ = 1 ⊞ χ₋₂₀ and Π₂ = χ₋₄ ⊞ χ₅, the automorphic inductions of the GL₁(𝔸_K) characters 1 and ψ. (PROVED, standard.)
-  - θ_{Q₁} lies in Π₁ ⊕ Π₂ and is **not** in either one.
+  - At s = 3, lattice sum (R = 400) vs formula: 2.0783968688555 vs 2.0783968688659, and 0.4218385421188 vs 0.4218385421236. The gap is lattice-truncation level. (NUMERICAL)
+  - r_{Q₁} = b₁ + b₂ and r_{Q₂} = b₁ − b₂, with b₁ = 1 ∗ χ₋₂₀ and b₂ = χ₋₄ ∗ χ₅: 0 failures for n ≤ 200. GE independently found 0 failures for n ≤ 300. (CHECKED)
+- **No Euler product (elementary proof, from GE).** Set a = r_{Q₁}/2. Then a(2) = a(3) = 0, since 2 and 3 are not of the form x² + 5y², but a(6) = 2, from (±1, ±1). So a(6) ≠ a(2)a(3), a is not multiplicative, and Z_{Q₁} is not L(s, Π) for any Π. (PROVED; CHECKED in `epstein_non_euler`.)
+- **Automorphic pieces.** Π₁ = 1 ⊞ χ₋₂₀ and Π₂ = χ₋₄ ⊞ χ₅, both weight-1 Eisenstein of level 20 with nebentypus χ₋₂₀. θ_{Q₁} lies in Π₁ ⊕ Π₂ and in neither summand alone. (PROVED, standard.)
 
-### Davenport–Heilbronn (CHECKED)
-- **Decomposition.** DH(s) = α L(s, χ) + β L(s, χ̄), where χ mod 5 has χ(2) = i, α = (1 − iκ)/2, β = (1 + iκ)/2, and κ = (√(10−2√5) − 2)/(√5 − 1) = 0.28408.
+### Davenport–Heilbronn
+- **Decomposition.** DH = α L(s, χ) + β L(s, χ̄), where χ mod 5 has χ(2) = i, α, β = (1 ∓ iκ)/2, and κ = (√(10−2√5) − 2)/(√5 − 1) = 0.28408.
 - **Root numbers.**
-  - β/α = ε(χ) = 1/ε(χ̄) = 0.850651 + 0.525731i, with |β/α| = 1 (CHECKED to 12 digits).
-  - Hence Λ(DH, s) = Λ(DH, 1−s) exactly. The FE of L(χ) itself is checked to 9e-31. (PROVED + CHECKED)
-  - Within span{L(χ), L(χ̄)}, the FE-symmetric line is the single complex ray β = α/ε(χ̄) (PROVED, two lines of algebra). So DH is, up to scale, the unique symmetric superposition.
+  - β/α = ε(χ) = 1/ε(χ̄) = 0.850651 + 0.525731i, with |β/α| = 1 (CHECKED).
+  - The FE of L(χ) holds to 4e-21 (CHECKED).
+  - The FE-symmetric combinations form the single complex ray β = α/ε(χ̄). (PROVED, two lines of algebra.)
+- **No Euler product.** There are 906 non-prime-power atoms of −F′/F up to n ≤ 3000 (CHECKED).
 
-## 2. Is the Weil form bilinear in F? No. The correct statements (honesty check)
+## 2. W is not bilinear in F: what is actually true
 
-**2a. Additive over products, not over sums (PROVED; CHECKED).**
-- **Over products.** W_F is built from −F′/F = Σ c_F(n) n^{−s} plus the gamma factor and poles. log(FG) = log F + log G gives c_{FG} = c_F + c_G, the same for the arch terms, and zeros(FG) = zeros(F) ∪ zeros(G). So **W_{FG} = W_F + W_G exactly**, with no cross term. (PROVED)
-  - Integer check (`r14f_logderiv.json`, N = 3000): max |c_{ζ·L(χ₅)} − c_ζ − c_{L(χ₅)}| = 9.8e-15. (CHECKED)
-  - Consistent with 13j: W_{ℚ(√5)} = W_ζ + W_{χ₅} to 2e-13.
-- **Over sums.** For F = F₁ + F₂, the quantity −F′/F is **not** −F₁′/F₁ − F₂′/F₂, and there is no bilinear formula.
-  - For Epstein: max |c_{EPS} − c_{ζ_K} − c_{L_ψ}| = 315 (CHECKED).
-  - The "cross term" is therefore **not** a bilinear cross term B(F₁, F₂). The literal claim "W_{F₁+F₂} = W₁ + W₂ + 2B" is false. (PROVED)
-- **The prime side records it.**
+**2a. Additivity over products (an identity, not content).**
+- W_F is linear in −F′/F, log Γ_F and the pole divisor, and all three are additive under F ↦ FG. So W_{FG} = W_F + W_G and zeros(FG) = zeros(F) ∪ zeros(G). This is log(FG) = log F + log G. (PROVED, tautological.)
+- The value 9.8e-15 for ζ·L(χ₅) is a **float check of the Dirichlet-convolution code**, not evidence.
+- Likewise the Epstein defect max |c_EPS − c_{ζ_K} − c_{L_ψ}| = 315 just says log is not additive over sums.
+- Consequence: the "cross term" of a sum F₁ + F₂ is **not** a bilinear B(F₁, F₂). (PROVED)
+- **Compatibility with 14B (GE §5.1).** 14B's polarisation W_{F_θ}(g) = 2B_ζ(e^{−θu}g, e^{θu}g) is bilinearity in the *test vector*, not in F, so there is no conflict.
+  - GE verified the archimedean constants term by term.
+  - The θ- and τ-digamma identities ψ(¼ + θ/2) + ψ(¼ − θ/2) − 2ψ(¼) = −4∫w_ζ(cosh θt − 1), and its τ analogue, hold to 2e-15 at θ = 0.1, 0.2, 0.3 and to 2e-11 at τ = 1, 3 (`r14f_twist.json`). (CHECKED)
+- **Atoms of −F′/F** (`r14f_logderiv.json`, N = 3000; CHECKED):
 
-| model | non-prime-power atoms of −F′/F (n ≤ 3000) | max_p \|c(p)\|/log p |
+| model | non-prime-power atoms | max_p \|c(p)\|/log p |
 |---|---|---|
 | ζ, L(χ₅) | 0 | 1 |
 | ζ_{ℚ(√5)} | 0 | 2 |
 | ζ_K(−20), L_ψ | 0 | 2 |
-| EPS | **203** (first 6, 14, 21, 36, …) | 2 |
-| DH | **906** (first 6, 12, 14, 18, …) | 1 |
+| EPS | **203** (6, 14, 21, 36, …) | 2 |
+| DH | **906** (6, 12, 14, 18, …) | 1 |
 | F_{0.2} | 0 | **5.16** |
 
-  So linear combinations put weight on non-prime-powers, while products stay prime-power supported. F_θ stays prime-power supported but breaks the Ramanujan bound (degree 2 permits ≤ 2). (CHECKED)
+**2b. Off-line zeros of a sum come from interference.**
+- **Identity.** For F = αF₁ + βF₂ with αβ ≠ 0: F(ρ) = 0 ⇔ F₁(ρ)/F₂(ρ) = −β/α. A common zero of F and F₁ is a common zero of F₁ and F₂. (PROVED)
+- **Equal moduli are forced.** Here |β/α| = 1 (DH: ε(χ); EPS: α = β = 1), so |F₁(ρ)| = |F₂(ρ)| at *every* zero, on or off the line. That is not evidence. (PROVED, tautological.)
+- **The content is the size of the pieces** (NUMERICAL, test data):
+  - At DH's ρ = 0.808517182457 + 85.6993484854i: |L(χ)| = |L(χ̄)| = 0.70220.
+  - At EPS's ρ = 0.932969697485 + 15.6682495313i: |ζ_K| = |L_ψ| = 0.93341, with ratio −1 to 3e-21.
+  - So neither piece is near its own zeros there.
+  - At ζ's first zero |L_ψ| = 9.41, so it is not a zero of Z_{Q₁}.
+- **Collision homotopy Z_λ = ζ_K + λL_ψ** (`r14f_quotient.json`; NUMERICAL). Real λ keeps the FE, gamma factor, conductor and real coefficients.
+  - **λ = 0.** On t ∈ [14.5, 16.2] the only on-line zero is L(χ₋₂₀)'s 15.4925. The other zero involved, L(χ₋₂₀)'s 14.338, enters the window as λ grows. (ζ's 14.1347 moves down and out of the window, to 13.40 at λ = 0.25.)
+  - **The pair approaches.** 14.79 / 15.45 at λ = 0.06, 14.97 / 15.40 at λ = 0.10, 15.13 / 15.33 at λ = 0.13, 15.22 / 15.26 at λ = 0.140.
+  - **No on-line zero in the window** at λ = 0.1425, 0.145, 0.15, 0.16 (step 0.005). So **λ* ∈ (0.1400, 0.1425)**, at height ≈ 15.24. This is consistent with GE's (0.140, 0.145).
+  - **After the collision, the off-line track.** Re ρ = 0.566 / 0.595 / 0.633 / 0.718 / 0.890 / 0.933 at λ = 0.145 / 0.15 / 0.16 / 0.2 / 0.5 / 1, with Im ρ going from 15.244 to 15.668.
+  - Losing on-line zeros in colliding pairs is classical for real FE-symmetric families. Here it shows the Epstein quartet is born from two zeros of one piece, L(χ₋₂₀), once the second eigen-component is mixed in at about 14%.
 
-**2b. Where the off-line zeros come from: interference (PROVED identity + NUMERICAL).**
-- **The identity.** For F = αF₁ + βF₂ with α, β ≠ 0: F(ρ) = 0 ⇔ F₁(ρ)/F₂(ρ) = −β/α. The zeros are a level set of the ratio of the two pieces, **not** a subset of zeros(F₁) ∪ zeros(F₂). (PROVED)
-  - A common zero of F and F₁ is a common zero of F₁ and F₂. None was found: at ζ's first zero |L_ψ| = 9.41, so Z_{Q₁} ≠ 0 there. (PROVED + NUMERICAL)
-- **At the off-line zeros** (test data):
-  - **DH**, ρ = 0.808517182457 + 85.6993484854i: |L(χ, ρ)| = |L(χ̄, ρ)| = 0.70220, nowhere near 0, and L(χ)/L(χ̄)(ρ) = −0.850651 − 0.525731i = −β/α exactly. (NUMERICAL)
-  - **Epstein**, ρ = 0.932969697485 + 15.6682495313i: |ζ_K(ρ)| = |L_ψ(ρ)| = 0.93341 and ζ_K/L_ψ(ρ) = −1.000000 (imaginary part 3e-31). (NUMERICAL)
-  - Both pieces are large at the zero, and the zero is pure destructive interference of equal moduli.
-- **Birth of the ghost (homotopy Z_λ = ζ_K + λL_ψ, λ ∈ [0, 1]).** Real λ preserves the FE, the gamma factor, the conductor and real coefficients. (NUMERICAL)
-  - At λ = 0 the zeros near t ≈ 14–16 are ζ's 14.1347 and L(χ₋₂₀)'s 14.338 and 15.492, all on the line.
-  - As λ grows, 14.338 and 15.492 approach each other (14.79 / 15.45 at λ = 0.06).
-  - They **collide on the line** at λ* ≈ 0.14 (bracket (0.06, 0.16); √-extrapolation of Re ρ − 1/2 gives 0.138), near t ≈ 15.2.
-  - They then leave as the off-line quartet. Re ρ = 0.633 / 0.718 / 0.815 / 0.890 / 0.933 at λ = 0.16 / 0.2 / 0.3 / 0.5 / 1, and Im ρ goes from 15.26 to 15.668.
-  - So the Epstein ghost is born from **two zeros of the piece L(χ₋₂₀)** as the second piece is mixed in. It is neither a zero of either piece nor a sum of the pieces' spectra.
-  - In 14B's language, the off-line pair is a 2-dimensional neutral block of signature (1, 1) of the Krein-space quotient.
+**2c. Restated item 5: the Tate/Hecke containment (replaces the vacuous Connes-quotient sentence).**
+- **Retracted.** The earlier claim "ghosts are not spectrum of any ℋ-equivariant quotient" was true but vacuous.
+  - Connes 1999 Thm 1 works in L²_δ, δ > 1, where the cokernel spectrum consists of **critical** zeros only. In the δ = 0 picture off-line zeros appear only as resonances.
+  - So *no* off-line zero is ever spectrum of such a quotient, equivariant or not, and equivariance did no work. Also, Connes 1999 is GL₁ (Grössencharakters) only.
+- **Correct statement (PROVED, standard Tate / local theory).**
+  - For an ℋ-eigen (isotypic) test vector, the global zeta integral is L(s, π_i) times finitely many local factors, which are polynomials in p^{±s} or archimedean entire factors.
+  - So the zeros of any equivariant construction lie in ∪_i zeros(L(π_i)) ∪ (local-factor zeros).
+  - Consequently, any off-line zero of an equivariant zeta integral that is not a local-factor zero is an off-line zero of some L(π_i).
+- **Application to the fakes (PROVED + NUMERICAL).**
+  - The EPS and DH off-line zeros are not zeros of any piece (sizes 0.93 and 0.70, §2b).
+  - They are not local-factor zeros either: a finite polynomial in p^{−s} vanishes only on vertical lines, and EPS's and DH's test vectors carry no such factor.
+  - So they come from **non-equivariance**, i.e. interference.
+- **The non-equivariance itself (CHECKED).**
+  - DH evaluates at u = 1 in (ℤ/5)^×: the ratio c(2a)/c(a) = 0.284, −3.520, −3.520, 0.284 is not constant, against i for χ.
+  - Epstein evaluates at the class C₁ in Cl_K ≅ ℤ/2. The GL₂ Hecke relation b(p)b(n) = b(pn) + χ₋₂₀(p)b(n/p) gives defect 0 for b₁ and b₂ and −4, −4, −4, −2, −4, −4, −4 for r_{Q₁}/2 at (p, n) = (3,3), (3,7), (7,3), (2,3), (7,7), (23,3), (3,23).
+- **The same gcd principle for ζ (PROVED).** The 14A vector has zeta integral ζ(s)(1 − 2^{1−s})·Γ-factor, whose zeros on Re s = 1 are local-factor zeros. Only the gcd over the Hecke orbit is intrinsic.
 
-**2c. Where the ghost lives in the quotient (PROVED, sketch).**
-- **The equivariant quotient.** Let V be the C_ℚ-invariant hull of the range of E restricted to the χ ⊕ χ̄ isotypic part of L²_δ(C_ℚ). That means the closed span of E(π(a)(H ⊗ f₅)) over all a ∈ C_ℚ.
-  - V splits as V_χ ⊕ V_χ̄, because the units ℤ₅^× act by χ(u) and χ̄(u) and separate the two parts.
-  - So the cokernel is Q_χ ⊕ Q_χ̄, with ℝ_{>0}-spectrum Z_crit(L(χ)) ∪ Z_crit(L(χ̄)) (Connes 1999 per character).
-- **The DH quotient.** It is L²_δ(ℝ_{>0}) / closure{DH(s)Ĥ(s)}. It arises only after composing with Res_{u=1}: restriction to one point of ℤ₅^×, i.e. pairing with the fixed vector c = (1, κ, −κ, −1) on (ℤ/5)^×.
-  - Res_{u=1} is ℝ_{>0}-equivariant but **not** ℤ₅^×-equivariant: c(2a)/c(a) = 0.284, −3.520, −3.520, 0.284, against the constant i for χ (CHECKED).
-  - Its range is therefore not ℋ-stable. The spectrum is Z_crit(DH), which is disjoint from the pieces' spectra by 2b.
-- **Same for Epstein.** Z_{Q₁} is the restriction to one point (the class C₁) of the class group Cl_K ≅ ℤ/2, instead of a projection onto a character of Cl_K. On GL₂, the Hecke relation b(p)b(n) = b(pn) + χ₋₂₀(p)b(n/p):
-  - holds exactly for b₁ and b₂ (defect 0 at (p, n) = (3,3), (3,7), (7,3), (2,3), (7,7), (23,3), (3,23));
-  - fails for r_{Q₁}/2 (defect −4, −4, −4, −2, −4, −4, −4). (CHECKED)
-  - So θ_{Q₁} is not a Hecke eigenform, and E_{Q₁} does not intertwine T_p.
-- **Statement.** The off-line zeros of EPS and DH are zeros of the zeta integral of **one non-equivariant vector**. They are not spectrum of any ℋ-equivariant subquotient of Connes' adelic cokernel. The ghost lives in the interference locus {F₁/F₂ = −β/α}, which no ℋ-stable construction sees. (PROVED, modulo Connes 1999 for the per-character spectra, cited and not re-derived.)
-- **The same mechanism for ζ.** Vector-dependent zeros already occur for ζ: the single test vector of 14A §2 has zeta integral ζ(s)(1 − 2^{1−s})·Γ-factor, which has zeros on Re s = 1. Only the common zeros over the whole Hecke orbit are intrinsic. (PROVED)
+## 3. The criterion and the seven test cases
 
-## 3. The criterion, tested against the pre-audit falsifier (c)
+**Criterion.** F = L(s, Π), with Π an isobaric sum of unitary cuspidal automorphic π_i on GL_{n_i}(𝔸_ℚ).
+- As a *predicate* on the seven cases it is PROVED / CHECKED.
+- As a *positivity criterion* it is CONJECTURE (GRH).
 
-**Candidate criterion (CONJECTURE as a positivity criterion; PROVED as a classification of the six cases).** F = L(s, Π) with Π = π₁ ⊞ … ⊞ π_r an isobaric sum of **unitary cuspidal** automorphic representations of GL_{n_i}(𝔸_ℚ). Characters count as GL₁-cuspidal; the poles come from trivial constituents.
+| model | Euler product | FE | automorphic (isobaric Π) | product vs linear combination | unitary constituents | tempered at p (Ramanujan) | criterion | ghosts |
+|---|---|---|---|---|---|---|---|---|
+| ζ | yes | yes | GL₁, trivial | single | yes | yes (1) | passes | none, L ≤ 8: **code check** (zeros in band known on the line) |
+| ζ_{ℚ(√5)} = ζ·L(χ₅) | yes | yes | 1 ⊞ χ₅ | product (W additive: identity) | yes | yes (2 = degree) | passes | none (13j): **code check** |
+| F_{iτ} = ζ(s−iτ)ζ(s+iτ), τ = 3 | yes (c = 2cos(τ log n)Λ) | yes | \|·\|^{iτ} ⊞ \|·\|^{−iτ} | product | **yes** | yes (\|2cos\| ≤ 2) | passes | **0 at L = 2 (M = 37) and L = 4 (M = 66)**, λ_min = +1.4e-10 / +6.1e-11: **code check** |
+| F_θ = ζ(s−θ)ζ(s+θ), θ = 0.2 | yes, Λ ≥ 0 | yes | \|·\|^θ ⊞ \|·\|^{−θ} | product | **no** (non-unitary exponents) | no (5.16 > 2) | fails (unitarity) | 8 at L = 2 (λ_min = −0.091), 20 at L = 4 (λ_min = −0.755): NUMERICAL (built in) |
+| Epstein x²+5y² | **no**: a(6) = 2 ≠ a(2)a(3) = 0 | yes (Poisson on ℤ²) | in Π₁ ⊕ Π₂, not eigen | **linear combination** | each piece yes | each piece yes | fails | quartet 0.933+15.67i: NUMERICAL (verified zero) |
+| DH | **no** | yes | GL₁ vector mixed at 5 | **linear combination** | each piece yes | each piece yes | fails | 0.8085+85.70i: NUMERICAL (verified zero) |
+| spliced Beurling | yes, Λ ≥ 0 | **no** | **no** (no ℚ^× ⊂ 𝔸 realisation) | – | – | – | fails (not automorphic) | **N.A. / defect**: no own explicit formula, so its borrowed-arch form is a defect, not a ghost count (14B erratum c) |
 
-Equivalent structural form: E_F is ℋ-equivariant, the cyclic ℋ-module generated by the test vector is a finite direct sum of eigen-modules λ_{π_i}, and each π_i is unitary.
+- **The twist pair** (`r14f_twist.json`; own code; pole term by 400-node quadrature, validated against ζ's closed form to 3.3e-14).
+  - F_{iτ} and F_θ have the same product structure and differ only in unitarity. The ghost counts are 0 and 0 against 8 and 20.
+  - GE reports 7 ghosts for F_θ at L = 2. The λ_min agrees (−0.091). The count differs by one at the 1e-8 relative threshold, which is a threshold artifact.
+  - **Statement (PROVED, conditional).** A unitary twist multiplies the test vector by e^{iτu}, which is an isometry. So W_{ζ(·∓iτ)}(g) = W_ζ(e^{±iτu}g), and W_{F_{iτ}}(g) = W_ζ(e^{iτu}g) + W_ζ(e^{−iτu}g) for complex g.
+  - It therefore **transports** positivity: W_{F_{iτ}} ≥ 0 if W_ζ ≥ 0 (i.e. under RH). It does not create positivity, and the "0 ghosts" is a code check.
+  - A non-unitary twist e^{±θu} is not an isometry. W_{F_θ}(g) = 2B_ζ(e^{−θu}g, e^{θu}g) is a cross term between two different vectors, indefinite by construction (14B erratum b).
+  - So unitarity is the axiom that keeps the positive cone invariant under twisting. (PROVED, elementary.)
+- **Unitarity vs temperedness.**
+  - For GL₁ they coincide (|χ(p)| = 1, or |p^{iτ}| = 1).
+  - For GL_n, n ≥ 2, unitary cuspidal π are not known to be tempered (Ramanujan is open, e.g. for Maass forms). So "c(p)/log p > degree" detects **non-temperedness**, not non-unitarity in general.
+  - For F_θ both fail, since the constituents |·|^{±θ} are non-unitary characters of GL₁. By Jacquet–Shalika uniqueness of the isobaric decomposition, F_θ has no unitary-constituent representation. (CHECKED, literature.)
+- **The pre-audit falsifier is resolved.**
+  - ζ_{ℚ(√5)} is two pieces and ghost-free (a product). F_θ is a product and ghosted (non-unitary).
+  - "Irreducible ⇔ no ghosts" fails. The isobaric-unitary predicate separates all seven, and the F_{iτ} / F_θ pair isolates unitarity.
+  - The agreement with ghost-freeness is conditional on RH/GRH for ζ, ζ_{ℚ(√5)} and F_{iτ} (code checks only). It is NUMERICAL for the ghosted fakes. Beurling is not a ghost case at all.
+- **Strong multiplicity one** (Jacquet–Shalika 1981, isobaric classification) makes "F = L(Π)" a property of the coefficient sequence alone, through multiplicativity and the Hecke relations of §2c. Degree ≤ 1 Selberg class: Kaczorowski–Perelli 1999. (CHECKED, literature.)
 
-| model | Euler product | FE / Poisson | automorphic | product (isobaric) vs linear combination | unitary constituents (Ramanujan at p) | criterion | ghosts (13e / 14B / 14D) |
-|---|---|---|---|---|---|---|---|
-| ζ | yes | yes | GL₁, trivial character | single | yes (c(p)/log p = 1) | **passes** | none found (L ≤ 8, NUMERICAL) |
-| ζ_{ℚ(√5)} = ζ·L(χ₅) | yes | yes | 1 ⊞ χ₅ | **product**; W additive (9.8e-15) | yes (2 = degree) | **passes** | none (13j, NUMERICAL) |
-| Epstein x²+5y² | **no** | yes (Poisson on ℤ²) | in Π₁ ⊕ Π₂, not an eigenform | **linear combination**; Hecke defect −4 | yes for each piece | **fails** (not ℋ-equivariant) | yes, quartet 0.933+15.67i |
-| DH | **no** | yes | GL₁ vector mixed at 5 | **linear combination**; c(2a)/c(a) not constant | yes for each piece | **fails** | yes, 0.8085+85.70i |
-| F_θ = ζ(s−θ)ζ(s+θ) | yes, Λ ≥ 0 | yes | \|·\|^θ ⊞ \|·\|^{−θ} | product | **no** (c(p)/log p up to 5.16 > 2; non-unitary central exponents) | **fails** (unitarity) | yes, every zero shifted off by θ |
-| spliced Beurling | yes, Λ ≥ 0 | **no** | **no** (no ℚ^× ⊂ 𝔸, no GL₁(𝔸_ℚ) realisation) | – | – | **fails** (not automorphic) | yes, proliferation beyond L = log 55 (14B) |
+**What the criterion gives, and what remains.**
+- **Selection, not positivity (PROVED as a reduction).** Each axiom is an identity constraint, not an inequality: equivariance, multiplicativity, Hecke relations, isobaric uniqueness, unitarity.
+- **The product reduction.** W_Π = Σ_i W_{π_i} (identity) and zeros(L(Π)) = ∪ zeros(L(π_i)). By Weil's criterion for each L(π_i), W_Π ≥ 0 ⇔ W_{π_i} ≥ 0 for all i. (PROVED, given Weil's criterion and its standard extensions to automorphic L-functions; CHECKED, literature.)
+- **What §2c excludes.** It removes only *interference* ghosts. A ghost inside a single L(π) is not excluded. (PROVED; the remaining case is OPEN.)
+- **The remaining inequality (GAP).** For each unitary cuspidal π (here ζ, χ₅, χ₋₂₀, χ₋₄, χ mod 5, and |·|^{±iτ}-twists of ζ), and all admissible g with h = g ∗ g̃:
+  Σ_n Λ_π(n) n^{−1/2} [h(n) + h̄(1/n)] ≤ Pole_π(h) + ∫ |ĝ(½+it)|² w_π(t) dt,
+  where w_π(t) = (1/2π) Re Σ_j ψ((½ + it + μ_j)/2) + (1/2π) log(N_π / π^n), the μ_j are the archimedean parameters and N_π is the conductor.
+  - This is Weil's criterion, i.e. GRH for π: **CONJECTURE / OPEN**.
+  - For GL₁ it is equivalent to the validity of Connes' global trace formula (Connes 1999). For n ≥ 2 the citation is Weil's criterion, not a Connes quotient.
 
-Labels: the Euler / FE / product columns are PROVED/CHECKED as cited, and the ghost column is NUMERICAL.
-
-- **The falsifier is resolved.**
-  - ζ_{ℚ(√5)} is "two pieces" and ghost-free because it is a **product**.
-  - F_θ is a product and full of ghosts because its constituents are **non-unitary**.
-  - "Irreducible ⇔ no ghosts" misclassifies both. The isobaric-unitary criterion classifies all six correctly. (PROVED for the classification. The ghost column is NUMERICAL, finite width.)
-- **The unitarity axiom is classical.** F_θ fails Ramanujan/unitarity, which is the axiom the pre-audit predicted the criterion would have to detect. (CHECKED)
-- **Strong multiplicity one is what makes the criterion intrinsic.** Jacquet–Shalika 1981 give it for isobaric sums: an isobaric Π is determined by its Hecke eigenvalues at almost all p. "F = L(Π)" is then a property of the coefficient sequence alone, namely the multiplicativity and Hecke relations tested in §2c. (CHECKED, literature.) Selberg-class analogue: Kaczorowski–Perelli 1999 classify degree 1 as ζ and L(s+iθ, χ). (CHECKED, literature; consistent with 14B.)
-
-**What the criterion does and does not give.**
-- **It selects; it does not prove** (PROVED as a reduction):
-  - Each of ℋ-equivariance, multiplicativity, Hecke relations, strong multiplicity one and unitary central character is an **identity** constraint.
-  - None of them is an inequality, and none of them implies W ≥ 0.
-  - Additivity reduces the positivity of a product to its factors: W_Π = Σ_i W_{π_i}, and zeros(L(Π)) = ∪ zeros(L(π_i)). So W_Π ≥ 0 ⇔ W_{π_i} ≥ 0 for every i, using Weil's criterion for each L(π_i). (PROVED, given Weil's criterion for these L-functions.)
-- **The exact remaining inequality** (the GAP), for each single unitary cuspidal π. Here n = 1 means each Dirichlet character χ, and for the two cases above it means ζ, χ₅, χ₋₂₀, χ₋₄, and χ mod 5. The statement is, for all admissible g, with h = g ∗ g̃:
-  Σ_n Λ_π(n) n^{−1/2} [h(n) + h̄(1/n)] ≤ Pole_π(h) + ∫ |ĝ(1/2+it)|² w_π(t) dt.
-  - w_π(t) = (1/2π) Re Σ_j ψ((1/2 + it + μ_j)/2) + (1/2π) log(N_π/π^{n})
-  - The μ_j are the archimedean Langlands parameters of π, and N_π is its conductor.
-  - Equivalently: positivity of W_π on Connes' π-isotypic quotient. This is GRH for π: **CONJECTURE / OPEN**.
-- **What the equivariance structure proves.** Any ghost of an ℋ-equivariant quotient is already a ghost of a single L(π_i). The mechanism that produces the EPS and DH ghosts (interference between eigen-components) is excluded. A ghost *inside* one L(π) is not excluded. (PROVED reduction; the remaining case is OPEN.)
-
-## 4. Optional pair test (matched local data)
-
-- **ζ_K(−20) vs Epstein Z_{Q₁}.** They have the same gamma factor, conductor and FE, and r_{Q₁}(p) = b₁(p) + b₂(p) differs from the eigen-coefficient b₁(p) only by the genus-character piece.
-  - The homotopy Z_λ isolates the effect: the ghost is born at λ* ≈ 0.14, as soon as the second eigen-component is mixed in at about 14% amplitude. (NUMERICAL)
-- **L(χ mod 5) vs DH.** They have the same gamma factor and conductor 5, and agree at the unramified places up to the χ/χ̄ mixing.
-  - L(χ) is eigen under ℤ₅^× (ratio i). DH is not.
-  - DH has an off-line zero where |L(χ)| = |L(χ̄)| = 0.702.
-  - The local data at p ≠ 5 cannot see the difference coefficient by coefficient. Only the eigen-property at 5 does. (CHECKED + NUMERICAL)
+## 4. Pair test (matched local data)
+- **ζ_K(−20) vs Z_{Q₁}.** Same gamma factor, conductor and FE. The homotopy produces the ghost at λ* ∈ (0.1400, 0.1425), once about 14% of the second eigen-component is mixed in. (NUMERICAL)
+- **L(χ mod 5) vs DH.** Same gamma factor and conductor. L(χ) is ℤ₅^×-eigen (ratio i) and DH is not, and DH's off-line zero sits where both pieces have size 0.70. The difference shows only in the eigen-property at 5. (CHECKED + NUMERICAL)
+- **F_{iτ} vs F_θ.** Same product structure, differing only in unitarity: 0 vs 8 / 20 ghosts. (Code check vs NUMERICAL.)
 
 ## 5. Labels summary
+- **§0:** "irreducible" for C_ℚ is vacuous: PROVED. The ℋ-module definition is a definition, not a claim.
+- **§1:**
+  - Epstein constants ±1: PROVED; coefficient identity (n ≤ 200): CHECKED.
+  - a(6) ≠ a(2)a(3): PROVED / CHECKED.
+  - DH root number and FE: PROVED / CHECKED.
+- **§2a:**
+  - Additivity over products: identity (PROVED, tautological); the 9.8e-15 is a float check.
+  - Digamma twist identities: CHECKED.
+- **§2b:**
+  - Interference identity: PROVED.
+  - Equal moduli: forced, so tautological.
+  - Piece sizes 0.70 / 0.93: NUMERICAL.
+  - λ* ∈ (0.1400, 0.1425): NUMERICAL.
+- **§2c:**
+  - Tate/Hecke containment: PROVED (standard).
+  - Fakes' zeros come from non-equivariance: PROVED + NUMERICAL.
+  - Hecke and translation defects: CHECKED.
+  - The earlier Connes-quotient sentence: retracted as vacuous.
+- **§3:**
+  - Predicate on seven cases: PROVED / CHECKED.
+  - ζ, ζ_{ℚ(√5)}, F_{iτ} ghost-free: code checks.
+  - Fakes' ghosts: NUMERICAL.
+  - Beurling: N.A. / defect.
+  - Unitary twist transports positivity: PROVED (conditional on W_ζ ≥ 0).
+  - Criterion ⇒ positivity: GAP. GRH for each unitary cuspidal π: CONJECTURE / OPEN.
+- RH, GRH, ARP and H_ψ: OPEN. Nothing here closes any of them.
 
-- **§0** "irreducible" for abelian C_ℚ is vacuous: PROVED. The algebraic (ℋ-module) definition: definition, not a claim.
-- **§1** Epstein constants ±1 and coefficient identity (n ≤ 200): PROVED / CHECKED. DH constants and root number: PROVED / CHECKED.
-- **§2a** W additive over products: PROVED; CHECKED to 1e-14. Not bilinear over sums: PROVED; CHECKED (defect 315).
-- **§2b** interference identity: PROVED. Equal-moduli values at the zeros: NUMERICAL. Collision at λ* ≈ 0.14: NUMERICAL.
-- **§2c** non-equivariance (Hecke defect −4; ℤ₅^× ratio not constant): CHECKED. The ghost is not in any ℋ-equivariant subquotient: PROVED (sketch, using Connes 1999 per character as cited).
-- **§3** the classification table: PROVED / CHECKED, with the ghosts column NUMERICAL. Criterion ⇒ positivity: GAP. GRH for each unitary cuspidal π: CONJECTURE / OPEN.
-- Nothing here closes RH, GRH, ARP or H_ψ. RH: OPEN.
-
-— Daniel Toupin / Golden Physics Project. This seat: Grok Bot (principal-series lane). Tasking: Heart of the Cosmos. Pre-audit: Golden Eye. Audit: Turbo.
+— Daniel Toupin / Golden Physics Project. This seat: Grok Bot (principal-series lane). Tasking: Heart of the Cosmos. Audit: Golden Eye (AUDIT14 §5) and Turbo.
