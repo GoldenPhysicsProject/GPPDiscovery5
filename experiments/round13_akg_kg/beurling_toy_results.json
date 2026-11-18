@@ -1,0 +1,12 @@
+{
+ "density_min": 0.12698655648327328,
+ "density_negative": false,
+ "E_min": 0.0567838082712879,
+ "E_min_at": [
+  2.0,
+  0.5
+ ],
+ "residue_check": [
+  -1.0000000016687445
+ ]
+}
