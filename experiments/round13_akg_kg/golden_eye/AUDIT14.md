@@ -10,6 +10,7 @@ I did not edit anyone else's files. My re-runs are tiny probes; their code is in
 - **14C:** the main no-go is correct but mostly by construction. Two items marked CHECKED are tautologies. "Rules out every semilocal route" is an overclaim (§2).
 - **14D:** Faces 1+2 are correct; that is Tate's thesis. "E lands in the radical" is a correct theorem, but the numerical check doesn't test radical membership. "Positivity must live on the quotient ⇔ RH" is Weil's criterion with nothing added, and is partly misattributed to Connes 1999 (§3).
 - **14F:** the algebra is correct and my falsifier was resolved correctly (unitarity is the separating axiom). Item 3 (additivity over products) is a tautology. Item 5 (ghosts are not spectrum of any Hecke-equivariant quotient) is vacuous as stated, though its algebraic restatement holds. Two ghost-column labels need fixing (§5).
+- **14E:** the conclusion holds (no gap; a uniform gap is falsified at L = 8 by a proved Lehmer bound of 0.063, which I reproduced). But the Sylvester check is a one-sided restriction with low power, since a random subspace also keeps every ghost. The "floor" is a precision limit. The zeros in §5 are proof inputs, and `lehmer.py` doesn't run as committed. The Gaussian λ_min fit fails just outside its range: 80-digit data show double-exponential decay exp(−B e^L), B ≈ 13 (§6).
 - RH: OPEN. Nothing in 14B–14F moves it.
 
 ---
@@ -259,7 +260,107 @@ kern = lambda t: 2*math.cosh(t/2)*math.cos(tau*t)       # poles at 1/2 +- i tau
 # twist identity: digamma(1/4+th/2)+digamma(1/4-th/2)-2*digamma(1/4) == -4*int_0^inf wz(t)*(cosh(th t)-1) dt
 ```
 
-## 14E: pending
+## 6. Round 14E (main cbcf08a): W on the complement of the window-truncated range of E
+
+Audited: `round14e_gap/ROUND14E.md`, `gap.py`, `run_gap.py`, `bilinear.py`, `fits.py`, `lehmer.py`, `lehmer_opt.py` and their JSON outputs. I ran everything from a detached worktree of origin/main, so nothing in it was edited. Re-runs are listed in 6.8.
+
+**Verdict.** 14E took the pre-audit seriously, reports its vacuous cases honestly, and its main conclusion stands: no cut-independent positive gap is visible for ζ, and a uniform-in-L gap is falsified at L = 8 at the 0.06 level. But four points need correcting:
+- (1) The Sylvester check is a restriction, which can only lower the negative index, and it has **almost no power**: a *random* subspace of the same dimension also preserves every ghost.
+- (2) The "float floor" for L ≥ 1.5 is a precision limit, not a zero. In 80-digit arithmetic, λ_min(W_ζ) is positive and resolved down to 7.8e-30 at L = 2.
+- (3) The Lehmer bound is correct (constant 12 and L³ verified, value reproduced). The zeros there are **proof inputs**, not just labels, and `lehmer.py::optimal` does not run as committed.
+- (4) The Gaussian fit is **contradicted by high-precision data** just outside its range. The decay is double-exponential, ≈ exp(−B e^L) with B ≈ 11–13, consistent with Slepian/prolate decay at scale S = e^{L/2}. The extrapolation to L = 8 (≈ e^{−994}) is unsupported.
+
+### 6.1 Errata blocks in 14C/14D (applied in cbcf08a): do they match this audit?
+- **14C, items 1–6: match** §2 (tautological CHECKs, vacuous 0.0 difference, χ rename, semilocal claim withdrawn, Tate-vector interpretation). The withdrawal sentence in §6 is struck through and replaced correctly.
+- **14D, items 1–6: match** §3.2: the easy direction; isotropy vs radical with the bilinear redo; BEUR″ entry withdrawn; quotient positivity = Weil plus GNS, with the L² vs W-norm and form-domain closure; the R-boundary coincidence; EPS "L > 3"; and Tate credit.
+- **Three minor items from §3 are not carried over.** Add them for completeness:
+  - (i) 3c's "zero-counting measure on the line" is a positive measure only under RH, so label it INTERPRETATION.
+  - (ii) N_F = ‖E_F g‖² only when ĝ vanishes at F's poles.
+  - (iii) Window-truncated range E is not in the radical, since E_F H has a half-infinite tail.
+- I spot-checked the 14D erratum's new separations against `bilinear.json`. They match the table in 6.6.
+
+### 6.2 (1) Sylvester "ghost-count invariance": which direction is proved?
+- **What the code does.** `gap.py::analyse` computes Q = null_space(Sᵀ) and the eigenvalues of QᵀWQ. That is the **restriction (compression)** of W to the L²-complement of S, not a quotient form.
+- **What is proved.**
+  - (a) If S ⊆ radical exactly (WS = 0), then W = QQᵀWQQᵀ. Restricting to S^⊥ then equals the quotient W/S, and the inertia is exactly preserved. This is the classical statement 14E cites.
+  - (b) For *any* S, Cauchy interlacing gives n₋(W) − dim S ≤ n₋(QᵀWQ) ≤ n₋(W).
+  - So the pipeline can only *lose* ghosts. "Invariance" proves only the lower inequality is not active. BEUR″'s failure (10 → 8/7/5 and 40 → 6/3/3) is a loss, in the only possible direction. The ζ control (0 → 0) is automatic. EPS L = 4 and F_θ L = 2 are vacuous (dim S = 0), as 14E says.
+- **Power: low. New control, my re-run.** At F_θ L = 4 (M = 66) I reproduced dim S = 14, 20 → 20 ghosts, λ_min −0.75496155371 → −0.75496155359, and bilinear residual 6.7e-6. Then:
+  - **3 random 14-dimensional subspaces also give 20 → 20**;
+  - only S = the span of the 14 lowest eigenvectors drops to 6, the interlacing floor.
+  - So keeping the ghost count is the *generic* outcome of a small restriction. It is not evidence that S ⊆ radical; the evidence for that is the bilinear residual. The ghost count can only catch an S aligned with the negative eigenspace, which is what happened for BEUR″ (ζ's range overlaps BEUR″'s defect directions).
+- **Relabel:** "inertia preserved: consistency check, one-sided (interlacing), low power. Radical membership: bilinear CHECK (6.6)." The exact claim 6.2 in 14E ("quotienting by range E_F cannot change the inertia") is PROVED for the *exact* quotient. The pipeline tests the restriction.
+
+### 6.3 (2) ζ: cut and basis instability of λ_min
+- **Confirmed and correctly reported.** The near-null count depends on the basis (L = 8: 97 vs 176), and λ_min(W|S^⊥) sits at the double-precision floor for L ≥ 1.5 for every ε and both bases.
+- **Correction: the "floor" is a precision limit, not λ_min = 0.** I rebuilt ζ's Galerkin matrix in mpmath at 80 digits, with the same basis and formula. The archimedean integral uses Gauss–Legendre, 4 panels × 192 nodes; degree 7 and degree 8 agree to 8 digits at L = 2, M = 66. The prime and pole terms are closed form. W itself (no quotient) is positive with λ_min resolved far below 1e-15. One "floor" entry was really a value: at L = 1.5, 14E's 4.6e-15 / 3.2e-15 compare with true 6.4e-15 (M = 30) and 4.1e-15 (M = 73), so it sat right at the floor. The quotient construction S is built in double precision, so the double "floor" for λ_min(W|S^⊥) cannot tell 0 from 1e-30. **Rephrase: "undetermined at double precision".** 14E's own wording ("no cut-independent positive value") is fine.
+- **Basis non-convergence grows with L.** At L = 2, λ_min = 1.28e-27 (M = 37, fmax 45), 1.01e-29 (M = 66), 7.8e-30 (M = 94). The fmax-45 values are Ritz upper bounds and are off by a factor of up to ~160 at L = 2. 14E's "basis-converged to ≤ 5% (11% at L = 1.25)" holds only for L ≤ 1.25.
+
+### 6.4 (3) Lehmer-pair bound: derivation, constant, inputs
+- **Derivation (checked).**
+  - Assume V ⊂ L²[−L/2, L/2] with ê(γ₁) = ê(γ₂) = 0.
+  - For h = g − e: ĥ(γ_i) = ĝ(γ_i), and |ĥ(γ₁) − ĥ(γ₂)| ≤ ∫|h(u)|·|e^{iγ₁u} − e^{iγ₂u}| du ≤ Δ∫|u||h| ≤ Δ‖h‖₂ (∫_{−L/2}^{L/2} u² du)^{1/2}.
+  - Since ∫_{−L/2}^{L/2} u² du = **L³/12** (centring at the window midpoint is optimal), we get dist(g, V)² ≥ 12|Δĝ|²/(Δ²L³), hence **W(g)/dist(g,V)² ≤ W(g)Δ²L³/(12|Δĝ|²)**.
+  - The constant 12 and L³ are correct. "Ideal" Δ²L³/24 uses W ≥ |ĝ(γ₁)|² + |ĝ(γ₂)|² ≥ |Δĝ|²/2, so q ≤ 2. That is correct.
+  - The true radical lies inside {ê(γ₁) = ê(γ₂) = 0}, and the form-domain distance is ≥ the L² distance, so the bound transfers to the true quotient.
+- **Caveats.**
+  - (i) V must be *window-supported*. If e carries E's half-infinite tail, ∫|u||h| over ℝ is not controlled by √(L³/12)‖h‖. 14E's text omits this hypothesis; add it.
+  - (ii) The bound is never better than the probe's own Rayleigh quotient: applying the same inequality to g gives bound ≥ W(g)/‖g‖². At L = 8 the probe has W/‖g‖² = 0.0094 and bound 0.063, so the bound's content is that dist(g, rad) ≥ 0.39‖g‖.
+- **Reproduced.** Pair #6709/6710 at t = 7005.0629 / 7005.1006, Δ = 0.03770. Bound **0.1203 (L = 7), 0.0629 (L = 8)**, q = 0.338 and 0.964. These match 14E's 0.120 and 0.063. The data-side W exceeds the truncated zero side by 7.0% and 3.8%, as expected since the low zeros are omitted from the zero side; using the data value is conservative.
+- **Zeros: inputs, not labels.** γ₁ and γ₂ (from `mp.zetazero`) are used to (a) build the probe and (b) make the bound valid at all: ê(γ_i) = 0 for e in the radical holds *because* the γ_i are zeros of ζ. That is legitimate, since an upper bound needs a witness and mpmath's zeros are reliable to the precision used. But 14E's header ("zeros are never proof inputs; only CHECK inputs in §5") is inaccurate for §5. **Relabel:** "zeros are proof inputs to the falsifier, verified numerically; W(g) itself comes from integer data."
+- **Reproducibility bug.** `lehmer.py::optimal` uses an undefined `d` (NameError on import-and-call; I reproduced it). `lehmer_opt.json` therefore cannot come from the committed code. My fix is one line, `d = ph([γ₁])[:,0] − ph([γ₂])[:,0]`, and it reproduces the table.
+- **Scope of the conclusion.** "No uniform gap ≳ 0.07 at L = 8" is correct for the window quotient (NUMERICAL, with a PROVED bound). It is weaker than the double-exponentially small λ_min(W) already visible at L = 2 (6.5): if the near-null directions left in S^⊥ are genuinely outside the radical, λ_min(quotient) is already ≤ 1e-29 at L = 2. Either way there is no gap. The Lehmer probe matters because it is a *proved* witness that doesn't depend on Galerkin artifacts.
+
+### 6.5 (4) The λ_min fit: what was measured, and what the decay really is
+- **What was actually measured above the floor.** 14E fits only L ∈ {0.25, 0.5, 0.75, 1.0, 1.25}: 5 points, a 3-parameter fit, 2 degrees of freedom. Every L ≥ 1.5 is at the double floor.
+- **Code drift.** The quadratic fit is in `fits.json`, but `fits.py` as committed only computes the *linear* fit. Commit the code that produced it.
+- **The fit's own formula gives e^{−994} at L = 8.** If anything downstream uses it, that is a pure extrapolation from L ≤ 1.25, about 400 orders below anything measured.
+- **High-precision data (mine, 80 digits):**
+
+| L | 0.25 | 0.5 | 0.75 | 1.0 | 1.25 | 1.5 | 1.75 | 2.0 | 2.25 | 2.5 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| λ_min(W_ζ), best M | 0.329 | 3.60e-2 | 5.55e-4 | 1.06e-6 | 3.04e-10 | 4.12e-15 | 2.07e-21 | 7.82e-30 | ≤2.6e-40 | ≤3.4e-51 |
+| M (fmax) | 16 (90) | 23 | 30 | 37 | 44 | 73 (135) | 84 (135) | 94 (135) | 73 (90) | 80 (90) |
+
+  At L ≤ 1.25 these reproduce 14E's double values to all printed digits. Values at L ≥ 2.25 are Ritz upper bounds, not yet M-converged.
+- **The Gaussian fails out of range.** The 14E quadratic fit predicts log λ = −32.1, −44.3, −58.5 at L = 1.5, 1.75, 2.0; measured: −33.1, −47.6, −67.0. At L = 2 it is off by a factor of ~5000, and the error grows with L.
+- **Fits on the converged points L ≤ 2** (max log-residual):
+  - geometric a + bL: 10.6 (rejected);
+  - quadratic: 1.12;
+  - a − Be^L: 2.1;
+  - **a + bL − Be^L: 0.32, with B = 13.1.**
+- **Slope test.** The local slope d log λ / d(e^L) is −10.4, −10.6, −11.3, −11.4, −11.9 over L = 0.75 to 2.0. It is nearly constant and slowly increasing in magnitude. A Gaussian in L would make this slope *decrease* in magnitude (from −10.3 at L ≈ 1.4 to −7.7 at L ≈ 2.1).
+- **Conclusion: double-exponential decay, λ_min ≈ exp(−B e^L + O(L)), B ≈ 11–13.**
+- **Theory (heuristic, stated as such).**
+  - CC "Spectral triples and ζ-cycles" (arXiv 2106.01715) show the very small eigenvalues for support in [S^{−1}, S] have eigenvectors built from prolate functions at scale S. Here S = e^{L/2}.
+  - Slepian's asymptotic for the prolate concentration defect is 1 − λ_n(c) ∝ c^{n+½} e^{−2c}, and the time–band product is c = 2πS² = 2πe^L for the e^{−2πixy} Fourier convention. That gives e^{−4πe^L}, i.e. **B → 4π ≈ 12.57**, consistent with the fitted 13.1 and the slope trend toward −12.
+  - I have **not** derived λ_min(W) from Slepian's formula. The prefactor (b ≈ 7.9) is not explained, and I am not citing a theorem that gives this rate for the Weil form.
+  - Bombieri studied Weil's functional on short supports ("Remarks on Weil's quadratic functional…", around 2000). I did not verify whether it states a decay rate, so I am not citing it for one.
+- **Relabel 14E's "Gaussian decay in L (CC very small eigenvalues; qualitatively known)"** as: "super-exponential; on 0.25 ≤ L ≤ 2.0 the data fit exp(−B e^L + O(L)) with B ≈ 13, consistent with prolate decay at scale e^{L/2} (heuristic). The Gaussian fit is valid only on its 5-point range and fails at L ≥ 1.75."
+
+### 6.6 (5) The bilinear radical check, redone
+- **Construction (checked):** residual = ‖WS‖₂/‖W‖ = sup_{v∈S, φ∈V_M} |W(v,φ)|/(‖v‖‖φ‖‖W‖). The control is the same family pushed through F − 0.1·2^{−s}. That is exactly the test I asked for (3.2.1–2).
+- **Numbers.** The JSON matches the table: ζ L = 4 and 6 at 6.4e3 and 1.2e4, EPS 1.3e2, F_θ 4.7e3, DH 7.4e2 at ε = 1e-8, and I reproduced F_θ L = 4's own residual of 6.7e-6. It drops to 47–1.9e3 at ε = 1e-6, as reported. **This is now a discriminating CHECK. Label earned.**
+- **Minor points.**
+  - (i) EPS's separation (1.3e2, with dim S = 9) is the weakest. The longer E tails at conductor 20 are the likely reason; 14E notes this.
+  - (ii) The residual is measured inside V_M (the Galerkin span). Radical membership against probes *outside* the band, i.e. high-frequency φ near the window edge, is untested. That matters because the leftover near-null directions in S^⊥ are band-edge and window-edge (14E §4).
+  - (iii) As 14E says, it proves the easy direction numerically and does not single out ζ.
+
+### 6.7 Smaller items
+- "Non-near-null count ≈ 2N(fmax) + 10–14 is Connes' semiclassical count (known)": the count depends on the threshold (1e-8‖W‖) and on leakage from the non-band-limited sine basis. Label it INTERPRETATION, not "known".
+- The fakes' ghost-depth fits e^{(0.8–1.1)L} use 4 points each. Fine as NUMERICAL; don't extrapolate them.
+- §7 "Next step" (Connes–Consani Sonin compression with S complete for the support) is the right next target, and it matches §2.3.
+
+### 6.8 Falsifier and next check
+- **Biggest hole.** At double precision, the quotient question for ζ (λ_min(W|S^⊥) at fixed L) cannot be settled. W's own spectrum below 1e-15 is a double-exponential ladder, and S is built in double precision.
+- **Cheapest falsifier for "λ_min(quotient) = 0 at every fixed L".** Rebuild S in mpmath at L = 1.5–2. The line values come from Hurwitz sums, which are cheap at 40 digits for t ≤ 250. Then compute λ_min(W|S^⊥) at 80 digits for two cuts and two bases.
+  - If λ_min(W|S^⊥) converges to a positive, cut-independent value well above λ_min(W) (about 1e-29 at L = 2), there *is* a finite-L gap on the quotient, and the Lehmer bound then caps it.
+  - If it tracks λ_min(W) down the ladder, the uncaught near-null directions are genuine and the quotient has no gap at finite L.
+- **Re-runs, ~20 core-minutes total:**
+  - my high-precision Galerkin `mpw.py`, a line-by-line mpmath port of `weil_galerkin.operators` for ζ;
+  - the Lehmer reproduction with the one-line fix;
+  - the F_θ L = 4 Sylvester rerun plus the random-subspace control.
+  - Scratch copies are in `/tmp/ge/` on the shared box, not committed. They are short; ask if you want them committed.
 
 ---
 
