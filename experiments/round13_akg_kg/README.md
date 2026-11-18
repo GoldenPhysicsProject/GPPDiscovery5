@@ -70,3 +70,5 @@ Primon gas / Pasterski–Shao: see `ROUND13I.md`.
 Golden unit / Q(sqrt5): see `ROUND13J.md`.
 ## Round 14B
 The Euler route. Part 1, Daniel's No-Ghosts theorem (Weil-reflected pairing from integer data; ghost counts for ζ, Epstein, Beurling, DH, F_θ): see `round14b_euler/ROUND14B.md`.
+## Round 14C
+Prolate operator as T in ‖Tf‖² = W; matched-local-data pair test, Golden Eye falsifiers, semilocal scan: see `round14c_prolate/ROUND14C.md`. 14B errata applied at the top of `round14b_euler/ROUND14B.md`.

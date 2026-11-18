@@ -1,5 +1,25 @@
 # Round 14B — the Euler route. Part 1: Daniel's No-Ghosts theorem (physics first)
 
+> **Errata (Golden Eye's audit, applied 2026-11-18; these override the text below where they differ)**
+> - **Framing.** "No ghosts ⇔ RH" is Weil's criterion (1952) restated in the language of ghosts. It is classical, not new. The ghost counts below are finite-L **NUMERICAL** evidence.
+> - **(a) ζ "no ghosts, L ≤ 8, f ≤ 125"** is a **CHECKED code check**, not evidence about RH.
+>   - It uses the threshold eigenvalue < −1e-7·max|W|. The relative floor is about 1e-10 at M = 327.
+>   - ζ's zeros in that band are known to be on the line, so the check only tests the code.
+> - **(b) F_θ is built to have ghosts.** W_Fθ(g) = 2B_ζ(e^{−θu}g, e^{θu}g) is a cross term, indefinite by construction, so its ghosts carry no information.
+>   - "Euler product + functional equation is insufficient" is **standard**: Ramanujan / Selberg-class failure of F_θ, and Kaczorowski–Perelli. It was not learned from these numerics.
+> - **(c) Spliced Beurling** belongs in a "defect / not applicable" column, not in the ghost count. It has no explicit formula of its own, so its pairing (with ζ's arch borrowed) is not its Weil form.
+> - **(d) Count ghosts with multiplicity.**
+>   - An off-line quartet of multiplicity m gives 2m.
+>   - A real off-line pair {β, 1−β} gives 1.
+>   - The odd count for EPS at L = 3 (1 ghost, λ = −1.7e-5) is a threshold artifact.
+>   - "2 per quartet" is NUMERICAL, and only once a quartet is resolved.
+>   - Matching ghosts to zeros by peak frequency is heuristic.
+> - **(e) §4 as a general no-go.** Bernstein–Widder plus the OS spectrum condition means a reflection-positive Euclidean kernel is a Laplace transform of a positive measure. Its Fourier transform is then strictly positive on ℝ. So **Euclidean OS positivity is impossible for any L-function with zeros**, on or off the line. The ζ computation in §4 is just an instance of this.
+> - **(f) §5's "same time" reading of the Tate vector is INTERPRETATION.**
+>   - At ∞ the Fourier transform is the oscillator flow e^{−iπN/2}.
+>   - At p, the Fourier transform is the action of the Weyl element w in the Weil representation, not an oscillator flow. 1_{ℤ_p} is fixed by it.
+>   - The mathematical content is only that f₀ is a factorizable Fourier-fixed vector (Tate). That part is PROVED.
+
 Idea and name: **No-Ghosts theorem — Daniel Toupin.** Daniel's clue: "same time". The integer state space (primon Fock space, i.e. the Euler product) together with the time reflection x → 1/x (Poisson / theta) should be ghost-free, and then the energies are real and equal to ξ's zeros.
 
 Code (this directory): `weil_galerkin.py` (closed-form Galerkin), `models14b.py` (the models), `check_models.py` (validation), `noghosts.py` (the pairing, per model and width). Data: `check_models.json`, `noghosts.json` (Weil-reflected pairing), `noghosts_B.json` (Euclidean OS pairing). Zeros are never inputs. They appear below only as labels for where a ghost sits, taken from `../epstein_zeros*.json` and `../principal_series/ROUND14A.md`. Candidates 1–4 of Round 14B (Pólya Φ, Nyman–Beurling Gram, Selberg squares, Jensen polynomials) come in Part 2.
