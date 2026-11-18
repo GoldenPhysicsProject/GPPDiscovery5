@@ -1,0 +1,116 @@
+[
+ {
+  "p": 5,
+  "curve": "y^2=x^3+1x+1",
+  "h": 9,
+  "a": -3,
+  "hasse_ok": true,
+  "deg1_counts_ok": true,
+  "deg2_counts_ok": true,
+  "Z0_zero_moduli": [
+   0.276393202250021,
+   0.7236067977499789
+  ],
+  "RH_circle": 0.4472135954999579,
+  "pencil_window_lam": [
+   0.06598300562505255,
+   1.1840169943749475
+  ],
+  "lam1_in_window": true
+ },
+ {
+  "p": 7,
+  "curve": "y^2=x^3+1x+3",
+  "h": 6,
+  "a": 2,
+  "hasse_ok": true,
+  "deg1_counts_ok": true,
+  "deg2_counts_ok": true,
+  "Z0_zero_moduli": [
+   0.17267316464601143,
+   0.8273268353539885
+  ],
+  "RH_circle": 0.37796447300922725,
+  "pencil_window_lam": [
+   0.3416994755741637,
+   2.4583005244258365
+  ],
+  "lam1_in_window": true
+ },
+ {
+  "p": 11,
+  "curve": "y^2=x^3+1x+1",
+  "h": 14,
+  "a": -2,
+  "hasse_ok": true,
+  "deg1_counts_ok": true,
+  "deg2_counts_ok": true,
+  "Z0_zero_moduli": [
+   0.10113798239126716,
+   0.898862017608733
+  ],
+  "RH_circle": 0.30151134457776363,
+  "pencil_window_lam": [
+   0.3359038784068616,
+   1.3564038139008308
+  ],
+  "lam1_in_window": true
+ },
+ {
+  "p": 13,
+  "curve": "y^2=x^3+1x+6",
+  "h": 13,
+  "a": 1,
+  "hasse_ok": true,
+  "deg1_counts_ok": true,
+  "deg2_counts_ok": true,
+  "Z0_zero_moduli": [
+   0.08397485283107813,
+   0.9160251471689219
+  ],
+  "RH_circle": 0.2773500981126146,
+  "pencil_window_lam": [
+   0.4824081207560018,
+   1.684258545910665
+  ],
+  "lam1_in_window": true
+ },
+ {
+  "p": 17,
+  "curve": "y^2=x^3+2x+3",
+  "h": 22,
+  "a": -4,
+  "hasse_ok": true,
+  "deg1_counts_ok": true,
+  "deg2_counts_ok": true,
+  "Z0_zero_moduli": [
+   0.06276268390239688,
+   0.9372373160976032
+  ],
+  "RH_circle": 0.24253562503633297,
+  "pencil_window_lam": [
+   0.41684708327450853,
+   1.2022005357731107
+  ],
+  "lam1_in_window": true
+ },
+ {
+  "p": 19,
+  "curve": "y^2=x^3+1x+4",
+  "h": 19,
+  "a": 1,
+  "hasse_ok": true,
+  "deg1_counts_ok": true,
+  "deg2_counts_ok": true,
+  "Z0_zero_moduli": [
+   0.05573834168068069,
+   0.9442616583193192
+  ],
+  "RH_circle": 0.22941573387056177,
+  "pencil_window_lam": [
+   0.5712334507177029,
+   1.5398776603934081
+  ],
+  "lam1_in_window": true
+ }
+]
