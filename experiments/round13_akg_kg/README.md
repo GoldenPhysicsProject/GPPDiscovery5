@@ -64,3 +64,5 @@ de Branges / Lagarias curvature test: see `ROUND13F.md`.
 Nyman–Beurling / Báez-Duarte d_N: see `ROUND13G.md`.
 ## Round 13h
 Compactifying the scale direction: see `ROUND13H.md`.
+## Round 13i
+Primon gas / Pasterski–Shao: see `ROUND13I.md`.
