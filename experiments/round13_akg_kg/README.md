@@ -68,3 +68,5 @@ Compactifying the scale direction: see `ROUND13H.md`.
 Primon gas / Pasterski–Shao: see `ROUND13I.md`.
 ## Round 13j
 Golden unit / Q(sqrt5): see `ROUND13J.md`.
+## Round 14B
+The Euler route. Part 1, Daniel's No-Ghosts theorem (Weil-reflected pairing from integer data; ghost counts for ζ, Epstein, Beurling, DH, F_θ): see `round14b_euler/ROUND14B.md`.
