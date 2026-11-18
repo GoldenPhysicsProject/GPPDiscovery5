@@ -1,0 +1,75 @@
+{
+ "zeta": {
+  "nonzero_atoms<=N": 466,
+  "non_prime_power_atoms": 0,
+  "first_non_pp": [],
+  "negative_atoms": 0,
+  "max_p |c(p)|/log p": 1.0
+ },
+ "L(chi_5)": {
+  "nonzero_atoms<=N": 462,
+  "non_prime_power_atoms": 0,
+  "first_non_pp": [],
+  "negative_atoms": 232,
+  "max_p |c(p)|/log p": 1.0
+ },
+ "zeta_K Q(sqrt5)=zeta*L(chi_5)": {
+  "nonzero_atoms<=N": 234,
+  "non_prime_power_atoms": 0,
+  "first_non_pp": [],
+  "negative_atoms": 0,
+  "max_p |c(p)|/log p": 2.0
+ },
+ "Epstein x2+5y2 (r_Q/2)": {
+  "nonzero_atoms<=N": 327,
+  "non_prime_power_atoms": 203,
+  "first_non_pp": [
+   6,
+   14,
+   21,
+   36,
+   46,
+   54
+  ],
+  "negative_atoms": 57,
+  "max_p |c(p)|/log p": 2.0
+ },
+ "Epstein pieces zeta_K(-20)": {
+  "nonzero_atoms<=N": 243,
+  "non_prime_power_atoms": 0,
+  "first_non_pp": [],
+  "negative_atoms": 0,
+  "max_p |c(p)|/log p": 2.0
+ },
+ "Epstein pieces L_psi": {
+  "nonzero_atoms<=N": 243,
+  "non_prime_power_atoms": 0,
+  "first_non_pp": [],
+  "negative_atoms": 119,
+  "max_p |c(p)|/log p": 2.0
+ },
+ "DH": {
+  "nonzero_atoms<=N": 1368,
+  "non_prime_power_atoms": 906,
+  "first_non_pp": [
+   6,
+   12,
+   14,
+   18,
+   21,
+   24
+  ],
+  "negative_atoms": 680,
+  "max_p |c(p)|/log p": 1.0
+ },
+ "F_theta=zeta(s-th)zeta(s+th)": {
+  "nonzero_atoms<=N": 466,
+  "non_prime_power_atoms": 0,
+  "first_non_pp": [],
+  "negative_atoms": 0,
+  "max_p |c(p)|/log p": 5.1607
+ },
+ "additivity_over_product: max|c_{zeta L5} - c_zeta - c_L5|": 9.769962616701378e-15,
+ "non-additivity_over_sum: max|c_EPS - c_zetaK - c_Lpsi|": 315.2321737869959,
+ "N": 3000
+}
