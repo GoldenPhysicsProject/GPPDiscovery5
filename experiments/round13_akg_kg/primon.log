@@ -1,0 +1,6 @@
+/workspace/r13akg/GPPDiscovery5/experiments/round13_akg_kg/harness.py:37: RuntimeWarning: divide by zero encountered in log
+  logn = np.log(np.arange(N+1, dtype=float)); logn[0] = 0
+ZETA {'rms_u2.0': 0.0694443540254184, 'rms_u5.0': 0.0018975331616531259, 'rms_u8.0': 0.0019058751629783702, 'rms_u11.0': 0.001895675757524281, 'growth_rate_per_u': -0.0026616129941946453}
+EPS {'rms_u2.0': 1.2471272814214827, 'rms_u5.0': 1.3061072555164175, 'rms_u8.0': 1.2976653187716227, 'rms_u11.0': 1.259657460465522, 'growth_rate_per_u': 0.0049267555869517725}
+BEUR {'rms_u2.0': 0.069519021062267, 'rms_u5.0': 0.07786444980078205, 'rms_u8.0': 0.06857290454698774, 'rms_u11.0': 0.0032734706229876572, 'growth_rate_per_u': -0.43780154930247456}
+{'ZETA': 1.0, 'EPS_a_normalised': 0.7024814731040726, 'BEUR': [1.003449959041478, 0.9981734573901105, 0.9976463285328888]} 0.0

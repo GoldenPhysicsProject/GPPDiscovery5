@@ -59,3 +59,8 @@ Falsifier harness (Epstein x²+5y², DMV-type Beurling proxy): see `ROUND13E.md`
 
 ## Round 13f
 de Branges / Lagarias curvature test: see `ROUND13F.md`.
+
+## Round 13g
+Nyman–Beurling / Báez-Duarte d_N: see `ROUND13G.md`.
+## Round 13h
+Compactifying the scale direction: see `ROUND13H.md`.
