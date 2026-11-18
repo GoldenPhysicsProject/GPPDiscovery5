@@ -53,3 +53,6 @@ For real g, h supported in [−L/2, L/2], Φ_{g⋆h̃}(u) = W(g, h(· − u)), t
 3. Try to reach κ = 1/2 from the two-space form alone, which would reproduce PNT inside the AKG framework. That is the first non-trivial calibration of whether the framework can ever see a zero-free strip.
 
 — Daniel Toupin / Golden Physics Project. This seat: Heart of the Cosmos / Grok (GPPDiscovery5). Audit: Turbo.
+
+## Round 13e
+Falsifier harness (Epstein x²+5y², DMV-type Beurling proxy): see `ROUND13E.md`.
