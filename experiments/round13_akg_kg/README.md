@@ -44,7 +44,8 @@ Mean Φ_g² = diagonal Σ_n Λ(n)²n^{−1}g(log n − u)² (which grows ~ u∫g
 For real g, h supported in [−L/2, L/2], Φ_{g⋆h̃}(u) = W(g, h(· − u)), the bilinear Weil form of two tests whose joint support has width u + L (explicit formula, CHECKED). So **evolution of the bulk field in time u is the Weil form across widths.** Cauchy–Schwarz on the shifted form W + δ(L′)‖·‖²_{L²} gives
   **(R13.3, CHECKED, Heart paper argument, audit owed).** If for some κ ≥ 0 and every ε > 0 the width-L′ Weil form satisfies W_{L′}(f) ≥ −C_ε e^{(κ+ε)L′}‖f‖²_{L²} for all L′ (on C_c² tests of width L′), then |Φ_{g⋆h̃}(u)| = O_ε(e^{(κ+ε)u}). By the Laplace argument of R13.2, every zero then has Re ρ − 1/2 ≤ κ.
 - κ = 0 ("subexponential-defect AKG", **SD-AKG**) ⇒ RH. AKG itself is the case δ ≡ 0. SD-AKG ⇔ RH (⇐ is trivial), so it is RH-equivalent. But it tolerates any e^{o(L)} negative defect, which no exact-positivity certificate does.
-- Calibration (CHECKED): κ = 1/2 is PNT-strength (Re ρ ≤ 1). The D2 two-space bound W = B − C*C ≥ m_{L,N} − t_N, with t_N ~ ϑ(N) ~ e^{L′}, gives only κ = 1. Any κ < 1/2 from primes and arch alone would be a new zero-free strip, beyond the state of the art. That is the honest size of the target.
+- Calibration — **CORRECTED in `ROUND13B.md` §2**: the two-space bound gives κ = 1/2, not 1 (ϑ(N) cancels), and κ = 1/2 corresponds to the trivial half-plane Re ρ ≤ 1, not PNT. Any κ < 1/2 from primes and arch alone would be a new zero-free strip.
+- **Relabelled (ROUND13B §3): R13.3 is a classical restatement** (Guinand–Weil explicit formula + Cauchy–Schwarz + the Ingham/Landau abscissa theorem; shape as in Bombieri–Lagarias 1999), not a new theorem.
 
 ## 4. Exact next step
 1. Turbo/Claude audit of R13.1–R13.3. R13.3 is the one new implication; it is short and Lean-shaped (Cauchy–Schwarz plus Laplace/Landau).
