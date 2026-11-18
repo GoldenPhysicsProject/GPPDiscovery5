@@ -1,0 +1,9 @@
+/workspace/GPPDiscovery5/experiments/round13_akg_kg/round14b_euler/../harness.py:37: RuntimeWarning: divide by zero encountered in log
+  logn = np.log(np.arange(N+1, dtype=float)); logn[0] = 0
+EPS P3 1 34 34 1.699 1.742e+00 0
+EPS P3 2 51 51 2.797 7.575e-01 0
+EPS P3 3 68 68 3.896 -9.966e-02 1
+EPS P3 4 85 85 4.994 -1.555e+00 3
+EPS P3 5 102 102 6.093 -4.756e+00 8
+EPS P3 6 119 119 7.192 -1.122e+01 14
+EPS P3 7 136 136 8.29 -2.089e+01 18
