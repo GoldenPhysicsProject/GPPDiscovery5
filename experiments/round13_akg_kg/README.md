@@ -66,3 +66,11 @@ Nyman–Beurling / Báez-Duarte d_N: see `ROUND13G.md`.
 Compactifying the scale direction: see `ROUND13H.md`.
 ## Round 13i
 Primon gas / Pasterski–Shao: see `ROUND13I.md`.
+## Round 13j
+Golden unit / Q(sqrt5): see `ROUND13J.md`.
+## Round 14B
+The Euler route. Part 1, Daniel's No-Ghosts theorem (Weil-reflected pairing from integer data; ghost counts for ζ, Epstein, Beurling, DH, F_θ): see `round14b_euler/ROUND14B.md`.
+## Round 14C
+Prolate operator as T in ‖Tf‖² = W; matched-local-data pair test, Golden Eye falsifiers, semilocal scan: see `round14c_prolate/ROUND14C.md`. 14B errata applied at the top of `round14b_euler/ROUND14B.md`.
+## Round 14D
+One global object, three faces (Tate theta; Connes–Consani map E; radical, pencil, pair test): see `round14d_global/ROUND14D.md`.
