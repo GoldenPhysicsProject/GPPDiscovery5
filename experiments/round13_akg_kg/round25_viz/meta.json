@@ -140,5 +140,10 @@
    37.586178158825675
   ]
  ],
- "theta": 0.25
+ "theta": 0.25,
+ "xi_ext": [
+  15.585708589924199,
+  22.097977280453488
+ ],
+ "xi_ext_note": "extrema of xi(1/2+it), not of Hardy Z; the two violet marks in fig5 zeta panel (t in [10,26])."
 }
