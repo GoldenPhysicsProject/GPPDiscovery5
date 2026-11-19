@@ -1,5 +1,12 @@
 # Round 23: formalizable statements, a handoff for the verify / Lean track
 
+> **Attribution erratum (added in Round 24, 2026-11-19).** D(L) here is exactly Ψ(t) = −g(t), M. Suzuki's *screw function* of ζ
+> (J. London Math. Soc. 2023, arXiv:2206.03682). Theorems 1–2 (closed form, Laplace formula), 3 (RH ⇔ Ψ ≥ 0 ⇔ Ψ bounded below),
+> 4 (strip version, his Thm 11.1) and 7 (box-Gram PSD ⇔ RH, Kreĭn screw function) are Suzuki's results, rederived here independently.
+> "RH ⇔ e^{−Ψ} is an infinitely divisible characteristic function" is Nakamura–Suzuki (arXiv:2306.08317).
+> What is new in this round: the ball-arithmetic certificate Ψ > 0.0214 on [log 2, log 10⁸] (Theorem 5), which extends Suzuki's
+> Thm 4.1 (Ψ > 0 on (0, t₀) with t₀ > log 2) to t₀ > 18.42; Theorem 6 (liminf ≤ 0); and the fake controls. See ../round24_novel/ROUND24.md.
+
 — Daniel Toupin / Golden Physics Project. This seat: Heart of the Cosmos / Grok (GPPDiscovery5).
 
 These are self-contained statements from ROUND23.md (and a few from R20/R22). They are ordered from easiest to hardest.
