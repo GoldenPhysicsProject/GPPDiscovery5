@@ -1,0 +1,6 @@
+ZETA 10 {'min': 0.010624303967865734, 'at': 0.0, 'frac_negative': 0.0, 'first_negative_gamma': None, 'mean': 0.7919406310748531}
+ZETA 100 {'min': 0.004685142752358165, 'at': 7.34, 'frac_negative': 0.0, 'first_negative_gamma': None, 'mean': 0.7907109386547135}
+ZETA 1000 {'min': 0.003364897468124184, 'at': 0.45, 'frac_negative': 0.0, 'first_negative_gamma': None, 'mean': 0.7905400485251131}
+ZETA 10000 {'min': 0.0027701319022347473, 'at': 7.32, 'frac_negative': 0.0, 'first_negative_gamma': None, 'mean': 0.7903783054715119}
+ZETA 100000 {'min': 0.002234152709078785, 'at': 0.0, 'frac_negative': 0.0, 'first_negative_gamma': None, 'mean': 0.7903283083205134}
+ZETA 1000000 {'min': 0.0017047287615241657, 'at': 0.0, 'frac_negative': 0.0, 'first_negative_gamma': None, 'mean': 0.7902383146128991}

@@ -1,0 +1,11 @@
+ZETA 0.6 {'HB_violated': False, 'max_log_ratio': -0.002771117661058642, 'at_x': 0.1, 'at_y': 0.05}
+ZETA 0.5 {'HB_violated': False, 'max_log_ratio': -0.0023096727953223484, 'at_x': 0.1, 'at_y': 0.05}
+ZETA 0.45 {'HB_violated': False, 'max_log_ratio': -0.002078864206449982, 'at_x': 0.1, 'at_y': 0.05}
+ZETA 0.4 {'HB_violated': False, 'max_log_ratio': -0.0018480055487696267, 'at_x': 0.1, 'at_y': 0.05}
+ZETA 0.35 {'HB_violated': False, 'max_log_ratio': -0.0016171023610376256, 'at_x': 0.1, 'at_y': 0.05}
+ZETA 0.3 {'HB_violated': False, 'max_log_ratio': -0.001386160190623431, 'at_x': 0.1, 'at_y': 0.05}
+ZETA 0.25 {'HB_violated': False, 'max_log_ratio': -0.0011551845924416826, 'at_x': 0.1, 'at_y': 0.05}
+ZETA 0.2 {'HB_violated': False, 'max_log_ratio': -0.000924181127881063, 'at_x': 0.1, 'at_y': 0.05}
+ZETA 0.15 {'HB_violated': False, 'max_log_ratio': -0.000693155363730602, 'at_x': 0.1, 'at_y': 0.05}
+ZETA 0.1 {'HB_violated': False, 'max_log_ratio': -0.0004621128711022049, 'at_x': 0.1, 'at_y': 0.05}
+ZETA 0.05 {'HB_violated': False, 'max_log_ratio': -0.00023105922435195936, 'at_x': 0.1, 'at_y': 0.05}

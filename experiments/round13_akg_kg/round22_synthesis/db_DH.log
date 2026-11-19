@@ -1,0 +1,11 @@
+DH 0.6 {'HB_violated': False, 'max_log_ratio': -0.011699271687596213, 'at_x': 0.1, 'at_y': 0.05}
+DH 0.5 {'HB_violated': False, 'max_log_ratio': -0.009768290354589038, 'at_x': 0.1, 'at_y': 0.05}
+DH 0.45 {'HB_violated': False, 'max_log_ratio': -0.00879884475882814, 'at_x': 0.1, 'at_y': 0.05}
+DH 0.4 {'HB_violated': False, 'max_log_ratio': -0.007827085530346611, 'at_x': 0.1, 'at_y': 0.05}
+DH 0.35 {'HB_violated': False, 'max_log_ratio': -0.006853259809508738, 'at_x': 0.1, 'at_y': 0.05}
+DH 0.3 {'HB_violated': True, 'max_log_ratio': 0.15397861384501255, 'at_x': 85.7, 'at_y': 0.05}
+DH 0.25 {'HB_violated': True, 'max_log_ratio': 2.341246962055692, 'at_x': 85.7, 'at_y': 0.05}
+DH 0.2 {'HB_violated': True, 'max_log_ratio': 2.762628899707522, 'at_x': 85.7, 'at_y': 0.1}
+DH 0.15 {'HB_violated': True, 'max_log_ratio': 2.869365190141764, 'at_x': 85.7, 'at_y': 0.15}
+DH 0.1 {'HB_violated': True, 'max_log_ratio': 2.762628899707522, 'at_x': 85.7, 'at_y': 0.2}
+DH 0.05 {'HB_violated': True, 'max_log_ratio': 2.341246962055692, 'at_x': 85.7, 'at_y': 0.25}

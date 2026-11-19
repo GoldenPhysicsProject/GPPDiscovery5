@@ -1,0 +1,7 @@
+DH 10 {'min': 0.044389464310711085, 'at': 0.0, 'frac_negative': 0.0, 'first_negative_gamma': None, 'mean': 1.079936505959198}
+DH 30 {'min': 0.026994807454970293, 'at': 3.25, 'frac_negative': 0.0, 'first_negative_gamma': None, 'mean': 1.0785205636319168}
+DH 100 {'min': -0.1341355638181334, 'at': 84.48, 'frac_negative': 0.0035996400359964, 'first_negative_gamma': 84.3, 'mean': 1.0779895805511786}
+DH 300 {'min': -0.3644759734647509, 'at': 86.62, 'frac_negative': 0.007899210078992101, 'first_negative_gamma': 84.53, 'mean': 1.0778884562119475}
+DH 1000 {'min': -0.8746991109907369, 'at': 84.95, 'frac_negative': 0.011198880111988802, 'first_negative_gamma': 83.86, 'mean': 1.0779946234605788}
+DH 3000 {'min': -1.5229639577615408, 'at': 85.07000000000001, 'frac_negative': 0.011198880111988802, 'first_negative_gamma': 84.05, 'mean': 1.078351933884715}
+DH 10000 {'min': -2.7232425284899424, 'at': 85.17, 'frac_negative': 0.0150984901509849, 'first_negative_gamma': 83.66, 'mean': 1.078807104120058}

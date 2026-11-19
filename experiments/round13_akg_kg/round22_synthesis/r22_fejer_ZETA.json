@@ -1,0 +1,53 @@
+{
+ "ZETA": {
+  "10": {
+   "min": 0.010624303967865512,
+   "at": 0.0,
+   "frac_negative": 0.0,
+   "first_negative_gamma": null,
+   "mean": 0.5817069444412326
+  },
+  "30": {
+   "min": 0.006554126375830943,
+   "at": 0.9400000000000001,
+   "frac_negative": 0.0,
+   "first_negative_gamma": null,
+   "mean": 0.5811142079274948
+  },
+  "100": {
+   "min": 0.004685142752358165,
+   "at": 7.34,
+   "frac_negative": 0.0,
+   "first_negative_gamma": null,
+   "mean": 0.5809829243800342
+  },
+  "300": {
+   "min": 0.0038540916520393154,
+   "at": 0.0,
+   "frac_negative": 0.0,
+   "first_negative_gamma": null,
+   "mean": 0.5808112729752251
+  },
+  "1000": {
+   "min": 0.00336489746812485,
+   "at": 0.45,
+   "frac_negative": 0.0,
+   "first_negative_gamma": null,
+   "mean": 0.5805343080508686
+  },
+  "3000": {
+   "min": 0.0024116429289584573,
+   "at": 0.0,
+   "frac_negative": 0.0,
+   "first_negative_gamma": null,
+   "mean": 0.5804249440761344
+  },
+  "10000": {
+   "min": 0.00277013190223422,
+   "at": 7.32,
+   "frac_negative": 0.0,
+   "first_negative_gamma": null,
+   "mean": 0.5804478385913051
+  }
+ }
+}

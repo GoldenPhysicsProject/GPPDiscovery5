@@ -1,0 +1,12 @@
+EPS genus check 2.0783968393535106203 2.0783968688659127624
+EPS 0.6 {'HB_violated': False, 'max_log_ratio': -0.051917474432482125, 'at_x': 3.3, 'at_y': 0.05}
+EPS 0.5 {'HB_violated': False, 'max_log_ratio': -0.043993391160561, 'at_x': 3.3, 'at_y': 0.05}
+EPS 0.45 {'HB_violated': False, 'max_log_ratio': -0.03988823042602385, 'at_x': 3.3, 'at_y': 0.05}
+EPS 0.4 {'HB_violated': True, 'max_log_ratio': 1.242218858635134, 'at_x': 30.0, 'at_y': 0.05}
+EPS 0.35 {'HB_violated': True, 'max_log_ratio': 1.773939067000164, 'at_x': 30.0, 'at_y': 0.1}
+EPS 0.3 {'HB_violated': True, 'max_log_ratio': 1.985696820669304, 'at_x': 30.0, 'at_y': 0.15}
+EPS 0.25 {'HB_violated': True, 'max_log_ratio': 2.0679424492348844, 'at_x': 30.0, 'at_y': 0.2}
+EPS 0.2 {'HB_violated': True, 'max_log_ratio': 2.2576475755725482, 'at_x': 58.5, 'at_y': 0.1}
+EPS 0.15 {'HB_violated': True, 'max_log_ratio': 2.3550305121741815, 'at_x': 58.5, 'at_y': 0.15}
+EPS 0.1 {'HB_violated': True, 'max_log_ratio': 2.2576475755725482, 'at_x': 58.5, 'at_y': 0.2}
+EPS 0.05 {'HB_violated': True, 'max_log_ratio': 1.869437024604764, 'at_x': 58.5, 'at_y': 0.25}

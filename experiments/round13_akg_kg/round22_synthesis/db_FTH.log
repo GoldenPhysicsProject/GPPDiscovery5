@@ -1,0 +1,11 @@
+FTH 0.6 {'HB_violated': False, 'max_log_ratio': -0.0055405703939857, 'at_x': 0.1, 'at_y': 0.05}
+FTH 0.5 {'HB_violated': False, 'max_log_ratio': -0.004617956180015703, 'at_x': 0.1, 'at_y': 0.05}
+FTH 0.45 {'HB_violated': False, 'max_log_ratio': -0.004156477176354034, 'at_x': 0.1, 'at_y': 0.05}
+FTH 0.4 {'HB_violated': False, 'max_log_ratio': -0.0036948982767512906, 'at_x': 0.1, 'at_y': 0.05}
+FTH 0.35 {'HB_violated': False, 'max_log_ratio': -0.0032332305321607357, 'at_x': 0.1, 'at_y': 0.05}
+FTH 0.3 {'HB_violated': False, 'max_log_ratio': -0.002771485010659047, 'at_x': 0.1, 'at_y': 0.05}
+FTH 0.25 {'HB_violated': False, 'max_log_ratio': -0.0023096727953224594, 'at_x': 0.1, 'at_y': 0.05}
+FTH 0.2 {'HB_violated': True, 'max_log_ratio': 2.7247760183202914, 'at_x': 48.0, 'at_y': 0.05}
+FTH 0.15 {'HB_violated': True, 'max_log_ratio': 3.11954222530985, 'at_x': 48.0, 'at_y': 0.1}
+FTH 0.1 {'HB_violated': True, 'max_log_ratio': 3.11954222530985, 'at_x': 48.0, 'at_y': 0.15}
+FTH 0.05 {'HB_violated': True, 'max_log_ratio': 2.7247760183202914, 'at_x': 48.0, 'at_y': 0.2}

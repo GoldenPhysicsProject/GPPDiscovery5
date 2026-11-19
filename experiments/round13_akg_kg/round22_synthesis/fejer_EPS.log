@@ -1,0 +1,7 @@
+EPS 10 {'min': 0.30236715828323685, 'at': 3.45, 'frac_negative': 0.0, 'first_negative_gamma': None, 'mean': 1.7895042790270999}
+EPS 30 {'min': 0.06558762881029445, 'at': 3.42, 'frac_negative': 0.0, 'first_negative_gamma': None, 'mean': 1.7826352916428594}
+EPS 100 {'min': -0.3739351639705375, 'at': 14.530000000000001, 'frac_negative': 0.017830361606398934, 'first_negative_gamma': 14.25, 'mean': 1.7773172603661116}
+EPS 300 {'min': -1.0716988783905064, 'at': 16.55, 'frac_negative': 0.034827528745209134, 'first_negative_gamma': 14.47, 'mean': 1.7764296783906368}
+EPS 1000 {'min': -2.3454986356116256, 'at': 14.97, 'frac_negative': 0.06898850191634727, 'first_negative_gamma': 13.81, 'mean': 1.7764711535802966}
+EPS 3000 {'min': -4.467940884905913, 'at': 30.57, 'frac_negative': 0.07998666888851858, 'first_negative_gamma': 13.99, 'mean': 1.7732219176525423}
+EPS 10000 {'min': -8.415421401621765, 'at': 30.47, 'frac_negative': 0.10831528078653557, 'first_negative_gamma': 13.58, 'mean': 1.7692968789981296}
