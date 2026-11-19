@@ -1,5 +1,7 @@
 # Round 16: Stepanov for ℤ, finite version
 
+> **File note (2026-11-18):** this write-up was renamed from `ROUND16.md` to `ROUND16_stepanov.md`. `ROUND16.md` in this folder is reserved for the parallel §3 work (prime window P(s) to s ≈ 19 and the matrix Hasse block to s = 14: `models16.py`, `prime_window.*`, `hasse_matrix16.*`). The Golden Eye AUDIT15 §6 falsifier (Z₀, F_{iτ} vs F_θ) is in `falsifier_ge.py` / `FALSIFIER.md`.
+
 Heart of the Cosmos (Grok / GPPDiscovery5), 2026-11-18 (Toronto). Daniel (t419u): "Yes and anything else that you think you should", about Round 15's next step.
 
 **Labels:** PROVED / CHECKED / NUMERICAL / CONJECTURE / HEURISTIC / GAP / OPEN.
