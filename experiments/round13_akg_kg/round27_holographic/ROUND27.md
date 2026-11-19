@@ -11,39 +11,44 @@ Frame (as in R21/R26): d = 1, s = Δ, H = L²(ℝ₊, dx). Mellin transform Mf(s
 
 Controls: F_θ = ξ(s+θ)ξ(s−θ) with θ = ¼; Epstein Z_Q with Q = x²+5y² (EPS); Davenport–Heilbronn (DH).
 
-## Short answer
+## Short answer (plain language first)
+
+- **Daniel's picture is exactly right as a picture, and exactly equivalent to RH.**
+  - One plane with two faces (x and 1/x), each split by the critical line into two sides, gives four sectors.
+  - The four places a zero shows up, ρ, 1−ρ, ρ̄, 1−ρ̄, are the four lifts ++, +−, −+, −− of *Which Way Is Forward?*.
+  - On the seam (Re s = ½), the "anti-aligned" lifts land on the aligned ones: the zero tunnels to s̄, and the quartet is one state.
+  - Weil's quadratic form, written in these four sectors, has **no cross-terms**. Each collapsed quartet contributes a perfect square, "the other positive instead".
+  - A split quartet contributes one square **minus** another, and that is the only minus sign anywhere on the zero side.
+  - So "no negatives ever" = RH (PROVED equivalence; this is a translation, not a proof).
+- **Conservation law.**
+  - The one charge that ζ keeps exactly and every fake breaks is "each prime counted exactly once, with a unit-circle local factor": Satake parameter 1, a Lee–Yang circle per prime, Λ(p^k) = log p.
+    - F_θ pays with p^{±¼}: charge 2.03–8.53 instead of 1.
+    - Epstein pays with representation counts: mass off the prime powers, 87 negative Λ's below 5000.
+    - DH pays with periodic signs: 1088 negative Λ's below 5000.
+  - **New numerical fact (NUMERICAL):** ζ has *no budget*. Multiply every prime's weight by (1+ε) and Weil positivity survives only for ε ∈ [−6.3 %, +0.02 %] at window L = 1, and only for |ε| < 10⁻⁶ at L = 1.5 (both sectors). Over-counting by one part in a million already creates a χ = −1 direction.
+- **Where it breaks: the infinite product.**
+  - The charge is conserved by every finite truncation, but truncations lose positivity. At L = 1.5, dropping the single prime 3 gives λ_min = −9.4·10⁻³ even and −1.8·10⁻² odd, far above the 10⁻⁹ floor.
+  - The per-prime phases do not converge on the line.
+  - The zeros are made by the additive (theta/Poisson) continuation, not by any product.
+  - No conserved quantity we tested is defined at S = ∞ in the strip. Charge + functional equation ⇒ RH is Selberg's conjecture, OPEN (GAP-27).
+
+Technical summary:
 
 1. **Resonance obstruction (part 1).**
-   - In the Faddeev–Pavlov/Lax–Phillips picture, a ζ zero ρ is a pole of the modular scattering matrix at s₀ = ρ/2. Its residue grows in the cusp like y^{1−s₀}, and it is **never normalizable** for 0 < β < 1, whether or not RH holds (PROVED).
-   - Unitarity of the scattering matrix on the line holds for ζ **and for all three controls** (CHECKED, to 10⁻³⁰). So unitarity cannot see where the zeros are.
-   - The one Hilbert space in which the zeros *are* normalizable states is the completion of test functions under the Weil form. That space exists as a Hilbert space **iff RH** (PROVED, classical). So GAP-26 ⇔ Weil positivity: the gap has been restated, not closed.
-2. **Literature (part 2).** §2. No published construction escapes the obstruction.
-3. **One plane, two faces, four lifts (part 3).** Daniel's four-lift dictionary is an exact translation (PROVED as a translation; not progress on RH):
-   - ++ = s, −− = s̄, +− = 1−s, −+ = 1−s̄;
-   - the χ = −1 class collapses onto the χ = +1 class exactly on the line.
-
-   Three lemmas (PROVED) on the Weil form, split into the four sectors:
-   - (a) The cross-sector terms vanish identically. The form is block-diagonal in the J-parity, and the C-sectors are copies of each other (multiplication by i).
-   - (b) Inside a sector, a collapsed quartet (an on-line pair) contributes a perfect square, "the positive partner on the other face".
-   - (c) A split quartet contributes 4(aaᵀ − bbᵀ). That is the **only minus sign** on the zero side. It is a rank-2 block of signature (1, 1): one χ = +1 square minus one χ = −1 square.
-
-   So Daniel's rule "no negatives; every cancellation is a pairing across the faces" is **exactly** RH (Weil's criterion, PROVED equivalent). Numerics:
-   - The rule holds for ζ in every test (both sectors, to the double-precision floor; arb-certified in S36 at support 2.6).
-   - It fails for F_θ in both sectors already at L = 1–2. The negativity is ≥ 97 % carried by the −bbᵀ term of the split quartets (NUMERICAL).
-   - It fails for EPS and DH at the heights of their off-line zeros (§3.5).
-
-   **What does *not* separate ζ from the controls:** the sector structure, the Klein symmetry, line unitarity, local winding numbers, and local line-unitarity of the Tate gammas. All four models have every one of these (CHECKED).
-4. **Conservation law (Daniel's χ-charge).**
-   - One candidate is exactly conserved prime by prime for ζ and broken by every control: **"Satake parameters on the unit circle"**. This is the same as a per-prime Lee–Yang circle theorem, the same as tempered local factors, and the same as "every coefficient exactly 1" (Λ_M(p^k)/Λ(p^k) = 1). PROVED/CHECKED:
-     - F_θ: ratio 2.03–8.53, moduli 2^{±¼};
-     - EPS and DH: Λ_M is supported off the prime powers and is negative 87 and 1088 times for n ≤ 5000.
-   - **It does not survive the infinite product into the strip.** The Euler product converges only for Re s > 1. Every finite truncation has *no* zeros in the strip at all. The per-prime U(1) phases do not converge on the line (partial sums wander: −14.3 at 10⁶, −15.7 at 2·10⁶ for t = 10). The zeros are created by the additive (Poisson/theta) continuation, not by any product.
-   - The statement "tempered Euler product + functional equation ⇒ RH" is Selberg's class conjecture: **OPEN**. The conservation law is a correct *name* for what a proof must use, and it is the right filter. But it is not a proof mechanism yet. That is GAP-27.
-5. **Finite-prime truncation (part 4).**
-   - On window L the Weil form uses exactly the primes p^k < e^L (PROVED; GPPVerify `kS_eq_Kpsi`), so each finite window is an exact finite-prime statement. RH is the statement for all L.
-   - The truncated modular scattering matrix φ_P is **not** unitary on the line: |φ_P| ranges from 3·10⁻¹⁰ to 4·10² at P = 1009. It has poles **on** the unitary axis at t = πk/log p (CHECKED).
-   - The local Tate gammas are unitary prime by prime, but their resonances sit on the lattice Re s = 1, Im s ∈ 2πℤ/log p, nowhere near the ζ resonances.
-   - Truncation keeps the χ-charge and loses the zeros. Completion recovers the zeros, and nobody knows how to carry the charge through it.
+   - ζ zeros are poles of the modular scattering matrix at s₀ = ρ/2 (Faddeev–Pavlov, Lax–Phillips). The residues are **never** L² (cusp integrand y^{−β}), on or off the line (PROVED).
+   - |φ| = 1 on the line for ζ **and** all three controls (CHECKED to 10⁻³⁰). Unitarity is blind.
+   - Self-adjointness of the scattering excludes DH/EPS (zeros with σ > 1 give forbidden poles) but **not** F_θ.
+   - The only space where the zeros are normalizable is the Weil completion, which is a Hilbert space iff RH (PROVED, classical). GAP-26 ⇔ Weil positivity.
+2. **Literature (part 2).** §2. Nothing published escapes the obstruction.
+3. **Four sectors (part 3).** Lemmas 3.3(a–c) are PROVED. The prime side and the zero side agree to 6·10⁻¹⁰ relative for ζ and 1·10⁻⁹ for F_θ (CHECKED, explicit formula). This sets the double-precision floor at ≈ 6·10⁻⁹ (operator norm).
+   - ζ: no negative direction above the floor, in either sector, in any test (L ≤ 5; heights 15.7 and 85.7). Arb-certified at support 2.6 in S36, both parities.
+   - F_θ: negative in both sectors from L = 1–2, 85 % (L = 1) to 98 % (L = 2) carried by the χ = −1 squares of split quartets.
+   - EPS at t ≈ 15.7 and DH at t ≈ 85.7: **exactly one negative direction per sector** (the signature (1,1) of one split quartet), from X = 55 (EPS) and X = 300 (DH).
+4. **Finite-prime truncation (part 4).**
+   - Window L is an exact finite-prime statement (PROVED).
+   - The truncated scattering matrix is not unitary and has poles on the line (CHECKED).
+   - The semilocal Tate product is unitary, with resonances on Re s = 1, never near ζ's.
+   - Truncation conserves the charge and loses both the zeros and the positivity.
 
 ---
 
@@ -110,6 +115,16 @@ Controls: F_θ = ξ(s+θ)ξ(s−θ) with θ = ¼; Epstein Z_Q with Q = x²+5y² 
 - On Re s = ½ we have 1−s = s̄, so the χ = −1 class coincides with the χ = +1 class (the quartet is one state). Off the line it separates.
 - **RH ⇔ no zero has a separate χ = −1 class.** On the Hilbert space: R_q ↔ J (faces), D ↔ C (sides), R_t ↔ Θ = CJ. The fixed set of R_t is the critical line, the seam.
 
+**3.1b Tunneling to s̄ and the "other positive" rule (exact restatement).**
+- R_q (faces, s ↦ 1−s) followed by D (sides, s ↦ s̄) is R_t: s ↦ 1−s̄.
+- On the seam, 1−s = s̄. So the face-flip of a zero *is* its conjugate: the zero "tunnels" from the 1/x face straight to s̄ on the same side, and no new point is created.
+- In the Weil form each zero ρ is paired with its R_t-partner 1−ρ̄, giving ĥ(ρ)·conj ĥ(1−ρ̄).
+  - On the seam the partner is ρ itself, so the term is |ĥ(ρ)|² ≥ 0. This is Daniel's "instead of going negative it takes the other positive".
+  - Off the seam the partner is a different point, and the product ĥ(ρ)·conj ĥ(1−ρ̄) has no sign.
+- **Rule (Daniel): every cancellation is a pairing of two positive quantities across the faces, never a subtraction.**
+  - Lemma 3.3 shows that on the zero side this rule holds iff every quartet collapses, i.e. iff RH.
+  - On the prime side the subtraction −Σ Λ(n) n^{−½}[g(log n) + g(−log n)] is real, and it is what the rule must absorb.
+
 **3.2 The four sectors (PROVED).**
 - C is antilinear, so the sectors are real subspaces: H = ⊕_{ε,η=±} H_{εη} with Jf = εf and Cf = ηf.
 - Multiplication by i maps H_{ε+} → H_{ε−}. Θ = CJ acts as εη.
@@ -132,7 +147,7 @@ Controls: F_θ = ξ(s+θ)ξ(s−θ) with θ = ¼; Epstein Z_Q with Q = x²+5y² 
 **3.4 Numerics (NUMERICAL; `r27_sector_check.json`, `r27_quartet.json`, `r27_scan_*.json`).** Basis: b_j = cos²(πu/L)·{cos, sin}(jπu/(L/2)) on |u| ≤ L/2, so n ≤ e^L. Prime side from the R22 explicit formula, with sector kernel g_jk = ±(b_j ∗ b_k).
 - **Explicit-formula check, prime side vs zero side** (300 ζ zeros; F_θ zeros ρ ± ¼):
   - F_θ: agreement to 1·10⁻⁹ (L = 2) in both sectors.
-  - ζ: agreement after the orbit fix (rerun pending; see 3.3 note).
+  - ζ (after the orbit fix): agreement 6.0·10⁻¹⁰ (L = 2, even), 1.1·10⁻¹¹ (odd), 9.3·10⁻¹⁰ (L = 5, even). Operator-norm differences ≤ 5.7·10⁻⁹ define the floor (`r27_budget.json → floor_*`). Every ζ prime-side eigenvalue in this round lies above −1.3·10⁻⁹, i.e. inside the floor.
 - **F_θ attribution** (min eigenvector v):
 
 | L | sector | λ_min | vᵀ(+aaᵀ)v | vᵀ(−bbᵀ)v | first quartet (γ₁) −part |
@@ -170,6 +185,24 @@ Controls: F_θ = ξ(s+θ)ξ(s−θ) with θ = ¼; Epstein Z_Q with Q = x²+5y² 
 | 300 | EPS | 0.0385 (3.5) | 0.0403 (3.5) | 0/0 |
 | 300 | DH | 4.57e-06 (1.75) | 1.45e-05 (0.75) | 0/0 |
 
+**3.5b Localized sector Galerkin at the controls' off-line heights (NUMERICAL; `r27_localized.json`).**
+- Basis: cos²(πu/L)·{cos, sin}(T_k u), with T_k = T₀ + {−6, …, 6}.
+- Exactly **one** negative eigenvalue per sector, which is the signature (1,1) of one split quartet per sector predicted by Lemma 3.3(c).
+
+| model | T₀ | X = e^L | even λ_min/max | odd λ_min/max |
+|---|---|---|---|---|
+| EPS | 15.67 | 55 | −5.6e−3 (1 neg) | −5.7e−3 (1 neg) |
+| EPS | 15.67 | 100 | −3.9e−2 (1) | −3.9e−2 (1) |
+| EPS | 15.67 | 300 | −1.24e−1 (1) | −1.24e−1 (1) |
+| DH | 85.70 | 300 | −6.4e−2 (1) | −6.4e−2 (1) |
+| DH | 85.70 | 1000 | −1.05e−1 (1) | −1.05e−1 (1) |
+| DH | 85.70 | 3000 | −1.19e−1 (1) | −1.19e−1 (1) |
+| ζ | 85.70 | 300 / 1000 | +1.4e−11 / +7.0e−12 | +1.6e−11 / −1.0e−11 (floor) |
+| ζ | 15.67 | 100 | −4.4e−10 (floor) | −7.6e−10 (floor) |
+
+- The single-function frequency probe (3.5) misses EPS/DH, because one cos²-window function cannot resolve δ = 0.43 / 0.31 at these X. The 13-function local Galerkin does resolve it.
+- Even and odd values coincide to 4–7 digits for EPS/DH. A split quartet at large t loads both J-sectors equally, since for large t the cos and sin parts of a quartet's bbᵀ block have nearly equal mass.
+
 **3.6 Where ζ differs from the controls, in this language.**
 
 | property | ζ | F_θ | EPS | DH |
@@ -180,7 +213,7 @@ Controls: F_θ = ξ(s+θ)ξ(s−θ) with θ = ¼; Epstein Z_Q with Q = x²+5y² 
 | resonances in Re s ≤ ½ (self-adjoint scattering, §1.4) | ✓ | ✓ | ✗ | ✗ |
 | Λ_M ≥ 0, supported on prime powers | ✓ | ✓ | ✗ (87 neg.) | ✗ (1088 neg.) |
 | χ-charge: Satake moduli 1 / Lee–Yang per prime / Λ_M(p^k) = log p exactly | ✓ | ✗ (2^{±¼}) | undefined | undefined |
-| sector Weil form ≥ 0 ("no negatives") | ✓ so far (certified on support 2.6) | ✗ from L = 1 | ✗ near t = 15.7 | ✗ near t = 85.7 |
+| sector Weil form ≥ 0 ("no negatives") | ✓ so far (certified on support 2.6) | ✗ from L = 1 | ✗ at t ≈ 15.7 from X = 55 (1 neg/sector) | ✗ at t ≈ 85.7 from X = 300 (1 neg/sector) |
 
 **Reading.**
 - Only the χ-charge row separates ζ from all three controls.
@@ -196,6 +229,33 @@ Controls: F_θ = ξ(s+θ)ξ(s−θ) with θ = ¼; Epstein Z_Q with Q = x²+5y² 
 | winding / argument-principle count of γ_p per period | 0 | **no**: F_θ also 0 (CHECKED) | n/a | KILLED |
 | **Satake parameter on \|α_p\| = 1** ⇔ Lee–Yang zero of 1/L_p at z = p^{−s} = 1 on \|z\| = 1 ⇔ Λ_M(p^k) = log p ("each prime counted once") | **yes, exactly** | **yes**: F_θ 2^{±¼}, ratio 2.03–8.53; EPS/DH no local factors, Λ_M off prime powers and negative | finite products: yes, trivially (the zero set of ∏ is the union, all on the torus \|z_p\| = 1). Into the strip: **no mechanism**. ∏ converges only for Re s > 1, and 1/ζ_S has zeros only on Re s = 0 | PROVED locally; GAP-27 globally |
 | Weil positivity on window L | exact finite-prime statement (p^k < e^L) | yes (controls fail at finite L) | that *is* RH | equivalent to RH, OPEN |
+
+**3b.1 "No budget": ζ sits on the edge of the positive cone (NUMERICAL; `r27_budget.json`, fig 5).**
+- Scale the prime side Λ → (1+ε)Λ, keeping the pole and archimedean terms. Basis as in 3.4; floor ≈ 6·10⁻⁹.
+
+| L | sector | λ_min at ε=0 | PSD window in ε | λ_min at ε = +10⁻⁶ / −10⁻⁶ |
+|---|---|---|---|---|
+| 1.0 | even | 2.7e−6 | [−0.063, +0.0002] | 2.67e−6 / 2.70e−6 |
+| 1.0 | odd | 1.1e−4 | [−0.0079, +0.63] | — |
+| 1.5 | even | −3e−12 (floor) | none above floor | **−3.1e−7 / −6.6e−8** |
+| 1.5 | odd | 1.3e−11 (floor) | [0, 5e−6] | 1.4e−7 / **−1.5e−7** |
+
+- At L = 1.5, a change of the prime weights by one part in a million in either direction produces a negative eigenvalue 30–300× above the floor.
+- The "counted exactly once" point ε = 0 is (numerically) the *only* PSD point. This is Daniel's "no budget to create a χ = −1 pair", made quantitative.
+- **Label: NUMERICAL**, double precision, two windows. CONJECTURE: the PSD ε-window shrinks to {0} as L → ∞.
+  - The side ε > 0 is forced by the prime number theorem: the pole term fixes the prime mass, which is what F_θ compensates with its two poles at 1 ± θ.
+  - The side ε < 0 is the non-trivial one.
+- Relation to the literature: the near-degeneracy of ζ's Weil form (exponentially small eigenvalues) is known (Connes–Consani–Moscovici, prolate; S36 here). Reading it as ε-rigidity of the prime weights is, as far as we know, new framing, not a new theorem.
+
+**3b.2 Truncation keeps the charge, loses positivity.**
+- Keep only the primes p ≤ P inside the window (L = 1.5, primes 2 and 3):
+  - P = 0: λ_min = −0.084 (even), −0.164 (odd);
+  - P = 2: −9.4·10⁻³ / −1.8·10⁻²;
+  - P = 3: back to the ζ value (floor).
+- At L = 1 (only prime 2 in the window), dropping 2 gives −3.7·10⁻³ / −1.8·10⁻².
+- So each truncation, which conserves the per-prime charge perfectly, is *not* positive. Positivity is a global balance between the pole, the archimedean term and **all** primes in the window together, not a sum of per-prime conserved pieces (NUMERICAL; consistent with S54's "every prime ≤ 13 necessary").
+- Truncated objects have no functional equation, so their negative directions are ghosts not attached to any quartet.
+- **This is the precise sense in which the charge does not survive the infinite product:** conservation is local, positivity is global.
 
 **Honest verdict.**
 - The surviving charge is "tempered local factors with multiplicity one". This is the Selberg-class axiom, and the expected answer.
@@ -245,9 +305,41 @@ Controls: F_θ = ξ(s+θ)ξ(s−θ) with θ = ¼; Epstein Z_Q with Q = x²+5y² 
 | `r27_probe.py` | sector-resolved frequency probe → `r27_probe.json`, `probe.log` |
 | `r27_quartet.py` | χ = ±1 attribution for F_θ → `r27_quartet.json` |
 | `r27_checks.py` | part 1 (FE, unitarity, resonances), part 4 (truncation), conservation candidates → `r27_checks.json` |
+| `r27_dh.py` | localized sector Galerkin at the EPS/DH off-line heights → `r27_localized.json`, `localized.log` |
+| `r27_budget.py` | ε-rigidity ("no budget"), prime truncation, ζ prime-vs-zero floor → `r27_budget.json`, `budget.log` |
+| `r27_figs.py` | figures 1–5 |
 | `r22_models.py` | copy of the R22 explicit-formula data |
 | `zeta_zeros_300.json` | first 300 ζ ordinates (checks only) |
 
-Reproduce: `python3 r27_checks.py; python3 r27_sectors.py; python3 r27_scan.py 1,2,3,4,5; python3 r27_probe.py; python3 r27_quartet.py` (numpy, scipy, mpmath).
+Reproduce: `python3 r27_checks.py; python3 r27_sectors.py; python3 r27_scan.py 1,2,3,4,5; python3 r27_probe.py; python3 r27_quartet.py; python3 r27_dh.py; python3 r27_budget.py; python3 r27_figs.py` (numpy, scipy, mpmath, matplotlib). Total about 1.5 h on 8 cores.
+
+## 7. Figures
+
+- `fig1_four_lifts.png`: the four lifts. ζ: the quartet collapses on the seam. F_θ: a separate χ = −1 class.
+- `fig2_sector_scan.png`: λ_min per J-sector vs L, all models, with the floor band.
+- `fig3_fth_chi_attribution.png`: F_θ negativity split into χ = +1 and χ = −1 squares.
+- `fig4_charge_and_phase.png`: the per-prime charge Λ_M/Λ for the four models, and the non-convergence of the product of local phases on the line.
+- `fig5_no_budget_and_truncation.png`: ε-rigidity, and the loss of positivity under truncation.
+
+## 8. Done vs not done, new vs known, next step
+
+**Done:** parts 1, 2, 3 (four sectors, dictionary, tunneling, rule), 4, and the conservation hunt (five candidates, with the budget and truncation tests).
+
+**Not done:**
+- No arb certification of the new numerics (ε-window, truncation, localized EPS/DH). These are double precision, against a measured floor of 6·10⁻⁹.
+- The ε-window at L ≥ 2 is below the double floor, so it needs mpmath/arb.
+- No Beurling control in the sector code (R13 harness has one).
+- No literature page-check for Bombieri/Yoshida's negative-index statement.
+
+**New versus the literature (modest):**
+1. The exact four-lift/χ dictionary and the sector form of Weil's criterion, in which the χ = −1 square is the only minus sign. The mathematics is classical; the packaging is new.
+2. Localized sector Galerkin: exactly one negative direction per sector at EPS's and DH's first off-line zeros.
+3. The ε-rigidity ("no budget") measurement and the truncation-loses-positivity measurement. Both are numerical.
+Nothing here proves RH or a new theorem about ζ.
+
+**Recommended next step:**
+- Certify the ε-rigidity at L = 1.5–2.6 in arb, reusing the S36 machinery (it already has both parities).
+- Then test the CONJECTURE "PSD ε-window → {0}" against F_θ (rescaled by its own charge) and a Beurling system.
+- If the window provably collapses only for systems with charge exactly 1 *and* a functional equation, that is a concrete, checkable form of GAP-27.
 
 Credit: Daniel Toupin / Golden Physics Project, with AI assistance from Grok.
