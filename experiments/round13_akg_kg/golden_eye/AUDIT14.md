@@ -1,4 +1,4 @@
-# AUDIT14: Golden Eye's audit of Rounds 14B–14F
+# AUDIT14: Golden Eye's audit of Rounds 14B–14F and 14E2
 
 Auditor: Golden Eye (Golden Physics Project, RH team). Requested by Heart for Daniel Toupin. Date: 2026-11-18.
 Scope: labels (PROVED / CHECKED / NUMERICAL / CONJECTURE / OPEN), overclaims, tautological controls, literature.
@@ -11,7 +11,8 @@ I did not edit anyone else's files. My re-runs are tiny probes; their code is in
 - **14D:** Faces 1+2 are correct; that is Tate's thesis. "E lands in the radical" is a correct theorem, but the numerical check doesn't test radical membership. "Positivity must live on the quotient ⇔ RH" is Weil's criterion with nothing added, and is partly misattributed to Connes 1999 (§3).
 - **14F:** the algebra is correct and my falsifier was resolved correctly (unitarity is the separating axiom). Item 3 (additivity over products) is a tautology. Item 5 (ghosts are not spectrum of any Hecke-equivariant quotient) is vacuous as stated, though its algebraic restatement holds. Two ghost-column labels need fixing (§5).
 - **14E:** the conclusion holds (no gap; a uniform gap is falsified at L = 8 by a proved Lehmer bound of 0.063, which I reproduced). But the Sylvester check is a one-sided restriction with low power, since a random subspace also keeps every ghost. The "floor" is a precision limit. The zeros in §5 are proof inputs, and `lehmer.py` doesn't run as committed. The Gaussian λ_min fit fails just outside its range: 80-digit data show double-exponential decay exp(−B e^L), B ≈ 13 (§6).
-- RH: OPEN. Nothing in 14B–14F moves it.
+- **14E2:** reproduces (λ₁ and Q to 8 digits); no finite-L gap holds (Q/λ₁ 1.09–3.57). The Schur complement is the right quotient. But "S nearly orthogonal to u₁" is false: Q = λ₁/(1 − ‖P_S u₁‖²) with ‖P_S u₁‖² = 0.08–0.72. F_θ quotient ghost persistence is Haynsworth (a theorem), not evidence. The errata match §6 (§7). Round 15 is audited in AUDIT15.md.
+- RH: OPEN. Nothing in 14B–14E2 moves it.
 
 ---
 
@@ -361,6 +362,46 @@ Audited: `round14e_gap/ROUND14E.md`, `gap.py`, `run_gap.py`, `bilinear.py`, `fit
   - the Lehmer reproduction with the one-line fix;
   - the F_θ L = 4 Sylvester rerun plus the random-subspace control.
   - Scratch copies are in `/tmp/ge/` on the shared box, not committed. They are short; ask if you want them committed.
+
+---
+
+## 7. Round 14E2 (main 24e17c3): the true quotient at 80 digits, plus the 14E/14D errata
+
+**Verdict.** It reproduces, and the conclusion stands: at L = 1.5–2 the quotient seminorm on S^⊥ tracks λ₁(W_ζ) (Q/λ₁ ∈ [1.09, 3.57] over the 41 non-empty ζ runs), so there is no finite-L gap. The Schur complement is the right object. But the **principal-angle diagnostic is the wrong quantity, and the "S nearly orthogonal to u₁" explanation is false**: S carries 8–72% of u₁'s energy. Q is close to λ₁ because S does not *contain* u₁, not because S misses it. The F_θ "7 → 7" is the restriction count; for the true quotient the count is fixed by a theorem (Haynsworth), so it isn't evidence either way. The errata match §6.
+
+### 7.1 Is the Schur complement the right quotient object? Yes.
+- For x ∈ S^⊥ (coordinates in an orthonormal basis Q of S^⊥), q([x]) = inf_{s∈S} W(x + s). When W_SS > 0 the infimum is attained at s = −W_SS^{−1}W_{SQ}x, and q = xᵀ(W_QQ − W_QS W_SS^{−1} W_SQ)x = xᵀ(W/W_SS)x. The quotient norm of the coset is ‖x‖, since x is its minimal-norm representative. So λ_min(W/W_SS) is the bottom of the quotient form for the quotient Hilbert norm. `mpgap.py` builds exactly this (`Sc = R − WQS·WSS⁻¹·WQSᵀ`, after checking that W_SS has no zero eigenvalue). Correct.
+- Two caveats on what it means:
+  - S is the **window-truncated** range of E. It is not in the radical (bilinear residual 4e-7 to 2e-3). So W/S is "W with the S-directions optimised away", not the 14D/Connes quotient by a radical. On the Galerkin space W_ζ > 0 has trivial radical, so a quotient by a true radical would be the identity here.
+  - For W > 0 the bracket is exact and elementary: (W/W_SS)⁻¹ = (W⁻¹)_QQ. That gives λ_min(W/W_SS) ≥ λ₁(W). Testing the coset of u₁ gives λ_min(W/W_SS) ≤ λ₁/(1 − ‖P_S u₁‖²). The upper bracket λ_{k+1}(W) quoted in 14E2 also holds (Sc ≤ R, then interlacing).
+- **The Gaussian H switch is legitimate.** E_F H is in the radical for Schwartz H whose Mellin transform vanishes at F's poles (the constraint rows Cn), and Gaussians are Schwartz. Compact support is not needed for that. The Gram matrices come from Parseval on the line, t ∈ [0, 260], step 0.1, 90 digits, with ζ(½+it) from mpmath. No zeros are used. Truncation at |t| = 260 costs ≲ e^{−400} for these σ = w/4 (σ ≥ 0.18, modulation k ≤ 99). The price of the switch is a longer tail, which is truncated by the window projection. That leak is exactly what the bilinear residual measures, and it is of the same size as in 14E.
+
+### 7.2 Spot-check reruns (80/90 digits, scratch copy of `mpW.py` / `mpline.py` / `mpgap.py`, about 4 min)
+- **W reproduces to all printed digits:** λ₁ = 6.394341e-15 (L = 1.5, M = 30) and 1.2843737e-27 (L = 2, M = 37). Every λ_min_quot in three gap files (ZETA 1.5/45/1e-13, 2.0/45/1e-13, 2.0/45/1e-40) matches the committed JSON to 8 digits. The 41-run range Q/λ₁ = [1.0922, 3.5666] is recomputed from the committed JSONs.
+- **The missing diagnostic.** I added ‖P_S u₁‖² (u₁ = bottom eigenvector of W) to the run:
+
+| L, τ | ε | dim S | ‖P_S u₁‖² | λ₁/(1 − ‖P_S u₁‖²) | Q = λ_min(W/W_SS) | sin(largest angle) |
+|---|---|---|---|---|---|---|
+| 1.5, 1e-13 | 1e-6 | 1 | 0.1417 | 7.4502e-15 | 7.4503e-15 | 0.926 |
+| 1.5, 1e-13 | 1e-4 | 3 | 0.1741 | 7.742e-15 | 7.742e-15 | 0.999 |
+| 2.0, 1e-13 | 1e-10 | 3 | 0.1626 | 1.5338e-27 | 1.5338e-27 | 0.987 |
+| 2.0, 1e-13 | 1e-6 | 6 | 0.2317 | 1.6718e-27 | 1.6717e-27 | 0.997 |
+| 2.0, 1e-13 | 1e-4 | 8 | 0.5512 | 2.862e-27 | 2.861e-27 | 0.996 |
+| 2.0, 1e-40 | 1e-6 | 7 | 0.5776 | 3.041e-27 | 3.040e-27 | 0.999 |
+| 2.0, 1e-40 | 1e-4 | 8 | 0.6281 | 3.453e-27 | 3.453e-27 | 0.995 |
+
+- So **Q = λ₁/(1 − ‖P_S u₁‖²)** to 3–5 digits. That is the test-coset upper bound, saturated because λ₂/λ₁ ≈ 10³ (the correction is O(λ₁/λ₂)). Inverting it across all 41 runs gives ‖P_S u₁‖² ∈ [0.08, 0.72].
+- **Why the angle diagnostic misleads.** "sin of the largest principal angle between S and the bottom-k eigenvectors ≈ 1" only says that *one* direction of S is nearly orthogonal to span(u₁…u_k). It says nothing about how much of u₁ lies in S. The same JSON has sin(largest angle vs bottom-2k) = 0.33 at L = 2: S sits largely *inside* the near-null cluster. The text "removing S removes none of the ladder" is therefore wrong. Correct statement: S overlaps u₁ substantially but never contains it. A finite-L gap of size G would need ‖P_S u₁‖² ≥ 1 − λ₁/G, i.e. S containing u₁ to relative accuracy λ₁/G, and the data are nowhere near that.
+- The conclusion "no finite-L gap at L = 1.5–2" does not depend on the explanation; it is the measured Q/λ₁. **NUMERICAL, earned.** Basis caveat as in §6.3: the fmax-45 λ₁ is a Ritz value up to 127–160× too high at L = 2, and Q follows whichever λ₁ the basis gives.
+
+### 7.3 F_θ control
+- The restricted form R = QᵀWQ: 7 → 7 (7 → 6 at dim S = 3), consistent with interlacing, low power (§6.2).
+- **The quotient count is a theorem, not a measurement.** With W_SS > 0, Haynsworth inertia additivity gives In(W) = In(W_SS) + In(W/W_SS). So n₋(W/W_SS) = n₋(W) **exactly, whatever S is**. The JSONs report n_neg_quot = 8 against n_neg_W = 7. That is not a contradiction; it is the threshold. W_Fθ has an 8th eigenvalue at −4.6e-7 (just under the −1e-7·‖W‖ cut) and a 9th at −3.2e-12, and the Schur complement moves them across the cut. Report the quotient's ghost persistence as PROVED (Haynsworth), and "more negative" (−0.7 to −2.6) as expected, since S is not in F_θ's radical. Neither is evidence about F_θ.
+
+### 7.4 Errata vs §6
+- 14E block items 1–5 match §6.2–6.7: the fit is withdrawn and e^{−994} dropped; the replacement is a + bL − Be^L with B = 13.13, and B → 4π is labelled heuristic; floor = precision; the Lehmer window-support hypothesis is added; zeros are proof inputs; the NameError is fixed and reruns bit-for-bit (0.1203 / 0.0629); Sylvester → "one-sided, low power", with the random-subspace control quoted; the semiclassical count → INTERPRETATION.
+- The 14D items 7–9 (3c measure → INTERPRETATION, N_F domain, E tail) are the three minor items I flagged in §6.1, and they are worded correctly.
+- **One wording to fix in 14E2 itself** (ROUND14E2.md line 11 and §6 item 3): replace "S is nearly orthogonal to the near-null eigenvectors" with "S contains 8–72% of u₁ but never all of it; Q = λ₁/(1 − ‖P_S u₁‖²)". Also relabel the F_θ quotient persistence as PROVED (Haynsworth).
 
 ---
 
