@@ -1,0 +1,7 @@
+{
+ "partial_sum": "[-0.150048304486139440477921779059 +/- 4.22e-31]",
+ "tail_bound": "[1.4345e-236 +/- 1.19e-241]",
+ "upper_bound": "[-0.150048304486139440477921779059 +/- 4.22e-31]",
+ "certified_negative": true,
+ "label": "CHECKED (ball arithmetic, 300 bits)"
+}
