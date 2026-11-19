@@ -1,0 +1,92 @@
+[
+ {
+  "kind": "E",
+  "p": 7,
+  "q": 49,
+  "N": 60,
+  "NFp": 6,
+  "l": 5,
+  "m": 9,
+  "full": {
+   "kernel_dim": 1,
+   "pole_F": 469,
+   "rational_points": 60,
+   "F_vanishes_at": 59,
+   "bound": 68
+  },
+  "A_no_additivity": {
+   "kernel_dim": 0,
+   "bound": null
+  },
+  "B_frob_not_fixing": {
+   "kernel_dim": 1,
+   "pole_F": 91,
+   "rational_points": 60,
+   "F_vanishes_at": 7
+  },
+  "C_RR_short": {
+   "kernel_dim": 0
+  }
+ },
+ {
+  "kind": "E",
+  "p": 11,
+  "q": 121,
+  "N": 140,
+  "NFp": 14,
+  "l": 7,
+  "m": 13,
+  "full": {
+   "kernel_dim": 1,
+   "pole_F": 1639,
+   "rational_points": 140,
+   "F_vanishes_at": 139,
+   "bound": 150
+  },
+  "A_no_additivity": {
+   "kernel_dim": 0,
+   "bound": null
+  },
+  "B_frob_not_fixing": {
+   "kernel_dim": 1,
+   "pole_F": 209,
+   "rational_points": 140,
+   "F_vanishes_at": 15
+  },
+  "C_RR_short": {
+   "kernel_dim": 0
+  }
+ },
+ {
+  "kind": "G2",
+  "p": 11,
+  "q": 121,
+  "N": 130,
+  "NFp": 14,
+  "l": 10,
+  "m": 15,
+  "full": {
+   "kernel_dim": 3,
+   "pole_F": 1892,
+   "rational_points": 130,
+   "F_vanishes_at": 129,
+   "bound": 173
+  },
+  "A_no_additivity": {
+   "kernel_dim": 4,
+   "pole_F": 1778,
+   "rational_points": 130,
+   "F_vanishes_at": 129,
+   "bound": 1779
+  },
+  "B_frob_not_fixing": {
+   "kernel_dim": 3,
+   "pole_F": 242,
+   "rational_points": 130,
+   "F_vanishes_at": 13
+  },
+  "C_RR_short": {
+   "kernel_dim": 0
+  }
+ }
+]

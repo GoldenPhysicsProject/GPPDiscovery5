@@ -1,0 +1,25 @@
+(a) ZETA rho-env slope=0.000 max rho=1.000 theta_W(sine1)=0.009 theta_W(ground)=-0.012 max|b|/d=0.885
+(a) FTAU rho-env slope=0.002 max rho=0.996 theta_W(sine1)=0.004 theta_W(ground)=0.041 max|b|/d=0.922
+(a) EPS rho-env slope=0.363 max rho=4.215 theta_W(sine1)=-0.082 theta_W(ground)=-0.029 max|b|/d=0.817
+(a) DH rho-env slope=0.123 max rho=1.499 theta_W(sine1)=0.039 theta_W(ground)=0.027 max|b|/d=0.943
+(a) BEUR2 rho-env slope=-0.174 max rho=9.660 theta_W(sine1)=-0.859 theta_W(ground)=-0.473 max|b|/d=7.611
+(a) FTH rho-env slope=0.157 max rho=2.538 theta_W(sine1)=0.149 theta_W(ground)=0.140 max|b|/d=2.075
+(b,c) ZETA cheb id resid/x @2700 = 0.0000 binom resid/x = 0.0000 (psi2x-psix)/(2xlog2) = 0.714 MV max ratios {'y=x^0.5': np.float64(0.457), 'y=x^0.75': np.float64(0.457), 'y=x(e^.6-e^-.6)': np.float64(0.483)}
+(b,c) FTAU cheb id resid/x @2700 = -7.8917 binom resid/x = -0.0681 (psi2x-psix)/(2xlog2) = 1.149 MV max ratios {'y=x^0.5': np.float64(0.75), 'y=x^0.75': np.float64(0.82), 'y=x(e^.6-e^-.6)': np.float64(0.716)}
+(b,c) EPS cheb id resid/x @2700 = 0.2241 binom resid/x = -0.0872 (psi2x-psix)/(2xlog2) = 0.524 MV max ratios {'y=x^0.5': np.float64(1.815), 'y=x^0.75': np.float64(1.105), 'y=x(e^.6-e^-.6)': np.float64(0.614)}
+(b,c) DH cheb id resid/x @2700 = -7.0863 binom resid/x = -1.3670 (psi2x-psix)/(2xlog2) = 0.014 MV max ratios {'y=x^0.5': np.float64(0.321), 'y=x^0.75': np.float64(0.19), 'y=x(e^.6-e^-.6)': np.float64(0.077)}
+(b,c) BEUR2 cheb id resid/x @2700 = -0.0161 binom resid/x = -0.0029 (psi2x-psix)/(2xlog2) = 0.719 MV max ratios {'y=x^0.5': np.float64(0.395), 'y=x^0.75': np.float64(0.429), 'y=x(e^.6-e^-.6)': np.float64(0.48)}
+(b,c) FTH cheb id resid/x @2700 = 13.4302 binom resid/x = 5.6158 (psi2x-psix)/(2xlog2) = 3.882 MV max ratios {'y=x^0.5': np.float64(1.99), 'y=x^0.75': np.float64(1.931), 'y=x(e^.6-e^-.6)': np.float64(2.299)}
+(d) ZETA range [-199.4, -1.48] real zeros near []
+(d) EPS range [-280.3, -2.325] real zeros near []
+(d) DH range [0.8267, 0.9221] real zeros near []
+(d) FTH range [-3.518e+16, 383.3] real zeros near [0.7975]
+(d) FTAU range [0.2911, 0.4058] real zeros near []
+(e) ZETA {'s0=0.6': (True, None), 's0=0.8': (True, None), 's0=1.0': (True, None), 's0=1.2': (True, None), 's0=1.4': (True, None), 'rho_s0=0.6': (True, None), 'rho_s0=0.8': (True, None), 'rho_s0=1.0': (True, None), 'rho_s0=1.2': (True, None), 'rho_s0=1.4': (True, None)} hankel rank 177 pencil max delta 0.033
+(e) FTAU {'s0=0.6': (True, None), 's0=0.8': (True, None), 's0=1.0': (True, None), 's0=1.2': (True, None), 's0=1.4': (True, None), 'rho_s0=0.6': (True, None), 'rho_s0=0.8': (True, None), 'rho_s0=1.0': (True, None), 'rho_s0=1.2': (True, None), 'rho_s0=1.4': (True, None)} hankel rank 165 pencil max delta 0.330
+(e) EPS {'s0=0.6': (True, None), 's0=0.8': (True, None), 's0=1.0': (True, None), 's0=1.2': (True, None), 's0=1.4': (True, None), 'rho_s0=0.6': (True, 8), 'rho_s0=0.8': (True, 6), 'rho_s0=1.0': (True, 5), 'rho_s0=1.2': (True, 4), 'rho_s0=1.4': (True, 4)} hankel rank 149 pencil max delta 0.454
+(e) DH {'s0=0.6': (True, None), 's0=0.8': (True, None), 's0=1.0': (True, None), 's0=1.2': (True, None), 's0=1.4': (True, None), 'rho_s0=0.6': (True, 11), 'rho_s0=0.8': (True, None), 'rho_s0=1.0': (True, 7), 'rho_s0=1.2': (True, None), 'rho_s0=1.4': (True, 5)} hankel rank 141 pencil max delta 0.000
+(e) BEUR2 {'s0=0.6': (True, 7), 's0=0.8': (True, 5), 's0=1.0': (True, 4), 's0=1.2': (True, None), 's0=1.4': (True, 3), 'rho_s0=0.6': (True, 6), 'rho_s0=0.8': (True, 5), 'rho_s0=1.0': (True, 4), 'rho_s0=1.2': (True, 3), 'rho_s0=1.4': (True, 3)} hankel rank 182 pencil max delta 0.289
+(e) FTH {'s0=0.6': (True, 11), 's0=0.8': (True, 8), 's0=1.0': (True, None), 's0=1.2': (True, None), 's0=1.4': (True, None), 'rho_s0=0.6': (True, 3), 'rho_s0=0.8': (True, 5), 'rho_s0=1.0': (True, 2), 'rho_s0=1.2': (True, 3), 'rho_s0=1.4': (True, 3)} hankel rank 180 pencil max delta 0.452
+(f) [(1.0, 599.3, 0.156), (2.0, 928.6, 0.577), (3.0, 1498.7, 0.267), (4.0, 2451.7, 0.186), (5.0, 4030.4, 0.033), (6.0, 6638.0, 0.068), (7.0, 10939.9, 0.291)]
+DONE
