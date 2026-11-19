@@ -1,0 +1,14 @@
+{
+ "gamma_1d": 4.591774807899561e-41,
+ "gamma_2d": 1.1479437019748901e-41,
+ "offline_imag_part": 0.7141496269892372,
+ "theta_reflection": 2.081668171172168e-16,
+ "mellin_theta": 1.4349296274686127e-42,
+ "min_eta_on_(0,1)": 0.502254858177629,
+ "max_zeta_on_(0,1)": -0.5092907140398399,
+ "poisson_kernel": 0.0,
+ "xi_imag_on_line_max_rel": 7.74197400597353e-42,
+ "xi_mirror": 1.0026875593588336e-43,
+ "theta_unitary_alpha0": 0.0,
+ "theta_unitary_alpha1": 0.0
+}
