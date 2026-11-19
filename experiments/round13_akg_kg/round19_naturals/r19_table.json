@@ -1,0 +1,40 @@
+{
+ "ZETA": {
+  "all_ones_on_N": true,
+  "max_multiplicativity_defect": 0.0,
+  "max_complete_multiplicativity_defect": 0.0,
+  "max_ap_over_degree": 1.0,
+  "example_defect": null
+ },
+ "EPS": {
+  "all_ones_on_N": false,
+  "max_multiplicativity_defect": 8.0,
+  "max_complete_multiplicativity_defect": 10.0,
+  "max_ap_over_degree": 1.0,
+  "example_defect": [
+   2,
+   3,
+   2.0,
+   0.0
+  ]
+ },
+ "DH": {
+  "all_ones_on_N": false,
+  "max_multiplicativity_defect": 1.080700903149283,
+  "max_complete_multiplicativity_defect": 1.080700903149283,
+  "max_ap_over_degree": 1.0,
+  "example_defect": [
+   2,
+   3,
+   1.0,
+   -0.08070090314928288
+  ]
+ },
+ "FTHETA": {
+  "all_ones_on_N": false,
+  "max_multiplicativity_defect": 1.4210854715202004e-14,
+  "max_complete_multiplicativity_defect": 92.97520132681102,
+  "max_ap_over_degree": 3.767671254986952,
+  "example_defect": null
+ }
+}
