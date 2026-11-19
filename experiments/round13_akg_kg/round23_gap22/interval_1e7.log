@@ -1,0 +1,9 @@
+prime powers 665134 1.0334231853485107
+{'X': 11, 'worst_lower_bound_so_far': 0.03260990335419793, 'time': 1.0747816562652588}
+{'X': 101, 'worst_lower_bound_so_far': 0.029786506708301626, 'time': 1.1920628547668457}
+{'X': 1009, 'worst_lower_bound_so_far': 0.028022353566765818, 'time': 1.5623490810394287}
+{'X': 10007, 'worst_lower_bound_so_far': 0.02723225025560619, 'time': 1.6341438293457031}
+{'X': 100003, 'worst_lower_bound_so_far': 0.02723225025560619, 'time': 1.9178745746612549}
+{'X': 1000003, 'worst_lower_bound_so_far': 0.02723225025560619, 'time': 4.169388294219971}
+{'X': 10000000, 'worst_lower_bound_so_far': 0.02723225025560619, 'time': 23.89814805984497}
+{'X1': 10000000, 'gaps_checked': 665134, 'subdivided_gaps': 136, 'certified_min_lower_bound': 0.02723225025560619, 'worst_gap_right_end': 3109, 'all_positive': True, 'prec_bits': 160, 'checkpoints': [{'X': 11, 'worst_lower_bound_so_far': 0.03260990335419793, 'time': 1.0747816562652588}, {'X': 101, 'worst_lower_bound_so_far': 0.029786506708301626, 'time': 1.1920628547668457}, {'X': 1009, 'worst_lower_bound_so_far': 0.028022353566765818, 'time': 1.5623490810394287}, {'X': 10007, 'worst_lower_bound_so_far': 0.02723225025560619, 'time': 1.6341438293457031}, {'X': 100003, 'worst_lower_bound_so_far': 0.02723225025560619, 'time': 1.9178745746612549}, {'X': 1000003, 'worst_lower_bound_so_far': 0.02723225025560619, 'time': 4.169388294219971}, {'X': 10000000, 'worst_lower_bound_so_far': 0.02723225025560619, 'time': 23.89814805984497}], 'time_s': 23.91107678413391}

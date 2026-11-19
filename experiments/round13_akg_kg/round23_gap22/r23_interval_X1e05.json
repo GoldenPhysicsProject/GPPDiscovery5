@@ -1,0 +1,37 @@
+{
+ "X1": 100000,
+ "gaps_checked": 9700,
+ "subdivided_gaps": 136,
+ "certified_min_lower_bound": 0.02723225025560619,
+ "worst_gap_right_end": 3109,
+ "all_positive": true,
+ "prec_bits": 160,
+ "checkpoints": [
+  {
+   "X": 11,
+   "worst_lower_bound_so_far": 0.03260990335419793,
+   "time": 0.05518913269042969
+  },
+  {
+   "X": 101,
+   "worst_lower_bound_so_far": 0.029786506708301626,
+   "time": 0.16658592224121094
+  },
+  {
+   "X": 1009,
+   "worst_lower_bound_so_far": 0.028022353566765818,
+   "time": 0.5332179069519043
+  },
+  {
+   "X": 10007,
+   "worst_lower_bound_so_far": 0.02723225025560619,
+   "time": 0.6027333736419678
+  },
+  {
+   "X": 100000,
+   "worst_lower_bound_so_far": 0.02723225025560619,
+   "time": 0.8727505207061768
+  }
+ ],
+ "time_s": 0.8728828430175781
+}
