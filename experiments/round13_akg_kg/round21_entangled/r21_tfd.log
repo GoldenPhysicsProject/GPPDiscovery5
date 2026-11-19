@@ -1,0 +1,9 @@
+ZETA 2.0 {'min_coeff': 1.0, 'negative_weight_fraction': -0.0, 'S_entanglement': 1.6376043602190284, 'TC_prime_sectors': 3.906033545497678e-07, 'I(v2;v3)': 7.097211707218776e-12}
+EPS 2.0 {'min_coeff': 0.0, 'negative_weight_fraction': -0.0, 'S_entanglement': 0.9709922121993267, 'TC_prime_sectors': 0.2474447662205569, 'I(v2;v3)': 0.14511894915454338}
+FTH0.2 2.0 {'min_coeff': 1.0, 'negative_weight_fraction': -0.0, 'S_entanglement': 2.734887677404822, 'TC_prime_sectors': 1.5630123531895634e-05, 'I(v2;v3)': 1.40062006437347e-09}
+DH 2.0 {'min_coeff': -1.0, 'negative_weight_fraction': 0.10523517449469226}
+ZETA 3.0 {'min_coeff': 1.0, 'negative_weight_fraction': -0.0, 'S_entanglement': 0.678502221848249, 'TC_prime_sectors': 2.2994162129919005e-11, 'I(v2;v3)': 3.77686770747232e-12}
+EPS 3.0 {'min_coeff': 0.0, 'negative_weight_fraction': -0.0, 'S_entanglement': 0.21943300364115856, 'TC_prime_sectors': 0.05683536664643338, 'I(v2;v3)': 0.04761279883972769}
+FTH0.2 3.0 {'min_coeff': 1.0, 'negative_weight_fraction': -0.0, 'S_entanglement': 1.126871441817209, 'TC_prime_sectors': 3.3250957542918513e-11, 'I(v2;v3)': 3.2763791679712995e-12}
+DH 3.0 {'min_coeff': -1.0, 'negative_weight_fraction': 0.02710127991246385}
+{'2': {'S_exact': '1.63762228866', 'sum_p_le_2e5': '1.63761191793'}, '3': {'S_exact': '0.678502221866', 'sum_p_le_2e5': '0.678502221828'}} {'2': '1.637622289', '1.5': '3.218112936', '1.1': '12.74452582', '1.01': '105.0298342', '1.001': '1007.330727'}

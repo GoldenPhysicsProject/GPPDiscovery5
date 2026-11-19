@@ -1,0 +1,126 @@
+{
+ "flux_split_check": {
+  "ZETA": [
+   {
+    "s": "(0.5 + 3.0j)",
+    "err": "1.6e-23"
+   },
+   {
+    "s": "(0.3 + 10.0j)",
+    "err": "2.32e-24"
+   },
+   {
+    "s": "(0.8 - 7.0j)",
+    "err": "1.02e-23"
+   }
+  ],
+  "EPS": [
+   {
+    "s": "(0.5 + 3.0j)",
+    "err": "1.06e-22"
+   },
+   {
+    "s": "(0.3 + 10.0j)",
+    "err": "6.18e-23"
+   },
+   {
+    "s": "(0.8 - 7.0j)",
+    "err": "8.06e-23"
+   }
+  ]
+ },
+ "zero_as_boundary_cancellation": {
+  "ZETA": {
+   "rho": "(0.5 + 14.1347251417j)",
+   "A_right": "(0.0 - 0.03263910418j)",
+   "A_left": "(0.0 + 0.03263910418j)",
+   "cancellation_abs_sum": "0.0",
+   "scale_abs_A": "0.0326391",
+   "partner_is_conjugate_abs_diff": "0.0",
+   "arg_A_over_pi": "-0.5"
+  },
+  "EPS": {
+   "rho": "(0.932969697485 + 15.6682495313j)",
+   "A_right": "(0.0008735060006 - 0.03176926513j)",
+   "A_left": "(-0.0008735060006 + 0.03176926513j)",
+   "cancellation_abs_sum": "1.06e-22",
+   "scale_abs_A": "0.0317813",
+   "partner_is_conjugate_abs_diff": "0.00174701",
+   "arg_A_over_pi": "-0.4912501734"
+  }
+ },
+ "turing_count": {
+  "ZETA": {
+   "T": 100.0,
+   "sign_flips_on_line": 29,
+   "argument_principle_N": "29.0",
+   "deficit": 0,
+   "real_axis_sign_changes": 0,
+   "first_flips": [
+    14.14,
+    21.03,
+    25.02,
+    30.43,
+    32.94,
+    37.59,
+    40.92,
+    43.33,
+    48.01,
+    49.78,
+    52.98,
+    56.45
+   ]
+  },
+  "EPS": {
+   "T": 50.0,
+   "sign_flips_on_line": 32,
+   "argument_principle_N": "42.0",
+   "deficit": 10,
+   "real_axis_sign_changes": 0,
+   "first_flips": [
+    1.46,
+    5.33,
+    7.12,
+    9.21,
+    10.58,
+    12.5,
+    13.1,
+    17.6,
+    18.91,
+    19.81,
+    21.41,
+    21.89
+   ]
+  },
+  "DH": {
+   "T": 95.0,
+   "sign_flips_on_line": 48,
+   "argument_principle_N": "50.0",
+   "deficit": 2,
+   "real_axis_sign_changes": 0,
+   "first_flips": [
+    5.1,
+    8.94,
+    12.14,
+    14.41,
+    17.14,
+    19.31,
+    22.16,
+    23.35,
+    26.1,
+    27.93,
+    30.16,
+    31.97
+   ]
+  }
+ },
+ "right_of_line_count": {
+  "ZETA": "-4.19415e-20",
+  "EPS": "5.0",
+  "DH": "1.0"
+ },
+ "meta": {
+  "dps": 20,
+  "seconds": 560.9
+ }
+}

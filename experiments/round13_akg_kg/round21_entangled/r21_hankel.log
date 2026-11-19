@@ -1,0 +1,6 @@
+FTH check {'mellin_at_half_grid': np.float64(5.614201111789404), 'closed': 5.614201112117628, 'rel_err': np.float64(5.846311236633257e-11)}
+ZETA pos 7 neg 7 top ['-4.994e-01', '2.426e-03', '-1.371e-04', '1.198e-05', '-1.316e-06', '1.681e-07', '-2.389e-08', '3.689e-09']
+EPS pos 10 neg 10 top ['-9.218e-01', '7.194e-02', '-1.072e-02', '1.671e-03', '-2.834e-04', '5.431e-05', '-1.129e-05', '2.461e-06']
+DH pos 13 neg 13 top ['2.082e-01', '-3.520e-02', '7.658e-03', '-1.856e-03', '4.615e-04', '-1.208e-04', '3.363e-05', '-9.861e-06']
+FTH0.2 pos 45 neg 44 top ['1.464e+00', '-6.092e-02', '3.975e-05', '-1.338e-06', '7.598e-08', '2.720e-08', '-2.717e-08', '-2.172e-08']
+{'form_on_e_minus_u_over_2': '-0.499418072132222', 'form_on_e_minus_3u_minus_c_e_minus_u_over_2': '0.000156648261960352', 'note': 'two quadratic forms of the SAME Hankel operator Gamma_phi (ZETA) with opposite signs => indefinite (CHECKED, 25 digits)'}
