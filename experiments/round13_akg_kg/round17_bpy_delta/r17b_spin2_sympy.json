@@ -1,0 +1,13 @@
+{
+ "q.q": "0",
+ "q.eps": "0",
+ "eps.eps": "0",
+ "trace": "0",
+ "div": "[0, 0, 0, 0]",
+ "box": "[0, 0, 0, 0]",
+ "q_rot = R q": "True",
+ "eps_rot = e^{-i th} R eps": "True",
+ "q_boost = lam B q": "True",
+ "eps_boost = B eps": "True",
+ "mellin": "gamma(Delta)/a**Delta"
+}

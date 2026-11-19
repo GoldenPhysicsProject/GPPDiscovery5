@@ -1,0 +1,327 @@
+{
+ "A_identity": {
+  "ZETA": [
+   {
+    "Delta": "(1.0 + 0.0j)",
+    "A_omega_quad": "(0.497120778188314 + 0.0j)",
+    "xi_closed_at_Delta_over_2": "(0.497120778188314 + 0.0j)",
+    "abs_err": "6.46e-27"
+   },
+   {
+    "Delta": "(1.0 + 20.0j)",
+    "A_omega_quad": "(0.0379678503109357 + 3.10286657798886e-31j)",
+    "xi_closed_at_Delta_over_2": "(0.0379678503109357 - 8.94066415950382e-28j)",
+    "abs_err": "1.85e-27"
+   },
+   {
+    "Delta": "(1.0 + 28.26945j)",
+    "A_omega_quad": "(1.95979283445368e-10 + 3.85832371272716e-31j)",
+    "xi_closed_at_Delta_over_2": "(1.95979283445368e-10 + 7.45582737847486e-35j)",
+    "abs_err": "9.94e-31"
+   },
+   {
+    "Delta": "(0.4 + 7.0j)",
+    "A_omega_quad": "(0.373867610835219 - 0.0185278073899297j)",
+    "xi_closed_at_Delta_over_2": "(0.373867610835219 - 0.0185278073899297j)",
+    "abs_err": "3.64e-27"
+   },
+   {
+    "Delta": "(1.6 - 11.0j)",
+    "A_omega_quad": "(0.242409521942831 - 0.0195431954637473j)",
+    "xi_closed_at_Delta_over_2": "(0.242409521942831 - 0.0195431954637473j)",
+    "abs_err": "5.25e-27"
+   },
+   {
+    "Delta": "(3.0 + 2.0j)",
+    "A_omega_quad": "(0.496627033988922 + 0.022965285938994j)",
+    "xi_closed_at_Delta_over_2": "(0.496627033988922 + 0.022965285938994j)",
+    "abs_err": "8.33e-27"
+   },
+   {
+    "Delta": "(-0.5 + 4.0j)",
+    "A_omega_quad": "(0.458027242889453 - 0.0319772881350001j)",
+    "xi_closed_at_Delta_over_2": "(0.458027242889453 - 0.0319772881350001j)",
+    "abs_err": "7.27e-27"
+   },
+   {
+    "Delta": "(2.0 + 0.0j)",
+    "A_omega_quad": "(0.5 + 0.0j)",
+    "xi_closed_at_Delta_over_2": "(0.5 + 0.0j)",
+    "abs_err": "1.17e-22"
+   },
+   {
+    "Delta": "(0.0 + 0.0j)",
+    "A_omega_quad": "(0.5 + 0.0j)",
+    "xi_closed_at_Delta_over_2": "(0.5 + 0.0j)",
+    "abs_err": "1.17e-22"
+   }
+  ],
+  "EPS": [
+   {
+    "Delta": "(1.0 + 0.0j)",
+    "A_omega_quad": "(0.859144101273273 + 0.0j)",
+    "xi_closed_at_Delta_over_2": "(0.859144101273273 + 0.0j)",
+    "abs_err": "0.0"
+   },
+   {
+    "Delta": "(1.0 + 20.0j)",
+    "A_omega_quad": "(9.63047465650685e-5 + 5.05286042007393e-33j)",
+    "xi_closed_at_Delta_over_2": "(9.63047465650685e-5 - 1.10522457098303e-29j)",
+    "abs_err": "1.12e-29"
+   },
+   {
+    "Delta": "(1.0 + 28.26945j)",
+    "A_omega_quad": "(-9.0636152308264e-7 - 2.93024882399015e-33j)",
+    "xi_closed_at_Delta_over_2": "(-9.0636152308264e-7 + 1.40441722732193e-31j)",
+    "abs_err": "1.44e-31"
+   },
+   {
+    "Delta": "(0.4 + 7.0j)",
+    "A_omega_quad": "(-0.472137660772996 + 0.101781931808402j)",
+    "xi_closed_at_Delta_over_2": "(-0.472137660772996 + 0.101781931808402j)",
+    "abs_err": "2.2e-26"
+   },
+   {
+    "Delta": "(1.6 - 11.0j)",
+    "A_omega_quad": "(0.0162866005336137 + 0.0117909480515891j)",
+    "xi_closed_at_Delta_over_2": "(0.0162866005336137 + 0.0117909480515891j)",
+    "abs_err": "1.86e-27"
+   },
+   {
+    "Delta": "(3.0 + 2.0j)",
+    "A_omega_quad": "(0.559426480043124 + 1.0455052410984j)",
+    "xi_closed_at_Delta_over_2": "(0.559426480043124 + 1.0455052410984j)",
+    "abs_err": "1.29e-26"
+   },
+   {
+    "Delta": "(-0.5 + 4.0j)",
+    "A_omega_quad": "(-0.605220103489134 - 0.459706909440271j)",
+    "xi_closed_at_Delta_over_2": "(-0.605220103489134 - 0.459706909440271j)",
+    "abs_err": "1.83e-26"
+   },
+   {
+    "Delta": "(2.0 + 0.0j)",
+    "A_omega_quad": "(1.0 + 0.0j)",
+    "xi_closed_at_Delta_over_2": "(1.0 + 0.0j)",
+    "abs_err": "1.16e-20"
+   },
+   {
+    "Delta": "(0.0 + 0.0j)",
+    "A_omega_quad": "(1.0 + 0.0j)",
+    "xi_closed_at_Delta_over_2": "(1.0 + 0.0j)",
+    "abs_err": "6.6e-21"
+   }
+  ],
+  "DH": [
+   {
+    "Delta": "(1.0 + 0.0j)",
+    "A_omega_quad": "(1.43319216877501 + 0.0j)",
+    "xi_closed_at_Delta_over_2": "(1.43319216877501 + 0.0j)",
+    "abs_err": "7.75e-26"
+   },
+   {
+    "Delta": "(1.0 + 20.0j)",
+    "A_omega_quad": "(0.00395624983107514 + 9.06954607530721e-34j)",
+    "xi_closed_at_Delta_over_2": "(0.00395624983107514 - 1.64959145860409e-28j)",
+    "abs_err": "4.36e-28"
+   },
+   {
+    "Delta": "(1.0 + 28.26945j)",
+    "A_omega_quad": "(-5.06387995785928e-5 + 2.53632906186672e-34j)",
+    "xi_closed_at_Delta_over_2": "(-5.06387995785928e-5 + 3.2701014430332e-30j)",
+    "abs_err": "1.46e-28"
+   },
+   {
+    "Delta": "(0.4 + 7.0j)",
+    "A_omega_quad": "(0.351346197997667 - 0.102457896632935j)",
+    "xi_closed_at_Delta_over_2": "(0.351346197997667 - 0.102457896632935j)",
+    "abs_err": "9.69e-27"
+   },
+   {
+    "Delta": "(1.6 - 11.0j)",
+    "A_omega_quad": "(-0.0384526179287823 - 0.0176810513577615j)",
+    "xi_closed_at_Delta_over_2": "(-0.0384526179287823 - 0.0176810513577615j)",
+    "abs_err": "8.08e-28"
+   },
+   {
+    "Delta": "(3.0 + 2.0j)",
+    "A_omega_quad": "(1.41066886864236 + 0.280058365911074j)",
+    "xi_closed_at_Delta_over_2": "(1.41066886864236 + 0.280058365911074j)",
+    "abs_err": "6.46e-27"
+   },
+   {
+    "Delta": "(-0.5 + 4.0j)",
+    "A_omega_quad": "(0.971946462005308 - 0.315487248706348j)",
+    "xi_closed_at_Delta_over_2": "(0.971946462005308 - 0.315487248706348j)",
+    "abs_err": "1.94e-26"
+   },
+   {
+    "Delta": "(2.0 + 0.0j)",
+    "A_omega_quad": "(1.46868479710193 + 0.0j)",
+    "xi_closed_at_Delta_over_2": "(1.46868479710193 + 0.0j)",
+    "abs_err": "1.05e-20"
+   },
+   {
+    "Delta": "(0.0 + 0.0j)",
+    "A_omega_quad": "(1.46868479710193 + 0.0j)",
+    "xi_closed_at_Delta_over_2": "(1.46868479710193 + 0.0j)",
+    "abs_err": "1.52e-21"
+   }
+  ]
+ },
+ "B_KG_vs_Plancherel": {
+  "ZETA": {
+   "KG_norm": "0.639503623923243",
+   "plancherel_ReDelta1": "0.639503623923243",
+   "rel_err": "2.02e-26"
+  },
+  "EPS": {
+   "KG_norm": "0.701892509109114",
+   "plancherel_ReDelta1": "0.701892509109114",
+   "rel_err": "0.0"
+  },
+  "DH": {
+   "KG_norm": "2.5216259908928",
+   "plancherel_ReDelta1": "2.5216259908928",
+   "rel_err": "0.0"
+  }
+ },
+ "C_power_maps": {
+  "rule": "y = omega^k gives s = Delta/k; KG measure omega d omega = (1/k) y^(2/k-1) dy; flat (Plancherel line Re s = 1/2) iff k = 2, i.e. Delta = 2s; then shadow Delta->2-Delta = s->1-s.",
+  "k1_planck": [
+   {
+    "Delta": "(3.0 + 1.0j)",
+    "planck_mellin": "(1.2646740522772 + 1.3398835790984j)",
+    "Gamma_zeta": "(1.2646740522772 + 1.3398835790984j)"
+   },
+   {
+    "Delta": "(1.5 + 4.0j)",
+    "planck_mellin": "(-0.014022875318156 + 0.0014522650922563j)",
+    "Gamma_zeta": "(-0.014022875318155 + 0.0014522650922568j)"
+   },
+   {
+    "Delta": "(2.2 - 3.0j)",
+    "planck_mellin": "(-0.095422858014667 - 0.089735766251504j)",
+    "Gamma_zeta": "(-0.095422858014667 - 0.089735766251504j)"
+   }
+  ],
+  "k1_linear_theta": [
+   {
+    "Delta": "(3.0 + 1.0j)",
+    "linear_theta_mellin": "(0.062167203532003 - 0.049336791152391j)",
+    "half_GammaR_zeta": "(0.062167203532003 - 0.049336791152391j)"
+   },
+   {
+    "Delta": "(1.5 + 4.0j)",
+    "linear_theta_mellin": "(-0.015917519976352 - 0.012680164452799j)",
+    "half_GammaR_zeta": "(-0.015917519976352 - 0.012680164452799j)"
+   }
+  ],
+  "k1_verdict": "k=1: Gamma(Delta) zeta(Delta) / Gamma_R(Delta) zeta(Delta): FE Delta <-> 1-Delta, critical line Re Delta = 1/2, NOT the d=2 principal series Re Delta = 1 (PS eq. 4.7: divergent unless c = d/2 = 1)."
+ },
+ "D_soft_poles": {
+  "ZETA_raw_identity": [
+   {
+    "Delta": "(3.0 + 2.0j)",
+    "mellin": "(-0.0096278383531375 - 0.12295327870309j)",
+    "quarter_GammaR_zeta": "(-0.0096278383531375 - 0.12295327870309j)"
+   },
+   {
+    "Delta": "5.0",
+    "mellin": "0.072679227601618",
+    "quarter_GammaR_zeta": "0.072679227601618"
+   },
+   {
+    "Delta": "(2.5 - 6.0j)",
+    "mellin": "(-0.017431467407602 + 0.01150442652571j)",
+    "quarter_GammaR_zeta": "(-0.017431467407602 + 0.01150442652571j)"
+   }
+  ],
+  "ZETA_raw_small_omega": [
+   {
+    "omega": 0.4,
+    "r_minus_soft": "0.0"
+   },
+   {
+    "omega": 0.5,
+    "r_minus_soft": "5.9159e-22"
+   },
+   {
+    "omega": 0.6,
+    "r_minus_soft": "8.2433e-11"
+   },
+   {
+    "omega": 0.7,
+    "r_minus_soft": "4.2391e-6"
+   }
+  ],
+  "ZETA_residues": {
+   "2": "0.5",
+   "0": "-0.5"
+  },
+  "ZETA_regular_at": {
+   "1": "-0.9942415564",
+   "-1": "0.3391540258",
+   "-2": "0.1308996939",
+   "-3": "0.0726792276"
+  },
+  "EPS_raw_small_omega": [
+   {
+    "omega": 0.4,
+    "r_minus_soft": "0.0019203"
+   },
+   {
+    "omega": 0.6,
+    "r_minus_soft": "0.11216"
+   },
+   {
+    "omega": 0.8,
+    "r_minus_soft": "0.34845"
+   }
+  ],
+  "EPS_raw_identity": [
+   {
+    "Delta": "(3.0 + 2.0j)",
+    "mellin": "(0.24014201380751 - 0.16987437173672j)",
+    "closed": "(0.24014201380751 - 0.16987437173672j)"
+   },
+   {
+    "Delta": "5.0",
+    "mellin": "0.62194391170646",
+    "closed": "0.62194391170646"
+   }
+  ]
+ },
+ "E_special_points": {
+  "ZETA": {
+   "A(1)=xi(1/2) [Goldstone/memory, self-shadow]": "(0.497120778188 + 0.0j)",
+   "A(2)=xi(1) [stress tensor, shadow of Delta=0]": "(0.5 + 0.0j)",
+   "A(0)=xi(0) [subleading soft / superrotation]": "(0.5 + 0.0j)",
+   "A(-1)=xi(-1/2) [sub-subleading]": "(0.508731038726 + 0.0j)"
+  },
+  "EPS": {
+   "A(1)=xi(1/2) [Goldstone/memory, self-shadow]": "(0.859144101273 + 0.0j)",
+   "A(2)=xi(1) [stress tensor, shadow of Delta=0]": "(1.0 + 0.0j)",
+   "A(0)=xi(0) [subleading soft / superrotation]": "(1.0 + 0.0j)",
+   "A(-1)=xi(-1/2) [sub-subleading]": "(1.48477169261 + 0.0j)"
+  },
+  "DH": {
+   "A(1)=xi(1/2) [Goldstone/memory, self-shadow]": "(1.43319216878 + 0.0j)",
+   "A(2)=xi(1) [stress tensor, shadow of Delta=0]": "(1.4686847971 + 0.0j)",
+   "A(0)=xi(0) [subleading soft / superrotation]": "(1.4686847971 + 0.0j)",
+   "A(-1)=xi(-1/2) [sub-subleading]": "(1.57951671228 + 0.0j)"
+  }
+ },
+ "F_EPS_ghost": {
+  "rho": "(0.932969697485 + 15.6682495313j)",
+  "Delta": "(1.86593939497 + 31.3364990626j)",
+  "ReDelta": "1.8659394",
+  "A_omega_quad_at_Delta": "4.31e-32",
+  "A_omega_quad_scale_at_ReDelta1": "2.28429e-8",
+  "note": "graviton primary of weight Delta (Re Delta != 1, not delta-normalizable, PS eq. 4.7) has zero overlap with the normalizable EPS graviton state"
+ },
+ "meta": {
+  "dps": 25,
+  "seconds": 171.5
+ }
+}

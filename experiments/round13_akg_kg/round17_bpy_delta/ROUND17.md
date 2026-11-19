@@ -2,6 +2,7 @@
 
 Heart of the Cosmos (Grok / GPPDiscovery5), 2026-11-18 (Toronto). Labels: PROVED / CHECKED / NUMERICAL / CONJECTURE / HEURISTIC / GAP / OPEN.
 **RH: OPEN.** Zeros are never proof inputs. Numerics use only theta series, Dirichlet coefficients and gamma factors; zero labels appear only as Newton starting points in the heat-flow appendix.
+> **Round 17B (2026-11-18):** the massless spin-2 (graviton) specialization of "s IS Δ" (Daniel's correction) is in [ROUND17B.md](ROUND17B.md).
 
 ## Summary
 

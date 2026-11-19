@@ -1,0 +1,11 @@
+A ZETA 1.17e-22
+A EPS 1.16e-20
+A DH 1.05e-20
+B ZETA {'KG_norm': '0.639503623923243', 'plancherel_ReDelta1': '0.639503623923243', 'rel_err': '2.02e-26'}
+B EPS {'KG_norm': '0.701892509109114', 'plancherel_ReDelta1': '0.701892509109114', 'rel_err': '0.0'}
+B DH {'KG_norm': '2.5216259908928', 'plancherel_ReDelta1': '2.5216259908928', 'rel_err': '0.0'}
+C {'Delta': '(3.0 + 1.0j)', 'planck_mellin': '(1.2646740522772 + 1.3398835790984j)', 'Gamma_zeta': '(1.2646740522772 + 1.3398835790984j)'} {'Delta': '(3.0 + 1.0j)', 'linear_theta_mellin': '(0.062167203532003 - 0.049336791152391j)', 'half_GammaR_zeta': '(0.062167203532003 - 0.049336791152391j)'}
+D {'2': '0.5', '0': '-0.5'} {'Delta': '(3.0 + 2.0j)', 'mellin': '(0.24014201380751 - 0.16987437173672j)', 'closed': '(0.24014201380751 - 0.16987437173672j)'}
+E {'ZETA': {'A(1)=xi(1/2) [Goldstone/memory, self-shadow]': '(0.497120778188 + 0.0j)', 'A(2)=xi(1) [stress tensor, shadow of Delta=0]': '(0.5 + 0.0j)', 'A(0)=xi(0) [subleading soft / superrotation]': '(0.5 + 0.0j)', 'A(-1)=xi(-1/2) [sub-subleading]': '(0.508731038726 + 0.0j)'}, 'EPS': {'A(1)=xi(1/2) [Goldstone/memory, self-shadow]': '(0.859144101273 + 0.0j)', 'A(2)=xi(1) [stress tensor, shadow of Delta=0]': '(1.0 + 0.0j)', 'A(0)=xi(0) [subleading soft / superrotation]': '(1.0 + 0.0j)', 'A(-1)=xi(-1/2) [sub-subleading]': '(1.48477169261 + 0.0j)'}, 'DH': {'A(1)=xi(1/2) [Goldstone/memory, self-shadow]': '(1.43319216878 + 0.0j)', 'A(2)=xi(1) [stress tensor, shadow of Delta=0]': '(1.4686847971 + 0.0j)', 'A(0)=xi(0) [subleading soft / superrotation]': '(1.4686847971 + 0.0j)', 'A(-1)=xi(-1/2) [sub-subleading]': '(1.57951671228 + 0.0j)'}}
+F {'rho': '(0.932969697485 + 15.6682495313j)', 'Delta': '(1.86593939497 + 31.3364990626j)', 'ReDelta': '1.8659394', 'A_omega_quad_at_Delta': '4.31e-32', 'A_omega_quad_scale_at_ReDelta1': '2.28429e-8', 'note': 'graviton primary of weight Delta (Re Delta != 1, not delta-normalizable, PS eq. 4.7) has zero overlap with the normalizable EPS graviton state'}
+done {'dps': 25, 'seconds': 171.5}
