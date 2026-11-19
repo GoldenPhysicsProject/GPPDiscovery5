@@ -4,6 +4,19 @@ Framing credit: **Daniel Toupin** — "construct one global arithmetic object wh
 
 Code: `lineval.py` (|F(½+it)|² from Hurwitz sums; `line_*.npy`), `radical.py` (`radical.json`), `pencil.py` (`pencil.json`). It reuses `../round14b_euler/weil_galerkin.py` and `models14b.py`. Zeros are never inputs.
 
+> **Errata (Golden Eye, AUDIT14 on team/golden-eye 062e4e2; applied in Round 14E).**
+> 1. "range E ⊂ radical" (3a) is the **easy direction** of the explicit formula (Mellin(E_F H) = F·Ĥ vanishes at every zero of F). PROVED, classical.
+> 2. The 3a numerical "CHECKED rel ≤ 1e-4" tested **isotropy W(v,v) ≈ 0, not radical membership**, and had low power (a same-band non-radical vector also scores ~4e-6). It is downgraded to "consistent at the grid floor; not discriminating". **Redone in 14E** (`../round14e_gap/bilinear.py`): bilinear residual sup_φ |W(v,φ)|/(‖v‖‖φ‖‖W‖) over v in the window-truncated range, against a same-band non-radical control (a(2) → a(2) − 0.1). Separation 6.4e3 (ζ, L=4), 1.2e4 (ζ, L=6), 1.3e2 (EPS, L=6), 4.7e3 (F_θ, L=4), 7.4e2 (DH, L=4) at ε = 1e-8. That is now a discriminating CHECK.
+> 3. The BEUR″ table entry "E_B is ~ in ζ's radical (6e-6)" is **not supported** at that probe's power; withdrawn. (14E: ζ's truncated range is *not* in BEUR″'s radical: bilinear residual 0.1–0.4.)
+> 4. "Positivity on the quotient ⇔ RH" is **Weil's criterion restated** (quotienting by part of the radical cannot change positivity; GNS). Connes 1999's cokernel carries the L² (or L²_δ) inner product, not the W-norm; the closure must be taken in the **form-domain norm**, not L². Faithful statement: "if W ≥ 0, its GNS space is a quotient of the admissible space by a subspace containing range E; whether that subspace equals closure(range E) is the spectral-realization question."
+> 5. "R indefinite past log 2 = CC 2021 boundary" is a **coincidence**, not a check: DH's R is already indefinite below log 2 (R_min = −1.78 at log 2 − 0.05). EPS "μ_min < 0 at L ≥ 3" should read L > 3.
+> 6. Faces 1+2 are Tate's thesis (Riemann 1859 / Tate 1950); credit Daniel for the framing, not a new object.
+>
+> **Errata, continued (Golden Eye, AUDIT14 §6.1 on team/golden-eye eae661d; applied in Round 14E2).** Three minor §3 items not carried over above:
+> 7. **3c measure claim → INTERPRETATION.** "W weighs |ĝ|² by the zero-counting measure θ′/π dt + dS_F on the line" is a *positive measure on the line only under RH*. Off-line zeros enter W through ĝ at complex points, not through a measure on the line (with S = arg F along the critical line, the off-line pair contributions to Re F′/F cancel). Relabel 3c's measure statement INTERPRETATION. Its conclusion (no injective T on range E) needs only 3a and stands.
+> 8. **N_F domain caveat.** N_F = ‖E_F g‖² holds only when ĝ vanishes at F's poles; otherwise E_F g ∉ L². The pencil uses all window g, so there N_F is a *defined* form ∫|F|²|ĝ|² ≥ 0, not the norm of E_F g. (`pencil.py`'s docstring says this; the text above did not.)
+> 9. **E-tail point.** E_F H has a half-infinite tail in u (support (−∞, log b]), so E_F H is not a window function, and the **window-truncated** range of E is *not* in the radical of W_F; only the untruncated range is. The truncation error is what Connes–Consani handle with prolate functions (ζ-cycles). (Whether range E ∩ C_c = {0} is plausible but not proved here.) Round 14E/14E2 measure this leak directly: bilinear residual 4e-7 to 2e-3 depending on the concentration cut.
+
 Standards (Golden Eye):
 - **CHECKED** = a code or identity check.
 - NUMERICAL = evidence.

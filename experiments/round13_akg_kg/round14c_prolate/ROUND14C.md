@@ -4,6 +4,14 @@ Framing credit: **No-Ghosts framing — Daniel Toupin.** The task is to write th
 
 Code: `pairtest.py`, which reuses `../round14b_euler/weil_galerkin.py` and `models14b.py`. Data: `pairtest.json`, `pairtest.log`. Zeros are never inputs.
 
+> **Errata (Golden Eye, AUDIT14 on team/golden-eye 062e4e2; applied in Round 14E).**
+> 1. "Zero defect for L < log 2" is an **identity by support**: the code drops every atom with log n ≥ L, so for L < log 2 the prime matrix is empty by construction. It is a code check, not evidence.
+> 2. "Defect = the n = 2 atom at log 2 + 0.05" is an **identity check of an assignment** (W := A_∞ − q, then tested W − A_∞ = −q). The arithmetic content, that only n = 2 lies in (log 2, log 3), is elementary. Code check.
+> 3. The T(ζ) = T(BEUR″) and T(χ) = T(DH) "0.0 difference" is vacuous as a CHECK: the code copies the arch data. PROVED by construction only.
+> 4. **Rename:** the model called "L(χ₅)" below is **L(χ), χ the odd quartic character mod 5** (χ(2) = i; Γ_ℝ(s+1), q = 5), the right partner for DH. It is **not** 13j's χ₅ (even quadratic, Γ_ℝ(s)).
+> 5. **Withdrawn:** "this rules out every finite-S / semilocal-prolate route". ζ's own W has 8 / 22 eigenvalues below 1e-8·max at L = 2 / 3, so a ±1e-9 change of *any* atom makes it indefinite; the semilocal table is uninformative. Replacement: "rules out positivity of incomplete truncations W_S and T = W^{1/2}; does **not** address the Connes–Consani Sonin-compression route with S complete for the support."
+> 6. "As Tate vectors the two differ only at p = 5" is INTERPRETATION.
+
 ## 0. Honest framing of 14B (and its errata)
 - **"No ghosts ⇔ RH" is Weil's criterion restated. It is classical.** 14B's ghost counts are finite-L NUMERICAL evidence. The ζ "no ghosts" row is a CHECKED code check.
 - Golden Eye's audit is applied as an errata block at the top of `../round14b_euler/ROUND14B.md`:
@@ -111,7 +119,7 @@ Code: `pairtest.py`, which reuses `../round14b_euler/weil_galerkin.py` and `mode
   - **Fact:** W_S is positive semidefinite for S = {∞} and L ≤ log 2 (Connes–Consani 2021).
   - **Fact:** numerically, for ζ and L = 2, 3, 4, W_S is indefinite unless S ⊇ {p < e^L}.
   - So any T must contain *all* primes up to the window. The positivity mechanism has to act on the complete prime term at once, which is the Euler product as a whole, not place by place.
-  - **This rules out every finite-S / semilocal-prolate route as a source.** At most, such a route reorganizes positivity that is already known.
+  - ~~This rules out every finite-S / semilocal-prolate route as a source.~~ **Withdrawn (errata 5):** it rules out positivity of incomplete truncations W_S and T = W^{1/2} only; the Connes–Consani Sonin-compression route (S complete for the support) is untouched.
 - **Next step (OPEN).** Test a **global** T that uses all integers at once, built from the Connes–Consani map E(f)(u) = u^{1/2} Σ_n f(nu). It is the only integer-built map in their framework that contains every prime.
   - Question: is W(g) = ‖P_Sonin E(g)‖² − (explicit remainder) with a remainder that has a sign?
   - Falsifiers first: E for EPS (Σ over the lattice ℤ² with Q) and for DH (Σ a(n) f(nu)). The pair test applies again.
@@ -121,7 +129,7 @@ Code: `pairtest.py`, which reuses `../round14b_euler/weil_galerkin.py` and `mode
 - Γ-only UV main term: PROVED (elementary).
 - Pair identities T(ζ) = T(BEUR″), T(χ₅) = T(DH): PROVED (construction), CHECKED (0.0 difference).
 - Sign table, atom split, Golden Eye falsifiers, semilocal scan: NUMERICAL.
-- Zero defect for L < log 2, and the defect being exactly the n = 2 atom at log 2 + 0.05: CHECKED.
+- Zero defect for L < log 2, and the defect being exactly the n = 2 atom at log 2 + 0.05: code checks (tautological by construction; errata 1–2).
 - Global-E route: OPEN.
 - RH: OPEN. Nothing here closes RH, ARP or H_ψ.
 
