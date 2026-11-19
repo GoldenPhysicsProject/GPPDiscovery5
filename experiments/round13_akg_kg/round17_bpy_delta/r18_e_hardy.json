@@ -1,0 +1,83 @@
+{
+ "catastrophe": [
+  {
+   "sigma": "0.75",
+   "K_t_minus_u_1": "0.47988443",
+   "vacuum_fidelity_1_over_zeta2sigma": "0.38279338"
+  },
+  {
+   "sigma": "0.6",
+   "K_t_minus_u_1": "0.21276837",
+   "vacuum_fidelity_1_over_zeta2sigma": "0.17884025"
+  },
+  {
+   "sigma": "0.51",
+   "K_t_minus_u_1": "0.021865205",
+   "vacuum_fidelity_1_over_zeta2sigma": "0.01977118"
+  },
+  {
+   "sigma": "0.501",
+   "K_t_minus_u_1": "0.0021888112",
+   "vacuum_fidelity_1_over_zeta2sigma": "0.0019976932"
+  },
+  {
+   "sigma": "0.5001",
+   "K_t_minus_u_1": "0.00021890029",
+   "vacuum_fidelity_1_over_zeta2sigma": "0.00019997691"
+  }
+ ],
+ "boundary_delta": [
+  {
+   "eps": "0.1",
+   "int_Re_zeta_1_eps_itau_over_abs_tau_lt_1": "4.1144845"
+  },
+  {
+   "eps": "0.01",
+   "int_Re_zeta_1_eps_itau_over_abs_tau_lt_1": "4.2807556"
+  },
+  {
+   "eps": "0.001",
+   "int_Re_zeta_1_eps_itau_over_abs_tau_lt_1": "4.2974392"
+  }
+ ],
+ "boundary_delta_note": "-> pi + 2*gamma-type regular part: Re zeta(1+eps+i tau) -> pi delta(tau) + regular; Im part -> -PV(1/tau). Boundary vectors are delta-normalizable only up to a Hilbert-transform (PV) term: a Hardy (one-sided) structure, not an orthonormal delta-basis.",
+ "eps_not_eigen": [
+  {
+   "p": 2,
+   "distinct_ratios_on_support": [
+    "0.0"
+   ],
+   "n_with_r_n_0_but_r_pn_nonzero": [
+    2,
+    3,
+    7,
+    8,
+    10
+   ],
+   "eigen": false
+  },
+  {
+   "p": 3,
+   "distinct_ratios_on_support": [
+    "0.0"
+   ],
+   "n_with_r_n_0_but_r_pn_nonzero": [
+    2,
+    3,
+    7,
+    8,
+    10
+   ],
+   "eigen": false
+  },
+  {
+   "p": 29,
+   "distinct_ratios_on_support": [
+    "1.5",
+    "2.0"
+   ],
+   "n_with_r_n_0_but_r_pn_nonzero": [],
+   "eigen": false
+  }
+ ]
+}

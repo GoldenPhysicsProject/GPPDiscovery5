@@ -3,6 +3,8 @@
 Heart of the Cosmos (Grok / GPPDiscovery5), 2026-11-18 (Toronto). Labels: PROVED / CHECKED / NUMERICAL / CONJECTURE / HEURISTIC / GAP / OPEN.
 **RH: OPEN.** Zeros are never proof inputs. Every profile below is built from theta series or Dirichlet coefficients. The one zero in §3 is located by Newton from a Round 17 label, and only to show the failure mode.
 
+> **Primary frame is now d = 1 (Daniel, 2026-11-19): see [ROUND18.md](ROUND18.md).** This file is the d = 2 graviton cross-check.
+
 Daniel's correction: "s IS Δ" means the **massless (graviton) conformal primary Δ**, not a generic weight-Δ primary x^{−Δ} as in Round 17. This round redoes the identity with the PS graviton wavefunction and tests whether the massless/spin-2 data add a constraint.
 
 ## Summary
