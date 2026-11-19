@@ -6,8 +6,9 @@ via the Round-13/14B linear functional on even autocorrelations
 applied to Asym(t) = (X_ij(t-s) + X_ij(-t-s))/2,  X_ij(u) = int phi_i(x) phi_j(x+u) dx  (closed form, 14B Aclosed).
 k(t) = sum over poles a of 2 cosh(a t) (complex pairs combined, real).  B_0 = 14B W exactly (checked in run).
 Translation invariance:  W(tau_a f, tau_b h) = B_{b-a};  B_{-s} = B_s^T.  Integer/own-gamma data only; no zeros."""
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__))); import _paths  # noqa: E402  (run from anywhere)
 import sys, os, math, numpy as np
-HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, '..', 'round14b_euler')); sys.path.insert(0, os.path.join(HERE, '..'))
+HERE = _paths.HERE
 import weil_galerkin as wg, models14b as md
 from scipy.special import digamma
 XG, WG = np.polynomial.legendre.leggauss(48)

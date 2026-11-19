@@ -1,4 +1,5 @@
 """Collect Round 15 results into round15.json and the two tables of ROUND15.md (summary15.md)."""
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__))); import _paths  # noqa: E402  (run from anywhere)
 import json, glob
 NG = json.load(open('../round14b_euler/noghosts.json'))['A']
 key14 = dict(ZETA='ZETA_f45.0', EPS='EPS_f45.0', DH='DH_f125.0', BEUR2='BEUR2_f45.0', FTH='FTH0.2_f45.0')

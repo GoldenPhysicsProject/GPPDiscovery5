@@ -5,6 +5,7 @@ Z-analogue of the F_q 2x2 block on {Delta, Gamma_F}:  span{g, tau_s g}, g in the
 F_q dictionary (normalised by sqrt q):  d = W(g) <-> 2g (genus),  b_s <-> -a/sqrt q = (N_1 - q - 1)/sqrt q; the pole part of b_s
   <-> (q+1)/sqrt q = sqrt q + 1/sqrt q (here p^{1/2}+p^{-1/2} times |g^(i/2)|^2), the prime part <-> N_1/sqrt q.
 Fixed-g decomposition also recorded for g = ground state of W_l and g = first sine.  Usage: python3 hasse_blocks.py MODEL [l]"""
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__))); import _paths  # noqa: E402  (run from anywhere)
 import sys, json, math, numpy as np, hasse_core as hc
 name = sys.argv[1]; l = float(sys.argv[2]) if len(sys.argv) > 2 else 0.6
 fmax = 125.0 if name == 'DH' else 45.0

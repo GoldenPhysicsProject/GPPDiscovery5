@@ -6,6 +6,7 @@ on a shift set S (Z-analogue of span{1, F, F^2, ...}), base window l.  Families:
 Generalised eigenproblem G v = lam N v, N[(a,i),(b,j)] = <tau_{s_a}phi_i, tau_{s_b}phi_j>; N-null directions (eig < 1e-9 max) dropped.
 Ghost = eigenvalue < -1e-7 max|G| (14B convention). Span lies in width L = l + max S, so ghosts <= 14B ghosts at L (Cauchy interlacing).
 Usage: python3 hasse_gram.py MODEL FAMILY Kmax [l]"""
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__))); import _paths  # noqa: E402  (run from anywhere)
 import sys, json, math, numpy as np, hasse_core as hc
 name, fam, Kmax = sys.argv[1], sys.argv[2], int(sys.argv[3]); l = float(sys.argv[4]) if len(sys.argv) > 4 else 0.6
 fmax = 125.0 if name == 'DH' else 45.0

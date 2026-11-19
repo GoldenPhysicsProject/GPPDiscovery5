@@ -1,5 +1,14 @@
 # Round 15: the Hasse Gram, testing whether Hasse's two-integer positive form has a shadow over ℤ
 
+> **Erratum (Golden Eye AUDIT15, team/golden-eye 798f3ac), 2026-11-18.**
+> 1. The one-shift block follows from W ≥ 0 by Cauchy–Schwarz (W is translation-invariant), so it is a **tautological control**, strictly weaker than W ≥ 0. EPS is indefinite from width 3.0 but fails the block only at s = 4.40 (width 5.0).
+> 2. The pole term is 2cosh(s/2)·ĝ(i/2)ĝ(−i/2), which equals |ĝ(i/2)|² only for even g. It is an algebraic identity, so its match is a **code check**.
+> 3. CC 2021 needs supp g ⊂ [2^{−1/2}, 2^{1/2}] and ĝ(i/2) = 0.
+> 4. "Kronecker ⇒ ρ → 1" is **HEURISTIC**.
+> 5. Toeplitz = 2·deg is **algebra-checked only**.
+> 6. The scripts now run from any working directory (`_paths.py`).
+> Numbers are unchanged, and 'all s ⇔ RH' (PROVED, sketch) stands per AUDIT15.
+
 Heart of the Cosmos (Grok / GPPDiscovery5), 2026-11-18 (Toronto). Daniel (t417u/t418u): "dig into this, do your thinking magic", about CLUES.md clue 1.
 
 **Labels:** PROVED / CHECKED / NUMERICAL / CONJECTURE / HEURISTIC / GAP / OPEN.
@@ -21,7 +30,7 @@ Models (14B/14F):
    - in genus g, Hodge index on C×C makes the Toeplitz "Hasse Gram" T[j,k] = Σ ω_i^{k−j} positive.
 
    a = F + F̂ is an addition and q = F F̂ is a multiplication of the *same* algebraic number. The curve-RH proof that avoids surfaces (Bombieri–Stepanov) runs on one fact: x ↦ x^q is additive and multiplicative **at the same time**. That is the sharpest mathematical form of Daniel's coupling, and it is exactly what ℤ lacks in characteristic 0.
-2. **The one-shift Hasse block [g, τ_s g] separates ζ from every fake on our data (Part 2).** At l = 0.6 it holds for ζ and F_{iτ} at all 499 shifts s ≤ 8, and fails for F_θ (from p = 3), BEUR″ (p = 37), EPS (p = 149) and DH (p = 547). NUMERICAL. ζ saturates it: max ρ = 0.9996.
+2. **The one-shift Hasse block [g, τ_s g] separates ζ from every fake on our data (Part 2), but only as a tautological control** (AUDIT15). W is translation-invariant, so the block is Cauchy–Schwarz for W. It is implied by W ≥ 0, every failure is an explicit ghost g ± τ_s g of width ≤ l + s, and it is strictly weaker than W ≥ 0: EPS is indefinite from width 3.0, yet fails the block only at s = 4.40 (width 5.0). At l = 0.6 it holds for ζ and F_{iτ} at all 499 shifts s ≤ 8, and fails for F_θ (from p = 3), BEUR″ (p = 37), EPS (p = 149) and DH (p = 547). NUMERICAL. ζ's pass is a code check; F_{iτ}'s pass is expected. ζ nearly saturates it: max ρ = 0.9996.
 3. **It is not a new criterion (Part 3).** The family over all s is RH-equivalent (PROVED, sketch), and so is any weak, subexponential version (the Stepanov amplification). The full Hasse Gram reproduces 14B's ghost onsets and adds nothing new.
 4. **The GAP** is a zero-free, Stepanov-type uniform bound on W(g, τ_s g). It would need a Frobenius that is additive and multiplicative at once. Such a Frobenius exists only in characteristic 1 (Connes–Consani's arithmetic site). OPEN.
 
@@ -47,7 +56,7 @@ The **Hodge index theorem** (NS(C×C)_ℝ has signature (1, ρ−1) because H + 
 
   T[j,k] = −Γ′_j·Γ′_k / q^{(j+k)/2} = Σ_i ω_i^{k−j},  ω_i = α_i/√q,  T ⪰ 0 for every size.
 
-For g = 1 the 2×2 block is [[2, a/√q], [a/√q, 2]] and (m, −n√q) T (m, −n√q)ᵀ = 2(m² − a mn + q n²) = 2 deg(m − nF). The positive Toeplitz form forces |ω_i| = 1: if a positive metric is preserved by F/√q, F/√q is unitary. **That is literally 14B's holonomy lemma and Daniel's No-Ghosts theorem.** In the curve case the theorem is not the hard part; the hard part is having a positive metric that Frobenius preserves.
+For g = 1 the 2×2 block is [[2, a/√q], [a/√q, 2]] and (m, −n√q) T (m, −n√q)ᵀ = 2(m² − a mn + q n²) = 2 deg(m − nF) (an algebraic identity: CHECKED-as-algebra only, not a test against isogeny degrees). The positive Toeplitz form forces |ω_i| = 1: if a positive metric is preserved by F/√q, F/√q is unitary. **That is literally 14B's holonomy lemma and Daniel's No-Ghosts theorem.** In the curve case the theorem is not the hard part; the hard part is having a positive metric that Frobenius preserves.
 
 **Where add and mult meet.** Correspondences on C×C form a *ring*: + is the sum of divisors, × is composition, and the intersection with Δ is the trace (Lefschetz). Frobenius obeys F∘Fᵗ = q·Δ (F times its transpose is multiplication by q). And in characteristic p, x ↦ x^q is **at the same time multiplicative and additive**: (x + y)^q = x^q + y^q. That single fact is what Bombieri–Stepanov use. Their auxiliary-polynomial proof needs only (a) Riemann–Roch on C, to count auxiliary functions, and (b) additivity of x ↦ x^q, to make the auxiliary function vanish to high order at every rational point. It gives |N_k − q^k − 1| ≤ C q^{k/2} for large k. Then amplification over k (the generating function Σ a_k T^k = Σ_i α_i T/(1 − α_i T) is rational) upgrades it to |α_i| = √q.
 
@@ -60,10 +69,10 @@ For g = 1 the 2×2 block is [[2, a/√q], [a/√q, 2]] and (m, −n√q) T (m, �
 | F is a ring endomorphism (x ↦ x^q additive) | on the arithmetic site, Fr_λ(x) = x^λ is a semifield automorphism of ℝ_max **only in characteristic 1**; on the adeles, scaling is additive but not multiplicative; Borger's λ-rings: Frobenius lifts ψ_p are ring maps, but trivial on ℤ | **missing in char 0** |
 | divisor mΔ − nΓ_F | test function f = m·g + n·τ_{log p} g (bump g at the identity plus its shift by log p) | this round |
 | intersection D·E | −W(f, h), the Weil bilinear form; explicit formula = Lefschetz trace (Connes trace formula) | PROVED |
-| subtracting H, V (primitive part) | the pole terms ĝ(0), ĝ(1). Measured: the pole part of the shift block is exactly 2cosh(s/2)·\|ĝ(i/2)\|², the ℤ image of (q + 1)/√q = √q + 1/√q | PROVED, CHECKED here to 6 digits |
+| subtracting H, V (primitive part) | the pole terms ĝ(0), ĝ(1). The pole part of the shift block is 2cosh(s/2)·ĝ(i/2)ĝ(−i/2) (= \|ĝ(i/2)\|² only for even g; AUDIT15), the ℤ image of (q + 1)/√q = √q + 1/√q. It is an algebraic identity (c_±(τ_s g) = e^{±s/2} c_±(g)), so the match is a code check | PROVED; code check |
 | N_k = #C(F_{q^k}) | the prime sum Σ_{\|log n − s\|<l} Λ(n) n^{−1/2} X(log n − s): ψ in a window at e^s | — |
 | genus 2g = −Γ′² | W(g) for supp g of width < log 2 (no primes): the archimedean "genus" of g. It diverges as g → δ, so the genus is infinite (CC 2026, *On the Jacobian of Spec ℤ*: Jacobian = orbit space of the scaling flow, infinite genus) | — |
-| local positivity of the genus term | W(g) > 0 for supp g ⊂ (1/2, 2): Connes–Consani, *Weil positivity and trace formula, the archimedean place* (Selecta 2021): a Sonin-space trace plus a prolate correction controlled by Toeplitz matrices | PROVED (literature) |
+| local positivity of the genus term | W(g * g*) ≥ 0 for supp g ⊂ [2^{−1/2}, 2^{1/2}] (so supp g * g* ⊂ [1/2, 2]) **and ĝ(i/2) = 0**, so it does not cover the diagonal's pole part: Connes–Consani, *Weil positivity and trace formula, the archimedean place* (Selecta 2021): a Sonin-space trace plus a prolate correction controlled by Toeplitz matrices | PROVED (literature) |
 | Riemann–Roch on C | Riemann–Roch for Spec ℤ̄ (CC, Bull. Sci. Math. 2023; for the ring ℤ over the sphere spectrum, CRAS 2024) | partial |
 | Hodge index on C×C / Rosati positivity | Weil positivity W(f * f^*) ≥ 0, f^*(x) = x^{−1} conj f(1/x) (Daniel's x → 1/x), equivalent to RH (Weil 1952) | **OPEN = RH** |
 | polarization (theta divisor of Jac C) | ? The Jacobi theta Σ e^{−πn²x}, Poisson on ℤ, is the obvious candidate, but nothing makes it a polarization of the CC Jacobian | **missing** |
@@ -105,7 +114,7 @@ That second item is Daniel's coupling, made into a precise mathematical statemen
 - An independent brute-force grid quadrature of W(g + τ_s h) agrees to 1e-7 to 1e-6 relative, at s = 0.45, log 2, log 3 and 1.7, for ZETA, EPS, FTH and FTAU (`check_shift.json`). That is the grid's own accuracy.
 - Doubling the panels at the tightest shifts changes μ by less than 7e-14 (`check_quad.json`).
 
-**The add+mult dictionary, measured.** For g = first sine at l = 0.6 (ζ), the pole part of b_s, divided by 2cosh(s/2), equals 0.488418 at every s from 0.6 to 7.8. The ℤ image of (q + 1)/√q is exact. The prime-window sum tracks it (17.691 vs 17.711 at s = 7.18), and the remainder b_s stays within ±0.008, while d = W(g) = 0.0118. This is N_k ≈ q^k + 1 with the error bounded by the genus, played out on ℤ (CHECKED).
+**The add+mult dictionary, measured.** For g = first sine at l = 0.6 (ζ), the pole part of b_s, divided by 2cosh(s/2), equals 0.488418 = ĝ(i/2)ĝ(−i/2) at every s from 0.6 to 7.8. That is an algebraic identity (the ℤ image of (q + 1)/√q), so this is a code check, not a measurement. The prime-window sum tracks it (17.691 vs 17.711 at s = 7.18), and the remainder b_s stays within ±0.008, while d = W(g) = 0.0118. This is N_k ≈ q^k + 1 with the error bounded by the genus, played out on ℤ (CHECKED).
 
 ### 2.2 (a)+(c) One-shift Hasse block [g, τ_s g] (`hasse_blocks.py`)
 
@@ -125,9 +134,9 @@ The Hasse inequality |b_s(g)| ≤ d(g) for all g is the same as ρ ≤ 1. The sc
 | FTH | 0.0176 | 377/499 | 0.66 (p = 3) | -4.49e+00 | 2.5384 | 205, 1.78 | 2.4975 |
 
 **Readout.**
-- At **l = 0.6** the one-shift block separates ζ from **every** fake. ζ and the unitary control F_{iτ} pass at every one of 499 shifts. Each fake fails beyond a model-dependent onset: F_θ at s = 0.66 (p = 3), BEUR″ at 3.60 (p = 37, the first window that reaches its Beurling primes ≥ 55), EPS at 4.40 (p = 149), DH at 6.30 (p = 547). NUMERICAL.
+- At **l = 0.6** the one-shift block separates ζ from **every** fake. This is a tautological control, a weaker ghost detector than 14B's W ≥ 0 (Cauchy–Schwarz; AUDIT15 §1): each failure exhibits a ghost g ± τ_s g of width ≤ l + s, and EPS (indefinite from width 3.0) first fails at width 5.0. ζ and the unitary control F_{iτ} pass at every one of 499 shifts. Each fake fails beyond a model-dependent onset: F_θ at s = 0.66 (p = 3), BEUR″ at 3.60 (p = 37, the first window that reaches its Beurling primes ≥ 55), EPS at 4.40 (p = 149), DH at 6.30 (p = 547). NUMERICAL.
 - At **l = 0.3** (narrower g, larger "genus" d) only EPS (from s = 5.64) and F_θ (from 1.78) fail before the data cutoff. DH (max ρ 0.9993) and BEUR″ (0.956) pass. **The onset moves out as the genus grows.** That is the expected e^{δs}-growth picture: violation needs |G(ρ)|² e^{δs} ≳ d.
-- **ζ saturates the bound:** max ρ = 0.99959 at s = 5.78 (l = 0.6). It is the ℤ-shadow of the Weil bound's sharpness: under RH, ρ(s) = sup_g |Σ_γ |G(γ)|² e^{−iγs}| / Σ_γ |G(γ)|², and Kronecker makes it approach 1. So ζ sits exactly on the edge, as in s = Δ / de Bruijn–Newman Λ = 0. NUMERICAL.
+- **ζ saturates the bound:** max ρ = 0.99959 at s = 5.78 (l = 0.6). It is the ℤ-shadow of the Weil bound's sharpness: under RH, ρ(s) = sup_g |Σ_γ |G(γ)|² e^{−iγs}| / Σ_γ |G(γ)|², and Kronecker makes it approach 1 (**HEURISTIC**; F_{iτ} nearly saturates too, at 0.9963). The analogy to s = Δ / de Bruijn–Newman Λ = 0 is also HEURISTIC. The ρ values are NUMERICAL.
 
 ### 2.3 (b) Full Hasse Gram (`hasse_gram.py`)
 
@@ -155,7 +164,7 @@ The generalized eigenproblem G v = λ N v, with N-null directions dropped and gh
 
 | object | 2×2 Hasse block [[2g, c₁],[c₁, 2g]] | Toeplitz T up to K = 8–10 | note |
 |---|---|---|---|
-| elliptic curves, probe B (p = 5…19) | PSD (e.g. p = 5: eigenvalues 0.658, 3.342) | rank 2, 0 ghosts | (m, −n√q)T(…)ᵀ = 2 deg(m − nF) verified for \|m\|, \|n\| ≤ 4; N_k > 0 |
+| elliptic curves, probe B (p = 5…19) | PSD (e.g. p = 5: eigenvalues 0.658, 3.342) | rank 2, 0 ghosts | (m, −n√q)T(…)ᵀ = 2 deg(m − nF) for \|m\|, \|n\| ≤ 4 (algebra check only: compared to m² − a·mn + q·n², not to isogeny degrees); N_k > 0 |
 | class-0 partial zeta Z₀ (probe B "Epstein", no Euler product) | c₁ = √q > 2: **1 ghost** for every q ≥ 5 (p = 5: −0.236) | 1 ghost | the EPS failure exactly |
 | genus-2 curves y² = f(x), p = 5, 7, 11, 13 (brute-force N₁, N₂) | PSD | rank 4, 0 ghosts, all \|ω\| = 1 | Weil |
 | synthetic genus-2 "fake" {e^{±iφ}, r, 1/r} (FE, off-circle pair) | **passes** (c₁ = 1.32, 0.45, 3.11) | first ghost at K = 3 for all three, i.e. size 2g = 4 | the one-shift block [Δ, Γ_{F^k}] first fails at k = 3, 4, 6 |
@@ -170,9 +179,9 @@ Lesson (PROVED, elementary): in genus g, the Toeplitz block of size 2g decides R
 
   d(g) := W(g) ≥ |b_s(g)| := |W(g, τ_s g)| for every g supported in a window of width l < log 2, for every shift s.
 
-At l = 0.6 it holds for ζ and F_{iτ} on all 499 shifts up to s ≈ 8 (p ≲ 2800), and it fails for EPS, DH, BEUR″ and F_θ (NUMERICAL). Its shape is genuinely Hasse's |a| ≤ 2g√q:
-- the **diagonal is prime-free**: archimedean + pole, the "genus", known positive by Connes–Consani 2021;
-- the **off-diagonal is one Frobenius window**: the pole main term 2cosh(s/2)|ĝ(i/2)|², the analogue of q^k + 1, minus the prime count near e^s, the analogue of N_k.
+At l = 0.6 it holds for ζ and F_{iτ} on all 499 shifts up to s ≈ 8 (p ≲ 2800), and it fails for EPS, DH, BEUR″ and F_θ (NUMERICAL). It is implied by W ≥ 0 (Cauchy–Schwarz) and strictly weaker, so it is a tautological control (AUDIT15). Its shape is genuinely Hasse's |a| ≤ 2g√q:
+- the **diagonal is prime-free**: archimedean + pole, the "genus", positive by Connes–Consani 2021 only for supp g ⊂ [2^{−1/2}, 2^{1/2}] with ĝ(i/2) = 0, so the pole part is not covered;
+- the **off-diagonal is one Frobenius window**: the pole main term 2cosh(s/2)·ĝ(i/2)ĝ(−i/2), the analogue of q^k + 1, minus the prime count near e^s, the analogue of N_k.
 
 So it reads: *prime-count fluctuation at e^s, tested by g ⊗ g, is bounded by the archimedean genus of g.*
 
@@ -216,7 +225,7 @@ The GAP is a Stepanov-type auxiliary-function count on the arithmetic or scaling
 | `ff_hasse.py` → `ff_hasse.json` | part (d) |
 | `summarize15.py` → `round15.json`, `summary15.md` | tables |
 
-Reproduce:
+Reproduce (from any working directory: every script imports `_paths.py`, which sets sys.path and chdirs to this folder; for a scratch copy elsewhere set `GPP_R13=/path/to/round13_akg_kg`):
 1. `python3 check_core.py; python3 check_shift.py; python3 check_quad.py`
 2. `for m in ZETA EPS DH BEUR2 FTH FTAU; do python3 hasse_blocks.py $m 0.6; python3 hasse_blocks.py $m 0.3; for f in P2 P3 P5; do python3 hasse_gram.py $m $f 14; done; python3 hasse_gram.py $m INT 40; python3 hasse_gram.py $m PP 128; done`
 3. `python3 ff_hasse.py; python3 summarize15.py`

@@ -7,6 +7,7 @@ Hodge index (primitive part negative definite) => T >= 0 for every K.  For g = 1
 Rows: (1) elliptic curves of probe B (zeta: Euler product)   (2) the class-0 partial zeta Z_0 (probe B 'Epstein', no Euler product)
 (3) genus-2 curves y^2 = f(x) by brute-force counts over F_p, F_p^2   (4) a synthetic genus-2 'fake' with FE but omega off the circle,
 whose 2x2 Hasse block PASSES while larger Toeplitz blocks fail: one Frobenius-shift block is not enough once g >= 2."""
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__))); import _paths  # noqa: E402  (run from anywhere)
 import json, math, cmath, itertools, numpy as np, sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'clues'))
 

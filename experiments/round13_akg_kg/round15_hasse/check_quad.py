@@ -1,4 +1,5 @@
 """Quadrature convergence of the one-shift block at zeta's tightest shift (s = 5.78) and FTAU's (7.34): npan 24 vs 64."""
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__))); import _paths  # noqa: E402  (run from anywhere)
 import numpy as np, json, hasse_core as hc
 out = []
 for name, s in [('ZETA', 5.78), ('FTAU', 7.34), ('ZETA', 4.0)]:

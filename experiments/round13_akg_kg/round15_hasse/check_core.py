@@ -1,4 +1,5 @@
 """B_0 must equal the 14B Weil matrix W = arch + pole - prime (weil_galerkin.operators)."""
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__))); import _paths  # noqa: E402  (run from anywhere)
 import numpy as np, hasse_core as hc, weil_galerkin as wg, json
 out = {}
 for name in ['ZETA', 'EPS', 'DH', 'FTH']:

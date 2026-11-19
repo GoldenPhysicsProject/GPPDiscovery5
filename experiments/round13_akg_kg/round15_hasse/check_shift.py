@@ -1,5 +1,6 @@
 """Independent grid check of B_s (s>0): W(f) for f = g + tau_s h computed by brute-force quadrature of Q(A_f) on a grid
 must equal B_0(g,g) + B_0(h,h) + 2 Bsym_s(g,h)."""
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__))); import _paths  # noqa: E402  (run from anywhere)
 import numpy as np, math, json, hasse_core as hc, weil_galerkin as wg
 from scipy.integrate import quad
 def Qgrid(mo, x, f):
