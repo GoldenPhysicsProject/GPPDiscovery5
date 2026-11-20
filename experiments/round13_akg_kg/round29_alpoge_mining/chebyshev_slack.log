@@ -1,0 +1,4 @@
+n=    1000  ASK=       983.6  MAIN=      1382.3  full Legendre=      1382.3  slack=     398.7  slack/n=0.399  slack/sqrt(2n)=   8.91
+n=   10000  ASK=      9909.3  MAIN=     13857.8  full Legendre=     13857.8  slack=    3948.4  slack/n=0.395  slack/sqrt(2n)=  27.92
+n=  100000  ASK=     99833.6  MAIN=    138623.1  full Legendre=    138623.1  slack=   38789.5  slack/n=0.388  slack/sqrt(2n)=  86.74
+n= 1000000  ASK=   1000103.5  MAIN=   1386286.9  full Legendre=   1386286.9  slack=  386183.3  slack/n=0.386  slack/sqrt(2n)= 273.07
