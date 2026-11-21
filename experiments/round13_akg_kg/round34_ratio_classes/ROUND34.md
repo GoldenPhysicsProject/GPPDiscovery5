@@ -147,7 +147,7 @@ Equivalently:  R_c(X) ≤ −H_c(X) + B X^ε   (the sharpest form; R_c ≥ −H_
   3. *The first unattained milestone*: E_X(1) ≪ X^{1−δ} for one δ > 0. By R33 Thm 33.2(a) this already gives the zero-free strip Re s > 1 − δ/2 (quasi-RH), which is open.
      - The z-route cannot supply it: for non-integer z, ζ^{−z} has branch points at every zero ρ, so the Selberg–Delange error terms near z = 1 *are* the zeros.
      - What the route would need is a **power-saving Selberg–Delange theorem at z = 1** (Σ_{n≤x} μ(n)z^{ω(n)} with error ≪ x^{1−δ} uniformly for |z − 1| ≤ r). That is a zero-free strip statement, so it is the precise thing to attack.
-- **CONJECTURE-34 (NUMERICAL support):** min_{z∈[−1,1]} E_X(z) = E_X(1) for all X. It holds at X = 10⁴ … 10⁷ (tested on 81–201-point grids). It would mean real μ minimizes the random-sign-averaged Fejér square. It does not by itself bound E_X(1).
+- **CONJECTURE-34 (NUMERICAL support):** min_{z∈[−1,1]} E_X(z) = E_X(1) for all X. It holds at X = 10⁴ … 10⁷ (tested on an 81-point grid). It would mean real μ minimizes the random-sign-averaged Fejér square. It does not by itself bound E_X(1).
 
 ## 5. Controls (X = 3·10⁴, each model with its own μ; `r34_controls.py`, brute-force pairs)
 

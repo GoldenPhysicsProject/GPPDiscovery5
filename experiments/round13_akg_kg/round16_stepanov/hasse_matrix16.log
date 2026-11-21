@@ -1,1 +1,8 @@
 ZETA {'lam_min_W': 0.008916671600351023, 'max_rho': 0.9989410794564294, 's_at_max': 4.0, 'n_violating': 0, 'n_scanned': 261, 'first_violation': None}
+FTAU {'lam_min_W': 0.07370426976031144, 'max_rho': 0.9942579204207185, 's_at_max': 12.7, 'n_violating': 0, 'n_scanned': 261, 'first_violation': None}
+FTH {'lam_min_W': 0.017588473853718367, 'max_rho': 8.237634724013402, 's_at_max': 14.0, 'n_violating': 223, 'n_scanned': 261, 'first_violation': 1.1}
+BEUR2 {'lam_min_W': 0.008916671600351023, 'max_rho': 9.66765748249662, 's_at_max': 4.05, 'n_violating': 120, 'n_scanned': 261, 'first_violation': 3.6}
+/workspace/GPPDiscovery5/experiments/round13_akg_kg/round14b_euler/../harness.py:37: RuntimeWarning: divide by zero encountered in log
+  logn = np.log(np.arange(N+1, dtype=float)); logn[0] = 0
+EPS {'lam_min_W': 2.20865710140501, 'max_rho': 51.58079393853625, 's_at_max': 13.85, 'n_violating': 176, 'n_scanned': 261, 'first_violation': 4.4}
+DH {'lam_min_W': 0.7930515308445879, 'max_rho': 9.5013463040763, 's_at_max': 14.0, 'n_violating': 116, 'n_scanned': 261, 'first_violation': 6.45}
