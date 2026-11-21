@@ -141,6 +141,8 @@ For each attempt, the result on the controls is given, then the exact stopping p
 - So the positive-density version is (conjecturally) true for every model and gives nothing through F13S, which needs every k in the window.
 - **Stop:** F13S's "all k" quantifier is where the one-sidedness lives. A density version is exactly what F_θ satisfies.
 
+For a dyadic tent sum $P(x)$ over ordinary primes, Lee Crossley proves unconditionally that every sufficiently late block $[K,K^2]$ contains a run $m\le n\le m+\lfloor m^\eta\rfloor$ with $P(n^4)<(n^4/2)\log 2$, for any fixed $0<\eta<1$. Keeping $P(n^4)$ at or below this main term throughout arbitrarily late blocks is equivalent to RH. [Crossley (2026), theorem and proof](https://doi.org/10.5281/zenodo.24411621)
+
 **E. Growing B: the exponent dictionary** (PROVED direction in Lean; converse classical).
 - D ≥ −C e^{εL} on windows [L, (3/2)L] ⇒ ζ ≠ 0 on Re s > ½+ε (F13W `F13W_three_halves`).
 - Conversely, zero-free on Re s > ½+ε ⇒ D ≥ −C_δ e^{(ε+δ)L} (explicit formula, CLASSICAL).
