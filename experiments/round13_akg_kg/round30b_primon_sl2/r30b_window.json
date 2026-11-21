@@ -1,0 +1,184 @@
+{
+ "eps_decomposition_max_err": 0.0,
+ "max_imag_over_abs": {
+  "ZETA": 3.9438664153406037e-20,
+  "FTH": 7.879207374134204e-20,
+  "EPS": 9.89671342886651e-20,
+  "DH": 3.9245636513293614e-20
+ },
+ "windows": {
+  "0.5": {
+   "ZETA": {
+    "windows": 779,
+    "certified": 350,
+    "frac": 0.4492939666238768,
+    "R_max": 1.0,
+    "R_median": 1.0,
+    "grid_sign_changes": 202,
+    "first_uncertified_T": 10.5,
+    "last_uncertified_T": 399.5
+   },
+   "FTH": {
+    "windows": 779,
+    "certified": 0,
+    "frac": 0.0,
+    "R_max": 1.0,
+    "R_median": 1.0,
+    "grid_sign_changes": 0,
+    "first_uncertified_T": 10.5,
+    "last_uncertified_T": 399.5
+   },
+   "EPS": {
+    "windows": 779,
+    "certified": 574,
+    "frac": 0.7368421052631579,
+    "R_max": 1.0,
+    "R_median": 0.9602277399177326,
+    "grid_sign_changes": 424,
+    "first_uncertified_T": 11.5,
+    "last_uncertified_T": 392.5
+   },
+   "DH": {
+    "windows": 779,
+    "certified": 486,
+    "frac": 0.6238767650834403,
+    "R_max": 1.0,
+    "R_median": 0.9936313625602711,
+    "grid_sign_changes": 285,
+    "first_uncertified_T": 10.5,
+    "last_uncertified_T": 398.5
+   }
+  },
+  "1.0": {
+   "ZETA": {
+    "windows": 389,
+    "certified": 312,
+    "frac": 0.8020565552699229,
+    "R_max": 1.0,
+    "R_median": 0.9402543325964012,
+    "grid_sign_changes": 202,
+    "first_uncertified_T": 11.0,
+    "last_uncertified_T": 399.0
+   },
+   "FTH": {
+    "windows": 389,
+    "certified": 0,
+    "frac": 0.0,
+    "R_max": 1.0,
+    "R_median": 1.0,
+    "grid_sign_changes": 0,
+    "first_uncertified_T": 11.0,
+    "last_uncertified_T": 399.0
+   },
+   "EPS": {
+    "windows": 389,
+    "certified": 370,
+    "frac": 0.9511568123393316,
+    "R_max": 1.0,
+    "R_median": 0.7949469215468565,
+    "grid_sign_changes": 424,
+    "first_uncertified_T": 15.0,
+    "last_uncertified_T": 352.0
+   },
+   "DH": {
+    "windows": 389,
+    "certified": 364,
+    "frac": 0.9357326478149101,
+    "R_max": 1.0,
+    "R_median": 0.795357343169069,
+    "grid_sign_changes": 285,
+    "first_uncertified_T": 11.0,
+    "last_uncertified_T": 367.0
+   }
+  },
+  "2.0": {
+   "ZETA": {
+    "windows": 194,
+    "certified": 190,
+    "frac": 0.979381443298969,
+    "R_max": 1.0,
+    "R_median": 0.6957760539473592,
+    "grid_sign_changes": 202,
+    "first_uncertified_T": 12.0,
+    "last_uncertified_T": 46.0
+   },
+   "FTH": {
+    "windows": 194,
+    "certified": 0,
+    "frac": 0.0,
+    "R_max": 1.0,
+    "R_median": 1.0,
+    "grid_sign_changes": 0,
+    "first_uncertified_T": 12.0,
+    "last_uncertified_T": 398.0
+   },
+   "EPS": {
+    "windows": 194,
+    "certified": 194,
+    "frac": 1.0,
+    "R_max": 0.9997566163107564,
+    "R_median": 0.58166241790533,
+    "grid_sign_changes": 424,
+    "first_uncertified_T": null,
+    "last_uncertified_T": null
+   },
+   "DH": {
+    "windows": 194,
+    "certified": 194,
+    "frac": 1.0,
+    "R_max": 0.9999049772768246,
+    "R_median": 0.4890793625723861,
+    "grid_sign_changes": 285,
+    "first_uncertified_T": null,
+    "last_uncertified_T": null
+   }
+  },
+  "4.0": {
+   "ZETA": {
+    "windows": 96,
+    "certified": 96,
+    "frac": 1.0,
+    "R_max": 0.996548061620703,
+    "R_median": 0.4711003007111486,
+    "grid_sign_changes": 202,
+    "first_uncertified_T": null,
+    "last_uncertified_T": null
+   },
+   "FTH": {
+    "windows": 96,
+    "certified": 0,
+    "frac": 0.0,
+    "R_max": 1.0,
+    "R_median": 1.0,
+    "grid_sign_changes": 0,
+    "first_uncertified_T": 14.0,
+    "last_uncertified_T": 394.0
+   },
+   "EPS": {
+    "windows": 96,
+    "certified": 96,
+    "frac": 1.0,
+    "R_max": 0.9786199827654999,
+    "R_median": 0.42805144041573207,
+    "grid_sign_changes": 424,
+    "first_uncertified_T": null,
+    "last_uncertified_T": null
+   },
+   "DH": {
+    "windows": 96,
+    "certified": 96,
+    "frac": 1.0,
+    "R_max": 0.9328301214789182,
+    "R_median": 0.3509115321833804,
+    "grid_sign_changes": 285,
+    "first_uncertified_T": null,
+    "last_uncertified_T": null
+   }
+  }
+ },
+ "T_range": [
+  10.0,
+  400.0
+ ],
+ "min_Z_FTH": 0.039710804433433056
+}
