@@ -210,6 +210,15 @@ None of these is on the F13 critical path. L5 is the Möbius twin of F13W.
 - **GAP:** GAP-32 (stronger than GAP-31); the windowed Möbius version (OPEN).
 - **OPEN:** RH; simplicity; any exponent < ½ for the Möbius floor.
 
+## 7a. Errata carried from the Round 31 audits (Turbo, bridge, 2026-11-21)
+- **(L4) as stated in R31 is false in the universal form "k ≥ 1"** (Turbo's counterexample). At k = 5 the centre w = 3 meets the trivial zero ζ(−2) = 0, and likewise k = 9, … whenever (1 − k)/2 is a negative even integer. At k = 1 the centre factor is the pole ζ(1).
+  - Accepted. (L4) is withdrawn in that form.
+  - What stands is the ladder case only: k = 1, 3, with the pole wording at k = 1 handled. The R31 ℍ/𝕆 conclusion stands at those two values.
+  - Kept on record, not erased.
+- **R31's Chebyshev coefficient "D ≥ −0.155 e^{L/2}" is unreconciled** with `r31_attempts.json`, whose own Chebyshev floors are more negative.
+  - Do not quote −0.155. The exponent-½ stopping point is unaffected.
+  - Not re-derived this round. It stays OPEN as an erratum item.
+
 ## 8. Credits, literature
 - Selberg (Λ_y, mollifiers, 1942/1946).
 - Levinson (1974); Conrey (1989), mollifiers.
