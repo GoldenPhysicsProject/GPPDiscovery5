@@ -139,6 +139,27 @@ G_c = 2 Q_c + L·M_c(X)² − 2 M_c(X)(m − cL),     M_c = M_{½} − c,  M_{½
   - CHECKED for ζ on L ∈ [3, 20.72], with R_c/H_c → −0.98.
   - It fails for EPS at small L, and is PROVED to fail eventually for Beurling. So it is an ℕ-specific statement, not a torus generality.
 
+## 5a. Against the Codex/Turbo equal-Haar-norm translation control (CHECKED; `r33_translation_control.py`, N = 10⁷)
+
+**The control.** Codex (GPPDiscovery2 `a8172e5`, audited by Turbo on PR #15) translates T by τ = (z_p = −1 for all p), which sends
+μ(n) → |μ(n)|. The centering −cχ_1 is a constant function on T (a translation-invariant scalar, which is Turbo's scope condition), so it is untouched.
+- Every Haar quantity is identical for f_c and its translate. **H_c is identical to all printed digits**: 39.173920 (L = 6), 122.129183 (L = 12), 204.392883 (L = 16.1).
+- So no argument using only H_c (C1 + C2) can bound the floor. This agrees with §5: the counted-once diagonal cannot do it alone.
+
+**The SOS norm is not translation-invariant.** ν_L/L → δ_1 concentrates at the identity, not at τ.
+
+| L | Q_c: μ / translate | G_c: μ / translate | R_c/H_c: μ / translate | ⟨f,1⟩ = m − cL: μ / translate |
+|---|---|---|---|---|
+| 6 | 2.569 / 658.7 | 4.82 / 2584 | −0.877 / +65.0 | 1.847 / 50.0 |
+| 12 | 2.745 / 2.42e5 | 5.74 / 2.41e6 | −0.953 / +1.97e4 | 1.823 / 986 |
+| 16.1 | 2.862 / 1.48e7 | 6.24 / 2.09e8 | −0.969 / +1.02e6 | 1.832 / 7698 |
+
+**What this shows.**
+- The SOS passes the control. Its separating content is exactly the non-translation-invariant remainder R_c, which is strongly negative for μ and huge and positive for the translate.
+- The translate's base-point value tracks 4√X/ζ(2), as filed.
+- This locates "the inverse identity at the distinguished point": it enters only through the Fejér modes q ≠ 1 weighted towards z = 1.
+- HEURISTIC: Z_X·M_X = χ_1 + (tail on X < n ≤ X²), and Z_X is maximal (2√X) exactly at z = 1, while Z_X^τ(1) = Σ λ(n)n^{−1/2} is small.
+
 ## 6. GAP-33 (exact) and the named reductions
 
 **The GAP in three forms:**
@@ -217,6 +238,7 @@ Remainder form (ζ, given C1–C2): GAP-33 ⇔ R_c(L) ≤ B e^{εL};  sufficient
 - `r33_beur_dump.c` + `r33_beurling.py` → `r33_beurling.json`: 18,645,213 squarefree Beurling integers ≤ 10⁸, primes from R32.
   The 298 MB dump `beur_sqf.bin` and the binary are not committed.
 - `r33_identities.py` → `r33_identities.json`: T1–T4.
+- `r33_translation_control.py` → `r33_translation_control.json`: the §5a Codex/Turbo control.
 - `r33_validate_zeros.py` → `r33_validate_zeros.json`: test data only.
 - `r33_analysis.py` → `r33_results.json`, `r33_series.npz`.
 - `r33_figs.py` → **`fig1_torus_sos.png`** (main figure):
@@ -228,7 +250,7 @@ Remainder form (ζ, given C1–C2): GAP-33 ⇔ R_c(L) ≤ B e^{εL};  sufficient
 ## 10. Labels and credit
 
 - **PROVED:** Thm 33.1 (identities, the SOS inequality, the H + R split); Thm 33.2(a, b); controls unbounded; Beurling R_B > 0 eventually (idealized DMV); Prop 33.3; (C1), (C2).
-- **CHECKED:** T1–T4; κ₀ to 5·10⁻¹⁰; m̃ vs R32.
+- **CHECKED:** T1–T4; the §5a translation control (H identical, R separates); κ₀ to 5·10⁻¹⁰; m̃ vs R32.
 - **NUMERICAL:** the table and the slopes.
 - **CLASSICAL-conditional:** 33.2(c), Cramér.
 - **CONJECTURE:** GAP-33₁ and CONJECTURE-33⁻ for ζ.
