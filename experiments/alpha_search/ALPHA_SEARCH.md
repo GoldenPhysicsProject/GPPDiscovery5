@@ -122,3 +122,58 @@ Within the 216 sibling grammars:
 | "α comes from the golden angle" | HEURISTIC (no mechanism; units and running objections) |
 | A structural derivation of α(0) | OPEN; no candidate found |
 | Daniel-framework arithmetic constants (ζ, L-values, Gauss-sum moduli √p, Casimir rationals) produce no 1σ hit in 2.4×10⁷ monomials | NUMERICAL (null) |
+
+## 5. "On the Origin of Spacetime": every version (Daniel t587u)
+
+Script: `origin_of_spacetime_versions.py`; output in `origin_of_spacetime_versions.json`. Daniel's drafts are not copied here. The formulas were transcribed from the Drive PDFs and from `AppendixG.tex` inside `Origin of Spacetime-Newest.zip`. The drafts write "log" without a base, so both ln and log₁₀ were evaluated, along with the "1/α vs α" alternative readings.
+
+**Versions found** (Drive, GPP folder; dates from the title page or file time):
+
+| date (2025) | file(s) | what it says about α |
+|---|---|---|
+| May 14 | On The Origin Of Spacetime V2.docx | qualitative only: "constants from projection". No formula |
+| May 20–22 | Information_and_Holographic_Spacetime (3)–(9), titled "On the Origin of Spacetime(s)" | table entry α(θ) ∼ 1/κ_U(1)(θ), with the observed 1/137.035999 written beside it. No computable formula |
+| May 24 | OnTheOriginOfSpacetime.pdf, OnTheOriginOfSpacetimeGG.pdf | G.4: α ∼ 1/(θϕ) at θ = φ, said to give "the observed value within projection uncertainty" |
+| May 25 | MPNP (7), (8), _Final_Copy; Information_and_Holographic_Spacetime (13), (16), (24)–(27) | G.2: α(θ) = φ⁻⁶ · θ^1.472 / (1 + 1.78 log(1/θ)), "at θ = φ yields α⁻¹ ≈ 137.036". Also gives sin²θ_W and α_s formulas |
+| May 27 | MPNP (11) | formula boxes are empty in the PDF: "Using : Matches the observed value to high precision" |
+| May 27 → Jun 19 | MPNP (12), (16), (19)–(22), (28); _complete; MPNP__; Revised; v3; Newest.zip (Jun 11) | G.3: α⁻¹ = Σ_{k≥2} κ_α / (φᵏ[1 + (θ − φᵏ)²]) at θ = φ⁹, with "fitted κ_α = 19.56" giving α⁻¹ ≈ 137.036. Identical in every later draft |
+| Jun 7–11 | MPNP (23)–(27), ~260 KB | actually the Yang–Mills mass-gap paper; no α |
+| Jun 15 | On_the_dimensionality_of_spacetime.pdf | no α |
+| Nov–Dec 2025 | GGC III / II (see §1) | 360/φ² series (gives 137.0360516); 4π/φ² (gives 4.80) |
+
+**Formula by formula** (50 digits; CODATA 2022 = 137.035999177(21), Rb = …206(11), Cs = …046(27)):
+
+| version | formula as printed | printed | computed 1/α | off by |
+|---|---|---|---|---|
+| May 24 | α ∼ 1/(θφ), θ = φ | "observed" | 2.618 (φ²) | −134.4 |
+| May 24, alt. (ϕ = golden angle 137.5°) | θ · 360/φ² | – | 222.49 | +85.5 |
+| May 25, ln | 1/[φ⁻⁶ θ^1.472/(1 + 1.78 ln(1/θ))], θ = φ | 137.036 | 1.2676 | −135.8 |
+| May 25, log₁₀ | same with log₁₀ | 137.036 | 5.5495 | −131.5 |
+| May 25, read as 1/α directly | – | – | 0.789 (ln) / 0.180 (log₁₀) | −136 |
+| May 27 – Jun 19 | 19.56 · Σ_{k≥2} 1/(φᵏ[1 + (φ⁹ − φᵏ)²]) | 137.036 | **0.26182** | −136.8 |
+| same, read as α | 1/(19.56 · S) | – | 3.8194 | −133.2 |
+| May 27 (11) | (empty) | "high precision" | n/a | – |
+
+- Every result is off by 85–137 in absolute terms, so the pulls against CODATA, Rb, and Cs are all 10⁹–10¹⁰σ.
+- S(φ⁹) = 0.0133856279, so the κ_α that would actually give CODATA is **10237.547343**, not 19.56.
+  - Rounding κ_α = 19.56 to its printed precision moves the result only within [0.26176, 0.26189].
+  - The value 19.56 is called "fitted", but it is not a fit to 137.036 under any reading I could construct.
+
+**Other constants in the May 25 draft:**
+
+| quantity | printed | computed (ln reading) | computed (log₁₀ reading) |
+|---|---|---|---|
+| sin²θ_W at θ = φ | 0.231 | 0.995 | 0.94 |
+| α_s at θ = φ | "≈ 1" | 0.235 | 0.336 |
+
+From May 27 on, the drafts drop these formulas. sin²θ_W is quoted from observation (0.231), and α_s comes from the standard one-loop QCD formula. G "derived" from M_P = √(ħc/G) is circular.
+
+**Look-elsewhere.** No version lands near 137.036, so there is no hit to discount. Two structural points still matter:
+- Both computable versions contain fitted continuous parameters (1.472 and 1.78; κ_α).
+- With one free continuous parameter, the formula reaches *any* target (κ = 10237.5 reaches every one of CODATA, Rb, and Cs). A correct match would therefore carry zero evidential weight (P = 1). Compare grammar A in §3, where no parameter is fitted and the chance rate is 3×10⁻⁴.
+
+**Verdict.**
+- No version of "On the Origin of Spacetime" gets α right.
+- In every version where a number is printed, it is the observed 137.036 written in. The formula beside it does not produce it: computed values range from 0.18 to 222.
+- Across all of Daniel's drafts, the closest computed value is GGC III (Nov 2025): 137.0360516, which is 3.8×10⁻⁷ relative and about 2500σ away.
+- Labels: CHECKED (ERRATA, all versions); "α from golden projection depth" is HEURISTIC; derivation OPEN.

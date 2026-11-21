@@ -1,0 +1,137 @@
+{
+ "rows": [
+  {
+   "version": "May 24 2025 (OnTheOriginOfSpacetime[GG].pdf) G.4",
+   "formula": "alpha ~ 1/(theta*phi), theta=phi (reading phi_angle=phi)",
+   "printed": "'observed value within projection uncertainty'",
+   "note": "only '~'; angle symbol undefined",
+   "computed_1/alpha": "2.61803398874989",
+   "diff_vs_C22": "-134.4",
+   "rel": "0.981",
+   "pull_CODATA2022": "-6.401e+9",
+   "pull_Morel2020_Rb": "-1.222e+10",
+   "pull_Parker2018_Cs": "-4.978e+9"
+  },
+  {
+   "version": "May 24 2025 G.4 alt reading",
+   "formula": "alpha ~ 1/(theta*phi_deg), theta=phi, phi_deg = golden angle 360/phi^2",
+   "printed": "same",
+   "note": "alternative reading of the undefined angle",
+   "computed_1/alpha": "222.492235949962",
+   "diff_vs_C22": "85.46",
+   "rel": "0.624",
+   "pull_CODATA2022": "4.069e+9",
+   "pull_Morel2020_Rb": "7.769e+9",
+   "pull_Parker2018_Cs": "3.165e+9"
+  },
+  {
+   "version": "May 25 2025 (MPNP (8)/Final_Copy) G.2 [ln]",
+   "formula": "alpha = phi^-6 * theta^1.472/(1+1.78 ln(1/theta)), theta=phi",
+   "printed": "137.036",
+   "note": "two fitted decimals 1.472, 1.78",
+   "computed_1/alpha": "1.26757961835547",
+   "diff_vs_C22": "-135.8",
+   "rel": "0.991",
+   "pull_CODATA2022": "-6.465e+9",
+   "pull_Morel2020_Rb": "-1.234e+10",
+   "pull_Parker2018_Cs": "-5.028e+9"
+  },
+  {
+   "version": "May 25 2025 (MPNP (8)/Final_Copy) G.2 [log10]",
+   "formula": "alpha = phi^-6 * theta^1.472/(1+1.78 log10(1/theta)), theta=phi",
+   "printed": "137.036",
+   "note": "two fitted decimals 1.472, 1.78",
+   "computed_1/alpha": "5.54954097221907",
+   "diff_vs_C22": "-131.5",
+   "rel": "0.96",
+   "pull_CODATA2022": "-6.261e+9",
+   "pull_Morel2020_Rb": "-1.195e+10",
+   "pull_Parker2018_Cs": "-4.87e+9"
+  },
+  {
+   "version": "May 27 - Jun 19 2025 (MPNP (12),(16),(19)-(22),(28), complete, Revised, v3, Newest.zip AppendixG.tex) G.3",
+   "formula": "1/alpha = sum_{k>=2} kappa/(phi^k [1+(theta-phi^k)^2]), theta=phi^9, kappa=19.56 ('fitted')",
+   "printed": "137.036",
+   "note": "kappa explicitly 'fitted'",
+   "computed_1/alpha": "0.261822881409746",
+   "diff_vs_C22": "-136.8",
+   "rel": "0.998",
+   "pull_CODATA2022": "-6.513e+9",
+   "pull_Morel2020_Rb": "-1.243e+10",
+   "pull_Parker2018_Cs": "-5.066e+9"
+  },
+  {
+   "version": "May 27 - Jun 19 2025 G.3 alt reading",
+   "formula": "same sum read as alpha (not 1/alpha)",
+   "printed": "137.036",
+   "note": "alternative reading",
+   "computed_1/alpha": "3.81937588730079",
+   "diff_vs_C22": "-133.2",
+   "rel": "0.972",
+   "pull_CODATA2022": "-6.344e+9",
+   "pull_Morel2020_Rb": "-1.211e+10",
+   "pull_Parker2018_Cs": "-4.934e+9"
+  },
+  {
+   "version": "May 25 2025 G.2 alt reading [ln]",
+   "formula": "same expression read as 1/alpha",
+   "printed": "137.036",
+   "note": "alternative reading",
+   "computed_1/alpha": "0.788905079822426",
+   "diff_vs_C22": "-136.2",
+   "rel": "0.994",
+   "pull_CODATA2022": "-6.488e+9",
+   "pull_Morel2020_Rb": "-1.239e+10",
+   "pull_Parker2018_Cs": "-5.046e+9"
+  },
+  {
+   "version": "May 25 2025 G.2 alt reading [log10]",
+   "formula": "same expression read as 1/alpha",
+   "printed": "137.036",
+   "note": "alternative reading",
+   "computed_1/alpha": "0.180195083702596",
+   "diff_vs_C22": "-136.9",
+   "rel": "0.999",
+   "pull_CODATA2022": "-6.517e+9",
+   "pull_Morel2020_Rb": "-1.244e+10",
+   "pull_Parker2018_Cs": "-5.069e+9"
+  },
+  {
+   "version": "May 20-22 2025 (Information_and_Holographic_Spacetime (3)-(9))",
+   "formula": "alpha(theta) ~ 1/kappa_U(1)(theta)",
+   "printed": "table lists observed 1/137.035999",
+   "note": "no computable formula",
+   "computed": "n/a"
+  },
+  {
+   "version": "May 14 2025 (On The Origin Of Spacetime V2.docx)",
+   "formula": "none (qualitative: constants from projection)",
+   "printed": "-",
+   "note": "",
+   "computed": "n/a"
+  },
+  {
+   "version": "May 27 2025 (MPNP (11))",
+   "formula": "formula boxes empty in PDF",
+   "printed": "'matches to high precision'",
+   "note": "",
+   "computed": "n/a"
+  }
+ ],
+ "S_phi9": "0.0133856278839338643504008372111",
+ "kappa_needed": {
+  "CODATA2022": "10237.547343",
+  "Morel2020_Rb": "10237.5473451",
+  "Parker2018_Cs": "10237.5473332"
+ },
+ "other": {
+  "sin2thetaW May25 [ln] X^2/(1+X^2)": "0.99462964",
+  "sin2thetaW May25 [ln] alt Y^2/(1+Y^2)": "0.9948066",
+  "alpha_s May25 [ln] (1/phi)((1+log(1/theta))/theta)^0.85": "0.2350252",
+  "sin2thetaW May25 [log10] X^2/(1+X^2)": "0.93965639",
+  "sin2thetaW May25 [log10] alt Y^2/(1+Y^2)": "0.94153835",
+  "alpha_s May25 [log10] (1/phi)((1+log(1/theta))/theta)^0.85": "0.33637882",
+  "printed: sin2thetaW": "0.231 (obs 0.23122 MSbar at M_Z)",
+  "printed: alpha_s": "~1"
+ }
+}
