@@ -1,0 +1,66 @@
+{
+ "A1_antiderivative_check": 0.0,
+ "A1_kernel_identity": [
+  {
+   "L": 4.0,
+   "S_direct": 15.07604165061187,
+   "S_kernel": 15.076041650611868,
+   "diff": 1.7763568394002505e-15,
+   "main": 21.5562243957226
+  },
+  {
+   "L": 8.0,
+   "S_direct": 193.17225005440443,
+   "S_kernel": 193.17225005440432,
+   "diff": 1.1368683772161603e-13,
+   "main": 206.39260013257694
+  },
+  {
+   "L": 12.0,
+   "S_direct": 1577.7521738521145,
+   "S_kernel": 1577.7521738521093,
+   "diff": 5.229594535194337e-12,
+   "main": 1597.7151739709404
+  }
+ ],
+ "A2_chebyshev_floor": [
+  {
+   "L": 10,
+   "floor": -47.91244896794048
+  },
+  {
+   "L": 20,
+   "floor": -3462.872501441629
+  },
+  {
+   "L": 40,
+   "floor": -75355933.59471685
+  }
+ ],
+ "A3_envelope": {
+  "FTH": {
+   "fit_exponent": 0.3568109872896881,
+   "n": 26,
+   "last": [
+    18.375,
+    1.782233552657999
+   ]
+  },
+  "EPS": {
+   "fit_exponent": 0.742752409624306,
+   "n": 19,
+   "last": [
+    15.75,
+    4.726871857377773
+   ]
+  },
+  "ZETA": {
+   "fit_exponent": null,
+   "note": "no negative window minimum in range"
+  },
+  "DH": {
+   "fit_exponent": null,
+   "note": "no negative window minimum in range"
+  }
+ }
+}
