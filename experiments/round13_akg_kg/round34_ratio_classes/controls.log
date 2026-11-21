@@ -1,0 +1,6 @@
+ZETA E0=94.32 E1=-1013.70 R=-89.22 G=5.1062 {'pairs_tested': 444975, 'sign_mismatch': 0, 'first_example': None}
+ZETA2 E0=2054.41 E1=-19099.86 R=-1989.19 G=65.2151 {'pairs_tested': 612675, 'sign_mismatch': 0, 'first_example': None}
+FTH0.1 E0=2636.08 E1=-23500.86 R=-2550.36 G=85.7152 {'pairs_tested': 612675, 'sign_mismatch': 0, 'first_example': None}
+DH E0=415.28 E1=-291.49 R=-412.30 G=2.9774 {'pairs_tested': 580275, 'sign_mismatch': 0, 'first_example': None}
+EPS E0=6512.79 E1=-2355.19 R=-6322.20 G=190.5902 {'pairs_tested': 126675, 'sign_mismatch': 36585, 'first_example': {'m': 4, 'n': 6, 'u': 2, 'v': 3, 'mu_m_mu_n': 2.0, 'mu_u_mu_v': 0.0}}
+BEUR 5602 E0=7502.53 E1=-5055.97 R=-468.62 G=7033.9110
