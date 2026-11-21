@@ -1,0 +1,82 @@
+[
+ {
+  "family": "A golden angle + 2 golden terms",
+  "distinct_values_near_T(|d|<0.02)": 209,
+  "1sigma 2.1e-8": {
+   "real_target_hits": 1,
+   "decoy_mean_hits": 0.0,
+   "decoy_frac_with_>=real_hits": 0.0,
+   "poisson_P(>=real)": 0.0
+  },
+  "Cs-Rb 1.6e-7": {
+   "real_target_hits": 1,
+   "decoy_mean_hits": 0.002,
+   "decoy_frac_with_>=real_hits": 0.002,
+   "poisson_P(>=real)": 0.001998001332666921
+  }
+ },
+ {
+  "family": "A4 golden angle + 3 golden terms",
+  "distinct_values_near_T(|d|<0.02)": 18584,
+  "1sigma 2.1e-8": {
+   "real_target_hits": 21,
+   "decoy_mean_hits": 0.0205,
+   "decoy_frac_with_>=real_hits": 0.0,
+   "poisson_P(>=real)": 0.0
+  },
+  "Cs-Rb 1.6e-7": {
+   "real_target_hits": 33,
+   "decoy_mean_hits": 0.1975,
+   "decoy_frac_with_>=real_hits": 0.0015,
+   "poisson_P(>=real)": 0.0
+  }
+ },
+ {
+  "family": "B GGC grammar (pi/n_i, n_i<=400)",
+  "distinct_values_near_T(|d|<0.02)": 19761,
+  "1sigma 2.1e-8": {
+   "real_target_hits": 1,
+   "decoy_mean_hits": 0.012,
+   "decoy_frac_with_>=real_hits": 0.012,
+   "poisson_P(>=real)": 0.011928287138069482
+  },
+  "Cs-Rb 1.6e-7": {
+   "real_target_hits": 1,
+   "decoy_mean_hits": 0.072,
+   "decoy_frac_with_>=real_hits": 0.0685,
+   "poisson_P(>=real)": 0.06946910418879426
+  }
+ },
+ {
+  "family": "C r*x^a*y^b (13 constants)",
+  "distinct_values_near_T(|d|<0.02)": 750,
+  "1sigma 2.1e-8": {
+   "real_target_hits": 0,
+   "decoy_mean_hits": 0.001,
+   "decoy_frac_with_>=real_hits": 0.001,
+   "poisson_P(>=real)": 1.0
+  },
+  "Cs-Rb 1.6e-7": {
+   "real_target_hits": 0,
+   "decoy_mean_hits": 0.0065,
+   "decoy_frac_with_>=real_hits": 0.0065,
+   "poisson_P(>=real)": 1.0
+  }
+ },
+ {
+  "family": "D 137 +/- r*x^a*y^b",
+  "distinct_values_near_T(|d|<0.02)": 39196,
+  "1sigma 2.1e-8": {
+   "real_target_hits": 0,
+   "decoy_mean_hits": 0.0435,
+   "decoy_frac_with_>=real_hits": 0.043,
+   "poisson_P(>=real)": 1.0
+  },
+  "Cs-Rb 1.6e-7": {
+   "real_target_hits": 0,
+   "decoy_mean_hits": 0.3175,
+   "decoy_frac_with_>=real_hits": 0.2725,
+   "poisson_P(>=real)": 1.0
+  }
+ }
+]
